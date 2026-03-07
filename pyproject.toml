@@ -1,0 +1,20 @@
+[project]
+name = "general"
+version = "0.1.0"
+description = "Add your description here"
+readme = "README.md"
+requires-python = ">=3.13"
+dependencies = [
+  "fastapi",
+  "google-api-python-client",
+  "google-cloud-bigquery",
+  "gspread",
+  "ipykernel>=7.2.0",
+  "langchain",
+  "openai",
+  "pandas",
+  "psycopg",
+  "psycopg2-binary",
+  "pydantic",
+  "rich",
+]
