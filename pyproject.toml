@@ -5,16 +5,22 @@ description = "Add your description here"
 readme = "README.md"
 requires-python = ">=3.13"
 dependencies = [
+  "faiss-cpu>=1.13.2",
   "fastapi",
   "google-api-python-client",
   "google-cloud-bigquery",
   "gspread",
   "ipykernel>=7.2.0",
   "langchain",
+  "langchain-community>=0.4.1",
+  "langchain-openai>=1.1.10",
+  "networkx>=3.6.1",
   "openai",
   "pandas",
   "psycopg",
   "psycopg2-binary",
   "pydantic",
+  "pypdf>=6.7.5",
+  "python-dotenv>=1.2.2",
   "rich",
 ]
