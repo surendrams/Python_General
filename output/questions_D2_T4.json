@@ -1,0 +1,1566 @@
+[
+  {
+    "id": "D2_T4_001",
+    "domain_id": "D2",
+    "task_statement_id": "D2.T4",
+    "scenario_ids": [
+      "S1"
+    ],
+    "difficulty": "conceptual_knowledge",
+    "key_concept_tested": "project-level .mcp.json vs user-level ~/.claude.json",
+    "stem": "Your customer support agent needs access to billing system tools. Where should you configure the MCP server connection to ensure all team members can use the same billing tools?",
+    "options": [
+      {
+        "label": "A",
+        "text": "In the project-level .mcp.json file within the repository",
+        "is_correct": true
+      },
+      {
+        "label": "B",
+        "text": "In each developer's ~/.claude.json file",
+        "is_correct": false
+      },
+      {
+        "label": "C",
+        "text": "In the Claude Code settings panel",
+        "is_correct": false
+      },
+      {
+        "label": "D",
+        "text": "In the system environment variables",
+        "is_correct": false
+      }
+    ],
+    "correct_label": "A",
+    "explanation": "Project-level .mcp.json ensures consistent MCP server configuration across all team members working on the customer support agent, while ~/.claude.json is user-specific configuration.",
+    "tags": [
+      "mcp_configuration",
+      "team_collaboration"
+    ],
+    "bloom_level": "understand",
+    "distractor_strategy": {
+      "plausible_but_prompt_only": "N/A",
+      "over_engineered": "N/A",
+      "wrong_layer": "N/A",
+      "valid_but_not_first_step": "N/A"
+    }
+  },
+  {
+    "id": "D2_T4_002",
+    "domain_id": "D2",
+    "task_statement_id": "D2.T4",
+    "scenario_ids": [
+      "S3"
+    ],
+    "difficulty": "conceptual_knowledge",
+    "key_concept_tested": "environment variable expansion: ${VAR}",
+    "stem": "Your research system's MCP configuration needs to reference different API keys across development and production environments. What is the correct syntax in .mcp.json?",
+    "options": [
+      {
+        "label": "A",
+        "text": "\"apiKey\": \"$API_KEY\"",
+        "is_correct": false
+      },
+      {
+        "label": "B",
+        "text": "\"apiKey\": \"${API_KEY}\"",
+        "is_correct": true
+      },
+      {
+        "label": "C",
+        "text": "\"apiKey\": \"%API_KEY%\"",
+        "is_correct": false
+      },
+      {
+        "label": "D",
+        "text": "\"apiKey\": \"{{API_KEY}}\"",
+        "is_correct": false
+      }
+    ],
+    "correct_label": "B",
+    "explanation": "MCP configuration uses ${VAR} syntax for environment variable expansion, allowing secure credential management across environments.",
+    "tags": [
+      "environment_variables",
+      "security"
+    ],
+    "bloom_level": "understand",
+    "distractor_strategy": {
+      "plausible_but_prompt_only": "N/A",
+      "over_engineered": "N/A",
+      "wrong_layer": "N/A",
+      "valid_but_not_first_step": "N/A"
+    }
+  },
+  {
+    "id": "D2_T4_003",
+    "domain_id": "D2",
+    "task_statement_id": "D2.T4",
+    "scenario_ids": [
+      "S1"
+    ],
+    "difficulty": "conceptual_knowledge",
+    "key_concept_tested": "tools discovered at connection time",
+    "stem": "After adding a new process_chargeback tool to your billing MCP server, when will Claude Code discover this new tool?",
+    "options": [
+      {
+        "label": "A",
+        "text": "Immediately when the server code is updated",
+        "is_correct": false
+      },
+      {
+        "label": "B",
+        "text": "When Claude Code restarts",
+        "is_correct": false
+      },
+      {
+        "label": "C",
+        "text": "When the MCP server connection is established",
+        "is_correct": true
+      },
+      {
+        "label": "D",
+        "text": "When the tool is first called",
+        "is_correct": false
+      }
+    ],
+    "correct_label": "C",
+    "explanation": "MCP tools are discovered during the connection handshake phase when the client connects to the server, not at runtime or on first use.",
+    "tags": [
+      "tool_discovery",
+      "connection_lifecycle"
+    ],
+    "bloom_level": "understand",
+    "distractor_strategy": {
+      "plausible_but_prompt_only": "N/A",
+      "over_engineered": "N/A",
+      "wrong_layer": "N/A",
+      "valid_but_not_first_step": "N/A"
+    }
+  },
+  {
+    "id": "D2_T4_004",
+    "domain_id": "D2",
+    "task_statement_id": "D2.T4",
+    "scenario_ids": [
+      "S3"
+    ],
+    "difficulty": "conceptual_knowledge",
+    "key_concept_tested": "MCP resources for content catalogs",
+    "stem": "Your research system needs to provide agents with access to a large document catalog. What MCP feature should you use?",
+    "options": [
+      {
+        "label": "A",
+        "text": "MCP tools to search individual documents",
+        "is_correct": false
+      },
+      {
+        "label": "B",
+        "text": "MCP prompts to describe document locations",
+        "is_correct": false
+      },
+      {
+        "label": "C",
+        "text": "MCP sampling to generate document summaries",
+        "is_correct": false
+      },
+      {
+        "label": "D",
+        "text": "MCP resources to expose the document catalog",
+        "is_correct": true
+      }
+    ],
+    "correct_label": "D",
+    "explanation": "MCP resources are designed for exposing content catalogs and data sources that agents can browse and access, rather than tools which perform actions.",
+    "tags": [
+      "resources",
+      "content_catalogs"
+    ],
+    "bloom_level": "understand",
+    "distractor_strategy": {
+      "plausible_but_prompt_only": "B",
+      "over_engineered": "N/A",
+      "wrong_layer": "N/A",
+      "valid_but_not_first_step": "N/A"
+    }
+  },
+  {
+    "id": "D2_T4_005",
+    "domain_id": "D2",
+    "task_statement_id": "D2.T4",
+    "scenario_ids": [
+      "S1"
+    ],
+    "difficulty": "conceptual_knowledge",
+    "key_concept_tested": "community vs custom MCP servers",
+    "stem": "For your customer support agent, you need both database access and weather information. What is the most efficient approach?",
+    "options": [
+      {
+        "label": "A",
+        "text": "Use a community MCP server for weather and build a custom server for database access",
+        "is_correct": true
+      },
+      {
+        "label": "B",
+        "text": "Build a single custom MCP server for both weather and database access",
+        "is_correct": false
+      },
+      {
+        "label": "C",
+        "text": "Use only community MCP servers to avoid custom development",
+        "is_correct": false
+      },
+      {
+        "label": "D",
+        "text": "Implement both as tools within the agent code rather than MCP servers",
+        "is_correct": false
+      }
+    ],
+    "correct_label": "A",
+    "explanation": "Leveraging community MCP servers for common functionality like weather while building custom servers for proprietary systems like databases maximizes efficiency and maintainability.",
+    "tags": [
+      "community_servers",
+      "custom_development"
+    ],
+    "bloom_level": "understand",
+    "distractor_strategy": {
+      "plausible_but_prompt_only": "N/A",
+      "over_engineered": "N/A",
+      "wrong_layer": "N/A",
+      "valid_but_not_first_step": "N/A"
+    }
+  },
+  {
+    "id": "D2_T4_006",
+    "domain_id": "D2",
+    "task_statement_id": "D2.T4",
+    "scenario_ids": [
+      "S3"
+    ],
+    "difficulty": "conceptual_knowledge",
+    "key_concept_tested": "project-level .mcp.json vs user-level ~/.claude.json",
+    "stem": "A developer on your research team wants to test a new experimental MCP server locally without affecting others. Where should they configure it?",
+    "options": [
+      {
+        "label": "A",
+        "text": "Add it to the project .mcp.json file",
+        "is_correct": false
+      },
+      {
+        "label": "B",
+        "text": "Configure it in their ~/.claude.json file",
+        "is_correct": true
+      },
+      {
+        "label": "C",
+        "text": "Create a separate test project",
+        "is_correct": false
+      },
+      {
+        "label": "D",
+        "text": "Use environment variables only",
+        "is_correct": false
+      }
+    ],
+    "correct_label": "B",
+    "explanation": "User-level ~/.claude.json configuration allows individual developers to test experimental MCP servers without affecting the shared project configuration.",
+    "tags": [
+      "user_configuration",
+      "testing"
+    ],
+    "bloom_level": "understand",
+    "distractor_strategy": {
+      "plausible_but_prompt_only": "N/A",
+      "over_engineered": "C",
+      "wrong_layer": "N/A",
+      "valid_but_not_first_step": "N/A"
+    }
+  },
+  {
+    "id": "D2_T4_007",
+    "domain_id": "D2",
+    "task_statement_id": "D2.T4",
+    "scenario_ids": [
+      "S1"
+    ],
+    "difficulty": "conceptual_knowledge",
+    "key_concept_tested": "tools discovered at connection time",
+    "stem": "Your billing MCP server is running but Claude Code shows 'No tools available'. What is the most likely cause?",
+    "options": [
+      {
+        "label": "A",
+        "text": "The MCP server hasn't implemented the tools/list method",
+        "is_correct": false
+      },
+      {
+        "label": "B",
+        "text": "The tools are not being returned in the connection handshake",
+        "is_correct": false
+      },
+      {
+        "label": "C",
+        "text": "Claude Code failed to establish a connection to the MCP server",
+        "is_correct": true
+      },
+      {
+        "label": "D",
+        "text": "The tools require authentication that hasn't been provided",
+        "is_correct": false
+      }
+    ],
+    "correct_label": "C",
+    "explanation": "If no tools are discovered, it typically indicates a connection failure since tool discovery happens during the connection establishment phase.",
+    "tags": [
+      "connection_troubleshooting",
+      "tool_discovery"
+    ],
+    "bloom_level": "understand",
+    "distractor_strategy": {
+      "plausible_but_prompt_only": "N/A",
+      "over_engineered": "N/A",
+      "wrong_layer": "N/A",
+      "valid_but_not_first_step": "N/A"
+    }
+  },
+  {
+    "id": "D2_T4_008",
+    "domain_id": "D2",
+    "task_statement_id": "D2.T4",
+    "scenario_ids": [
+      "S3"
+    ],
+    "difficulty": "conceptual_knowledge",
+    "key_concept_tested": "MCP resources for content catalogs",
+    "stem": "Your document analysis agent needs to access research papers from a knowledge base. What MCP primitive provides the most appropriate interface?",
+    "options": [
+      {
+        "label": "A",
+        "text": "Tools for searching and retrieving documents",
+        "is_correct": false
+      },
+      {
+        "label": "B",
+        "text": "Prompts for document summarization",
+        "is_correct": false
+      },
+      {
+        "label": "C",
+        "text": "Sampling for document generation",
+        "is_correct": false
+      },
+      {
+        "label": "D",
+        "text": "Resources for browsing the knowledge base",
+        "is_correct": true
+      }
+    ],
+    "correct_label": "D",
+    "explanation": "MCP resources are specifically designed for exposing content catalogs and knowledge bases that can be browsed and accessed by agents.",
+    "tags": [
+      "resources",
+      "knowledge_base"
+    ],
+    "bloom_level": "understand",
+    "distractor_strategy": {
+      "plausible_but_prompt_only": "B",
+      "over_engineered": "N/A",
+      "wrong_layer": "N/A",
+      "valid_but_not_first_step": "N/A"
+    }
+  },
+  {
+    "id": "D2_T4_009",
+    "domain_id": "D2",
+    "task_statement_id": "D2.T4",
+    "scenario_ids": [
+      "S1"
+    ],
+    "difficulty": "conceptual_knowledge",
+    "key_concept_tested": "environment variable expansion: ${VAR}",
+    "stem": "Your .mcp.json needs to reference different database connection strings for each environment. Which configuration correctly uses environment variable expansion?",
+    "options": [
+      {
+        "label": "A",
+        "text": "\"connectionString\": \"${DATABASE_URL}\"",
+        "is_correct": true
+      },
+      {
+        "label": "B",
+        "text": "\"connectionString\": \"$DATABASE_URL\"",
+        "is_correct": false
+      },
+      {
+        "label": "C",
+        "text": "\"connectionString\": \"env.DATABASE_URL\"",
+        "is_correct": false
+      },
+      {
+        "label": "D",
+        "text": "\"connectionString\": \"process.env.DATABASE_URL\"",
+        "is_correct": false
+      }
+    ],
+    "correct_label": "A",
+    "explanation": "MCP configuration files use ${VAR} syntax for environment variable expansion, providing secure and environment-specific configuration.",
+    "tags": [
+      "environment_variables",
+      "configuration"
+    ],
+    "bloom_level": "understand",
+    "distractor_strategy": {
+      "plausible_but_prompt_only": "N/A",
+      "over_engineered": "N/A",
+      "wrong_layer": "N/A",
+      "valid_but_not_first_step": "N/A"
+    }
+  },
+  {
+    "id": "D2_T4_010",
+    "domain_id": "D2",
+    "task_statement_id": "D2.T4",
+    "scenario_ids": [
+      "S3"
+    ],
+    "difficulty": "conceptual_knowledge",
+    "key_concept_tested": "community vs custom MCP servers",
+    "stem": "Your research system needs web search capabilities and proprietary document analysis. What server architecture should you implement?",
+    "options": [
+      {
+        "label": "A",
+        "text": "Build both capabilities in a single custom MCP server",
+        "is_correct": false
+      },
+      {
+        "label": "B",
+        "text": "Use a community web search server and build a custom document analysis server",
+        "is_correct": true
+      },
+      {
+        "label": "C",
+        "text": "Use only community servers to minimize maintenance overhead",
+        "is_correct": false
+      },
+      {
+        "label": "D",
+        "text": "Implement all functionality directly in the agent without MCP",
+        "is_correct": false
+      }
+    ],
+    "correct_label": "B",
+    "explanation": "Using community servers for standard functionality like web search while building custom servers for proprietary capabilities provides the best balance of efficiency and functionality.",
+    "tags": [
+      "community_servers",
+      "architecture_design"
+    ],
+    "bloom_level": "understand",
+    "distractor_strategy": {
+      "plausible_but_prompt_only": "N/A",
+      "over_engineered": "N/A",
+      "wrong_layer": "N/A",
+      "valid_but_not_first_step": "N/A"
+    }
+  },
+  {
+    "id": "D2_T4_011",
+    "domain_id": "D2",
+    "task_statement_id": "D2.T4",
+    "scenario_ids": [
+      "S1"
+    ],
+    "difficulty": "applied_judgment",
+    "key_concept_tested": "project-level .mcp.json vs user-level ~/.claude.json",
+    "stem": "Your customer support team reports inconsistent tool availability - some developers can access get_customer while others cannot. The MCP server is running correctly. What is the most likely configuration issue?",
+    "options": [
+      {
+        "label": "A",
+        "text": "The MCP server configuration is in individual ~/.claude.json files instead of project-level .mcp.json",
+        "is_correct": false
+      },
+      {
+        "label": "B",
+        "text": "Some developers have the MCP server configured in ~/.claude.json while the project uses .mcp.json",
+        "is_correct": true
+      },
+      {
+        "label": "C",
+        "text": "The project .mcp.json file has incorrect permissions",
+        "is_correct": false
+      },
+      {
+        "label": "D",
+        "text": "Environment variables are not set consistently across machines",
+        "is_correct": false
+      }
+    ],
+    "correct_label": "B",
+    "explanation": "Mixed configuration sources can cause inconsistent tool availability. User-level configurations in ~/.claude.json can override or conflict with project-level .mcp.json settings.",
+    "tags": [
+      "configuration_conflicts",
+      "troubleshooting"
+    ],
+    "bloom_level": "apply",
+    "distractor_strategy": {
+      "plausible_but_prompt_only": "N/A",
+      "over_engineered": "N/A",
+      "wrong_layer": "N/A",
+      "valid_but_not_first_step": "N/A"
+    }
+  },
+  {
+    "id": "D2_T4_012",
+    "domain_id": "D2",
+    "task_statement_id": "D2.T4",
+    "scenario_ids": [
+      "S3"
+    ],
+    "difficulty": "applied_judgment",
+    "key_concept_tested": "environment variable expansion: ${VAR}",
+    "stem": "Your research system MCP configuration fails to connect in production but works locally. The config uses \"apiKey\": \"${RESEARCH_API_KEY}\". What should you verify first?",
+    "options": [
+      {
+        "label": "A",
+        "text": "The MCP server is running on the production host",
+        "is_correct": false
+      },
+      {
+        "label": "B",
+        "text": "The RESEARCH_API_KEY environment variable is set in production",
+        "is_correct": true
+      },
+      {
+        "label": "C",
+        "text": "The .mcp.json file has correct JSON syntax",
+        "is_correct": false
+      },
+      {
+        "label": "D",
+        "text": "The network connectivity to the API endpoint",
+        "is_correct": false
+      }
+    ],
+    "correct_label": "B",
+    "explanation": "Environment variable expansion failures are common when deploying to production. If the variable isn't set, the literal string '${RESEARCH_API_KEY}' is used instead of the actual key.",
+    "tags": [
+      "deployment_issues",
+      "environment_variables"
+    ],
+    "bloom_level": "apply",
+    "distractor_strategy": {
+      "plausible_but_prompt_only": "N/A",
+      "over_engineered": "N/A",
+      "wrong_layer": "N/A",
+      "valid_but_not_first_step": "N/A"
+    }
+  },
+  {
+    "id": "D2_T4_013",
+    "domain_id": "D2",
+    "task_statement_id": "D2.T4",
+    "scenario_ids": [
+      "S1"
+    ],
+    "difficulty": "applied_judgment",
+    "key_concept_tested": "tools discovered at connection time",
+    "stem": "After deploying an updated billing MCP server with new refund processing capabilities, your support agents report the new tools aren't available. The server logs show successful startup. What action will resolve this?",
+    "options": [
+      {
+        "label": "A",
+        "text": "Wait for the tools to be automatically discovered",
+        "is_correct": false
+      },
+      {
+        "label": "B",
+        "text": "Restart Claude Code to re-establish MCP connections",
+        "is_correct": false
+      },
+      {
+        "label": "C",
+        "text": "Restart Claude Code to trigger tool rediscovery",
+        "is_correct": true
+      },
+      {
+        "label": "D",
+        "text": "Manually refresh the tool cache in Claude Code",
+        "is_correct": false
+      }
+    ],
+    "correct_label": "C",
+    "explanation": "Tools are discovered during connection establishment. After server updates, Claude Code needs to restart to establish new connections and discover updated tools.",
+    "tags": [
+      "tool_discovery",
+      "deployment"
+    ],
+    "bloom_level": "apply",
+    "distractor_strategy": {
+      "plausible_but_prompt_only": "N/A",
+      "over_engineered": "N/A",
+      "wrong_layer": "N/A",
+      "valid_but_not_first_step": "N/A"
+    }
+  },
+  {
+    "id": "D2_T4_014",
+    "domain_id": "D2",
+    "task_statement_id": "D2.T4",
+    "scenario_ids": [
+      "S3"
+    ],
+    "difficulty": "applied_judgment",
+    "key_concept_tested": "MCP resources for content catalogs",
+    "stem": "Your document analysis agent needs to process 50,000 research papers. Agents currently struggle to find relevant documents efficiently. How should you restructure the MCP integration?",
+    "options": [
+      {
+        "label": "A",
+        "text": "Create individual tools for each document category",
+        "is_correct": false
+      },
+      {
+        "label": "B",
+        "text": "Implement MCP resources with hierarchical browsing of the document catalog",
+        "is_correct": true
+      },
+      {
+        "label": "C",
+        "text": "Use prompts to describe document locations and metadata",
+        "is_correct": false
+      },
+      {
+        "label": "D",
+        "text": "Build a single search tool that returns all matching documents",
+        "is_correct": false
+      }
+    ],
+    "correct_label": "B",
+    "explanation": "MCP resources provide the appropriate interface for large content catalogs, allowing agents to browse and discover documents hierarchically rather than relying on search tools alone.",
+    "tags": [
+      "large_datasets",
+      "resource_design"
+    ],
+    "bloom_level": "apply",
+    "distractor_strategy": {
+      "plausible_but_prompt_only": "C",
+      "over_engineered": "N/A",
+      "wrong_layer": "N/A",
+      "valid_but_not_first_step": "N/A"
+    }
+  },
+  {
+    "id": "D2_T4_015",
+    "domain_id": "D2",
+    "task_statement_id": "D2.T4",
+    "scenario_ids": [
+      "S1"
+    ],
+    "difficulty": "applied_judgment",
+    "key_concept_tested": "community vs custom MCP servers",
+    "stem": "Your support system needs CRM integration, email sending, and timezone conversion. Development resources are limited. What is the most pragmatic server architecture?",
+    "options": [
+      {
+        "label": "A",
+        "text": "Build one custom MCP server containing all three capabilities",
+        "is_correct": false
+      },
+      {
+        "label": "B",
+        "text": "Use community servers for email and timezone, build custom CRM integration",
+        "is_correct": true
+      },
+      {
+        "label": "C",
+        "text": "Build separate custom MCP servers for each capability",
+        "is_correct": false
+      },
+      {
+        "label": "D",
+        "text": "Use only community servers and modify them for CRM integration",
+        "is_correct": false
+      }
+    ],
+    "correct_label": "B",
+    "explanation": "With limited resources, leveraging community servers for standard functionality (email, timezone) while building custom integration only for proprietary systems (CRM) maximizes efficiency.",
+    "tags": [
+      "resource_constraints",
+      "architecture_decisions"
+    ],
+    "bloom_level": "apply",
+    "distractor_strategy": {
+      "plausible_but_prompt_only": "N/A",
+      "over_engineered": "C",
+      "wrong_layer": "N/A",
+      "valid_but_not_first_step": "N/A"
+    }
+  },
+  {
+    "id": "D2_T4_016",
+    "domain_id": "D2",
+    "task_statement_id": "D2.T4",
+    "scenario_ids": [
+      "S3"
+    ],
+    "difficulty": "applied_judgment",
+    "key_concept_tested": "project-level .mcp.json vs user-level ~/.claude.json",
+    "stem": "Your research team wants to test different web search MCP servers (Brave, DuckDuckGo, Google) for performance comparison. How should you structure the configuration?",
+    "options": [
+      {
+        "label": "A",
+        "text": "Configure all three servers in the project .mcp.json",
+        "is_correct": false
+      },
+      {
+        "label": "B",
+        "text": "Have each team member test different servers using their ~/.claude.json",
+        "is_correct": true
+      },
+      {
+        "label": "C",
+        "text": "Create separate branches for each search server configuration",
+        "is_correct": false
+      },
+      {
+        "label": "D",
+        "text": "Use environment variables to switch between servers dynamically",
+        "is_correct": false
+      }
+    ],
+    "correct_label": "B",
+    "explanation": "User-level ~/.claude.json configuration allows team members to test different MCP servers independently without affecting shared project configuration or requiring code changes.",
+    "tags": [
+      "testing_strategies",
+      "configuration_management"
+    ],
+    "bloom_level": "apply",
+    "distractor_strategy": {
+      "plausible_but_prompt_only": "N/A",
+      "over_engineered": "C",
+      "wrong_layer": "N/A",
+      "valid_but_not_first_step": "N/A"
+    }
+  },
+  {
+    "id": "D2_T4_017",
+    "domain_id": "D2",
+    "task_statement_id": "D2.T4",
+    "scenario_ids": [
+      "S1"
+    ],
+    "difficulty": "applied_judgment",
+    "key_concept_tested": "environment variable expansion: ${VAR}",
+    "stem": "Your support system's MCP configuration needs different database credentials for development, staging, and production. Your current config hard-codes production credentials. What changes should you make?",
+    "options": [
+      {
+        "label": "A",
+        "text": "Create separate .mcp.json files for each environment",
+        "is_correct": false
+      },
+      {
+        "label": "B",
+        "text": "Replace hard-coded credentials with ${DB_USER} and ${DB_PASS} environment variables",
+        "is_correct": true
+      },
+      {
+        "label": "C",
+        "text": "Use conditional logic in the .mcp.json file",
+        "is_correct": false
+      },
+      {
+        "label": "D",
+        "text": "Store credentials in a separate configuration service",
+        "is_correct": false
+      }
+    ],
+    "correct_label": "B",
+    "explanation": "Environment variable expansion with ${VAR} syntax allows the same .mcp.json to work across environments while keeping credentials secure and environment-specific.",
+    "tags": [
+      "credential_management",
+      "environment_configuration"
+    ],
+    "bloom_level": "apply",
+    "distractor_strategy": {
+      "plausible_but_prompt_only": "N/A",
+      "over_engineered": "D",
+      "wrong_layer": "N/A",
+      "valid_but_not_first_step": "N/A"
+    }
+  },
+  {
+    "id": "D2_T4_018",
+    "domain_id": "D2",
+    "task_statement_id": "D2.T4",
+    "scenario_ids": [
+      "S3"
+    ],
+    "difficulty": "applied_judgment",
+    "key_concept_tested": "tools discovered at connection time",
+    "stem": "Your research system's MCP server dynamically generates tools based on available data sources. After adding new research databases, agents don't see the new tools. When will they become available?",
+    "options": [
+      {
+        "label": "A",
+        "text": "Immediately when the databases are added",
+        "is_correct": false
+      },
+      {
+        "label": "B",
+        "text": "When the next agent request is processed",
+        "is_correct": false
+      },
+      {
+        "label": "C",
+        "text": "When Claude Code reconnects to the MCP server",
+        "is_correct": true
+      },
+      {
+        "label": "D",
+        "text": "After manually triggering tool refresh",
+        "is_correct": false
+      }
+    ],
+    "correct_label": "C",
+    "explanation": "Tool discovery occurs during connection establishment. Even for dynamically generated tools, Claude Code must reconnect to the MCP server to discover newly available tools.",
+    "tags": [
+      "dynamic_tools",
+      "connection_lifecycle"
+    ],
+    "bloom_level": "apply",
+    "distractor_strategy": {
+      "plausible_but_prompt_only": "N/A",
+      "over_engineered": "N/A",
+      "wrong_layer": "N/A",
+      "valid_but_not_first_step": "N/A"
+    }
+  },
+  {
+    "id": "D2_T4_019",
+    "domain_id": "D2",
+    "task_statement_id": "D2.T4",
+    "scenario_ids": [
+      "S1"
+    ],
+    "difficulty": "applied_judgment",
+    "key_concept_tested": "MCP resources for content catalogs",
+    "stem": "Your support agents need access to a knowledge base with 10,000 FAQ articles, product documentation, and policy documents. Currently using individual search tools for each category results in poor discoverability. What MCP approach would improve this?",
+    "options": [
+      {
+        "label": "A",
+        "text": "Combine all search tools into a single unified search tool",
+        "is_correct": false
+      },
+      {
+        "label": "B",
+        "text": "Implement MCP resources to expose the knowledge base structure for browsing",
+        "is_correct": true
+      },
+      {
+        "label": "C",
+        "text": "Create more granular search tools for subcategories",
+        "is_correct": false
+      },
+      {
+        "label": "D",
+        "text": "Use MCP prompts to provide search guidance",
+        "is_correct": false
+      }
+    ],
+    "correct_label": "B",
+    "explanation": "MCP resources provide a browsable interface for large content catalogs, allowing agents to explore and discover relevant information more effectively than search-only approaches.",
+    "tags": [
+      "knowledge_management",
+      "discoverability"
+    ],
+    "bloom_level": "apply",
+    "distractor_strategy": {
+      "plausible_but_prompt_only": "D",
+      "over_engineered": "N/A",
+      "wrong_layer": "N/A",
+      "valid_but_not_first_step": "N/A"
+    }
+  },
+  {
+    "id": "D2_T4_020",
+    "domain_id": "D2",
+    "task_statement_id": "D2.T4",
+    "scenario_ids": [
+      "S3"
+    ],
+    "difficulty": "applied_judgment",
+    "key_concept_tested": "community vs custom MCP servers",
+    "stem": "Your research system needs PDF processing, web scraping, and proprietary academic database access. The academic database has a unique authentication scheme. What server strategy minimizes development time while ensuring reliability?",
+    "options": [
+      {
+        "label": "A",
+        "text": "Build all three capabilities in a single custom MCP server for consistency",
+        "is_correct": false
+      },
+      {
+        "label": "B",
+        "text": "Use community servers for PDF and web scraping, build custom server for academic database",
+        "is_correct": true
+      },
+      {
+        "label": "C",
+        "text": "Use community servers for all capabilities and modify them for the database",
+        "is_correct": false
+      },
+      {
+        "label": "D",
+        "text": "Build separate custom servers for each capability for maximum control",
+        "is_correct": false
+      }
+    ],
+    "correct_label": "B",
+    "explanation": "Leveraging proven community servers for standard functionality (PDF, web scraping) while building custom integration only for proprietary systems minimizes development time and leverages community maintenance.",
+    "tags": [
+      "development_efficiency",
+      "custom_integration"
+    ],
+    "bloom_level": "apply",
+    "distractor_strategy": {
+      "plausible_but_prompt_only": "N/A",
+      "over_engineered": "D",
+      "wrong_layer": "N/A",
+      "valid_but_not_first_step": "N/A"
+    }
+  },
+  {
+    "id": "D2_T4_021",
+    "domain_id": "D2",
+    "task_statement_id": "D2.T4",
+    "scenario_ids": [
+      "S1"
+    ],
+    "difficulty": "applied_judgment",
+    "key_concept_tested": "project-level .mcp.json vs user-level ~/.claude.json",
+    "stem": "A developer accidentally committed their personal API keys in the project .mcp.json file. Beyond removing the keys, what configuration change prevents this in the future?",
+    "options": [
+      {
+        "label": "A",
+        "text": "Move all MCP configuration to individual ~/.claude.json files",
+        "is_correct": false
+      },
+      {
+        "label": "B",
+        "text": "Replace hard-coded keys with environment variable references like ${API_KEY}",
+        "is_correct": true
+      },
+      {
+        "label": "C",
+        "text": "Add .mcp.json to .gitignore",
+        "is_correct": false
+      },
+      {
+        "label": "D",
+        "text": "Use a separate configuration file for sensitive values",
+        "is_correct": false
+      }
+    ],
+    "correct_label": "B",
+    "explanation": "Using environment variable expansion prevents credentials from being committed to version control while maintaining shared project configuration structure.",
+    "tags": [
+      "security",
+      "credential_protection"
+    ],
+    "bloom_level": "apply",
+    "distractor_strategy": {
+      "plausible_but_prompt_only": "N/A",
+      "over_engineered": "D",
+      "wrong_layer": "N/A",
+      "valid_but_not_first_step": "N/A"
+    }
+  },
+  {
+    "id": "D2_T4_022",
+    "domain_id": "D2",
+    "task_statement_id": "D2.T4",
+    "scenario_ids": [
+      "S3"
+    ],
+    "difficulty": "applied_judgment",
+    "key_concept_tested": "environment variable expansion: ${VAR}",
+    "stem": "Your research system's MCP server fails to authenticate with external APIs in your containerized deployment. The .mcp.json uses \"token\": \"${RESEARCH_TOKEN}\". Container logs show the MCP server starting successfully. What is the most likely issue?",
+    "options": [
+      {
+        "label": "A",
+        "text": "The container doesn't have network access to the external APIs",
+        "is_correct": false
+      },
+      {
+        "label": "B",
+        "text": "The RESEARCH_TOKEN environment variable is not set in the container",
+        "is_correct": true
+      },
+      {
+        "label": "C",
+        "text": "The MCP server doesn't support environment variable expansion",
+        "is_correct": false
+      },
+      {
+        "label": "D",
+        "text": "The external API endpoints are different in the container environment",
+        "is_correct": false
+      }
+    ],
+    "correct_label": "B",
+    "explanation": "In containerized deployments, environment variables must be explicitly passed to containers. If ${RESEARCH_TOKEN} isn't set, the literal string is used instead of the token value.",
+    "tags": [
+      "containerization",
+      "environment_variables"
+    ],
+    "bloom_level": "apply",
+    "distractor_strategy": {
+      "plausible_but_prompt_only": "N/A",
+      "over_engineered": "N/A",
+      "wrong_layer": "N/A",
+      "valid_but_not_first_step": "N/A"
+    }
+  },
+  {
+    "id": "D2_T4_023",
+    "domain_id": "D2",
+    "task_statement_id": "D2.T4",
+    "scenario_ids": [
+      "S1"
+    ],
+    "difficulty": "applied_judgment",
+    "key_concept_tested": "tools discovered at connection time",
+    "stem": "Your billing MCP server implements conditional tool availability based on user permissions. Support agents with different roles see different tools. A new agent reports seeing no tools despite proper permissions. What should you check first?",
+    "options": [
+      {
+        "label": "A",
+        "text": "Whether the agent's permissions are correctly configured in the billing system",
+        "is_correct": false
+      },
+      {
+        "label": "B",
+        "text": "Whether Claude Code successfully connected to the MCP server for this agent",
+        "is_correct": true
+      },
+      {
+        "label": "C",
+        "text": "Whether the MCP server is implementing tools/list correctly for this user",
+        "is_correct": false
+      },
+      {
+        "label": "D",
+        "text": "Whether the agent is using the correct .mcp.json configuration",
+        "is_correct": false
+      }
+    ],
+    "correct_label": "B",
+    "explanation": "If no tools are visible, the first step is verifying connection establishment. Tool discovery happens during connection, so connection failure would result in no tools being available regardless of permissions.",
+    "tags": [
+      "connection_troubleshooting",
+      "permissions"
+    ],
+    "bloom_level": "apply",
+    "distractor_strategy": {
+      "plausible_but_prompt_only": "N/A",
+      "over_engineered": "N/A",
+      "wrong_layer": "N/A",
+      "valid_but_not_first_step": "N/A"
+    }
+  },
+  {
+    "id": "D2_T4_024",
+    "domain_id": "D2",
+    "task_statement_id": "D2.T4",
+    "scenario_ids": [
+      "S3"
+    ],
+    "difficulty": "applied_judgment",
+    "key_concept_tested": "MCP resources for content catalogs",
+    "stem": "Your document analysis agents are making excessive API calls because they can't efficiently browse your research paper collection. Each search query hits the database multiple times. How should you optimize the MCP integration?",
+    "options": [
+      {
+        "label": "A",
+        "text": "Implement caching in the search tools",
+        "is_correct": false
+      },
+      {
+        "label": "B",
+        "text": "Expose the paper catalog structure through MCP resources",
+        "is_correct": true
+      },
+      {
+        "label": "C",
+        "text": "Reduce the number of available search tools",
+        "is_correct": false
+      },
+      {
+        "label": "D",
+        "text": "Implement batch search capabilities",
+        "is_correct": false
+      }
+    ],
+    "correct_label": "B",
+    "explanation": "MCP resources allow agents to browse and understand the structure of content catalogs without repeated API calls, reducing database load and improving agent efficiency.",
+    "tags": [
+      "performance_optimization",
+      "api_efficiency"
+    ],
+    "bloom_level": "apply",
+    "distractor_strategy": {
+      "plausible_but_prompt_only": "N/A",
+      "over_engineered": "N/A",
+      "wrong_layer": "N/A",
+      "valid_but_not_first_step": "N/A"
+    }
+  },
+  {
+    "id": "D2_T4_025",
+    "domain_id": "D2",
+    "task_statement_id": "D2.T4",
+    "scenario_ids": [
+      "S1"
+    ],
+    "difficulty": "applied_judgment",
+    "key_concept_tested": "community vs custom MCP servers",
+    "stem": "Your support system needs Slack integration, calendar scheduling, and access to your proprietary customer database. A community Slack MCP server exists but lacks some features you need. What approach balances functionality and maintenance burden?",
+    "options": [
+      {
+        "label": "A",
+        "text": "Fork and modify the community Slack server, build custom servers for calendar and database",
+        "is_correct": true
+      },
+      {
+        "label": "B",
+        "text": "Build all three as custom MCP servers for consistency",
+        "is_correct": false
+      },
+      {
+        "label": "C",
+        "text": "Use the community Slack server as-is and build custom servers for missing functionality",
+        "is_correct": false
+      },
+      {
+        "label": "D",
+        "text": "Build one comprehensive custom server containing all three integrations",
+        "is_correct": false
+      }
+    ],
+    "correct_label": "A",
+    "explanation": "Forking the community server allows customization while maintaining community updates as a base. Building separate custom servers for other proprietary systems provides modularity and focused functionality.",
+    "tags": [
+      "community_contributions",
+      "customization"
+    ],
+    "bloom_level": "apply",
+    "distractor_strategy": {
+      "plausible_but_prompt_only": "N/A",
+      "over_engineered": "N/A",
+      "wrong_layer": "N/A",
+      "valid_but_not_first_step": "N/A"
+    }
+  },
+  {
+    "id": "D2_T4_026",
+    "domain_id": "D2",
+    "task_statement_id": "D2.T4",
+    "scenario_ids": [
+      "S3"
+    ],
+    "difficulty": "applied_judgment",
+    "key_concept_tested": "project-level .mcp.json vs user-level ~/.claude.json",
+    "stem": "Your research team wants to standardize on specific MCP servers but allow individual researchers to add experimental servers for their specific projects. How should you structure the configuration?",
+    "options": [
+      {
+        "label": "A",
+        "text": "Put all servers in project .mcp.json and use feature flags",
+        "is_correct": false
+      },
+      {
+        "label": "B",
+        "text": "Use project .mcp.json for standard servers, allow additional servers in ~/.claude.json",
+        "is_correct": true
+      },
+      {
+        "label": "C",
+        "text": "Use only ~/.claude.json files with shared templates",
+        "is_correct": false
+      },
+      {
+        "label": "D",
+        "text": "Create separate project configurations for each researcher",
+        "is_correct": false
+      }
+    ],
+    "correct_label": "B",
+    "explanation": "Project-level .mcp.json ensures consistent core functionality while user-level ~/.claude.json allows individual experimentation without affecting team standards or requiring project changes.",
+    "tags": [
+      "configuration_strategy",
+      "team_standards"
+    ],
+    "bloom_level": "apply",
+    "distractor_strategy": {
+      "plausible_but_prompt_only": "N/A",
+      "over_engineered": "D",
+      "wrong_layer": "N/A",
+      "valid_but_not_first_step": "N/A"
+    }
+  },
+  {
+    "id": "D2_T4_027",
+    "domain_id": "D2",
+    "task_statement_id": "D2.T4",
+    "scenario_ids": [
+      "S1"
+    ],
+    "difficulty": "applied_judgment",
+    "key_concept_tested": "environment variable expansion: ${VAR}",
+    "stem": "Your customer support MCP configuration needs to work across multiple deployment environments with different database hosts and credentials. Currently each environment requires manual configuration file changes. What solution provides the most maintainable approach?",
+    "options": [
+      {
+        "label": "A",
+        "text": "Create separate .mcp.json files for each environment",
+        "is_correct": false
+      },
+      {
+        "label": "B",
+        "text": "Use environment variables like ${DB_HOST} and ${DB_CREDENTIALS} in a single .mcp.json",
+        "is_correct": true
+      },
+      {
+        "label": "C",
+        "text": "Use a configuration management tool to template the .mcp.json",
+        "is_correct": false
+      },
+      {
+        "label": "D",
+        "text": "Implement runtime configuration loading in the MCP server",
+        "is_correct": false
+      }
+    ],
+    "correct_label": "B",
+    "explanation": "Environment variable expansion allows a single configuration file to work across all environments by substituting environment-specific values at runtime, reducing maintenance overhead.",
+    "tags": [
+      "multi_environment",
+      "configuration_management"
+    ],
+    "bloom_level": "apply",
+    "distractor_strategy": {
+      "plausible_but_prompt_only": "N/A",
+      "over_engineered": "A",
+      "wrong_layer": "N/A",
+      "valid_but_not_first_step": "N/A"
+    }
+  },
+  {
+    "id": "D2_T4_028",
+    "domain_id": "D2",
+    "task_statement_id": "D2.T4",
+    "scenario_ids": [
+      "S3"
+    ],
+    "difficulty": "anti_pattern_recognition",
+    "key_concept_tested": "tools discovered at connection time",
+    "stem": "A developer implements an MCP server that dynamically adds tools based on runtime conditions. They add logic to check for new tools every 30 seconds during agent conversations. What is the primary flaw in this approach?",
+    "options": [
+      {
+        "label": "A",
+        "text": "The polling interval is too frequent and will impact performance",
+        "is_correct": false
+      },
+      {
+        "label": "B",
+        "text": "MCP tools are discovered only during connection establishment, not during runtime",
+        "is_correct": true
+      },
+      {
+        "label": "C",
+        "text": "Dynamic tool addition requires restart of the MCP server",
+        "is_correct": false
+      },
+      {
+        "label": "D",
+        "text": "Runtime tool checking should be event-driven rather than polling-based",
+        "is_correct": false
+      }
+    ],
+    "correct_label": "B",
+    "explanation": "This is a fundamental misunderstanding of MCP tool discovery. Tools are discovered during the connection handshake phase, not continuously during runtime. Runtime polling won't make new tools available.",
+    "tags": [
+      "tool_discovery_misconception",
+      "runtime_behavior"
+    ],
+    "bloom_level": "evaluate",
+    "distractor_strategy": {
+      "plausible_but_prompt_only": "N/A",
+      "over_engineered": "N/A",
+      "wrong_layer": "N/A",
+      "valid_but_not_first_step": "N/A"
+    }
+  },
+  {
+    "id": "D2_T4_029",
+    "domain_id": "D2",
+    "task_statement_id": "D2.T4",
+    "scenario_ids": [
+      "S1"
+    ],
+    "difficulty": "anti_pattern_recognition",
+    "key_concept_tested": "project-level .mcp.json vs user-level ~/.claude.json",
+    "stem": "A team lead decides to avoid project-level .mcp.json configuration entirely, instead providing each team member with identical ~/.claude.json files to ensure consistency. What is the main problem with this approach?",
+    "options": [
+      {
+        "label": "A",
+        "text": "User-level configuration files cannot be version controlled effectively",
+        "is_correct": true
+      },
+      {
+        "label": "B",
+        "text": "Individual ~/.claude.json files have limited MCP server capacity",
+        "is_correct": false
+      },
+      {
+        "label": "C",
+        "text": "User-level configuration requires more system resources",
+        "is_correct": false
+      },
+      {
+        "label": "D",
+        "text": "Multiple ~/.claude.json files create connection conflicts",
+        "is_correct": false
+      }
+    ],
+    "correct_label": "A",
+    "explanation": "User-level configurations are outside version control, making it impossible to track changes, ensure consistency, or manage updates across team members. Project-level configuration should be used for shared resources.",
+    "tags": [
+      "version_control",
+      "team_configuration"
+    ],
+    "bloom_level": "evaluate",
+    "distractor_strategy": {
+      "plausible_but_prompt_only": "N/A",
+      "over_engineered": "N/A",
+      "wrong_layer": "N/A",
+      "valid_but_not_first_step": "N/A"
+    }
+  },
+  {
+    "id": "D2_T4_030",
+    "domain_id": "D2",
+    "task_statement_id": "D2.T4",
+    "scenario_ids": [
+      "S3"
+    ],
+    "difficulty": "anti_pattern_recognition",
+    "key_concept_tested": "environment variable expansion: ${VAR}",
+    "stem": "A developer creates an MCP server that reads .mcp.json at runtime and performs its own environment variable substitution using custom parsing logic like %VAR% and {{VAR}}. What is the fundamental issue with this approach?",
+    "options": [
+      {
+        "label": "A",
+        "text": "Custom parsing logic introduces unnecessary complexity and potential bugs",
+        "is_correct": false
+      },
+      {
+        "label": "B",
+        "text": "MCP clients handle environment variable expansion using ${VAR} syntax, making server-side parsing redundant",
+        "is_correct": true
+      },
+      {
+        "label": "C",
+        "text": "Multiple variable syntax formats create confusion for developers",
+        "is_correct": false
+      },
+      {
+        "label": "D",
+        "text": "Runtime configuration parsing impacts MCP server performance",
+        "is_correct": false
+      }
+    ],
+    "correct_label": "B",
+    "explanation": "Environment variable expansion is handled by the MCP client (Claude Code) using standard ${VAR} syntax. Server-side parsing duplicates this functionality and ignores the standard MCP configuration mechanism.",
+    "tags": [
+      "configuration_responsibility",
+      "standard_protocols"
+    ],
+    "bloom_level": "evaluate",
+    "distractor_strategy": {
+      "plausible_but_prompt_only": "N/A",
+      "over_engineered": "N/A",
+      "wrong_layer": "N/A",
+      "valid_but_not_first_step": "N/A"
+    }
+  },
+  {
+    "id": "D2_T4_031",
+    "domain_id": "D2",
+    "task_statement_id": "D2.T4",
+    "scenario_ids": [
+      "S1"
+    ],
+    "difficulty": "anti_pattern_recognition",
+    "key_concept_tested": "MCP resources for content catalogs",
+    "stem": "A developer builds a customer knowledge base MCP server that implements 500+ individual tools, one for each FAQ category and subcategory, believing this provides the most specific access. What is the primary problem with this approach?",
+    "options": [
+      {
+        "label": "A",
+        "text": "Too many tools create overwhelming choice paralysis for agents",
+        "is_correct": false
+      },
+      {
+        "label": "B",
+        "text": "MCP resources would provide a more appropriate interface for browsing content catalogs",
+        "is_correct": true
+      },
+      {
+        "label": "C",
+        "text": "Individual tools have higher latency than batch operations",
+        "is_correct": false
+      },
+      {
+        "label": "D",
+        "text": "Large numbers of tools exceed MCP server connection limits",
+        "is_correct": false
+      }
+    ],
+    "correct_label": "B",
+    "explanation": "This over-engineers the solution by creating tools for what should be resources. MCP resources are specifically designed for content catalogs and browsable data structures, not individual tools.",
+    "tags": [
+      "over_engineering",
+      "resource_vs_tools"
+    ],
+    "bloom_level": "evaluate",
+    "distractor_strategy": {
+      "plausible_but_prompt_only": "N/A",
+      "over_engineered": "N/A",
+      "wrong_layer": "N/A",
+      "valid_but_not_first_step": "N/A"
+    }
+  },
+  {
+    "id": "D2_T4_032",
+    "domain_id": "D2",
+    "task_statement_id": "D2.T4",
+    "scenario_ids": [
+      "S3"
+    ],
+    "difficulty": "anti_pattern_recognition",
+    "key_concept_tested": "community vs custom MCP servers",
+    "stem": "A team decides to build custom MCP servers for all functionality including basic operations like file system access, web requests, and JSON parsing, believing custom implementation provides better control. What is the key flaw in this strategy?",
+    "options": [
+      {
+        "label": "A",
+        "text": "Custom servers require more computational resources than community servers",
+        "is_correct": false
+      },
+      {
+        "label": "B",
+        "text": "This unnecessarily duplicates well-tested community functionality and increases maintenance burden",
+        "is_correct": true
+      },
+      {
+        "label": "C",
+        "text": "Custom servers cannot integrate with community MCP ecosystems",
+        "is_correct": false
+      },
+      {
+        "label": "D",
+        "text": "Multiple custom servers create version compatibility issues",
+        "is_correct": false
+      }
+    ],
+    "correct_label": "B",
+    "explanation": "This represents over-engineering by building custom solutions for standard functionality. Community servers provide tested implementations with ongoing maintenance, while custom servers for basic operations add unnecessary development and maintenance overhead.",
+    "tags": [
+      "over_engineering",
+      "community_leverage"
+    ],
+    "bloom_level": "evaluate",
+    "distractor_strategy": {
+      "plausible_but_prompt_only": "N/A",
+      "over_engineered": "N/A",
+      "wrong_layer": "N/A",
+      "valid_but_not_first_step": "N/A"
+    }
+  },
+  {
+    "id": "D2_T4_033",
+    "domain_id": "D2",
+    "task_statement_id": "D2.T4",
+    "scenario_ids": [
+      "S1"
+    ],
+    "difficulty": "anti_pattern_recognition",
+    "key_concept_tested": "tools discovered at connection time",
+    "stem": "A developer implements error handling in their support agent that catches 'tool not found' errors and attempts to trigger MCP server reconnection to refresh available tools. What misconception does this approach reflect?",
+    "options": [
+      {
+        "label": "A",
+        "text": "Tool availability should be verified before each tool call rather than handling errors",
+        "is_correct": false
+      },
+      {
+        "label": "B",
+        "text": "MCP connections should be persistent and not reconnected for tool discovery",
+        "is_correct": false
+      },
+      {
+        "label": "C",
+        "text": "Tool discovery happens at connection time, so missing tools indicate connection issues, not discovery timing",
+        "is_correct": true
+      },
+      {
+        "label": "D",
+        "text": "Error handling should be implemented at the MCP server level, not the agent level",
+        "is_correct": false
+      }
+    ],
+    "correct_label": "C",
+    "explanation": "This reflects a misunderstanding that tools can appear/disappear during runtime. If a tool is 'not found', it indicates either the tool was never discovered (connection issue) or the tool name is incorrect, not a timing issue requiring reconnection.",
+    "tags": [
+      "error_handling_misconception",
+      "connection_lifecycle"
+    ],
+    "bloom_level": "evaluate",
+    "distractor_strategy": {
+      "plausible_but_prompt_only": "N/A",
+      "over_engineered": "N/A",
+      "wrong_layer": "N/A",
+      "valid_but_not_first_step": "N/A"
+    }
+  },
+  {
+    "id": "D2_T4_034",
+    "domain_id": "D2",
+    "task_statement_id": "D2.T4",
+    "scenario_ids": [
+      "S3"
+    ],
+    "difficulty": "anti_pattern_recognition",
+    "key_concept_tested": "project-level .mcp.json vs user-level ~/.claude.json",
+    "stem": "A developer creates a complex system where the project .mcp.json dynamically generates different configurations based on the current user's ~/.claude.json settings, believing this provides the best of both approaches. What is the primary issue with this design?",
+    "options": [
+      {
+        "label": "A",
+        "text": "Dynamic configuration generation creates unpredictable behavior and debugging difficulties",
+        "is_correct": true
+      },
+      {
+        "label": "B",
+        "text": "User-level settings should not influence project-level configuration",
+        "is_correct": false
+      },
+      {
+        "label": "C",
+        "text": "This approach requires elevated file system permissions",
+        "is_correct": false
+      },
+      {
+        "label": "D",
+        "text": "Cross-file configuration dependencies impact MCP server performance",
+        "is_correct": false
+      }
+    ],
+    "correct_label": "A",
+    "explanation": "This over-complicates the configuration system by creating interdependencies between user and project configurations. It makes debugging difficult and behavior unpredictable, violating the principle of clear separation between user and project settings.",
+    "tags": [
+      "over_engineering",
+      "configuration_complexity"
+    ],
+    "bloom_level": "evaluate",
+    "distractor_strategy": {
+      "plausible_but_prompt_only": "N/A",
+      "over_engineered": "N/A",
+      "wrong_layer": "N/A",
+      "valid_but_not_first_step": "N/A"
+    }
+  }
+]

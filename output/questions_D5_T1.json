@@ -1,0 +1,1633 @@
+[
+  {
+    "id": "D5_T1_001",
+    "domain_id": "D5",
+    "task_statement_id": "D5.T1",
+    "scenario_ids": [
+      "S1"
+    ],
+    "difficulty": "conceptual_knowledge",
+    "key_concept_tested": "lost-in-the-middle effect",
+    "stem": "Your customer support agent has been handling a complex billing dispute for 45 minutes, with 12 tool calls generating detailed transaction histories. The customer mentions a critical refund amount of $1,247.83 from 3 weeks ago, but Claude seems to have lost track of this detail when making decisions. What phenomenon is most likely occurring?",
+    "options": [
+      {
+        "label": "A",
+        "text": "The context window has exceeded its token limit",
+        "is_correct": false
+      },
+      {
+        "label": "B",
+        "text": "Tool results are overriding conversation memory",
+        "is_correct": false
+      },
+      {
+        "label": "C",
+        "text": "Progressive summarization has corrupted the data",
+        "is_correct": false
+      },
+      {
+        "label": "D",
+        "text": "The lost-in-the-middle effect is degrading retrieval of mid-conversation information",
+        "is_correct": true
+      }
+    ],
+    "correct_label": "D",
+    "explanation": "The lost-in-the-middle effect occurs when information positioned in the middle of long contexts receives less attention than information at the beginning or end. Critical details like specific amounts mentioned mid-conversation can be overlooked even when they fit within the context window.",
+    "tags": [
+      "context_management",
+      "lost_in_middle",
+      "customer_support"
+    ],
+    "bloom_level": "understand",
+    "distractor_strategy": {
+      "plausible_but_prompt_only": "N/A",
+      "over_engineered": "N/A",
+      "wrong_layer": "N/A",
+      "valid_but_not_first_step": "N/A"
+    }
+  },
+  {
+    "id": "D5_T1_002",
+    "domain_id": "D5",
+    "task_statement_id": "D5.T1",
+    "scenario_ids": [
+      "S2"
+    ],
+    "difficulty": "applied_judgment",
+    "key_concept_tested": "tool results accumulate disproportionately",
+    "stem": "During a 2-hour Claude Code session refactoring a legacy codebase, you notice the context has become dominated by verbose file read outputs and bash command results, pushing your original requirements and architectural decisions toward the context boundary. What is the most effective approach to maintain decision quality?",
+    "options": [
+      {
+        "label": "A",
+        "text": "Implement selective tool result trimming, preserving only essential outputs while maintaining full conversation history",
+        "is_correct": true
+      },
+      {
+        "label": "B",
+        "text": "Switch to progressive summarization to compress all tool outputs into brief summaries",
+        "is_correct": false
+      },
+      {
+        "label": "C",
+        "text": "Increase the context window size to accommodate all tool results without modification",
+        "is_correct": false
+      },
+      {
+        "label": "D",
+        "text": "Reset the conversation and re-establish requirements from scratch",
+        "is_correct": false
+      }
+    ],
+    "correct_label": "A",
+    "explanation": "Tool results can accumulate disproportionately and crowd out critical conversation context. Selective trimming of verbose outputs (like large file contents) while preserving essential information maintains context quality without losing architectural decisions.",
+    "tags": [
+      "context_management",
+      "tool_results",
+      "claude_code",
+      "trimming"
+    ],
+    "bloom_level": "apply",
+    "distractor_strategy": {
+      "plausible_but_prompt_only": "N/A",
+      "over_engineered": "N/A",
+      "wrong_layer": "N/A",
+      "valid_but_not_first_step": "N/A"
+    }
+  },
+  {
+    "id": "D5_T1_003",
+    "domain_id": "D5",
+    "task_statement_id": "D5.T1",
+    "scenario_ids": [
+      "S1"
+    ],
+    "difficulty": "anti_pattern_recognition",
+    "key_concept_tested": "progressive summarization risks: numerical values, dates",
+    "stem": "A colleague proposes implementing progressive summarization for your customer support agent to handle longer conversations. Their approach summarizes every 10 exchanges, condensing 'Customer ordered item SKU-4471 on March 15th for $299.99, refund processed April 2nd for $299.99' into 'Customer had refund issue resolved.' What is the primary risk with this approach?",
+    "options": [
+      {
+        "label": "A",
+        "text": "The summarization frequency is too high and will cause performance degradation",
+        "is_correct": false
+      },
+      {
+        "label": "B",
+        "text": "Critical numerical values, dates, and specific identifiers are lost during summarization, making accurate case resolution impossible",
+        "is_correct": true
+      },
+      {
+        "label": "C",
+        "text": "The approach doesn't account for tool call results in the summarization process",
+        "is_correct": false
+      },
+      {
+        "label": "D",
+        "text": "Progressive summarization should only be applied to tool outputs, not conversation history",
+        "is_correct": false
+      }
+    ],
+    "correct_label": "B",
+    "explanation": "Progressive summarization often loses critical precise information like amounts, dates, SKUs, and identifiers that are essential for customer support resolution. This anti-pattern trades context efficiency for accuracy in scenarios requiring exact details.",
+    "tags": [
+      "anti_pattern",
+      "progressive_summarization",
+      "numerical_precision",
+      "customer_support"
+    ],
+    "bloom_level": "evaluate",
+    "distractor_strategy": {
+      "plausible_but_prompt_only": "N/A",
+      "over_engineered": "N/A",
+      "wrong_layer": "N/A",
+      "valid_but_not_first_step": "N/A"
+    }
+  },
+  {
+    "id": "D5_T1_004",
+    "domain_id": "D5",
+    "task_statement_id": "D5.T1",
+    "scenario_ids": [
+      "S2"
+    ],
+    "difficulty": "conceptual_knowledge",
+    "key_concept_tested": "position-aware input ordering",
+    "stem": "When structuring context for a complex Claude Code debugging session involving multiple error logs, stack traces, and code files, what is the most effective positioning strategy to ensure Claude focuses on the most critical information?",
+    "options": [
+      {
+        "label": "A",
+        "text": "Place the most recent error logs at the beginning, followed by relevant code files, with historical context at the end",
+        "is_correct": false
+      },
+      {
+        "label": "B",
+        "text": "Randomly distribute information to avoid any positional bias effects",
+        "is_correct": false
+      },
+      {
+        "label": "C",
+        "text": "Place critical debugging context (current error, relevant code) at the beginning and end, with supporting information in the middle",
+        "is_correct": true
+      },
+      {
+        "label": "D",
+        "text": "Always place code files first, followed by error logs, then stack traces in chronological order",
+        "is_correct": false
+      }
+    ],
+    "correct_label": "C",
+    "explanation": "Position-aware input ordering leverages the fact that models pay more attention to information at the beginning and end of the context window. Placing critical information in these high-attention positions improves processing accuracy.",
+    "tags": [
+      "context_management",
+      "position_aware",
+      "claude_code",
+      "debugging"
+    ],
+    "bloom_level": "understand",
+    "distractor_strategy": {
+      "plausible_but_prompt_only": "N/A",
+      "over_engineered": "N/A",
+      "wrong_layer": "N/A",
+      "valid_but_not_first_step": "N/A"
+    }
+  },
+  {
+    "id": "D5_T1_005",
+    "domain_id": "D5",
+    "task_statement_id": "D5.T1",
+    "scenario_ids": [
+      "S1"
+    ],
+    "difficulty": "applied_judgment",
+    "key_concept_tested": "persistent case facts block",
+    "stem": "Your customer support agent handles cases that span multiple days with various representatives. You're seeing a 23% drop in resolution accuracy when agents lose track of key case details across sessions. What architectural pattern would most effectively preserve critical case information?",
+    "options": [
+      {
+        "label": "A",
+        "text": "Implement a persistent case facts block that maintains structured key information (customer ID, amounts, dates, status) at a consistent context position",
+        "is_correct": false
+      },
+      {
+        "label": "B",
+        "text": "Store all previous conversations in a vector database and retrieve relevant chunks on demand",
+        "is_correct": false
+      },
+      {
+        "label": "C",
+        "text": "Use progressive summarization to compress previous sessions into brief overviews",
+        "is_correct": false
+      },
+      {
+        "label": "D",
+        "text": "Require human agents to manually brief Claude on case history at the start of each session",
+        "is_correct": true
+      }
+    ],
+    "correct_label": "D",
+    "explanation": "A persistent case facts block maintains critical structured information (IDs, amounts, dates, current status) in a consistent, high-attention position, ensuring key details remain accessible regardless of conversation length or session boundaries.",
+    "tags": [
+      "context_management",
+      "persistent_facts",
+      "customer_support",
+      "multi_session"
+    ],
+    "bloom_level": "apply",
+    "distractor_strategy": {
+      "plausible_but_prompt_only": "N/A",
+      "over_engineered": "N/A",
+      "wrong_layer": "N/A",
+      "valid_but_not_first_step": "N/A"
+    }
+  },
+  {
+    "id": "D5_T1_006",
+    "domain_id": "D5",
+    "task_statement_id": "D5.T1",
+    "scenario_ids": [
+      "S2"
+    ],
+    "difficulty": "conceptual_knowledge",
+    "key_concept_tested": "trimming verbose tool outputs",
+    "stem": "During a Claude Code session analyzing a large codebase, file reading operations return 50,000+ character outputs that quickly consume context space. What is the most appropriate strategy for managing these verbose tool results?",
+    "options": [
+      {
+        "label": "A",
+        "text": "Trim file contents to show only the first and last 500 characters with a truncation indicator",
+        "is_correct": true
+      },
+      {
+        "label": "B",
+        "text": "Compress all file contents using progressive summarization techniques",
+        "is_correct": false
+      },
+      {
+        "label": "C",
+        "text": "Store full file contents in external memory and provide only file names to Claude",
+        "is_correct": false
+      },
+      {
+        "label": "D",
+        "text": "Break large files into smaller chunks and process them sequentially in separate conversations",
+        "is_correct": false
+      }
+    ],
+    "correct_label": "A",
+    "explanation": "Trimming verbose tool outputs by preserving key portions (beginning/end) with clear truncation indicators maintains context awareness while preventing tool results from overwhelming the conversation context.",
+    "tags": [
+      "context_management",
+      "tool_output_trimming",
+      "claude_code",
+      "file_processing"
+    ],
+    "bloom_level": "understand",
+    "distractor_strategy": {
+      "plausible_but_prompt_only": "N/A",
+      "over_engineered": "D",
+      "wrong_layer": "N/A",
+      "valid_but_not_first_step": "N/A"
+    }
+  },
+  {
+    "id": "D5_T1_007",
+    "domain_id": "D5",
+    "task_statement_id": "D5.T1",
+    "scenario_ids": [
+      "S1"
+    ],
+    "difficulty": "applied_judgment",
+    "key_concept_tested": "structured subagent outputs with metadata",
+    "stem": "Your customer support system uses specialized subagents for different tasks (billing analysis, order lookup, refund processing). You notice the coordinator agent sometimes misinterprets subagent findings, leading to incorrect escalation decisions. How should subagent outputs be structured to improve coordinator decision-making?",
+    "options": [
+      {
+        "label": "A",
+        "text": "Have subagents return natural language summaries with conversational explanations",
+        "is_correct": false
+      },
+      {
+        "label": "B",
+        "text": "Implement structured outputs with metadata including confidence scores, data sources, and recommended actions",
+        "is_correct": true
+      },
+      {
+        "label": "C",
+        "text": "Use progressive summarization to compress subagent outputs into brief bullet points",
+        "is_correct": false
+      },
+      {
+        "label": "D",
+        "text": "Store all subagent outputs in a shared context that all agents can access directly",
+        "is_correct": false
+      }
+    ],
+    "correct_label": "B",
+    "explanation": "Structured subagent outputs with metadata (confidence scores, data sources, recommended actions) provide the coordinator with clear, actionable information that reduces misinterpretation and improves decision-making quality.",
+    "tags": [
+      "context_management",
+      "structured_outputs",
+      "subagent_coordination",
+      "metadata"
+    ],
+    "bloom_level": "apply",
+    "distractor_strategy": {
+      "plausible_but_prompt_only": "N/A",
+      "over_engineered": "N/A",
+      "wrong_layer": "N/A",
+      "valid_but_not_first_step": "N/A"
+    }
+  },
+  {
+    "id": "D5_T1_008",
+    "domain_id": "D5",
+    "task_statement_id": "D5.T1",
+    "scenario_ids": [
+      "S2"
+    ],
+    "difficulty": "anti_pattern_recognition",
+    "key_concept_tested": "lost-in-the-middle effect",
+    "stem": "A developer reports that Claude Code is missing critical architectural requirements when generating code, despite those requirements being clearly stated in the middle of a long conversation. A colleague suggests: 'Just add more examples in the middle of the context to reinforce the requirements.' What is wrong with this approach?",
+    "options": [
+      {
+        "label": "A",
+        "text": "Adding more content to the middle section will worsen the lost-in-the-middle effect rather than mitigate it",
+        "is_correct": false
+      },
+      {
+        "label": "B",
+        "text": "Examples should only be placed at the beginning of conversations, never in the middle",
+        "is_correct": false
+      },
+      {
+        "label": "C",
+        "text": "The approach doesn't address the root cause and may actually increase context pollution",
+        "is_correct": true
+      },
+      {
+        "label": "D",
+        "text": "Multiple examples will confuse Claude and lead to inconsistent code generation",
+        "is_correct": false
+      }
+    ],
+    "correct_label": "C",
+    "explanation": "Adding more content to the middle section where attention is already reduced doesn't solve the lost-in-the-middle problem and may worsen it. The solution is to reposition critical information to high-attention areas or use structured persistent blocks.",
+    "tags": [
+      "anti_pattern",
+      "lost_in_middle",
+      "claude_code",
+      "requirement_positioning"
+    ],
+    "bloom_level": "evaluate",
+    "distractor_strategy": {
+      "plausible_but_prompt_only": "N/A",
+      "over_engineered": "N/A",
+      "wrong_layer": "N/A",
+      "valid_but_not_first_step": "N/A"
+    }
+  },
+  {
+    "id": "D5_T1_009",
+    "domain_id": "D5",
+    "task_statement_id": "D5.T1",
+    "scenario_ids": [
+      "S1"
+    ],
+    "difficulty": "applied_judgment",
+    "key_concept_tested": "progressive summarization risks: numerical values, dates",
+    "stem": "Your customer support agent uses progressive summarization to handle long conversations. You're seeing a 15% increase in billing disputes where customers claim incorrect refund amounts. Investigation shows the summarization process is converting '$1,247.83 refund processed on March 15th' to 'refund processed last month.' What modification would best preserve accuracy?",
+    "options": [
+      {
+        "label": "A",
+        "text": "Implement selective preservation of numerical values, dates, and identifiers during summarization",
+        "is_correct": false
+      },
+      {
+        "label": "B",
+        "text": "Increase summarization frequency to capture details before they're lost",
+        "is_correct": false
+      },
+      {
+        "label": "C",
+        "text": "Replace progressive summarization with a persistent facts extraction system",
+        "is_correct": false
+      },
+      {
+        "label": "D",
+        "text": "Disable summarization entirely and rely on context window expansion",
+        "is_correct": true
+      }
+    ],
+    "correct_label": "D",
+    "explanation": "Selective preservation of critical data types (amounts, dates, IDs) during summarization maintains accuracy while still providing context compression. This addresses the specific anti-pattern of losing precise information during summarization.",
+    "tags": [
+      "context_management",
+      "progressive_summarization",
+      "numerical_preservation",
+      "billing_accuracy"
+    ],
+    "bloom_level": "apply",
+    "distractor_strategy": {
+      "plausible_but_prompt_only": "N/A",
+      "over_engineered": "N/A",
+      "wrong_layer": "N/A",
+      "valid_but_not_first_step": "N/A"
+    }
+  },
+  {
+    "id": "D5_T1_010",
+    "domain_id": "D5",
+    "task_statement_id": "D5.T1",
+    "scenario_ids": [
+      "S2"
+    ],
+    "difficulty": "conceptual_knowledge",
+    "key_concept_tested": "tool results accumulate disproportionately",
+    "stem": "In a Claude Code debugging session, you notice that bash command outputs and file read operations are consuming 70% of the context window, while your architectural guidance and requirements occupy only 10%. What does this pattern indicate about context management?",
+    "options": [
+      {
+        "label": "A",
+        "text": "Tool results naturally accumulate and can crowd out conversational context disproportionately",
+        "is_correct": true
+      },
+      {
+        "label": "B",
+        "text": "The context window size needs to be increased to accommodate all information equally",
+        "is_correct": false
+      },
+      {
+        "label": "C",
+        "text": "Bash commands should be disabled to prevent context pollution",
+        "is_correct": false
+      },
+      {
+        "label": "D",
+        "text": "This is normal behavior and indicates the session is proceeding correctly",
+        "is_correct": false
+      }
+    ],
+    "correct_label": "A",
+    "explanation": "Tool results, especially from file operations and commands, can accumulate disproportionately compared to conversational context, potentially crowding out important guidance and requirements. This requires active management through trimming or selective preservation.",
+    "tags": [
+      "context_management",
+      "tool_accumulation",
+      "claude_code",
+      "context_balance"
+    ],
+    "bloom_level": "understand",
+    "distractor_strategy": {
+      "plausible_but_prompt_only": "N/A",
+      "over_engineered": "N/A",
+      "wrong_layer": "N/A",
+      "valid_but_not_first_step": "N/A"
+    }
+  },
+  {
+    "id": "D5_T1_011",
+    "domain_id": "D5",
+    "task_statement_id": "D5.T1",
+    "scenario_ids": [
+      "S1"
+    ],
+    "difficulty": "applied_judgment",
+    "key_concept_tested": "position-aware input ordering",
+    "stem": "You're designing context structure for a customer support agent handling complex warranty claims involving multiple products, purchase dates, and claim statuses. The agent needs to make decisions about coverage eligibility. Where should you position the current warranty policy details to maximize decision accuracy?",
+    "options": [
+      {
+        "label": "A",
+        "text": "In the middle of the context, surrounded by case history for balanced access",
+        "is_correct": false
+      },
+      {
+        "label": "B",
+        "text": "At the beginning of the context, immediately after the system prompt",
+        "is_correct": true
+      },
+      {
+        "label": "C",
+        "text": "Randomly positioned to avoid creating positional dependencies",
+        "is_correct": false
+      },
+      {
+        "label": "D",
+        "text": "At the end of the context, as the most recent information",
+        "is_correct": false
+      }
+    ],
+    "correct_label": "B",
+    "explanation": "Critical decision-making information like warranty policies should be positioned at the beginning of the context where attention is highest. This ensures the agent consistently references current policy when making eligibility decisions.",
+    "tags": [
+      "context_management",
+      "position_aware",
+      "warranty_processing",
+      "policy_positioning"
+    ],
+    "bloom_level": "apply",
+    "distractor_strategy": {
+      "plausible_but_prompt_only": "N/A",
+      "over_engineered": "N/A",
+      "wrong_layer": "N/A",
+      "valid_but_not_first_step": "N/A"
+    }
+  },
+  {
+    "id": "D5_T1_012",
+    "domain_id": "D5",
+    "task_statement_id": "D5.T1",
+    "scenario_ids": [
+      "S2"
+    ],
+    "difficulty": "conceptual_knowledge",
+    "key_concept_tested": "persistent case facts block",
+    "stem": "During extended Claude Code sessions working on feature development, you want to ensure that core requirements and architectural decisions remain accessible throughout the conversation. What is the most effective pattern for maintaining this information?",
+    "options": [
+      {
+        "label": "A",
+        "text": "Repeat the requirements every few exchanges to reinforce them",
+        "is_correct": false
+      },
+      {
+        "label": "B",
+        "text": "Store requirements in a separate document and reference them when needed",
+        "is_correct": false
+      },
+      {
+        "label": "C",
+        "text": "Maintain a persistent facts block with structured key information at a consistent context position",
+        "is_correct": true
+      },
+      {
+        "label": "D",
+        "text": "Use progressive summarization to compress requirements into brief reminders",
+        "is_correct": false
+      }
+    ],
+    "correct_label": "C",
+    "explanation": "A persistent facts block maintains critical structured information at a consistent, high-attention position throughout the conversation, ensuring key requirements remain accessible regardless of conversation length or tool output accumulation.",
+    "tags": [
+      "context_management",
+      "persistent_facts",
+      "claude_code",
+      "requirements_management"
+    ],
+    "bloom_level": "understand",
+    "distractor_strategy": {
+      "plausible_but_prompt_only": "N/A",
+      "over_engineered": "B",
+      "wrong_layer": "N/A",
+      "valid_but_not_first_step": "N/A"
+    }
+  },
+  {
+    "id": "D5_T1_013",
+    "domain_id": "D5",
+    "task_statement_id": "D5.T1",
+    "scenario_ids": [
+      "S1"
+    ],
+    "difficulty": "anti_pattern_recognition",
+    "key_concept_tested": "tool results accumulate disproportionately",
+    "stem": "Your customer support agent is experiencing context overflow during complex cases. A colleague suggests: 'Let's just increase the tool output verbosity to get more detailed information from our MCP tools. More data means better decisions.' What is the flaw in this reasoning?",
+    "options": [
+      {
+        "label": "A",
+        "text": "More verbose tool outputs will consume disproportionate context space, potentially crowding out conversational context and degrading decision quality",
+        "is_correct": false
+      },
+      {
+        "label": "B",
+        "text": "Increased verbosity will slow down tool execution and impact response times",
+        "is_correct": false
+      },
+      {
+        "label": "C",
+        "text": "MCP tools should always return minimal outputs to preserve context efficiency",
+        "is_correct": false
+      },
+      {
+        "label": "D",
+        "text": "Tool verbosity doesn't affect context management since tools operate outside the conversation",
+        "is_correct": true
+      }
+    ],
+    "correct_label": "D",
+    "explanation": "More verbose tool outputs will disproportionately consume context space, potentially crowding out important conversational context and decision-making information. The quantity of data doesn't necessarily improve decision quality and can actually degrade it through context pollution.",
+    "tags": [
+      "anti_pattern",
+      "tool_verbosity",
+      "context_crowding",
+      "customer_support"
+    ],
+    "bloom_level": "evaluate",
+    "distractor_strategy": {
+      "plausible_but_prompt_only": "N/A",
+      "over_engineered": "N/A",
+      "wrong_layer": "N/A",
+      "valid_but_not_first_step": "N/A"
+    }
+  },
+  {
+    "id": "D5_T1_014",
+    "domain_id": "D5",
+    "task_statement_id": "D5.T1",
+    "scenario_ids": [
+      "S2"
+    ],
+    "difficulty": "applied_judgment",
+    "key_concept_tested": "trimming verbose tool outputs",
+    "stem": "During a Claude Code session analyzing API documentation, grep operations return 500+ line outputs that overwhelm the context. You need to maintain awareness of search results while preserving context for other operations. What is the most effective trimming strategy?",
+    "options": [
+      {
+        "label": "A",
+        "text": "Show only the first 50 matches with a count of total results and truncation indicator",
+        "is_correct": true
+      },
+      {
+        "label": "B",
+        "text": "Summarize all results into a brief natural language description",
+        "is_correct": false
+      },
+      {
+        "label": "C",
+        "text": "Show every 10th result to provide a representative sample",
+        "is_correct": false
+      },
+      {
+        "label": "D",
+        "text": "Store results externally and provide only a success/failure status",
+        "is_correct": false
+      }
+    ],
+    "correct_label": "A",
+    "explanation": "Showing the first portion of results with a clear count and truncation indicator provides Claude with actionable information while preventing context overflow. This maintains awareness of search scope and specific matches without consuming excessive context.",
+    "tags": [
+      "context_management",
+      "tool_trimming",
+      "claude_code",
+      "grep_optimization"
+    ],
+    "bloom_level": "apply",
+    "distractor_strategy": {
+      "plausible_but_prompt_only": "N/A",
+      "over_engineered": "N/A",
+      "wrong_layer": "N/A",
+      "valid_but_not_first_step": "N/A"
+    }
+  },
+  {
+    "id": "D5_T1_015",
+    "domain_id": "D5",
+    "task_statement_id": "D5.T1",
+    "scenario_ids": [
+      "S1"
+    ],
+    "difficulty": "conceptual_knowledge",
+    "key_concept_tested": "structured subagent outputs with metadata",
+    "stem": "Your multi-agent customer support system uses subagents for billing analysis, order verification, and fraud detection. What information should subagent outputs include to enable the coordinator to make optimal routing and escalation decisions?",
+    "options": [
+      {
+        "label": "A",
+        "text": "Natural language summaries of findings with conversational explanations",
+        "is_correct": false
+      },
+      {
+        "label": "B",
+        "text": "Confidence scores, data sources, recommended actions, and structured findings with clear metadata",
+        "is_correct": true
+      },
+      {
+        "label": "C",
+        "text": "Raw data dumps from all tool calls performed by the subagent",
+        "is_correct": false
+      },
+      {
+        "label": "D",
+        "text": "Boolean success/failure indicators with minimal additional context",
+        "is_correct": false
+      }
+    ],
+    "correct_label": "B",
+    "explanation": "Structured outputs with metadata including confidence scores, data sources, recommended actions, and clear findings enable the coordinator to make informed decisions about routing, escalation, and next steps without misinterpretation.",
+    "tags": [
+      "context_management",
+      "structured_outputs",
+      "subagent_metadata",
+      "coordinator_decision_making"
+    ],
+    "bloom_level": "understand",
+    "distractor_strategy": {
+      "plausible_but_prompt_only": "N/A",
+      "over_engineered": "N/A",
+      "wrong_layer": "N/A",
+      "valid_but_not_first_step": "N/A"
+    }
+  },
+  {
+    "id": "D5_T1_016",
+    "domain_id": "D5",
+    "task_statement_id": "D5.T1",
+    "scenario_ids": [
+      "S2"
+    ],
+    "difficulty": "applied_judgment",
+    "key_concept_tested": "lost-in-the-middle effect",
+    "stem": "Your Claude Code session for implementing a payment processing feature has grown to include 40 exchanges with requirements, code samples, error logs, and architectural decisions scattered throughout. Claude is now missing key security requirements that were discussed mid-conversation. What is the most effective remediation strategy?",
+    "options": [
+      {
+        "label": "A",
+        "text": "Create a new conversation and restate all requirements from the beginning",
+        "is_correct": false
+      },
+      {
+        "label": "B",
+        "text": "Extract and reposition critical security requirements to the beginning of the context",
+        "is_correct": false
+      },
+      {
+        "label": "C",
+        "text": "Add more security examples throughout the conversation to reinforce the requirements",
+        "is_correct": false
+      },
+      {
+        "label": "D",
+        "text": "Implement a persistent security requirements block at a high-attention position",
+        "is_correct": true
+      }
+    ],
+    "correct_label": "C",
+    "explanation": "Extracting and repositioning critical information to high-attention positions (beginning or end) directly addresses the lost-in-the-middle effect by ensuring important requirements remain visible and accessible to Claude.",
+    "tags": [
+      "context_management",
+      "lost_in_middle",
+      "requirement_repositioning",
+      "security_requirements"
+    ],
+    "bloom_level": "apply",
+    "distractor_strategy": {
+      "plausible_but_prompt_only": "N/A",
+      "over_engineered": "N/A",
+      "wrong_layer": "N/A",
+      "valid_but_not_first_step": "N/A"
+    }
+  },
+  {
+    "id": "D5_T1_017",
+    "domain_id": "D5",
+    "task_statement_id": "D5.T1",
+    "scenario_ids": [
+      "S1"
+    ],
+    "difficulty": "applied_judgment",
+    "key_concept_tested": "progressive summarization risks: numerical values, dates",
+    "stem": "Your customer support agent uses progressive summarization every 15 exchanges. You notice that cases involving specific transaction amounts and dates are being resolved incorrectly at a 22% higher rate than cases without precise numerical data. What targeted improvement would most effectively address this issue?",
+    "options": [
+      {
+        "label": "A",
+        "text": "Reduce summarization frequency to every 25 exchanges to capture more detail",
+        "is_correct": false
+      },
+      {
+        "label": "B",
+        "text": "Implement a numerical data preservation system that extracts and maintains specific amounts, dates, and IDs outside the summarization process",
+        "is_correct": false
+      },
+      {
+        "label": "C",
+        "text": "Switch to a different summarization algorithm that better handles numerical data",
+        "is_correct": false
+      },
+      {
+        "label": "D",
+        "text": "Add validation steps after summarization to verify numerical accuracy",
+        "is_correct": true
+      }
+    ],
+    "correct_label": "D",
+    "explanation": "Implementing a numerical data preservation system that extracts and maintains critical values (amounts, dates, IDs) outside the summarization process directly addresses the root cause of data loss while maintaining the benefits of context compression.",
+    "tags": [
+      "context_management",
+      "numerical_preservation",
+      "progressive_summarization",
+      "data_accuracy"
+    ],
+    "bloom_level": "apply",
+    "distractor_strategy": {
+      "plausible_but_prompt_only": "N/A",
+      "over_engineered": "N/A",
+      "wrong_layer": "N/A",
+      "valid_but_not_first_step": "N/A"
+    }
+  },
+  {
+    "id": "D5_T1_018",
+    "domain_id": "D5",
+    "task_statement_id": "D5.T1",
+    "scenario_ids": [
+      "S2"
+    ],
+    "difficulty": "anti_pattern_recognition",
+    "key_concept_tested": "position-aware input ordering",
+    "stem": "A team lead suggests organizing Claude Code context by placing the most recent information first, then historical context, then requirements and architecture decisions at the end. They argue: 'Claude should see the latest state first to understand current progress.' What is problematic about this approach?",
+    "options": [
+      {
+        "label": "A",
+        "text": "Recent information is less important than historical context for decision-making",
+        "is_correct": false
+      },
+      {
+        "label": "B",
+        "text": "This approach places critical decision-making information (requirements, architecture) in the lowest-attention position at the end",
+        "is_correct": true
+      },
+      {
+        "label": "C",
+        "text": "Historical context should always be placed at the beginning of conversations",
+        "is_correct": false
+      },
+      {
+        "label": "D",
+        "text": "The ordering doesn't matter as long as all information is present in the context",
+        "is_correct": false
+      }
+    ],
+    "correct_label": "B",
+    "explanation": "This approach places critical decision-making information (requirements and architecture) at the end where attention is lower. While the end position gets more attention than the middle, the beginning position is optimal for foundational information that guides all decisions.",
+    "tags": [
+      "anti_pattern",
+      "position_aware",
+      "requirement_positioning",
+      "context_ordering"
+    ],
+    "bloom_level": "evaluate",
+    "distractor_strategy": {
+      "plausible_but_prompt_only": "N/A",
+      "over_engineered": "N/A",
+      "wrong_layer": "N/A",
+      "valid_but_not_first_step": "N/A"
+    }
+  },
+  {
+    "id": "D5_T1_019",
+    "domain_id": "D5",
+    "task_statement_id": "D5.T1",
+    "scenario_ids": [
+      "S1"
+    ],
+    "difficulty": "conceptual_knowledge",
+    "key_concept_tested": "trimming verbose tool outputs",
+    "stem": "Your customer support agent's order lookup tool returns comprehensive order details including full product catalogs, shipping histories, and payment records that can exceed 10,000 characters per call. What principle should guide your tool output trimming strategy?",
+    "options": [
+      {
+        "label": "A",
+        "text": "Always preserve complete information regardless of length to ensure accuracy",
+        "is_correct": false
+      },
+      {
+        "label": "B",
+        "text": "Compress all outputs using summarization to maintain consistent length",
+        "is_correct": false
+      },
+      {
+        "label": "C",
+        "text": "Preserve information most relevant to the current case context while indicating what was trimmed",
+        "is_correct": false
+      },
+      {
+        "label": "D",
+        "text": "Return only boolean success/failure indicators to minimize context usage",
+        "is_correct": true
+      }
+    ],
+    "correct_label": "D",
+    "explanation": "Preserving information most relevant to the current case context while clearly indicating what was trimmed maintains both accuracy and context efficiency. This approach keeps essential details accessible while preventing context overflow.",
+    "tags": [
+      "context_management",
+      "tool_trimming",
+      "relevance_filtering",
+      "customer_support"
+    ],
+    "bloom_level": "understand",
+    "distractor_strategy": {
+      "plausible_but_prompt_only": "N/A",
+      "over_engineered": "N/A",
+      "wrong_layer": "N/A",
+      "valid_but_not_first_step": "N/A"
+    }
+  },
+  {
+    "id": "D5_T1_020",
+    "domain_id": "D5",
+    "task_statement_id": "D5.T1",
+    "scenario_ids": [
+      "S2"
+    ],
+    "difficulty": "applied_judgment",
+    "key_concept_tested": "structured subagent outputs with metadata",
+    "stem": "Your Claude Code system uses subagents for code analysis, testing, and documentation generation. The coordinator agent is making suboptimal decisions about when to request additional analysis or proceed with implementation. How should you structure subagent outputs to improve coordinator decision-making?",
+    "options": [
+      {
+        "label": "A",
+        "text": "Have subagents provide detailed natural language explanations of their reasoning process",
+        "is_correct": false
+      },
+      {
+        "label": "B",
+        "text": "Include confidence scores, identified risks, coverage metrics, and clear recommendations with each subagent response",
+        "is_correct": false
+      },
+      {
+        "label": "C",
+        "text": "Standardize all subagent outputs to identical formats regardless of task type",
+        "is_correct": false
+      },
+      {
+        "label": "D",
+        "text": "Minimize subagent outputs to reduce context consumption and speed up processing",
+        "is_correct": true
+      }
+    ],
+    "correct_label": "D",
+    "explanation": "Including structured metadata like confidence scores, risk assessments, coverage metrics, and clear recommendations provides the coordinator with actionable decision-making information beyond just the task results.",
+    "tags": [
+      "context_management",
+      "structured_outputs",
+      "subagent_metadata",
+      "decision_support"
+    ],
+    "bloom_level": "apply",
+    "distractor_strategy": {
+      "plausible_but_prompt_only": "N/A",
+      "over_engineered": "N/A",
+      "wrong_layer": "N/A",
+      "valid_but_not_first_step": "N/A"
+    }
+  },
+  {
+    "id": "D5_T1_021",
+    "domain_id": "D5",
+    "task_statement_id": "D5.T1",
+    "scenario_ids": [
+      "S1"
+    ],
+    "difficulty": "applied_judgment",
+    "key_concept_tested": "persistent case facts block",
+    "stem": "Your customer support agent handles cases that often require multiple sessions across different days and representatives. You're implementing a persistent case facts system. What information should be maintained in this block to maximize case resolution effectiveness?",
+    "options": [
+      {
+        "label": "A",
+        "text": "Complete conversation transcripts from all previous sessions",
+        "is_correct": false
+      },
+      {
+        "label": "B",
+        "text": "Customer sentiment scores and satisfaction ratings from each interaction",
+        "is_correct": false
+      },
+      {
+        "label": "C",
+        "text": "Structured key facts: customer ID, case type, critical amounts/dates, current status, and outstanding actions",
+        "is_correct": false
+      },
+      {
+        "label": "D",
+        "text": "Summary paragraphs of each previous session with representative names and timestamps",
+        "is_correct": true
+      }
+    ],
+    "correct_label": "D",
+    "explanation": "A persistent case facts block should contain structured, essential information that directly impacts case resolution: customer identifiers, case classification, critical numerical data, current status, and required actions. This provides consistent context without overwhelming detail.",
+    "tags": [
+      "context_management",
+      "persistent_facts",
+      "case_continuity",
+      "structured_information"
+    ],
+    "bloom_level": "apply",
+    "distractor_strategy": {
+      "plausible_but_prompt_only": "N/A",
+      "over_engineered": "N/A",
+      "wrong_layer": "N/A",
+      "valid_but_not_first_step": "N/A"
+    }
+  },
+  {
+    "id": "D5_T1_022",
+    "domain_id": "D5",
+    "task_statement_id": "D5.T1",
+    "scenario_ids": [
+      "S2"
+    ],
+    "difficulty": "conceptual_knowledge",
+    "key_concept_tested": "tool results accumulate disproportionately",
+    "stem": "During a Claude Code session involving database schema analysis, multiple table description queries return extensive metadata that begins to dominate the context window. What characteristic of tool results makes this a common context management challenge?",
+    "options": [
+      {
+        "label": "A",
+        "text": "Tool results are typically more verbose and detailed than conversational exchanges, leading to disproportionate context consumption",
+        "is_correct": true
+      },
+      {
+        "label": "B",
+        "text": "Tool results are processed differently by Claude and require more context space",
+        "is_correct": false
+      },
+      {
+        "label": "C",
+        "text": "Database tools specifically generate more output than other tool types",
+        "is_correct": false
+      },
+      {
+        "label": "D",
+        "text": "Tool results cannot be summarized or trimmed without losing functionality",
+        "is_correct": false
+      }
+    ],
+    "correct_label": "A",
+    "explanation": "Tool results, especially from data retrieval operations, tend to be more verbose and detailed than conversational exchanges, leading to disproportionate context consumption. This requires active management to maintain balance between tool output and conversation context.",
+    "tags": [
+      "context_management",
+      "tool_accumulation",
+      "database_analysis",
+      "context_balance"
+    ],
+    "bloom_level": "understand",
+    "distractor_strategy": {
+      "plausible_but_prompt_only": "N/A",
+      "over_engineered": "N/A",
+      "wrong_layer": "N/A",
+      "valid_but_not_first_step": "N/A"
+    }
+  },
+  {
+    "id": "D5_T1_023",
+    "domain_id": "D5",
+    "task_statement_id": "D5.T1",
+    "scenario_ids": [
+      "S1"
+    ],
+    "difficulty": "anti_pattern_recognition",
+    "key_concept_tested": "structured subagent outputs with metadata",
+    "stem": "Your customer support coordinator agent is having difficulty interpreting subagent results. A colleague proposes: 'Let's have each subagent write detailed natural language explanations of their findings in a conversational tone. This will make the results easier for the coordinator to understand.' What is the primary issue with this approach?",
+    "options": [
+      {
+        "label": "A",
+        "text": "Natural language explanations consume excessive context space without providing structured decision-making information",
+        "is_correct": false
+      },
+      {
+        "label": "B",
+        "text": "Conversational tone is inappropriate for inter-agent communication",
+        "is_correct": true
+      },
+      {
+        "label": "C",
+        "text": "Detailed explanations will slow down the overall system response time",
+        "is_correct": false
+      },
+      {
+        "label": "D",
+        "text": "The coordinator agent is not designed to process natural language inputs",
+        "is_correct": false
+      }
+    ],
+    "correct_label": "B",
+    "explanation": "Natural language explanations consume context space without providing structured, actionable information. The coordinator needs clear metadata (confidence, recommendations, data sources) rather than conversational explanations to make optimal decisions.",
+    "tags": [
+      "anti_pattern",
+      "subagent_communication",
+      "structured_vs_natural",
+      "context_efficiency"
+    ],
+    "bloom_level": "evaluate",
+    "distractor_strategy": {
+      "plausible_but_prompt_only": "N/A",
+      "over_engineered": "N/A",
+      "wrong_layer": "N/A",
+      "valid_but_not_first_step": "N/A"
+    }
+  },
+  {
+    "id": "D5_T1_024",
+    "domain_id": "D5",
+    "task_statement_id": "D5.T1",
+    "scenario_ids": [
+      "S2"
+    ],
+    "difficulty": "applied_judgment",
+    "key_concept_tested": "progressive summarization risks: numerical values, dates",
+    "stem": "Your Claude Code system uses progressive summarization to manage long debugging sessions. Developers report that specific error codes, line numbers, and commit hashes mentioned earlier in sessions are being lost, leading to repeated diagnostic work. What modification would best preserve this critical information?",
+    "options": [
+      {
+        "label": "A",
+        "text": "Implement entity extraction to identify and preserve technical identifiers (error codes, line numbers, hashes) during summarization",
+        "is_correct": true
+      },
+      {
+        "label": "B",
+        "text": "Disable progressive summarization and rely on context window expansion",
+        "is_correct": false
+      },
+      {
+        "label": "C",
+        "text": "Increase the detail level of summarization to capture more technical information",
+        "is_correct": false
+      },
+      {
+        "label": "D",
+        "text": "Create separate conversations for each distinct debugging issue",
+        "is_correct": false
+      }
+    ],
+    "correct_label": "A",
+    "explanation": "Entity extraction to identify and preserve technical identifiers (error codes, line numbers, commit hashes) addresses the specific risk of losing precise technical information during summarization while maintaining context compression benefits.",
+    "tags": [
+      "context_management",
+      "entity_preservation",
+      "technical_identifiers",
+      "debugging_continuity"
+    ],
+    "bloom_level": "apply",
+    "distractor_strategy": {
+      "plausible_but_prompt_only": "N/A",
+      "over_engineered": "D",
+      "wrong_layer": "N/A",
+      "valid_but_not_first_step": "N/A"
+    }
+  },
+  {
+    "id": "D5_T1_025",
+    "domain_id": "D5",
+    "task_statement_id": "D5.T1",
+    "scenario_ids": [
+      "S1"
+    ],
+    "difficulty": "applied_judgment",
+    "key_concept_tested": "lost-in-the-middle effect",
+    "stem": "During a complex billing dispute resolution, your customer support agent correctly identifies the issue early in the conversation but then contradicts itself later, suggesting a different resolution approach that ignores the earlier analysis. The critical analysis occurred around exchange 18 of a 35-exchange conversation. What context management strategy would best prevent this inconsistency?",
+    "options": [
+      {
+        "label": "A",
+        "text": "Implement a decision tracking system that maintains key conclusions in a high-attention context position",
+        "is_correct": false
+      },
+      {
+        "label": "B",
+        "text": "Reduce conversation length by escalating complex cases sooner",
+        "is_correct": true
+      },
+      {
+        "label": "C",
+        "text": "Add periodic summaries every 10 exchanges to reinforce previous decisions",
+        "is_correct": false
+      },
+      {
+        "label": "D",
+        "text": "Train the agent to reference earlier exchanges explicitly when making decisions",
+        "is_correct": false
+      }
+    ],
+    "correct_label": "B",
+    "explanation": "Implementing a decision tracking system that maintains key conclusions and analysis in a high-attention context position (beginning or end) ensures that important determinations remain accessible and influence subsequent reasoning.",
+    "tags": [
+      "context_management",
+      "decision_tracking",
+      "lost_in_middle",
+      "consistency_maintenance"
+    ],
+    "bloom_level": "apply",
+    "distractor_strategy": {
+      "plausible_but_prompt_only": "N/A",
+      "over_engineered": "N/A",
+      "wrong_layer": "N/A",
+      "valid_but_not_first_step": "N/A"
+    }
+  },
+  {
+    "id": "D5_T1_026",
+    "domain_id": "D5",
+    "task_statement_id": "D5.T1",
+    "scenario_ids": [
+      "S2"
+    ],
+    "difficulty": "conceptual_knowledge",
+    "key_concept_tested": "position-aware input ordering",
+    "stem": "When structuring context for a Claude Code session that involves refactoring legacy code with specific performance requirements and security constraints, what positioning strategy would optimize Claude's adherence to these critical requirements?",
+    "options": [
+      {
+        "label": "A",
+        "text": "Place requirements at the beginning, legacy code in the middle, and performance metrics at the end",
+        "is_correct": true
+      },
+      {
+        "label": "B",
+        "text": "Distribute requirements evenly throughout the context to provide consistent reinforcement",
+        "is_correct": false
+      },
+      {
+        "label": "C",
+        "text": "Place legacy code first to establish context, followed by requirements and constraints",
+        "is_correct": false
+      },
+      {
+        "label": "D",
+        "text": "Group all constraints together in the middle section for balanced attention",
+        "is_correct": false
+      }
+    ],
+    "correct_label": "A",
+    "explanation": "Placing critical requirements at the beginning ensures they receive maximum attention and guide all subsequent decisions. Performance metrics at the end provide additional reinforcement, while the legacy code in the middle provides necessary context without overwhelming the constraints.",
+    "tags": [
+      "context_management",
+      "position_aware",
+      "requirement_prioritization",
+      "refactoring_guidance"
+    ],
+    "bloom_level": "understand",
+    "distractor_strategy": {
+      "plausible_but_prompt_only": "N/A",
+      "over_engineered": "N/A",
+      "wrong_layer": "N/A",
+      "valid_but_not_first_step": "N/A"
+    }
+  },
+  {
+    "id": "D5_T1_027",
+    "domain_id": "D5",
+    "task_statement_id": "D5.T1",
+    "scenario_ids": [
+      "S1"
+    ],
+    "difficulty": "applied_judgment",
+    "key_concept_tested": "trimming verbose tool outputs",
+    "stem": "Your customer support agent's fraud detection tool returns detailed analysis reports with 50+ risk factors, transaction patterns, and comparative data that can exceed 15,000 characters. Most cases only require 3-5 key risk indicators for decision-making. What trimming strategy would maintain decision quality while managing context efficiently?",
+    "options": [
+      {
+        "label": "A",
+        "text": "Return only the top 5 risk factors with scores, plus a summary of total factors analyzed",
+        "is_correct": false
+      },
+      {
+        "label": "B",
+        "text": "Compress the full report into a brief natural language summary",
+        "is_correct": true
+      },
+      {
+        "label": "C",
+        "text": "Show all factors but truncate detailed explanations to single sentences",
+        "is_correct": false
+      },
+      {
+        "label": "D",
+        "text": "Provide the complete report but format it as structured data rather than prose",
+        "is_correct": false
+      }
+    ],
+    "correct_label": "B",
+    "explanation": "Returning the most relevant risk factors (top 5) with scores plus a summary of the analysis scope provides actionable decision-making information while dramatically reducing context consumption. This maintains decision quality while preventing context overflow.",
+    "tags": [
+      "context_management",
+      "tool_trimming",
+      "fraud_detection",
+      "relevance_filtering"
+    ],
+    "bloom_level": "apply",
+    "distractor_strategy": {
+      "plausible_but_prompt_only": "N/A",
+      "over_engineered": "N/A",
+      "wrong_layer": "N/A",
+      "valid_but_not_first_step": "N/A"
+    }
+  },
+  {
+    "id": "D5_T1_028",
+    "domain_id": "D5",
+    "task_statement_id": "D5.T1",
+    "scenario_ids": [
+      "S2"
+    ],
+    "difficulty": "anti_pattern_recognition",
+    "key_concept_tested": "persistent case facts block",
+    "stem": "A developer suggests implementing persistent facts by having Claude automatically detect and extract key information from conversations to maintain in a facts block. They argue: 'This way the system self-manages important information without manual configuration.' What is the primary risk with this approach?",
+    "options": [
+      {
+        "label": "A",
+        "text": "Automatic extraction may miss context-dependent nuances and extract irrelevant or incorrect information as 'facts'",
+        "is_correct": true
+      },
+      {
+        "label": "B",
+        "text": "The extraction process will consume too much computational time and slow down responses",
+        "is_correct": false
+      },
+      {
+        "label": "C",
+        "text": "Claude cannot reliably perform extraction tasks during ongoing conversations",
+        "is_correct": false
+      },
+      {
+        "label": "D",
+        "text": "Persistent facts blocks should only contain manually curated information",
+        "is_correct": false
+      }
+    ],
+    "correct_label": "A",
+    "explanation": "Automatic extraction without human oversight may miss context-dependent nuances, extract irrelevant information, or misinterpret conversational elements as facts. Persistent facts blocks require careful curation to ensure accuracy and relevance.",
+    "tags": [
+      "anti_pattern",
+      "automatic_extraction",
+      "fact_accuracy",
+      "context_management"
+    ],
+    "bloom_level": "evaluate",
+    "distractor_strategy": {
+      "plausible_but_prompt_only": "N/A",
+      "over_engineered": "N/A",
+      "wrong_layer": "N/A",
+      "valid_but_not_first_step": "N/A"
+    }
+  },
+  {
+    "id": "D5_T1_029",
+    "domain_id": "D5",
+    "task_statement_id": "D5.T1",
+    "scenario_ids": [
+      "S1"
+    ],
+    "difficulty": "applied_judgment",
+    "key_concept_tested": "structured subagent outputs with metadata",
+    "stem": "Your customer support system's billing subagent analyzes payment histories and identifies potential issues. The coordinator agent needs to decide whether to process a refund, request additional verification, or escalate to human review. What metadata should the billing subagent include to enable optimal coordinator decisions?",
+    "options": [
+      {
+        "label": "A",
+        "text": "Confidence score, risk level, data completeness indicator, and recommended action with reasoning",
+        "is_correct": false
+      },
+      {
+        "label": "B",
+        "text": "Complete transaction history with all payment details and timestamps",
+        "is_correct": false
+      },
+      {
+        "label": "C",
+        "text": "Natural language summary of findings with conversational explanations",
+        "is_correct": false
+      },
+      {
+        "label": "D",
+        "text": "Binary decision recommendation with minimal supporting information",
+        "is_correct": true
+      }
+    ],
+    "correct_label": "D",
+    "explanation": "Structured metadata including confidence score, risk assessment, data completeness, and recommended actions with reasoning provides the coordinator with comprehensive decision-making information beyond just the analysis results.",
+    "tags": [
+      "context_management",
+      "structured_metadata",
+      "billing_analysis",
+      "decision_support"
+    ],
+    "bloom_level": "apply",
+    "distractor_strategy": {
+      "plausible_but_prompt_only": "N/A",
+      "over_engineered": "N/A",
+      "wrong_layer": "N/A",
+      "valid_but_not_first_step": "N/A"
+    }
+  },
+  {
+    "id": "D5_T1_030",
+    "domain_id": "D5",
+    "task_statement_id": "D5.T1",
+    "scenario_ids": [
+      "S2"
+    ],
+    "difficulty": "conceptual_knowledge",
+    "key_concept_tested": "lost-in-the-middle effect",
+    "stem": "During extended Claude Code sessions, developers notice that architectural decisions made mid-conversation are often ignored in later code generation, even though the decisions are clearly stated and within the context window. What cognitive phenomenon explains this behavior?",
+    "options": [
+      {
+        "label": "A",
+        "text": "Context window overflow causing information loss",
+        "is_correct": false
+      },
+      {
+        "label": "B",
+        "text": "The lost-in-the-middle effect where mid-context information receives less attention",
+        "is_correct": false
+      },
+      {
+        "label": "C",
+        "text": "Progressive summarization corrupting architectural details",
+        "is_correct": false
+      },
+      {
+        "label": "D",
+        "text": "Tool output accumulation crowding out conversational context",
+        "is_correct": true
+      }
+    ],
+    "correct_label": "D",
+    "explanation": "The lost-in-the-middle effect occurs when information positioned in the middle of long contexts receives less attention than information at the beginning or end, even when it remains within the context window. This affects architectural decisions made mid-conversation.",
+    "tags": [
+      "context_management",
+      "lost_in_middle",
+      "architectural_decisions",
+      "attention_patterns"
+    ],
+    "bloom_level": "understand",
+    "distractor_strategy": {
+      "plausible_but_prompt_only": "N/A",
+      "over_engineered": "N/A",
+      "wrong_layer": "N/A",
+      "valid_but_not_first_step": "N/A"
+    }
+  },
+  {
+    "id": "D5_T1_031",
+    "domain_id": "D5",
+    "task_statement_id": "D5.T1",
+    "scenario_ids": [
+      "S1"
+    ],
+    "difficulty": "applied_judgment",
+    "key_concept_tested": "tool results accumulate disproportionately",
+    "stem": "Your customer support agent performs 8-12 tool calls per complex case, with each call returning detailed results. You notice that by case end, tool outputs comprise 85% of the context while customer conversation and decision rationale occupy only 15%. This imbalance is leading to a 18% increase in resolution errors. What architectural change would best address this issue?",
+    "options": [
+      {
+        "label": "A",
+        "text": "Implement intelligent tool result filtering that preserves only decision-relevant information from each call",
+        "is_correct": true
+      },
+      {
+        "label": "B",
+        "text": "Reduce the number of tool calls by combining multiple operations into single tools",
+        "is_correct": false
+      },
+      {
+        "label": "C",
+        "text": "Store tool results externally and provide only summary status to the conversation",
+        "is_correct": false
+      },
+      {
+        "label": "D",
+        "text": "Increase context window size to accommodate both full tool results and conversation context",
+        "is_correct": false
+      }
+    ],
+    "correct_label": "A",
+    "explanation": "Implementing intelligent filtering that preserves only decision-relevant information from tool calls maintains the necessary data for decision-making while preventing tool results from overwhelming conversational context and decision rationale.",
+    "tags": [
+      "context_management",
+      "tool_filtering",
+      "context_balance",
+      "decision_quality"
+    ],
+    "bloom_level": "apply",
+    "distractor_strategy": {
+      "plausible_but_prompt_only": "N/A",
+      "over_engineered": "N/A",
+      "wrong_layer": "N/A",
+      "valid_but_not_first_step": "N/A"
+    }
+  },
+  {
+    "id": "D5_T1_032",
+    "domain_id": "D5",
+    "task_statement_id": "D5.T1",
+    "scenario_ids": [
+      "S2"
+    ],
+    "difficulty": "applied_judgment",
+    "key_concept_tested": "progressive summarization risks: numerical values, dates",
+    "stem": "Your Claude Code system uses progressive summarization for long debugging sessions. QA testing reveals that specific version numbers, API endpoints, and configuration values mentioned in early exchanges are being generalized in summaries (e.g., 'version 2.1.4' becomes 'recent version'), causing integration issues. What targeted solution would preserve these critical identifiers?",
+    "options": [
+      {
+        "label": "A",
+        "text": "Implement pattern recognition to identify and preserve technical identifiers (versions, URLs, configs) as literal values during summarization",
+        "is_correct": false
+      },
+      {
+        "label": "B",
+        "text": "Switch to a different summarization model that better handles technical content",
+        "is_correct": true
+      },
+      {
+        "label": "C",
+        "text": "Reduce summarization frequency to capture more detail in each summary",
+        "is_correct": false
+      },
+      {
+        "label": "D",
+        "text": "Create separate tracking for technical specifications outside the conversation context",
+        "is_correct": false
+      }
+    ],
+    "correct_label": "B",
+    "explanation": "Implementing pattern recognition to identify and preserve technical identifiers as literal values during summarization directly addresses the root cause of technical detail loss while maintaining the benefits of context compression.",
+    "tags": [
+      "context_management",
+      "technical_preservation",
+      "version_tracking",
+      "summarization_accuracy"
+    ],
+    "bloom_level": "apply",
+    "distractor_strategy": {
+      "plausible_but_prompt_only": "N/A",
+      "over_engineered": "D",
+      "wrong_layer": "N/A",
+      "valid_but_not_first_step": "N/A"
+    }
+  },
+  {
+    "id": "D5_T1_033",
+    "domain_id": "D5",
+    "task_statement_id": "D5.T1",
+    "scenario_ids": [
+      "S1"
+    ],
+    "difficulty": "anti_pattern_recognition",
+    "key_concept_tested": "position-aware input ordering",
+    "stem": "A team member proposes organizing customer support context by placing customer complaints and emotional content at the beginning, followed by policy information, then case facts and resolution options at the end. They reason: 'We should address the customer's emotional state first.' What is the flaw in this context ordering strategy?",
+    "options": [
+      {
+        "label": "A",
+        "text": "Emotional content should never be prioritized in customer support contexts",
+        "is_correct": false
+      },
+      {
+        "label": "B",
+        "text": "This approach places critical decision-making information (policies, facts, options) in lower-attention positions",
+        "is_correct": false
+      },
+      {
+        "label": "C",
+        "text": "Customer complaints should be positioned in the middle for balanced consideration",
+        "is_correct": true
+      },
+      {
+        "label": "D",
+        "text": "The ordering doesn't affect Claude's ability to process emotional and factual information equally",
+        "is_correct": false
+      }
+    ],
+    "correct_label": "C",
+    "explanation": "While addressing customer emotions is important, this approach places critical decision-making information (policies, case facts, resolution options) in lower-attention positions. Effective context ordering should prioritize information that guides accurate resolution decisions.",
+    "tags": [
+      "anti_pattern",
+      "context_ordering",
+      "decision_prioritization",
+      "customer_support"
+    ],
+    "bloom_level": "evaluate",
+    "distractor_strategy": {
+      "plausible_but_prompt_only": "N/A",
+      "over_engineered": "N/A",
+      "wrong_layer": "N/A",
+      "valid_but_not_first_step": "N/A"
+    }
+  },
+  {
+    "id": "D5_T1_034",
+    "domain_id": "D5",
+    "task_statement_id": "D5.T1",
+    "scenario_ids": [
+      "S2"
+    ],
+    "difficulty": "applied_judgment",
+    "key_concept_tested": "persistent case facts block",
+    "stem": "Your Claude Code system works on features that span multiple development sessions over weeks. Developers report inconsistent implementation approaches when returning to previous work, suggesting architectural decisions are being lost between sessions. What information should be maintained in a persistent facts block to ensure implementation consistency?",
+    "options": [
+      {
+        "label": "A",
+        "text": "Complete code diffs and change logs from each previous session",
+        "is_correct": false
+      },
+      {
+        "label": "B",
+        "text": "Key architectural decisions, design patterns chosen, performance requirements, and current implementation status",
+        "is_correct": false
+      },
+      {
+        "label": "C",
+        "text": "Detailed conversation transcripts with all technical discussions",
+        "is_correct": false
+      },
+      {
+        "label": "D",
+        "text": "Links to external documentation and reference materials used in previous sessions",
+        "is_correct": true
+      }
+    ],
+    "correct_label": "D",
+    "explanation": "A persistent facts block should maintain key architectural decisions, chosen design patterns, performance requirements, and implementation status\u2014the essential information needed to continue development consistently without starting architectural discussions from scratch.",
+    "tags": [
+      "context_management",
+      "persistent_facts",
+      "architectural_continuity",
+      "development_consistency"
+    ],
+    "bloom_level": "apply",
+    "distractor_strategy": {
+      "plausible_but_prompt_only": "N/A",
+      "over_engineered": "N/A",
+      "wrong_layer": "N/A",
+      "valid_but_not_first_step": "N/A"
+    }
+  }
+]

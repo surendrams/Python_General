@@ -1,0 +1,1600 @@
+[
+  {
+    "id": "D3_T4_001",
+    "domain_id": "D3",
+    "task_statement_id": "D3.T4",
+    "scenario_ids": [
+      "S2"
+    ],
+    "difficulty": "conceptual_knowledge",
+    "key_concept_tested": "plan mode: large-scale, multi-file, architectural, multiple valid approaches",
+    "stem": "Your team is migrating a monolithic Express.js application to a microservices architecture. The refactoring involves splitting 15 controllers across 8 new services, updating 25+ import statements, and restructuring the database layer. What is the primary advantage of using plan mode for this task?",
+    "options": [
+      {
+        "label": "A",
+        "text": "Plan mode automatically generates unit tests for each new microservice",
+        "is_correct": false
+      },
+      {
+        "label": "B",
+        "text": "Plan mode prevents Claude from making syntax errors during refactoring",
+        "is_correct": false
+      },
+      {
+        "label": "C",
+        "text": "Plan mode allows you to review and approve the architectural approach before execution",
+        "is_correct": true
+      },
+      {
+        "label": "D",
+        "text": "Plan mode completes large refactoring tasks faster than direct execution",
+        "is_correct": false
+      }
+    ],
+    "correct_label": "C",
+    "explanation": "Plan mode's key advantage for architectural changes is that it presents the overall strategy for review before execution. This is crucial for large-scale refactoring where multiple valid approaches exist and you need to ensure the chosen approach aligns with your architecture goals. The other options describe capabilities that aren't specific to plan mode or are incorrect.",
+    "tags": [
+      "plan_mode",
+      "architectural_changes",
+      "code_refactoring"
+    ],
+    "bloom_level": "understand",
+    "distractor_strategy": {
+      "plausible_but_prompt_only": "N/A",
+      "over_engineered": "A",
+      "wrong_layer": "N/A",
+      "valid_but_not_first_step": "N/A"
+    }
+  },
+  {
+    "id": "D3_T4_002",
+    "domain_id": "D3",
+    "task_statement_id": "D3.T4",
+    "scenario_ids": [
+      "S4"
+    ],
+    "difficulty": "applied_judgment",
+    "key_concept_tested": "direct execution: simple, well-scoped, single-file changes",
+    "stem": "You're using Claude to add logging statements to a single Python module that handles user authentication. The task involves adding 8 debug statements and 3 error handlers within the existing function structure. The file is 150 lines long and well-documented. What execution approach should you use?",
+    "options": [
+      {
+        "label": "A",
+        "text": "Use plan mode to ensure all logging follows the same format",
+        "is_correct": false
+      },
+      {
+        "label": "B",
+        "text": "Use the Explore subagent first, then plan mode for implementation",
+        "is_correct": false
+      },
+      {
+        "label": "C",
+        "text": "Use direct execution with clear instructions about logging patterns",
+        "is_correct": false
+      },
+      {
+        "label": "D",
+        "text": "Use direct execution since the scope is well-defined and contained to one file",
+        "is_correct": true
+      }
+    ],
+    "correct_label": "D",
+    "explanation": "This is an ideal case for direct execution: the task is simple (adding logging), well-scoped (single file), and the changes don't require architectural decisions. The file size (150 lines) is manageable, and the existing structure provides clear context. Plan mode would add unnecessary overhead for such straightforward modifications.",
+    "tags": [
+      "direct_execution",
+      "single_file_changes",
+      "logging"
+    ],
+    "bloom_level": "apply",
+    "distractor_strategy": {
+      "plausible_but_prompt_only": "C",
+      "over_engineered": "N/A",
+      "wrong_layer": "N/A",
+      "valid_but_not_first_step": "N/A"
+    }
+  },
+  {
+    "id": "D3_T4_003",
+    "domain_id": "D3",
+    "task_statement_id": "D3.T4",
+    "scenario_ids": [
+      "S2"
+    ],
+    "difficulty": "anti_pattern_recognition",
+    "key_concept_tested": "plan mode: large-scale, multi-file, architectural, multiple valid approaches",
+    "stem": "A developer wants to use Claude Code to implement a new feature that spans 12 files and involves creating new database tables, API endpoints, and frontend components. They say: 'I'll just tell Claude to implement it directly since I know exactly what I want.' What is the main risk with this approach?",
+    "options": [
+      {
+        "label": "A",
+        "text": "Claude will refuse to execute multi-file changes without plan mode enabled",
+        "is_correct": true
+      },
+      {
+        "label": "B",
+        "text": "Direct execution will create inconsistent code patterns across the 12 files",
+        "is_correct": false
+      },
+      {
+        "label": "C",
+        "text": "The developer won't be able to review the implementation strategy before changes are made",
+        "is_correct": false
+      },
+      {
+        "label": "D",
+        "text": "Claude will execute changes sequentially, causing integration issues between files",
+        "is_correct": false
+      }
+    ],
+    "correct_label": "A",
+    "explanation": "While the developer thinks they know exactly what they want, multi-file features often have multiple valid implementation approaches. Plan mode allows review of the overall strategy, dependency ordering, and architectural decisions before execution. Without it, you might get an implementation that works but doesn't align with your preferences or existing patterns. Claude won't refuse direct execution, but plan mode is the better choice here.",
+    "tags": [
+      "anti_pattern",
+      "multi_file_changes",
+      "architectural_planning"
+    ],
+    "bloom_level": "evaluate",
+    "distractor_strategy": {
+      "plausible_but_prompt_only": "N/A",
+      "over_engineered": "N/A",
+      "wrong_layer": "N/A",
+      "valid_but_not_first_step": "N/A"
+    }
+  },
+  {
+    "id": "D3_T4_004",
+    "domain_id": "D3",
+    "task_statement_id": "D3.T4",
+    "scenario_ids": [
+      "S4"
+    ],
+    "difficulty": "conceptual_knowledge",
+    "key_concept_tested": "Explore subagent for verbose discovery isolation",
+    "stem": "You need Claude to understand a complex legacy codebase with 200+ files before implementing a new integration. The codebase has minimal documentation and uses custom frameworks. What is the primary purpose of using the Explore subagent first?",
+    "options": [
+      {
+        "label": "A",
+        "text": "To automatically generate documentation for the entire codebase",
+        "is_correct": false
+      },
+      {
+        "label": "B",
+        "text": "To isolate the discovery process and prevent verbose exploration from cluttering the main conversation",
+        "is_correct": true
+      },
+      {
+        "label": "C",
+        "text": "To create a complete dependency graph of all 200+ files",
+        "is_correct": false
+      },
+      {
+        "label": "D",
+        "text": "To identify security vulnerabilities in the legacy code",
+        "is_correct": false
+      }
+    ],
+    "correct_label": "B",
+    "explanation": "The Explore subagent's primary purpose is to isolate verbose discovery activities from the main conversation context. When exploring large, complex codebases, Claude needs to examine many files and generate extensive analysis. Doing this in the main conversation would consume tokens and make the conversation unwieldy. The Explore subagent handles this discovery separately, then provides a clean summary to the main context.",
+    "tags": [
+      "explore_subagent",
+      "legacy_codebase",
+      "context_isolation"
+    ],
+    "bloom_level": "understand",
+    "distractor_strategy": {
+      "plausible_but_prompt_only": "N/A",
+      "over_engineered": "N/A",
+      "wrong_layer": "N/A",
+      "valid_but_not_first_step": "N/A"
+    }
+  },
+  {
+    "id": "D3_T4_005",
+    "domain_id": "D3",
+    "task_statement_id": "D3.T4",
+    "scenario_ids": [
+      "S2"
+    ],
+    "difficulty": "applied_judgment",
+    "key_concept_tested": "combining plan mode + direct execution",
+    "stem": "You're implementing a payment processing feature that requires creating 3 new API endpoints, updating 2 database schemas, and adding frontend validation. After using plan mode to design the approach, you notice one endpoint implementation has a bug. How should you handle the fix?",
+    "options": [
+      {
+        "label": "A",
+        "text": "Re-run the entire plan mode to regenerate all files with the fix",
+        "is_correct": false
+      },
+      {
+        "label": "B",
+        "text": "Use direct execution to fix the single endpoint while keeping other files unchanged",
+        "is_correct": false
+      },
+      {
+        "label": "C",
+        "text": "Use direct execution to fix the bug in the specific endpoint file",
+        "is_correct": true
+      },
+      {
+        "label": "D",
+        "text": "Ask Claude to create a new plan that only addresses the buggy endpoint",
+        "is_correct": false
+      }
+    ],
+    "correct_label": "C",
+    "explanation": "This demonstrates effective combining of plan mode and direct execution. Plan mode was appropriate for the initial multi-file, architectural implementation. Now that the overall structure is in place, the bug fix is a simple, well-scoped change to a single file - perfect for direct execution. This approach is efficient and doesn't require re-planning the entire feature.",
+    "tags": [
+      "combining_modes",
+      "bug_fixes",
+      "workflow_optimization"
+    ],
+    "bloom_level": "apply",
+    "distractor_strategy": {
+      "plausible_but_prompt_only": "N/A",
+      "over_engineered": "N/A",
+      "wrong_layer": "N/A",
+      "valid_but_not_first_step": "N/A"
+    }
+  },
+  {
+    "id": "D3_T4_006",
+    "domain_id": "D3",
+    "task_statement_id": "D3.T4",
+    "scenario_ids": [
+      "S4"
+    ],
+    "difficulty": "anti_pattern_recognition",
+    "key_concept_tested": "direct execution: simple, well-scoped, single-file changes",
+    "stem": "A team lead instructs their developers to 'always use direct execution for faster development - plan mode just slows us down.' They're working on a project that involves frequent API redesigns, database migrations, and cross-service integrations. What is the primary flaw in this approach?",
+    "options": [
+      {
+        "label": "A",
+        "text": "Direct execution cannot handle database migrations safely",
+        "is_correct": false
+      },
+      {
+        "label": "B",
+        "text": "API redesigns require human approval that only plan mode provides",
+        "is_correct": false
+      },
+      {
+        "label": "C",
+        "text": "Cross-service integrations need the architectural overview that plan mode offers",
+        "is_correct": false
+      },
+      {
+        "label": "D",
+        "text": "Complex, multi-component changes benefit from strategy review before implementation",
+        "is_correct": true
+      }
+    ],
+    "correct_label": "D",
+    "explanation": "The team lead's blanket preference for direct execution is an anti-pattern. While direct execution is faster for simple changes, complex work involving API redesigns, migrations, and cross-service integrations often has multiple valid approaches. Plan mode allows reviewing the strategy and ensuring all components work together coherently. Skipping this for complex changes can lead to implementations that work but aren't optimal or maintainable.",
+    "tags": [
+      "anti_pattern",
+      "execution_mode_selection",
+      "complex_changes"
+    ],
+    "bloom_level": "evaluate",
+    "distractor_strategy": {
+      "plausible_but_prompt_only": "N/A",
+      "over_engineered": "C",
+      "wrong_layer": "N/A",
+      "valid_but_not_first_step": "N/A"
+    }
+  },
+  {
+    "id": "D3_T4_007",
+    "domain_id": "D3",
+    "task_statement_id": "D3.T4",
+    "scenario_ids": [
+      "S2"
+    ],
+    "difficulty": "applied_judgment",
+    "key_concept_tested": "plan mode: multiple valid approaches",
+    "stem": "You're asking Claude to implement OAuth2 authentication for your React application. There are several valid approaches: using a library like Auth0, implementing JWT tokens manually, or using OAuth2 with PKCE flow. The implementation will touch authentication components, route guards, and API middleware. What execution mode should you choose?",
+    "options": [
+      {
+        "label": "A",
+        "text": "Use plan mode to compare approaches and see the recommended implementation strategy",
+        "is_correct": true
+      },
+      {
+        "label": "B",
+        "text": "Use direct execution with specific instructions about which OAuth2 approach to use",
+        "is_correct": false
+      },
+      {
+        "label": "C",
+        "text": "Use the Explore subagent to research OAuth2 options, then direct execution",
+        "is_correct": false
+      },
+      {
+        "label": "D",
+        "text": "Use direct execution since OAuth2 implementation patterns are well-established",
+        "is_correct": false
+      }
+    ],
+    "correct_label": "A",
+    "explanation": "This scenario has multiple valid approaches (Auth0, manual JWT, PKCE flow), making it ideal for plan mode. Plan mode will allow Claude to present different options, explain the tradeoffs, and show how the chosen approach will be implemented across the authentication components, route guards, and API middleware. This helps you make an informed decision about which approach best fits your needs.",
+    "tags": [
+      "plan_mode",
+      "multiple_approaches",
+      "oauth_implementation"
+    ],
+    "bloom_level": "apply",
+    "distractor_strategy": {
+      "plausible_but_prompt_only": "B",
+      "over_engineered": "N/A",
+      "wrong_layer": "N/A",
+      "valid_but_not_first_step": "N/A"
+    }
+  },
+  {
+    "id": "D3_T4_008",
+    "domain_id": "D3",
+    "task_statement_id": "D3.T4",
+    "scenario_ids": [
+      "S4"
+    ],
+    "difficulty": "conceptual_knowledge",
+    "key_concept_tested": "direct execution: simple, well-scoped, single-file changes",
+    "stem": "Which of the following tasks is BEST suited for direct execution rather than plan mode?",
+    "options": [
+      {
+        "label": "A",
+        "text": "Implementing a new microservice with 5 endpoints and database integration",
+        "is_correct": false
+      },
+      {
+        "label": "B",
+        "text": "Adding input validation to an existing form component",
+        "is_correct": true
+      },
+      {
+        "label": "C",
+        "text": "Migrating from REST to GraphQL across 8 API files",
+        "is_correct": false
+      },
+      {
+        "label": "D",
+        "text": "Refactoring the error handling strategy across the entire application",
+        "is_correct": false
+      }
+    ],
+    "correct_label": "B",
+    "explanation": "Adding input validation to an existing form component is a simple, well-scoped change that typically involves a single file. The requirements are clear, the scope is limited, and there's usually one straightforward approach. The other options involve multiple files, architectural decisions, or complex refactoring that would benefit from plan mode's strategic overview.",
+    "tags": [
+      "direct_execution",
+      "simple_changes",
+      "form_validation"
+    ],
+    "bloom_level": "understand",
+    "distractor_strategy": {
+      "plausible_but_prompt_only": "N/A",
+      "over_engineered": "A",
+      "wrong_layer": "N/A",
+      "valid_but_not_first_step": "N/A"
+    }
+  },
+  {
+    "id": "D3_T4_009",
+    "domain_id": "D3",
+    "task_statement_id": "D3.T4",
+    "scenario_ids": [
+      "S2"
+    ],
+    "difficulty": "applied_judgment",
+    "key_concept_tested": "Explore subagent for verbose discovery isolation",
+    "stem": "You're working with a React codebase that uses an unfamiliar state management library. Before implementing a new feature that will integrate with this state management, you need to understand the current patterns. The codebase has 50+ components using this library. What's the most effective approach?",
+    "options": [
+      {
+        "label": "A",
+        "text": "Use direct execution to implement the feature and learn the patterns through trial and error",
+        "is_correct": false
+      },
+      {
+        "label": "B",
+        "text": "Use plan mode to design the feature implementation based on standard React patterns",
+        "is_correct": false
+      },
+      {
+        "label": "C",
+        "text": "Use the Explore subagent to understand the state management patterns, then plan mode for implementation",
+        "is_correct": true
+      },
+      {
+        "label": "D",
+        "text": "Ask Claude to read the library documentation instead of exploring the codebase",
+        "is_correct": false
+      }
+    ],
+    "correct_label": "C",
+    "explanation": "This is an ideal use case for combining Explore subagent with plan mode. The Explore subagent can examine the 50+ components to understand how the unfamiliar state management library is being used in this specific codebase, identifying patterns and conventions. This discovery process would be verbose and clutter the main conversation. After exploration, plan mode can design the feature implementation using the discovered patterns.",
+    "tags": [
+      "explore_subagent",
+      "state_management",
+      "workflow_combination"
+    ],
+    "bloom_level": "apply",
+    "distractor_strategy": {
+      "plausible_but_prompt_only": "N/A",
+      "over_engineered": "N/A",
+      "wrong_layer": "N/A",
+      "valid_but_not_first_step": "N/A"
+    }
+  },
+  {
+    "id": "D3_T4_010",
+    "domain_id": "D3",
+    "task_statement_id": "D3.T4",
+    "scenario_ids": [
+      "S4"
+    ],
+    "difficulty": "anti_pattern_recognition",
+    "key_concept_tested": "plan mode: large-scale, multi-file, architectural",
+    "stem": "A developer is implementing a comprehensive logging system that will add structured logging to 20+ service files, create log aggregation utilities, and set up monitoring dashboards. They decide to use direct execution, saying 'Logging is straightforward - just add log statements everywhere.' What's wrong with this reasoning?",
+    "options": [
+      {
+        "label": "A",
+        "text": "Direct execution will create inconsistent log formats across different services",
+        "is_correct": false
+      },
+      {
+        "label": "B",
+        "text": "The scope involves architectural decisions about log structure, aggregation, and monitoring integration",
+        "is_correct": false
+      },
+      {
+        "label": "C",
+        "text": "Logging systems require careful planning to avoid performance impacts",
+        "is_correct": false
+      },
+      {
+        "label": "D",
+        "text": "The large scale and architectural nature of the change makes plan mode more appropriate",
+        "is_correct": true
+      }
+    ],
+    "correct_label": "D",
+    "explanation": "While individual log statements are simple, implementing a comprehensive logging system across 20+ files involves architectural decisions: log levels, structured formats, aggregation strategies, performance considerations, and monitoring integration. This is exactly the type of large-scale, multi-file, architectural change that benefits from plan mode's strategic overview. The developer's reasoning treats it as simple additions when it's actually a system-wide architectural change.",
+    "tags": [
+      "anti_pattern",
+      "logging_architecture",
+      "system_wide_changes"
+    ],
+    "bloom_level": "evaluate",
+    "distractor_strategy": {
+      "plausible_but_prompt_only": "N/A",
+      "over_engineered": "A",
+      "wrong_layer": "N/A",
+      "valid_but_not_first_step": "N/A"
+    }
+  },
+  {
+    "id": "D3_T4_011",
+    "domain_id": "D3",
+    "task_statement_id": "D3.T4",
+    "scenario_ids": [
+      "S2"
+    ],
+    "difficulty": "conceptual_knowledge",
+    "key_concept_tested": "combining plan mode + direct execution",
+    "stem": "After using plan mode to design a new user dashboard with 6 components and 3 API integrations, you realize you need to add a simple loading spinner to one of the components. What's the most efficient next step?",
+    "options": [
+      {
+        "label": "A",
+        "text": "Use direct execution to add the loading spinner to the specific component",
+        "is_correct": true
+      },
+      {
+        "label": "B",
+        "text": "Re-run plan mode to include the loading spinner in the overall design",
+        "is_correct": false
+      },
+      {
+        "label": "C",
+        "text": "Use the Explore subagent to research loading spinner best practices",
+        "is_correct": false
+      },
+      {
+        "label": "D",
+        "text": "Create a new plan specifically for the loading spinner implementation",
+        "is_correct": false
+      }
+    ],
+    "correct_label": "A",
+    "explanation": "This demonstrates the effective combination of plan mode and direct execution. Plan mode was appropriate for the initial multi-component dashboard design. Now that the architecture is established, adding a loading spinner is a simple, well-scoped change to a single component - perfect for direct execution. This workflow maximizes efficiency by using each mode for its strengths.",
+    "tags": [
+      "combining_modes",
+      "loading_spinner",
+      "workflow_efficiency"
+    ],
+    "bloom_level": "understand",
+    "distractor_strategy": {
+      "plausible_but_prompt_only": "N/A",
+      "over_engineered": "N/A",
+      "wrong_layer": "N/A",
+      "valid_but_not_first_step": "N/A"
+    }
+  },
+  {
+    "id": "D3_T4_012",
+    "domain_id": "D3",
+    "task_statement_id": "D3.T4",
+    "scenario_ids": [
+      "S4"
+    ],
+    "difficulty": "applied_judgment",
+    "key_concept_tested": "plan mode: multiple valid approaches",
+    "stem": "Your team needs to implement real-time notifications in your web application. You could use WebSockets, Server-Sent Events, or polling-based approaches. The implementation will affect the frontend, backend API, and database design. A junior developer suggests using direct execution because 'notifications are a common feature.' How should you respond?",
+    "options": [
+      {
+        "label": "A",
+        "text": "Agree - notifications are well-understood and don't need planning",
+        "is_correct": false
+      },
+      {
+        "label": "B",
+        "text": "Use plan mode because there are multiple valid technical approaches to evaluate",
+        "is_correct": true
+      },
+      {
+        "label": "C",
+        "text": "Use direct execution but specify which notification approach to implement",
+        "is_correct": false
+      },
+      {
+        "label": "D",
+        "text": "Use the Explore subagent to research notification patterns in similar applications",
+        "is_correct": false
+      }
+    ],
+    "correct_label": "B",
+    "explanation": "While notifications are common, this scenario presents multiple valid technical approaches (WebSockets, SSE, polling) with different tradeoffs in complexity, scalability, and browser support. The implementation affects multiple layers (frontend, backend, database), making it architectural in nature. Plan mode allows comparing approaches and seeing how each would be implemented across the stack before committing to one approach.",
+    "tags": [
+      "plan_mode",
+      "real_time_notifications",
+      "technical_approaches"
+    ],
+    "bloom_level": "apply",
+    "distractor_strategy": {
+      "plausible_but_prompt_only": "N/A",
+      "over_engineered": "N/A",
+      "wrong_layer": "N/A",
+      "valid_but_not_first_step": "N/A"
+    }
+  },
+  {
+    "id": "D3_T4_013",
+    "domain_id": "D3",
+    "task_statement_id": "D3.T4",
+    "scenario_ids": [
+      "S2"
+    ],
+    "difficulty": "conceptual_knowledge",
+    "key_concept_tested": "direct execution: simple, well-scoped, single-file changes",
+    "stem": "You need to fix a typo in an error message, update a deprecated API call to use the new syntax, and add a missing import statement in a utility file. What execution approach is most appropriate?",
+    "options": [
+      {
+        "label": "A",
+        "text": "Plan mode to ensure all changes are coordinated properly",
+        "is_correct": false
+      },
+      {
+        "label": "B",
+        "text": "Explore subagent to understand the context of each change",
+        "is_correct": false
+      },
+      {
+        "label": "C",
+        "text": "Direct execution since these are simple, well-defined changes",
+        "is_correct": true
+      },
+      {
+        "label": "D",
+        "text": "Plan mode because multiple changes are involved",
+        "is_correct": false
+      }
+    ],
+    "correct_label": "C",
+    "explanation": "These are all simple, well-defined changes: fixing a typo, updating an API call, and adding an import. Even though there are multiple changes, they're all straightforward and don't require architectural decisions or complex coordination. Direct execution is efficient for this type of maintenance work. The number of changes doesn't automatically require plan mode - the complexity and scope of each change matters more.",
+    "tags": [
+      "direct_execution",
+      "maintenance_tasks",
+      "simple_fixes"
+    ],
+    "bloom_level": "understand",
+    "distractor_strategy": {
+      "plausible_but_prompt_only": "N/A",
+      "over_engineered": "N/A",
+      "wrong_layer": "N/A",
+      "valid_but_not_first_step": "N/A"
+    }
+  },
+  {
+    "id": "D3_T4_014",
+    "domain_id": "D3",
+    "task_statement_id": "D3.T4",
+    "scenario_ids": [
+      "S4"
+    ],
+    "difficulty": "applied_judgment",
+    "key_concept_tested": "Explore subagent for verbose discovery isolation",
+    "stem": "You're joining a team that has built a complex data processing pipeline with custom ETL tools, proprietary data formats, and domain-specific business logic spread across 100+ Python files. Before making any changes, you need to understand how the system works. What's your first step?",
+    "options": [
+      {
+        "label": "A",
+        "text": "Use direct execution to make small exploratory changes and learn through experimentation",
+        "is_correct": false
+      },
+      {
+        "label": "B",
+        "text": "Use plan mode to design improvements based on standard ETL patterns",
+        "is_correct": false
+      },
+      {
+        "label": "C",
+        "text": "Use the Explore subagent to map out the system architecture and data flow patterns",
+        "is_correct": false
+      },
+      {
+        "label": "D",
+        "text": "Use the Explore subagent to understand the system without cluttering your main conversation",
+        "is_correct": true
+      }
+    ],
+    "correct_label": "D",
+    "explanation": "This is exactly what the Explore subagent is designed for: understanding complex, unfamiliar systems without cluttering the main conversation with verbose discovery. With 100+ files of custom tools and proprietary formats, Claude will need to examine many files and generate extensive analysis to understand the system. The Explore subagent isolates this discovery process and provides a clean summary to the main context.",
+    "tags": [
+      "explore_subagent",
+      "complex_systems",
+      "data_pipeline"
+    ],
+    "bloom_level": "apply",
+    "distractor_strategy": {
+      "plausible_but_prompt_only": "N/A",
+      "over_engineered": "N/A",
+      "wrong_layer": "N/A",
+      "valid_but_not_first_step": "N/A"
+    }
+  },
+  {
+    "id": "D3_T4_015",
+    "domain_id": "D3",
+    "task_statement_id": "D3.T4",
+    "scenario_ids": [
+      "S2"
+    ],
+    "difficulty": "anti_pattern_recognition",
+    "key_concept_tested": "combining plan mode + direct execution",
+    "stem": "A developer always uses the same execution mode for consistency, saying 'I use plan mode for everything because it's more thorough.' They use plan mode for tasks like fixing typos, adding console.log statements, and updating configuration values. What's the issue with this approach?",
+    "options": [
+      {
+        "label": "A",
+        "text": "Plan mode is slower and less efficient for simple, well-scoped changes",
+        "is_correct": true
+      },
+      {
+        "label": "B",
+        "text": "Plan mode cannot handle configuration file updates correctly",
+        "is_correct": false
+      },
+      {
+        "label": "C",
+        "text": "Using only one execution mode violates Claude Code best practices",
+        "is_correct": false
+      },
+      {
+        "label": "D",
+        "text": "Plan mode will generate unnecessary files for simple tasks",
+        "is_correct": false
+      }
+    ],
+    "correct_label": "A",
+    "explanation": "This developer has the anti-pattern of over-using plan mode. While plan mode is valuable for complex, architectural, or multi-approach scenarios, using it for simple tasks like fixing typos or adding log statements is inefficient. These tasks are well-scoped, have obvious solutions, and don't benefit from strategic planning. Direct execution would be faster and more appropriate. The key is matching the execution mode to the task complexity.",
+    "tags": [
+      "anti_pattern",
+      "execution_mode_overuse",
+      "efficiency"
+    ],
+    "bloom_level": "evaluate",
+    "distractor_strategy": {
+      "plausible_but_prompt_only": "N/A",
+      "over_engineered": "N/A",
+      "wrong_layer": "N/A",
+      "valid_but_not_first_step": "N/A"
+    }
+  },
+  {
+    "id": "D3_T4_016",
+    "domain_id": "D3",
+    "task_statement_id": "D3.T4",
+    "scenario_ids": [
+      "S4"
+    ],
+    "difficulty": "applied_judgment",
+    "key_concept_tested": "plan mode: large-scale, multi-file, architectural",
+    "stem": "You're tasked with implementing a comprehensive error handling strategy for a microservices application. This involves creating custom exception classes, updating 15 service files with consistent error handling, implementing retry logic, and adding monitoring integration. What execution approach should you use?",
+    "options": [
+      {
+        "label": "A",
+        "text": "Direct execution with detailed instructions about error handling patterns",
+        "is_correct": false
+      },
+      {
+        "label": "B",
+        "text": "Plan mode to design the error handling architecture across all components",
+        "is_correct": true
+      },
+      {
+        "label": "C",
+        "text": "Explore subagent to research error handling patterns, then direct execution",
+        "is_correct": false
+      },
+      {
+        "label": "D",
+        "text": "Direct execution for each service file individually to maintain focus",
+        "is_correct": false
+      }
+    ],
+    "correct_label": "B",
+    "explanation": "This is a large-scale, multi-file, architectural change that's perfect for plan mode. Implementing comprehensive error handling involves strategic decisions about exception hierarchies, retry strategies, monitoring integration, and consistent patterns across 15+ files. Plan mode allows you to review the overall architecture and ensure all components work together coherently before implementation begins.",
+    "tags": [
+      "plan_mode",
+      "error_handling",
+      "microservices_architecture"
+    ],
+    "bloom_level": "apply",
+    "distractor_strategy": {
+      "plausible_but_prompt_only": "A",
+      "over_engineered": "D",
+      "wrong_layer": "N/A",
+      "valid_but_not_first_step": "N/A"
+    }
+  },
+  {
+    "id": "D3_T4_017",
+    "domain_id": "D3",
+    "task_statement_id": "D3.T4",
+    "scenario_ids": [
+      "S2"
+    ],
+    "difficulty": "conceptual_knowledge",
+    "key_concept_tested": "plan mode: multiple valid approaches",
+    "stem": "You want Claude to implement caching for your API responses. You could use Redis, in-memory caching, database-level caching, or CDN-based caching. Each approach has different performance characteristics and implementation complexity. Why is plan mode particularly valuable here?",
+    "options": [
+      {
+        "label": "A",
+        "text": "Plan mode automatically benchmarks different caching solutions",
+        "is_correct": false
+      },
+      {
+        "label": "B",
+        "text": "Plan mode can present multiple approaches and their tradeoffs before implementation",
+        "is_correct": false
+      },
+      {
+        "label": "C",
+        "text": "Plan mode prevents Claude from choosing an inappropriate caching strategy",
+        "is_correct": false
+      },
+      {
+        "label": "D",
+        "text": "Plan mode allows you to see and compare different implementation strategies",
+        "is_correct": true
+      }
+    ],
+    "correct_label": "D",
+    "explanation": "This scenario exemplifies when plan mode is most valuable: multiple valid approaches exist (Redis, in-memory, database, CDN), each with different tradeoffs. Plan mode allows Claude to present these different strategies, explain their pros and cons, and show how each would be implemented. This helps you make an informed decision based on your specific requirements for performance, complexity, and infrastructure.",
+    "tags": [
+      "plan_mode",
+      "caching_strategies",
+      "approach_comparison"
+    ],
+    "bloom_level": "understand",
+    "distractor_strategy": {
+      "plausible_but_prompt_only": "N/A",
+      "over_engineered": "N/A",
+      "wrong_layer": "N/A",
+      "valid_but_not_first_step": "N/A"
+    }
+  },
+  {
+    "id": "D3_T4_018",
+    "domain_id": "D3",
+    "task_statement_id": "D3.T4",
+    "scenario_ids": [
+      "S4"
+    ],
+    "difficulty": "applied_judgment",
+    "key_concept_tested": "direct execution: simple, well-scoped, single-file changes",
+    "stem": "After implementing a new API endpoint using plan mode, you need to add rate limiting middleware to that specific endpoint. The rate limiting logic already exists in your codebase and just needs to be applied to this one route. What's the best approach?",
+    "options": [
+      {
+        "label": "A",
+        "text": "Use plan mode to ensure the rate limiting integrates properly with the existing endpoint",
+        "is_correct": false
+      },
+      {
+        "label": "B",
+        "text": "Use the Explore subagent to understand the existing rate limiting implementation",
+        "is_correct": false
+      },
+      {
+        "label": "C",
+        "text": "Use direct execution to apply the existing rate limiting middleware",
+        "is_correct": true
+      },
+      {
+        "label": "D",
+        "text": "Create a new plan specifically for adding rate limiting to this endpoint",
+        "is_correct": false
+      }
+    ],
+    "correct_label": "C",
+    "explanation": "This is a perfect case for direct execution following plan mode implementation. The endpoint is already implemented, the rate limiting logic exists, and you just need to apply it to one route. This is simple, well-scoped, and doesn't require architectural decisions. Direct execution is efficient here, demonstrating good workflow combining plan mode for the initial implementation with direct execution for simple additions.",
+    "tags": [
+      "direct_execution",
+      "rate_limiting",
+      "endpoint_modification"
+    ],
+    "bloom_level": "apply",
+    "distractor_strategy": {
+      "plausible_but_prompt_only": "N/A",
+      "over_engineered": "N/A",
+      "wrong_layer": "N/A",
+      "valid_but_not_first_step": "N/A"
+    }
+  },
+  {
+    "id": "D3_T4_019",
+    "domain_id": "D3",
+    "task_statement_id": "D3.T4",
+    "scenario_ids": [
+      "S2"
+    ],
+    "difficulty": "anti_pattern_recognition",
+    "key_concept_tested": "Explore subagent for verbose discovery isolation",
+    "stem": "A developer wants to understand a large codebase before making changes. They decide to ask Claude directly in the main conversation: 'Please read through all 200 files in this project and explain how everything works.' What's problematic about this approach?",
+    "options": [
+      {
+        "label": "A",
+        "text": "Claude cannot read 200 files in a single conversation due to token limits",
+        "is_correct": false
+      },
+      {
+        "label": "B",
+        "text": "The verbose exploration will consume tokens and clutter the main conversation context",
+        "is_correct": false
+      },
+      {
+        "label": "C",
+        "text": "Direct exploration in the main conversation prevents effective follow-up development tasks",
+        "is_correct": false
+      },
+      {
+        "label": "D",
+        "text": "This type of comprehensive discovery should be isolated using the Explore subagent",
+        "is_correct": true
+      }
+    ],
+    "correct_label": "D",
+    "explanation": "This is an anti-pattern of not using the Explore subagent for its intended purpose. Comprehensive codebase discovery generates verbose output that clutters the main conversation and consumes tokens. The Explore subagent is specifically designed to handle this type of discovery work in isolation, then provide a clean summary to the main context. This keeps the main conversation focused and efficient for subsequent development tasks.",
+    "tags": [
+      "anti_pattern",
+      "explore_subagent",
+      "codebase_discovery"
+    ],
+    "bloom_level": "evaluate",
+    "distractor_strategy": {
+      "plausible_but_prompt_only": "N/A",
+      "over_engineered": "N/A",
+      "wrong_layer": "N/A",
+      "valid_but_not_first_step": "N/A"
+    }
+  },
+  {
+    "id": "D3_T4_020",
+    "domain_id": "D3",
+    "task_statement_id": "D3.T4",
+    "scenario_ids": [
+      "S4"
+    ],
+    "difficulty": "conceptual_knowledge",
+    "key_concept_tested": "combining plan mode + direct execution",
+    "stem": "What is the most effective workflow when implementing a complex new feature that will require both architectural decisions and subsequent refinements?",
+    "options": [
+      {
+        "label": "A",
+        "text": "Use plan mode for initial implementation, then direct execution for refinements and bug fixes",
+        "is_correct": false
+      },
+      {
+        "label": "B",
+        "text": "Use only plan mode to maintain consistency throughout the entire development process",
+        "is_correct": true
+      },
+      {
+        "label": "C",
+        "text": "Use direct execution throughout to maintain development velocity",
+        "is_correct": false
+      },
+      {
+        "label": "D",
+        "text": "Use the Explore subagent for discovery, then plan mode for everything else",
+        "is_correct": false
+      }
+    ],
+    "correct_label": "B",
+    "explanation": "The most effective workflow combines both modes based on task characteristics: plan mode for the initial architectural implementation where strategy matters, then direct execution for subsequent refinements, bug fixes, and simple additions. This maximizes efficiency by using each mode for its strengths - plan mode for complex decisions, direct execution for straightforward changes.",
+    "tags": [
+      "workflow_combination",
+      "feature_development",
+      "execution_modes"
+    ],
+    "bloom_level": "understand",
+    "distractor_strategy": {
+      "plausible_but_prompt_only": "N/A",
+      "over_engineered": "N/A",
+      "wrong_layer": "N/A",
+      "valid_but_not_first_step": "N/A"
+    }
+  },
+  {
+    "id": "D3_T4_021",
+    "domain_id": "D3",
+    "task_statement_id": "D3.T4",
+    "scenario_ids": [
+      "S2"
+    ],
+    "difficulty": "applied_judgment",
+    "key_concept_tested": "plan mode: large-scale, multi-file, architectural",
+    "stem": "Your e-commerce application needs to be internationalized (i18n) to support 5 languages. This involves extracting hardcoded strings from 30+ components, creating translation files, updating the routing system, and implementing language switching. What execution approach should you use?",
+    "options": [
+      {
+        "label": "A",
+        "text": "Direct execution with clear instructions about i18n best practices",
+        "is_correct": false
+      },
+      {
+        "label": "B",
+        "text": "Plan mode to design the internationalization architecture and implementation strategy",
+        "is_correct": false
+      },
+      {
+        "label": "C",
+        "text": "Explore subagent to find all hardcoded strings, then direct execution for implementation",
+        "is_correct": false
+      },
+      {
+        "label": "D",
+        "text": "Plan mode because this is a large-scale architectural change affecting multiple systems",
+        "is_correct": true
+      }
+    ],
+    "correct_label": "D",
+    "explanation": "Internationalization is a classic large-scale, architectural change affecting multiple systems: UI components, routing, file structure, and build processes. It involves strategic decisions about translation file organization, fallback strategies, and implementation patterns across 30+ files. Plan mode allows you to review the overall i18n strategy and ensure consistent implementation across all components.",
+    "tags": [
+      "plan_mode",
+      "internationalization",
+      "large_scale_changes"
+    ],
+    "bloom_level": "apply",
+    "distractor_strategy": {
+      "plausible_but_prompt_only": "A",
+      "over_engineered": "N/A",
+      "wrong_layer": "N/A",
+      "valid_but_not_first_step": "N/A"
+    }
+  },
+  {
+    "id": "D3_T4_022",
+    "domain_id": "D3",
+    "task_statement_id": "D3.T4",
+    "scenario_ids": [
+      "S4"
+    ],
+    "difficulty": "anti_pattern_recognition",
+    "key_concept_tested": "direct execution: simple, well-scoped, single-file changes",
+    "stem": "A team decides to use direct execution for all tasks to 'move fast and iterate quickly.' They use it for implementing new features, refactoring entire modules, and making architectural changes. After 3 months, they report that code quality has declined and integration issues are frequent. What's the root cause?",
+    "options": [
+      {
+        "label": "A",
+        "text": "Direct execution doesn't support complex refactoring operations",
+        "is_correct": false
+      },
+      {
+        "label": "B",
+        "text": "They're not using plan mode for complex, architectural changes that need strategic oversight",
+        "is_correct": true
+      },
+      {
+        "label": "C",
+        "text": "Direct execution creates inconsistent code patterns across different developers",
+        "is_correct": false
+      },
+      {
+        "label": "D",
+        "text": "They need to combine direct execution with more Explore subagent usage",
+        "is_correct": false
+      }
+    ],
+    "correct_label": "B",
+    "explanation": "This team has the anti-pattern of over-relying on direct execution. While direct execution is great for simple, well-scoped changes, using it for complex features, refactoring, and architectural changes bypasses the strategic planning that plan mode provides. Without reviewing the overall approach first, they're getting implementations that work individually but don't integrate well or follow consistent patterns.",
+    "tags": [
+      "anti_pattern",
+      "direct_execution_overuse",
+      "code_quality"
+    ],
+    "bloom_level": "evaluate",
+    "distractor_strategy": {
+      "plausible_but_prompt_only": "N/A",
+      "over_engineered": "N/A",
+      "wrong_layer": "N/A",
+      "valid_but_not_first_step": "N/A"
+    }
+  },
+  {
+    "id": "D3_T4_023",
+    "domain_id": "D3",
+    "task_statement_id": "D3.T4",
+    "scenario_ids": [
+      "S2"
+    ],
+    "difficulty": "applied_judgment",
+    "key_concept_tested": "Explore subagent for verbose discovery isolation",
+    "stem": "You need to integrate with a third-party API that has complex authentication flows, rate limiting, and webhook handling. The API documentation is extensive but you want to understand how similar integrations are implemented in your existing codebase first. What's the best approach?",
+    "options": [
+      {
+        "label": "A",
+        "text": "Use plan mode to design the integration based on the API documentation",
+        "is_correct": false
+      },
+      {
+        "label": "B",
+        "text": "Use direct execution to implement a basic integration and iterate",
+        "is_correct": false
+      },
+      {
+        "label": "C",
+        "text": "Use the Explore subagent to analyze existing API integrations, then plan mode for implementation",
+        "is_correct": true
+      },
+      {
+        "label": "D",
+        "text": "Ask Claude to read the API documentation and implement following standard patterns",
+        "is_correct": false
+      }
+    ],
+    "correct_label": "C",
+    "explanation": "This is an ideal workflow combination: use the Explore subagent to understand existing API integration patterns in your codebase (which could involve examining multiple files and generating verbose analysis), then use plan mode to design the new integration following those discovered patterns. This ensures consistency with existing code while handling the complex requirements of authentication, rate limiting, and webhooks.",
+    "tags": [
+      "explore_subagent",
+      "api_integration",
+      "workflow_combination"
+    ],
+    "bloom_level": "apply",
+    "distractor_strategy": {
+      "plausible_but_prompt_only": "N/A",
+      "over_engineered": "N/A",
+      "wrong_layer": "N/A",
+      "valid_but_not_first_step": "N/A"
+    }
+  },
+  {
+    "id": "D3_T4_024",
+    "domain_id": "D3",
+    "task_statement_id": "D3.T4",
+    "scenario_ids": [
+      "S4"
+    ],
+    "difficulty": "conceptual_knowledge",
+    "key_concept_tested": "plan mode: multiple valid approaches",
+    "stem": "You're implementing search functionality for your application. You could use full-text search in your existing database, integrate with Elasticsearch, use a cloud search service, or implement client-side filtering. Each has different performance, cost, and complexity tradeoffs. What makes plan mode valuable for this task?",
+    "options": [
+      {
+        "label": "A",
+        "text": "Plan mode can automatically benchmark the performance of each search approach",
+        "is_correct": false
+      },
+      {
+        "label": "B",
+        "text": "Plan mode allows comparing different approaches and their implementation strategies",
+        "is_correct": true
+      },
+      {
+        "label": "C",
+        "text": "Plan mode prevents you from choosing an inappropriate search solution",
+        "is_correct": false
+      },
+      {
+        "label": "D",
+        "text": "Plan mode automatically integrates with your existing database schema",
+        "is_correct": false
+      }
+    ],
+    "correct_label": "B",
+    "explanation": "This scenario exemplifies plan mode's strength with multiple valid approaches. Search implementation has several viable options (database full-text, Elasticsearch, cloud services, client-side), each with different tradeoffs in performance, cost, and complexity. Plan mode allows Claude to present these approaches, explain their pros and cons, and show how each would be implemented in your specific context, helping you make an informed decision.",
+    "tags": [
+      "plan_mode",
+      "search_implementation",
+      "approach_evaluation"
+    ],
+    "bloom_level": "understand",
+    "distractor_strategy": {
+      "plausible_but_prompt_only": "N/A",
+      "over_engineered": "N/A",
+      "wrong_layer": "N/A",
+      "valid_but_not_first_step": "N/A"
+    }
+  },
+  {
+    "id": "D3_T4_025",
+    "domain_id": "D3",
+    "task_statement_id": "D3.T4",
+    "scenario_ids": [
+      "S2"
+    ],
+    "difficulty": "applied_judgment",
+    "key_concept_tested": "combining plan mode + direct execution",
+    "stem": "You used plan mode to implement a user registration system with email verification, password validation, and profile creation. During testing, you discover the email validation regex is too restrictive and needs to be updated. What's the most efficient next step?",
+    "options": [
+      {
+        "label": "A",
+        "text": "Re-run plan mode to regenerate the entire registration system with the corrected regex",
+        "is_correct": false
+      },
+      {
+        "label": "B",
+        "text": "Use direct execution to update the email validation regex in the specific validation file",
+        "is_correct": false
+      },
+      {
+        "label": "C",
+        "text": "Create a new plan focused specifically on email validation improvements",
+        "is_correct": false
+      },
+      {
+        "label": "D",
+        "text": "Use direct execution to fix the regex since it's a simple, well-scoped change",
+        "is_correct": true
+      }
+    ],
+    "correct_label": "D",
+    "explanation": "This demonstrates effective workflow combination. Plan mode was appropriate for the initial multi-component registration system. Now that the architecture is implemented, fixing the email regex is a simple, well-scoped change to a specific validation rule - perfect for direct execution. This approach is efficient and doesn't require re-planning the entire system for a small fix.",
+    "tags": [
+      "combining_modes",
+      "regex_validation",
+      "bug_fixes"
+    ],
+    "bloom_level": "apply",
+    "distractor_strategy": {
+      "plausible_but_prompt_only": "N/A",
+      "over_engineered": "N/A",
+      "wrong_layer": "N/A",
+      "valid_but_not_first_step": "N/A"
+    }
+  },
+  {
+    "id": "D3_T4_026",
+    "domain_id": "D3",
+    "task_statement_id": "D3.T4",
+    "scenario_ids": [
+      "S4"
+    ],
+    "difficulty": "anti_pattern_recognition",
+    "key_concept_tested": "plan mode: large-scale, multi-file, architectural",
+    "stem": "A developer wants to migrate their application from JavaScript to TypeScript. This involves updating 50+ files, adding type definitions, configuring the build system, and updating tests. They say: 'I'll just tell Claude to convert each file individually using direct execution to keep it simple.' What's the flaw in this approach?",
+    "options": [
+      {
+        "label": "A",
+        "text": "Direct execution cannot handle TypeScript conversion safely",
+        "is_correct": false
+      },
+      {
+        "label": "B",
+        "text": "File-by-file conversion will create inconsistent typing patterns across the codebase",
+        "is_correct": false
+      },
+      {
+        "label": "C",
+        "text": "This large-scale migration needs architectural planning for consistent patterns and build configuration",
+        "is_correct": true
+      },
+      {
+        "label": "D",
+        "text": "TypeScript migration requires the Explore subagent to analyze existing code patterns first",
+        "is_correct": false
+      }
+    ],
+    "correct_label": "C",
+    "explanation": "TypeScript migration is a large-scale, architectural change that affects build systems, type patterns, and project structure across 50+ files. While individual file conversions might seem simple, the migration involves strategic decisions about type definitions, strictness levels, build configuration, and consistent patterns. Plan mode allows reviewing the overall migration strategy and ensuring coherent implementation across all files.",
+    "tags": [
+      "anti_pattern",
+      "typescript_migration",
+      "architectural_changes"
+    ],
+    "bloom_level": "evaluate",
+    "distractor_strategy": {
+      "plausible_but_prompt_only": "N/A",
+      "over_engineered": "N/A",
+      "wrong_layer": "N/A",
+      "valid_but_not_first_step": "N/A"
+    }
+  },
+  {
+    "id": "D3_T4_027",
+    "domain_id": "D3",
+    "task_statement_id": "D3.T4",
+    "scenario_ids": [
+      "S2"
+    ],
+    "difficulty": "conceptual_knowledge",
+    "key_concept_tested": "direct execution: simple, well-scoped, single-file changes",
+    "stem": "Which scenario is LEAST suitable for direct execution?",
+    "options": [
+      {
+        "label": "A",
+        "text": "Updating a configuration file to change an API endpoint URL",
+        "is_correct": true
+      },
+      {
+        "label": "B",
+        "text": "Implementing a complete user authentication system with multiple security layers",
+        "is_correct": false
+      },
+      {
+        "label": "C",
+        "text": "Adding a new validation rule to an existing form",
+        "is_correct": false
+      },
+      {
+        "label": "D",
+        "text": "Fixing a typo in a component's display text",
+        "is_correct": false
+      }
+    ],
+    "correct_label": "A",
+    "explanation": "Implementing a complete user authentication system is least suitable for direct execution because it's a large-scale, architectural change involving multiple components (login, registration, password reset, session management, security middleware) with multiple valid approaches (JWT, sessions, OAuth). This requires the strategic planning that plan mode provides. The other options are simple, well-scoped changes perfect for direct execution.",
+    "tags": [
+      "direct_execution",
+      "authentication_system",
+      "complexity_assessment"
+    ],
+    "bloom_level": "understand",
+    "distractor_strategy": {
+      "plausible_but_prompt_only": "N/A",
+      "over_engineered": "N/A",
+      "wrong_layer": "N/A",
+      "valid_but_not_first_step": "N/A"
+    }
+  },
+  {
+    "id": "D3_T4_028",
+    "domain_id": "D3",
+    "task_statement_id": "D3.T4",
+    "scenario_ids": [
+      "S4"
+    ],
+    "difficulty": "applied_judgment",
+    "key_concept_tested": "Explore subagent for verbose discovery isolation",
+    "stem": "You're working on a data analytics dashboard that uses a custom charting library you've never seen before. The dashboard has 20+ different chart types implemented across multiple files. Before adding a new chart type, you need to understand the existing patterns. What's your approach?",
+    "options": [
+      {
+        "label": "A",
+        "text": "Use direct execution to implement the new chart type based on standard charting patterns",
+        "is_correct": false
+      },
+      {
+        "label": "B",
+        "text": "Use the Explore subagent to understand the custom charting patterns without cluttering your main conversation",
+        "is_correct": true
+      },
+      {
+        "label": "C",
+        "text": "Use plan mode to design the new chart type implementation",
+        "is_correct": false
+      },
+      {
+        "label": "D",
+        "text": "Ask Claude to read the charting library documentation instead of exploring the codebase",
+        "is_correct": false
+      }
+    ],
+    "correct_label": "B",
+    "explanation": "This is a perfect use case for the Explore subagent. Understanding how a custom charting library is implemented across 20+ chart types will require examining multiple files and generating verbose analysis about patterns, conventions, and architecture. The Explore subagent isolates this discovery process from your main conversation, then provides a clean summary of the patterns you need to follow for the new chart type.",
+    "tags": [
+      "explore_subagent",
+      "charting_library",
+      "pattern_discovery"
+    ],
+    "bloom_level": "apply",
+    "distractor_strategy": {
+      "plausible_but_prompt_only": "N/A",
+      "over_engineered": "N/A",
+      "wrong_layer": "N/A",
+      "valid_but_not_first_step": "N/A"
+    }
+  },
+  {
+    "id": "D3_T4_029",
+    "domain_id": "D3",
+    "task_statement_id": "D3.T4",
+    "scenario_ids": [
+      "S2"
+    ],
+    "difficulty": "applied_judgment",
+    "key_concept_tested": "plan mode: multiple valid approaches",
+    "stem": "You need to implement file upload functionality for your web application. You could handle uploads on the client-side with direct S3 uploads, use a traditional server-side upload with local storage, implement chunked uploads for large files, or use a specialized service like Cloudinary. How should you proceed?",
+    "options": [
+      {
+        "label": "A",
+        "text": "Use direct execution with specific instructions about which upload approach to implement",
+        "is_correct": false
+      },
+      {
+        "label": "B",
+        "text": "Use the Explore subagent to research file upload best practices",
+        "is_correct": false
+      },
+      {
+        "label": "C",
+        "text": "Use plan mode to compare upload approaches and see implementation strategies for each",
+        "is_correct": true
+      },
+      {
+        "label": "D",
+        "text": "Use direct execution to implement the most common approach (server-side uploads)",
+        "is_correct": false
+      }
+    ],
+    "correct_label": "C",
+    "explanation": "File upload implementation has multiple valid approaches with different tradeoffs in security, performance, scalability, and complexity. Plan mode allows Claude to present these different strategies, explain their pros and cons (client-side vs server-side, chunking for large files, third-party services), and show how each would be implemented. This helps you choose the approach that best fits your requirements.",
+    "tags": [
+      "plan_mode",
+      "file_uploads",
+      "implementation_strategies"
+    ],
+    "bloom_level": "apply",
+    "distractor_strategy": {
+      "plausible_but_prompt_only": "A",
+      "over_engineered": "N/A",
+      "wrong_layer": "N/A",
+      "valid_but_not_first_step": "N/A"
+    }
+  },
+  {
+    "id": "D3_T4_030",
+    "domain_id": "D3",
+    "task_statement_id": "D3.T4",
+    "scenario_ids": [
+      "S4"
+    ],
+    "difficulty": "anti_pattern_recognition",
+    "key_concept_tested": "combining plan mode + direct execution",
+    "stem": "A team has a policy: 'Always finish what you start with the same execution mode.' If they begin a feature with plan mode, they use plan mode for all subsequent changes including bug fixes and minor tweaks. If they start with direct execution, they continue with direct execution even for major refactoring. What's problematic about this policy?",
+    "options": [
+      {
+        "label": "A",
+        "text": "It prevents developers from learning both execution modes effectively",
+        "is_correct": false
+      },
+      {
+        "label": "B",
+        "text": "It doesn't match execution mode to task complexity and scope",
+        "is_correct": true
+      },
+      {
+        "label": "C",
+        "text": "It violates Claude Code's intended workflow patterns",
+        "is_correct": false
+      },
+      {
+        "label": "D",
+        "text": "It makes code reviews more difficult due to inconsistent approaches",
+        "is_correct": false
+      }
+    ],
+    "correct_label": "B",
+    "explanation": "This policy is an anti-pattern because it prioritizes artificial consistency over efficiency and appropriateness. The execution mode should match the task characteristics: plan mode for complex, architectural, or multi-approach scenarios; direct execution for simple, well-scoped changes. Using plan mode for bug fixes (after initial plan mode implementation) is inefficient, and using direct execution for major refactoring (after initial direct execution) lacks necessary strategic oversight.",
+    "tags": [
+      "anti_pattern",
+      "execution_mode_policy",
+      "task_matching"
+    ],
+    "bloom_level": "evaluate",
+    "distractor_strategy": {
+      "plausible_but_prompt_only": "N/A",
+      "over_engineered": "N/A",
+      "wrong_layer": "N/A",
+      "valid_but_not_first_step": "N/A"
+    }
+  },
+  {
+    "id": "D3_T4_031",
+    "domain_id": "D3",
+    "task_statement_id": "D3.T4",
+    "scenario_ids": [
+      "S2"
+    ],
+    "difficulty": "applied_judgment",
+    "key_concept_tested": "plan mode: large-scale, multi-file, architectural",
+    "stem": "Your application needs to implement comprehensive security hardening: input sanitization across all forms, SQL injection prevention in database queries, XSS protection in templates, CSRF tokens, and security headers. This affects 25+ files across frontend and backend. What execution approach should you use?",
+    "options": [
+      {
+        "label": "A",
+        "text": "Direct execution for each security measure individually to maintain focus",
+        "is_correct": false
+      },
+      {
+        "label": "B",
+        "text": "Plan mode to design a comprehensive security strategy across all application layers",
+        "is_correct": true
+      },
+      {
+        "label": "C",
+        "text": "Explore subagent to audit current security practices, then direct execution",
+        "is_correct": false
+      },
+      {
+        "label": "D",
+        "text": "Direct execution with detailed security checklists for each file",
+        "is_correct": false
+      }
+    ],
+    "correct_label": "B",
+    "explanation": "Security hardening is a classic large-scale, architectural change affecting multiple layers (frontend, backend, database) and requiring consistent patterns across 25+ files. It involves strategic decisions about security policies, implementation approaches, and ensuring comprehensive coverage. Plan mode allows you to review the overall security strategy and ensure all components work together to create a coherent security posture.",
+    "tags": [
+      "plan_mode",
+      "security_hardening",
+      "comprehensive_changes"
+    ],
+    "bloom_level": "apply",
+    "distractor_strategy": {
+      "plausible_but_prompt_only": "N/A",
+      "over_engineered": "N/A",
+      "wrong_layer": "N/A",
+      "valid_but_not_first_step": "N/A"
+    }
+  },
+  {
+    "id": "D3_T4_032",
+    "domain_id": "D3",
+    "task_statement_id": "D3.T4",
+    "scenario_ids": [
+      "S4"
+    ],
+    "difficulty": "conceptual_knowledge",
+    "key_concept_tested": "Explore subagent for verbose discovery isolation",
+    "stem": "What is the primary benefit of using the Explore subagent before implementing changes in a complex, unfamiliar codebase?",
+    "options": [
+      {
+        "label": "A",
+        "text": "It automatically generates documentation for the entire codebase",
+        "is_correct": false
+      },
+      {
+        "label": "B",
+        "text": "It provides comprehensive discovery without consuming tokens in your main conversation",
+        "is_correct": false
+      },
+      {
+        "label": "C",
+        "text": "It isolates verbose exploration from your main development conversation",
+        "is_correct": true
+      },
+      {
+        "label": "D",
+        "text": "It creates a complete dependency map for better planning",
+        "is_correct": false
+      }
+    ],
+    "correct_label": "C",
+    "explanation": "The Explore subagent's primary benefit is isolating verbose discovery activities from the main conversation. When exploring complex, unfamiliar codebases, Claude needs to examine many files and generate extensive analysis. Doing this in the main conversation would clutter the context and make subsequent development tasks less efficient. The Explore subagent handles discovery separately, then provides clean summaries to the main context.",
+    "tags": [
+      "explore_subagent",
+      "context_isolation",
+      "discovery_process"
+    ],
+    "bloom_level": "understand",
+    "distractor_strategy": {
+      "plausible_but_prompt_only": "N/A",
+      "over_engineered": "N/A",
+      "wrong_layer": "N/A",
+      "valid_but_not_first_step": "N/A"
+    }
+  },
+  {
+    "id": "D3_T4_033",
+    "domain_id": "D3",
+    "task_statement_id": "D3.T4",
+    "scenario_ids": [
+      "S2"
+    ],
+    "difficulty": "applied_judgment",
+    "key_concept_tested": "direct execution: simple, well-scoped, single-file changes",
+    "stem": "After implementing a complex user dashboard using plan mode, you need to make several follow-up changes: fix a CSS alignment issue, update a button label, add a tooltip to a form field, and change a default value in a dropdown. What's the most efficient approach?",
+    "options": [
+      {
+        "label": "A",
+        "text": "Use plan mode to ensure all UI changes are coordinated properly",
+        "is_correct": false
+      },
+      {
+        "label": "B",
+        "text": "Use direct execution for each change since they're all simple, well-scoped modifications",
+        "is_correct": false
+      },
+      {
+        "label": "C",
+        "text": "Create a new plan specifically for these UI refinements",
+        "is_correct": false
+      },
+      {
+        "label": "D",
+        "text": "Use direct execution since these are simple UI tweaks to the existing implementation",
+        "is_correct": true
+      }
+    ],
+    "correct_label": "D",
+    "explanation": "These follow-up changes are all simple, well-scoped modifications to the existing dashboard: CSS fixes, text updates, tooltip additions, and default value changes. Even though there are multiple changes, each one is straightforward and doesn't require architectural decisions. Direct execution is efficient for this type of UI refinement work after the main implementation is complete.",
+    "tags": [
+      "direct_execution",
+      "ui_refinements",
+      "follow_up_changes"
+    ],
+    "bloom_level": "apply",
+    "distractor_strategy": {
+      "plausible_but_prompt_only": "N/A",
+      "over_engineered": "N/A",
+      "wrong_layer": "N/A",
+      "valid_but_not_first_step": "N/A"
+    }
+  },
+  {
+    "id": "D3_T4_034",
+    "domain_id": "D3",
+    "task_statement_id": "D3.T4",
+    "scenario_ids": [
+      "S4"
+    ],
+    "difficulty": "anti_pattern_recognition",
+    "key_concept_tested": "plan mode: multiple valid approaches",
+    "stem": "A developer needs to implement pagination for a data table. Instead of using plan mode to explore different approaches (client-side, server-side, infinite scroll, etc.), they immediately use direct execution saying 'Pagination is a solved problem - just implement standard server-side pagination.' What's the issue with this approach?",
+    "options": [
+      {
+        "label": "A",
+        "text": "Server-side pagination might not be optimal for their specific data size and user patterns",
+        "is_correct": true
+      },
+      {
+        "label": "B",
+        "text": "Direct execution cannot implement server-side pagination correctly",
+        "is_correct": false
+      },
+      {
+        "label": "C",
+        "text": "Pagination always requires plan mode due to its complexity",
+        "is_correct": false
+      },
+      {
+        "label": "D",
+        "text": "They should have used the Explore subagent to research pagination patterns first",
+        "is_correct": false
+      }
+    ],
+    "correct_label": "A",
+    "explanation": "While pagination is a common feature, different approaches (client-side, server-side, infinite scroll, virtual scrolling) have different tradeoffs based on data size, user patterns, and performance requirements. The developer's assumption that 'standard server-side pagination' is always correct bypasses the evaluation of which approach best fits their specific context. Plan mode would allow comparing approaches and their implementation strategies.",
+    "tags": [
+      "anti_pattern",
+      "pagination_approaches",
+      "assumption_bias"
+    ],
+    "bloom_level": "evaluate",
+    "distractor_strategy": {
+      "plausible_but_prompt_only": "N/A",
+      "over_engineered": "N/A",
+      "wrong_layer": "N/A",
+      "valid_but_not_first_step": "N/A"
+    }
+  }
+]

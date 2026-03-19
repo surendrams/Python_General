@@ -1,0 +1,1595 @@
+[
+  {
+    "id": "D5_T5_001",
+    "domain_id": "D5",
+    "task_statement_id": "D5.T5",
+    "scenario_ids": [
+      "S1"
+    ],
+    "difficulty": "conceptual_knowledge",
+    "key_concept_tested": "field-level confidence scores with labeled validation sets",
+    "stem": "Your customer support agent processes refund requests with 94% overall accuracy. However, you notice that 'refund_amount' field extraction fails 23% of the time while 'customer_id' extraction succeeds 98% of the time. What validation approach should you implement before enabling automated refund processing?",
+    "options": [
+      {
+        "label": "A",
+        "text": "Set a global confidence threshold of 0.85 across all extracted fields",
+        "is_correct": false
+      },
+      {
+        "label": "B",
+        "text": "Create field-specific validation rules with separate confidence thresholds for each extraction type",
+        "is_correct": false
+      },
+      {
+        "label": "C",
+        "text": "Implement prompt-based confidence estimation by asking Claude to rate its certainty",
+        "is_correct": false
+      },
+      {
+        "label": "D",
+        "text": "Build field-level confidence scores using labeled validation sets for each extraction type",
+        "is_correct": true
+      }
+    ],
+    "correct_label": "D",
+    "explanation": "Field-level confidence scores with labeled validation sets provide the most reliable approach. This allows you to calibrate confidence thresholds based on actual performance data for each field type, accounting for the fact that different fields have different extraction difficulty and accuracy profiles.",
+    "tags": [
+      "confidence_calibration",
+      "field_level_validation",
+      "extraction_accuracy"
+    ],
+    "bloom_level": "understand",
+    "distractor_strategy": {
+      "plausible_but_prompt_only": "C",
+      "over_engineered": "B",
+      "wrong_layer": "N/A",
+      "valid_but_not_first_step": "N/A"
+    }
+  },
+  {
+    "id": "D5_T5_002",
+    "domain_id": "D5",
+    "task_statement_id": "D5.T5",
+    "scenario_ids": [
+      "S2"
+    ],
+    "difficulty": "applied_judgment",
+    "key_concept_tested": "aggregate accuracy masking segment failures",
+    "stem": "Your Claude Code integration shows 89% overall code review accuracy across 500 pull requests. However, security vulnerability detection succeeds only 67% of the time while style issues are caught 96% of the time. The aggregate metric masks this critical security gap. What human review workflow should you implement?",
+    "options": [
+      {
+        "label": "A",
+        "text": "Route all pull requests with security-related changes to mandatory human security review regardless of Claude's confidence",
+        "is_correct": true
+      },
+      {
+        "label": "B",
+        "text": "Increase the overall confidence threshold from 0.8 to 0.9 to catch more edge cases",
+        "is_correct": false
+      },
+      {
+        "label": "C",
+        "text": "Add more security examples to the prompt and rely on Claude's improved performance",
+        "is_correct": false
+      },
+      {
+        "label": "D",
+        "text": "Set up automated infrastructure scanning to supplement Claude's security analysis",
+        "is_correct": false
+      }
+    ],
+    "correct_label": "A",
+    "explanation": "When aggregate accuracy masks critical segment failures, you must implement mandatory human review for the failing segment. Security vulnerabilities have high impact, so the 67% accuracy is unacceptable for automation. Human review ensures no security issues slip through.",
+    "tags": [
+      "aggregate_masking",
+      "security_review",
+      "mandatory_human_review"
+    ],
+    "bloom_level": "apply",
+    "distractor_strategy": {
+      "plausible_but_prompt_only": "C",
+      "over_engineered": "D",
+      "wrong_layer": "N/A",
+      "valid_but_not_first_step": "N/A"
+    }
+  },
+  {
+    "id": "D5_T5_003",
+    "domain_id": "D5",
+    "task_statement_id": "D5.T5",
+    "stem": "You're validating your customer support agent's performance before production deployment. Your test set contains 1000 support tickets: 600 billing issues, 300 returns, and 100 account problems. What sampling strategy ensures reliable confidence calibration across all ticket types?",
+    "options": [
+      {
+        "label": "A",
+        "text": "Random sampling of 200 tickets from the full dataset",
+        "is_correct": false
+      },
+      {
+        "label": "B",
+        "text": "Stratified random sampling maintaining the original distribution: 120 billing, 60 returns, 20 account issues",
+        "is_correct": true
+      },
+      {
+        "label": "C",
+        "text": "Equal sampling of 67 tickets from each category for balanced representation",
+        "is_correct": false
+      },
+      {
+        "label": "D",
+        "text": "Purposive sampling focusing on the most complex tickets from each category",
+        "is_correct": false
+      }
+    ],
+    "correct_label": "B",
+    "explanation": "Stratified random sampling maintains the original distribution while ensuring adequate representation of each ticket type. This provides reliable confidence calibration that reflects real production traffic patterns, unlike equal sampling which distorts the actual distribution.",
+    "tags": [
+      "stratified_sampling",
+      "confidence_calibration",
+      "validation_strategy"
+    ],
+    "bloom_level": "apply",
+    "distractor_strategy": {
+      "plausible_but_prompt_only": "N/A",
+      "over_engineered": "N/A",
+      "wrong_layer": "N/A",
+      "valid_but_not_first_step": "N/A"
+    }
+  },
+  {
+    "id": "D5_T5_004",
+    "domain_id": "D5",
+    "task_statement_id": "D5.T5",
+    "scenario_ids": [
+      "S1"
+    ],
+    "difficulty": "anti_pattern_recognition",
+    "key_concept_tested": "accuracy validation by document type and field before automation",
+    "stem": "A colleague proposes this validation approach: 'Our agent achieves 91% accuracy overall, so we can safely automate all refund processing. We'll monitor for issues and adjust the global threshold if problems arise.' What is the primary flaw in this approach?",
+    "options": [
+      {
+        "label": "A",
+        "text": "The confidence threshold should be set higher than 91% for financial transactions",
+        "is_correct": false
+      },
+      {
+        "label": "B",
+        "text": "Reactive monitoring after deployment introduces unnecessary risk to customer experience",
+        "is_correct": false
+      },
+      {
+        "label": "C",
+        "text": "Global accuracy metrics can mask critical failures in specific document types or field extractions",
+        "is_correct": true
+      },
+      {
+        "label": "D",
+        "text": "The sample size is too small to establish reliable confidence in the accuracy metric",
+        "is_correct": false
+      }
+    ],
+    "correct_label": "C",
+    "explanation": "The primary flaw is that aggregate accuracy can mask critical segment failures. Different document types and fields may have vastly different accuracy rates. You need document-type and field-level validation before automation, not global metrics.",
+    "tags": [
+      "aggregate_masking",
+      "validation_anti_pattern",
+      "segment_failures"
+    ],
+    "bloom_level": "evaluate",
+    "distractor_strategy": {
+      "plausible_but_prompt_only": "N/A",
+      "over_engineered": "B",
+      "wrong_layer": "N/A",
+      "valid_but_not_first_step": "N/A"
+    }
+  },
+  {
+    "id": "D5_T5_005",
+    "domain_id": "D5",
+    "task_statement_id": "D5.T5",
+    "scenario_ids": [
+      "S2"
+    ],
+    "difficulty": "applied_judgment",
+    "key_concept_tested": "stratified random sampling",
+    "stem": "Your Claude Code system processes three types of code reviews: frontend (40%), backend (35%), and infrastructure (25%). You need to validate performance before enabling automated merging. With 2000 historical reviews available, how should you construct your validation set?",
+    "options": [
+      {
+        "label": "A",
+        "text": "Sample 300 reviews randomly from the full dataset",
+        "is_correct": false
+      },
+      {
+        "label": "B",
+        "text": "Sample 100 reviews from each type for equal representation",
+        "is_correct": false
+      },
+      {
+        "label": "C",
+        "text": "Use stratified sampling: 120 frontend, 105 backend, 75 infrastructure reviews",
+        "is_correct": false
+      },
+      {
+        "label": "D",
+        "text": "Use stratified sampling: 160 frontend, 140 backend, 100 infrastructure reviews",
+        "is_correct": true
+      }
+    ],
+    "correct_label": "D",
+    "explanation": "Stratified random sampling should maintain the original distribution (40%/35%/25%) in your validation set. With 400 total samples, this means 160 frontend (40%), 140 backend (35%), and 100 infrastructure (25%) reviews to ensure representative validation.",
+    "tags": [
+      "stratified_sampling",
+      "code_review_validation",
+      "representative_sampling"
+    ],
+    "bloom_level": "apply",
+    "distractor_strategy": {
+      "plausible_but_prompt_only": "N/A",
+      "over_engineered": "C",
+      "wrong_layer": "N/A",
+      "valid_but_not_first_step": "N/A"
+    }
+  },
+  {
+    "id": "D5_T5_006",
+    "domain_id": "D5",
+    "task_statement_id": "D5.T5",
+    "scenario_ids": [
+      "S1"
+    ],
+    "difficulty": "conceptual_knowledge",
+    "key_concept_tested": "field-level confidence scores with labeled validation sets",
+    "stem": "Your support agent extracts multiple fields from billing dispute tickets. You want to establish reliable confidence scores for each field type. What is the most effective approach to build this calibration?",
+    "options": [
+      {
+        "label": "A",
+        "text": "Create labeled validation sets for each field type and measure actual accuracy against predicted confidence",
+        "is_correct": true
+      },
+      {
+        "label": "B",
+        "text": "Use Claude's self-reported confidence scores as ground truth for each field",
+        "is_correct": false
+      },
+      {
+        "label": "C",
+        "text": "Set uniform confidence thresholds based on overall system performance",
+        "is_correct": false
+      },
+      {
+        "label": "D",
+        "text": "Implement rule-based confidence scoring using field length and format validation",
+        "is_correct": false
+      }
+    ],
+    "correct_label": "A",
+    "explanation": "Labeled validation sets for each field type allow you to measure actual accuracy against predicted confidence, creating reliable calibration curves. This empirical approach is more accurate than self-reported confidence or rule-based scoring.",
+    "tags": [
+      "field_level_confidence",
+      "labeled_validation",
+      "confidence_calibration"
+    ],
+    "bloom_level": "understand",
+    "distractor_strategy": {
+      "plausible_but_prompt_only": "N/A",
+      "over_engineered": "N/A",
+      "wrong_layer": "N/A",
+      "valid_but_not_first_step": "N/A"
+    }
+  },
+  {
+    "id": "D5_T5_007",
+    "domain_id": "D5",
+    "task_statement_id": "D5.T5",
+    "scenario_ids": [
+      "S2"
+    ],
+    "difficulty": "conceptual_knowledge",
+    "key_concept_tested": "accuracy validation by document type and field before automation",
+    "stem": "Before enabling automated code review merging, you need to validate Claude Code's performance across different scenarios. What validation strategy ensures safe automation deployment?",
+    "options": [
+      {
+        "label": "A",
+        "text": "Test overall accuracy across all code types and set a global threshold",
+        "is_correct": false
+      },
+      {
+        "label": "B",
+        "text": "Validate accuracy separately for each code type (frontend, backend, infrastructure) and review category (security, style, logic)",
+        "is_correct": true
+      },
+      {
+        "label": "C",
+        "text": "Focus validation on the most common code review scenarios",
+        "is_correct": false
+      },
+      {
+        "label": "D",
+        "text": "Use A/B testing to compare automated vs manual review outcomes",
+        "is_correct": false
+      }
+    ],
+    "correct_label": "B",
+    "explanation": "Safe automation requires validation by both document type (code type) and field/category (review type) before deployment. Different combinations may have different accuracy profiles, and you need to understand performance across all dimensions.",
+    "tags": [
+      "document_type_validation",
+      "automation_safety",
+      "segmented_validation"
+    ],
+    "bloom_level": "understand",
+    "distractor_strategy": {
+      "plausible_but_prompt_only": "N/A",
+      "over_engineered": "N/A",
+      "wrong_layer": "N/A",
+      "valid_but_not_first_step": "N/A"
+    }
+  },
+  {
+    "id": "D5_T5_008",
+    "domain_id": "D5",
+    "task_statement_id": "D5.T5",
+    "scenario_ids": [
+      "S1"
+    ],
+    "difficulty": "applied_judgment",
+    "key_concept_tested": "aggregate accuracy masking segment failures",
+    "stem": "Your customer support agent shows these accuracy rates: account issues (95%), billing disputes (88%), returns (72%). The overall accuracy is 85%. Management wants to automate all ticket types since they exceed the 80% target. What should you recommend?",
+    "options": [
+      {
+        "label": "A",
+        "text": "Proceed with automation since overall accuracy meets the target",
+        "is_correct": false
+      },
+      {
+        "label": "B",
+        "text": "Implement human review for returns (72%) while automating account issues and billing disputes",
+        "is_correct": false
+      },
+      {
+        "label": "C",
+        "text": "Keep all ticket types in human review until returns accuracy improves to match the others",
+        "is_correct": true
+      },
+      {
+        "label": "D",
+        "text": "Lower the automation threshold to 70% to enable returns processing",
+        "is_correct": false
+      }
+    ],
+    "correct_label": "C",
+    "explanation": "The 72% accuracy for returns is significantly below acceptable levels for customer support automation. The aggregate 85% metric masks this critical failure. All ticket types should remain in human review until returns accuracy improves to acceptable levels.",
+    "tags": [
+      "aggregate_masking",
+      "segment_failures",
+      "automation_readiness"
+    ],
+    "bloom_level": "apply",
+    "distractor_strategy": {
+      "plausible_but_prompt_only": "N/A",
+      "over_engineered": "N/A",
+      "wrong_layer": "N/A",
+      "valid_but_not_first_step": "N/A"
+    }
+  },
+  {
+    "id": "D5_T5_009",
+    "domain_id": "D5",
+    "task_statement_id": "D5.T5",
+    "scenario_ids": [
+      "S2"
+    ],
+    "difficulty": "anti_pattern_recognition",
+    "key_concept_tested": "field-level confidence scores with labeled validation sets",
+    "stem": "A developer suggests: 'Let's ask Claude to rate its confidence on each code review finding from 1-10, then use scores above 8 for automated merging.' What is the fundamental problem with this approach?",
+    "options": [
+      {
+        "label": "A",
+        "text": "The confidence threshold of 8 is too high and will block too many valid merges",
+        "is_correct": false
+      },
+      {
+        "label": "B",
+        "text": "Self-reported confidence scores are not calibrated against actual accuracy and can be systematically biased",
+        "is_correct": false
+      },
+      {
+        "label": "C",
+        "text": "The 1-10 scale is too granular for practical confidence measurement",
+        "is_correct": false
+      },
+      {
+        "label": "D",
+        "text": "Claude's self-assessment lacks the empirical validation needed for reliable confidence calibration",
+        "is_correct": true
+      }
+    ],
+    "correct_label": "D",
+    "explanation": "Self-reported confidence scores lack empirical validation against actual performance. Reliable confidence calibration requires labeled validation sets that measure actual accuracy against predicted confidence, not subjective self-assessment.",
+    "tags": [
+      "confidence_anti_pattern",
+      "self_reported_confidence",
+      "empirical_validation"
+    ],
+    "bloom_level": "evaluate",
+    "distractor_strategy": {
+      "plausible_but_prompt_only": "N/A",
+      "over_engineered": "N/A",
+      "wrong_layer": "N/A",
+      "valid_but_not_first_step": "N/A"
+    }
+  },
+  {
+    "id": "D5_T5_010",
+    "domain_id": "D5",
+    "task_statement_id": "D5.T5",
+    "scenario_ids": [
+      "S1"
+    ],
+    "difficulty": "applied_judgment",
+    "key_concept_tested": "stratified random sampling",
+    "stem": "Your support ticket dataset contains: 2000 billing disputes, 800 returns, 200 account issues. You need a 300-ticket validation set that represents real production traffic. How should you sample?",
+    "options": [
+      {
+        "label": "A",
+        "text": "200 billing, 80 returns, 20 account issues (maintaining 10:4:1 ratio)",
+        "is_correct": true
+      },
+      {
+        "label": "B",
+        "text": "100 tickets from each category for balanced representation",
+        "is_correct": false
+      },
+      {
+        "label": "C",
+        "text": "250 billing, 40 returns, 10 account issues (weighted toward high volume)",
+        "is_correct": false
+      },
+      {
+        "label": "D",
+        "text": "Random sampling of 300 tickets from the combined dataset",
+        "is_correct": false
+      }
+    ],
+    "correct_label": "A",
+    "explanation": "Stratified random sampling should maintain the original distribution ratio (10:4:1) to represent real production traffic patterns. This ensures your validation results will be representative of actual system performance.",
+    "tags": [
+      "stratified_sampling",
+      "production_representation",
+      "validation_sampling"
+    ],
+    "bloom_level": "apply",
+    "distractor_strategy": {
+      "plausible_but_prompt_only": "N/A",
+      "over_engineered": "N/A",
+      "wrong_layer": "N/A",
+      "valid_but_not_first_step": "N/A"
+    }
+  },
+  {
+    "id": "D5_T5_011",
+    "domain_id": "D5",
+    "task_statement_id": "D5.T5",
+    "scenario_ids": [
+      "S2"
+    ],
+    "difficulty": "conceptual_knowledge",
+    "key_concept_tested": "aggregate accuracy masking segment failures",
+    "stem": "Your Claude Code system achieves 92% overall accuracy across all code reviews. However, when you break down performance by review type, you discover significant variation. What does this scenario illustrate?",
+    "options": [
+      {
+        "label": "A",
+        "text": "High overall accuracy indicates the system is ready for full automation",
+        "is_correct": false
+      },
+      {
+        "label": "B",
+        "text": "Aggregate metrics can mask critical failures in specific segments or categories",
+        "is_correct": true
+      },
+      {
+        "label": "C",
+        "text": "The sample size needs to be increased to get more reliable measurements",
+        "is_correct": false
+      },
+      {
+        "label": "D",
+        "text": "Performance variation is normal and doesn't affect automation decisions",
+        "is_correct": false
+      }
+    ],
+    "correct_label": "B",
+    "explanation": "This illustrates how aggregate accuracy can mask segment failures. High overall performance doesn't guarantee acceptable performance across all review types. You need segment-level analysis before automation decisions.",
+    "tags": [
+      "aggregate_masking",
+      "segment_analysis",
+      "performance_variation"
+    ],
+    "bloom_level": "understand",
+    "distractor_strategy": {
+      "plausible_but_prompt_only": "N/A",
+      "over_engineered": "N/A",
+      "wrong_layer": "N/A",
+      "valid_but_not_first_step": "N/A"
+    }
+  },
+  {
+    "id": "D5_T5_012",
+    "domain_id": "D5",
+    "task_statement_id": "D5.T5",
+    "scenario_ids": [
+      "S1"
+    ],
+    "difficulty": "applied_judgment",
+    "key_concept_tested": "accuracy validation by document type and field before automation",
+    "stem": "Your support agent processes three document types with varying field extraction accuracy: invoices (customer_id: 98%, amount: 89%), receipts (customer_id: 94%, amount: 76%), emails (customer_id: 87%, amount: 65%). What automation strategy should you implement?",
+    "options": [
+      {
+        "label": "A",
+        "text": "Automate all invoice processing, partial automation for receipts, manual review for emails",
+        "is_correct": false
+      },
+      {
+        "label": "B",
+        "text": "Set field-specific thresholds: automate customer_id extraction across all types, manual review for amount extraction below 85%",
+        "is_correct": false
+      },
+      {
+        "label": "C",
+        "text": "Automate invoice customer_id and amount, receipt customer_id only, manual review for all email processing",
+        "is_correct": true
+      },
+      {
+        "label": "D",
+        "text": "Use overall accuracy metrics to set a global automation threshold across all document types",
+        "is_correct": false
+      }
+    ],
+    "correct_label": "C",
+    "explanation": "Document-type and field-level validation requires specific thresholds for each combination. Invoice fields meet automation standards, receipt customer_id is acceptable but amount is too low, and email extraction accuracy is insufficient for automation.",
+    "tags": [
+      "document_field_validation",
+      "automation_thresholds",
+      "segmented_automation"
+    ],
+    "bloom_level": "apply",
+    "distractor_strategy": {
+      "plausible_but_prompt_only": "N/A",
+      "over_engineered": "N/A",
+      "wrong_layer": "N/A",
+      "valid_but_not_first_step": "N/A"
+    }
+  },
+  {
+    "id": "D5_T5_013",
+    "domain_id": "D5",
+    "task_statement_id": "D5.T5",
+    "scenario_ids": [
+      "S2"
+    ],
+    "difficulty": "applied_judgment",
+    "key_concept_tested": "field-level confidence scores with labeled validation sets",
+    "stem": "You're building confidence scores for Claude Code's security vulnerability detection. Your labeled validation set shows: high-severity bugs (73% accuracy), medium-severity bugs (84% accuracy), style issues (96% accuracy). How should you configure human review thresholds?",
+    "options": [
+      {
+        "label": "A",
+        "text": "Set a uniform 90% confidence threshold across all finding types",
+        "is_correct": false
+      },
+      {
+        "label": "B",
+        "text": "Require human review for all high-severity findings, confidence-based routing for medium-severity, automated handling for style issues",
+        "is_correct": false
+      },
+      {
+        "label": "C",
+        "text": "Use field-specific confidence thresholds calibrated to each finding type's actual accuracy profile",
+        "is_correct": false
+      },
+      {
+        "label": "D",
+        "text": "Route all security findings (high and medium severity) to human review, automate style issue handling",
+        "is_correct": true
+      }
+    ],
+    "correct_label": "D",
+    "explanation": "With security findings showing 73-84% accuracy, the risk of missing vulnerabilities is too high for automation. All security findings should go to human review regardless of confidence, while style issues with 96% accuracy can be automated.",
+    "tags": [
+      "security_review_thresholds",
+      "risk_based_routing",
+      "field_level_accuracy"
+    ],
+    "bloom_level": "apply",
+    "distractor_strategy": {
+      "plausible_but_prompt_only": "N/A",
+      "over_engineered": "N/A",
+      "wrong_layer": "N/A",
+      "valid_but_not_first_step": "N/A"
+    }
+  },
+  {
+    "id": "D5_T5_014",
+    "domain_id": "D5",
+    "task_statement_id": "D5.T5",
+    "scenario_ids": [
+      "S1"
+    ],
+    "difficulty": "conceptual_knowledge",
+    "key_concept_tested": "stratified random sampling",
+    "stem": "When validating your customer support agent's performance across different ticket types and complexity levels, what sampling approach ensures reliable confidence calibration for each segment?",
+    "options": [
+      {
+        "label": "A",
+        "text": "Stratified random sampling that maintains the original distribution of ticket types and complexity levels",
+        "is_correct": true
+      },
+      {
+        "label": "B",
+        "text": "Simple random sampling from the entire ticket population",
+        "is_correct": false
+      },
+      {
+        "label": "C",
+        "text": "Purposive sampling focused on edge cases and difficult tickets",
+        "is_correct": false
+      },
+      {
+        "label": "D",
+        "text": "Convenience sampling using the most recent tickets",
+        "is_correct": false
+      }
+    ],
+    "correct_label": "A",
+    "explanation": "Stratified random sampling ensures adequate representation of each ticket type and complexity level while maintaining the original distribution. This provides reliable confidence calibration that reflects real production patterns.",
+    "tags": [
+      "stratified_sampling",
+      "segment_representation",
+      "confidence_calibration"
+    ],
+    "bloom_level": "understand",
+    "distractor_strategy": {
+      "plausible_but_prompt_only": "N/A",
+      "over_engineered": "N/A",
+      "wrong_layer": "N/A",
+      "valid_but_not_first_step": "N/A"
+    }
+  },
+  {
+    "id": "D5_T5_015",
+    "domain_id": "D5",
+    "task_statement_id": "D5.T5",
+    "scenario_ids": [
+      "S2"
+    ],
+    "difficulty": "anti_pattern_recognition",
+    "key_concept_tested": "aggregate accuracy masking segment failures",
+    "stem": "Your team reports: 'Claude Code achieves 88% accuracy on code reviews, exceeding our 85% target. We should enable full automation.' You discover that security review accuracy is only 62% while style reviews are 94% accurate. What's wrong with the team's reasoning?",
+    "options": [
+      {
+        "label": "A",
+        "text": "The overall target should be higher than 85% for code review automation",
+        "is_correct": false
+      },
+      {
+        "label": "B",
+        "text": "They're relying on aggregate metrics that mask critical security review failures",
+        "is_correct": true
+      },
+      {
+        "label": "C",
+        "text": "The sample size is too small to establish reliable confidence in the accuracy measurement",
+        "is_correct": false
+      },
+      {
+        "label": "D",
+        "text": "They should implement gradual rollout instead of immediate full automation",
+        "is_correct": false
+      }
+    ],
+    "correct_label": "B",
+    "explanation": "The team is falling into the aggregate accuracy masking trap. The 88% overall accuracy hides the critical 62% security review failure rate. Security issues have high impact and cannot be automated at that accuracy level.",
+    "tags": [
+      "aggregate_masking_anti_pattern",
+      "security_accuracy",
+      "critical_segment_failures"
+    ],
+    "bloom_level": "evaluate",
+    "distractor_strategy": {
+      "plausible_but_prompt_only": "N/A",
+      "over_engineered": "N/A",
+      "wrong_layer": "N/A",
+      "valid_but_not_first_step": "N/A"
+    }
+  },
+  {
+    "id": "D5_T5_016",
+    "domain_id": "D5",
+    "task_statement_id": "D5.T5",
+    "scenario_ids": [
+      "S1"
+    ],
+    "difficulty": "applied_judgment",
+    "key_concept_tested": "accuracy validation by document type and field before automation",
+    "stem": "Your support agent handles warranty claims with these extraction accuracies by document type: PDF forms (product_id: 92%, claim_amount: 88%), scanned receipts (product_id: 84%, claim_amount: 71%), email attachments (product_id: 79%, claim_amount: 63%). Your automation threshold is 85%. What should you automate?",
+    "options": [
+      {
+        "label": "A",
+        "text": "Automate PDF form processing completely, scanned receipt product_id only, manual review for email attachments",
+        "is_correct": false
+      },
+      {
+        "label": "B",
+        "text": "Only automate PDF form product_id extraction, manual review for everything else",
+        "is_correct": false
+      },
+      {
+        "label": "C",
+        "text": "Automate all fields above 85%: PDF forms completely, scanned receipt product_id only, manual review for the rest",
+        "is_correct": false
+      },
+      {
+        "label": "D",
+        "text": "Only automate PDF form product_id extraction since it's the only field meeting the 85% threshold",
+        "is_correct": true
+      }
+    ],
+    "correct_label": "D",
+    "explanation": "With an 85% automation threshold, only PDF form product_id extraction (92%) meets the requirement. All other document-type and field combinations fall below the threshold and require manual review.",
+    "tags": [
+      "automation_threshold_application",
+      "document_field_accuracy",
+      "conservative_automation"
+    ],
+    "bloom_level": "apply",
+    "distractor_strategy": {
+      "plausible_but_prompt_only": "N/A",
+      "over_engineered": "N/A",
+      "wrong_layer": "N/A",
+      "valid_but_not_first_step": "N/A"
+    }
+  },
+  {
+    "id": "D5_T5_017",
+    "domain_id": "D5",
+    "task_statement_id": "D5.T5",
+    "scenario_ids": [
+      "S2"
+    ],
+    "difficulty": "conceptual_knowledge",
+    "key_concept_tested": "field-level confidence scores with labeled validation sets",
+    "stem": "You want to build reliable confidence scores for different types of code review findings. What is the essential component for accurate confidence calibration?",
+    "options": [
+      {
+        "label": "A",
+        "text": "Labeled validation sets that measure actual accuracy against predicted confidence for each finding type",
+        "is_correct": false
+      },
+      {
+        "label": "B",
+        "text": "Self-reported confidence scores from Claude for each review finding",
+        "is_correct": false
+      },
+      {
+        "label": "C",
+        "text": "Historical performance metrics aggregated across all code review types",
+        "is_correct": false
+      },
+      {
+        "label": "D",
+        "text": "Rule-based confidence scoring using code complexity and change size metrics",
+        "is_correct": false
+      }
+    ],
+    "correct_label": "A",
+    "explanation": "Labeled validation sets that measure actual accuracy against predicted confidence for each finding type are essential for reliable confidence calibration. This empirical approach provides ground truth for calibrating confidence scores.",
+    "tags": [
+      "confidence_calibration_essentials",
+      "labeled_validation_sets",
+      "empirical_validation"
+    ],
+    "bloom_level": "understand",
+    "distractor_strategy": {
+      "plausible_but_prompt_only": "N/A",
+      "over_engineered": "N/A",
+      "wrong_layer": "N/A",
+      "valid_but_not_first_step": "N/A"
+    }
+  },
+  {
+    "id": "D5_T5_018",
+    "domain_id": "D5",
+    "task_statement_id": "D5.T5",
+    "scenario_ids": [
+      "S1"
+    ],
+    "difficulty": "applied_judgment",
+    "key_concept_tested": "aggregate accuracy masking segment failures",
+    "stem": "Your support agent processes 1000 tickets daily with 87% overall accuracy. You discover performance varies significantly: simple requests (95%), moderate complexity (82%), high complexity (71%). The aggregate metric suggests acceptable performance. What action should you take?",
+    "options": [
+      {
+        "label": "A",
+        "text": "Implement human review for high complexity tickets while automating simple and moderate requests",
+        "is_correct": true
+      },
+      {
+        "label": "B",
+        "text": "Continue with current automation since overall accuracy meets targets",
+        "is_correct": false
+      },
+      {
+        "label": "C",
+        "text": "Increase the confidence threshold to improve performance on complex tickets",
+        "is_correct": false
+      },
+      {
+        "label": "D",
+        "text": "Focus training efforts on improving overall system accuracy",
+        "is_correct": false
+      }
+    ],
+    "correct_label": "A",
+    "explanation": "The aggregate 87% accuracy masks the unacceptable 71% performance on high complexity tickets. You need segment-specific handling: human review for complex tickets where accuracy is insufficient, automation for segments meeting performance standards.",
+    "tags": [
+      "segment_specific_handling",
+      "complexity_based_routing",
+      "aggregate_masking_response"
+    ],
+    "bloom_level": "apply",
+    "distractor_strategy": {
+      "plausible_but_prompt_only": "N/A",
+      "over_engineered": "N/A",
+      "wrong_layer": "N/A",
+      "valid_but_not_first_step": "N/A"
+    }
+  },
+  {
+    "id": "D5_T5_019",
+    "domain_id": "D5",
+    "task_statement_id": "D5.T5",
+    "scenario_ids": [
+      "S2"
+    ],
+    "difficulty": "applied_judgment",
+    "key_concept_tested": "stratified random sampling",
+    "stem": "Your code review dataset contains: 3000 JavaScript files, 2000 Python files, 1000 Go files. You need a 600-sample validation set. Your team suggests equal sampling (200 each) for 'balanced testing.' What's the better approach?",
+    "options": [
+      {
+        "label": "A",
+        "text": "Use equal sampling as suggested for balanced representation",
+        "is_correct": false
+      },
+      {
+        "label": "B",
+        "text": "Use stratified sampling: 300 JavaScript, 200 Python, 100 Go files",
+        "is_correct": true
+      },
+      {
+        "label": "C",
+        "text": "Focus on JavaScript and Python only since they represent the majority",
+        "is_correct": false
+      },
+      {
+        "label": "D",
+        "text": "Use random sampling from the entire dataset without stratification",
+        "is_correct": false
+      }
+    ],
+    "correct_label": "B",
+    "explanation": "Stratified sampling maintaining the original 3:2:1 ratio (300 JS, 200 Python, 100 Go) provides validation results that represent actual production traffic patterns, unlike equal sampling which distorts the real distribution.",
+    "tags": [
+      "stratified_vs_equal_sampling",
+      "production_representation",
+      "validation_accuracy"
+    ],
+    "bloom_level": "apply",
+    "distractor_strategy": {
+      "plausible_but_prompt_only": "N/A",
+      "over_engineered": "N/A",
+      "wrong_layer": "N/A",
+      "valid_but_not_first_step": "N/A"
+    }
+  },
+  {
+    "id": "D5_T5_020",
+    "domain_id": "D5",
+    "task_statement_id": "D5.T5",
+    "scenario_ids": [
+      "S1"
+    ],
+    "difficulty": "conceptual_knowledge",
+    "key_concept_tested": "accuracy validation by document type and field before automation",
+    "stem": "Before automating customer data extraction, you need to validate performance across different document types and field categories. What validation approach ensures safe deployment?",
+    "options": [
+      {
+        "label": "A",
+        "text": "Test overall system accuracy and set a global automation threshold",
+        "is_correct": false
+      },
+      {
+        "label": "B",
+        "text": "Validate accuracy for each document type and field combination separately",
+        "is_correct": false
+      },
+      {
+        "label": "C",
+        "text": "Focus validation on the most common document types and fields",
+        "is_correct": true
+      },
+      {
+        "label": "D",
+        "text": "Use cross-validation to test system robustness across different scenarios",
+        "is_correct": false
+      }
+    ],
+    "correct_label": "C",
+    "explanation": "Safe automation deployment requires separate validation for each document type and field combination. Different combinations may have vastly different accuracy profiles, and you need to understand performance across all dimensions before automation decisions.",
+    "tags": [
+      "document_field_validation",
+      "automation_safety",
+      "comprehensive_validation"
+    ],
+    "bloom_level": "understand",
+    "distractor_strategy": {
+      "plausible_but_prompt_only": "N/A",
+      "over_engineered": "B",
+      "wrong_layer": "N/A",
+      "valid_but_not_first_step": "N/A"
+    }
+  },
+  {
+    "id": "D5_T5_021",
+    "domain_id": "D5",
+    "task_statement_id": "D5.T5",
+    "scenario_ids": [
+      "S2"
+    ],
+    "difficulty": "anti_pattern_recognition",
+    "key_concept_tested": "stratified random sampling",
+    "stem": "A colleague suggests: 'Let's test our code review system with 100 samples each of frontend, backend, and infrastructure code for perfectly balanced validation.' Your production traffic is 60% frontend, 30% backend, 10% infrastructure. What's the flaw in this approach?",
+    "options": [
+      {
+        "label": "A",
+        "text": "The sample size is too small for reliable validation",
+        "is_correct": false
+      },
+      {
+        "label": "B",
+        "text": "Equal sampling distorts the real production distribution and may not represent actual performance",
+        "is_correct": false
+      },
+      {
+        "label": "C",
+        "text": "Infrastructure code should get more samples since it's more critical",
+        "is_correct": false
+      },
+      {
+        "label": "D",
+        "text": "The validation should focus only on the most common code types",
+        "is_correct": true
+      }
+    ],
+    "correct_label": "D",
+    "explanation": "Equal sampling (33% each) distorts the real production distribution (60%/30%/10%). Stratified sampling that maintains the actual distribution provides more representative validation results that reflect real system performance.",
+    "tags": [
+      "equal_sampling_anti_pattern",
+      "distribution_distortion",
+      "representative_sampling"
+    ],
+    "bloom_level": "evaluate",
+    "distractor_strategy": {
+      "plausible_but_prompt_only": "N/A",
+      "over_engineered": "C",
+      "wrong_layer": "N/A",
+      "valid_but_not_first_step": "N/A"
+    }
+  },
+  {
+    "id": "D5_T5_022",
+    "domain_id": "D5",
+    "task_statement_id": "D5.T5",
+    "scenario_ids": [
+      "S1"
+    ],
+    "difficulty": "applied_judgment",
+    "key_concept_tested": "field-level confidence scores with labeled validation sets",
+    "stem": "Your support agent extracts customer information with varying accuracy by field: name (94%), email (89%), phone (82%), address (76%). You want to implement confidence-based routing. What approach provides the most reliable confidence calibration?",
+    "options": [
+      {
+        "label": "A",
+        "text": "Build separate labeled validation sets for each field type and calibrate confidence thresholds based on actual accuracy",
+        "is_correct": true
+      },
+      {
+        "label": "B",
+        "text": "Use uniform confidence thresholds across all fields based on overall performance",
+        "is_correct": false
+      },
+      {
+        "label": "C",
+        "text": "Implement rule-based confidence scoring using field format validation",
+        "is_correct": false
+      },
+      {
+        "label": "D",
+        "text": "Ask Claude to self-assess confidence for each field extraction",
+        "is_correct": false
+      }
+    ],
+    "correct_label": "A",
+    "explanation": "Separate labeled validation sets for each field type allow you to calibrate confidence thresholds based on actual accuracy data. This provides the most reliable confidence calibration since different fields have different extraction difficulty profiles.",
+    "tags": [
+      "field_specific_calibration",
+      "labeled_validation",
+      "confidence_reliability"
+    ],
+    "bloom_level": "apply",
+    "distractor_strategy": {
+      "plausible_but_prompt_only": "N/A",
+      "over_engineered": "N/A",
+      "wrong_layer": "N/A",
+      "valid_but_not_first_step": "N/A"
+    }
+  },
+  {
+    "id": "D5_T5_023",
+    "domain_id": "D5",
+    "task_statement_id": "D5.T5",
+    "scenario_ids": [
+      "S2"
+    ],
+    "difficulty": "applied_judgment",
+    "key_concept_tested": "accuracy validation by document type and field before automation",
+    "stem": "Your Claude Code system reviews pull requests with these accuracies: bug detection in new features (78%), bug detection in refactors (85%), style issues in new features (93%), style issues in refactors (91%). Your automation threshold is 90%. What should you automate?",
+    "options": [
+      {
+        "label": "A",
+        "text": "Automate all style issue detection and refactor bug detection",
+        "is_correct": false
+      },
+      {
+        "label": "B",
+        "text": "Only automate style issues in new features since it exceeds 90%",
+        "is_correct": false
+      },
+      {
+        "label": "C",
+        "text": "Only automate style issue detection for new features, manual review for everything else",
+        "is_correct": true
+      },
+      {
+        "label": "D",
+        "text": "Lower the threshold to 85% to enable more automation",
+        "is_correct": false
+      }
+    ],
+    "correct_label": "C",
+    "explanation": "With a 90% automation threshold, only style issues in new features (93%) meets the requirement. All other combinations fall below the threshold and require manual review to ensure quality.",
+    "tags": [
+      "threshold_application",
+      "code_review_automation",
+      "quality_assurance"
+    ],
+    "bloom_level": "apply",
+    "distractor_strategy": {
+      "plausible_but_prompt_only": "N/A",
+      "over_engineered": "N/A",
+      "wrong_layer": "N/A",
+      "valid_but_not_first_step": "N/A"
+    }
+  },
+  {
+    "id": "D5_T5_024",
+    "domain_id": "D5",
+    "task_statement_id": "D5.T5",
+    "scenario_ids": [
+      "S1"
+    ],
+    "difficulty": "conceptual_knowledge",
+    "key_concept_tested": "aggregate accuracy masking segment failures",
+    "stem": "Your customer support agent shows 86% overall accuracy across all ticket types. However, when you analyze by ticket complexity, you find significant performance variation. What does this scenario demonstrate about accuracy metrics?",
+    "options": [
+      {
+        "label": "A",
+        "text": "Overall accuracy is sufficient for automation decisions",
+        "is_correct": false
+      },
+      {
+        "label": "B",
+        "text": "Performance variation is normal and doesn't affect system reliability",
+        "is_correct": false
+      },
+      {
+        "label": "C",
+        "text": "Aggregate metrics can hide critical performance gaps in specific segments",
+        "is_correct": false
+      },
+      {
+        "label": "D",
+        "text": "The system needs more training data to reduce performance variation",
+        "is_correct": true
+      }
+    ],
+    "correct_label": "D",
+    "explanation": "This demonstrates how aggregate metrics can hide critical performance gaps in specific segments. High overall accuracy doesn't guarantee acceptable performance across all complexity levels or ticket types.",
+    "tags": [
+      "aggregate_hiding_gaps",
+      "segment_analysis_importance",
+      "accuracy_decomposition"
+    ],
+    "bloom_level": "understand",
+    "distractor_strategy": {
+      "plausible_but_prompt_only": "N/A",
+      "over_engineered": "N/A",
+      "wrong_layer": "N/A",
+      "valid_but_not_first_step": "N/A"
+    }
+  },
+  {
+    "id": "D5_T5_025",
+    "domain_id": "D5",
+    "task_statement_id": "D5.T5",
+    "scenario_ids": [
+      "S2"
+    ],
+    "difficulty": "anti_pattern_recognition",
+    "key_concept_tested": "accuracy validation by document type and field before automation",
+    "stem": "Your manager says: 'Our code review system has 89% accuracy overall, which beats our 85% target. Let's enable full automation across all review types and code languages.' What critical step is being skipped?",
+    "options": [
+      {
+        "label": "A",
+        "text": "Testing the system under production load conditions",
+        "is_correct": false
+      },
+      {
+        "label": "B",
+        "text": "Implementing gradual rollout instead of immediate full automation",
+        "is_correct": false
+      },
+      {
+        "label": "C",
+        "text": "Validating accuracy separately for each code type and review category combination",
+        "is_correct": false
+      },
+      {
+        "label": "D",
+        "text": "Setting up monitoring and alerting for the automated system",
+        "is_correct": true
+      }
+    ],
+    "correct_label": "D",
+    "explanation": "The critical missing step is validating accuracy separately for each code type and review category combination. Aggregate accuracy can mask poor performance in specific segments that shouldn't be automated.",
+    "tags": [
+      "validation_before_automation",
+      "segment_specific_validation",
+      "automation_readiness"
+    ],
+    "bloom_level": "evaluate",
+    "distractor_strategy": {
+      "plausible_but_prompt_only": "N/A",
+      "over_engineered": "C",
+      "wrong_layer": "N/A",
+      "valid_but_not_first_step": "N/A"
+    }
+  },
+  {
+    "id": "D5_T5_026",
+    "domain_id": "D5",
+    "task_statement_id": "D5.T5",
+    "scenario_ids": [
+      "S1"
+    ],
+    "difficulty": "applied_judgment",
+    "key_concept_tested": "stratified random sampling",
+    "stem": "Your support ticket validation needs to cover seasonal patterns. Your dataset has: Q1 (1200 tickets), Q2 (800 tickets), Q3 (600 tickets), Q4 (1400 tickets). For a 400-ticket validation set, how should you sample to ensure temporal representativeness?",
+    "options": [
+      {
+        "label": "A",
+        "text": "Stratified sampling: 120 Q1, 80 Q2, 60 Q3, 140 Q4 tickets",
+        "is_correct": true
+      },
+      {
+        "label": "B",
+        "text": "Equal sampling: 100 tickets from each quarter",
+        "is_correct": false
+      },
+      {
+        "label": "C",
+        "text": "Focus on Q4 and Q1 as peak seasons: 150 each, 50 each for Q2 and Q3",
+        "is_correct": false
+      },
+      {
+        "label": "D",
+        "text": "Random sampling across all quarters without stratification",
+        "is_correct": false
+      }
+    ],
+    "correct_label": "A",
+    "explanation": "Stratified sampling maintaining the original temporal distribution (3:2:1.5:3.5 ratio) ensures your validation represents seasonal patterns in production traffic, providing more accurate performance estimates.",
+    "tags": [
+      "temporal_stratification",
+      "seasonal_representation",
+      "validation_sampling"
+    ],
+    "bloom_level": "apply",
+    "distractor_strategy": {
+      "plausible_but_prompt_only": "N/A",
+      "over_engineered": "N/A",
+      "wrong_layer": "N/A",
+      "valid_but_not_first_step": "N/A"
+    }
+  },
+  {
+    "id": "D5_T5_027",
+    "domain_id": "D5",
+    "task_statement_id": "D5.T5",
+    "scenario_ids": [
+      "S2"
+    ],
+    "difficulty": "conceptual_knowledge",
+    "key_concept_tested": "field-level confidence scores with labeled validation sets",
+    "stem": "To build reliable confidence scores for code review findings, what is the most important requirement for your validation approach?",
+    "options": [
+      {
+        "label": "A",
+        "text": "Large sample sizes for statistical significance",
+        "is_correct": false
+      },
+      {
+        "label": "B",
+        "text": "Labeled ground truth data that measures actual accuracy against predicted confidence",
+        "is_correct": true
+      },
+      {
+        "label": "C",
+        "text": "Expert review of confidence score assignments",
+        "is_correct": false
+      },
+      {
+        "label": "D",
+        "text": "Cross-validation across different code repositories",
+        "is_correct": false
+      }
+    ],
+    "correct_label": "B",
+    "explanation": "Labeled ground truth data that measures actual accuracy against predicted confidence is essential for reliable confidence calibration. This empirical validation is the foundation for trustworthy confidence scores.",
+    "tags": [
+      "confidence_requirements",
+      "ground_truth_importance",
+      "empirical_validation"
+    ],
+    "bloom_level": "understand",
+    "distractor_strategy": {
+      "plausible_but_prompt_only": "N/A",
+      "over_engineered": "N/A",
+      "wrong_layer": "N/A",
+      "valid_but_not_first_step": "N/A"
+    }
+  },
+  {
+    "id": "D5_T5_028",
+    "domain_id": "D5",
+    "task_statement_id": "D5.T5",
+    "scenario_ids": [
+      "S1"
+    ],
+    "difficulty": "applied_judgment",
+    "key_concept_tested": "aggregate accuracy masking segment failures",
+    "stem": "Your support agent achieves 91% accuracy overall. Breaking down by ticket source: web form (94%), email (89%), phone transcripts (78%), chat logs (85%). Management wants to automate all channels since overall performance exceeds the 90% target. What's your recommendation?",
+    "options": [
+      {
+        "label": "A",
+        "text": "Automate web forms only, manual review for other channels",
+        "is_correct": false
+      },
+      {
+        "label": "B",
+        "text": "Automate web forms and email, manual review for phone and chat",
+        "is_correct": false
+      },
+      {
+        "label": "C",
+        "text": "Implement channel-specific automation based on individual performance: automate web forms, manual review for phone transcripts",
+        "is_correct": true
+      },
+      {
+        "label": "D",
+        "text": "Proceed with full automation since overall accuracy meets the target",
+        "is_correct": false
+      }
+    ],
+    "correct_label": "C",
+    "explanation": "Channel-specific automation is needed because aggregate accuracy masks the poor performance of phone transcripts (78%). Only channels meeting the 90% threshold should be automated, with manual review for underperforming segments.",
+    "tags": [
+      "channel_specific_automation",
+      "performance_based_routing",
+      "aggregate_masking_solution"
+    ],
+    "bloom_level": "apply",
+    "distractor_strategy": {
+      "plausible_but_prompt_only": "N/A",
+      "over_engineered": "N/A",
+      "wrong_layer": "N/A",
+      "valid_but_not_first_step": "N/A"
+    }
+  },
+  {
+    "id": "D5_T5_029",
+    "domain_id": "D5",
+    "task_statement_id": "D5.T5",
+    "scenario_ids": [
+      "S2"
+    ],
+    "difficulty": "applied_judgment",
+    "key_concept_tested": "accuracy validation by document type and field before automation",
+    "stem": "Your Claude Code system needs validation before automating merge decisions. You have three code types (frontend, backend, mobile) and three review categories (security, performance, style). What validation matrix should you create?",
+    "options": [
+      {
+        "label": "A",
+        "text": "Validate accuracy for each of the 9 code-type and review-category combinations separately",
+        "is_correct": false
+      },
+      {
+        "label": "B",
+        "text": "Validate accuracy by code type (3 validations) and by review category (3 validations)",
+        "is_correct": false
+      },
+      {
+        "label": "C",
+        "text": "Focus validation on the most critical combinations: security reviews across all code types",
+        "is_correct": false
+      },
+      {
+        "label": "D",
+        "text": "Create a single overall validation across all combinations",
+        "is_correct": true
+      }
+    ],
+    "correct_label": "D",
+    "explanation": "You need to validate accuracy for each of the 9 code-type and review-category combinations separately. Different combinations may have vastly different performance profiles, and safe automation requires understanding each specific scenario.",
+    "tags": [
+      "validation_matrix",
+      "comprehensive_validation",
+      "automation_safety"
+    ],
+    "bloom_level": "apply",
+    "distractor_strategy": {
+      "plausible_but_prompt_only": "N/A",
+      "over_engineered": "A",
+      "wrong_layer": "N/A",
+      "valid_but_not_first_step": "N/A"
+    }
+  },
+  {
+    "id": "D5_T5_030",
+    "domain_id": "D5",
+    "task_statement_id": "D5.T5",
+    "scenario_ids": [
+      "S1"
+    ],
+    "difficulty": "anti_pattern_recognition",
+    "key_concept_tested": "field-level confidence scores with labeled validation sets",
+    "stem": "A team member proposes: 'Let's use the length and format complexity of extracted fields to calculate confidence scores. Longer, more complex fields get lower confidence.' What's the fundamental flaw in this approach?",
+    "options": [
+      {
+        "label": "A",
+        "text": "Field length doesn't correlate with extraction difficulty",
+        "is_correct": true
+      },
+      {
+        "label": "B",
+        "text": "The approach lacks empirical validation against actual accuracy data",
+        "is_correct": false
+      },
+      {
+        "label": "C",
+        "text": "Complex fields might actually be easier to extract due to more context",
+        "is_correct": false
+      },
+      {
+        "label": "D",
+        "text": "The scoring system is too simplistic for production use",
+        "is_correct": false
+      }
+    ],
+    "correct_label": "A",
+    "explanation": "The fundamental flaw is that this approach lacks empirical validation against actual accuracy data. Reliable confidence scores must be calibrated using labeled validation sets that measure real performance, not heuristic rules.",
+    "tags": [
+      "confidence_anti_pattern",
+      "heuristic_scoring",
+      "empirical_validation_need"
+    ],
+    "bloom_level": "evaluate",
+    "distractor_strategy": {
+      "plausible_but_prompt_only": "N/A",
+      "over_engineered": "N/A",
+      "wrong_layer": "N/A",
+      "valid_but_not_first_step": "N/A"
+    }
+  },
+  {
+    "id": "D5_T5_031",
+    "domain_id": "D5",
+    "task_statement_id": "D5.T5",
+    "scenario_ids": [
+      "S2"
+    ],
+    "difficulty": "conceptual_knowledge",
+    "key_concept_tested": "stratified random sampling",
+    "stem": "When creating a validation set for your code review system, you want to ensure each programming language and review type combination is adequately represented. What sampling approach achieves this goal?",
+    "options": [
+      {
+        "label": "A",
+        "text": "Simple random sampling from the entire dataset",
+        "is_correct": false
+      },
+      {
+        "label": "B",
+        "text": "Stratified random sampling that maintains the original distribution of language-review combinations",
+        "is_correct": true
+      },
+      {
+        "label": "C",
+        "text": "Systematic sampling at regular intervals from sorted data",
+        "is_correct": false
+      },
+      {
+        "label": "D",
+        "text": "Cluster sampling by repository or team",
+        "is_correct": false
+      }
+    ],
+    "correct_label": "B",
+    "explanation": "Stratified random sampling that maintains the original distribution ensures adequate representation of each language-review combination while preserving the real-world proportions for accurate validation.",
+    "tags": [
+      "stratified_sampling_benefits",
+      "combination_representation",
+      "validation_accuracy"
+    ],
+    "bloom_level": "understand",
+    "distractor_strategy": {
+      "plausible_but_prompt_only": "N/A",
+      "over_engineered": "N/A",
+      "wrong_layer": "N/A",
+      "valid_but_not_first_step": "N/A"
+    }
+  },
+  {
+    "id": "D5_T5_032",
+    "domain_id": "D5",
+    "task_statement_id": "D5.T5",
+    "scenario_ids": [
+      "S1"
+    ],
+    "difficulty": "applied_judgment",
+    "key_concept_tested": "accuracy validation by document type and field before automation",
+    "stem": "Your customer support agent processes insurance claims with these field extraction accuracies: policy_number from PDFs (96%), claim_amount from PDFs (91%), policy_number from images (83%), claim_amount from images (74%). Your automation requires 90% accuracy. What should you automate?",
+    "options": [
+      {
+        "label": "A",
+        "text": "Automate all PDF processing and policy_number extraction from images",
+        "is_correct": false
+      },
+      {
+        "label": "B",
+        "text": "Only automate policy_number extraction from PDFs",
+        "is_correct": false
+      },
+      {
+        "label": "C",
+        "text": "Automate both fields from PDFs and policy_number from images",
+        "is_correct": false
+      },
+      {
+        "label": "D",
+        "text": "Only automate policy_number and claim_amount extraction from PDFs",
+        "is_correct": true
+      }
+    ],
+    "correct_label": "D",
+    "explanation": "With a 90% automation threshold, only PDF processing meets the requirement: policy_number (96%) and claim_amount (91%). Image processing falls below the threshold and requires manual review.",
+    "tags": [
+      "automation_threshold_strict",
+      "document_type_accuracy",
+      "field_level_decisions"
+    ],
+    "bloom_level": "apply",
+    "distractor_strategy": {
+      "plausible_but_prompt_only": "N/A",
+      "over_engineered": "N/A",
+      "wrong_layer": "N/A",
+      "valid_but_not_first_step": "N/A"
+    }
+  },
+  {
+    "id": "D5_T5_033",
+    "domain_id": "D5",
+    "task_statement_id": "D5.T5",
+    "scenario_ids": [
+      "S2"
+    ],
+    "difficulty": "anti_pattern_recognition",
+    "key_concept_tested": "aggregate accuracy masking segment failures",
+    "stem": "Your code review system shows 87% overall accuracy. A colleague argues: 'This exceeds our 85% target, so we can safely automate all code reviews. Any issues will show up in our monitoring.' What's the primary risk in this reasoning?",
+    "options": [
+      {
+        "label": "A",
+        "text": "The monitoring system may not catch all automation failures",
+        "is_correct": false
+      },
+      {
+        "label": "B",
+        "text": "Aggregate accuracy may mask critical failures in specific code types or review categories",
+        "is_correct": true
+      },
+      {
+        "label": "C",
+        "text": "The 85% target may be too low for code review automation",
+        "is_correct": false
+      },
+      {
+        "label": "D",
+        "text": "Reactive monitoring introduces unnecessary delays in issue detection",
+        "is_correct": false
+      }
+    ],
+    "correct_label": "B",
+    "explanation": "The primary risk is that aggregate accuracy may mask critical failures in specific segments. For example, security reviews might have much lower accuracy than style reviews, but this would be hidden in the overall metric.",
+    "tags": [
+      "aggregate_masking_risk",
+      "segment_failure_hiding",
+      "automation_safety"
+    ],
+    "bloom_level": "evaluate",
+    "distractor_strategy": {
+      "plausible_but_prompt_only": "N/A",
+      "over_engineered": "N/A",
+      "wrong_layer": "N/A",
+      "valid_but_not_first_step": "N/A"
+    }
+  },
+  {
+    "id": "D5_T5_034",
+    "domain_id": "D5",
+    "task_statement_id": "D5.T5",
+    "scenario_ids": [
+      "S1"
+    ],
+    "difficulty": "applied_judgment",
+    "key_concept_tested": "field-level confidence scores with labeled validation sets",
+    "stem": "You're implementing confidence-based routing for customer data extraction. Your labeled validation shows: customer_name (92% accuracy), account_number (87% accuracy), transaction_amount (81% accuracy). How should you configure confidence thresholds for each field?",
+    "options": [
+      {
+        "label": "A",
+        "text": "Use field-specific thresholds calibrated to each field's actual accuracy profile from the labeled validation data",
+        "is_correct": true
+      },
+      {
+        "label": "B",
+        "text": "Set uniform confidence thresholds at 85% across all fields",
+        "is_correct": false
+      },
+      {
+        "label": "C",
+        "text": "Use higher thresholds for financial fields (account_number, transaction_amount) regardless of accuracy",
+        "is_correct": false
+      },
+      {
+        "label": "D",
+        "text": "Set thresholds based on Claude's self-reported confidence for each field type",
+        "is_correct": false
+      }
+    ],
+    "correct_label": "A",
+    "explanation": "Field-specific thresholds calibrated to actual accuracy profiles provide the most reliable confidence routing. Each field type has different extraction characteristics, and thresholds should reflect real performance data from labeled validation.",
+    "tags": [
+      "field_specific_thresholds",
+      "accuracy_based_calibration",
+      "confidence_routing"
+    ],
+    "bloom_level": "apply",
+    "distractor_strategy": {
+      "plausible_but_prompt_only": "N/A",
+      "over_engineered": "N/A",
+      "wrong_layer": "N/A",
+      "valid_but_not_first_step": "N/A"
+    }
+  }
+]

@@ -1,0 +1,10 @@
+{
+  "total_input_tokens": 27535,
+  "total_output_tokens": 354754,
+  "total_cache_write_tokens": 5167,
+  "total_cache_read_tokens": 144676,
+  "llm_calls": 29,
+  "skipped_checkpoints": 0,
+  "estimated_cost_usd": 5.466694049999999,
+  "total_questions": 993
+}

@@ -1,0 +1,535 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "Claude Certified Architect - Question Bank Schema",
+  "version": "1.0.0",
+  "metadata": {
+    "exam": "Claude Certified Architect – Foundations",
+    "passing_score": 720,
+    "score_range": "100-1000",
+    "total_questions_per_exam": "scenario-based, 4 of 6 scenarios randomly selected",
+    "question_format": "multiple_choice",
+    "options_per_question": 4,
+    "correct_answers_per_question": 1
+  },
+
+  "difficulty_tiers": {
+    "tier_1": {
+      "id": "conceptual_knowledge",
+      "label": "Conceptual Knowledge (Recall)",
+      "description": "Tests whether the candidate knows a fact, definition, or rule from the exam content",
+      "bloom_level": "remember / understand",
+      "indicators": [
+        "What is X?",
+        "Which of the following describes X?",
+        "What does X do?",
+        "Which flag / setting / configuration achieves X?"
+      ],
+      "weight_pct": 30
+    },
+    "tier_2": {
+      "id": "applied_judgment",
+      "label": "Applied Judgment (Application)",
+      "description": "Tests whether the candidate can apply knowledge to a realistic production scenario and choose the correct action",
+      "bloom_level": "apply / analyze",
+      "indicators": [
+        "Given this production context, what should you do?",
+        "Which approach best addresses this problem?",
+        "What is the most effective first step?"
+      ],
+      "weight_pct": 50
+    },
+    "tier_3": {
+      "id": "anti_pattern_recognition",
+      "label": "Anti-Pattern Recognition (Analysis)",
+      "description": "Tests whether the candidate can identify incorrect, risky, or suboptimal approaches — including options that sound plausible but violate best practices",
+      "bloom_level": "evaluate / critique",
+      "indicators": [
+        "Why is this approach insufficient?",
+        "Which option introduces a reliability risk?",
+        "A colleague proposes X — what is the flaw?",
+        "What is the most likely root cause of this failure?"
+      ],
+      "weight_pct": 20
+    }
+  },
+ 
+  "domains": [
+    {
+      "id": "D1",
+      "name": "Agentic Architecture & Orchestration",
+      "weight_pct": 27,
+      "task_statements": [
+        {
+          "id": "D1.T1",
+          "title": "Design and implement agentic loops for autonomous task execution",
+          "key_concepts": [
+            "stop_reason: tool_use vs end_turn",
+            "agentic loop lifecycle",
+            "tool result appending to conversation history",
+            "model-driven vs pre-configured decision trees",
+            "anti-patterns: natural language termination signals, arbitrary iteration caps, checking assistant text for completion"
+          ]
+        },
+        {
+          "id": "D1.T2",
+          "title": "Orchestrate multi-agent systems with coordinator-subagent patterns",
+          "key_concepts": [
+            "hub-and-spoke architecture",
+            "subagent isolated context",
+            "coordinator role: decomposition, delegation, aggregation",
+            "overly narrow task decomposition risks",
+            "iterative refinement loops",
+            "routing all communication through coordinator"
+          ]
+        },
+        {
+          "id": "D1.T3",
+          "title": "Configure subagent invocation, context passing, and spawning",
+          "key_concepts": [
+            "Task tool for spawning subagents",
+            "allowedTools must include Task",
+            "explicit context passing in prompt",
+            "AgentDefinition: descriptions, system prompts, tool restrictions",
+            "fork-based session management",
+            "parallel subagent spawning via multiple Task calls in single response",
+            "goal-oriented coordinator prompts"
+          ]
+        },
+        {
+          "id": "D1.T4",
+          "title": "Implement multi-step workflows with enforcement and handoff patterns",
+          "key_concepts": [
+            "programmatic enforcement vs prompt-based guidance",
+            "deterministic compliance for financial operations",
+            "structured handoff protocols: customer ID, root cause, recommended actions",
+            "programmatic prerequisite gates",
+            "parallel investigation of multi-concern requests"
+          ]
+        },
+        {
+          "id": "D1.T5",
+          "title": "Apply Agent SDK hooks for tool call interception and data normalization",
+          "key_concepts": [
+            "PostToolUse hook pattern",
+            "hook for outgoing tool call interception",
+            "deterministic guarantees vs probabilistic prompt compliance",
+            "normalizing heterogeneous data formats",
+            "blocking policy-violating actions via hooks"
+          ]
+        },
+        {
+          "id": "D1.T6",
+          "title": "Design task decomposition strategies for complex workflows",
+          "key_concepts": [
+            "fixed sequential pipelines vs dynamic adaptive decomposition",
+            "prompt chaining patterns",
+            "adaptive investigation plans",
+            "per-file local analysis + cross-file integration pass",
+            "open-ended task decomposition"
+          ]
+        },
+        {
+          "id": "D1.T7",
+          "title": "Manage session state, resumption, and forking",
+          "key_concepts": [
+            "--resume <session-name>",
+            "fork_session for divergent approaches",
+            "informing agent about file changes on resume",
+            "new session with structured summary vs resuming stale context"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "D2",
+      "name": "Tool Design & MCP Integration",
+      "weight_pct": 18,
+      "task_statements": [
+        {
+          "id": "D2.T1",
+          "title": "Design effective tool interfaces with clear descriptions and boundaries",
+          "key_concepts": [
+            "tool descriptions as primary LLM selection mechanism",
+            "minimal descriptions cause unreliable selection",
+            "include: input formats, example queries, edge cases, boundaries",
+            "ambiguous/overlapping descriptions cause misrouting",
+            "system prompt keyword sensitivity"
+          ]
+        },
+        {
+          "id": "D2.T2",
+          "title": "Implement structured error responses for MCP tools",
+          "key_concepts": [
+            "isError flag pattern",
+            "error categories: transient, validation, business, permission",
+            "uniform generic errors prevent recovery",
+            "retryable vs non-retryable errors",
+            "errorCategory, isRetryable boolean",
+            "local subagent recovery before propagation",
+            "access failure vs valid empty result distinction"
+          ]
+        },
+        {
+          "id": "D2.T3",
+          "title": "Distribute tools appropriately across agents and configure tool_choice",
+          "key_concepts": [
+            "too many tools degrade selection reliability",
+            "agents misuse out-of-specialization tools",
+            "scoped tool access",
+            "tool_choice: auto vs any vs forced",
+            "restricting subagent tool sets",
+            "constrained alternative tools"
+          ]
+        },
+        {
+          "id": "D2.T4",
+          "title": "Integrate MCP servers into Claude Code and agent workflows",
+          "key_concepts": [
+            "project-level .mcp.json vs user-level ~/.claude.json",
+            "environment variable expansion: ${VAR}",
+            "tools discovered at connection time",
+            "MCP resources for content catalogs",
+            "community vs custom MCP servers"
+          ]
+        },
+        {
+          "id": "D2.T5",
+          "title": "Select and apply built-in tools effectively",
+          "key_concepts": [
+            "Grep: content search across files",
+            "Glob: file path pattern matching",
+            "Read/Write: full file operations",
+            "Edit: targeted modifications with unique text matching",
+            "Edit failure fallback: Read + Write",
+            "incremental codebase understanding pattern"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "D3",
+      "name": "Claude Code Configuration & Workflows",
+      "weight_pct": 20,
+      "task_statements": [
+        {
+          "id": "D3.T1",
+          "title": "Configure CLAUDE.md files with appropriate hierarchy, scoping, and modular organization",
+          "key_concepts": [
+            "user-level: ~/.claude/CLAUDE.md",
+            "project-level: .claude/CLAUDE.md or root CLAUDE.md",
+            "directory-level: subdirectory CLAUDE.md",
+            "@import syntax for modular external files",
+            ".claude/rules/ for topic-specific rule files",
+            "/memory command for verification"
+          ]
+        },
+        {
+          "id": "D3.T2",
+          "title": "Create and configure custom slash commands and skills",
+          "key_concepts": [
+            "project-scoped: .claude/commands/ (version controlled)",
+            "user-scoped: ~/.claude/commands/ (personal)",
+            ".claude/skills/ with SKILL.md frontmatter",
+            "context: fork — isolated sub-agent execution",
+            "allowed-tools frontmatter",
+            "argument-hint frontmatter",
+            "skills vs CLAUDE.md: on-demand vs always-loaded"
+          ]
+        },
+        {
+          "id": "D3.T3",
+          "title": "Apply path-specific rules for conditional convention loading",
+          "key_concepts": [
+            ".claude/rules/ YAML frontmatter paths field",
+            "glob patterns for conditional activation",
+            "path-scoped rules reduce irrelevant context",
+            "glob patterns vs directory-level CLAUDE.md for cross-directory conventions"
+          ]
+        },
+        {
+          "id": "D3.T4",
+          "title": "Determine when to use plan mode vs direct execution",
+          "key_concepts": [
+            "plan mode: large-scale, multi-file, architectural, multiple valid approaches",
+            "direct execution: simple, well-scoped, single-file changes",
+            "Explore subagent for verbose discovery isolation",
+            "combining plan mode + direct execution"
+          ]
+        },
+        {
+          "id": "D3.T5",
+          "title": "Apply iterative refinement techniques for progressive improvement",
+          "key_concepts": [
+            "concrete input/output examples over prose descriptions",
+            "test-driven iteration",
+            "interview pattern",
+            "single message for interacting problems vs sequential for independent"
+          ]
+        },
+        {
+          "id": "D3.T6",
+          "title": "Integrate Claude Code into CI/CD pipelines",
+          "key_concepts": [
+            "-p / --print flag for non-interactive mode",
+            "--output-format json with --json-schema",
+            "CLAUDE.md for CI project context",
+            "session context isolation for independent review",
+            "prior review findings in context to avoid duplicate comments",
+            "existing test files in context to avoid duplicate test generation"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "D4",
+      "name": "Prompt Engineering & Structured Output",
+      "weight_pct": 20,
+      "task_statements": [
+        {
+          "id": "D4.T1",
+          "title": "Design prompts with explicit criteria to improve precision and reduce false positives",
+          "key_concepts": [
+            "explicit criteria over vague instructions",
+            "general instructions like 'be conservative' fail",
+            "false positive impact on developer trust",
+            "specific categorical criteria",
+            "severity criteria with concrete code examples"
+          ]
+        },
+        {
+          "id": "D4.T2",
+          "title": "Apply few-shot prompting to improve output consistency and quality",
+          "key_concepts": [
+            "few-shot as most effective for consistent formatted output",
+            "demonstrating ambiguous-case handling",
+            "generalization to novel patterns",
+            "reducing hallucination in extraction",
+            "2-4 targeted examples for ambiguous scenarios",
+            "examples showing reasoning for choice over alternatives"
+          ]
+        },
+        {
+          "id": "D4.T3",
+          "title": "Enforce structured output using tool use and JSON schemas",
+          "key_concepts": [
+            "tool_use with JSON schema: most reliable for schema-compliant output",
+            "tool_choice auto vs any vs forced",
+            "strict schemas eliminate syntax errors not semantic errors",
+            "required vs optional fields",
+            "enum with other + detail string pattern",
+            "nullable fields to prevent fabrication"
+          ]
+        },
+        {
+          "id": "D4.T4",
+          "title": "Implement validation, retry, and feedback loops for extraction quality",
+          "key_concepts": [
+            "retry-with-error-feedback pattern",
+            "retries ineffective when information absent from source",
+            "detected_pattern field for dismissal analysis",
+            "semantic vs schema syntax errors",
+            "self-correction validation flows",
+            "calculated_total vs stated_total discrepancy detection"
+          ]
+        },
+        {
+          "id": "D4.T5",
+          "title": "Design efficient batch processing strategies",
+          "key_concepts": [
+            "Message Batches API: 50% cost savings, 24h window, no latency SLA",
+            "batch for non-blocking latency-tolerant workloads",
+            "batch not for blocking workflows like pre-merge checks",
+            "no multi-turn tool calling in batch",
+            "custom_id for correlation",
+            "batch submission frequency from SLA constraints"
+          ]
+        },
+        {
+          "id": "D4.T6",
+          "title": "Design multi-instance and multi-pass review architectures",
+          "key_concepts": [
+            "self-review limitations: retained reasoning context",
+            "independent review instance more effective than self-review",
+            "multi-pass: per-file local + cross-file integration",
+            "confidence self-reporting alongside findings"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "D5",
+      "name": "Context Management & Reliability",
+      "weight_pct": 15,
+      "task_statements": [
+        {
+          "id": "D5.T1",
+          "title": "Manage conversation context to preserve critical information across long interactions",
+          "key_concepts": [
+            "progressive summarization risks: numerical values, dates",
+            "lost-in-the-middle effect",
+            "tool results accumulate disproportionately",
+            "persistent case facts block",
+            "trimming verbose tool outputs",
+            "position-aware input ordering",
+            "structured subagent outputs with metadata"
+          ]
+        },
+        {
+          "id": "D5.T2",
+          "title": "Design effective escalation and ambiguity resolution patterns",
+          "key_concepts": [
+            "escalation triggers: explicit customer request, policy gaps, inability to progress",
+            "immediate escalation on explicit customer request",
+            "sentiment-based escalation unreliable",
+            "multiple customer matches: request identifiers not heuristics",
+            "few-shot escalation examples in system prompt"
+          ]
+        },
+        {
+          "id": "D5.T3",
+          "title": "Implement error propagation strategies across multi-agent systems",
+          "key_concepts": [
+            "structured error context: failure type, attempted query, partial results, alternatives",
+            "access failure vs valid empty result",
+            "generic error statuses hide coordinator context",
+            "silent suppression and full termination are both anti-patterns",
+            "coverage annotations in synthesis output"
+          ]
+        },
+        {
+          "id": "D5.T4",
+          "title": "Manage context effectively in large codebase exploration",
+          "key_concepts": [
+            "context degradation in extended sessions",
+            "scratchpad files for persistent findings",
+            "subagent delegation for verbose output isolation",
+            "structured state persistence for crash recovery",
+            "/compact for context reduction"
+          ]
+        },
+        {
+          "id": "D5.T5",
+          "title": "Design human review workflows and confidence calibration",
+          "key_concepts": [
+            "aggregate accuracy masking segment failures",
+            "stratified random sampling",
+            "field-level confidence scores with labeled validation sets",
+            "accuracy validation by document type and field before automation"
+          ]
+        },
+        {
+          "id": "D5.T6",
+          "title": "Preserve information provenance and handle uncertainty in multi-source synthesis",
+          "key_concepts": [
+            "source attribution lost during summarization",
+            "structured claim-source mappings",
+            "conflicting statistics: annotate with attribution not arbitrary selection",
+            "temporal data: publication/collection dates required",
+            "coverage annotations for gap reporting"
+          ]
+        }
+      ]
+    }
+  ],
+
+  "scenarios": [
+    {
+      "id": "S1",
+      "title": "Customer Support Resolution Agent",
+      "primary_domains": ["D1", "D2", "D5"],
+      "context": "Building a customer support resolution agent using the Claude Agent SDK. The agent handles high-ambiguity requests like returns, billing disputes, and account issues. MCP tools: get_customer, lookup_order, process_refund, escalate_to_human. Target: 80%+ first-contact resolution.",
+      "combinable_with": ["S4", "S6"]
+    },
+    {
+      "id": "S2",
+      "title": "Code Generation with Claude Code",
+      "primary_domains": ["D3", "D5"],
+      "context": "Using Claude Code to accelerate software development: code generation, refactoring, debugging, documentation. Integrating custom slash commands, CLAUDE.md configurations, plan mode vs direct execution.",
+      "combinable_with": ["S5"]
+    },
+    {
+      "id": "S3",
+      "title": "Multi-Agent Research System",
+      "primary_domains": ["D1", "D2", "D5"],
+      "context": "Building a multi-agent research system using Claude Agent SDK. Coordinator delegates to: web search agent, document analysis agent, synthesis agent, report generation agent. Produces comprehensive cited reports.",
+      "combinable_with": ["S1", "S4"]
+    },
+    {
+      "id": "S4",
+      "title": "Developer Productivity with Claude",
+      "primary_domains": ["D2", "D3", "D1"],
+      "context": "Building developer productivity tools with Claude Agent SDK. Agent explores unfamiliar codebases, understands legacy systems, generates boilerplate, automates repetitive tasks. Uses built-in tools: Read, Write, Bash, Grep, Glob + MCP servers.",
+      "combinable_with": ["S2", "S3"]
+    },
+    {
+      "id": "S5",
+      "title": "Claude Code for Continuous Integration",
+      "primary_domains": ["D3", "D4"],
+      "context": "Integrating Claude Code into CI/CD pipeline. System runs automated code reviews, generates test cases, provides PR feedback. Requires prompts for actionable feedback and minimal false positives.",
+      "combinable_with": ["S2"]
+    },
+    {
+      "id": "S6",
+      "title": "Structured Data Extraction",
+      "primary_domains": ["D4", "D5"],
+      "context": "Building a structured data extraction system using Claude. Extracts information from unstructured documents, validates via JSON schemas, maintains high accuracy, handles edge cases gracefully, integrates with downstream systems.",
+      "combinable_with": ["S1", "S3"]
+    }
+  ],
+
+  "question_template": {
+    "id": "string — e.g. D1.T1.S1.T2.001",
+    "domain_id": "string — e.g. D1",
+    "task_statement_id": "string — e.g. D1.T1",
+    "scenario_ids": ["array — primary and any recombined scenario IDs e.g. S1, S3"],
+    "difficulty": "conceptual_knowledge | applied_judgment | anti_pattern_recognition",
+    "bloom_level": "remember | understand | apply | analyze | evaluate",
+    "key_concept_tested": "string — specific concept from task statement key_concepts list",
+    "stem": "string — the question text, framed within the scenario context",
+    "options": [
+      { "label": "A", "text": "string", "is_correct": false },
+      { "label": "B", "text": "string", "is_correct": false },
+      { "label": "C", "text": "string", "is_correct": true },
+      { "label": "D", "text": "string", "is_correct": false }
+    ],
+    "correct_label": "string — A | B | C | D",
+    "explanation": "string — explains why correct is right AND why each distractor is wrong",
+    "distractor_strategy": {
+      "plausible_but_prompt_only": "option that sounds correct but relies on probabilistic LLM compliance",
+      "over_engineered": "option that would work but adds unnecessary infrastructure",
+      "wrong_layer": "option that addresses a real problem but the wrong one",
+      "valid_but_not_first_step": "option correct in principle but premature given the scenario"
+    },
+    "tags": ["array of searchable tags e.g. stop_reason, tool_choice, hooks, CLAUDE.md"]
+  },
+
+  "batch_generation_instructions": {
+    "batch_size": 50,
+    "grouping": "by domain, then task statement",
+    "difficulty_distribution_per_batch": {
+      "conceptual_knowledge": "30% (~15 questions)",
+      "applied_judgment": "50% (~25 questions)",
+      "anti_pattern_recognition": "20% (~10 questions)"
+    },
+    "scenario_recombination_rules": [
+      "Each question must reference at least one scenario from the scenarios list",
+      "Cross-scenario questions (combinable_with) should make up ~20% of each batch",
+      "Do not reuse the same scenario+task_statement+difficulty combination within a batch",
+      "Rotate correct answer position (A/B/C/D) to avoid pattern bias — no label should appear >40% in a batch"
+    ],
+    "distractor_rules": [
+      "Every distractor must represent a genuine misconception or incomplete knowledge — not obviously wrong",
+      "At least one distractor per question should be a prompt-only / probabilistic compliance anti-pattern",
+      "At least one distractor should be over-engineered (adds infrastructure when a simpler fix exists)",
+      "Distractors must be plausible to a candidate with 3-5 months experience but insufficient for production"
+    ],
+    "stem_variation_rules": [
+      "Vary question framing: 'What should you do?', 'What is the root cause?', 'Why is this insufficient?', 'Which option introduces risk?'",
+      "Mix positive framing ('best approach') with negative framing ('most likely to fail')",
+      "Include production metrics in stems where relevant (e.g. '12% failure rate', '40% latency increase')",
+      "Reference specific API constructs (stop_reason, tool_choice, isError) in stems for applied/anti-pattern tiers"
+    ]
+  },
+
+  "generation_prompt_template": "Generate a batch of {batch_size} exam questions for the Claude Certified Architect – Foundations exam. Focus on domain {domain_id} ({domain_name}), task statements {task_statement_ids}. Use scenarios {scenario_ids} as context, recombining where marked combinable_with. Apply difficulty distribution: {pct_conceptual}% conceptual_knowledge, {pct_applied}% applied_judgment, {pct_antipattern}% anti_pattern_recognition. Output each question as a JSON object matching the question_template schema. Vary correct answer position across the batch. Each distractor must reflect a genuine production misconception. Include explanation that addresses all four options."
+}

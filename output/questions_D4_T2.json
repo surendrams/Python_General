@@ -1,0 +1,1634 @@
+[
+  {
+    "id": "D4_T2_001",
+    "domain_id": "D4",
+    "task_statement_id": "D4.T2",
+    "scenario_ids": [
+      "S6"
+    ],
+    "difficulty": "conceptual_knowledge",
+    "key_concept_tested": "few-shot as most effective for consistent formatted output",
+    "stem": "Your document extraction system needs to parse product specifications from technical datasheets with 95% accuracy. Which prompting approach is most effective for achieving consistent structured output?",
+    "options": [
+      {
+        "label": "A",
+        "text": "Zero-shot prompting with detailed JSON schema and validation rules",
+        "is_correct": false
+      },
+      {
+        "label": "B",
+        "text": "Few-shot prompting with 2-3 examples showing target extraction format",
+        "is_correct": true
+      },
+      {
+        "label": "C",
+        "text": "Chain-of-thought prompting explaining the extraction reasoning process",
+        "is_correct": false
+      },
+      {
+        "label": "D",
+        "text": "Role-based prompting instructing Claude to act as a technical document analyst",
+        "is_correct": false
+      }
+    ],
+    "correct_label": "B",
+    "explanation": "Few-shot prompting is most effective for consistent structured output because it provides concrete examples of the desired format, reducing ambiguity about output structure. While JSON schemas help with validation, examples demonstrate the actual extraction pattern more clearly than instructions alone.",
+    "tags": [
+      "few-shot",
+      "structured-output",
+      "document-extraction",
+      "consistency"
+    ],
+    "bloom_level": "understand",
+    "distractor_strategy": {
+      "plausible_but_prompt_only": "D",
+      "over_engineered": "N/A",
+      "wrong_layer": "N/A",
+      "valid_but_not_first_step": "N/A"
+    }
+  },
+  {
+    "id": "D4_T2_002",
+    "domain_id": "D4",
+    "task_statement_id": "D4.T2",
+    "scenario_ids": [
+      "S5"
+    ],
+    "difficulty": "applied_judgment",
+    "key_concept_tested": "demonstrating ambiguous-case handling",
+    "stem": "Your CI/CD system generates inconsistent code review feedback for edge cases like TODO comments and deprecated API usage. The current few-shot examples only show clear violations. What should you add to improve consistency?",
+    "options": [
+      {
+        "label": "A",
+        "text": "More examples with clear-cut violations to reinforce the pattern",
+        "is_correct": false
+      },
+      {
+        "label": "B",
+        "text": "Detailed rubric explaining when to flag vs ignore borderline cases",
+        "is_correct": false
+      },
+      {
+        "label": "C",
+        "text": "Examples specifically demonstrating how to handle ambiguous cases like contextual TODO comments",
+        "is_correct": true
+      },
+      {
+        "label": "D",
+        "text": "Higher temperature settings to increase creativity in edge case handling",
+        "is_correct": false
+      }
+    ],
+    "correct_label": "C",
+    "explanation": "Adding few-shot examples that specifically demonstrate ambiguous case handling teaches the model how to make consistent decisions in borderline scenarios. Examples showing when TODO comments are acceptable (e.g., with tickets) vs problematic (e.g., vague placeholders) provide concrete guidance for edge cases.",
+    "tags": [
+      "few-shot",
+      "ambiguous-cases",
+      "code-review",
+      "edge-cases"
+    ],
+    "bloom_level": "apply",
+    "distractor_strategy": {
+      "plausible_but_prompt_only": "N/A",
+      "over_engineered": "N/A",
+      "wrong_layer": "N/A",
+      "valid_but_not_first_step": "N/A"
+    }
+  },
+  {
+    "id": "D4_T2_003",
+    "domain_id": "D4",
+    "task_statement_id": "D4.T2",
+    "scenario_ids": [
+      "S6"
+    ],
+    "difficulty": "anti_pattern_recognition",
+    "key_concept_tested": "2-4 targeted examples for ambiguous scenarios",
+    "stem": "A colleague suggests improving extraction accuracy by including 12 comprehensive examples covering every possible document variation. What is the primary flaw in this approach?",
+    "options": [
+      {
+        "label": "A",
+        "text": "Too many examples consume excessive context window space",
+        "is_correct": false
+      },
+      {
+        "label": "B",
+        "text": "The model may overfit to specific examples rather than generalize patterns",
+        "is_correct": false
+      },
+      {
+        "label": "C",
+        "text": "Processing costs increase significantly with more examples in each request",
+        "is_correct": false
+      },
+      {
+        "label": "D",
+        "text": "Excessive examples dilute focus on key ambiguous patterns that need demonstration",
+        "is_correct": true
+      }
+    ],
+    "correct_label": "D",
+    "explanation": "While more examples seem helpful, 12 examples dilute focus on the specific ambiguous patterns that actually need demonstration. The optimal approach is 2-4 targeted examples that address the key edge cases causing inconsistency, rather than comprehensive coverage that obscures the critical patterns.",
+    "tags": [
+      "few-shot",
+      "anti-pattern",
+      "example-selection",
+      "focus"
+    ],
+    "bloom_level": "evaluate",
+    "distractor_strategy": {
+      "plausible_but_prompt_only": "N/A",
+      "over_engineered": "N/A",
+      "wrong_layer": "N/A",
+      "valid_but_not_first_step": "N/A"
+    }
+  },
+  {
+    "id": "D4_T2_004",
+    "domain_id": "D4",
+    "task_statement_id": "D4.T2",
+    "scenario_ids": [
+      "S5"
+    ],
+    "difficulty": "conceptual_knowledge",
+    "key_concept_tested": "generalization to novel patterns",
+    "stem": "Your few-shot examples for code review feedback work well for the demonstrated patterns but fail on novel code structures. What principle should guide example selection to improve generalization?",
+    "options": [
+      {
+        "label": "A",
+        "text": "Choose examples that demonstrate the underlying reasoning patterns rather than surface-level code patterns",
+        "is_correct": true
+      },
+      {
+        "label": "B",
+        "text": "Include examples from every programming language your team uses",
+        "is_correct": false
+      },
+      {
+        "label": "C",
+        "text": "Focus on the most common code patterns to reinforce frequent use cases",
+        "is_correct": false
+      },
+      {
+        "label": "D",
+        "text": "Use examples that match your team's specific coding standards exactly",
+        "is_correct": false
+      }
+    ],
+    "correct_label": "A",
+    "explanation": "Effective few-shot examples demonstrate underlying reasoning patterns (e.g., 'flag security risks in user input handling') rather than surface-level patterns (e.g., specific function names). This enables the model to generalize the reasoning to novel code structures it hasn't seen before.",
+    "tags": [
+      "few-shot",
+      "generalization",
+      "reasoning-patterns",
+      "code-review"
+    ],
+    "bloom_level": "understand",
+    "distractor_strategy": {
+      "plausible_but_prompt_only": "N/A",
+      "over_engineered": "N/A",
+      "wrong_layer": "N/A",
+      "valid_but_not_first_step": "N/A"
+    }
+  },
+  {
+    "id": "D4_T2_005",
+    "domain_id": "D4",
+    "task_statement_id": "D4.T2",
+    "scenario_ids": [
+      "S6"
+    ],
+    "difficulty": "applied_judgment",
+    "key_concept_tested": "reducing hallucination in extraction",
+    "stem": "Your extraction system occasionally hallucinates product specifications that don't exist in source documents. Your current few-shot examples only show successful extractions. How should you modify your examples to reduce hallucination?",
+    "options": [
+      {
+        "label": "A",
+        "text": "Add examples where some fields are marked as 'null' or 'not found' when information is missing",
+        "is_correct": false
+      },
+      {
+        "label": "B",
+        "text": "Include examples showing extraction from documents with missing or incomplete information",
+        "is_correct": true
+      },
+      {
+        "label": "C",
+        "text": "Increase the number of successful extraction examples to reinforce correct behavior",
+        "is_correct": false
+      },
+      {
+        "label": "D",
+        "text": "Add validation rules that reject outputs containing hallucinated information",
+        "is_correct": false
+      }
+    ],
+    "correct_label": "B",
+    "explanation": "Including examples that demonstrate how to handle missing or incomplete information teaches the model to accurately represent what's actually in the document rather than filling gaps with plausible but incorrect information. This directly addresses the hallucination problem by showing proper handling of incomplete data.",
+    "tags": [
+      "few-shot",
+      "hallucination",
+      "missing-data",
+      "extraction-accuracy"
+    ],
+    "bloom_level": "apply",
+    "distractor_strategy": {
+      "plausible_but_prompt_only": "N/A",
+      "over_engineered": "N/A",
+      "wrong_layer": "N/A",
+      "valid_but_not_first_step": "N/A"
+    }
+  },
+  {
+    "id": "D4_T2_006",
+    "domain_id": "D4",
+    "task_statement_id": "D4.T2",
+    "scenario_ids": [
+      "S5"
+    ],
+    "difficulty": "conceptual_knowledge",
+    "key_concept_tested": "examples showing reasoning for choice over alternatives",
+    "stem": "Your code review system needs to distinguish between legitimate performance optimizations and premature optimization. What type of few-shot example would best teach this distinction?",
+    "options": [
+      {
+        "label": "A",
+        "text": "Examples showing only clear cases of premature optimization to avoid",
+        "is_correct": false
+      },
+      {
+        "label": "B",
+        "text": "Examples showing only legitimate optimizations to encourage",
+        "is_correct": false
+      },
+      {
+        "label": "C",
+        "text": "Examples that contrast similar code changes, explaining why one is appropriate and another isn't",
+        "is_correct": true
+      },
+      {
+        "label": "D",
+        "text": "Examples with detailed performance benchmarks justifying each optimization",
+        "is_correct": false
+      }
+    ],
+    "correct_label": "C",
+    "explanation": "Contrastive examples that show similar code changes with explanations of why one is appropriate and another isn't help the model learn the reasoning criteria for making distinctions. This approach teaches the decision-making process rather than just showing positive or negative examples in isolation.",
+    "tags": [
+      "few-shot",
+      "contrastive-examples",
+      "reasoning",
+      "code-optimization"
+    ],
+    "bloom_level": "understand",
+    "distractor_strategy": {
+      "plausible_but_prompt_only": "N/A",
+      "over_engineered": "N/A",
+      "wrong_layer": "N/A",
+      "valid_but_not_first_step": "N/A"
+    }
+  },
+  {
+    "id": "D4_T2_007",
+    "domain_id": "D4",
+    "task_statement_id": "D4.T2",
+    "scenario_ids": [
+      "S6"
+    ],
+    "difficulty": "applied_judgment",
+    "key_concept_tested": "2-4 targeted examples for ambiguous scenarios",
+    "stem": "Your document extraction system struggles with tables that span multiple pages, sometimes missing data or duplicating headers. You have space for 3 few-shot examples. Which combination would be most effective?",
+    "options": [
+      {
+        "label": "A",
+        "text": "Three examples of different table formats (simple, complex, with merged cells)",
+        "is_correct": false
+      },
+      {
+        "label": "B",
+        "text": "One example each of: page break mid-table, repeated headers, and missing table boundaries",
+        "is_correct": false
+      },
+      {
+        "label": "C",
+        "text": "Three examples of successful single-page table extractions to reinforce the pattern",
+        "is_correct": false
+      },
+      {
+        "label": "D",
+        "text": "Examples showing: table continues across pages, how to identify vs ignore repeated headers, and handling incomplete table fragments",
+        "is_correct": true
+      }
+    ],
+    "correct_label": "D",
+    "explanation": "The most effective approach targets the specific ambiguous scenarios causing problems: page-spanning tables, header repetition, and incomplete fragments. These examples directly address the edge cases where the system currently fails, providing concrete guidance for the problematic patterns.",
+    "tags": [
+      "few-shot",
+      "targeted-examples",
+      "table-extraction",
+      "multi-page"
+    ],
+    "bloom_level": "apply",
+    "distractor_strategy": {
+      "plausible_but_prompt_only": "N/A",
+      "over_engineered": "N/A",
+      "wrong_layer": "N/A",
+      "valid_but_not_first_step": "N/A"
+    }
+  },
+  {
+    "id": "D4_T2_008",
+    "domain_id": "D4",
+    "task_statement_id": "D4.T2",
+    "scenario_ids": [
+      "S5"
+    ],
+    "difficulty": "anti_pattern_recognition",
+    "key_concept_tested": "few-shot as most effective for consistent formatted output",
+    "stem": "Your team proposes using detailed natural language instructions instead of few-shot examples for code review formatting, arguing that instructions are more flexible and don't constrain the model. What is the main risk of this approach?",
+    "options": [
+      {
+        "label": "A",
+        "text": "Natural language instructions require more tokens than few-shot examples",
+        "is_correct": true
+      },
+      {
+        "label": "B",
+        "text": "Instructions are interpreted differently across requests, leading to inconsistent output formatting",
+        "is_correct": false
+      },
+      {
+        "label": "C",
+        "text": "The model may ignore complex instructions in favor of default behaviors",
+        "is_correct": false
+      },
+      {
+        "label": "D",
+        "text": "Instructions cannot convey the nuanced formatting requirements as effectively as examples",
+        "is_correct": false
+      }
+    ],
+    "correct_label": "A",
+    "explanation": "While natural language instructions may seem flexible, they often lead to inconsistent output formatting because the model interprets them differently across requests. Few-shot examples provide concrete, unambiguous demonstrations of the exact format expected, leading to more consistent structured output.",
+    "tags": [
+      "few-shot",
+      "anti-pattern",
+      "instructions-vs-examples",
+      "consistency"
+    ],
+    "bloom_level": "evaluate",
+    "distractor_strategy": {
+      "plausible_but_prompt_only": "D",
+      "over_engineered": "N/A",
+      "wrong_layer": "N/A",
+      "valid_but_not_first_step": "N/A"
+    }
+  },
+  {
+    "id": "D4_T2_009",
+    "domain_id": "D4",
+    "task_statement_id": "D4.T2",
+    "scenario_ids": [
+      "S6"
+    ],
+    "difficulty": "applied_judgment",
+    "key_concept_tested": "demonstrating ambiguous-case handling",
+    "stem": "Your extraction system inconsistently handles product names that appear in multiple formats (e.g., 'iPhone 15', 'iPhone-15', 'iPhone_15'). Current accuracy is 78%. What few-shot approach would most effectively address this inconsistency?",
+    "options": [
+      {
+        "label": "A",
+        "text": "Examples showing normalization of different product name formats to a canonical form",
+        "is_correct": false
+      },
+      {
+        "label": "B",
+        "text": "Examples demonstrating how to identify and extract the most complete product name variant",
+        "is_correct": true
+      },
+      {
+        "label": "C",
+        "text": "Examples with regex patterns for matching different product name formats",
+        "is_correct": false
+      },
+      {
+        "label": "D",
+        "text": "Examples showing extraction of all product name variants found in the document",
+        "is_correct": false
+      }
+    ],
+    "correct_label": "B",
+    "explanation": "Examples that demonstrate how to identify and extract the most complete or authoritative product name variant teach the model to make consistent decisions about which format to prefer. This addresses the ambiguity directly by showing the decision-making criteria rather than just normalization rules.",
+    "tags": [
+      "few-shot",
+      "ambiguous-cases",
+      "product-names",
+      "variant-handling"
+    ],
+    "bloom_level": "apply",
+    "distractor_strategy": {
+      "plausible_but_prompt_only": "N/A",
+      "over_engineered": "N/A",
+      "wrong_layer": "N/A",
+      "valid_but_not_first_step": "N/A"
+    }
+  },
+  {
+    "id": "D4_T2_010",
+    "domain_id": "D4",
+    "task_statement_id": "D4.T2",
+    "scenario_ids": [
+      "S5"
+    ],
+    "difficulty": "conceptual_knowledge",
+    "key_concept_tested": "reducing hallucination in extraction",
+    "stem": "Your CI/CD code review system sometimes generates feedback about security vulnerabilities that don't actually exist in the code. Which few-shot example characteristic would most effectively reduce these false positives?",
+    "options": [
+      {
+        "label": "A",
+        "text": "Examples that show step-by-step analysis of code before making security assessments",
+        "is_correct": false
+      },
+      {
+        "label": "B",
+        "text": "Examples that include the exact code snippets being referenced in each piece of feedback",
+        "is_correct": false
+      },
+      {
+        "label": "C",
+        "text": "Examples demonstrating when NOT to flag code that appears suspicious but is actually safe",
+        "is_correct": true
+      },
+      {
+        "label": "D",
+        "text": "Examples with detailed explanations of different types of security vulnerabilities",
+        "is_correct": false
+      }
+    ],
+    "correct_label": "C",
+    "explanation": "Examples showing when NOT to flag apparently suspicious code teach the model to avoid false positives by demonstrating the boundaries of what constitutes an actual issue. This directly addresses the hallucination problem by showing restraint and proper discrimination.",
+    "tags": [
+      "few-shot",
+      "false-positives",
+      "security-review",
+      "restraint"
+    ],
+    "bloom_level": "understand",
+    "distractor_strategy": {
+      "plausible_but_prompt_only": "N/A",
+      "over_engineered": "N/A",
+      "wrong_layer": "N/A",
+      "valid_but_not_first_step": "N/A"
+    }
+  },
+  {
+    "id": "D4_T2_011",
+    "domain_id": "D4",
+    "task_statement_id": "D4.T2",
+    "scenario_ids": [
+      "S6"
+    ],
+    "difficulty": "applied_judgment",
+    "key_concept_tested": "generalization to novel patterns",
+    "stem": "Your few-shot examples work well for standard product datasheets but fail on technical manuals with embedded diagrams and flowcharts. The system currently achieves 65% accuracy on novel document types. What modification would best improve generalization?",
+    "options": [
+      {
+        "label": "A",
+        "text": "Add examples from technical manuals to cover this specific document type",
+        "is_correct": false
+      },
+      {
+        "label": "B",
+        "text": "Include examples that show how to extract information when it's presented in non-tabular formats",
+        "is_correct": false
+      },
+      {
+        "label": "C",
+        "text": "Focus examples on the information-seeking patterns rather than document layout patterns",
+        "is_correct": false
+      },
+      {
+        "label": "D",
+        "text": "Include examples demonstrating how to identify and extract key information regardless of presentation format",
+        "is_correct": true
+      }
+    ],
+    "correct_label": "D",
+    "explanation": "Examples that demonstrate format-agnostic information identification and extraction teach the model to focus on the content rather than the presentation. This enables better generalization to novel document types by showing the underlying information-seeking patterns that work across different formats.",
+    "tags": [
+      "few-shot",
+      "generalization",
+      "format-agnostic",
+      "novel-documents"
+    ],
+    "bloom_level": "apply",
+    "distractor_strategy": {
+      "plausible_but_prompt_only": "N/A",
+      "over_engineered": "N/A",
+      "wrong_layer": "N/A",
+      "valid_but_not_first_step": "N/A"
+    }
+  },
+  {
+    "id": "D4_T2_012",
+    "domain_id": "D4",
+    "task_statement_id": "D4.T2",
+    "scenario_ids": [
+      "S5"
+    ],
+    "difficulty": "anti_pattern_recognition",
+    "key_concept_tested": "examples showing reasoning for choice over alternatives",
+    "stem": "Your team creates few-shot examples that only show the final recommended action for each code review scenario, without explaining the reasoning. After deployment, the system makes inconsistent decisions on similar issues. What is the fundamental problem with this approach?",
+    "options": [
+      {
+        "label": "A",
+        "text": "The examples don't provide enough context about the codebase being reviewed",
+        "is_correct": true
+      },
+      {
+        "label": "B",
+        "text": "The model cannot learn the decision-making criteria from outcomes alone",
+        "is_correct": false
+      },
+      {
+        "label": "C",
+        "text": "Final actions without reasoning are too brief to establish consistent patterns",
+        "is_correct": false
+      },
+      {
+        "label": "D",
+        "text": "The examples need to include more edge cases to improve consistency",
+        "is_correct": false
+      }
+    ],
+    "correct_label": "A",
+    "explanation": "The fundamental problem is that showing only final actions without reasoning prevents the model from learning the decision-making criteria. The model needs to understand WHY certain choices were made over alternatives to apply consistent logic to new scenarios. Without reasoning, it can only pattern-match superficially.",
+    "tags": [
+      "few-shot",
+      "anti-pattern",
+      "reasoning-absence",
+      "decision-criteria"
+    ],
+    "bloom_level": "evaluate",
+    "distractor_strategy": {
+      "plausible_but_prompt_only": "N/A",
+      "over_engineered": "N/A",
+      "wrong_layer": "N/A",
+      "valid_but_not_first_step": "N/A"
+    }
+  },
+  {
+    "id": "D4_T2_013",
+    "domain_id": "D4",
+    "task_statement_id": "D4.T2",
+    "scenario_ids": [
+      "S6"
+    ],
+    "difficulty": "conceptual_knowledge",
+    "key_concept_tested": "2-4 targeted examples for ambiguous scenarios",
+    "stem": "Your document extraction system needs to handle financial reports where the same information might appear in multiple sections with different levels of detail. How many few-shot examples would be optimal for teaching this pattern?",
+    "options": [
+      {
+        "label": "A",
+        "text": "One comprehensive example showing all possible variations",
+        "is_correct": false
+      },
+      {
+        "label": "B",
+        "text": "2-3 examples showing different approaches to handling duplicate information",
+        "is_correct": true
+      },
+      {
+        "label": "C",
+        "text": "5-6 examples covering each type of financial report section",
+        "is_correct": false
+      },
+      {
+        "label": "D",
+        "text": "8-10 examples to ensure comprehensive coverage of all scenarios",
+        "is_correct": false
+      }
+    ],
+    "correct_label": "B",
+    "explanation": "2-3 targeted examples are optimal for teaching the duplicate information handling pattern. This provides enough variation to show different approaches (e.g., prefer detailed version, combine information, flag conflicts) without overwhelming the model with too many examples that dilute the focus on the core pattern.",
+    "tags": [
+      "few-shot",
+      "optimal-count",
+      "duplicate-information",
+      "financial-reports"
+    ],
+    "bloom_level": "understand",
+    "distractor_strategy": {
+      "plausible_but_prompt_only": "N/A",
+      "over_engineered": "N/A",
+      "wrong_layer": "N/A",
+      "valid_but_not_first_step": "N/A"
+    }
+  },
+  {
+    "id": "D4_T2_014",
+    "domain_id": "D4",
+    "task_statement_id": "D4.T2",
+    "scenario_ids": [
+      "S5"
+    ],
+    "difficulty": "applied_judgment",
+    "key_concept_tested": "few-shot as most effective for consistent formatted output",
+    "stem": "Your CI/CD system generates code review comments in inconsistent formats, making it difficult for developers to parse feedback programmatically. Current comments vary between bullet points, paragraphs, and structured lists. What is the most effective solution?",
+    "options": [
+      {
+        "label": "A",
+        "text": "Add post-processing to standardize comment formats after generation",
+        "is_correct": false
+      },
+      {
+        "label": "B",
+        "text": "Use structured output with JSON schema to enforce consistent formatting",
+        "is_correct": false
+      },
+      {
+        "label": "C",
+        "text": "Provide few-shot examples showing the exact comment format and structure required",
+        "is_correct": true
+      },
+      {
+        "label": "D",
+        "text": "Include detailed formatting instructions in the system prompt",
+        "is_correct": false
+      }
+    ],
+    "correct_label": "C",
+    "explanation": "Few-shot examples are most effective for consistent formatted output because they provide concrete demonstrations of the exact format required. While JSON schema works for structured data, code review comments need natural language formatting that's best demonstrated through examples rather than constraints.",
+    "tags": [
+      "few-shot",
+      "consistent-formatting",
+      "code-review-comments",
+      "natural-language"
+    ],
+    "bloom_level": "apply",
+    "distractor_strategy": {
+      "plausible_but_prompt_only": "D",
+      "over_engineered": "N/A",
+      "wrong_layer": "N/A",
+      "valid_but_not_first_step": "N/A"
+    }
+  },
+  {
+    "id": "D4_T2_015",
+    "domain_id": "D4",
+    "task_statement_id": "D4.T2",
+    "scenario_ids": [
+      "S6"
+    ],
+    "difficulty": "anti_pattern_recognition",
+    "key_concept_tested": "generalization to novel patterns",
+    "stem": "A colleague suggests creating highly specific few-shot examples that exactly match your most common document types to maximize accuracy on frequent cases. What is the primary limitation of this approach?",
+    "options": [
+      {
+        "label": "A",
+        "text": "Highly specific examples consume more context window space than general ones",
+        "is_correct": true
+      },
+      {
+        "label": "B",
+        "text": "The model will perform poorly on document types not represented in the examples",
+        "is_correct": false
+      },
+      {
+        "label": "C",
+        "text": "Specific examples are harder to maintain when document formats change",
+        "is_correct": false
+      },
+      {
+        "label": "D",
+        "text": "The extraction accuracy will be lower than with more general examples",
+        "is_correct": false
+      }
+    ],
+    "correct_label": "A",
+    "explanation": "The primary limitation is poor generalization to novel patterns. Highly specific examples teach the model to recognize particular document layouts rather than the underlying information extraction principles. This leads to brittle performance when encountering new document types or variations not covered in the training examples.",
+    "tags": [
+      "few-shot",
+      "anti-pattern",
+      "over-specification",
+      "generalization-failure"
+    ],
+    "bloom_level": "evaluate",
+    "distractor_strategy": {
+      "plausible_but_prompt_only": "N/A",
+      "over_engineered": "N/A",
+      "wrong_layer": "N/A",
+      "valid_but_not_first_step": "N/A"
+    }
+  },
+  {
+    "id": "D4_T2_016",
+    "domain_id": "D4",
+    "task_statement_id": "D4.T2",
+    "scenario_ids": [
+      "S5"
+    ],
+    "difficulty": "applied_judgment",
+    "key_concept_tested": "examples showing reasoning for choice over alternatives",
+    "stem": "Your code review system needs to distinguish between helpful refactoring suggestions and unnecessary changes that add complexity. Current feedback generates too many low-value suggestions. How should you structure your few-shot examples to address this?",
+    "options": [
+      {
+        "label": "A",
+        "text": "Show examples of good refactoring suggestions with clear benefit explanations",
+        "is_correct": true
+      },
+      {
+        "label": "B",
+        "text": "Include examples that contrast beneficial refactoring with unnecessary changes, explaining the reasoning for each decision",
+        "is_correct": false
+      },
+      {
+        "label": "C",
+        "text": "Provide examples of code that should not be changed, with explanations of why",
+        "is_correct": false
+      },
+      {
+        "label": "D",
+        "text": "Show examples with quantitative metrics justifying each refactoring suggestion",
+        "is_correct": false
+      }
+    ],
+    "correct_label": "A",
+    "explanation": "Contrastive examples that show both beneficial refactoring and unnecessary changes, with explicit reasoning for each decision, teach the model the evaluation criteria for distinguishing between them. This approach directly addresses the judgment issue by demonstrating the decision-making process.",
+    "tags": [
+      "few-shot",
+      "contrastive-reasoning",
+      "refactoring-judgment",
+      "decision-criteria"
+    ],
+    "bloom_level": "apply",
+    "distractor_strategy": {
+      "plausible_but_prompt_only": "N/A",
+      "over_engineered": "N/A",
+      "wrong_layer": "N/A",
+      "valid_but_not_first_step": "N/A"
+    }
+  },
+  {
+    "id": "D4_T2_017",
+    "domain_id": "D4",
+    "task_statement_id": "D4.T2",
+    "scenario_ids": [
+      "S6"
+    ],
+    "difficulty": "conceptual_knowledge",
+    "key_concept_tested": "demonstrating ambiguous-case handling",
+    "stem": "Your extraction system encounters product descriptions where key specifications are implied rather than explicitly stated (e.g., 'waterproof' vs 'IP68 rating'). Which few-shot approach would best handle this ambiguity?",
+    "options": [
+      {
+        "label": "A",
+        "text": "Examples showing how to extract only explicitly stated specifications",
+        "is_correct": false
+      },
+      {
+        "label": "B",
+        "text": "Examples demonstrating inference rules for converting implied specifications to explicit ones",
+        "is_correct": false
+      },
+      {
+        "label": "C",
+        "text": "Examples showing how to identify and appropriately handle both explicit and implied specifications",
+        "is_correct": false
+      },
+      {
+        "label": "D",
+        "text": "Examples that demonstrate when to extract implied information vs when to mark it as uncertain",
+        "is_correct": true
+      }
+    ],
+    "correct_label": "D",
+    "explanation": "Examples that demonstrate decision criteria for when to extract implied information versus when to mark it as uncertain teach the model to handle ambiguous cases appropriately. This approach shows how to balance completeness with accuracy when dealing with implied specifications.",
+    "tags": [
+      "few-shot",
+      "implied-information",
+      "uncertainty-handling",
+      "extraction-boundaries"
+    ],
+    "bloom_level": "understand",
+    "distractor_strategy": {
+      "plausible_but_prompt_only": "N/A",
+      "over_engineered": "N/A",
+      "wrong_layer": "N/A",
+      "valid_but_not_first_step": "N/A"
+    }
+  },
+  {
+    "id": "D4_T2_018",
+    "domain_id": "D4",
+    "task_statement_id": "D4.T2",
+    "scenario_ids": [
+      "S5"
+    ],
+    "difficulty": "applied_judgment",
+    "key_concept_tested": "reducing hallucination in extraction",
+    "stem": "Your CI/CD system occasionally suggests fixes for issues that don't actually exist in the code, leading to developer frustration. The system currently has a 15% false positive rate. Which few-shot modification would most effectively reduce hallucinated problems?",
+    "options": [
+      {
+        "label": "A",
+        "text": "Include examples where no issues are found and the response is 'No problems detected'",
+        "is_correct": false
+      },
+      {
+        "label": "B",
+        "text": "Add examples showing careful code analysis before concluding that an issue exists",
+        "is_correct": true
+      },
+      {
+        "label": "C",
+        "text": "Provide examples with conservative thresholds for flagging potential issues",
+        "is_correct": false
+      },
+      {
+        "label": "D",
+        "text": "Include examples that require multiple confirmation signals before reporting issues",
+        "is_correct": false
+      }
+    ],
+    "correct_label": "B",
+    "explanation": "Examples showing careful code analysis before concluding that an issue exists teach the model to verify problems thoroughly rather than jumping to conclusions. This step-by-step verification process directly addresses the hallucination of non-existent issues by demonstrating proper due diligence.",
+    "tags": [
+      "few-shot",
+      "hallucination-reduction",
+      "verification-process",
+      "false-positives"
+    ],
+    "bloom_level": "apply",
+    "distractor_strategy": {
+      "plausible_but_prompt_only": "N/A",
+      "over_engineered": "N/A",
+      "wrong_layer": "N/A",
+      "valid_but_not_first_step": "N/A"
+    }
+  },
+  {
+    "id": "D4_T2_019",
+    "domain_id": "D4",
+    "task_statement_id": "D4.T2",
+    "scenario_ids": [
+      "S6"
+    ],
+    "difficulty": "anti_pattern_recognition",
+    "key_concept_tested": "2-4 targeted examples for ambiguous scenarios",
+    "stem": "Your team decides to include 15 few-shot examples to comprehensively cover every edge case they can think of for document extraction. After implementation, accuracy on novel documents actually decreases. What explains this counterintuitive result?",
+    "options": [
+      {
+        "label": "A",
+        "text": "Too many examples overload the context window and reduce processing quality",
+        "is_correct": false
+      },
+      {
+        "label": "B",
+        "text": "The model overfits to the specific examples rather than learning generalizable patterns",
+        "is_correct": false
+      },
+      {
+        "label": "C",
+        "text": "Excessive examples dilute the signal from the most important patterns that need demonstration",
+        "is_correct": true
+      },
+      {
+        "label": "D",
+        "text": "The examples conflict with each other and confuse the model's decision-making",
+        "is_correct": false
+      }
+    ],
+    "correct_label": "C",
+    "explanation": "Excessive examples dilute the signal from the most important patterns that actually need demonstration. With 15 examples, the model loses focus on the key ambiguous scenarios that were causing problems and instead gets distracted by less critical edge cases, reducing its ability to handle truly novel situations.",
+    "tags": [
+      "few-shot",
+      "anti-pattern",
+      "signal-dilution",
+      "example-overload"
+    ],
+    "bloom_level": "evaluate",
+    "distractor_strategy": {
+      "plausible_but_prompt_only": "N/A",
+      "over_engineered": "N/A",
+      "wrong_layer": "N/A",
+      "valid_but_not_first_step": "N/A"
+    }
+  },
+  {
+    "id": "D4_T2_020",
+    "domain_id": "D4",
+    "task_statement_id": "D4.T2",
+    "scenario_ids": [
+      "S5"
+    ],
+    "difficulty": "applied_judgment",
+    "key_concept_tested": "generalization to novel patterns",
+    "stem": "Your few-shot examples for code review work well for JavaScript and Python but fail on Go and Rust code that your team is starting to adopt. Current accuracy drops from 85% to 60% on new languages. What example strategy would best improve cross-language generalization?",
+    "options": [
+      {
+        "label": "A",
+        "text": "Add specific examples for Go and Rust to cover these new languages",
+        "is_correct": true
+      },
+      {
+        "label": "B",
+        "text": "Focus examples on language-agnostic principles like code clarity and maintainability",
+        "is_correct": false
+      },
+      {
+        "label": "C",
+        "text": "Include examples that show how similar issues manifest across different programming languages",
+        "is_correct": false
+      },
+      {
+        "label": "D",
+        "text": "Use examples that demonstrate universal code quality patterns regardless of syntax",
+        "is_correct": false
+      }
+    ],
+    "correct_label": "A",
+    "explanation": "Focusing examples on language-agnostic principles like code clarity, maintainability, and security enables better generalization across programming languages. This teaches the model to identify universal code quality issues rather than language-specific syntax patterns, improving performance on new languages.",
+    "tags": [
+      "few-shot",
+      "cross-language",
+      "language-agnostic",
+      "universal-principles"
+    ],
+    "bloom_level": "apply",
+    "distractor_strategy": {
+      "plausible_but_prompt_only": "N/A",
+      "over_engineered": "N/A",
+      "wrong_layer": "N/A",
+      "valid_but_not_first_step": "N/A"
+    }
+  },
+  {
+    "id": "D4_T2_021",
+    "domain_id": "D4",
+    "task_statement_id": "D4.T2",
+    "scenario_ids": [
+      "S6"
+    ],
+    "difficulty": "conceptual_knowledge",
+    "key_concept_tested": "examples showing reasoning for choice over alternatives",
+    "stem": "Your document extraction system needs to choose between conflicting information when the same data appears with different values in multiple sections. Which few-shot example structure would best teach this decision-making process?",
+    "options": [
+      {
+        "label": "A",
+        "text": "Examples showing the final choice made in each conflict scenario",
+        "is_correct": false
+      },
+      {
+        "label": "B",
+        "text": "Examples that demonstrate the evaluation criteria and reasoning for choosing one value over another",
+        "is_correct": true
+      },
+      {
+        "label": "C",
+        "text": "Examples showing how to combine conflicting values into a single result",
+        "is_correct": false
+      },
+      {
+        "label": "D",
+        "text": "Examples that flag all conflicts for human review rather than making automatic choices",
+        "is_correct": false
+      }
+    ],
+    "correct_label": "B",
+    "explanation": "Examples that demonstrate the evaluation criteria and reasoning for choosing one value over another teach the model the decision-making process. This enables consistent application of the same logic to new conflict scenarios, rather than just pattern-matching to previous outcomes.",
+    "tags": [
+      "few-shot",
+      "conflict-resolution",
+      "decision-reasoning",
+      "evaluation-criteria"
+    ],
+    "bloom_level": "understand",
+    "distractor_strategy": {
+      "plausible_but_prompt_only": "N/A",
+      "over_engineered": "N/A",
+      "wrong_layer": "N/A",
+      "valid_but_not_first_step": "N/A"
+    }
+  },
+  {
+    "id": "D4_T2_022",
+    "domain_id": "D4",
+    "task_statement_id": "D4.T2",
+    "scenario_ids": [
+      "S5"
+    ],
+    "difficulty": "applied_judgment",
+    "key_concept_tested": "few-shot as most effective for consistent formatted output",
+    "stem": "Your CI/CD system needs to generate test case suggestions in a specific format that integrates with your testing framework. Developers report that 30% of suggestions require manual formatting fixes. What is the most effective approach to ensure consistent output format?",
+    "options": [
+      {
+        "label": "A",
+        "text": "Implement post-processing rules to automatically fix common formatting issues",
+        "is_correct": false
+      },
+      {
+        "label": "B",
+        "text": "Use structured output with a JSON schema defining the required test case format",
+        "is_correct": false
+      },
+      {
+        "label": "C",
+        "text": "Provide few-shot examples showing test cases in the exact required format",
+        "is_correct": true
+      },
+      {
+        "label": "D",
+        "text": "Add detailed formatting specifications to the system prompt instructions",
+        "is_correct": false
+      }
+    ],
+    "correct_label": "C",
+    "explanation": "Few-shot examples showing test cases in the exact required format are most effective for consistent formatted output. Unlike JSON schemas which work for pure data, test cases need specific code formatting that's best demonstrated through concrete examples rather than abstract specifications.",
+    "tags": [
+      "few-shot",
+      "test-case-formatting",
+      "consistent-output",
+      "code-generation"
+    ],
+    "bloom_level": "apply",
+    "distractor_strategy": {
+      "plausible_but_prompt_only": "D",
+      "over_engineered": "N/A",
+      "wrong_layer": "N/A",
+      "valid_but_not_first_step": "N/A"
+    }
+  },
+  {
+    "id": "D4_T2_023",
+    "domain_id": "D4",
+    "task_statement_id": "D4.T2",
+    "scenario_ids": [
+      "S6"
+    ],
+    "difficulty": "anti_pattern_recognition",
+    "key_concept_tested": "demonstrating ambiguous-case handling",
+    "stem": "Your team creates few-shot examples that only show clear-cut extraction scenarios to avoid confusing the model with edge cases. However, production documents contain many ambiguous cases that the system handles poorly. What is the fundamental flaw in this approach?",
+    "options": [
+      {
+        "label": "A",
+        "text": "Clear-cut examples don't provide enough variation to teach robust extraction patterns",
+        "is_correct": true
+      },
+      {
+        "label": "B",
+        "text": "The model needs to see ambiguous cases to learn how to handle uncertainty appropriately",
+        "is_correct": false
+      },
+      {
+        "label": "C",
+        "text": "Production documents are more complex than the training examples suggest",
+        "is_correct": false
+      },
+      {
+        "label": "D",
+        "text": "The examples don't match the actual distribution of document types in production",
+        "is_correct": false
+      }
+    ],
+    "correct_label": "A",
+    "explanation": "The fundamental flaw is that the model needs to see ambiguous cases to learn how to handle uncertainty appropriately. By only showing clear-cut examples, the system never learns the decision-making patterns needed for edge cases, leading to poor performance when encountering the ambiguous scenarios that are common in production.",
+    "tags": [
+      "few-shot",
+      "anti-pattern",
+      "ambiguous-avoidance",
+      "edge-case-training"
+    ],
+    "bloom_level": "evaluate",
+    "distractor_strategy": {
+      "plausible_but_prompt_only": "N/A",
+      "over_engineered": "N/A",
+      "wrong_layer": "N/A",
+      "valid_but_not_first_step": "N/A"
+    }
+  },
+  {
+    "id": "D4_T2_024",
+    "domain_id": "D4",
+    "task_statement_id": "D4.T2",
+    "scenario_ids": [
+      "S5"
+    ],
+    "difficulty": "applied_judgment",
+    "key_concept_tested": "2-4 targeted examples for ambiguous scenarios",
+    "stem": "Your code review system struggles with determining when performance optimizations are worthwhile versus when they add unnecessary complexity. You can include 4 few-shot examples. Which combination would be most effective for this specific judgment issue?",
+    "options": [
+      {
+        "label": "A",
+        "text": "Four examples of good performance optimizations with clear benefits",
+        "is_correct": true
+      },
+      {
+        "label": "B",
+        "text": "Two examples of beneficial optimizations and two examples of premature optimization to avoid",
+        "is_correct": false
+      },
+      {
+        "label": "C",
+        "text": "Examples showing: micro-optimization to avoid, algorithmic improvement to pursue, caching benefit, and readability-performance tradeoff",
+        "is_correct": false
+      },
+      {
+        "label": "D",
+        "text": "Four examples covering different programming languages to ensure broad applicability",
+        "is_correct": false
+      }
+    ],
+    "correct_label": "A",
+    "explanation": "The most effective combination targets the specific judgment patterns: micro-optimization to avoid, algorithmic improvement to pursue, beneficial caching, and readability-performance tradeoffs. These four scenarios directly address the core decision-making challenges in performance optimization evaluation.",
+    "tags": [
+      "few-shot",
+      "performance-optimization",
+      "targeted-examples",
+      "judgment-patterns"
+    ],
+    "bloom_level": "apply",
+    "distractor_strategy": {
+      "plausible_but_prompt_only": "N/A",
+      "over_engineered": "N/A",
+      "wrong_layer": "N/A",
+      "valid_but_not_first_step": "N/A"
+    }
+  },
+  {
+    "id": "D4_T2_025",
+    "domain_id": "D4",
+    "task_statement_id": "D4.T2",
+    "scenario_ids": [
+      "S6"
+    ],
+    "difficulty": "conceptual_knowledge",
+    "key_concept_tested": "reducing hallucination in extraction",
+    "stem": "Your extraction system sometimes creates plausible but incorrect technical specifications when source documents are unclear or incomplete. Which few-shot example characteristic would most effectively address this hallucination issue?",
+    "options": [
+      {
+        "label": "A",
+        "text": "Examples that show extraction only from documents with complete, clear information",
+        "is_correct": false
+      },
+      {
+        "label": "B",
+        "text": "Examples demonstrating how to indicate uncertainty or missing information rather than guessing",
+        "is_correct": true
+      },
+      {
+        "label": "C",
+        "text": "Examples with validation steps to verify extracted information against the source",
+        "is_correct": false
+      },
+      {
+        "label": "D",
+        "text": "Examples that show conservative extraction with minimal inference from context",
+        "is_correct": false
+      }
+    ],
+    "correct_label": "B",
+    "explanation": "Examples that demonstrate how to indicate uncertainty or missing information rather than guessing directly address the hallucination problem. This teaches the model to acknowledge limitations in the source material rather than filling gaps with plausible but potentially incorrect information.",
+    "tags": [
+      "few-shot",
+      "hallucination-prevention",
+      "uncertainty-indication",
+      "conservative-extraction"
+    ],
+    "bloom_level": "understand",
+    "distractor_strategy": {
+      "plausible_but_prompt_only": "N/A",
+      "over_engineered": "N/A",
+      "wrong_layer": "N/A",
+      "valid_but_not_first_step": "N/A"
+    }
+  },
+  {
+    "id": "D4_T2_026",
+    "domain_id": "D4",
+    "task_statement_id": "D4.T2",
+    "scenario_ids": [
+      "S5"
+    ],
+    "difficulty": "applied_judgment",
+    "key_concept_tested": "examples showing reasoning for choice over alternatives",
+    "stem": "Your CI/CD system needs to prioritize code review feedback, distinguishing between critical security issues, important maintainability concerns, and minor style suggestions. Current output treats all feedback equally, overwhelming developers. How should you structure few-shot examples to address this prioritization?",
+    "options": [
+      {
+        "label": "A",
+        "text": "Show examples with numerical severity scores for each type of issue",
+        "is_correct": false
+      },
+      {
+        "label": "B",
+        "text": "Include examples that group feedback by category (security, maintainability, style)",
+        "is_correct": false
+      },
+      {
+        "label": "C",
+        "text": "Provide examples that explain why certain issues are prioritized over others based on impact and risk",
+        "is_correct": true
+      },
+      {
+        "label": "D",
+        "text": "Show examples with different formatting for high, medium, and low priority issues",
+        "is_correct": false
+      }
+    ],
+    "correct_label": "C",
+    "explanation": "Examples that explain why certain issues are prioritized over others based on impact and risk teach the model the reasoning criteria for prioritization decisions. This enables consistent application of priority logic rather than just following formatting or categorization patterns.",
+    "tags": [
+      "few-shot",
+      "prioritization-reasoning",
+      "impact-assessment",
+      "feedback-ranking"
+    ],
+    "bloom_level": "apply",
+    "distractor_strategy": {
+      "plausible_but_prompt_only": "N/A",
+      "over_engineered": "N/A",
+      "wrong_layer": "N/A",
+      "valid_but_not_first_step": "N/A"
+    }
+  },
+  {
+    "id": "D4_T2_027",
+    "domain_id": "D4",
+    "task_statement_id": "D4.T2",
+    "scenario_ids": [
+      "S6"
+    ],
+    "difficulty": "anti_pattern_recognition",
+    "key_concept_tested": "generalization to novel patterns",
+    "stem": "A colleague proposes creating separate few-shot examples for each document format your system encounters (PDFs, Word docs, HTML pages, spreadsheets) to maximize format-specific accuracy. What is the primary drawback of this approach?",
+    "options": [
+      {
+        "label": "A",
+        "text": "Format-specific examples require too much context window space",
+        "is_correct": false
+      },
+      {
+        "label": "B",
+        "text": "The system will struggle with hybrid documents that combine multiple formats",
+        "is_correct": false
+      },
+      {
+        "label": "C",
+        "text": "Maintenance becomes complex when document formats change or new ones are added",
+        "is_correct": false
+      },
+      {
+        "label": "D",
+        "text": "The model learns format-specific patterns rather than generalizable information extraction principles",
+        "is_correct": true
+      }
+    ],
+    "correct_label": "D",
+    "explanation": "The primary drawback is that the model learns format-specific patterns rather than generalizable information extraction principles. This creates brittle performance when encountering format variations or new document types, reducing the system's ability to adapt to novel patterns not covered in the format-specific examples.",
+    "tags": [
+      "few-shot",
+      "anti-pattern",
+      "format-specificity",
+      "generalization-loss"
+    ],
+    "bloom_level": "evaluate",
+    "distractor_strategy": {
+      "plausible_but_prompt_only": "N/A",
+      "over_engineered": "N/A",
+      "wrong_layer": "N/A",
+      "valid_but_not_first_step": "N/A"
+    }
+  },
+  {
+    "id": "D4_T2_028",
+    "domain_id": "D4",
+    "task_statement_id": "D4.T2",
+    "scenario_ids": [
+      "S5"
+    ],
+    "difficulty": "applied_judgment",
+    "key_concept_tested": "demonstrating ambiguous-case handling",
+    "stem": "Your code review system inconsistently handles comments and documentation - sometimes flagging missing docs as critical, other times ignoring undocumented complex functions. Current consistency is 70% on documentation-related feedback. Which few-shot approach would best improve consistency?",
+    "options": [
+      {
+        "label": "A",
+        "text": "Examples showing clear rules for when documentation is required vs optional",
+        "is_correct": true
+      },
+      {
+        "label": "B",
+        "text": "Examples demonstrating different documentation standards for different code complexity levels",
+        "is_correct": false
+      },
+      {
+        "label": "C",
+        "text": "Examples that show how to evaluate code complexity to determine documentation requirements",
+        "is_correct": false
+      },
+      {
+        "label": "D",
+        "text": "Examples with metrics-based thresholds for flagging missing documentation",
+        "is_correct": false
+      }
+    ],
+    "correct_label": "A",
+    "explanation": "Examples that show how to evaluate code complexity to determine documentation requirements address the ambiguous case handling by demonstrating the decision criteria. This teaches the model to consistently assess when documentation is needed based on function complexity, public interfaces, and maintainability concerns.",
+    "tags": [
+      "few-shot",
+      "documentation-standards",
+      "complexity-evaluation",
+      "consistency-improvement"
+    ],
+    "bloom_level": "apply",
+    "distractor_strategy": {
+      "plausible_but_prompt_only": "N/A",
+      "over_engineered": "N/A",
+      "wrong_layer": "N/A",
+      "valid_but_not_first_step": "N/A"
+    }
+  },
+  {
+    "id": "D4_T2_029",
+    "domain_id": "D4",
+    "task_statement_id": "D4.T2",
+    "scenario_ids": [
+      "S6"
+    ],
+    "difficulty": "conceptual_knowledge",
+    "key_concept_tested": "2-4 targeted examples for ambiguous scenarios",
+    "stem": "Your document extraction system needs to handle product catalogs where pricing information appears in multiple currencies and formats. Which number of few-shot examples would be most effective for teaching currency and format normalization?",
+    "options": [
+      {
+        "label": "A",
+        "text": "1 comprehensive example showing all currency formats",
+        "is_correct": false
+      },
+      {
+        "label": "B",
+        "text": "3 examples showing different currency conversion and formatting approaches",
+        "is_correct": true
+      },
+      {
+        "label": "C",
+        "text": "6 examples covering each major currency individually",
+        "is_correct": false
+      },
+      {
+        "label": "D",
+        "text": "10 examples to ensure coverage of all possible currency formats",
+        "is_correct": false
+      }
+    ],
+    "correct_label": "B",
+    "explanation": "3 examples showing different currency conversion and formatting approaches provide the optimal balance for teaching the normalization pattern. This allows demonstration of key scenarios (e.g., symbol vs code format, decimal handling, conversion logic) without overwhelming the model with excessive examples that dilute focus.",
+    "tags": [
+      "few-shot",
+      "currency-normalization",
+      "optimal-count",
+      "format-handling"
+    ],
+    "bloom_level": "understand",
+    "distractor_strategy": {
+      "plausible_but_prompt_only": "N/A",
+      "over_engineered": "N/A",
+      "wrong_layer": "N/A",
+      "valid_but_not_first_step": "N/A"
+    }
+  },
+  {
+    "id": "D4_T2_030",
+    "domain_id": "D4",
+    "task_statement_id": "D4.T2",
+    "scenario_ids": [
+      "S5"
+    ],
+    "difficulty": "applied_judgment",
+    "key_concept_tested": "reducing hallucination in extraction",
+    "stem": "Your CI/CD system generates suggestions for code improvements that sound plausible but often reference non-existent functions or libraries. The false suggestion rate is 22%. Which few-shot modification would most effectively reduce these hallucinated recommendations?",
+    "options": [
+      {
+        "label": "A",
+        "text": "Include examples that verify function/library existence before suggesting their use",
+        "is_correct": false
+      },
+      {
+        "label": "B",
+        "text": "Add examples showing recommendations that only use standard library functions",
+        "is_correct": false
+      },
+      {
+        "label": "C",
+        "text": "Provide examples that base recommendations strictly on code patterns visible in the current codebase",
+        "is_correct": true
+      },
+      {
+        "label": "D",
+        "text": "Include examples with disclaimers about verifying suggested functions before implementation",
+        "is_correct": false
+      }
+    ],
+    "correct_label": "C",
+    "explanation": "Examples that base recommendations strictly on code patterns visible in the current codebase directly address hallucination by teaching the model to ground suggestions in observable evidence rather than general knowledge. This reduces false recommendations by constraining suggestions to what's actually present in the code being reviewed.",
+    "tags": [
+      "few-shot",
+      "hallucination-reduction",
+      "evidence-based",
+      "codebase-grounding"
+    ],
+    "bloom_level": "apply",
+    "distractor_strategy": {
+      "plausible_but_prompt_only": "N/A",
+      "over_engineered": "N/A",
+      "wrong_layer": "N/A",
+      "valid_but_not_first_step": "N/A"
+    }
+  },
+  {
+    "id": "D4_T2_031",
+    "domain_id": "D4",
+    "task_statement_id": "D4.T2",
+    "scenario_ids": [
+      "S6"
+    ],
+    "difficulty": "applied_judgment",
+    "key_concept_tested": "examples showing reasoning for choice over alternatives",
+    "stem": "Your extraction system encounters product specifications where multiple measurement units are used (e.g., weight in grams, kilograms, and pounds within the same document). The system needs consistent unit handling. Which few-shot approach would best teach appropriate unit selection decisions?",
+    "options": [
+      {
+        "label": "A",
+        "text": "Examples showing conversion of all measurements to a single standard unit",
+        "is_correct": true
+      },
+      {
+        "label": "B",
+        "text": "Examples that demonstrate reasoning for choosing the most appropriate unit based on context and precision",
+        "is_correct": false
+      },
+      {
+        "label": "C",
+        "text": "Examples showing extraction of measurements with their original units preserved",
+        "is_correct": false
+      },
+      {
+        "label": "D",
+        "text": "Examples that include multiple unit representations for each measurement",
+        "is_correct": false
+      }
+    ],
+    "correct_label": "A",
+    "explanation": "Examples that demonstrate reasoning for choosing the most appropriate unit based on context and precision teach the model the decision-making criteria. This enables consistent unit selection that considers factors like measurement precision, industry standards, and document context rather than arbitrary conversion rules.",
+    "tags": [
+      "few-shot",
+      "unit-selection",
+      "context-reasoning",
+      "measurement-handling"
+    ],
+    "bloom_level": "apply",
+    "distractor_strategy": {
+      "plausible_but_prompt_only": "N/A",
+      "over_engineered": "N/A",
+      "wrong_layer": "N/A",
+      "valid_but_not_first_step": "N/A"
+    }
+  },
+  {
+    "id": "D4_T2_032",
+    "domain_id": "D4",
+    "task_statement_id": "D4.T2",
+    "scenario_ids": [
+      "S5"
+    ],
+    "difficulty": "anti_pattern_recognition",
+    "key_concept_tested": "few-shot as most effective for consistent formatted output",
+    "stem": "Your team argues that natural language instructions are more maintainable than few-shot examples for code review formatting because they can be updated without changing the examples. However, output consistency has dropped to 65%. What is the core problem with relying primarily on instructions for formatting consistency?",
+    "options": [
+      {
+        "label": "A",
+        "text": "Natural language instructions are ambiguous and interpreted differently across model calls",
+        "is_correct": false
+      },
+      {
+        "label": "B",
+        "text": "Instructions require more tokens than examples, increasing processing costs",
+        "is_correct": true
+      },
+      {
+        "label": "C",
+        "text": "The model prioritizes examples over instructions when both are present",
+        "is_correct": false
+      },
+      {
+        "label": "D",
+        "text": "Instructions cannot capture the nuanced formatting requirements as precisely as examples",
+        "is_correct": false
+      }
+    ],
+    "correct_label": "A",
+    "explanation": "The core problem is that natural language instructions are ambiguous and interpreted differently across model calls, leading to inconsistent formatting. Few-shot examples provide unambiguous demonstrations of the exact format required, eliminating interpretation variance that causes consistency issues.",
+    "tags": [
+      "few-shot",
+      "anti-pattern",
+      "instruction-ambiguity",
+      "consistency-loss"
+    ],
+    "bloom_level": "evaluate",
+    "distractor_strategy": {
+      "plausible_but_prompt_only": "D",
+      "over_engineered": "N/A",
+      "wrong_layer": "N/A",
+      "valid_but_not_first_step": "N/A"
+    }
+  },
+  {
+    "id": "D4_T2_033",
+    "domain_id": "D4",
+    "task_statement_id": "D4.T2",
+    "scenario_ids": [
+      "S6"
+    ],
+    "difficulty": "applied_judgment",
+    "key_concept_tested": "generalization to novel patterns",
+    "stem": "Your few-shot examples work well for extracting product information from structured datasheets but fail on marketing brochures where the same information is presented narratively. Accuracy drops from 90% to 55% on narrative documents. How should you modify your examples to improve generalization?",
+    "options": [
+      {
+        "label": "A",
+        "text": "Add specific examples from marketing brochures to cover this document type",
+        "is_correct": false
+      },
+      {
+        "label": "B",
+        "text": "Include examples that show information extraction from both structured and narrative formats",
+        "is_correct": false
+      },
+      {
+        "label": "C",
+        "text": "Focus examples on identifying key information regardless of how it's presented or formatted",
+        "is_correct": true
+      },
+      {
+        "label": "D",
+        "text": "Create separate example sets for structured vs narrative document types",
+        "is_correct": false
+      }
+    ],
+    "correct_label": "C",
+    "explanation": "Focusing examples on identifying key information regardless of how it's presented or formatted teaches the model to look for content rather than format patterns. This enables better generalization by demonstrating information-seeking principles that work across both structured datasheets and narrative marketing materials.",
+    "tags": [
+      "few-shot",
+      "format-agnostic",
+      "content-focus",
+      "narrative-extraction"
+    ],
+    "bloom_level": "apply",
+    "distractor_strategy": {
+      "plausible_but_prompt_only": "N/A",
+      "over_engineered": "D",
+      "wrong_layer": "N/A",
+      "valid_but_not_first_step": "N/A"
+    }
+  },
+  {
+    "id": "D4_T2_034",
+    "domain_id": "D4",
+    "task_statement_id": "D4.T2",
+    "scenario_ids": [
+      "S5"
+    ],
+    "difficulty": "conceptual_knowledge",
+    "key_concept_tested": "demonstrating ambiguous-case handling",
+    "stem": "Your code review system needs to handle legacy code that doesn't follow current best practices but functions correctly. The system currently flags all deviations from modern standards, creating noise for developers. Which few-shot example approach would best address this ambiguity?",
+    "options": [
+      {
+        "label": "A",
+        "text": "Examples showing when to flag legacy patterns as requiring immediate updates",
+        "is_correct": false
+      },
+      {
+        "label": "B",
+        "text": "Examples demonstrating when legacy code should be left unchanged vs modernized",
+        "is_correct": true
+      },
+      {
+        "label": "C",
+        "text": "Examples that ignore legacy code patterns entirely to avoid false positives",
+        "is_correct": false
+      },
+      {
+        "label": "D",
+        "text": "Examples showing how to suggest gradual modernization approaches",
+        "is_correct": false
+      }
+    ],
+    "correct_label": "B",
+    "explanation": "Examples demonstrating when legacy code should be left unchanged vs modernized address the ambiguous case by teaching the decision criteria. This helps the model distinguish between legacy patterns that are problematic and those that are acceptable, reducing noise while maintaining useful feedback.",
+    "tags": [
+      "few-shot",
+      "legacy-code",
+      "modernization-judgment",
+      "ambiguous-standards"
+    ],
+    "bloom_level": "understand",
+    "distractor_strategy": {
+      "plausible_but_prompt_only": "N/A",
+      "over_engineered": "N/A",
+      "wrong_layer": "N/A",
+      "valid_but_not_first_step": "N/A"
+    }
+  }
+]

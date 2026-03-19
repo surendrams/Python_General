@@ -1,0 +1,1600 @@
+[
+  {
+    "id": "D1_T2_001",
+    "domain_id": "D1",
+    "task_statement_id": "D1.T2",
+    "scenario_ids": [
+      "S3"
+    ],
+    "difficulty": "conceptual_knowledge",
+    "key_concept_tested": "hub-and-spoke architecture",
+    "stem": "In your multi-agent research system, what is the primary architectural pattern that ensures all inter-subagent communication flows through the coordinator?",
+    "options": [
+      {
+        "label": "A",
+        "text": "Mesh topology where each subagent can communicate directly with any other subagent",
+        "is_correct": false
+      },
+      {
+        "label": "B",
+        "text": "Chain-of-responsibility pattern where subagents pass results sequentially",
+        "is_correct": false
+      },
+      {
+        "label": "C",
+        "text": "Hub-and-spoke architecture where the coordinator manages all subagent interactions",
+        "is_correct": true
+      },
+      {
+        "label": "D",
+        "text": "Publish-subscribe pattern where subagents broadcast results to all listeners",
+        "is_correct": false
+      }
+    ],
+    "correct_label": "C",
+    "explanation": "Hub-and-spoke architecture is the correct pattern where the coordinator acts as the central hub, managing all communication between subagents. This provides centralized control, observability, and consistent error handling.",
+    "tags": [
+      "multi-agent",
+      "architecture",
+      "coordinator"
+    ],
+    "bloom_level": "understand",
+    "distractor_strategy": {
+      "plausible_but_prompt_only": "N/A",
+      "over_engineered": "N/A",
+      "wrong_layer": "N/A",
+      "valid_but_not_first_step": "N/A"
+    }
+  },
+  {
+    "id": "D1_T2_002",
+    "domain_id": "D1",
+    "task_statement_id": "D1.T2",
+    "scenario_ids": [
+      "S1"
+    ],
+    "difficulty": "conceptual_knowledge",
+    "key_concept_tested": "subagent isolated context",
+    "stem": "When your customer support coordinator spawns a billing dispute subagent, what happens to the conversation history from the main customer interaction?",
+    "options": [
+      {
+        "label": "A",
+        "text": "The subagent automatically inherits the full conversation history",
+        "is_correct": false
+      },
+      {
+        "label": "B",
+        "text": "Only the last 3 messages are passed to maintain context efficiency",
+        "is_correct": false
+      },
+      {
+        "label": "C",
+        "text": "The conversation history is compressed and summarized before passing",
+        "is_correct": false
+      },
+      {
+        "label": "D",
+        "text": "The subagent operates with isolated context and must be explicitly provided relevant information",
+        "is_correct": true
+      }
+    ],
+    "correct_label": "D",
+    "explanation": "Subagents operate with isolated context and do not automatically inherit the coordinator's conversation history. The coordinator must explicitly provide relevant context in the subagent's prompt.",
+    "tags": [
+      "subagent",
+      "context",
+      "isolation"
+    ],
+    "bloom_level": "understand",
+    "distractor_strategy": {
+      "plausible_but_prompt_only": "N/A",
+      "over_engineered": "N/A",
+      "wrong_layer": "N/A",
+      "valid_but_not_first_step": "N/A"
+    }
+  },
+  {
+    "id": "D1_T2_003",
+    "domain_id": "D1",
+    "task_statement_id": "D1.T2",
+    "scenario_ids": [
+      "S3"
+    ],
+    "difficulty": "conceptual_knowledge",
+    "key_concept_tested": "coordinator role: decomposition, delegation, aggregation",
+    "stem": "In your research system, what are the three primary responsibilities of the coordinator agent?",
+    "options": [
+      {
+        "label": "A",
+        "text": "Task decomposition, delegation to subagents, and result aggregation",
+        "is_correct": true
+      },
+      {
+        "label": "B",
+        "text": "Data validation, error logging, and performance monitoring",
+        "is_correct": false
+      },
+      {
+        "label": "C",
+        "text": "User authentication, request routing, and response caching",
+        "is_correct": false
+      },
+      {
+        "label": "D",
+        "text": "Load balancing, resource allocation, and queue management",
+        "is_correct": false
+      }
+    ],
+    "correct_label": "A",
+    "explanation": "The coordinator's core responsibilities are breaking down complex queries into subtasks (decomposition), assigning these to appropriate subagents (delegation), and combining their outputs into a cohesive result (aggregation).",
+    "tags": [
+      "coordinator",
+      "responsibilities",
+      "workflow"
+    ],
+    "bloom_level": "understand",
+    "distractor_strategy": {
+      "plausible_but_prompt_only": "N/A",
+      "over_engineered": "N/A",
+      "wrong_layer": "N/A",
+      "valid_but_not_first_step": "N/A"
+    }
+  },
+  {
+    "id": "D1_T2_004",
+    "domain_id": "D1",
+    "task_statement_id": "D1.T2",
+    "scenario_ids": [
+      "S1"
+    ],
+    "difficulty": "conceptual_knowledge",
+    "key_concept_tested": "overly narrow task decomposition risks",
+    "stem": "Your customer support coordinator is breaking down a complex billing dispute into very specific micro-tasks for different subagents. What is the primary risk of this approach?",
+    "options": [
+      {
+        "label": "A",
+        "text": "Increased API costs due to more subagent invocations",
+        "is_correct": false
+      },
+      {
+        "label": "B",
+        "text": "Incomplete coverage of the customer's broader concerns",
+        "is_correct": true
+      },
+      {
+        "label": "C",
+        "text": "Higher latency due to sequential processing requirements",
+        "is_correct": false
+      },
+      {
+        "label": "D",
+        "text": "Reduced system throughput due to resource contention",
+        "is_correct": false
+      }
+    ],
+    "correct_label": "B",
+    "explanation": "Overly narrow task decomposition risks incomplete coverage of broad or complex issues. The coordinator might miss important aspects of the customer's problem by focusing too narrowly on specific subtasks.",
+    "tags": [
+      "task-decomposition",
+      "risks",
+      "coverage"
+    ],
+    "bloom_level": "understand",
+    "distractor_strategy": {
+      "plausible_but_prompt_only": "N/A",
+      "over_engineered": "N/A",
+      "wrong_layer": "N/A",
+      "valid_but_not_first_step": "N/A"
+    }
+  },
+  {
+    "id": "D1_T2_005",
+    "domain_id": "D1",
+    "task_statement_id": "D1.T2",
+    "scenario_ids": [
+      "S3"
+    ],
+    "difficulty": "applied_judgment",
+    "key_concept_tested": "iterative refinement loops",
+    "stem": "Your research coordinator receives a synthesis report that lacks coverage of recent regulatory changes. The initial search found 15 academic papers but no regulatory documents. What should the coordinator do next?",
+    "options": [
+      {
+        "label": "A",
+        "text": "Accept the synthesis as complete since academic sources are authoritative",
+        "is_correct": false
+      },
+      {
+        "label": "B",
+        "text": "Implement a prompt-only instruction telling the synthesis agent to be more thorough",
+        "is_correct": false
+      },
+      {
+        "label": "C",
+        "text": "Re-delegate to the search agent with targeted queries for regulatory sources, then re-invoke synthesis",
+        "is_correct": true
+      },
+      {
+        "label": "D",
+        "text": "Deploy additional infrastructure to automatically monitor regulatory databases",
+        "is_correct": false
+      }
+    ],
+    "correct_label": "C",
+    "explanation": "The coordinator should implement iterative refinement by re-delegating to the search agent with targeted queries for the missing regulatory information, then re-invoking synthesis with the expanded source material.",
+    "tags": [
+      "iterative-refinement",
+      "gap-analysis",
+      "re-delegation"
+    ],
+    "bloom_level": "apply",
+    "distractor_strategy": {
+      "plausible_but_prompt_only": "B",
+      "over_engineered": "D",
+      "wrong_layer": "N/A",
+      "valid_but_not_first_step": "N/A"
+    }
+  },
+  {
+    "id": "D1_T2_006",
+    "domain_id": "D1",
+    "task_statement_id": "D1.T2",
+    "scenario_ids": [
+      "S1"
+    ],
+    "difficulty": "applied_judgment",
+    "key_concept_tested": "routing all communication through coordinator",
+    "stem": "Your billing dispute subagent needs additional customer account details that the order lookup subagent previously retrieved. How should this information be accessed?",
+    "options": [
+      {
+        "label": "A",
+        "text": "The billing subagent should directly query the order subagent's cached results",
+        "is_correct": false
+      },
+      {
+        "label": "B",
+        "text": "Implement a shared memory system that all subagents can read from",
+        "is_correct": false
+      },
+      {
+        "label": "C",
+        "text": "Use a message queue to enable direct subagent-to-subagent communication",
+        "is_correct": false
+      },
+      {
+        "label": "D",
+        "text": "The coordinator should provide the needed information when spawning the billing subagent",
+        "is_correct": true
+      }
+    ],
+    "correct_label": "D",
+    "explanation": "All subagent communication should be routed through the coordinator. The coordinator should provide the necessary account details when spawning the billing subagent, maintaining the hub-and-spoke architecture.",
+    "tags": [
+      "communication-routing",
+      "coordinator-control",
+      "architecture"
+    ],
+    "bloom_level": "apply",
+    "distractor_strategy": {
+      "plausible_but_prompt_only": "N/A",
+      "over_engineered": "N/A",
+      "wrong_layer": "N/A",
+      "valid_but_not_first_step": "N/A"
+    }
+  },
+  {
+    "id": "D1_T2_007",
+    "domain_id": "D1",
+    "task_statement_id": "D1.T2",
+    "scenario_ids": [
+      "S3"
+    ],
+    "difficulty": "applied_judgment",
+    "key_concept_tested": "coordinator role: decomposition, delegation, aggregation",
+    "stem": "A research query asks for 'the impact of AI on healthcare.' Your coordinator must decide how to decompose this broad topic. What approach provides the best coverage while minimizing duplication?",
+    "options": [
+      {
+        "label": "A",
+        "text": "Assign distinct healthcare sectors (diagnostics, treatment, administration) to different search agents",
+        "is_correct": true
+      },
+      {
+        "label": "B",
+        "text": "Have all subagents search the same broad topic to ensure comprehensive coverage",
+        "is_correct": false
+      },
+      {
+        "label": "C",
+        "text": "Use a single search agent and rely on prompt engineering for thoroughness",
+        "is_correct": false
+      },
+      {
+        "label": "D",
+        "text": "Create specialized infrastructure for each medical subdiscipline",
+        "is_correct": false
+      }
+    ],
+    "correct_label": "A",
+    "explanation": "Partitioning the research scope across subagents by assigning distinct subtopics (healthcare sectors) minimizes duplication while ensuring comprehensive coverage of the broad research topic.",
+    "tags": [
+      "scope-partitioning",
+      "task-decomposition",
+      "coverage"
+    ],
+    "bloom_level": "apply",
+    "distractor_strategy": {
+      "plausible_but_prompt_only": "C",
+      "over_engineered": "D",
+      "wrong_layer": "N/A",
+      "valid_but_not_first_step": "N/A"
+    }
+  },
+  {
+    "id": "D1_T2_008",
+    "domain_id": "D1",
+    "task_statement_id": "D1.T2",
+    "scenario_ids": [
+      "S1"
+    ],
+    "difficulty": "applied_judgment",
+    "key_concept_tested": "hub-and-spoke architecture",
+    "stem": "Your customer support system shows 23% of cases require multiple subagent consultations, but you're seeing inconsistent error handling across different interaction paths. What architectural principle is being violated?",
+    "options": [
+      {
+        "label": "A",
+        "text": "Subagents are communicating directly instead of through the coordinator",
+        "is_correct": false
+      },
+      {
+        "label": "B",
+        "text": "The coordinator is not properly managing all inter-subagent communication and error handling",
+        "is_correct": true
+      },
+      {
+        "label": "C",
+        "text": "The system lacks sufficient prompt-only error handling instructions",
+        "is_correct": false
+      },
+      {
+        "label": "D",
+        "text": "The infrastructure doesn't have enough redundancy for multi-agent scenarios",
+        "is_correct": false
+      }
+    ],
+    "correct_label": "B",
+    "explanation": "Inconsistent error handling indicates the coordinator is not properly managing all communication and error handling as required by the hub-and-spoke architecture. All interactions should flow through the coordinator for consistent handling.",
+    "tags": [
+      "error-handling",
+      "consistency",
+      "coordinator-responsibility"
+    ],
+    "bloom_level": "apply",
+    "distractor_strategy": {
+      "plausible_but_prompt_only": "C",
+      "over_engineered": "D",
+      "wrong_layer": "N/A",
+      "valid_but_not_first_step": "N/A"
+    }
+  },
+  {
+    "id": "D1_T2_009",
+    "domain_id": "D1",
+    "task_statement_id": "D1.T2",
+    "scenario_ids": [
+      "S3"
+    ],
+    "difficulty": "applied_judgment",
+    "key_concept_tested": "subagent isolated context",
+    "stem": "Your document analysis subagent is producing irrelevant results because it lacks context about the specific research question. The web search subagent found highly relevant papers, but the analysis agent doesn't know about them. What is the root cause?",
+    "options": [
+      {
+        "label": "A",
+        "text": "The subagents need direct communication channels to share context",
+        "is_correct": false
+      },
+      {
+        "label": "B",
+        "text": "The system needs better prompt engineering to infer context automatically",
+        "is_correct": false
+      },
+      {
+        "label": "C",
+        "text": "The coordinator is not explicitly providing relevant context when spawning the analysis subagent",
+        "is_correct": true
+      },
+      {
+        "label": "D",
+        "text": "The infrastructure lacks shared memory for context persistence",
+        "is_correct": false
+      }
+    ],
+    "correct_label": "C",
+    "explanation": "Since subagents operate with isolated context, the coordinator must explicitly provide relevant information (including the research question and relevant papers found) when spawning the analysis subagent.",
+    "tags": [
+      "context-passing",
+      "coordinator-responsibility",
+      "subagent-isolation"
+    ],
+    "bloom_level": "apply",
+    "distractor_strategy": {
+      "plausible_but_prompt_only": "B",
+      "over_engineered": "D",
+      "wrong_layer": "N/A",
+      "valid_but_not_first_step": "N/A"
+    }
+  },
+  {
+    "id": "D1_T2_010",
+    "domain_id": "D1",
+    "task_statement_id": "D1.T2",
+    "scenario_ids": [
+      "S1"
+    ],
+    "difficulty": "applied_judgment",
+    "key_concept_tested": "iterative refinement loops",
+    "stem": "Your customer support coordinator resolved a billing dispute but the customer's follow-up reveals an unaddressed account access issue. The system shows 89% resolution rate but 18% require follow-up contacts. How should the coordinator adapt?",
+    "options": [
+      {
+        "label": "A",
+        "text": "Implement longer initial conversations to catch all issues upfront",
+        "is_correct": false
+      },
+      {
+        "label": "B",
+        "text": "Add prompt instructions to be more thorough in initial analysis",
+        "is_correct": false
+      },
+      {
+        "label": "C",
+        "text": "Build infrastructure to automatically detect all possible related issues",
+        "is_correct": false
+      },
+      {
+        "label": "D",
+        "text": "Evaluate resolution completeness and re-delegate with broader scope when gaps are identified",
+        "is_correct": true
+      }
+    ],
+    "correct_label": "D",
+    "explanation": "The coordinator should implement iterative refinement loops by evaluating resolution completeness and re-delegating to appropriate subagents with broader scope when gaps are identified, rather than trying to catch everything upfront.",
+    "tags": [
+      "iterative-refinement",
+      "completeness-evaluation",
+      "adaptive-scope"
+    ],
+    "bloom_level": "apply",
+    "distractor_strategy": {
+      "plausible_but_prompt_only": "B",
+      "over_engineered": "C",
+      "wrong_layer": "N/A",
+      "valid_but_not_first_step": "N/A"
+    }
+  },
+  {
+    "id": "D1_T2_011",
+    "domain_id": "D1",
+    "task_statement_id": "D1.T2",
+    "scenario_ids": [
+      "S3"
+    ],
+    "difficulty": "applied_judgment",
+    "key_concept_tested": "overly narrow task decomposition risks",
+    "stem": "Your research coordinator is decomposing 'climate change impacts on agriculture' by assigning each subagent to search for exactly one crop type (wheat, corn, rice). The resulting synthesis lacks coverage of broader agricultural systems. What decomposition strategy would be more effective?",
+    "options": [
+      {
+        "label": "A",
+        "text": "Assign subagents to agricultural systems (irrigation, soil health, pest management) rather than individual crops",
+        "is_correct": true
+      },
+      {
+        "label": "B",
+        "text": "Increase the number of crop-specific subagents to cover more varieties",
+        "is_correct": false
+      },
+      {
+        "label": "C",
+        "text": "Use prompt engineering to make each crop subagent consider system-wide effects",
+        "is_correct": false
+      },
+      {
+        "label": "D",
+        "text": "Deploy specialized infrastructure for comprehensive agricultural monitoring",
+        "is_correct": false
+      }
+    ],
+    "correct_label": "A",
+    "explanation": "Assigning subagents to agricultural systems rather than individual crops avoids overly narrow decomposition and ensures broader coverage of how climate change affects agricultural systems as a whole.",
+    "tags": [
+      "task-decomposition",
+      "scope-design",
+      "systems-thinking"
+    ],
+    "bloom_level": "apply",
+    "distractor_strategy": {
+      "plausible_but_prompt_only": "C",
+      "over_engineered": "D",
+      "wrong_layer": "N/A",
+      "valid_but_not_first_step": "N/A"
+    }
+  },
+  {
+    "id": "D1_T2_012",
+    "domain_id": "D1",
+    "task_statement_id": "D1.T2",
+    "scenario_ids": [
+      "S1"
+    ],
+    "difficulty": "applied_judgment",
+    "key_concept_tested": "routing all communication through coordinator",
+    "stem": "Your support system needs to track which subagents were consulted for each case to improve future routing decisions. Currently, you have limited visibility into subagent interactions. What architectural change would provide this observability?",
+    "options": [
+      {
+        "label": "A",
+        "text": "Add logging capabilities directly to each subagent",
+        "is_correct": false
+      },
+      {
+        "label": "B",
+        "text": "Ensure all subagent invocations and results flow through the coordinator for centralized tracking",
+        "is_correct": true
+      },
+      {
+        "label": "C",
+        "text": "Implement a distributed tracing system across all subagents",
+        "is_correct": false
+      },
+      {
+        "label": "D",
+        "text": "Use prompt instructions to make subagents self-report their activities",
+        "is_correct": false
+      }
+    ],
+    "correct_label": "B",
+    "explanation": "Routing all subagent communication through the coordinator provides centralized observability and tracking. The coordinator can log all invocations and results, giving complete visibility into multi-agent interactions.",
+    "tags": [
+      "observability",
+      "centralized-tracking",
+      "coordinator-control"
+    ],
+    "bloom_level": "apply",
+    "distractor_strategy": {
+      "plausible_but_prompt_only": "D",
+      "over_engineered": "N/A",
+      "wrong_layer": "N/A",
+      "valid_but_not_first_step": "N/A"
+    }
+  },
+  {
+    "id": "D1_T2_013",
+    "domain_id": "D1",
+    "task_statement_id": "D1.T2",
+    "scenario_ids": [
+      "S3"
+    ],
+    "difficulty": "applied_judgment",
+    "key_concept_tested": "coordinator role: decomposition, delegation, aggregation",
+    "stem": "Your research coordinator receives outputs from web search (12 papers), document analysis (3 detailed summaries), and initial synthesis (draft report with gaps). The query complexity suggests more comprehensive coverage is needed. What should the coordinator's next action be?",
+    "options": [
+      {
+        "label": "A",
+        "text": "Accept the current synthesis and deliver the report as complete",
+        "is_correct": false
+      },
+      {
+        "label": "B",
+        "text": "Use prompt engineering to make the synthesis agent more thorough",
+        "is_correct": false
+      },
+      {
+        "label": "C",
+        "text": "Analyze the gaps, re-delegate targeted searches, and re-invoke synthesis with expanded materials",
+        "is_correct": true
+      },
+      {
+        "label": "D",
+        "text": "Deploy additional search infrastructure to automatically find more sources",
+        "is_correct": false
+      }
+    ],
+    "correct_label": "C",
+    "explanation": "The coordinator should analyze the synthesis gaps, determine what additional information is needed, re-delegate to search and analysis subagents with targeted queries, and then re-invoke synthesis with the expanded source material.",
+    "tags": [
+      "gap-analysis",
+      "iterative-refinement",
+      "coordinator-decision-making"
+    ],
+    "bloom_level": "apply",
+    "distractor_strategy": {
+      "plausible_but_prompt_only": "B",
+      "over_engineered": "D",
+      "wrong_layer": "N/A",
+      "valid_but_not_first_step": "N/A"
+    }
+  },
+  {
+    "id": "D1_T2_014",
+    "domain_id": "D1",
+    "task_statement_id": "D1.T2",
+    "scenario_ids": [
+      "S1"
+    ],
+    "difficulty": "applied_judgment",
+    "key_concept_tested": "hub-and-spoke architecture",
+    "stem": "Your customer support system needs to handle escalations where multiple subagents (billing, technical, account) must collaborate on a complex case. How should information flow between these subagents?",
+    "options": [
+      {
+        "label": "A",
+        "text": "Enable direct peer-to-peer communication between the collaborating subagents",
+        "is_correct": false
+      },
+      {
+        "label": "B",
+        "text": "Create a shared workspace that all relevant subagents can access simultaneously",
+        "is_correct": false
+      },
+      {
+        "label": "C",
+        "text": "Use a message bus to broadcast updates to all potentially interested subagents",
+        "is_correct": false
+      },
+      {
+        "label": "D",
+        "text": "Route all information through the coordinator, which manages the collaboration and information sharing",
+        "is_correct": true
+      }
+    ],
+    "correct_label": "D",
+    "explanation": "The hub-and-spoke architecture requires all information to flow through the coordinator. The coordinator manages the collaboration by collecting information from each subagent and providing relevant context to others as needed.",
+    "tags": [
+      "collaboration",
+      "information-flow",
+      "coordinator-management"
+    ],
+    "bloom_level": "apply",
+    "distractor_strategy": {
+      "plausible_but_prompt_only": "N/A",
+      "over_engineered": "N/A",
+      "wrong_layer": "N/A",
+      "valid_but_not_first_step": "N/A"
+    }
+  },
+  {
+    "id": "D1_T2_015",
+    "domain_id": "D1",
+    "task_statement_id": "D1.T2",
+    "scenario_ids": [
+      "S3"
+    ],
+    "difficulty": "applied_judgment",
+    "key_concept_tested": "subagent isolated context",
+    "stem": "Your synthesis subagent is producing inconsistent report quality. Sometimes it creates comprehensive reports, other times it misses key findings that were discovered by the search and analysis subagents. What is the most likely cause?",
+    "options": [
+      {
+        "label": "A",
+        "text": "The synthesis subagent needs better prompt engineering for consistency",
+        "is_correct": false
+      },
+      {
+        "label": "B",
+        "text": "The coordinator is inconsistently providing relevant context and findings when spawning the synthesis subagent",
+        "is_correct": true
+      },
+      {
+        "label": "C",
+        "text": "The subagents need shared memory to maintain consistent access to all findings",
+        "is_correct": false
+      },
+      {
+        "label": "D",
+        "text": "The system needs additional infrastructure for result persistence and retrieval",
+        "is_correct": false
+      }
+    ],
+    "correct_label": "B",
+    "explanation": "Since subagents operate with isolated context, inconsistent report quality likely stems from the coordinator inconsistently providing relevant context and findings when spawning the synthesis subagent. The synthesis agent can only work with the information explicitly provided to it.",
+    "tags": [
+      "consistency",
+      "context-provision",
+      "coordinator-responsibility"
+    ],
+    "bloom_level": "apply",
+    "distractor_strategy": {
+      "plausible_but_prompt_only": "A",
+      "over_engineered": "D",
+      "wrong_layer": "N/A",
+      "valid_but_not_first_step": "N/A"
+    }
+  },
+  {
+    "id": "D1_T2_016",
+    "domain_id": "D1",
+    "task_statement_id": "D1.T2",
+    "scenario_ids": [
+      "S1"
+    ],
+    "difficulty": "applied_judgment",
+    "key_concept_tested": "iterative refinement loops",
+    "stem": "Your customer support coordinator initially resolved a return request, but the customer indicates the refund amount seems incorrect based on their purchase history. The system shows the case as 'resolved' with 94% confidence. How should the coordinator respond?",
+    "options": [
+      {
+        "label": "A",
+        "text": "Accept the high confidence score and mark the case as definitively resolved",
+        "is_correct": false
+      },
+      {
+        "label": "B",
+        "text": "Add prompt instructions to double-check all calculations in future cases",
+        "is_correct": false
+      },
+      {
+        "label": "C",
+        "text": "Re-delegate to the order lookup and refund processing subagents with the customer's specific concern",
+        "is_correct": true
+      },
+      {
+        "label": "D",
+        "text": "Implement additional validation infrastructure for all refund calculations",
+        "is_correct": false
+      }
+    ],
+    "correct_label": "C",
+    "explanation": "The coordinator should implement iterative refinement by re-delegating to the relevant subagents (order lookup and refund processing) with the customer's specific concern about the refund amount, rather than accepting the initial resolution as final.",
+    "tags": [
+      "iterative-refinement",
+      "customer-feedback",
+      "re-delegation"
+    ],
+    "bloom_level": "apply",
+    "distractor_strategy": {
+      "plausible_but_prompt_only": "B",
+      "over_engineered": "D",
+      "wrong_layer": "N/A",
+      "valid_but_not_first_step": "N/A"
+    }
+  },
+  {
+    "id": "D1_T2_017",
+    "domain_id": "D1",
+    "task_statement_id": "D1.T2",
+    "scenario_ids": [
+      "S3"
+    ],
+    "difficulty": "anti_pattern_recognition",
+    "key_concept_tested": "routing all communication through coordinator",
+    "stem": "A colleague suggests optimizing your research system by allowing the document analysis subagent to directly request additional sources from the web search subagent when it identifies gaps. What is the primary flaw in this approach?",
+    "options": [
+      {
+        "label": "A",
+        "text": "It violates the hub-and-spoke architecture by enabling direct subagent communication",
+        "is_correct": true
+      },
+      {
+        "label": "B",
+        "text": "It lacks sufficient prompt engineering to ensure quality direct communication",
+        "is_correct": false
+      },
+      {
+        "label": "C",
+        "text": "It requires additional infrastructure for peer-to-peer subagent messaging",
+        "is_correct": false
+      },
+      {
+        "label": "D",
+        "text": "It increases API costs due to redundant subagent invocations",
+        "is_correct": false
+      }
+    ],
+    "correct_label": "A",
+    "explanation": "Direct subagent communication violates the hub-and-spoke architecture principle. All communication should flow through the coordinator to maintain centralized control, observability, and consistent error handling.",
+    "tags": [
+      "anti-pattern",
+      "direct-communication",
+      "architecture-violation"
+    ],
+    "bloom_level": "evaluate",
+    "distractor_strategy": {
+      "plausible_but_prompt_only": "B",
+      "over_engineered": "C",
+      "wrong_layer": "N/A",
+      "valid_but_not_first_step": "N/A"
+    }
+  },
+  {
+    "id": "D1_T2_018",
+    "domain_id": "D1",
+    "task_statement_id": "D1.T2",
+    "scenario_ids": [
+      "S1"
+    ],
+    "difficulty": "anti_pattern_recognition",
+    "key_concept_tested": "subagent isolated context",
+    "stem": "Your team implements a 'smart context sharing' feature where subagents automatically inherit the coordinator's full conversation history to 'improve understanding.' After deployment, you notice degraded performance and inconsistent responses. What is the fundamental problem?",
+    "options": [
+      {
+        "label": "A",
+        "text": "The prompt engineering isn't sophisticated enough to handle inherited context",
+        "is_correct": false
+      },
+      {
+        "label": "B",
+        "text": "Subagents should operate with isolated context, and automatic inheritance introduces noise and confusion",
+        "is_correct": true
+      },
+      {
+        "label": "C",
+        "text": "The system needs more robust infrastructure to handle large context transfers",
+        "is_correct": false
+      },
+      {
+        "label": "D",
+        "text": "The context compression algorithms aren't optimized for multi-agent scenarios",
+        "is_correct": false
+      }
+    ],
+    "correct_label": "B",
+    "explanation": "Subagents are designed to operate with isolated context for a reason. Automatic inheritance of full conversation history introduces irrelevant information that can confuse subagents and degrade their specialized performance.",
+    "tags": [
+      "anti-pattern",
+      "context-inheritance",
+      "subagent-isolation"
+    ],
+    "bloom_level": "evaluate",
+    "distractor_strategy": {
+      "plausible_but_prompt_only": "A",
+      "over_engineered": "C",
+      "wrong_layer": "N/A",
+      "valid_but_not_first_step": "N/A"
+    }
+  },
+  {
+    "id": "D1_T2_019",
+    "domain_id": "D1",
+    "task_statement_id": "D1.T2",
+    "scenario_ids": [
+      "S3"
+    ],
+    "difficulty": "anti_pattern_recognition",
+    "key_concept_tested": "overly narrow task decomposition risks",
+    "stem": "Your research coordinator decomposes every query into 15+ micro-tasks, each handled by a different subagent (one for abstracts, one for methodologies, one for conclusions, etc.). Users report that the final reports lack coherence and miss important connections. What decomposition anti-pattern is this?",
+    "options": [
+      {
+        "label": "A",
+        "text": "Insufficient prompt engineering for micro-task coordination",
+        "is_correct": false
+      },
+      {
+        "label": "B",
+        "text": "Lack of specialized infrastructure for fine-grained task management",
+        "is_correct": false
+      },
+      {
+        "label": "C",
+        "text": "Overly narrow task decomposition that fragments understanding and misses broader connections",
+        "is_correct": true
+      },
+      {
+        "label": "D",
+        "text": "Inadequate result aggregation algorithms for combining micro-outputs",
+        "is_correct": false
+      }
+    ],
+    "correct_label": "C",
+    "explanation": "This is the classic overly narrow task decomposition anti-pattern. Breaking tasks into too many micro-components can fragment understanding and cause the system to miss important connections and broader context that humans would naturally maintain.",
+    "tags": [
+      "anti-pattern",
+      "over-decomposition",
+      "fragmentation"
+    ],
+    "bloom_level": "evaluate",
+    "distractor_strategy": {
+      "plausible_but_prompt_only": "A",
+      "over_engineered": "B",
+      "wrong_layer": "N/A",
+      "valid_but_not_first_step": "N/A"
+    }
+  },
+  {
+    "id": "D1_T2_020",
+    "domain_id": "D1",
+    "task_statement_id": "D1.T2",
+    "scenario_ids": [
+      "S1"
+    ],
+    "difficulty": "anti_pattern_recognition",
+    "key_concept_tested": "coordinator role: decomposition, delegation, aggregation",
+    "stem": "A team member suggests that instead of having the coordinator analyze and decompose customer requests, you should use prompt engineering to make each subagent 'smart enough' to handle any type of request. What is wrong with this approach?",
+    "options": [
+      {
+        "label": "A",
+        "text": "It eliminates the coordinator's essential role in task decomposition, delegation, and result aggregation",
+        "is_correct": true
+      },
+      {
+        "label": "B",
+        "text": "It requires more sophisticated prompt engineering than current capabilities allow",
+        "is_correct": false
+      },
+      {
+        "label": "C",
+        "text": "It needs additional infrastructure to support generalized subagent capabilities",
+        "is_correct": false
+      },
+      {
+        "label": "D",
+        "text": "It increases token costs due to longer prompts for each subagent",
+        "is_correct": false
+      }
+    ],
+    "correct_label": "A",
+    "explanation": "This approach eliminates the coordinator's essential functions of analyzing requests, decomposing them appropriately, delegating to specialized subagents, and aggregating results. It fundamentally breaks the multi-agent architecture.",
+    "tags": [
+      "anti-pattern",
+      "coordinator-elimination",
+      "role-confusion"
+    ],
+    "bloom_level": "evaluate",
+    "distractor_strategy": {
+      "plausible_but_prompt_only": "D",
+      "over_engineered": "C",
+      "wrong_layer": "N/A",
+      "valid_but_not_first_step": "N/A"
+    }
+  },
+  {
+    "id": "D1_T2_021",
+    "domain_id": "D1",
+    "task_statement_id": "D1.T2",
+    "scenario_ids": [
+      "S3"
+    ],
+    "difficulty": "anti_pattern_recognition",
+    "key_concept_tested": "iterative refinement loops",
+    "stem": "Your research system implements a 'one-shot perfection' approach where the coordinator must get the decomposition exactly right on the first attempt, with no ability to refine based on initial results. Users report that 34% of research reports have significant gaps. What is the core problem?",
+    "options": [
+      {
+        "label": "A",
+        "text": "The prompt engineering for initial decomposition isn't sophisticated enough",
+        "is_correct": false
+      },
+      {
+        "label": "B",
+        "text": "The system lacks iterative refinement loops to identify and address gaps in coverage",
+        "is_correct": true
+      },
+      {
+        "label": "C",
+        "text": "The infrastructure doesn't have sufficient computational resources for complex queries",
+        "is_correct": false
+      },
+      {
+        "label": "D",
+        "text": "The subagents need better training data for comprehensive research",
+        "is_correct": false
+      }
+    ],
+    "correct_label": "B",
+    "explanation": "The 'one-shot perfection' approach eliminates iterative refinement loops, which are essential for identifying gaps in initial results and re-delegating to fill those gaps. Complex research often requires multiple iterations to achieve comprehensive coverage.",
+    "tags": [
+      "anti-pattern",
+      "one-shot-approach",
+      "no-iteration"
+    ],
+    "bloom_level": "evaluate",
+    "distractor_strategy": {
+      "plausible_but_prompt_only": "A",
+      "over_engineered": "C",
+      "wrong_layer": "N/A",
+      "valid_but_not_first_step": "N/A"
+    }
+  },
+  {
+    "id": "D1_T2_022",
+    "domain_id": "D1",
+    "task_statement_id": "D1.T2",
+    "scenario_ids": [
+      "S1"
+    ],
+    "difficulty": "anti_pattern_recognition",
+    "key_concept_tested": "hub-and-spoke architecture",
+    "stem": "To 'improve efficiency,' your team implements a mesh network where billing, technical, and account subagents can communicate directly with each other. After deployment, error handling becomes inconsistent and debugging becomes extremely difficult. What architectural principle was violated?",
+    "options": [
+      {
+        "label": "A",
+        "text": "The system needs better prompt engineering for peer-to-peer communication",
+        "is_correct": false
+      },
+      {
+        "label": "B",
+        "text": "The mesh architecture requires more sophisticated infrastructure than is available",
+        "is_correct": false
+      },
+      {
+        "label": "C",
+        "text": "Direct subagent communication violates the hub-and-spoke architecture needed for centralized control",
+        "is_correct": true
+      },
+      {
+        "label": "D",
+        "text": "The error handling algorithms aren't optimized for distributed communication patterns",
+        "is_correct": false
+      }
+    ],
+    "correct_label": "C",
+    "explanation": "The mesh network approach violates the hub-and-spoke architecture principle. Direct subagent communication eliminates the coordinator's centralized control, making error handling inconsistent and debugging difficult due to lack of observability.",
+    "tags": [
+      "anti-pattern",
+      "mesh-network",
+      "centralized-control"
+    ],
+    "bloom_level": "evaluate",
+    "distractor_strategy": {
+      "plausible_but_prompt_only": "A",
+      "over_engineered": "B",
+      "wrong_layer": "N/A",
+      "valid_but_not_first_step": "N/A"
+    }
+  },
+  {
+    "id": "D1_T2_023",
+    "domain_id": "D1",
+    "task_statement_id": "D1.T2",
+    "scenario_ids": [
+      "S3"
+    ],
+    "difficulty": "conceptual_knowledge",
+    "key_concept_tested": "routing all communication through coordinator",
+    "stem": "In your multi-agent research system, why must all subagent communication be routed through the coordinator rather than allowing direct subagent interactions?",
+    "options": [
+      {
+        "label": "A",
+        "text": "Direct communication requires more expensive API calls",
+        "is_correct": false
+      },
+      {
+        "label": "B",
+        "text": "Subagents lack the computational resources for peer-to-peer communication",
+        "is_correct": false
+      },
+      {
+        "label": "C",
+        "text": "Routing through the coordinator provides centralized observability, error handling, and controlled information flow",
+        "is_correct": true
+      },
+      {
+        "label": "D",
+        "text": "The Claude Agent SDK doesn't support direct subagent communication protocols",
+        "is_correct": false
+      }
+    ],
+    "correct_label": "C",
+    "explanation": "Routing all communication through the coordinator provides essential centralized observability, consistent error handling, and controlled information flow, which are key benefits of the hub-and-spoke architecture.",
+    "tags": [
+      "communication-routing",
+      "centralized-benefits",
+      "observability"
+    ],
+    "bloom_level": "understand",
+    "distractor_strategy": {
+      "plausible_but_prompt_only": "N/A",
+      "over_engineered": "N/A",
+      "wrong_layer": "N/A",
+      "valid_but_not_first_step": "N/A"
+    }
+  },
+  {
+    "id": "D1_T2_024",
+    "domain_id": "D1",
+    "task_statement_id": "D1.T2",
+    "scenario_ids": [
+      "S1"
+    ],
+    "difficulty": "conceptual_knowledge",
+    "key_concept_tested": "iterative refinement loops",
+    "stem": "What is the purpose of iterative refinement loops in a multi-agent customer support system?",
+    "options": [
+      {
+        "label": "A",
+        "text": "To reduce the total number of subagent invocations needed",
+        "is_correct": false
+      },
+      {
+        "label": "B",
+        "text": "To evaluate results for gaps and re-delegate with targeted queries until coverage is sufficient",
+        "is_correct": true
+      },
+      {
+        "label": "C",
+        "text": "To automatically optimize prompt templates based on performance metrics",
+        "is_correct": false
+      },
+      {
+        "label": "D",
+        "text": "To distribute workload evenly across all available subagents",
+        "is_correct": false
+      }
+    ],
+    "correct_label": "B",
+    "explanation": "Iterative refinement loops allow the coordinator to evaluate results for gaps or insufficiencies, then re-delegate to appropriate subagents with more targeted queries, continuing until the coverage is sufficient for the customer's needs.",
+    "tags": [
+      "iterative-refinement",
+      "gap-evaluation",
+      "targeted-queries"
+    ],
+    "bloom_level": "understand",
+    "distractor_strategy": {
+      "plausible_but_prompt_only": "C",
+      "over_engineered": "N/A",
+      "wrong_layer": "N/A",
+      "valid_but_not_first_step": "N/A"
+    }
+  },
+  {
+    "id": "D1_T2_025",
+    "domain_id": "D1",
+    "task_statement_id": "D1.T2",
+    "scenario_ids": [
+      "S3"
+    ],
+    "difficulty": "conceptual_knowledge",
+    "key_concept_tested": "coordinator role: decomposition, delegation, aggregation",
+    "stem": "When your research coordinator receives a broad query like 'analyze the future of renewable energy,' what is its first responsibility?",
+    "options": [
+      {
+        "label": "A",
+        "text": "Immediately delegate the entire query to the web search subagent",
+        "is_correct": false
+      },
+      {
+        "label": "B",
+        "text": "Break down the broad query into specific, manageable subtasks for different subagents",
+        "is_correct": false
+      },
+      {
+        "label": "C",
+        "text": "Generate a comprehensive response using only its own knowledge",
+        "is_correct": false
+      },
+      {
+        "label": "D",
+        "text": "Analyze the query requirements and decompose it into appropriate subtasks",
+        "is_correct": true
+      }
+    ],
+    "correct_label": "D",
+    "explanation": "The coordinator's first responsibility is task decomposition - analyzing the query requirements and breaking it down into appropriate subtasks that can be effectively handled by specialized subagents.",
+    "tags": [
+      "task-decomposition",
+      "query-analysis",
+      "coordinator-first-step"
+    ],
+    "bloom_level": "understand",
+    "distractor_strategy": {
+      "plausible_but_prompt_only": "N/A",
+      "over_engineered": "N/A",
+      "wrong_layer": "N/A",
+      "valid_but_not_first_step": "N/A"
+    }
+  },
+  {
+    "id": "D1_T2_026",
+    "domain_id": "D1",
+    "task_statement_id": "D1.T2",
+    "scenario_ids": [
+      "S1"
+    ],
+    "difficulty": "conceptual_knowledge",
+    "key_concept_tested": "overly narrow task decomposition risks",
+    "stem": "What happens when a coordinator decomposes customer support tasks too narrowly?",
+    "options": [
+      {
+        "label": "A",
+        "text": "The system becomes more efficient due to specialized handling",
+        "is_correct": false
+      },
+      {
+        "label": "B",
+        "text": "Each subagent can focus better on its specific micro-task",
+        "is_correct": false
+      },
+      {
+        "label": "C",
+        "text": "The coordinator gains better control over the overall process",
+        "is_correct": false
+      },
+      {
+        "label": "D",
+        "text": "Important aspects of the customer's broader concerns may be missed",
+        "is_correct": true
+      }
+    ],
+    "correct_label": "D",
+    "explanation": "Overly narrow task decomposition risks incomplete coverage of the customer's broader concerns. When tasks are broken down too specifically, the system may miss important connections and aspects that require a more holistic understanding.",
+    "tags": [
+      "narrow-decomposition",
+      "coverage-risk",
+      "holistic-understanding"
+    ],
+    "bloom_level": "understand",
+    "distractor_strategy": {
+      "plausible_but_prompt_only": "N/A",
+      "over_engineered": "N/A",
+      "wrong_layer": "N/A",
+      "valid_but_not_first_step": "N/A"
+    }
+  },
+  {
+    "id": "D1_T2_027",
+    "domain_id": "D1",
+    "task_statement_id": "D1.T2",
+    "scenario_ids": [
+      "S3"
+    ],
+    "difficulty": "applied_judgment",
+    "key_concept_tested": "hub-and-spoke architecture",
+    "stem": "Your research system processes 200+ queries daily with 4 specialized subagents. You need to add audit logging and performance monitoring across all agent interactions. Where should this instrumentation be implemented?",
+    "options": [
+      {
+        "label": "A",
+        "text": "In the coordinator, since all subagent interactions flow through it in the hub-and-spoke architecture",
+        "is_correct": true
+      },
+      {
+        "label": "B",
+        "text": "Distributed across all subagents to capture their individual performance metrics",
+        "is_correct": false
+      },
+      {
+        "label": "C",
+        "text": "In a separate monitoring service that observes all agent communications",
+        "is_correct": false
+      },
+      {
+        "label": "D",
+        "text": "Through prompt engineering that makes each agent self-report its activities",
+        "is_correct": false
+      }
+    ],
+    "correct_label": "A",
+    "explanation": "In a hub-and-spoke architecture, all subagent interactions flow through the coordinator, making it the ideal place for centralized audit logging and performance monitoring. This provides complete visibility with minimal instrumentation complexity.",
+    "tags": [
+      "monitoring",
+      "centralized-logging",
+      "hub-and-spoke-benefits"
+    ],
+    "bloom_level": "apply",
+    "distractor_strategy": {
+      "plausible_but_prompt_only": "D",
+      "over_engineered": "C",
+      "wrong_layer": "N/A",
+      "valid_but_not_first_step": "N/A"
+    }
+  },
+  {
+    "id": "D1_T2_028",
+    "domain_id": "D1",
+    "task_statement_id": "D1.T2",
+    "scenario_ids": [
+      "S1"
+    ],
+    "difficulty": "applied_judgment",
+    "key_concept_tested": "subagent isolated context",
+    "stem": "Your billing dispute subagent needs to understand the customer's payment history, account status, and the specific dispute details. The coordinator has all this information from previous interactions. How should this context be provided?",
+    "options": [
+      {
+        "label": "A",
+        "text": "Enable the subagent to automatically access the coordinator's conversation history",
+        "is_correct": false
+      },
+      {
+        "label": "B",
+        "text": "The coordinator should explicitly include relevant payment history, account status, and dispute details in the subagent's prompt",
+        "is_correct": true
+      },
+      {
+        "label": "C",
+        "text": "Use prompt engineering to make the subagent infer context from available tools",
+        "is_correct": false
+      },
+      {
+        "label": "D",
+        "text": "Implement a shared knowledge base that all subagents can query",
+        "is_correct": false
+      }
+    ],
+    "correct_label": "B",
+    "explanation": "Since subagents operate with isolated context, the coordinator must explicitly provide all relevant information (payment history, account status, dispute details) in the subagent's prompt. Subagents cannot automatically inherit context.",
+    "tags": [
+      "explicit-context",
+      "coordinator-responsibility",
+      "context-isolation"
+    ],
+    "bloom_level": "apply",
+    "distractor_strategy": {
+      "plausible_but_prompt_only": "C",
+      "over_engineered": "N/A",
+      "wrong_layer": "N/A",
+      "valid_but_not_first_step": "N/A"
+    }
+  },
+  {
+    "id": "D1_T2_029",
+    "domain_id": "D1",
+    "task_statement_id": "D1.T2",
+    "scenario_ids": [
+      "S3"
+    ],
+    "difficulty": "applied_judgment",
+    "key_concept_tested": "overly narrow task decomposition risks",
+    "stem": "Your research coordinator is asked to analyze 'the impact of remote work on productivity.' It decomposes this into 20 micro-tasks: one subagent for each industry, one for each productivity metric, etc. The resulting report lacks coherent insights about overall trends. What should the coordinator do differently?",
+    "options": [
+      {
+        "label": "A",
+        "text": "Use broader task categories like 'industry impact analysis,' 'productivity measurement approaches,' and 'trend synthesis'",
+        "is_correct": false
+      },
+      {
+        "label": "B",
+        "text": "Add more micro-tasks to ensure even more comprehensive coverage",
+        "is_correct": false
+      },
+      {
+        "label": "C",
+        "text": "Implement better prompt engineering for each micro-task to consider broader context",
+        "is_correct": false
+      },
+      {
+        "label": "D",
+        "text": "Deploy specialized infrastructure to automatically connect insights across micro-tasks",
+        "is_correct": false
+      }
+    ],
+    "correct_label": "A",
+    "explanation": "The coordinator should use broader, more meaningful task categories rather than excessive micro-decomposition. This allows subagents to maintain coherent understanding of their domain while still providing specialized analysis.",
+    "tags": [
+      "task-categorization",
+      "coherent-decomposition",
+      "meaningful-scope"
+    ],
+    "bloom_level": "apply",
+    "distractor_strategy": {
+      "plausible_but_prompt_only": "C",
+      "over_engineered": "D",
+      "wrong_layer": "N/A",
+      "valid_but_not_first_step": "N/A"
+    }
+  },
+  {
+    "id": "D1_T2_030",
+    "domain_id": "D1",
+    "task_statement_id": "D1.T2",
+    "scenario_ids": [
+      "S1"
+    ],
+    "difficulty": "applied_judgment",
+    "key_concept_tested": "routing all communication through coordinator",
+    "stem": "Your customer support system needs to handle a complex case where the billing subagent discovers an account issue that the technical subagent should investigate. How should this information be communicated?",
+    "options": [
+      {
+        "label": "A",
+        "text": "The billing subagent should directly notify the technical subagent about the discovered issue",
+        "is_correct": false
+      },
+      {
+        "label": "B",
+        "text": "Both subagents should update a shared case management system simultaneously",
+        "is_correct": false
+      },
+      {
+        "label": "C",
+        "text": "The billing subagent should return its findings to the coordinator, which then decides whether to invoke the technical subagent",
+        "is_correct": true
+      },
+      {
+        "label": "D",
+        "text": "Use prompt engineering to make the billing subagent handle technical issues as well",
+        "is_correct": false
+      }
+    ],
+    "correct_label": "C",
+    "explanation": "All communication must be routed through the coordinator. The billing subagent should return its findings to the coordinator, which then analyzes the results and decides whether to invoke the technical subagent with the relevant information.",
+    "tags": [
+      "communication-flow",
+      "coordinator-mediation",
+      "decision-routing"
+    ],
+    "bloom_level": "apply",
+    "distractor_strategy": {
+      "plausible_but_prompt_only": "D",
+      "over_engineered": "N/A",
+      "wrong_layer": "N/A",
+      "valid_but_not_first_step": "N/A"
+    }
+  },
+  {
+    "id": "D1_T2_031",
+    "domain_id": "D1",
+    "task_statement_id": "D1.T2",
+    "scenario_ids": [
+      "S3"
+    ],
+    "difficulty": "applied_judgment",
+    "key_concept_tested": "iterative refinement loops",
+    "stem": "Your research coordinator produces an initial report on 'AI in education' but realizes the synthesis lacks coverage of K-12 applications (only covers higher education). The search subagent found 45 sources, but most were university-focused. What should happen next?",
+    "options": [
+      {
+        "label": "A",
+        "text": "Accept the report as complete since higher education sources are more authoritative",
+        "is_correct": false
+      },
+      {
+        "label": "B",
+        "text": "Re-delegate to the search subagent with specific queries for K-12 applications, then re-invoke synthesis with expanded sources",
+        "is_correct": true
+      },
+      {
+        "label": "C",
+        "text": "Use prompt engineering to make the synthesis agent extrapolate K-12 insights from higher education data",
+        "is_correct": false
+      },
+      {
+        "label": "D",
+        "text": "Deploy additional search infrastructure specifically optimized for K-12 educational content",
+        "is_correct": false
+      }
+    ],
+    "correct_label": "B",
+    "explanation": "The coordinator should implement iterative refinement by re-delegating to the search subagent with targeted K-12 queries, then re-invoking synthesis with the expanded source material to address the identified coverage gap.",
+    "tags": [
+      "gap-identification",
+      "targeted-re-delegation",
+      "iterative-improvement"
+    ],
+    "bloom_level": "apply",
+    "distractor_strategy": {
+      "plausible_but_prompt_only": "C",
+      "over_engineered": "D",
+      "wrong_layer": "N/A",
+      "valid_but_not_first_step": "N/A"
+    }
+  },
+  {
+    "id": "D1_T2_032",
+    "domain_id": "D1",
+    "task_statement_id": "D1.T2",
+    "scenario_ids": [
+      "S1"
+    ],
+    "difficulty": "applied_judgment",
+    "key_concept_tested": "coordinator role: decomposition, delegation, aggregation",
+    "stem": "A customer contacts support with a complex issue: 'My subscription was charged twice, I can't access my account, and the mobile app crashes when I try to view my billing history.' How should the coordinator approach this multi-faceted problem?",
+    "options": [
+      {
+        "label": "A",
+        "text": "Delegate the entire problem to the most experienced subagent to handle comprehensively",
+        "is_correct": false
+      },
+      {
+        "label": "B",
+        "text": "Decompose into billing (double charge), account access, and technical (app crashes) issues, delegate to specialized subagents, then aggregate results",
+        "is_correct": true
+      },
+      {
+        "label": "C",
+        "text": "Use prompt engineering to make a single subagent handle all three aspects simultaneously",
+        "is_correct": false
+      },
+      {
+        "label": "D",
+        "text": "Build specialized infrastructure that can automatically detect and route multi-faceted issues",
+        "is_correct": false
+      }
+    ],
+    "correct_label": "B",
+    "explanation": "The coordinator should decompose the complex issue into distinct problems (billing, account access, technical), delegate each to the appropriate specialized subagent, then aggregate their results into a comprehensive resolution.",
+    "tags": [
+      "multi-faceted-decomposition",
+      "specialized-delegation",
+      "result-aggregation"
+    ],
+    "bloom_level": "apply",
+    "distractor_strategy": {
+      "plausible_but_prompt_only": "C",
+      "over_engineered": "D",
+      "wrong_layer": "N/A",
+      "valid_but_not_first_step": "N/A"
+    }
+  },
+  {
+    "id": "D1_T2_033",
+    "domain_id": "D1",
+    "task_statement_id": "D1.T2",
+    "scenario_ids": [
+      "S3"
+    ],
+    "difficulty": "conceptual_knowledge",
+    "key_concept_tested": "subagent isolated context",
+    "stem": "Why do subagents in a multi-agent research system operate with isolated context rather than sharing a common knowledge base?",
+    "options": [
+      {
+        "label": "A",
+        "text": "Shared context would exceed token limits for complex research queries",
+        "is_correct": false
+      },
+      {
+        "label": "B",
+        "text": "Isolated context allows each subagent to focus on its specialized task without irrelevant information interfering",
+        "is_correct": false
+      },
+      {
+        "label": "C",
+        "text": "Isolated context allows each subagent to focus on its specialized task without irrelevant information interfering",
+        "is_correct": true
+      },
+      {
+        "label": "D",
+        "text": "The Claude Agent SDK doesn't support shared context architectures",
+        "is_correct": false
+      }
+    ],
+    "correct_label": "C",
+    "explanation": "Subagents operate with isolated context so they can focus on their specialized tasks without being confused or distracted by irrelevant information from other parts of the system. This improves the quality and reliability of their specialized outputs.",
+    "tags": [
+      "context-isolation",
+      "specialization",
+      "focus"
+    ],
+    "bloom_level": "understand",
+    "distractor_strategy": {
+      "plausible_but_prompt_only": "N/A",
+      "over_engineered": "N/A",
+      "wrong_layer": "N/A",
+      "valid_but_not_first_step": "N/A"
+    }
+  },
+  {
+    "id": "D1_T2_034",
+    "domain_id": "D1",
+    "task_statement_id": "D1.T2",
+    "scenario_ids": [
+      "S1"
+    ],
+    "difficulty": "conceptual_knowledge",
+    "key_concept_tested": "hub-and-spoke architecture",
+    "stem": "In a customer support multi-agent system using hub-and-spoke architecture, what is the coordinator's relationship to the subagents?",
+    "options": [
+      {
+        "label": "A",
+        "text": "The coordinator is a peer that collaborates equally with other agents",
+        "is_correct": false
+      },
+      {
+        "label": "B",
+        "text": "The coordinator acts as the central hub that manages all subagent interactions and communication",
+        "is_correct": true
+      },
+      {
+        "label": "C",
+        "text": "The coordinator is a backup system that only activates when subagents fail",
+        "is_correct": false
+      },
+      {
+        "label": "D",
+        "text": "The coordinator is a load balancer that distributes requests across available subagents",
+        "is_correct": false
+      }
+    ],
+    "correct_label": "B",
+    "explanation": "In hub-and-spoke architecture, the coordinator acts as the central hub that manages all subagent interactions, communication, error handling, and information flow. All subagents connect to and communicate through the coordinator.",
+    "tags": [
+      "hub-and-spoke",
+      "central-management",
+      "coordinator-role"
+    ],
+    "bloom_level": "understand",
+    "distractor_strategy": {
+      "plausible_but_prompt_only": "N/A",
+      "over_engineered": "N/A",
+      "wrong_layer": "N/A",
+      "valid_but_not_first_step": "N/A"
+    }
+  }
+]

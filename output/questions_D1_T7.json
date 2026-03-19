@@ -1,0 +1,1599 @@
+[
+  {
+    "id": "D1_T7_001",
+    "domain_id": "D1",
+    "task_statement_id": "D1.T7",
+    "scenario_ids": [
+      "S1"
+    ],
+    "difficulty": "conceptual_knowledge",
+    "key_concept_tested": "--resume <session-name>",
+    "stem": "Your customer support agent was interrupted mid-conversation while processing a complex billing dispute. What is the primary purpose of using `--resume billing-dispute-case-12345` when restarting the agent?",
+    "options": [
+      {
+        "label": "A",
+        "text": "To restore the complete conversation history and context so the agent can continue where it left off",
+        "is_correct": true
+      },
+      {
+        "label": "B",
+        "text": "To automatically retry the last failed tool call with exponential backoff",
+        "is_correct": false
+      },
+      {
+        "label": "C",
+        "text": "To create a new session with enhanced error handling capabilities",
+        "is_correct": false
+      },
+      {
+        "label": "D",
+        "text": "To generate a summary of previous interactions for human review",
+        "is_correct": false
+      }
+    ],
+    "correct_label": "A",
+    "explanation": "The --resume flag restores the complete conversation history and context from a named session, allowing the agent to continue processing from exactly where it was interrupted. This is essential for complex multi-step customer support cases.",
+    "tags": [
+      "session_management",
+      "conversation_continuity"
+    ],
+    "bloom_level": "understand",
+    "distractor_strategy": {
+      "plausible_but_prompt_only": "N/A",
+      "over_engineered": "N/A",
+      "wrong_layer": "N/A",
+      "valid_but_not_first_step": "N/A"
+    }
+  },
+  {
+    "id": "D1_T7_002",
+    "domain_id": "D1",
+    "task_statement_id": "D1.T7",
+    "scenario_ids": [
+      "S3"
+    ],
+    "difficulty": "applied_judgment",
+    "key_concept_tested": "fork_session for divergent approaches",
+    "stem": "Your research coordinator agent has gathered initial findings on climate change impacts. The client now wants to explore two different analytical approaches: economic impact analysis vs. environmental mitigation strategies. What should you do?",
+    "options": [
+      {
+        "label": "A",
+        "text": "Use prompt engineering to ask the agent to consider both approaches simultaneously",
+        "is_correct": false
+      },
+      {
+        "label": "B",
+        "text": "Fork the session to create two divergent research paths, each optimized for its specific analytical focus",
+        "is_correct": true
+      },
+      {
+        "label": "C",
+        "text": "Restart with a new session and more detailed instructions about handling multiple approaches",
+        "is_correct": false
+      },
+      {
+        "label": "D",
+        "text": "Configure the coordinator to randomly alternate between the two approaches",
+        "is_correct": false
+      }
+    ],
+    "correct_label": "B",
+    "explanation": "Session forking allows you to create two separate research paths from the same starting point, each optimized for its specific analytical approach. This preserves the initial context while allowing specialized exploration of divergent strategies.",
+    "tags": [
+      "session_forking",
+      "parallel_analysis",
+      "research_coordination"
+    ],
+    "bloom_level": "apply",
+    "distractor_strategy": {
+      "plausible_but_prompt_only": "C",
+      "over_engineered": "N/A",
+      "wrong_layer": "N/A",
+      "valid_but_not_first_step": "N/A"
+    }
+  },
+  {
+    "id": "D1_T7_003",
+    "domain_id": "D1",
+    "task_statement_id": "D1.T7",
+    "scenario_ids": [
+      "S1"
+    ],
+    "difficulty": "anti_pattern_recognition",
+    "key_concept_tested": "informing agent about file changes on resume",
+    "stem": "A colleague resumes a customer support session after updating the customer database schema. They notice the agent is still using old field names and failing tool calls. Their approach is to let the agent 'figure it out' through trial and error. What's wrong with this approach?",
+    "options": [
+      {
+        "label": "A",
+        "text": "The agent should be explicitly informed about schema changes during session resumption to avoid repeated failures",
+        "is_correct": false
+      },
+      {
+        "label": "B",
+        "text": "Trial and error wastes tokens and degrades customer experience with failed tool calls",
+        "is_correct": false
+      },
+      {
+        "label": "C",
+        "text": "Both A and B - the agent needs explicit notification of changes and trial-and-error creates poor customer experience",
+        "is_correct": true
+      },
+      {
+        "label": "D",
+        "text": "The database should automatically handle backward compatibility",
+        "is_correct": false
+      }
+    ],
+    "correct_label": "C",
+    "explanation": "When resuming sessions after file or schema changes, the agent must be explicitly informed about these changes. Relying on trial-and-error leads to failed tool calls, wasted tokens, and poor customer experience. Proper session resumption includes context updates about environmental changes.",
+    "tags": [
+      "session_resumption",
+      "context_updates",
+      "error_prevention"
+    ],
+    "bloom_level": "evaluate",
+    "distractor_strategy": {
+      "plausible_but_prompt_only": "N/A",
+      "over_engineered": "N/A",
+      "wrong_layer": "N/A",
+      "valid_but_not_first_step": "N/A"
+    }
+  },
+  {
+    "id": "D1_T7_004",
+    "domain_id": "D1",
+    "task_statement_id": "D1.T7",
+    "scenario_ids": [
+      "S3"
+    ],
+    "difficulty": "conceptual_knowledge",
+    "key_concept_tested": "new session with structured summary vs resuming stale context",
+    "stem": "Your multi-agent research system has been idle for 48 hours with a partially completed investigation into renewable energy trends. The research landscape has shifted significantly with new policy announcements. What's the key consideration for deciding between resuming vs. starting fresh?",
+    "options": [
+      {
+        "label": "A",
+        "text": "Always resume to preserve computational investment",
+        "is_correct": false
+      },
+      {
+        "label": "B",
+        "text": "Always start fresh to ensure current information",
+        "is_correct": false
+      },
+      {
+        "label": "C",
+        "text": "Resume if existing context remains relevant; start fresh with structured summary if context is stale",
+        "is_correct": false
+      },
+      {
+        "label": "D",
+        "text": "Evaluate whether the existing research context is still relevant given recent developments, then choose accordingly",
+        "is_correct": true
+      }
+    ],
+    "correct_label": "D",
+    "explanation": "The decision between resuming and starting fresh depends on context relevance. If significant changes have occurred that invalidate previous research directions, starting with a new session (potentially with a structured summary of still-relevant findings) may be more effective than resuming stale context.",
+    "tags": [
+      "context_relevance",
+      "session_strategy",
+      "research_continuity"
+    ],
+    "bloom_level": "understand",
+    "distractor_strategy": {
+      "plausible_but_prompt_only": "N/A",
+      "over_engineered": "N/A",
+      "wrong_layer": "N/A",
+      "valid_but_not_first_step": "N/A"
+    }
+  },
+  {
+    "id": "D1_T7_005",
+    "domain_id": "D1",
+    "task_statement_id": "D1.T7",
+    "scenario_ids": [
+      "S1"
+    ],
+    "difficulty": "applied_judgment",
+    "key_concept_tested": "--resume <session-name>",
+    "stem": "Your customer support agent crashed during a complex refund process involving multiple orders and partial returns. The customer has been waiting 20 minutes. You have session 'refund-case-789' saved. What's the most effective resumption strategy?",
+    "options": [
+      {
+        "label": "A",
+        "text": "Resume the session and immediately apologize to the customer for the delay",
+        "is_correct": true
+      },
+      {
+        "label": "B",
+        "text": "Start a new session and ask the customer to re-explain their issue from the beginning",
+        "is_correct": false
+      },
+      {
+        "label": "C",
+        "text": "Resume the session but first validate all previous tool calls were successful",
+        "is_correct": false
+      },
+      {
+        "label": "D",
+        "text": "Create a summary of the previous session and start fresh with that context",
+        "is_correct": false
+      }
+    ],
+    "correct_label": "A",
+    "explanation": "Resuming preserves all the context and progress made, allowing the agent to acknowledge the delay and continue processing efficiently. Starting fresh would waste the customer's time and previous progress. The agent can validate tool call status as part of its resumed workflow.",
+    "tags": [
+      "customer_experience",
+      "session_resumption",
+      "service_recovery"
+    ],
+    "bloom_level": "apply",
+    "distractor_strategy": {
+      "plausible_but_prompt_only": "N/A",
+      "over_engineered": "N/A",
+      "wrong_layer": "N/A",
+      "valid_but_not_first_step": "N/A"
+    }
+  },
+  {
+    "id": "D1_T7_006",
+    "domain_id": "D1",
+    "task_statement_id": "D1.T7",
+    "scenario_ids": [
+      "S3"
+    ],
+    "difficulty": "conceptual_knowledge",
+    "key_concept_tested": "fork_session for divergent approaches",
+    "stem": "In your multi-agent research system, what is the primary advantage of session forking over creating entirely separate sessions for exploring different research methodologies?",
+    "options": [
+      {
+        "label": "A",
+        "text": "Forked sessions automatically merge results at completion",
+        "is_correct": false
+      },
+      {
+        "label": "B",
+        "text": "Forked sessions preserve the common initial context and research foundation while allowing divergent exploration",
+        "is_correct": true
+      },
+      {
+        "label": "C",
+        "text": "Forked sessions use less computational resources than separate sessions",
+        "is_correct": false
+      },
+      {
+        "label": "D",
+        "text": "Forked sessions enable real-time collaboration between research approaches",
+        "is_correct": false
+      }
+    ],
+    "correct_label": "B",
+    "explanation": "Session forking preserves the common initial context (research foundation, initial findings, problem understanding) while allowing each fork to pursue different methodological approaches. This avoids duplicating the foundational research work.",
+    "tags": [
+      "session_forking",
+      "context_preservation",
+      "research_efficiency"
+    ],
+    "bloom_level": "understand",
+    "distractor_strategy": {
+      "plausible_but_prompt_only": "N/A",
+      "over_engineered": "C",
+      "wrong_layer": "N/A",
+      "valid_but_not_first_step": "N/A"
+    }
+  },
+  {
+    "id": "D1_T7_007",
+    "domain_id": "D1",
+    "task_statement_id": "D1.T7",
+    "scenario_ids": [
+      "S1"
+    ],
+    "difficulty": "anti_pattern_recognition",
+    "key_concept_tested": "new session with structured summary vs resuming stale context",
+    "stem": "A team member always starts fresh sessions for customer support cases, claiming it ensures 'clean context.' They create a brief summary from the previous session notes. What's the main problem with this approach?",
+    "options": [
+      {
+        "label": "A",
+        "text": "Summaries lose important nuanced context and conversation flow that could be crucial for resolution",
+        "is_correct": false
+      },
+      {
+        "label": "B",
+        "text": "Starting fresh wastes computational resources and increases response time",
+        "is_correct": false
+      },
+      {
+        "label": "C",
+        "text": "Both A and B - summaries lose crucial context and the approach is inefficient",
+        "is_correct": false
+      },
+      {
+        "label": "D",
+        "text": "The approach ignores the benefits of preserving complete conversation history when context is still relevant",
+        "is_correct": true
+      }
+    ],
+    "correct_label": "D",
+    "explanation": "Always starting fresh ignores the value of preserving complete conversation history when the context is still relevant. While summaries can work for stale context, they lose nuanced details, emotional context, and conversation flow that may be crucial for customer support resolution.",
+    "tags": [
+      "context_preservation",
+      "customer_support",
+      "session_strategy"
+    ],
+    "bloom_level": "evaluate",
+    "distractor_strategy": {
+      "plausible_but_prompt_only": "N/A",
+      "over_engineered": "N/A",
+      "wrong_layer": "N/A",
+      "valid_but_not_first_step": "N/A"
+    }
+  },
+  {
+    "id": "D1_T7_008",
+    "domain_id": "D1",
+    "task_statement_id": "D1.T7",
+    "scenario_ids": [
+      "S3"
+    ],
+    "difficulty": "applied_judgment",
+    "key_concept_tested": "informing agent about file changes on resume",
+    "stem": "You're resuming a research session after your team updated the MCP tool definitions to include new academic database APIs. The session was investigating renewable energy policy. How should you handle the resumption?",
+    "options": [
+      {
+        "label": "A",
+        "text": "Resume normally - the agent will discover new tools through exploration",
+        "is_correct": false
+      },
+      {
+        "label": "B",
+        "text": "Explicitly inform the agent about the new academic database tools and their capabilities during resumption",
+        "is_correct": true
+      },
+      {
+        "label": "C",
+        "text": "Start a fresh session to ensure proper tool integration",
+        "is_correct": false
+      },
+      {
+        "label": "D",
+        "text": "Resume and let the coordinator agent delegate tool discovery to subagents",
+        "is_correct": false
+      }
+    ],
+    "correct_label": "B",
+    "explanation": "When resuming after tool definition changes, the agent should be explicitly informed about new capabilities. This prevents inefficient exploration and ensures the agent can immediately leverage new academic database tools for enhanced research quality.",
+    "tags": [
+      "tool_updates",
+      "session_resumption",
+      "capability_notification"
+    ],
+    "bloom_level": "apply",
+    "distractor_strategy": {
+      "plausible_but_prompt_only": "N/A",
+      "over_engineered": "N/A",
+      "wrong_layer": "N/A",
+      "valid_but_not_first_step": "N/A"
+    }
+  },
+  {
+    "id": "D1_T7_009",
+    "domain_id": "D1",
+    "task_statement_id": "D1.T7",
+    "scenario_ids": [
+      "S1"
+    ],
+    "difficulty": "conceptual_knowledge",
+    "key_concept_tested": "fork_session for divergent approaches",
+    "stem": "A customer has a complex billing dispute that could be resolved through either a technical investigation of billing system errors or a policy-based review of charges. When would session forking be most appropriate?",
+    "options": [
+      {
+        "label": "A",
+        "text": "When you want to explore both resolution approaches simultaneously to find the fastest path",
+        "is_correct": false
+      },
+      {
+        "label": "B",
+        "text": "When the customer specifically requests multiple resolution strategies",
+        "is_correct": false
+      },
+      {
+        "label": "C",
+        "text": "When initial investigation suggests both approaches have merit and you want to pursue them in parallel",
+        "is_correct": true
+      },
+      {
+        "label": "D",
+        "text": "When the first approach fails and you need a backup strategy",
+        "is_correct": false
+      }
+    ],
+    "correct_label": "C",
+    "explanation": "Session forking is most appropriate when initial investigation reveals that multiple approaches have legitimate merit and could lead to different but valid resolutions. This allows parallel exploration while preserving the common investigative foundation.",
+    "tags": [
+      "parallel_resolution",
+      "session_forking",
+      "dispute_resolution"
+    ],
+    "bloom_level": "understand",
+    "distractor_strategy": {
+      "plausible_but_prompt_only": "N/A",
+      "over_engineered": "N/A",
+      "wrong_layer": "N/A",
+      "valid_but_not_first_step": "N/A"
+    }
+  },
+  {
+    "id": "D1_T7_010",
+    "domain_id": "D1",
+    "task_statement_id": "D1.T7",
+    "scenario_ids": [
+      "S3"
+    ],
+    "difficulty": "anti_pattern_recognition",
+    "key_concept_tested": "--resume <session-name>",
+    "stem": "A developer implements session resumption by saving only the final agent response and starting new conversations with that as context. They argue this is 'more efficient than full session state.' What's the critical flaw?",
+    "options": [
+      {
+        "label": "A",
+        "text": "It loses the complete reasoning chain and tool call history that inform agent decision-making",
+        "is_correct": true
+      },
+      {
+        "label": "B",
+        "text": "It doesn't preserve the original user query and requirements",
+        "is_correct": false
+      },
+      {
+        "label": "C",
+        "text": "It makes debugging and error tracking impossible",
+        "is_correct": false
+      },
+      {
+        "label": "D",
+        "text": "It violates data retention policies for conversation logs",
+        "is_correct": false
+      }
+    ],
+    "correct_label": "A",
+    "explanation": "Saving only the final response loses the complete reasoning chain, tool call history, and iterative context that informs agent decision-making. True session resumption requires preserving the full conversation history, not just the endpoint.",
+    "tags": [
+      "session_state",
+      "conversation_history",
+      "context_preservation"
+    ],
+    "bloom_level": "evaluate",
+    "distractor_strategy": {
+      "plausible_but_prompt_only": "N/A",
+      "over_engineered": "N/A",
+      "wrong_layer": "N/A",
+      "valid_but_not_first_step": "N/A"
+    }
+  },
+  {
+    "id": "D1_T7_011",
+    "domain_id": "D1",
+    "task_statement_id": "D1.T7",
+    "scenario_ids": [
+      "S1"
+    ],
+    "difficulty": "applied_judgment",
+    "key_concept_tested": "new session with structured summary vs resuming stale context",
+    "stem": "A customer support case has been idle for 5 days. The original issue was account access problems, but the customer has since created a new account and is now asking about transferring data. The old session contains detailed account investigation. What's the best approach?",
+    "options": [
+      {
+        "label": "A",
+        "text": "Resume the old session to maintain continuity",
+        "is_correct": false
+      },
+      {
+        "label": "B",
+        "text": "Start a fresh session with a structured summary of relevant account details and focus on the new data transfer request",
+        "is_correct": true
+      },
+      {
+        "label": "C",
+        "text": "Fork the session to handle both old and new issues simultaneously",
+        "is_correct": false
+      },
+      {
+        "label": "D",
+        "text": "Resume the session but immediately redirect to the new issue",
+        "is_correct": false
+      }
+    ],
+    "correct_label": "B",
+    "explanation": "The context has fundamentally shifted from account access problems to data transfer with a new account. Starting fresh with a structured summary of relevant account details focuses on the current need while preserving useful information from the previous investigation.",
+    "tags": [
+      "context_shift",
+      "structured_summary",
+      "customer_needs"
+    ],
+    "bloom_level": "apply",
+    "distractor_strategy": {
+      "plausible_but_prompt_only": "N/A",
+      "over_engineered": "N/A",
+      "wrong_layer": "N/A",
+      "valid_but_not_first_step": "N/A"
+    }
+  },
+  {
+    "id": "D1_T7_012",
+    "domain_id": "D1",
+    "task_statement_id": "D1.T7",
+    "scenario_ids": [
+      "S3"
+    ],
+    "difficulty": "conceptual_knowledge",
+    "key_concept_tested": "informing agent about file changes on resume",
+    "stem": "Your research system was interrupted after your team added new data sources to the MCP configuration. When resuming the session, what information should the agent receive about these changes?",
+    "options": [
+      {
+        "label": "A",
+        "text": "Just the names of the new data sources",
+        "is_correct": false
+      },
+      {
+        "label": "B",
+        "text": "The new data sources and their specific capabilities or unique value for the research topic",
+        "is_correct": false
+      },
+      {
+        "label": "C",
+        "text": "A complete list of all available tools and data sources",
+        "is_correct": false
+      },
+      {
+        "label": "D",
+        "text": "The new data sources, their capabilities, and how they might enhance the current research objectives",
+        "is_correct": true
+      }
+    ],
+    "correct_label": "D",
+    "explanation": "When informing the agent about new data sources during resumption, it should understand not just what's available, but how these new capabilities can enhance the specific research objectives already in progress. This enables immediate strategic integration.",
+    "tags": [
+      "capability_notification",
+      "research_enhancement",
+      "tool_integration"
+    ],
+    "bloom_level": "understand",
+    "distractor_strategy": {
+      "plausible_but_prompt_only": "N/A",
+      "over_engineered": "N/A",
+      "wrong_layer": "N/A",
+      "valid_but_not_first_step": "N/A"
+    }
+  },
+  {
+    "id": "D1_T7_013",
+    "domain_id": "D1",
+    "task_statement_id": "D1.T7",
+    "scenario_ids": [
+      "S1"
+    ],
+    "difficulty": "applied_judgment",
+    "key_concept_tested": "--resume <session-name>",
+    "stem": "Your customer support agent was processing a refund when the system crashed. You have three session saves: 'refund-initial-inquiry', 'refund-order-lookup', and 'refund-processing-started'. The customer is calling back upset about the delay. Which session should you resume?",
+    "options": [
+      {
+        "label": "A",
+        "text": "'refund-initial-inquiry' to ensure nothing is missed",
+        "is_correct": false
+      },
+      {
+        "label": "B",
+        "text": "'refund-processing-started' to continue from the most recent progress point",
+        "is_correct": true
+      },
+      {
+        "label": "C",
+        "text": "'refund-order-lookup' as a safe middle ground",
+        "is_correct": false
+      },
+      {
+        "label": "D",
+        "text": "Start fresh and explain the technical difficulties to the customer",
+        "is_correct": false
+      }
+    ],
+    "correct_label": "B",
+    "explanation": "Resuming from 'refund-processing-started' continues from the most recent progress point, minimizing additional delay for the already upset customer. The agent can acknowledge the interruption and proceed efficiently with the refund process.",
+    "tags": [
+      "service_recovery",
+      "customer_experience",
+      "session_selection"
+    ],
+    "bloom_level": "apply",
+    "distractor_strategy": {
+      "plausible_but_prompt_only": "N/A",
+      "over_engineered": "N/A",
+      "wrong_layer": "N/A",
+      "valid_but_not_first_step": "N/A"
+    }
+  },
+  {
+    "id": "D1_T7_014",
+    "domain_id": "D1",
+    "task_statement_id": "D1.T7",
+    "scenario_ids": [
+      "S3"
+    ],
+    "difficulty": "anti_pattern_recognition",
+    "key_concept_tested": "fork_session for divergent approaches",
+    "stem": "A developer creates separate forks for every possible research angle, resulting in 8 parallel sessions for a single research query. They claim this ensures 'comprehensive coverage.' What's problematic about this approach?",
+    "options": [
+      {
+        "label": "A",
+        "text": "It creates excessive computational overhead without strategic focus",
+        "is_correct": false
+      },
+      {
+        "label": "B",
+        "text": "It makes result synthesis and coherent reporting extremely difficult",
+        "is_correct": false
+      },
+      {
+        "label": "C",
+        "text": "Both A and B - it's computationally wasteful and makes synthesis unmanageable",
+        "is_correct": true
+      },
+      {
+        "label": "D",
+        "text": "It violates the coordinator-subagent pattern by creating too many parallel agents",
+        "is_correct": false
+      }
+    ],
+    "correct_label": "C",
+    "explanation": "Excessive forking creates both computational waste and synthesis challenges. Strategic forking should focus on genuinely divergent approaches with clear value, not exhaustive coverage. Too many parallel sessions make coherent result integration nearly impossible.",
+    "tags": [
+      "strategic_forking",
+      "resource_management",
+      "result_synthesis"
+    ],
+    "bloom_level": "evaluate",
+    "distractor_strategy": {
+      "plausible_but_prompt_only": "N/A",
+      "over_engineered": "N/A",
+      "wrong_layer": "N/A",
+      "valid_but_not_first_step": "N/A"
+    }
+  },
+  {
+    "id": "D1_T7_015",
+    "domain_id": "D1",
+    "task_statement_id": "D1.T7",
+    "scenario_ids": [
+      "S1"
+    ],
+    "difficulty": "applied_judgment",
+    "key_concept_tested": "informing agent about file changes on resume",
+    "stem": "During a billing dispute resolution, your team updated the refund policy rules in the system. You're resuming a session where the agent was about to process a refund under the old rules. What's the most important action?",
+    "options": [
+      {
+        "label": "A",
+        "text": "Let the agent attempt the refund and handle any policy conflicts that arise",
+        "is_correct": false
+      },
+      {
+        "label": "B",
+        "text": "Inform the agent about the policy changes and have it re-evaluate the refund eligibility",
+        "is_correct": true
+      },
+      {
+        "label": "C",
+        "text": "Start a fresh session to ensure policy compliance",
+        "is_correct": false
+      },
+      {
+        "label": "D",
+        "text": "Resume normally but add a validation step before processing",
+        "is_correct": false
+      }
+    ],
+    "correct_label": "B",
+    "explanation": "Policy changes directly affect refund eligibility decisions. The agent must be informed about these changes and re-evaluate the case under current rules to ensure compliance and avoid processing invalid refunds.",
+    "tags": [
+      "policy_compliance",
+      "context_updates",
+      "decision_validation"
+    ],
+    "bloom_level": "apply",
+    "distractor_strategy": {
+      "plausible_but_prompt_only": "N/A",
+      "over_engineered": "N/A",
+      "wrong_layer": "N/A",
+      "valid_but_not_first_step": "N/A"
+    }
+  },
+  {
+    "id": "D1_T7_016",
+    "domain_id": "D1",
+    "task_statement_id": "D1.T7",
+    "scenario_ids": [
+      "S3"
+    ],
+    "difficulty": "applied_judgment",
+    "key_concept_tested": "new session with structured summary vs resuming stale context",
+    "stem": "Your research system has been investigating 'AI in healthcare' for 3 weeks. New breakthrough studies were published yesterday that could change the research direction. The existing session has 15,000 tokens of valuable analysis. How should you proceed?",
+    "options": [
+      {
+        "label": "A",
+        "text": "Resume the existing session and incorporate new findings incrementally",
+        "is_correct": true
+      },
+      {
+        "label": "B",
+        "text": "Start fresh with a structured summary of key findings plus the new breakthrough studies",
+        "is_correct": false
+      },
+      {
+        "label": "C",
+        "text": "Fork the session to explore how new studies impact existing analysis",
+        "is_correct": false
+      },
+      {
+        "label": "D",
+        "text": "Archive the old session and begin a completely new investigation",
+        "is_correct": false
+      }
+    ],
+    "correct_label": "A",
+    "explanation": "With substantial valuable analysis already completed, resuming and incrementally incorporating new findings is most efficient. The existing context remains relevant and the new studies can enhance rather than replace the current research foundation.",
+    "tags": [
+      "research_continuity",
+      "incremental_updates",
+      "context_value"
+    ],
+    "bloom_level": "apply",
+    "distractor_strategy": {
+      "plausible_but_prompt_only": "N/A",
+      "over_engineered": "N/A",
+      "wrong_layer": "N/A",
+      "valid_but_not_first_step": "N/A"
+    }
+  },
+  {
+    "id": "D1_T7_017",
+    "domain_id": "D1",
+    "task_statement_id": "D1.T7",
+    "scenario_ids": [
+      "S1"
+    ],
+    "difficulty": "conceptual_knowledge",
+    "key_concept_tested": "new session with structured summary vs resuming stale context",
+    "stem": "When is it most appropriate to start a new session with a structured summary instead of resuming an existing customer support session?",
+    "options": [
+      {
+        "label": "A",
+        "text": "When the session has been idle for more than 24 hours",
+        "is_correct": false
+      },
+      {
+        "label": "B",
+        "text": "When the customer's needs or context have fundamentally changed since the last interaction",
+        "is_correct": true
+      },
+      {
+        "label": "C",
+        "text": "When the original session exceeded 10,000 tokens",
+        "is_correct": false
+      },
+      {
+        "label": "D",
+        "text": "When multiple agents were involved in the original session",
+        "is_correct": false
+      }
+    ],
+    "correct_label": "B",
+    "explanation": "A new session with structured summary is most appropriate when the customer's needs or context have fundamentally changed, making much of the previous conversation history less relevant while still preserving key information.",
+    "tags": [
+      "context_relevance",
+      "customer_needs",
+      "session_strategy"
+    ],
+    "bloom_level": "understand",
+    "distractor_strategy": {
+      "plausible_but_prompt_only": "N/A",
+      "over_engineered": "N/A",
+      "wrong_layer": "N/A",
+      "valid_but_not_first_step": "N/A"
+    }
+  },
+  {
+    "id": "D1_T7_018",
+    "domain_id": "D1",
+    "task_statement_id": "D1.T7",
+    "scenario_ids": [
+      "S3"
+    ],
+    "difficulty": "applied_judgment",
+    "key_concept_tested": "--resume <session-name>",
+    "stem": "Your multi-agent research coordinator was interrupted while delegating tasks to subagents. Two subagents completed their work, but one was still processing. You have session 'climate-research-coordination' saved. What should you consider when resuming?",
+    "options": [
+      {
+        "label": "A",
+        "text": "Resume and immediately check the status of all subagent tasks before proceeding",
+        "is_correct": false
+      },
+      {
+        "label": "B",
+        "text": "Resume and let the coordinator naturally assess progress and continue orchestration",
+        "is_correct": true
+      },
+      {
+        "label": "C",
+        "text": "Start fresh and re-delegate all tasks to ensure consistency",
+        "is_correct": false
+      },
+      {
+        "label": "D",
+        "text": "Resume but only continue with the completed subagent results",
+        "is_correct": false
+      }
+    ],
+    "correct_label": "B",
+    "explanation": "Resuming allows the coordinator to naturally assess the current state, understand which subagents have completed work, and continue orchestration appropriately. The coordinator's reasoning capabilities can handle the mixed completion states effectively.",
+    "tags": [
+      "coordinator_resumption",
+      "subagent_status",
+      "orchestration_continuity"
+    ],
+    "bloom_level": "apply",
+    "distractor_strategy": {
+      "plausible_but_prompt_only": "N/A",
+      "over_engineered": "N/A",
+      "wrong_layer": "N/A",
+      "valid_but_not_first_step": "N/A"
+    }
+  },
+  {
+    "id": "D1_T7_019",
+    "domain_id": "D1",
+    "task_statement_id": "D1.T7",
+    "scenario_ids": [
+      "S1"
+    ],
+    "difficulty": "conceptual_knowledge",
+    "key_concept_tested": "informing agent about file changes on resume",
+    "stem": "What type of information should be provided to an agent when resuming a session after system changes have occurred?",
+    "options": [
+      {
+        "label": "A",
+        "text": "A complete technical changelog of all system modifications",
+        "is_correct": false
+      },
+      {
+        "label": "B",
+        "text": "Only the changes that directly impact the agent's current task",
+        "is_correct": false
+      },
+      {
+        "label": "C",
+        "text": "Changes that affect available tools, capabilities, or relevant business rules for the current case",
+        "is_correct": true
+      },
+      {
+        "label": "D",
+        "text": "A summary of all changes made since the session was last active",
+        "is_correct": false
+      }
+    ],
+    "correct_label": "C",
+    "explanation": "The agent should be informed about changes that affect its available tools, capabilities, or relevant business rules for the current case. This focuses on operationally relevant updates without overwhelming the agent with unnecessary technical details.",
+    "tags": [
+      "relevant_updates",
+      "capability_changes",
+      "operational_context"
+    ],
+    "bloom_level": "understand",
+    "distractor_strategy": {
+      "plausible_but_prompt_only": "N/A",
+      "over_engineered": "N/A",
+      "wrong_layer": "N/A",
+      "valid_but_not_first_step": "N/A"
+    }
+  },
+  {
+    "id": "D1_T7_020",
+    "domain_id": "D1",
+    "task_statement_id": "D1.T7",
+    "scenario_ids": [
+      "S3"
+    ],
+    "difficulty": "anti_pattern_recognition",
+    "key_concept_tested": "new session with structured summary vs resuming stale context",
+    "stem": "A team always creates structured summaries and starts fresh sessions, even for research that was active just hours ago. They claim this 'ensures clean context and prevents confusion.' What's the main issue with this approach?",
+    "options": [
+      {
+        "label": "A",
+        "text": "It unnecessarily discards valuable recent context and reasoning chains that are still highly relevant",
+        "is_correct": true
+      },
+      {
+        "label": "B",
+        "text": "It increases computational costs by requiring context reconstruction",
+        "is_correct": false
+      },
+      {
+        "label": "C",
+        "text": "It makes it difficult to track research progress over time",
+        "is_correct": false
+      },
+      {
+        "label": "D",
+        "text": "It violates best practices for multi-agent coordination",
+        "is_correct": false
+      }
+    ],
+    "correct_label": "A",
+    "explanation": "Always starting fresh discards valuable recent context and reasoning chains that are still highly relevant. Recent sessions contain nuanced understanding, intermediate findings, and reasoning patterns that structured summaries cannot fully capture.",
+    "tags": [
+      "context_preservation",
+      "reasoning_chains",
+      "session_strategy"
+    ],
+    "bloom_level": "evaluate",
+    "distractor_strategy": {
+      "plausible_but_prompt_only": "N/A",
+      "over_engineered": "N/A",
+      "wrong_layer": "N/A",
+      "valid_but_not_first_step": "N/A"
+    }
+  },
+  {
+    "id": "D1_T7_021",
+    "domain_id": "D1",
+    "task_statement_id": "D1.T7",
+    "scenario_ids": [
+      "S1"
+    ],
+    "difficulty": "applied_judgment",
+    "key_concept_tested": "fork_session for divergent approaches",
+    "stem": "A customer has both a technical billing error and a service quality complaint in the same case. Initial investigation shows these require different resolution processes and timelines. The customer wants both issues addressed. What's the best session management approach?",
+    "options": [
+      {
+        "label": "A",
+        "text": "Handle both issues sequentially in the same session",
+        "is_correct": false
+      },
+      {
+        "label": "B",
+        "text": "Fork the session to address technical and service issues in parallel, then merge results",
+        "is_correct": true
+      },
+      {
+        "label": "C",
+        "text": "Create separate cases and handle them independently",
+        "is_correct": false
+      },
+      {
+        "label": "D",
+        "text": "Focus on the technical issue first, then resume for service quality",
+        "is_correct": false
+      }
+    ],
+    "correct_label": "B",
+    "explanation": "Forking allows parallel resolution of both issues while maintaining the customer context. Each fork can follow its appropriate resolution process and timeline, then results can be merged for a comprehensive customer response.",
+    "tags": [
+      "parallel_resolution",
+      "customer_service",
+      "issue_separation"
+    ],
+    "bloom_level": "apply",
+    "distractor_strategy": {
+      "plausible_but_prompt_only": "N/A",
+      "over_engineered": "D",
+      "wrong_layer": "N/A",
+      "valid_but_not_first_step": "N/A"
+    }
+  },
+  {
+    "id": "D1_T7_022",
+    "domain_id": "D1",
+    "task_statement_id": "D1.T7",
+    "scenario_ids": [
+      "S3"
+    ],
+    "difficulty": "conceptual_knowledge",
+    "key_concept_tested": "--resume <session-name>",
+    "stem": "In a multi-agent research system, what is preserved when you resume a coordinator session named 'market-analysis-2024'?",
+    "options": [
+      {
+        "label": "A",
+        "text": "Only the coordinator's conversation history",
+        "is_correct": false
+      },
+      {
+        "label": "B",
+        "text": "The coordinator's history and all active subagent states",
+        "is_correct": true
+      },
+      {
+        "label": "C",
+        "text": "Just the final research outputs from completed subagents",
+        "is_correct": false
+      },
+      {
+        "label": "D",
+        "text": "The coordinator's history and a summary of subagent results",
+        "is_correct": false
+      }
+    ],
+    "correct_label": "B",
+    "explanation": "Resuming a coordinator session preserves both the coordinator's complete conversation history and the states of all active subagents, allowing the full multi-agent system to continue from where it left off.",
+    "tags": [
+      "multi_agent_state",
+      "coordinator_resumption",
+      "system_continuity"
+    ],
+    "bloom_level": "understand",
+    "distractor_strategy": {
+      "plausible_but_prompt_only": "N/A",
+      "over_engineered": "N/A",
+      "wrong_layer": "N/A",
+      "valid_but_not_first_step": "N/A"
+    }
+  },
+  {
+    "id": "D1_T7_023",
+    "domain_id": "D1",
+    "task_statement_id": "D1.T7",
+    "scenario_ids": [
+      "S1"
+    ],
+    "difficulty": "applied_judgment",
+    "key_concept_tested": "informing agent about file changes on resume",
+    "stem": "You're resuming a customer support session after your team implemented new escalation rules that change when cases should be transferred to human agents. The agent was about to make an escalation decision. What should you do?",
+    "options": [
+      {
+        "label": "A",
+        "text": "Resume and let the agent proceed with its original escalation assessment",
+        "is_correct": false
+      },
+      {
+        "label": "B",
+        "text": "Inform the agent about the new escalation rules and ask it to reassess the case",
+        "is_correct": false
+      },
+      {
+        "label": "C",
+        "text": "Update the agent on new escalation criteria and have it re-evaluate whether escalation is appropriate",
+        "is_correct": true
+      },
+      {
+        "label": "D",
+        "text": "Manually review the case and make the escalation decision yourself",
+        "is_correct": false
+      }
+    ],
+    "correct_label": "C",
+    "explanation": "Escalation rules directly impact agent decision-making. The agent must be informed about the new criteria and asked to re-evaluate the case to ensure compliance with current policies and appropriate customer service levels.",
+    "tags": [
+      "escalation_rules",
+      "policy_updates",
+      "decision_reevaluation"
+    ],
+    "bloom_level": "apply",
+    "distractor_strategy": {
+      "plausible_but_prompt_only": "N/A",
+      "over_engineered": "N/A",
+      "wrong_layer": "N/A",
+      "valid_but_not_first_step": "N/A"
+    }
+  },
+  {
+    "id": "D1_T7_024",
+    "domain_id": "D1",
+    "task_statement_id": "D1.T7",
+    "scenario_ids": [
+      "S3"
+    ],
+    "difficulty": "applied_judgment",
+    "key_concept_tested": "fork_session for divergent approaches",
+    "stem": "Your research coordinator has identified that a topic can be approached through quantitative analysis or qualitative case studies. The client budget allows for both approaches but with different timelines. How should you structure the session management?",
+    "options": [
+      {
+        "label": "A",
+        "text": "Fork the session immediately and run both approaches in parallel",
+        "is_correct": false
+      },
+      {
+        "label": "B",
+        "text": "Complete one approach first, then use those insights to inform the second approach",
+        "is_correct": false
+      },
+      {
+        "label": "C",
+        "text": "Fork the session with different resource allocation and timeline expectations for each approach",
+        "is_correct": true
+      },
+      {
+        "label": "D",
+        "text": "Use a single session and alternate between approaches based on data availability",
+        "is_correct": false
+      }
+    ],
+    "correct_label": "C",
+    "explanation": "Forking with different resource allocation and timeline expectations allows both approaches to proceed optimally according to their specific requirements while maintaining coordination and eventual integration of results.",
+    "tags": [
+      "resource_allocation",
+      "timeline_management",
+      "parallel_research"
+    ],
+    "bloom_level": "apply",
+    "distractor_strategy": {
+      "plausible_but_prompt_only": "N/A",
+      "over_engineered": "N/A",
+      "wrong_layer": "N/A",
+      "valid_but_not_first_step": "N/A"
+    }
+  },
+  {
+    "id": "D1_T7_025",
+    "domain_id": "D1",
+    "task_statement_id": "D1.T7",
+    "scenario_ids": [
+      "S1"
+    ],
+    "difficulty": "anti_pattern_recognition",
+    "key_concept_tested": "--resume <session-name>",
+    "stem": "A developer implements session resumption by concatenating the last few messages and starting a new conversation. They claim this is 'lightweight resumption.' What critical aspect are they missing?",
+    "options": [
+      {
+        "label": "A",
+        "text": "The complete tool call history and results that inform agent reasoning",
+        "is_correct": true
+      },
+      {
+        "label": "B",
+        "text": "The original timestamp and session metadata",
+        "is_correct": false
+      },
+      {
+        "label": "C",
+        "text": "The customer's contact information and case priority",
+        "is_correct": false
+      },
+      {
+        "label": "D",
+        "text": "The agent's internal state variables and counters",
+        "is_correct": false
+      }
+    ],
+    "correct_label": "A",
+    "explanation": "True session resumption requires preserving the complete conversation history including tool calls and results. These provide the reasoning context the agent needs to understand what actions have been taken and what information is already known.",
+    "tags": [
+      "complete_context",
+      "tool_history",
+      "reasoning_continuity"
+    ],
+    "bloom_level": "evaluate",
+    "distractor_strategy": {
+      "plausible_but_prompt_only": "N/A",
+      "over_engineered": "N/A",
+      "wrong_layer": "N/A",
+      "valid_but_not_first_step": "N/A"
+    }
+  },
+  {
+    "id": "D1_T7_026",
+    "domain_id": "D1",
+    "task_statement_id": "D1.T7",
+    "scenario_ids": [
+      "S3"
+    ],
+    "difficulty": "conceptual_knowledge",
+    "key_concept_tested": "new session with structured summary vs resuming stale context",
+    "stem": "What is the main advantage of using a structured summary when starting a new session instead of resuming stale context?",
+    "options": [
+      {
+        "label": "A",
+        "text": "It reduces token usage compared to full session history",
+        "is_correct": false
+      },
+      {
+        "label": "B",
+        "text": "It allows focusing on currently relevant information while preserving key insights",
+        "is_correct": true
+      },
+      {
+        "label": "C",
+        "text": "It eliminates the need for context validation",
+        "is_correct": false
+      },
+      {
+        "label": "D",
+        "text": "It provides better error handling capabilities",
+        "is_correct": false
+      }
+    ],
+    "correct_label": "B",
+    "explanation": "A structured summary allows the agent to focus on currently relevant information while preserving key insights from previous work. This is especially valuable when context has shifted but previous findings remain useful.",
+    "tags": [
+      "structured_summary",
+      "context_relevance",
+      "information_focus"
+    ],
+    "bloom_level": "understand",
+    "distractor_strategy": {
+      "plausible_but_prompt_only": "N/A",
+      "over_engineered": "N/A",
+      "wrong_layer": "N/A",
+      "valid_but_not_first_step": "N/A"
+    }
+  },
+  {
+    "id": "D1_T7_027",
+    "domain_id": "D1",
+    "task_statement_id": "D1.T7",
+    "scenario_ids": [
+      "S1"
+    ],
+    "difficulty": "applied_judgment",
+    "key_concept_tested": "new session with structured summary vs resuming stale context",
+    "stem": "A customer support case was last active 10 days ago regarding a shipping issue. The customer now calls with a related but different concern about product quality from the same order. The old session contains detailed order analysis. What's the optimal approach?",
+    "options": [
+      {
+        "label": "A",
+        "text": "Resume the old session to maintain order context",
+        "is_correct": false
+      },
+      {
+        "label": "B",
+        "text": "Start fresh and treat this as a completely new case",
+        "is_correct": false
+      },
+      {
+        "label": "C",
+        "text": "Create a new session with a structured summary of relevant order details and previous resolution",
+        "is_correct": true
+      },
+      {
+        "label": "D",
+        "text": "Fork the old session to handle the quality issue separately",
+        "is_correct": false
+      }
+    ],
+    "correct_label": "C",
+    "explanation": "A new session with structured summary is optimal because the customer's focus has shifted to product quality, but the detailed order analysis from the shipping issue remains relevant context for understanding the overall customer experience.",
+    "tags": [
+      "related_issues",
+      "context_adaptation",
+      "customer_history"
+    ],
+    "bloom_level": "apply",
+    "distractor_strategy": {
+      "plausible_but_prompt_only": "N/A",
+      "over_engineered": "D",
+      "wrong_layer": "N/A",
+      "valid_but_not_first_step": "N/A"
+    }
+  },
+  {
+    "id": "D1_T7_028",
+    "domain_id": "D1",
+    "task_statement_id": "D1.T7",
+    "scenario_ids": [
+      "S3"
+    ],
+    "difficulty": "anti_pattern_recognition",
+    "key_concept_tested": "informing agent about file changes on resume",
+    "stem": "A team member resumes research sessions without informing the agent about updated data sources, reasoning that 'the agent should adapt automatically to new information.' After resumption, the agent continues using outdated methodologies. What's wrong with this approach?",
+    "options": [
+      {
+        "label": "A",
+        "text": "The agent cannot discover new capabilities without explicit notification during resumption",
+        "is_correct": true
+      },
+      {
+        "label": "B",
+        "text": "The agent needs time to explore and understand new data sources",
+        "is_correct": false
+      },
+      {
+        "label": "C",
+        "text": "The agent should validate all existing tools before using new ones",
+        "is_correct": false
+      },
+      {
+        "label": "D",
+        "text": "The agent requires retraining on new data source schemas",
+        "is_correct": false
+      }
+    ],
+    "correct_label": "A",
+    "explanation": "Agents cannot automatically discover new capabilities added during interruption. They must be explicitly informed about new tools, data sources, or capabilities during resumption to integrate them into their reasoning and methodology.",
+    "tags": [
+      "capability_discovery",
+      "explicit_notification",
+      "methodology_updates"
+    ],
+    "bloom_level": "evaluate",
+    "distractor_strategy": {
+      "plausible_but_prompt_only": "N/A",
+      "over_engineered": "N/A",
+      "wrong_layer": "N/A",
+      "valid_but_not_first_step": "N/A"
+    }
+  },
+  {
+    "id": "D1_T7_029",
+    "domain_id": "D1",
+    "task_statement_id": "D1.T7",
+    "scenario_ids": [
+      "S1"
+    ],
+    "difficulty": "applied_judgment",
+    "key_concept_tested": "--resume <session-name>",
+    "stem": "Your customer support system crashed during peak hours. You have 15 active sessions saved with names like 'billing-dispute-001' through 'account-access-015'. Customers are calling back frustrated. What's the most effective resumption strategy?",
+    "options": [
+      {
+        "label": "A",
+        "text": "Resume sessions in the order customers call back",
+        "is_correct": true
+      },
+      {
+        "label": "B",
+        "text": "Resume all sessions simultaneously to minimize wait times",
+        "is_correct": false
+      },
+      {
+        "label": "C",
+        "text": "Prioritize sessions based on estimated resolution complexity",
+        "is_correct": false
+      },
+      {
+        "label": "D",
+        "text": "Start fresh sessions and apologize for the technical difficulties",
+        "is_correct": false
+      }
+    ],
+    "correct_label": "A",
+    "explanation": "Resuming sessions as customers call back ensures immediate, personalized service recovery. Each customer gets their full context restored without additional delay, maximizing customer satisfaction during the service recovery process.",
+    "tags": [
+      "service_recovery",
+      "customer_priority",
+      "system_restoration"
+    ],
+    "bloom_level": "apply",
+    "distractor_strategy": {
+      "plausible_but_prompt_only": "N/A",
+      "over_engineered": "N/A",
+      "wrong_layer": "N/A",
+      "valid_but_not_first_step": "N/A"
+    }
+  },
+  {
+    "id": "D1_T7_030",
+    "domain_id": "D1",
+    "task_statement_id": "D1.T7",
+    "scenario_ids": [
+      "S3"
+    ],
+    "difficulty": "conceptual_knowledge",
+    "key_concept_tested": "fork_session for divergent approaches",
+    "stem": "In a multi-agent research system, what happens to the coordinator's context when you fork a session for divergent research approaches?",
+    "options": [
+      {
+        "label": "A",
+        "text": "The coordinator context is split equally between forks",
+        "is_correct": false
+      },
+      {
+        "label": "B",
+        "text": "Each fork gets a complete copy of the coordinator's context as a starting point",
+        "is_correct": true
+      },
+      {
+        "label": "C",
+        "text": "The coordinator context remains with the original session only",
+        "is_correct": false
+      },
+      {
+        "label": "D",
+        "text": "Only relevant portions of coordinator context are copied to each fork",
+        "is_correct": false
+      }
+    ],
+    "correct_label": "B",
+    "explanation": "When forking a session, each fork receives a complete copy of the coordinator's context as its starting point. This ensures both research approaches have full access to the foundational understanding and can diverge from the same baseline.",
+    "tags": [
+      "context_copying",
+      "session_forking",
+      "research_baseline"
+    ],
+    "bloom_level": "understand",
+    "distractor_strategy": {
+      "plausible_but_prompt_only": "N/A",
+      "over_engineered": "N/A",
+      "wrong_layer": "N/A",
+      "valid_but_not_first_step": "N/A"
+    }
+  },
+  {
+    "id": "D1_T7_031",
+    "domain_id": "D1",
+    "task_statement_id": "D1.T7",
+    "scenario_ids": [
+      "S1"
+    ],
+    "difficulty": "applied_judgment",
+    "key_concept_tested": "informing agent about file changes on resume",
+    "stem": "During a complex refund case, your team updated the customer database to include new fields for fraud detection. You're resuming the session where the agent was about to approve a high-value refund. What's the critical action?",
+    "options": [
+      {
+        "label": "A",
+        "text": "Resume normally and let the agent complete the refund process",
+        "is_correct": false
+      },
+      {
+        "label": "B",
+        "text": "Inform the agent about new fraud detection capabilities and have it revalidate the refund",
+        "is_correct": true
+      },
+      {
+        "label": "C",
+        "text": "Manually review the refund before allowing agent approval",
+        "is_correct": false
+      },
+      {
+        "label": "D",
+        "text": "Start a new session focused specifically on fraud validation",
+        "is_correct": false
+      }
+    ],
+    "correct_label": "B",
+    "explanation": "New fraud detection capabilities are critical for high-value refund decisions. The agent must be informed about these new tools and asked to revalidate the refund using the enhanced detection capabilities before approval.",
+    "tags": [
+      "fraud_detection",
+      "high_value_transactions",
+      "security_validation"
+    ],
+    "bloom_level": "apply",
+    "distractor_strategy": {
+      "plausible_but_prompt_only": "N/A",
+      "over_engineered": "N/A",
+      "wrong_layer": "N/A",
+      "valid_but_not_first_step": "N/A"
+    }
+  },
+  {
+    "id": "D1_T7_032",
+    "domain_id": "D1",
+    "task_statement_id": "D1.T7",
+    "scenario_ids": [
+      "S3"
+    ],
+    "difficulty": "anti_pattern_recognition",
+    "key_concept_tested": "fork_session for divergent approaches",
+    "stem": "A developer creates session forks for every individual subagent task (search, analysis, synthesis, reporting) instead of using the coordinator-subagent pattern. They argue this provides 'better isolation.' What's the fundamental problem?",
+    "options": [
+      {
+        "label": "A",
+        "text": "It breaks the coordinator's ability to orchestrate and synthesize results from multiple subagents",
+        "is_correct": true
+      },
+      {
+        "label": "B",
+        "text": "It uses more computational resources than necessary",
+        "is_correct": false
+      },
+      {
+        "label": "C",
+        "text": "It makes debugging individual subagent failures more difficult",
+        "is_correct": false
+      },
+      {
+        "label": "D",
+        "text": "It violates session naming conventions",
+        "is_correct": false
+      }
+    ],
+    "correct_label": "A",
+    "explanation": "Session forking should be used for divergent research approaches, not individual subagent tasks. Breaking tasks into separate forks eliminates the coordinator's ability to orchestrate the workflow and synthesize results from multiple subagents working together.",
+    "tags": [
+      "coordinator_orchestration",
+      "subagent_coordination",
+      "workflow_management"
+    ],
+    "bloom_level": "evaluate",
+    "distractor_strategy": {
+      "plausible_but_prompt_only": "N/A",
+      "over_engineered": "N/A",
+      "wrong_layer": "N/A",
+      "valid_but_not_first_step": "N/A"
+    }
+  },
+  {
+    "id": "D1_T7_033",
+    "domain_id": "D1",
+    "task_statement_id": "D1.T7",
+    "scenario_ids": [
+      "S1"
+    ],
+    "difficulty": "applied_judgment",
+    "key_concept_tested": "new session with structured summary vs resuming stale context",
+    "stem": "A VIP customer had a billing dispute session 2 weeks ago that was 90% resolved. They're now calling about a completely different service issue but mention they're still concerned about the previous billing matter. How should you handle session management?",
+    "options": [
+      {
+        "label": "A",
+        "text": "Resume the old billing session and address the new service issue within it",
+        "is_correct": false
+      },
+      {
+        "label": "B",
+        "text": "Start a fresh session for the service issue and create a separate session for billing follow-up",
+        "is_correct": false
+      },
+      {
+        "label": "C",
+        "text": "Start a new session with a structured summary of the billing resolution status, then focus on the service issue",
+        "is_correct": true
+      },
+      {
+        "label": "D",
+        "text": "Fork the old session to handle both issues simultaneously",
+        "is_correct": false
+      }
+    ],
+    "correct_label": "C",
+    "explanation": "A new session with structured summary acknowledges the VIP customer's billing concerns while focusing on the current service issue. This approach maintains customer confidence about the previous matter while addressing the new priority efficiently.",
+    "tags": [
+      "VIP_service",
+      "multi_issue_management",
+      "customer_confidence"
+    ],
+    "bloom_level": "apply",
+    "distractor_strategy": {
+      "plausible_but_prompt_only": "N/A",
+      "over_engineered": "B",
+      "wrong_layer": "N/A",
+      "valid_but_not_first_step": "N/A"
+    }
+  },
+  {
+    "id": "D1_T7_034",
+    "domain_id": "D1",
+    "task_statement_id": "D1.T7",
+    "scenario_ids": [
+      "S3"
+    ],
+    "difficulty": "conceptual_knowledge",
+    "key_concept_tested": "informing agent about file changes on resume",
+    "stem": "When resuming a research session after adding new MCP tools, what is the most important aspect of informing the agent about these changes?",
+    "options": [
+      {
+        "label": "A",
+        "text": "The technical specifications of each new tool",
+        "is_correct": false
+      },
+      {
+        "label": "B",
+        "text": "How the new tools can enhance the current research objectives and methodology",
+        "is_correct": true
+      },
+      {
+        "label": "C",
+        "text": "The complete list of all available tools",
+        "is_correct": false
+      },
+      {
+        "label": "D",
+        "text": "The reasons why the new tools were added",
+        "is_correct": false
+      }
+    ],
+    "correct_label": "B",
+    "explanation": "The most important aspect is helping the agent understand how new tools can enhance the current research objectives and methodology. This enables immediate strategic integration rather than just awareness of new capabilities.",
+    "tags": [
+      "strategic_integration",
+      "research_enhancement",
+      "methodology_improvement"
+    ],
+    "bloom_level": "understand",
+    "distractor_strategy": {
+      "plausible_but_prompt_only": "N/A",
+      "over_engineered": "N/A",
+      "wrong_layer": "N/A",
+      "valid_but_not_first_step": "N/A"
+    }
+  }
+]

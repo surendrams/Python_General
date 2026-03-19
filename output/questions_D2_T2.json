@@ -1,0 +1,1600 @@
+[
+  {
+    "id": "D2_T2_001",
+    "domain_id": "D2",
+    "task_statement_id": "D2.T2",
+    "scenario_ids": [
+      "S1"
+    ],
+    "difficulty": "conceptual_knowledge",
+    "key_concept_tested": "isError flag pattern",
+    "stem": "Your customer support agent's get_customer MCP tool encounters a database timeout. What is the correct way to structure the error response?",
+    "options": [
+      {
+        "label": "A",
+        "text": "Return {\"isError\": true, \"content\": [{\"type\": \"text\", \"text\": \"Database timeout occurred\"}], \"errorCategory\": \"transient\", \"isRetryable\": true}",
+        "is_correct": true
+      },
+      {
+        "label": "B",
+        "text": "Return {\"content\": [{\"type\": \"text\", \"text\": \"Error: Database timeout\"}]} without isError flag",
+        "is_correct": false
+      },
+      {
+        "label": "C",
+        "text": "Throw a JSON-RPC protocol error with code -32603",
+        "is_correct": false
+      },
+      {
+        "label": "D",
+        "text": "Return {\"error\": \"timeout\", \"message\": \"Database unavailable\"} in plain object format",
+        "is_correct": false
+      }
+    ],
+    "correct_label": "A",
+    "explanation": "MCP tools should use the isError flag pattern with structured content. Database timeouts are transient errors that should be marked as retryable. Protocol errors are for malformed requests, not execution failures.",
+    "tags": [
+      "mcp_tools",
+      "error_handling",
+      "isError_pattern"
+    ],
+    "bloom_level": "understand",
+    "distractor_strategy": {
+      "plausible_but_prompt_only": "N/A",
+      "over_engineered": "N/A",
+      "wrong_layer": "N/A",
+      "valid_but_not_first_step": "N/A"
+    }
+  },
+  {
+    "id": "D2_T2_002",
+    "domain_id": "D2",
+    "task_statement_id": "D2.T2",
+    "scenario_ids": [
+      "S1"
+    ],
+    "difficulty": "applied_judgment",
+    "key_concept_tested": "error categories: transient, validation, business, permission",
+    "stem": "A customer requests a refund for order #12345, but your process_refund tool discovers the order was placed 18 months ago, exceeding your 12-month return policy. How should you categorize this error?",
+    "options": [
+      {
+        "label": "A",
+        "text": "transient - the policy might change",
+        "is_correct": false
+      },
+      {
+        "label": "B",
+        "text": "business - policy violation that requires different handling",
+        "is_correct": true
+      },
+      {
+        "label": "C",
+        "text": "validation - the order ID format is invalid",
+        "is_correct": false
+      },
+      {
+        "label": "D",
+        "text": "permission - customer lacks refund authorization",
+        "is_correct": false
+      }
+    ],
+    "correct_label": "B",
+    "explanation": "This is a business logic error - the order exists and the customer is valid, but the refund violates business rules. Business errors indicate policy constraints that may require escalation or alternative resolution paths.",
+    "tags": [
+      "error_categorization",
+      "business_logic",
+      "policy_enforcement"
+    ],
+    "bloom_level": "apply",
+    "distractor_strategy": {
+      "plausible_but_prompt_only": "N/A",
+      "over_engineered": "N/A",
+      "wrong_layer": "N/A",
+      "valid_but_not_first_step": "N/A"
+    }
+  },
+  {
+    "id": "D2_T2_003",
+    "domain_id": "D2",
+    "task_statement_id": "D2.T2",
+    "scenario_ids": [
+      "S3"
+    ],
+    "difficulty": "conceptual_knowledge",
+    "key_concept_tested": "uniform generic errors prevent recovery",
+    "stem": "Your research system's web search subagent is returning generic 'search failed' errors for both API rate limits and invalid queries. What is the primary problem with this approach?",
+    "options": [
+      {
+        "label": "A",
+        "text": "Generic errors consume more tokens",
+        "is_correct": false
+      },
+      {
+        "label": "B",
+        "text": "The coordinator cannot distinguish retryable from non-retryable failures",
+        "is_correct": false
+      },
+      {
+        "label": "C",
+        "text": "The coordinator cannot make informed recovery decisions without specific error context",
+        "is_correct": true
+      },
+      {
+        "label": "D",
+        "text": "Generic errors violate MCP protocol specifications",
+        "is_correct": false
+      }
+    ],
+    "correct_label": "C",
+    "explanation": "Generic errors prevent the coordinator from implementing appropriate recovery strategies. Rate limits need delays/retries, while invalid queries need reformulation. Specific error categories enable targeted recovery actions.",
+    "tags": [
+      "error_recovery",
+      "coordinator_logic",
+      "error_specificity"
+    ],
+    "bloom_level": "understand",
+    "distractor_strategy": {
+      "plausible_but_prompt_only": "N/A",
+      "over_engineered": "N/A",
+      "wrong_layer": "N/A",
+      "valid_but_not_first_step": "N/A"
+    }
+  },
+  {
+    "id": "D2_T2_004",
+    "domain_id": "D2",
+    "task_statement_id": "D2.T2",
+    "scenario_ids": [
+      "S1"
+    ],
+    "difficulty": "anti_pattern_recognition",
+    "key_concept_tested": "retryable vs non-retryable errors",
+    "stem": "A colleague implements your lookup_order tool to always return isRetryable: true for any error, reasoning that 'retries can't hurt.' What is the flaw in this approach?",
+    "options": [
+      {
+        "label": "A",
+        "text": "It violates MCP protocol requirements",
+        "is_correct": false
+      },
+      {
+        "label": "B",
+        "text": "It increases API costs unnecessarily",
+        "is_correct": false
+      },
+      {
+        "label": "C",
+        "text": "It causes the agent to waste time retrying validation errors and permanent failures",
+        "is_correct": false
+      },
+      {
+        "label": "D",
+        "text": "It prevents the agent from escalating non-recoverable issues to humans promptly",
+        "is_correct": true
+      }
+    ],
+    "correct_label": "D",
+    "explanation": "Marking non-retryable errors as retryable delays appropriate escalation. Invalid order IDs, permission denials, and business rule violations need immediate human intervention, not repeated retry attempts.",
+    "tags": [
+      "retry_logic",
+      "escalation_patterns",
+      "anti_patterns"
+    ],
+    "bloom_level": "evaluate",
+    "distractor_strategy": {
+      "plausible_but_prompt_only": "N/A",
+      "over_engineered": "N/A",
+      "wrong_layer": "N/A",
+      "valid_but_not_first_step": "N/A"
+    }
+  },
+  {
+    "id": "D2_T2_005",
+    "domain_id": "D2",
+    "task_statement_id": "D2.T2",
+    "scenario_ids": [
+      "S3"
+    ],
+    "difficulty": "applied_judgment",
+    "key_concept_tested": "errorCategory, isRetryable boolean",
+    "stem": "Your document analysis subagent encounters a PDF that requires authentication to access. The document exists but the current credentials are insufficient. How should you structure this error response?",
+    "options": [
+      {
+        "label": "A",
+        "text": "{\"isError\": true, \"content\": [{\"type\": \"text\", \"text\": \"Authentication required\"}], \"errorCategory\": \"permission\", \"isRetryable\": false}",
+        "is_correct": true
+      },
+      {
+        "label": "B",
+        "text": "{\"isError\": true, \"content\": [{\"type\": \"text\", \"text\": \"Document not found\"}], \"errorCategory\": \"validation\", \"isRetryable\": false}",
+        "is_correct": false
+      },
+      {
+        "label": "C",
+        "text": "{\"isError\": true, \"content\": [{\"type\": \"text\", \"text\": \"Access denied\"}], \"errorCategory\": \"transient\", \"isRetryable\": true}",
+        "is_correct": false
+      },
+      {
+        "label": "D",
+        "text": "{\"isError\": true, \"content\": [{\"type\": \"text\", \"text\": \"Server error\"}], \"errorCategory\": \"business\", \"isRetryable\": true}",
+        "is_correct": false
+      }
+    ],
+    "correct_label": "A",
+    "explanation": "This is a permission error - the document exists but access is denied due to insufficient credentials. Permission errors are typically non-retryable without credential changes or escalation.",
+    "tags": [
+      "permission_errors",
+      "access_control",
+      "document_analysis"
+    ],
+    "bloom_level": "apply",
+    "distractor_strategy": {
+      "plausible_but_prompt_only": "N/A",
+      "over_engineered": "N/A",
+      "wrong_layer": "N/A",
+      "valid_but_not_first_step": "N/A"
+    }
+  },
+  {
+    "id": "D2_T2_006",
+    "domain_id": "D2",
+    "task_statement_id": "D2.T2",
+    "scenario_ids": [
+      "S1"
+    ],
+    "difficulty": "conceptual_knowledge",
+    "key_concept_tested": "local subagent recovery before propagation",
+    "stem": "Your customer support agent's get_customer tool experiences a temporary network timeout. What should the tool implementation do before returning an error to the agent?",
+    "options": [
+      {
+        "label": "A",
+        "text": "Immediately return the timeout error to let the agent handle it",
+        "is_correct": false
+      },
+      {
+        "label": "B",
+        "text": "Attempt local retry with exponential backoff before propagating the error",
+        "is_correct": true
+      },
+      {
+        "label": "C",
+        "text": "Cache the previous result and return that instead",
+        "is_correct": false
+      },
+      {
+        "label": "D",
+        "text": "Convert the timeout to a validation error to avoid retries",
+        "is_correct": false
+      }
+    ],
+    "correct_label": "B",
+    "explanation": "Tools should implement local recovery for transient errors before propagating to the agent. This reduces agent complexity and improves success rates by handling recoverable failures at the appropriate level.",
+    "tags": [
+      "local_recovery",
+      "error_propagation",
+      "tool_resilience"
+    ],
+    "bloom_level": "understand",
+    "distractor_strategy": {
+      "plausible_but_prompt_only": "N/A",
+      "over_engineered": "N/A",
+      "wrong_layer": "N/A",
+      "valid_but_not_first_step": "N/A"
+    }
+  },
+  {
+    "id": "D2_T2_007",
+    "domain_id": "D2",
+    "task_statement_id": "D2.T2",
+    "scenario_ids": [
+      "S3"
+    ],
+    "difficulty": "applied_judgment",
+    "key_concept_tested": "access failure vs valid empty result distinction",
+    "stem": "Your research coordinator queries the web search subagent for 'quantum computing patents filed in 2024' but finds no results. The search API returned successfully with an empty result set. How should the search tool respond?",
+    "options": [
+      {
+        "label": "A",
+        "text": "Return isError: true with errorCategory: validation to indicate no results found",
+        "is_correct": false
+      },
+      {
+        "label": "B",
+        "text": "Return isError: false with content explaining no patents match the criteria",
+        "is_correct": false
+      },
+      {
+        "label": "C",
+        "text": "Return successful response with structured empty results and search metadata",
+        "is_correct": true
+      },
+      {
+        "label": "D",
+        "text": "Return isError: true with errorCategory: business to indicate search limitations",
+        "is_correct": false
+      }
+    ],
+    "correct_label": "C",
+    "explanation": "Empty results from a successful API call are not errors - they're valid responses. The tool should return success with structured data indicating zero results, allowing the coordinator to understand the search completed successfully but found nothing.",
+    "tags": [
+      "empty_results",
+      "success_conditions",
+      "search_results"
+    ],
+    "bloom_level": "apply",
+    "distractor_strategy": {
+      "plausible_but_prompt_only": "N/A",
+      "over_engineered": "N/A",
+      "wrong_layer": "N/A",
+      "valid_but_not_first_step": "N/A"
+    }
+  },
+  {
+    "id": "D2_T2_008",
+    "domain_id": "D2",
+    "task_statement_id": "D2.T2",
+    "scenario_ids": [
+      "S1"
+    ],
+    "difficulty": "anti_pattern_recognition",
+    "key_concept_tested": "uniform generic errors prevent recovery",
+    "stem": "Your teammate implements all MCP tools to return the same generic error format: {\"isError\": true, \"content\": [{\"type\": \"text\", \"text\": \"Operation failed\"}]}. What recovery capability does this eliminate?",
+    "options": [
+      {
+        "label": "A",
+        "text": "The agent cannot retry any failed operations",
+        "is_correct": false
+      },
+      {
+        "label": "B",
+        "text": "The agent cannot distinguish between different failure modes requiring different responses",
+        "is_correct": false
+      },
+      {
+        "label": "C",
+        "text": "The agent cannot implement targeted recovery strategies or escalation logic",
+        "is_correct": false
+      },
+      {
+        "label": "D",
+        "text": "The agent cannot determine whether to retry, reformulate, escalate, or continue with alternative approaches",
+        "is_correct": true
+      }
+    ],
+    "correct_label": "D",
+    "explanation": "Generic errors eliminate the agent's ability to make informed decisions about next steps. Different error types require different recovery strategies - retries for transient failures, reformulation for validation errors, escalation for business rule violations.",
+    "tags": [
+      "error_recovery",
+      "decision_making",
+      "generic_errors"
+    ],
+    "bloom_level": "evaluate",
+    "distractor_strategy": {
+      "plausible_but_prompt_only": "N/A",
+      "over_engineered": "N/A",
+      "wrong_layer": "N/A",
+      "valid_but_not_first_step": "N/A"
+    }
+  },
+  {
+    "id": "D2_T2_009",
+    "domain_id": "D2",
+    "task_statement_id": "D2.T2",
+    "scenario_ids": [
+      "S3"
+    ],
+    "difficulty": "conceptual_knowledge",
+    "key_concept_tested": "errorCategory, isRetryable boolean",
+    "stem": "Your synthesis subagent receives malformed data from the document analysis agent - the JSON structure is invalid. What error category and retry setting should you use?",
+    "options": [
+      {
+        "label": "A",
+        "text": "errorCategory: validation, isRetryable: false",
+        "is_correct": true
+      },
+      {
+        "label": "B",
+        "text": "errorCategory: transient, isRetryable: true",
+        "is_correct": false
+      },
+      {
+        "label": "C",
+        "text": "errorCategory: business, isRetryable: false",
+        "is_correct": false
+      },
+      {
+        "label": "D",
+        "text": "errorCategory: permission, isRetryable: true",
+        "is_correct": false
+      }
+    ],
+    "correct_label": "A",
+    "explanation": "Invalid JSON structure is a validation error - the input format doesn't meet requirements. Validation errors are typically non-retryable without fixing the input data or the upstream process that generated it.",
+    "tags": [
+      "validation_errors",
+      "data_format",
+      "json_parsing"
+    ],
+    "bloom_level": "understand",
+    "distractor_strategy": {
+      "plausible_but_prompt_only": "N/A",
+      "over_engineered": "N/A",
+      "wrong_layer": "N/A",
+      "valid_but_not_first_step": "N/A"
+    }
+  },
+  {
+    "id": "D2_T2_010",
+    "domain_id": "D2",
+    "task_statement_id": "D2.T2",
+    "scenario_ids": [
+      "S1"
+    ],
+    "difficulty": "applied_judgment",
+    "key_concept_tested": "local subagent recovery before propagation",
+    "stem": "Your process_refund tool calls an external payment API that returns a 503 Service Unavailable error. The tool has already attempted 3 retries with exponential backoff. What should happen next?",
+    "options": [
+      {
+        "label": "A",
+        "text": "Continue retrying indefinitely until the service recovers",
+        "is_correct": false
+      },
+      {
+        "label": "B",
+        "text": "Return isError: true with errorCategory: transient, isRetryable: false to indicate local retries exhausted",
+        "is_correct": true
+      },
+      {
+        "label": "C",
+        "text": "Return isError: true with errorCategory: business to indicate refund policy violation",
+        "is_correct": false
+      },
+      {
+        "label": "D",
+        "text": "Return successful response with partial refund status",
+        "is_correct": false
+      }
+    ],
+    "correct_label": "B",
+    "explanation": "After exhausting local retries, the tool should propagate a transient error marked as non-retryable to prevent the agent from immediately retrying. This allows the agent to implement higher-level recovery strategies or escalation.",
+    "tags": [
+      "retry_exhaustion",
+      "escalation_timing",
+      "external_apis"
+    ],
+    "bloom_level": "apply",
+    "distractor_strategy": {
+      "plausible_but_prompt_only": "N/A",
+      "over_engineered": "A",
+      "wrong_layer": "N/A",
+      "valid_but_not_first_step": "N/A"
+    }
+  },
+  {
+    "id": "D2_T2_011",
+    "domain_id": "D2",
+    "task_statement_id": "D2.T2",
+    "scenario_ids": [
+      "S3"
+    ],
+    "difficulty": "conceptual_knowledge",
+    "key_concept_tested": "access failure vs valid empty result distinction",
+    "stem": "Your document analysis subagent successfully connects to a document repository but the specific document ID doesn't exist. How should this be handled?",
+    "options": [
+      {
+        "label": "A",
+        "text": "Return isError: false with content indicating the document was not found",
+        "is_correct": false
+      },
+      {
+        "label": "B",
+        "text": "Return isError: true with errorCategory: validation for invalid document ID",
+        "is_correct": false
+      },
+      {
+        "label": "C",
+        "text": "Return isError: true with errorCategory: validation, isRetryable: false",
+        "is_correct": true
+      },
+      {
+        "label": "D",
+        "text": "Return isError: true with errorCategory: transient to allow retries",
+        "is_correct": false
+      }
+    ],
+    "correct_label": "C",
+    "explanation": "A non-existent document ID is a validation error - the input parameter is invalid. This is different from empty search results, as the specific resource identifier is malformed or doesn't exist.",
+    "tags": [
+      "validation_errors",
+      "resource_existence",
+      "document_access"
+    ],
+    "bloom_level": "understand",
+    "distractor_strategy": {
+      "plausible_but_prompt_only": "N/A",
+      "over_engineered": "N/A",
+      "wrong_layer": "N/A",
+      "valid_but_not_first_step": "N/A"
+    }
+  },
+  {
+    "id": "D2_T2_012",
+    "domain_id": "D2",
+    "task_statement_id": "D2.T2",
+    "scenario_ids": [
+      "S1"
+    ],
+    "difficulty": "anti_pattern_recognition",
+    "key_concept_tested": "isError flag pattern",
+    "stem": "A developer implements error handling by parsing the text content of tool responses for keywords like 'error', 'failed', or 'exception' instead of using the isError flag. What problem does this create?",
+    "options": [
+      {
+        "label": "A",
+        "text": "It violates MCP protocol specifications",
+        "is_correct": false
+      },
+      {
+        "label": "B",
+        "text": "It creates unreliable error detection that may miss errors or trigger false positives",
+        "is_correct": true
+      },
+      {
+        "label": "C",
+        "text": "It increases computational overhead for text processing",
+        "is_correct": false
+      },
+      {
+        "label": "D",
+        "text": "It prevents the use of structured error categories",
+        "is_correct": false
+      }
+    ],
+    "correct_label": "D",
+    "explanation": "Text parsing for error detection is unreliable and brittle. The isError flag provides a clear, structured way to indicate errors that doesn't depend on natural language patterns that may appear in valid responses.",
+    "tags": [
+      "error_detection",
+      "structured_responses",
+      "parsing_antipatterns"
+    ],
+    "bloom_level": "evaluate",
+    "distractor_strategy": {
+      "plausible_but_prompt_only": "N/A",
+      "over_engineered": "N/A",
+      "wrong_layer": "N/A",
+      "valid_but_not_first_step": "N/A"
+    }
+  },
+  {
+    "id": "D2_T2_013",
+    "domain_id": "D2",
+    "task_statement_id": "D2.T2",
+    "scenario_ids": [
+      "S3"
+    ],
+    "difficulty": "applied_judgment",
+    "key_concept_tested": "error categories: transient, validation, business, permission",
+    "stem": "Your web search subagent hits an API rate limit of 100 requests per minute while processing a large research query. The API returns 'Rate limit exceeded, try again in 60 seconds.' How should you categorize this?",
+    "options": [
+      {
+        "label": "A",
+        "text": "errorCategory: transient, isRetryable: true with retry delay information",
+        "is_correct": true
+      },
+      {
+        "label": "B",
+        "text": "errorCategory: business, isRetryable: false to indicate quota policy",
+        "is_correct": false
+      },
+      {
+        "label": "C",
+        "text": "errorCategory: validation, isRetryable: false for too many requests",
+        "is_correct": false
+      },
+      {
+        "label": "D",
+        "text": "errorCategory: permission, isRetryable: true for access restriction",
+        "is_correct": false
+      }
+    ],
+    "correct_label": "A",
+    "explanation": "Rate limits are transient errors - they're temporary restrictions that will resolve after a time delay. The API explicitly indicates when to retry, making this a retryable transient error.",
+    "tags": [
+      "rate_limiting",
+      "transient_errors",
+      "api_quotas"
+    ],
+    "bloom_level": "apply",
+    "distractor_strategy": {
+      "plausible_but_prompt_only": "N/A",
+      "over_engineered": "N/A",
+      "wrong_layer": "N/A",
+      "valid_but_not_first_step": "N/A"
+    }
+  },
+  {
+    "id": "D2_T2_014",
+    "domain_id": "D2",
+    "task_statement_id": "D2.T2",
+    "scenario_ids": [
+      "S1"
+    ],
+    "difficulty": "conceptual_knowledge",
+    "key_concept_tested": "retryable vs non-retryable errors",
+    "stem": "Your escalate_to_human tool successfully creates a support ticket but the customer's contact information is missing from their profile. What retry setting should you use?",
+    "options": [
+      {
+        "label": "A",
+        "text": "isRetryable: true - missing data might be updated",
+        "is_correct": false
+      },
+      {
+        "label": "B",
+        "text": "isRetryable: false - data validation issues require different resolution",
+        "is_correct": true
+      },
+      {
+        "label": "C",
+        "text": "isRetryable: true - the escalation should be attempted again",
+        "is_correct": false
+      },
+      {
+        "label": "D",
+        "text": "isRetryable: false - escalation tools should never retry",
+        "is_correct": false
+      }
+    ],
+    "correct_label": "B",
+    "explanation": "Missing required data is a validation issue that won't be resolved by retrying the same operation. The missing contact information needs to be obtained or the escalation process needs to handle incomplete profiles.",
+    "tags": [
+      "data_validation",
+      "escalation_logic",
+      "retry_decisions"
+    ],
+    "bloom_level": "understand",
+    "distractor_strategy": {
+      "plausible_but_prompt_only": "N/A",
+      "over_engineered": "N/A",
+      "wrong_layer": "N/A",
+      "valid_but_not_first_step": "N/A"
+    }
+  },
+  {
+    "id": "D2_T2_015",
+    "domain_id": "D2",
+    "task_statement_id": "D2.T2",
+    "scenario_ids": [
+      "S3"
+    ],
+    "difficulty": "applied_judgment",
+    "key_concept_tested": "local subagent recovery before propagation",
+    "stem": "Your report generation subagent encounters a template formatting error while processing synthesis results. The error occurs in 2% of cases due to edge case data structures. What recovery strategy should the tool implement?",
+    "options": [
+      {
+        "label": "A",
+        "text": "Immediately propagate the error to let the coordinator handle all formatting issues",
+        "is_correct": false
+      },
+      {
+        "label": "B",
+        "text": "Attempt fallback formatting approaches before propagating the error",
+        "is_correct": true
+      },
+      {
+        "label": "C",
+        "text": "Return a generic error without attempting local recovery",
+        "is_correct": false
+      },
+      {
+        "label": "D",
+        "text": "Skip the problematic data and generate a partial report",
+        "is_correct": false
+      }
+    ],
+    "correct_label": "B",
+    "explanation": "Tools should implement local recovery strategies for predictable edge cases. Template formatting can often be resolved with fallback approaches (simpler templates, alternative structures) before escalating to the coordinator.",
+    "tags": [
+      "local_recovery",
+      "template_formatting",
+      "edge_cases"
+    ],
+    "bloom_level": "apply",
+    "distractor_strategy": {
+      "plausible_but_prompt_only": "N/A",
+      "over_engineered": "N/A",
+      "wrong_layer": "N/A",
+      "valid_but_not_first_step": "N/A"
+    }
+  },
+  {
+    "id": "D2_T2_016",
+    "domain_id": "D2",
+    "task_statement_id": "D2.T2",
+    "scenario_ids": [
+      "S1"
+    ],
+    "difficulty": "anti_pattern_recognition",
+    "key_concept_tested": "error categories: transient, validation, business, permission",
+    "stem": "Your colleague categorizes all external API failures as 'business' errors, reasoning that they represent business dependencies being unavailable. What's wrong with this categorization?",
+    "options": [
+      {
+        "label": "A",
+        "text": "It prevents distinguishing between temporary outages and permanent policy violations",
+        "is_correct": true
+      },
+      {
+        "label": "B",
+        "text": "Business errors should only be used for internal business logic",
+        "is_correct": false
+      },
+      {
+        "label": "C",
+        "text": "External APIs cannot generate business errors by definition",
+        "is_correct": false
+      },
+      {
+        "label": "D",
+        "text": "It violates the MCP specification for error categories",
+        "is_correct": false
+      }
+    ],
+    "correct_label": "A",
+    "explanation": "API failures have different root causes requiring different responses. Network timeouts are transient, authentication failures are permission errors, malformed requests are validation errors. Lumping all as 'business' prevents appropriate recovery strategies.",
+    "tags": [
+      "error_categorization",
+      "api_failures",
+      "recovery_strategies"
+    ],
+    "bloom_level": "evaluate",
+    "distractor_strategy": {
+      "plausible_but_prompt_only": "N/A",
+      "over_engineered": "N/A",
+      "wrong_layer": "N/A",
+      "valid_but_not_first_step": "N/A"
+    }
+  },
+  {
+    "id": "D2_T2_017",
+    "domain_id": "D2",
+    "task_statement_id": "D2.T2",
+    "scenario_ids": [
+      "S3"
+    ],
+    "difficulty": "conceptual_knowledge",
+    "key_concept_tested": "uniform generic errors prevent recovery",
+    "stem": "Your research coordinator receives identical error responses from different subagents: web search fails due to API limits, document analysis fails due to file corruption, and synthesis fails due to insufficient data. What capability is lost?",
+    "options": [
+      {
+        "label": "A",
+        "text": "The ability to log errors for debugging",
+        "is_correct": false
+      },
+      {
+        "label": "B",
+        "text": "The ability to implement different recovery strategies for each failure type",
+        "is_correct": false
+      },
+      {
+        "label": "C",
+        "text": "The ability to continue the research process with alternative approaches",
+        "is_correct": false
+      },
+      {
+        "label": "D",
+        "text": "The ability to make informed decisions about retrying, switching sources, or escalating",
+        "is_correct": true
+      }
+    ],
+    "correct_label": "D",
+    "explanation": "Uniform errors eliminate the coordinator's ability to tailor responses to specific failure modes. API limits need delays, file corruption needs alternative sources, insufficient data needs different synthesis approaches.",
+    "tags": [
+      "coordinator_decisions",
+      "failure_modes",
+      "recovery_strategies"
+    ],
+    "bloom_level": "understand",
+    "distractor_strategy": {
+      "plausible_but_prompt_only": "N/A",
+      "over_engineered": "N/A",
+      "wrong_layer": "N/A",
+      "valid_but_not_first_step": "N/A"
+    }
+  },
+  {
+    "id": "D2_T2_018",
+    "domain_id": "D2",
+    "task_statement_id": "D2.T2",
+    "scenario_ids": [
+      "S1"
+    ],
+    "difficulty": "applied_judgment",
+    "key_concept_tested": "access failure vs valid empty result distinction",
+    "stem": "Your lookup_order tool searches for orders by customer email but finds no orders for a valid customer account. The database query executed successfully. How should this be handled?",
+    "options": [
+      {
+        "label": "A",
+        "text": "Return isError: true with errorCategory: validation for no orders found",
+        "is_correct": false
+      },
+      {
+        "label": "B",
+        "text": "Return successful response with empty order list and customer confirmation",
+        "is_correct": true
+      },
+      {
+        "label": "C",
+        "text": "Return isError: true with errorCategory: business for customers without orders",
+        "is_correct": false
+      },
+      {
+        "label": "D",
+        "text": "Return isError: true with errorCategory: transient to retry the search",
+        "is_correct": false
+      }
+    ],
+    "correct_label": "B",
+    "explanation": "A successful database query that returns no results is not an error - it's valid data indicating the customer has no orders. This should be returned as a successful response with structured empty results.",
+    "tags": [
+      "empty_results",
+      "database_queries",
+      "customer_data"
+    ],
+    "bloom_level": "apply",
+    "distractor_strategy": {
+      "plausible_but_prompt_only": "N/A",
+      "over_engineered": "N/A",
+      "wrong_layer": "N/A",
+      "valid_but_not_first_step": "N/A"
+    }
+  },
+  {
+    "id": "D2_T2_019",
+    "domain_id": "D2",
+    "task_statement_id": "D2.T2",
+    "scenario_ids": [
+      "S3"
+    ],
+    "difficulty": "anti_pattern_recognition",
+    "key_concept_tested": "retryable vs non-retryable errors",
+    "stem": "A developer sets isRetryable: false for all errors to 'fail fast and avoid wasting time on retries.' What recovery opportunity does this eliminate?",
+    "options": [
+      {
+        "label": "A",
+        "text": "The ability to handle transient network issues and temporary service outages",
+        "is_correct": true
+      },
+      {
+        "label": "B",
+        "text": "The ability to validate input parameters",
+        "is_correct": false
+      },
+      {
+        "label": "C",
+        "text": "The ability to escalate complex issues to humans",
+        "is_correct": false
+      },
+      {
+        "label": "D",
+        "text": "The ability to log detailed error information",
+        "is_correct": false
+      }
+    ],
+    "correct_label": "A",
+    "explanation": "Setting all errors as non-retryable eliminates the system's ability to recover from transient failures that would succeed on retry. Network glitches, temporary service outages, and rate limits are often resolved with appropriate retry strategies.",
+    "tags": [
+      "retry_strategies",
+      "transient_failures",
+      "fail_fast_antipattern"
+    ],
+    "bloom_level": "evaluate",
+    "distractor_strategy": {
+      "plausible_but_prompt_only": "N/A",
+      "over_engineered": "N/A",
+      "wrong_layer": "N/A",
+      "valid_but_not_first_step": "N/A"
+    }
+  },
+  {
+    "id": "D2_T2_020",
+    "domain_id": "D2",
+    "task_statement_id": "D2.T2",
+    "scenario_ids": [
+      "S1"
+    ],
+    "difficulty": "conceptual_knowledge",
+    "key_concept_tested": "errorCategory, isRetryable boolean",
+    "stem": "Your get_customer tool receives a customer ID that exists but the customer account is suspended due to policy violations. What error category and retry setting should you use?",
+    "options": [
+      {
+        "label": "A",
+        "text": "errorCategory: business, isRetryable: false",
+        "is_correct": true
+      },
+      {
+        "label": "B",
+        "text": "errorCategory: permission, isRetryable: true",
+        "is_correct": false
+      },
+      {
+        "label": "C",
+        "text": "errorCategory: validation, isRetryable: false",
+        "is_correct": false
+      },
+      {
+        "label": "D",
+        "text": "errorCategory: transient, isRetryable: false",
+        "is_correct": false
+      }
+    ],
+    "correct_label": "A",
+    "explanation": "Account suspension due to policy violations is a business rule enforcement. The customer ID is valid (not validation), access isn't just denied (not permission), and it's not temporary (not transient). Business errors are typically non-retryable.",
+    "tags": [
+      "business_rules",
+      "account_suspension",
+      "policy_enforcement"
+    ],
+    "bloom_level": "understand",
+    "distractor_strategy": {
+      "plausible_but_prompt_only": "N/A",
+      "over_engineered": "N/A",
+      "wrong_layer": "N/A",
+      "valid_but_not_first_step": "N/A"
+    }
+  },
+  {
+    "id": "D2_T2_021",
+    "domain_id": "D2",
+    "task_statement_id": "D2.T2",
+    "scenario_ids": [
+      "S3"
+    ],
+    "difficulty": "applied_judgment",
+    "key_concept_tested": "isError flag pattern",
+    "stem": "Your document analysis subagent successfully processes a PDF but discovers the content is in an unsupported language. The processing completed without technical errors but can't extract meaningful information. How should this be structured?",
+    "options": [
+      {
+        "label": "A",
+        "text": "Return isError: true with errorCategory: validation for unsupported content",
+        "is_correct": true
+      },
+      {
+        "label": "B",
+        "text": "Return isError: false with content indicating language limitation",
+        "is_correct": false
+      },
+      {
+        "label": "C",
+        "text": "Return isError: true with errorCategory: business for language policy",
+        "is_correct": false
+      },
+      {
+        "label": "D",
+        "text": "Return isError: true with errorCategory: transient to retry with different settings",
+        "is_correct": false
+      }
+    ],
+    "correct_label": "A",
+    "explanation": "Unsupported language content is a validation error - the input doesn't meet the tool's processing requirements. Even though technically processed, the inability to extract meaningful information due to language constraints is a validation failure.",
+    "tags": [
+      "content_validation",
+      "language_support",
+      "processing_limitations"
+    ],
+    "bloom_level": "apply",
+    "distractor_strategy": {
+      "plausible_but_prompt_only": "N/A",
+      "over_engineered": "N/A",
+      "wrong_layer": "N/A",
+      "valid_but_not_first_step": "N/A"
+    }
+  },
+  {
+    "id": "D2_T2_022",
+    "domain_id": "D2",
+    "task_statement_id": "D2.T2",
+    "scenario_ids": [
+      "S1"
+    ],
+    "difficulty": "applied_judgment",
+    "key_concept_tested": "local subagent recovery before propagation",
+    "stem": "Your process_refund tool encounters intermittent connection timeouts to the payment processor, succeeding about 70% of the time. Currently it fails immediately on first timeout. What improvement should you implement?",
+    "options": [
+      {
+        "label": "A",
+        "text": "Add retry logic with exponential backoff before reporting timeout errors",
+        "is_correct": false
+      },
+      {
+        "label": "B",
+        "text": "Implement local retry with jitter and circuit breaker pattern",
+        "is_correct": true
+      },
+      {
+        "label": "C",
+        "text": "Cache successful refunds to avoid repeated calls",
+        "is_correct": false
+      },
+      {
+        "label": "D",
+        "text": "Switch to asynchronous processing for all refunds",
+        "is_correct": false
+      }
+    ],
+    "correct_label": "B",
+    "explanation": "With 70% success rate, the tool should implement local recovery with retry logic, jitter to avoid thundering herd, and circuit breaker to prevent cascading failures. This handles transient issues locally before escalating.",
+    "tags": [
+      "local_recovery",
+      "circuit_breaker",
+      "payment_processing"
+    ],
+    "bloom_level": "apply",
+    "distractor_strategy": {
+      "plausible_but_prompt_only": "N/A",
+      "over_engineered": "N/A",
+      "wrong_layer": "N/A",
+      "valid_but_not_first_step": "N/A"
+    }
+  },
+  {
+    "id": "D2_T2_023",
+    "domain_id": "D2",
+    "task_statement_id": "D2.T2",
+    "scenario_ids": [
+      "S3"
+    ],
+    "difficulty": "anti_pattern_recognition",
+    "key_concept_tested": "access failure vs valid empty result distinction",
+    "stem": "Your web search subagent returns isError: true with 'No results found' for searches that execute successfully but match no documents. What does this prevent the coordinator from understanding?",
+    "options": [
+      {
+        "label": "A",
+        "text": "Whether the search API is functioning correctly",
+        "is_correct": false
+      },
+      {
+        "label": "B",
+        "text": "Whether the search terms should be reformulated or the topic has no available information",
+        "is_correct": false
+      },
+      {
+        "label": "C",
+        "text": "Whether to try alternative search strategies or conclude the research area is unexplored",
+        "is_correct": true
+      },
+      {
+        "label": "D",
+        "text": "Whether the search quota has been exceeded",
+        "is_correct": false
+      }
+    ],
+    "correct_label": "C",
+    "explanation": "Treating empty results as errors prevents the coordinator from distinguishing between search failures and successful searches of unexplored topics. Valid empty results should inform research strategy decisions, not trigger error recovery.",
+    "tags": [
+      "empty_results",
+      "search_strategy",
+      "research_coordination"
+    ],
+    "bloom_level": "evaluate",
+    "distractor_strategy": {
+      "plausible_but_prompt_only": "N/A",
+      "over_engineered": "N/A",
+      "wrong_layer": "N/A",
+      "valid_but_not_first_step": "N/A"
+    }
+  },
+  {
+    "id": "D2_T2_024",
+    "domain_id": "D2",
+    "task_statement_id": "D2.T2",
+    "scenario_ids": [
+      "S1"
+    ],
+    "difficulty": "conceptual_knowledge",
+    "key_concept_tested": "error categories: transient, validation, business, permission",
+    "stem": "Your escalate_to_human tool fails because the support queue has reached its maximum capacity of 100 concurrent tickets. What error category best describes this situation?",
+    "options": [
+      {
+        "label": "A",
+        "text": "transient - queue capacity will become available",
+        "is_correct": true
+      },
+      {
+        "label": "B",
+        "text": "business - violates queue management policy",
+        "is_correct": false
+      },
+      {
+        "label": "C",
+        "text": "validation - too many escalation requests",
+        "is_correct": false
+      },
+      {
+        "label": "D",
+        "text": "permission - insufficient rights to create tickets",
+        "is_correct": false
+      }
+    ],
+    "correct_label": "A",
+    "explanation": "Queue capacity limits are transient constraints - tickets will be processed and capacity will become available. This is different from business rule violations or permission denials, as it's a temporary resource limitation.",
+    "tags": [
+      "queue_management",
+      "capacity_limits",
+      "transient_errors"
+    ],
+    "bloom_level": "understand",
+    "distractor_strategy": {
+      "plausible_but_prompt_only": "N/A",
+      "over_engineered": "N/A",
+      "wrong_layer": "N/A",
+      "valid_but_not_first_step": "N/A"
+    }
+  },
+  {
+    "id": "D2_T2_025",
+    "domain_id": "D2",
+    "task_statement_id": "D2.T2",
+    "scenario_ids": [
+      "S3"
+    ],
+    "difficulty": "applied_judgment",
+    "key_concept_tested": "uniform generic errors prevent recovery",
+    "stem": "Your research system shows 15% task failure rate with all subagents returning generic 'processing failed' errors. After implementing specific error categories, what improvement would you expect to see first?",
+    "options": [
+      {
+        "label": "A",
+        "text": "Reduced overall error rate due to better error handling",
+        "is_correct": true
+      },
+      {
+        "label": "B",
+        "text": "Faster response times from subagents",
+        "is_correct": false
+      },
+      {
+        "label": "C",
+        "text": "Lower computational costs for error processing",
+        "is_correct": false
+      },
+      {
+        "label": "D",
+        "text": "Improved search result quality",
+        "is_correct": false
+      }
+    ],
+    "correct_label": "A",
+    "explanation": "Specific error categories enable targeted recovery strategies, allowing the coordinator to retry transient failures, reformulate validation errors, and escalate business/permission issues appropriately. This should reduce the effective failure rate.",
+    "tags": [
+      "error_recovery",
+      "failure_rates",
+      "system_improvement"
+    ],
+    "bloom_level": "apply",
+    "distractor_strategy": {
+      "plausible_but_prompt_only": "N/A",
+      "over_engineered": "N/A",
+      "wrong_layer": "N/A",
+      "valid_but_not_first_step": "N/A"
+    }
+  },
+  {
+    "id": "D2_T2_026",
+    "domain_id": "D2",
+    "task_statement_id": "D2.T2",
+    "scenario_ids": [
+      "S1"
+    ],
+    "difficulty": "applied_judgment",
+    "key_concept_tested": "retryable vs non-retryable errors",
+    "stem": "Your lookup_order tool encounters a database deadlock error that occurs in 0.1% of queries due to concurrent access patterns. The database automatically resolves these within milliseconds. What retry setting should you use?",
+    "options": [
+      {
+        "label": "A",
+        "text": "isRetryable: false - deadlocks indicate data integrity issues",
+        "is_correct": false
+      },
+      {
+        "label": "B",
+        "text": "isRetryable: true - deadlocks are transient and automatically resolved",
+        "is_correct": true
+      },
+      {
+        "label": "C",
+        "text": "isRetryable: false - database errors should not be retried",
+        "is_correct": false
+      },
+      {
+        "label": "D",
+        "text": "isRetryable: true - but only after manual intervention",
+        "is_correct": false
+      }
+    ],
+    "correct_label": "B",
+    "explanation": "Database deadlocks that auto-resolve are classic transient errors. They're temporary resource conflicts that resolve quickly, making them ideal candidates for retry with brief delays.",
+    "tags": [
+      "database_deadlocks",
+      "transient_errors",
+      "concurrent_access"
+    ],
+    "bloom_level": "apply",
+    "distractor_strategy": {
+      "plausible_but_prompt_only": "N/A",
+      "over_engineered": "N/A",
+      "wrong_layer": "N/A",
+      "valid_but_not_first_step": "N/A"
+    }
+  },
+  {
+    "id": "D2_T2_027",
+    "domain_id": "D2",
+    "task_statement_id": "D2.T2",
+    "scenario_ids": [
+      "S3"
+    ],
+    "difficulty": "conceptual_knowledge",
+    "key_concept_tested": "local subagent recovery before propagation",
+    "stem": "Your synthesis subagent receives corrupted data from document analysis 5% of the time due to PDF parsing edge cases. What should the synthesis tool do before propagating an error?",
+    "options": [
+      {
+        "label": "A",
+        "text": "Request the document analysis subagent to reprocess the document",
+        "is_correct": false
+      },
+      {
+        "label": "B",
+        "text": "Attempt to clean or reconstruct the corrupted data using available context",
+        "is_correct": false
+      },
+      {
+        "label": "C",
+        "text": "Try alternative synthesis approaches that are more resilient to data quality issues",
+        "is_correct": true
+      },
+      {
+        "label": "D",
+        "text": "Skip the corrupted sections and synthesize from remaining data",
+        "is_correct": false
+      }
+    ],
+    "correct_label": "C",
+    "explanation": "Tools should implement local recovery strategies appropriate to their function. A synthesis tool can try different approaches (more permissive parsing, fallback algorithms) before declaring the data unusable.",
+    "tags": [
+      "local_recovery",
+      "data_corruption",
+      "synthesis_strategies"
+    ],
+    "bloom_level": "understand",
+    "distractor_strategy": {
+      "plausible_but_prompt_only": "N/A",
+      "over_engineered": "N/A",
+      "wrong_layer": "N/A",
+      "valid_but_not_first_step": "N/A"
+    }
+  },
+  {
+    "id": "D2_T2_028",
+    "domain_id": "D2",
+    "task_statement_id": "D2.T2",
+    "scenario_ids": [
+      "S1"
+    ],
+    "difficulty": "anti_pattern_recognition",
+    "key_concept_tested": "isError flag pattern",
+    "stem": "A developer implements error detection by checking if the tool response contains the word 'success' - if not present, it's treated as an error. What reliability issue does this create?",
+    "options": [
+      {
+        "label": "A",
+        "text": "False positives when valid responses don't contain the word 'success'",
+        "is_correct": true
+      },
+      {
+        "label": "B",
+        "text": "Increased latency from text processing overhead",
+        "is_correct": false
+      },
+      {
+        "label": "C",
+        "text": "Incompatibility with non-English responses",
+        "is_correct": false
+      },
+      {
+        "label": "D",
+        "text": "Violation of MCP protocol standards",
+        "is_correct": false
+      }
+    ],
+    "correct_label": "A",
+    "explanation": "Text-based error detection is unreliable. Many valid responses won't contain 'success' (data responses, empty results, status information), leading to false error detection. The isError flag provides reliable, structured error indication.",
+    "tags": [
+      "error_detection",
+      "false_positives",
+      "text_parsing_antipatterns"
+    ],
+    "bloom_level": "evaluate",
+    "distractor_strategy": {
+      "plausible_but_prompt_only": "N/A",
+      "over_engineered": "N/A",
+      "wrong_layer": "N/A",
+      "valid_but_not_first_step": "N/A"
+    }
+  },
+  {
+    "id": "D2_T2_029",
+    "domain_id": "D2",
+    "task_statement_id": "D2.T2",
+    "scenario_ids": [
+      "S3"
+    ],
+    "difficulty": "applied_judgment",
+    "key_concept_tested": "error categories: transient, validation, business, permission",
+    "stem": "Your document analysis subagent attempts to process a 500MB PDF but your processing service has a 100MB file size limit. How should you categorize this error?",
+    "options": [
+      {
+        "label": "A",
+        "text": "errorCategory: validation, isRetryable: false for file size constraint",
+        "is_correct": true
+      },
+      {
+        "label": "B",
+        "text": "errorCategory: business, isRetryable: false for policy violation",
+        "is_correct": false
+      },
+      {
+        "label": "C",
+        "text": "errorCategory: transient, isRetryable: true for temporary limitation",
+        "is_correct": false
+      },
+      {
+        "label": "D",
+        "text": "errorCategory: permission, isRetryable: false for access restriction",
+        "is_correct": false
+      }
+    ],
+    "correct_label": "A",
+    "explanation": "File size limits are validation constraints - the input doesn't meet the technical requirements for processing. This is different from business policies (which are about rules) or permissions (which are about access rights).",
+    "tags": [
+      "file_size_limits",
+      "validation_constraints",
+      "technical_limits"
+    ],
+    "bloom_level": "apply",
+    "distractor_strategy": {
+      "plausible_but_prompt_only": "N/A",
+      "over_engineered": "N/A",
+      "wrong_layer": "N/A",
+      "valid_but_not_first_step": "N/A"
+    }
+  },
+  {
+    "id": "D2_T2_030",
+    "domain_id": "D2",
+    "task_statement_id": "D2.T2",
+    "scenario_ids": [
+      "S1"
+    ],
+    "difficulty": "conceptual_knowledge",
+    "key_concept_tested": "access failure vs valid empty result distinction",
+    "stem": "Your get_customer tool successfully authenticates with the customer database but the queried customer ID doesn't exist in the system. How should this be handled?",
+    "options": [
+      {
+        "label": "A",
+        "text": "Return successful response with null/empty customer data",
+        "is_correct": false
+      },
+      {
+        "label": "B",
+        "text": "Return isError: true with errorCategory: validation for non-existent ID",
+        "is_correct": true
+      },
+      {
+        "label": "C",
+        "text": "Return isError: true with errorCategory: transient to retry the lookup",
+        "is_correct": false
+      },
+      {
+        "label": "D",
+        "text": "Return isError: true with errorCategory: permission for unauthorized access",
+        "is_correct": false
+      }
+    ],
+    "correct_label": "B",
+    "explanation": "A non-existent customer ID is a validation error - the input parameter is invalid. This is different from empty search results, as the specific identifier doesn't exist in the system.",
+    "tags": [
+      "customer_lookup",
+      "validation_errors",
+      "resource_existence"
+    ],
+    "bloom_level": "understand",
+    "distractor_strategy": {
+      "plausible_but_prompt_only": "N/A",
+      "over_engineered": "N/A",
+      "wrong_layer": "N/A",
+      "valid_but_not_first_step": "N/A"
+    }
+  },
+  {
+    "id": "D2_T2_031",
+    "domain_id": "D2",
+    "task_statement_id": "D2.T2",
+    "scenario_ids": [
+      "S3"
+    ],
+    "difficulty": "applied_judgment",
+    "key_concept_tested": "local subagent recovery before propagation",
+    "stem": "Your web search subagent experiences API rate limiting on primary search provider. It has access to two alternative search APIs with different rate limits. What recovery strategy should it implement?",
+    "options": [
+      {
+        "label": "A",
+        "text": "Immediately propagate rate limit error to coordinator for handling",
+        "is_correct": false
+      },
+      {
+        "label": "B",
+        "text": "Wait for rate limit reset then retry the same API",
+        "is_correct": false
+      },
+      {
+        "label": "C",
+        "text": "Automatically failover to alternative search APIs before reporting failure",
+        "is_correct": true
+      },
+      {
+        "label": "D",
+        "text": "Return partial results from cached previous searches",
+        "is_correct": false
+      }
+    ],
+    "correct_label": "C",
+    "explanation": "With multiple search APIs available, the tool should implement local failover before propagating errors. This maximizes success rate and reduces coordinator complexity by handling provider failures transparently.",
+    "tags": [
+      "failover_strategies",
+      "api_redundancy",
+      "local_recovery"
+    ],
+    "bloom_level": "apply",
+    "distractor_strategy": {
+      "plausible_but_prompt_only": "N/A",
+      "over_engineered": "N/A",
+      "wrong_layer": "N/A",
+      "valid_but_not_first_step": "N/A"
+    }
+  },
+  {
+    "id": "D2_T2_032",
+    "domain_id": "D2",
+    "task_statement_id": "D2.T2",
+    "scenario_ids": [
+      "S1"
+    ],
+    "difficulty": "anti_pattern_recognition",
+    "key_concept_tested": "errorCategory, isRetryable boolean",
+    "stem": "Your team implements all MCP tools to use errorCategory: 'generic' and isRetryable: 'maybe' as string values instead of the proper enums and booleans. What integration problem does this create?",
+    "options": [
+      {
+        "label": "A",
+        "text": "Agents cannot programmatically determine appropriate recovery actions",
+        "is_correct": true
+      },
+      {
+        "label": "B",
+        "text": "The MCP protocol will reject malformed error responses",
+        "is_correct": false
+      },
+      {
+        "label": "C",
+        "text": "Error logging systems cannot parse the responses",
+        "is_correct": false
+      },
+      {
+        "label": "D",
+        "text": "Performance degrades due to string comparison overhead",
+        "is_correct": false
+      }
+    ],
+    "correct_label": "A",
+    "explanation": "Using non-standard values breaks the structured error handling contract. Agents expect specific error categories and boolean retry flags to make programmatic decisions about recovery strategies.",
+    "tags": [
+      "error_structure",
+      "integration_issues",
+      "type_safety"
+    ],
+    "bloom_level": "evaluate",
+    "distractor_strategy": {
+      "plausible_but_prompt_only": "N/A",
+      "over_engineered": "N/A",
+      "wrong_layer": "N/A",
+      "valid_but_not_first_step": "N/A"
+    }
+  },
+  {
+    "id": "D2_T2_033",
+    "domain_id": "D2",
+    "task_statement_id": "D2.T2",
+    "scenario_ids": [
+      "S3"
+    ],
+    "difficulty": "applied_judgment",
+    "key_concept_tested": "uniform generic errors prevent recovery",
+    "stem": "After implementing specific error categories, your research coordinator's success rate improves from 73% to 89%. The biggest improvement comes from better handling of which error type?",
+    "options": [
+      {
+        "label": "A",
+        "text": "Permission errors through better authentication retry",
+        "is_correct": false
+      },
+      {
+        "label": "B",
+        "text": "Transient errors through appropriate retry strategies",
+        "is_correct": true
+      },
+      {
+        "label": "C",
+        "text": "Business errors through policy exception handling",
+        "is_correct": false
+      },
+      {
+        "label": "D",
+        "text": "Validation errors through input sanitization",
+        "is_correct": false
+      }
+    ],
+    "correct_label": "B",
+    "explanation": "Transient errors typically show the biggest improvement with proper categorization because they're recoverable with retry strategies. Network issues, rate limits, and temporary service outages can often be resolved automatically.",
+    "tags": [
+      "error_recovery",
+      "transient_failures",
+      "success_rates"
+    ],
+    "bloom_level": "apply",
+    "distractor_strategy": {
+      "plausible_but_prompt_only": "N/A",
+      "over_engineered": "N/A",
+      "wrong_layer": "N/A",
+      "valid_but_not_first_step": "N/A"
+    }
+  },
+  {
+    "id": "D2_T2_034",
+    "domain_id": "D2",
+    "task_statement_id": "D2.T2",
+    "scenario_ids": [
+      "S1"
+    ],
+    "difficulty": "conceptual_knowledge",
+    "key_concept_tested": "access failure vs valid empty result distinction",
+    "stem": "Your lookup_order tool queries for all orders in the last 30 days for a customer account. The database query executes successfully but returns no orders because the customer hasn't made any purchases recently. How should this be handled?",
+    "options": [
+      {
+        "label": "A",
+        "text": "Return isError: false with structured empty order list and query metadata",
+        "is_correct": true
+      },
+      {
+        "label": "B",
+        "text": "Return isError: true with errorCategory: validation for no recent orders",
+        "is_correct": false
+      },
+      {
+        "label": "C",
+        "text": "Return isError: true with errorCategory: business for inactive customer",
+        "is_correct": false
+      },
+      {
+        "label": "D",
+        "text": "Return isError: false with message 'No orders found' as text content",
+        "is_correct": false
+      }
+    ],
+    "correct_label": "A",
+    "explanation": "A successful query that returns no results is valid data, not an error. The response should be structured with empty results and metadata (query parameters, date range) to help the agent understand what was searched.",
+    "tags": [
+      "empty_results",
+      "query_success",
+      "customer_orders"
+    ],
+    "bloom_level": "understand",
+    "distractor_strategy": {
+      "plausible_but_prompt_only": "N/A",
+      "over_engineered": "N/A",
+      "wrong_layer": "N/A",
+      "valid_but_not_first_step": "N/A"
+    }
+  }
+]

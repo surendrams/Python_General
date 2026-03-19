@@ -1,0 +1,1600 @@
+[
+  {
+    "id": "D5_T3_001",
+    "domain_id": "D5",
+    "task_statement_id": "D5.T3",
+    "scenario_ids": [
+      "S1"
+    ],
+    "difficulty": "conceptual_knowledge",
+    "key_concept_tested": "structured error context: failure type, attempted query, partial results, alternatives",
+    "stem": "Your customer support agent's lookup_order tool fails during a billing dispute. What structured error information should be propagated to the coordinator?",
+    "options": [
+      {
+        "label": "A",
+        "text": "Generic 'order lookup failed' message to avoid exposing system internals",
+        "is_correct": false
+      },
+      {
+        "label": "B",
+        "text": "HTTP status code and timestamp for debugging purposes",
+        "is_correct": false
+      },
+      {
+        "label": "C",
+        "text": "Simple boolean failure flag to trigger escalation workflow",
+        "is_correct": false
+      },
+      {
+        "label": "D",
+        "text": "Failure type, attempted order ID, partial customer data found, and alternative lookup methods",
+        "is_correct": true
+      }
+    ],
+    "correct_label": "D",
+    "explanation": "Structured error context must include failure type (network/auth/data), the specific query attempted, any partial results obtained, and available alternatives. This allows the coordinator to make informed decisions about retry strategies or alternative approaches rather than blind escalation.",
+    "tags": [
+      "error_propagation",
+      "structured_context",
+      "multi_agent"
+    ],
+    "bloom_level": "understand",
+    "distractor_strategy": {
+      "plausible_but_prompt_only": "N/A",
+      "over_engineered": "N/A",
+      "wrong_layer": "N/A",
+      "valid_but_not_first_step": "N/A"
+    }
+  },
+  {
+    "id": "D5_T3_002",
+    "domain_id": "D5",
+    "task_statement_id": "D5.T3",
+    "scenario_ids": [
+      "S2"
+    ],
+    "difficulty": "applied_judgment",
+    "key_concept_tested": "access failure vs valid empty result",
+    "stem": "Claude Code's file analysis returns no results when scanning for deprecated functions in a legacy codebase. How should you distinguish between access failure and a genuinely clean codebase?",
+    "options": [
+      {
+        "label": "A",
+        "text": "Include scan metadata: files accessed, patterns searched, and confidence level in the response structure",
+        "is_correct": true
+      },
+      {
+        "label": "B",
+        "text": "Retry the scan with broader search patterns to ensure coverage",
+        "is_correct": false
+      },
+      {
+        "label": "C",
+        "text": "Return a simple 'no deprecated functions found' message",
+        "is_correct": false
+      },
+      {
+        "label": "D",
+        "text": "Escalate to manual code review when no results are returned",
+        "is_correct": false
+      }
+    ],
+    "correct_label": "A",
+    "explanation": "Valid empty results must be distinguished from access failures through metadata. Including files accessed, search patterns used, and confidence levels allows downstream processes to understand whether the result represents successful analysis of clean code or incomplete scanning due to access issues.",
+    "tags": [
+      "empty_results",
+      "metadata",
+      "validation"
+    ],
+    "bloom_level": "apply",
+    "distractor_strategy": {
+      "plausible_but_prompt_only": "N/A",
+      "over_engineered": "N/A",
+      "wrong_layer": "N/A",
+      "valid_but_not_first_step": "N/A"
+    }
+  },
+  {
+    "id": "D5_T3_003",
+    "domain_id": "D5",
+    "task_statement_id": "D5.T3",
+    "scenario_ids": [
+      "S1"
+    ],
+    "difficulty": "anti_pattern_recognition",
+    "key_concept_tested": "generic error statuses hide coordinator context",
+    "stem": "A colleague implements error handling that returns 'SYSTEM_ERROR' for all MCP tool failures. What critical information does this approach lose?",
+    "options": [
+      {
+        "label": "A",
+        "text": "Error timestamps for performance monitoring",
+        "is_correct": false
+      },
+      {
+        "label": "B",
+        "text": "Whether the failure was recoverable, which specific tool failed, and what partial data was retrieved",
+        "is_correct": true
+      },
+      {
+        "label": "C",
+        "text": "Stack traces for developer debugging",
+        "is_correct": false
+      },
+      {
+        "label": "D",
+        "text": "User session identifiers for audit logging",
+        "is_correct": false
+      }
+    ],
+    "correct_label": "B",
+    "explanation": "Generic error statuses hide critical context needed for intelligent error handling: recoverability (can retry vs must escalate), tool identity (affects alternative strategies), and partial results (may still be useful). This forces coordinators to treat all failures identically, reducing system effectiveness.",
+    "tags": [
+      "anti_pattern",
+      "error_context",
+      "coordinator_decisions"
+    ],
+    "bloom_level": "evaluate",
+    "distractor_strategy": {
+      "plausible_but_prompt_only": "N/A",
+      "over_engineered": "N/A",
+      "wrong_layer": "N/A",
+      "valid_but_not_first_step": "N/A"
+    }
+  },
+  {
+    "id": "D5_T3_004",
+    "domain_id": "D5",
+    "task_statement_id": "D5.T3",
+    "scenario_ids": [
+      "S2"
+    ],
+    "difficulty": "applied_judgment",
+    "key_concept_tested": "silent suppression and full termination are both anti-patterns",
+    "stem": "Your Claude Code integration encounters file permission errors during code generation. The system currently logs the error but continues with partial results. What adjustment improves reliability?",
+    "options": [
+      {
+        "label": "A",
+        "text": "Suppress all permission errors to avoid interrupting the development workflow",
+        "is_correct": false
+      },
+      {
+        "label": "B",
+        "text": "Immediately terminate and require manual intervention for any permission error",
+        "is_correct": false
+      },
+      {
+        "label": "C",
+        "text": "Surface permission context to the user with partial results and suggested alternatives",
+        "is_correct": true
+      },
+      {
+        "label": "D",
+        "text": "Retry with elevated permissions automatically",
+        "is_correct": false
+      }
+    ],
+    "correct_label": "C",
+    "explanation": "Both silent suppression and full termination are anti-patterns. Instead, surface the error context to users while preserving partial results. This allows informed decisions about whether partial output is acceptable or if permission issues need resolution before proceeding.",
+    "tags": [
+      "error_handling",
+      "partial_results",
+      "user_context"
+    ],
+    "bloom_level": "apply",
+    "distractor_strategy": {
+      "plausible_but_prompt_only": "N/A",
+      "over_engineered": "N/A",
+      "wrong_layer": "N/A",
+      "valid_but_not_first_step": "N/A"
+    }
+  },
+  {
+    "id": "D5_T3_005",
+    "domain_id": "D5",
+    "task_statement_id": "D5.T3",
+    "scenario_ids": [
+      "S1"
+    ],
+    "difficulty": "conceptual_knowledge",
+    "key_concept_tested": "coverage annotations in synthesis output",
+    "stem": "When your customer support agent synthesizes information from multiple MCP tools, what coverage annotations should be included?",
+    "options": [
+      {
+        "label": "A",
+        "text": "Processing timestamps and tool execution order",
+        "is_correct": false
+      },
+      {
+        "label": "B",
+        "text": "Memory usage and API rate limit consumption",
+        "is_correct": false
+      },
+      {
+        "label": "C",
+        "text": "Simple success/failure flags for each tool invocation",
+        "is_correct": false
+      },
+      {
+        "label": "D",
+        "text": "Which data sources contributed, gaps in information, and confidence levels for each conclusion",
+        "is_correct": true
+      }
+    ],
+    "correct_label": "D",
+    "explanation": "Coverage annotations must indicate which sources contributed to each conclusion, identify information gaps, and provide confidence levels. This allows users and downstream systems to understand the completeness and reliability of synthesized information.",
+    "tags": [
+      "synthesis",
+      "coverage",
+      "confidence"
+    ],
+    "bloom_level": "understand",
+    "distractor_strategy": {
+      "plausible_but_prompt_only": "N/A",
+      "over_engineered": "N/A",
+      "wrong_layer": "N/A",
+      "valid_but_not_first_step": "N/A"
+    }
+  },
+  {
+    "id": "D5_T3_006",
+    "domain_id": "D5",
+    "task_statement_id": "D5.T3",
+    "scenario_ids": [
+      "S2"
+    ],
+    "difficulty": "applied_judgment",
+    "key_concept_tested": "structured error context: failure type, attempted query, partial results, alternatives",
+    "stem": "Claude Code fails to generate unit tests for a complex function due to missing type annotations. How should this error be structured for the development workflow?",
+    "options": [
+      {
+        "label": "A",
+        "text": "Failure type: missing_context, attempted: test_generation, partial: function signature analysis, alternatives: manual annotation or integration test approach",
+        "is_correct": true
+      },
+      {
+        "label": "B",
+        "text": "Generic 'test generation failed' with suggestion to add type hints",
+        "is_correct": false
+      },
+      {
+        "label": "C",
+        "text": "Detailed stack trace showing internal parsing errors",
+        "is_correct": false
+      },
+      {
+        "label": "D",
+        "text": "Automatic retry with different test generation strategies",
+        "is_correct": false
+      }
+    ],
+    "correct_label": "A",
+    "explanation": "Structured error context enables intelligent handling: failure type (missing_context vs syntax_error vs complexity), specific attempt (test_generation with function details), partial results (signature analysis succeeded), and concrete alternatives (manual annotation path or integration testing).",
+    "tags": [
+      "structured_errors",
+      "development_workflow",
+      "alternatives"
+    ],
+    "bloom_level": "apply",
+    "distractor_strategy": {
+      "plausible_but_prompt_only": "N/A",
+      "over_engineered": "N/A",
+      "wrong_layer": "N/A",
+      "valid_but_not_first_step": "N/A"
+    }
+  },
+  {
+    "id": "D5_T3_007",
+    "domain_id": "D5",
+    "task_statement_id": "D5.T3",
+    "scenario_ids": [
+      "S1"
+    ],
+    "difficulty": "anti_pattern_recognition",
+    "key_concept_tested": "silent suppression and full termination are both anti-patterns",
+    "stem": "Your support agent implementation either silently ignores MCP tool errors or immediately escalates to human agents. What is the fundamental flaw in this approach?",
+    "options": [
+      {
+        "label": "A",
+        "text": "It doesn't log errors for debugging purposes",
+        "is_correct": false
+      },
+      {
+        "label": "B",
+        "text": "It prevents graceful degradation with partial results and user-informed decisions",
+        "is_correct": true
+      },
+      {
+        "label": "C",
+        "text": "It doesn't implement proper retry mechanisms",
+        "is_correct": false
+      },
+      {
+        "label": "D",
+        "text": "It lacks proper authentication error handling",
+        "is_correct": false
+      }
+    ],
+    "correct_label": "B",
+    "explanation": "Binary error handling (silent suppression or full termination) prevents graceful degradation. Many scenarios benefit from partial results with clear context about limitations, allowing users to decide whether to proceed with incomplete information or escalate.",
+    "tags": [
+      "anti_pattern",
+      "graceful_degradation",
+      "user_agency"
+    ],
+    "bloom_level": "evaluate",
+    "distractor_strategy": {
+      "plausible_but_prompt_only": "N/A",
+      "over_engineered": "N/A",
+      "wrong_layer": "N/A",
+      "valid_but_not_first_step": "N/A"
+    }
+  },
+  {
+    "id": "D5_T3_008",
+    "domain_id": "D5",
+    "task_statement_id": "D5.T3",
+    "scenario_ids": [
+      "S2"
+    ],
+    "difficulty": "conceptual_knowledge",
+    "key_concept_tested": "access failure vs valid empty result",
+    "stem": "When Claude Code finds no security vulnerabilities in a code scan, what information distinguishes this from a scan failure?",
+    "options": [
+      {
+        "label": "A",
+        "text": "Execution time and memory usage statistics",
+        "is_correct": false
+      },
+      {
+        "label": "B",
+        "text": "Files scanned count, vulnerability patterns checked, and scan completion status",
+        "is_correct": false
+      },
+      {
+        "label": "C",
+        "text": "Scan metadata: files accessed, patterns searched, and coverage completeness indicators",
+        "is_correct": true
+      },
+      {
+        "label": "D",
+        "text": "Comparison with previous scan results",
+        "is_correct": false
+      }
+    ],
+    "correct_label": "C",
+    "explanation": "Valid empty results require metadata proving comprehensive scanning occurred: which files were accessed (vs access denied), what patterns were searched, and coverage indicators. This distinguishes genuine security cleanliness from incomplete scanning due to access or parsing failures.",
+    "tags": [
+      "empty_results",
+      "scan_validation",
+      "completeness"
+    ],
+    "bloom_level": "understand",
+    "distractor_strategy": {
+      "plausible_but_prompt_only": "N/A",
+      "over_engineered": "N/A",
+      "wrong_layer": "N/A",
+      "valid_but_not_first_step": "N/A"
+    }
+  },
+  {
+    "id": "D5_T3_009",
+    "domain_id": "D5",
+    "task_statement_id": "D5.T3",
+    "scenario_ids": [
+      "S1"
+    ],
+    "difficulty": "applied_judgment",
+    "key_concept_tested": "coverage annotations in synthesis output",
+    "stem": "Your support agent synthesizes billing dispute information from get_customer (success), lookup_order (partial), and process_refund (failed). How should coverage be annotated?",
+    "options": [
+      {
+        "label": "A",
+        "text": "Customer profile: complete, Order history: partial (last 6 months only), Refund eligibility: unavailable - system timeout, confidence: medium",
+        "is_correct": false
+      },
+      {
+        "label": "B",
+        "text": "Mark synthesis as incomplete and escalate to human agent",
+        "is_correct": false
+      },
+      {
+        "label": "C",
+        "text": "Simple traffic light status: green for customer, yellow for orders, red for refunds",
+        "is_correct": false
+      },
+      {
+        "label": "D",
+        "text": "Customer profile: complete, Order details: partial (missing shipping data), Refund status: unavailable (system error), overall confidence: moderate for dispute assessment",
+        "is_correct": true
+      }
+    ],
+    "correct_label": "D",
+    "explanation": "Coverage annotations must specify what information is complete, what's partial with details about gaps, what's unavailable with reasons, and overall confidence for the synthesis purpose. This enables informed decision-making about whether available information suffices for resolution.",
+    "tags": [
+      "synthesis",
+      "partial_data",
+      "confidence_assessment"
+    ],
+    "bloom_level": "apply",
+    "distractor_strategy": {
+      "plausible_but_prompt_only": "N/A",
+      "over_engineered": "N/A",
+      "wrong_layer": "N/A",
+      "valid_but_not_first_step": "N/A"
+    }
+  },
+  {
+    "id": "D5_T3_010",
+    "domain_id": "D5",
+    "task_statement_id": "D5.T3",
+    "scenario_ids": [
+      "S2"
+    ],
+    "difficulty": "applied_judgment",
+    "key_concept_tested": "generic error statuses hide coordinator context",
+    "stem": "Claude Code returns 'PARSE_ERROR' when analyzing a Python file. What additional context enables better error handling in your CI/CD pipeline?",
+    "options": [
+      {
+        "label": "A",
+        "text": "Parse failure type (syntax vs encoding), specific location, partial AST if available, and suggested fix approaches",
+        "is_correct": true
+      },
+      {
+        "label": "B",
+        "text": "Full file contents and Python version information",
+        "is_correct": false
+      },
+      {
+        "label": "C",
+        "text": "Generic 'fix syntax errors before analysis' message",
+        "is_correct": false
+      },
+      {
+        "label": "D",
+        "text": "Automatic retry with different Python parser versions",
+        "is_correct": false
+      }
+    ],
+    "correct_label": "A",
+    "explanation": "Generic 'PARSE_ERROR' hides actionable context. Structured errors should specify failure type (syntax error vs encoding issue vs version incompatibility), exact location, any partial parsing success, and concrete remediation paths. This enables intelligent pipeline decisions.",
+    "tags": [
+      "parse_errors",
+      "actionable_context",
+      "cicd_integration"
+    ],
+    "bloom_level": "apply",
+    "distractor_strategy": {
+      "plausible_but_prompt_only": "N/A",
+      "over_engineered": "N/A",
+      "wrong_layer": "N/A",
+      "valid_but_not_first_step": "N/A"
+    }
+  },
+  {
+    "id": "D5_T3_011",
+    "domain_id": "D5",
+    "task_statement_id": "D5.T3",
+    "scenario_ids": [
+      "S1"
+    ],
+    "difficulty": "conceptual_knowledge",
+    "key_concept_tested": "silent suppression and full termination are both anti-patterns",
+    "stem": "What characterizes effective error propagation in multi-agent customer support systems?",
+    "options": [
+      {
+        "label": "A",
+        "text": "Always escalate to humans when any MCP tool fails",
+        "is_correct": false
+      },
+      {
+        "label": "B",
+        "text": "Surface error context with partial results, allowing informed continuation or escalation decisions",
+        "is_correct": true
+      },
+      {
+        "label": "C",
+        "text": "Log errors internally but continue processing as if nothing failed",
+        "is_correct": false
+      },
+      {
+        "label": "D",
+        "text": "Implement automatic retry loops until all tools succeed",
+        "is_correct": false
+      }
+    ],
+    "correct_label": "B",
+    "explanation": "Effective error propagation surfaces context while preserving agency. Users or coordinators can then decide whether partial results are sufficient or if escalation is needed, rather than forcing binary outcomes through silent suppression or automatic termination.",
+    "tags": [
+      "error_propagation",
+      "user_agency",
+      "context_preservation"
+    ],
+    "bloom_level": "understand",
+    "distractor_strategy": {
+      "plausible_but_prompt_only": "N/A",
+      "over_engineered": "N/A",
+      "wrong_layer": "N/A",
+      "valid_but_not_first_step": "N/A"
+    }
+  },
+  {
+    "id": "D5_T3_012",
+    "domain_id": "D5",
+    "task_statement_id": "D5.T3",
+    "scenario_ids": [
+      "S2"
+    ],
+    "difficulty": "anti_pattern_recognition",
+    "key_concept_tested": "coverage annotations in synthesis output",
+    "stem": "A developer configures Claude Code to report 'Analysis complete' for all code reviews, regardless of actual coverage. What critical information does this hide?",
+    "options": [
+      {
+        "label": "A",
+        "text": "Processing time and computational resources used",
+        "is_correct": false
+      },
+      {
+        "label": "B",
+        "text": "Which files were analyzed, coverage gaps, and confidence levels for different code quality aspects",
+        "is_correct": false
+      },
+      {
+        "label": "C",
+        "text": "Detailed line-by-line analysis results",
+        "is_correct": true
+      },
+      {
+        "label": "D",
+        "text": "Comparison with industry coding standards",
+        "is_correct": false
+      }
+    ],
+    "correct_label": "C",
+    "explanation": "Missing coverage annotations hide which files were successfully analyzed versus skipped, what aspects were covered (security vs performance vs style), gaps in analysis, and confidence levels. This prevents developers from understanding the completeness and reliability of the review.",
+    "tags": [
+      "anti_pattern",
+      "coverage_hiding",
+      "code_review"
+    ],
+    "bloom_level": "evaluate",
+    "distractor_strategy": {
+      "plausible_but_prompt_only": "N/A",
+      "over_engineered": "N/A",
+      "wrong_layer": "N/A",
+      "valid_but_not_first_step": "N/A"
+    }
+  },
+  {
+    "id": "D5_T3_013",
+    "domain_id": "D5",
+    "task_statement_id": "D5.T3",
+    "scenario_ids": [
+      "S1"
+    ],
+    "difficulty": "applied_judgment",
+    "key_concept_tested": "access failure vs valid empty result",
+    "stem": "Your support agent's get_customer tool returns no billing history for a customer account. How do you distinguish between access restrictions and a genuinely new account?",
+    "options": [
+      {
+        "label": "A",
+        "text": "Include query metadata: account access level, data sources checked, and temporal scope of search",
+        "is_correct": false
+      },
+      {
+        "label": "B",
+        "text": "Retry with elevated permissions automatically",
+        "is_correct": false
+      },
+      {
+        "label": "C",
+        "text": "Escalate to human agent for manual verification",
+        "is_correct": false
+      },
+      {
+        "label": "D",
+        "text": "Return account creation date, data sources accessed, and permission levels verified in the response structure",
+        "is_correct": true
+      }
+    ],
+    "correct_label": "D",
+    "explanation": "Distinguishing access failure from valid empty results requires metadata about what was successfully accessed. Account creation date, which data sources were queried, and confirmed permission levels help determine if empty billing history reflects a new account or access limitations.",
+    "tags": [
+      "access_validation",
+      "empty_results",
+      "metadata"
+    ],
+    "bloom_level": "apply",
+    "distractor_strategy": {
+      "plausible_but_prompt_only": "N/A",
+      "over_engineered": "N/A",
+      "wrong_layer": "N/A",
+      "valid_but_not_first_step": "N/A"
+    }
+  },
+  {
+    "id": "D5_T3_014",
+    "domain_id": "D5",
+    "task_statement_id": "D5.T3",
+    "scenario_ids": [
+      "S2"
+    ],
+    "difficulty": "applied_judgment",
+    "key_concept_tested": "structured error context: failure type, attempted query, partial results, alternatives",
+    "stem": "Claude Code encounters a timeout while analyzing a large codebase for refactoring opportunities. How should this error be structured for the development team?",
+    "options": [
+      {
+        "label": "A",
+        "text": "Failure type: timeout, attempted: full codebase analysis, partial: completed modules list, alternatives: incremental analysis or scope reduction",
+        "is_correct": true
+      },
+      {
+        "label": "B",
+        "text": "Simple 'analysis timeout' message with retry suggestion",
+        "is_correct": false
+      },
+      {
+        "label": "C",
+        "text": "Detailed performance metrics and system resource usage",
+        "is_correct": false
+      },
+      {
+        "label": "D",
+        "text": "Automatic fallback to faster analysis modes",
+        "is_correct": false
+      }
+    ],
+    "correct_label": "A",
+    "explanation": "Timeout errors need structured context: failure type (timeout vs memory vs complexity), what analysis was attempted, which modules completed successfully, and concrete alternatives like incremental processing or scope reduction. This enables informed decisions about how to proceed.",
+    "tags": [
+      "timeout_handling",
+      "structured_context",
+      "alternatives"
+    ],
+    "bloom_level": "apply",
+    "distractor_strategy": {
+      "plausible_but_prompt_only": "N/A",
+      "over_engineered": "N/A",
+      "wrong_layer": "N/A",
+      "valid_but_not_first_step": "N/A"
+    }
+  },
+  {
+    "id": "D5_T3_015",
+    "domain_id": "D5",
+    "task_statement_id": "D5.T3",
+    "scenario_ids": [
+      "S1"
+    ],
+    "difficulty": "conceptual_knowledge",
+    "key_concept_tested": "generic error statuses hide coordinator context",
+    "stem": "Why are generic error statuses problematic in multi-agent customer support systems?",
+    "options": [
+      {
+        "label": "A",
+        "text": "They don't provide enough debugging information for developers",
+        "is_correct": false
+      },
+      {
+        "label": "B",
+        "text": "They prevent coordinators from making intelligent decisions about recovery strategies and alternative approaches",
+        "is_correct": true
+      },
+      {
+        "label": "C",
+        "text": "They consume too much bandwidth in error reporting",
+        "is_correct": false
+      },
+      {
+        "label": "D",
+        "text": "They violate security best practices for error disclosure",
+        "is_correct": false
+      }
+    ],
+    "correct_label": "B",
+    "explanation": "Generic error statuses force coordinators to treat all failures identically, preventing intelligent recovery. Structured errors enable coordinators to distinguish between retryable failures, alternative tool choices, partial result utilization, and escalation triggers.",
+    "tags": [
+      "generic_errors",
+      "coordinator_intelligence",
+      "recovery_strategies"
+    ],
+    "bloom_level": "understand",
+    "distractor_strategy": {
+      "plausible_but_prompt_only": "N/A",
+      "over_engineered": "N/A",
+      "wrong_layer": "N/A",
+      "valid_but_not_first_step": "N/A"
+    }
+  },
+  {
+    "id": "D5_T3_016",
+    "domain_id": "D5",
+    "task_statement_id": "D5.T3",
+    "scenario_ids": [
+      "S2"
+    ],
+    "difficulty": "applied_judgment",
+    "key_concept_tested": "silent suppression and full termination are both anti-patterns",
+    "stem": "Your Claude Code integration encounters deprecated API usage in legacy code. The system currently either ignores these issues or blocks all code generation. What approach provides better developer experience?",
+    "options": [
+      {
+        "label": "A",
+        "text": "Always block generation when deprecated APIs are detected",
+        "is_correct": false
+      },
+      {
+        "label": "B",
+        "text": "Ignore deprecated API warnings to maintain development velocity",
+        "is_correct": false
+      },
+      {
+        "label": "C",
+        "text": "Continue generation while annotating deprecated usage with modernization suggestions and risk levels",
+        "is_correct": true
+      },
+      {
+        "label": "D",
+        "text": "Automatically rewrite all deprecated code before proceeding",
+        "is_correct": false
+      }
+    ],
+    "correct_label": "C",
+    "explanation": "Neither silent suppression nor full termination serves developers well. Instead, continue with generation while clearly annotating deprecated usage, providing modernization paths, and indicating risk levels. This preserves productivity while maintaining code quality awareness.",
+    "tags": [
+      "deprecated_apis",
+      "graceful_handling",
+      "developer_experience"
+    ],
+    "bloom_level": "apply",
+    "distractor_strategy": {
+      "plausible_but_prompt_only": "N/A",
+      "over_engineered": "N/A",
+      "wrong_layer": "N/A",
+      "valid_but_not_first_step": "N/A"
+    }
+  },
+  {
+    "id": "D5_T3_017",
+    "domain_id": "D5",
+    "task_statement_id": "D5.T3",
+    "scenario_ids": [
+      "S1"
+    ],
+    "difficulty": "applied_judgment",
+    "key_concept_tested": "coverage annotations in synthesis output",
+    "stem": "Your support agent must synthesize a customer refund recommendation from incomplete data: customer profile (complete), order details (missing shipping), payment info (expired token). How should coverage be communicated?",
+    "options": [
+      {
+        "label": "A",
+        "text": "Refund recommendation: approved, based on customer profile analysis, limited by missing shipping details and payment verification, confidence: moderate",
+        "is_correct": false
+      },
+      {
+        "label": "B",
+        "text": "Mark case as incomplete and escalate immediately",
+        "is_correct": false
+      },
+      {
+        "label": "C",
+        "text": "Proceed with standard refund process ignoring missing data",
+        "is_correct": false
+      },
+      {
+        "label": "D",
+        "text": "Customer eligibility: confirmed, Order validation: partial (shipping data unavailable), Payment verification: failed (token expired), recommendation confidence: low - manual review suggested",
+        "is_correct": true
+      }
+    ],
+    "correct_label": "D",
+    "explanation": "Coverage annotations must clearly indicate what aspects were successfully verified, what's missing and why, and how these gaps affect confidence in the final recommendation. This enables appropriate escalation decisions and sets proper expectations.",
+    "tags": [
+      "incomplete_data",
+      "recommendation_confidence",
+      "escalation_triggers"
+    ],
+    "bloom_level": "apply",
+    "distractor_strategy": {
+      "plausible_but_prompt_only": "N/A",
+      "over_engineered": "N/A",
+      "wrong_layer": "N/A",
+      "valid_but_not_first_step": "N/A"
+    }
+  },
+  {
+    "id": "D5_T3_018",
+    "domain_id": "D5",
+    "task_statement_id": "D5.T3",
+    "scenario_ids": [
+      "S2"
+    ],
+    "difficulty": "conceptual_knowledge",
+    "key_concept_tested": "structured error context: failure type, attempted query, partial results, alternatives",
+    "stem": "When Claude Code fails to generate documentation for a function due to complex business logic, what error context components are essential?",
+    "options": [
+      {
+        "label": "A",
+        "text": "Failure type, function signature analyzed, complexity indicators, and alternative documentation approaches",
+        "is_correct": true
+      },
+      {
+        "label": "B",
+        "text": "Generic 'documentation generation failed' message",
+        "is_correct": false
+      },
+      {
+        "label": "C",
+        "text": "Full function source code and execution trace",
+        "is_correct": false
+      },
+      {
+        "label": "D",
+        "text": "Automatic fallback to template-based documentation",
+        "is_correct": false
+      }
+    ],
+    "correct_label": "A",
+    "explanation": "Documentation failures need structured context: failure type (complexity vs missing context), what analysis succeeded (function signature parsing), complexity indicators that caused the failure, and concrete alternatives like template-based docs or manual annotation.",
+    "tags": [
+      "documentation_generation",
+      "complexity_handling",
+      "structured_errors"
+    ],
+    "bloom_level": "understand",
+    "distractor_strategy": {
+      "plausible_but_prompt_only": "N/A",
+      "over_engineered": "N/A",
+      "wrong_layer": "N/A",
+      "valid_but_not_first_step": "N/A"
+    }
+  },
+  {
+    "id": "D5_T3_019",
+    "domain_id": "D5",
+    "task_statement_id": "D5.T3",
+    "scenario_ids": [
+      "S1"
+    ],
+    "difficulty": "applied_judgment",
+    "key_concept_tested": "generic error statuses hide coordinator context",
+    "stem": "Your MCP tools return standardized HTTP status codes (404, 500, 503) for all failures. What additional context improves coordinator decision-making?",
+    "options": [
+      {
+        "label": "A",
+        "text": "Request timestamps and response times",
+        "is_correct": false
+      },
+      {
+        "label": "B",
+        "text": "Domain-specific error types (customer_not_found vs database_timeout vs permission_denied) with recovery suggestions",
+        "is_correct": true
+      },
+      {
+        "label": "C",
+        "text": "Detailed stack traces and system logs",
+        "is_correct": false
+      },
+      {
+        "label": "D",
+        "text": "Retry attempt counters and rate limiting information",
+        "is_correct": false
+      }
+    ],
+    "correct_label": "B",
+    "explanation": "HTTP status codes are too generic for intelligent coordination. Domain-specific error types enable appropriate responses: customer_not_found suggests alternative lookup methods, database_timeout indicates retry potential, permission_denied requires different escalation paths.",
+    "tags": [
+      "domain_specific_errors",
+      "coordinator_decisions",
+      "recovery_context"
+    ],
+    "bloom_level": "apply",
+    "distractor_strategy": {
+      "plausible_but_prompt_only": "N/A",
+      "over_engineered": "N/A",
+      "wrong_layer": "N/A",
+      "valid_but_not_first_step": "N/A"
+    }
+  },
+  {
+    "id": "D5_T3_020",
+    "domain_id": "D5",
+    "task_statement_id": "D5.T3",
+    "scenario_ids": [
+      "S2"
+    ],
+    "difficulty": "anti_pattern_recognition",
+    "key_concept_tested": "access failure vs valid empty result",
+    "stem": "A Claude Code implementation treats all empty analysis results as failures and retries indefinitely. What does this approach miss?",
+    "options": [
+      {
+        "label": "A",
+        "text": "Performance optimization opportunities",
+        "is_correct": false
+      },
+      {
+        "label": "B",
+        "text": "Proper error logging and monitoring",
+        "is_correct": false
+      },
+      {
+        "label": "C",
+        "text": "The distinction between clean code (valid empty result) and analysis failures requiring different handling",
+        "is_correct": true
+      },
+      {
+        "label": "D",
+        "text": "Rate limiting and API quota management",
+        "is_correct": false
+      }
+    ],
+    "correct_label": "C",
+    "explanation": "Treating all empty results as failures creates infinite retry loops for genuinely clean code. Valid empty results (no issues found) must be distinguished from access failures through metadata about what was successfully analyzed versus what couldn't be accessed.",
+    "tags": [
+      "anti_pattern",
+      "empty_results",
+      "infinite_retry"
+    ],
+    "bloom_level": "evaluate",
+    "distractor_strategy": {
+      "plausible_but_prompt_only": "N/A",
+      "over_engineered": "N/A",
+      "wrong_layer": "N/A",
+      "valid_but_not_first_step": "N/A"
+    }
+  },
+  {
+    "id": "D5_T3_021",
+    "domain_id": "D5",
+    "task_statement_id": "D5.T3",
+    "scenario_ids": [
+      "S1"
+    ],
+    "difficulty": "applied_judgment",
+    "key_concept_tested": "silent suppression and full termination are both anti-patterns",
+    "stem": "Your support agent encounters intermittent database timeouts affecting 15% of customer lookups. Current handling either ignores timeouts or escalates all affected cases. What balanced approach improves outcomes?",
+    "options": [
+      {
+        "label": "A",
+        "text": "Implement exponential backoff retries for all timeout errors",
+        "is_correct": false
+      },
+      {
+        "label": "B",
+        "text": "Surface timeout context with cached/partial customer data where available, enabling case-by-case decisions",
+        "is_correct": false
+      },
+      {
+        "label": "C",
+        "text": "Always escalate timeout cases to prevent customer frustration",
+        "is_correct": false
+      },
+      {
+        "label": "D",
+        "text": "Present timeout status with any available cached data, partial results, and alternative resolution paths",
+        "is_correct": true
+      }
+    ],
+    "correct_label": "D",
+    "explanation": "Neither ignoring timeouts nor blanket escalation optimizes outcomes. Instead, surface timeout context with available cached data, partial results from other tools, and alternative resolution paths. This enables informed decisions about whether to proceed or escalate based on case specifics.",
+    "tags": [
+      "timeout_handling",
+      "partial_results",
+      "balanced_approach"
+    ],
+    "bloom_level": "apply",
+    "distractor_strategy": {
+      "plausible_but_prompt_only": "N/A",
+      "over_engineered": "N/A",
+      "wrong_layer": "N/A",
+      "valid_but_not_first_step": "N/A"
+    }
+  },
+  {
+    "id": "D5_T3_022",
+    "domain_id": "D5",
+    "task_statement_id": "D5.T3",
+    "scenario_ids": [
+      "S2"
+    ],
+    "difficulty": "applied_judgment",
+    "key_concept_tested": "coverage annotations in synthesis output",
+    "stem": "Claude Code analyzes a microservices codebase but encounters access restrictions on 3 of 12 services. How should coverage be annotated in the analysis report?",
+    "options": [
+      {
+        "label": "A",
+        "text": "Services analyzed: 9/12, restricted services: auth, payment, logging, coverage gaps: authentication flows and payment processing, confidence: high for analyzed services, unknown for restricted areas",
+        "is_correct": true
+      },
+      {
+        "label": "B",
+        "text": "Mark analysis as incomplete due to access restrictions",
+        "is_correct": false
+      },
+      {
+        "label": "C",
+        "text": "Report only on successfully analyzed services without mentioning restrictions",
+        "is_correct": false
+      },
+      {
+        "label": "D",
+        "text": "Request elevated access and retry full analysis",
+        "is_correct": false
+      }
+    ],
+    "correct_label": "A",
+    "explanation": "Coverage annotations must clearly specify what was analyzed versus restricted, identify specific gaps in understanding, and provide confidence levels for different areas. This enables informed decisions about whether partial analysis suffices or if access issues need resolution.",
+    "tags": [
+      "partial_coverage",
+      "access_restrictions",
+      "confidence_levels"
+    ],
+    "bloom_level": "apply",
+    "distractor_strategy": {
+      "plausible_but_prompt_only": "N/A",
+      "over_engineered": "C",
+      "wrong_layer": "N/A",
+      "valid_but_not_first_step": "N/A"
+    }
+  },
+  {
+    "id": "D5_T3_023",
+    "domain_id": "D5",
+    "task_statement_id": "D5.T3",
+    "scenario_ids": [
+      "S1"
+    ],
+    "difficulty": "conceptual_knowledge",
+    "key_concept_tested": "access failure vs valid empty result",
+    "stem": "What metadata distinguishes between 'customer has no orders' and 'order lookup failed' in your support system?",
+    "options": [
+      {
+        "label": "A",
+        "text": "Response timestamp and query execution time",
+        "is_correct": false
+      },
+      {
+        "label": "B",
+        "text": "Database connection status and query success indicators",
+        "is_correct": true
+      },
+      {
+        "label": "C",
+        "text": "Customer account creation date and activity status",
+        "is_correct": false
+      },
+      {
+        "label": "D",
+        "text": "Order system availability and maintenance schedules",
+        "is_correct": false
+      }
+    ],
+    "correct_label": "B",
+    "explanation": "Valid empty results require metadata proving successful database access and query execution. Connection status, query success flags, and table access confirmation distinguish genuine 'no orders found' from system failures that prevent proper lookup.",
+    "tags": [
+      "database_access",
+      "query_validation",
+      "empty_results"
+    ],
+    "bloom_level": "understand",
+    "distractor_strategy": {
+      "plausible_but_prompt_only": "N/A",
+      "over_engineered": "N/A",
+      "wrong_layer": "N/A",
+      "valid_but_not_first_step": "N/A"
+    }
+  },
+  {
+    "id": "D5_T3_024",
+    "domain_id": "D5",
+    "task_statement_id": "D5.T3",
+    "scenario_ids": [
+      "S2"
+    ],
+    "difficulty": "applied_judgment",
+    "key_concept_tested": "generic error statuses hide coordinator context",
+    "stem": "Your CI/CD pipeline receives 'ANALYSIS_FAILED' from Claude Code for various code quality issues. What structured error format enables better pipeline decisions?",
+    "options": [
+      {
+        "label": "A",
+        "text": "HTTP status codes with retry-after headers",
+        "is_correct": false
+      },
+      {
+        "label": "B",
+        "text": "Detailed exception stack traces and debug logs",
+        "is_correct": false
+      },
+      {
+        "label": "C",
+        "text": "Simple pass/fail flags with issue counts",
+        "is_correct": true
+      },
+      {
+        "label": "D",
+        "text": "Failure category (syntax, complexity, security), specific issues found, severity levels, and suggested remediation approaches",
+        "is_correct": false
+      }
+    ],
+    "correct_label": "C",
+    "explanation": "Generic 'ANALYSIS_FAILED' prevents intelligent pipeline responses. Structured errors should specify failure categories (syntax vs complexity vs security), concrete issues identified, severity levels, and remediation approaches. This enables appropriate pipeline actions like blocking vs warning vs auto-fixing.",
+    "tags": [
+      "cicd_integration",
+      "structured_errors",
+      "pipeline_decisions"
+    ],
+    "bloom_level": "apply",
+    "distractor_strategy": {
+      "plausible_but_prompt_only": "N/A",
+      "over_engineered": "N/A",
+      "wrong_layer": "N/A",
+      "valid_but_not_first_step": "N/A"
+    }
+  },
+  {
+    "id": "D5_T3_025",
+    "domain_id": "D5",
+    "task_statement_id": "D5.T3",
+    "scenario_ids": [
+      "S1"
+    ],
+    "difficulty": "anti_pattern_recognition",
+    "key_concept_tested": "structured error context: failure type, attempted query, partial results, alternatives",
+    "stem": "A support agent logs 'MCP tool error occurred' for all failures without additional context. What operational problems does this create?",
+    "options": [
+      {
+        "label": "A",
+        "text": "Insufficient disk space for log storage",
+        "is_correct": false
+      },
+      {
+        "label": "B",
+        "text": "Prevents root cause analysis, intelligent retry strategies, and alternative tool selection",
+        "is_correct": false
+      },
+      {
+        "label": "C",
+        "text": "Violates customer privacy and data protection regulations",
+        "is_correct": false
+      },
+      {
+        "label": "D",
+        "text": "Creates excessive noise in monitoring systems",
+        "is_correct": true
+      }
+    ],
+    "correct_label": "D",
+    "explanation": "Generic error logging without structure prevents operational intelligence: root cause analysis becomes impossible, retry strategies can't be optimized, alternative tools can't be selected appropriately, and debugging requires manual investigation of every incident.",
+    "tags": [
+      "anti_pattern",
+      "operational_intelligence",
+      "debugging"
+    ],
+    "bloom_level": "evaluate",
+    "distractor_strategy": {
+      "plausible_but_prompt_only": "B",
+      "over_engineered": "N/A",
+      "wrong_layer": "N/A",
+      "valid_but_not_first_step": "N/A"
+    }
+  },
+  {
+    "id": "D5_T3_026",
+    "domain_id": "D5",
+    "task_statement_id": "D5.T3",
+    "scenario_ids": [
+      "S2"
+    ],
+    "difficulty": "conceptual_knowledge",
+    "key_concept_tested": "silent suppression and full termination are both anti-patterns",
+    "stem": "What principle guides effective error handling in Claude Code integrations?",
+    "options": [
+      {
+        "label": "A",
+        "text": "Always complete operations successfully regardless of errors encountered",
+        "is_correct": true
+      },
+      {
+        "label": "B",
+        "text": "Immediately halt processing when any error occurs to prevent data corruption",
+        "is_correct": false
+      },
+      {
+        "label": "C",
+        "text": "Surface error context while preserving useful partial results and enabling informed decisions",
+        "is_correct": false
+      },
+      {
+        "label": "D",
+        "text": "Implement comprehensive retry mechanisms for all failure scenarios",
+        "is_correct": false
+      }
+    ],
+    "correct_label": "A",
+    "explanation": "Effective error handling balances continuation with transparency. Surface error context and partial results while enabling informed decisions about whether to proceed, retry, or escalate. This avoids both silent suppression and unnecessary termination.",
+    "tags": [
+      "error_principles",
+      "transparency",
+      "informed_decisions"
+    ],
+    "bloom_level": "understand",
+    "distractor_strategy": {
+      "plausible_but_prompt_only": "N/A",
+      "over_engineered": "N/A",
+      "wrong_layer": "N/A",
+      "valid_but_not_first_step": "N/A"
+    }
+  },
+  {
+    "id": "D5_T3_027",
+    "domain_id": "D5",
+    "task_statement_id": "D5.T3",
+    "scenario_ids": [
+      "S1"
+    ],
+    "difficulty": "applied_judgment",
+    "key_concept_tested": "coverage annotations in synthesis output",
+    "stem": "Your support agent synthesizes a billing dispute resolution from multiple partial results: payment history (6 months), order details (incomplete shipping), refund policies (current). How should synthesis confidence be communicated?",
+    "options": [
+      {
+        "label": "A",
+        "text": "High confidence due to successful data retrieval from multiple sources",
+        "is_correct": false
+      },
+      {
+        "label": "B",
+        "text": "Payment analysis: high confidence, Order validation: medium (missing shipping context), Policy compliance: high, Overall resolution confidence: medium due to shipping data gaps",
+        "is_correct": true
+      },
+      {
+        "label": "C",
+        "text": "Low confidence due to partial data availability",
+        "is_correct": false
+      },
+      {
+        "label": "D",
+        "text": "Confidence cannot be determined with incomplete information",
+        "is_correct": false
+      }
+    ],
+    "correct_label": "B",
+    "explanation": "Coverage annotations must provide granular confidence levels for each component and explain how specific gaps affect overall confidence. This enables nuanced decision-making about whether synthesis quality suffices for resolution or requires additional data gathering.",
+    "tags": [
+      "granular_confidence",
+      "component_analysis",
+      "synthesis_quality"
+    ],
+    "bloom_level": "apply",
+    "distractor_strategy": {
+      "plausible_but_prompt_only": "N/A",
+      "over_engineered": "N/A",
+      "wrong_layer": "N/A",
+      "valid_but_not_first_step": "N/A"
+    }
+  },
+  {
+    "id": "D5_T3_028",
+    "domain_id": "D5",
+    "task_statement_id": "D5.T3",
+    "scenario_ids": [
+      "S2"
+    ],
+    "difficulty": "anti_pattern_recognition",
+    "key_concept_tested": "access failure vs valid empty result",
+    "stem": "Claude Code reports 'no issues found' for all files it cannot access due to permission restrictions. What reliability problem does this create?",
+    "options": [
+      {
+        "label": "A",
+        "text": "Excessive false positive rates in issue detection",
+        "is_correct": false
+      },
+      {
+        "label": "B",
+        "text": "Unnecessary computational overhead from repeated access attempts",
+        "is_correct": true
+      },
+      {
+        "label": "C",
+        "text": "False confidence in code quality due to unanalyzed files appearing clean",
+        "is_correct": false
+      },
+      {
+        "label": "D",
+        "text": "Violation of least-privilege security principles",
+        "is_correct": false
+      }
+    ],
+    "correct_label": "C",
+    "explanation": "Reporting inaccessible files as 'clean' creates false confidence in overall code quality. Teams may believe their codebase is issue-free when restricted files simply couldn't be analyzed. Access failures must be clearly distinguished from valid empty results.",
+    "tags": [
+      "anti_pattern",
+      "false_confidence",
+      "access_masking"
+    ],
+    "bloom_level": "evaluate",
+    "distractor_strategy": {
+      "plausible_but_prompt_only": "N/A",
+      "over_engineered": "N/A",
+      "wrong_layer": "N/A",
+      "valid_but_not_first_step": "N/A"
+    }
+  },
+  {
+    "id": "D5_T3_029",
+    "domain_id": "D5",
+    "task_statement_id": "D5.T3",
+    "scenario_ids": [
+      "S1"
+    ],
+    "difficulty": "applied_judgment",
+    "key_concept_tested": "structured error context: failure type, attempted query, partial results, alternatives",
+    "stem": "The process_refund MCP tool fails due to payment gateway maintenance during a customer dispute. How should this error be structured for coordinator handling?",
+    "options": [
+      {
+        "label": "A",
+        "text": "Failure type: service_unavailable, attempted: refund_processing for order #12345, partial: eligibility confirmed, alternatives: manual processing or delayed retry",
+        "is_correct": false
+      },
+      {
+        "label": "B",
+        "text": "Generic 'refund failed' with retry timestamp",
+        "is_correct": false
+      },
+      {
+        "label": "C",
+        "text": "Payment gateway error code and maintenance window information",
+        "is_correct": false
+      },
+      {
+        "label": "D",
+        "text": "Escalate immediately to human agent for manual processing",
+        "is_correct": true
+      }
+    ],
+    "correct_label": "D",
+    "explanation": "Service unavailability requires structured context: failure type (temporary service unavailability), specific operation attempted, any partial validation completed, and concrete alternatives like manual processing or scheduled retry. This enables appropriate coordinator responses.",
+    "tags": [
+      "service_unavailability",
+      "structured_context",
+      "alternatives"
+    ],
+    "bloom_level": "apply",
+    "distractor_strategy": {
+      "plausible_but_prompt_only": "N/A",
+      "over_engineered": "A",
+      "wrong_layer": "N/A",
+      "valid_but_not_first_step": "N/A"
+    }
+  },
+  {
+    "id": "D5_T3_030",
+    "domain_id": "D5",
+    "task_statement_id": "D5.T3",
+    "scenario_ids": [
+      "S2"
+    ],
+    "difficulty": "applied_judgment",
+    "key_concept_tested": "silent suppression and full termination are both anti-patterns",
+    "stem": "Claude Code encounters deprecated function calls in 20% of analyzed files. Current implementation either ignores these entirely or blocks all code generation. What approach balances code quality with development productivity?",
+    "options": [
+      {
+        "label": "A",
+        "text": "Continue generation with deprecation annotations, modernization suggestions, and timeline urgency indicators",
+        "is_correct": true
+      },
+      {
+        "label": "B",
+        "text": "Block generation until all deprecated functions are updated",
+        "is_correct": false
+      },
+      {
+        "label": "C",
+        "text": "Ignore deprecation warnings to maintain development velocity",
+        "is_correct": false
+      },
+      {
+        "label": "D",
+        "text": "Generate code with automatic deprecation fixes applied",
+        "is_correct": false
+      }
+    ],
+    "correct_label": "A",
+    "explanation": "Balance quality and productivity by continuing generation while clearly annotating deprecated usage, providing modernization paths, and indicating timeline urgency. This maintains development flow while ensuring technical debt visibility and planning.",
+    "tags": [
+      "deprecation_handling",
+      "productivity_balance",
+      "technical_debt"
+    ],
+    "bloom_level": "apply",
+    "distractor_strategy": {
+      "plausible_but_prompt_only": "N/A",
+      "over_engineered": "N/A",
+      "wrong_layer": "N/A",
+      "valid_but_not_first_step": "N/A"
+    }
+  },
+  {
+    "id": "D5_T3_031",
+    "domain_id": "D5",
+    "task_statement_id": "D5.T3",
+    "scenario_ids": [
+      "S1"
+    ],
+    "difficulty": "conceptual_knowledge",
+    "key_concept_tested": "coverage annotations in synthesis output",
+    "stem": "Why are coverage annotations critical in multi-agent customer support synthesis?",
+    "options": [
+      {
+        "label": "A",
+        "text": "They improve system performance by reducing redundant queries",
+        "is_correct": false
+      },
+      {
+        "label": "B",
+        "text": "They enable users and escalation systems to understand information completeness and reliability",
+        "is_correct": true
+      },
+      {
+        "label": "C",
+        "text": "They provide audit trails for compliance and regulatory requirements",
+        "is_correct": false
+      },
+      {
+        "label": "D",
+        "text": "They reduce memory usage by tracking processed data sources",
+        "is_correct": false
+      }
+    ],
+    "correct_label": "B",
+    "explanation": "Coverage annotations enable informed decision-making by clearly indicating which information sources contributed, what gaps exist, and confidence levels for different conclusions. This allows appropriate escalation and user expectation management.",
+    "tags": [
+      "coverage_importance",
+      "informed_decisions",
+      "reliability_indicators"
+    ],
+    "bloom_level": "understand",
+    "distractor_strategy": {
+      "plausible_but_prompt_only": "N/A",
+      "over_engineered": "N/A",
+      "wrong_layer": "N/A",
+      "valid_but_not_first_step": "N/A"
+    }
+  },
+  {
+    "id": "D5_T3_032",
+    "domain_id": "D5",
+    "task_statement_id": "D5.T3",
+    "scenario_ids": [
+      "S2"
+    ],
+    "difficulty": "applied_judgment",
+    "key_concept_tested": "generic error statuses hide coordinator context",
+    "stem": "Your development team receives generic 'BUILD_FAILED' messages from Claude Code integration. What structured error format would improve their debugging workflow?",
+    "options": [
+      {
+        "label": "A",
+        "text": "Build failure category (dependency, syntax, configuration), specific error locations, successful build steps, and targeted fix suggestions",
+        "is_correct": false
+      },
+      {
+        "label": "B",
+        "text": "Full build logs and system environment details",
+        "is_correct": false
+      },
+      {
+        "label": "C",
+        "text": "Simple retry instructions with exponential backoff",
+        "is_correct": true
+      },
+      {
+        "label": "D",
+        "text": "Automatic fallback to previous working build configuration",
+        "is_correct": false
+      }
+    ],
+    "correct_label": "C",
+    "explanation": "Generic 'BUILD_FAILED' forces manual investigation. Structured errors should specify failure categories (dependency issues vs syntax errors), exact locations, which steps succeeded, and targeted remediation. This enables faster resolution and appropriate automation.",
+    "tags": [
+      "build_failures",
+      "debugging_workflow",
+      "structured_errors"
+    ],
+    "bloom_level": "apply",
+    "distractor_strategy": {
+      "plausible_but_prompt_only": "N/A",
+      "over_engineered": "N/A",
+      "wrong_layer": "N/A",
+      "valid_but_not_first_step": "N/A"
+    }
+  },
+  {
+    "id": "D5_T3_033",
+    "domain_id": "D5",
+    "task_statement_id": "D5.T3",
+    "scenario_ids": [
+      "S1"
+    ],
+    "difficulty": "anti_pattern_recognition",
+    "key_concept_tested": "coverage annotations in synthesis output",
+    "stem": "A support system reports 'customer analysis complete' regardless of which MCP tools succeeded or failed. What does this approach prevent?",
+    "options": [
+      {
+        "label": "A",
+        "text": "Proper error logging and system monitoring",
+        "is_correct": false
+      },
+      {
+        "label": "B",
+        "text": "Understanding of information gaps, data quality issues, and appropriate confidence levels for decision-making",
+        "is_correct": true
+      },
+      {
+        "label": "C",
+        "text": "Integration with external customer management systems",
+        "is_correct": false
+      },
+      {
+        "label": "D",
+        "text": "Compliance with data privacy regulations",
+        "is_correct": false
+      }
+    ],
+    "correct_label": "B",
+    "explanation": "Generic completion messages hide critical information about data quality, coverage gaps, and reliability. Users cannot assess whether analysis results are comprehensive enough for their decisions, leading to inappropriate escalations or insufficient investigations.",
+    "tags": [
+      "anti_pattern",
+      "coverage_hiding",
+      "decision_quality"
+    ],
+    "bloom_level": "evaluate",
+    "distractor_strategy": {
+      "plausible_but_prompt_only": "N/A",
+      "over_engineered": "N/A",
+      "wrong_layer": "N/A",
+      "valid_but_not_first_step": "N/A"
+    }
+  },
+  {
+    "id": "D5_T3_034",
+    "domain_id": "D5",
+    "task_statement_id": "D5.T3",
+    "scenario_ids": [
+      "S2"
+    ],
+    "difficulty": "conceptual_knowledge",
+    "key_concept_tested": "access failure vs valid empty result",
+    "stem": "When should Claude Code differentiate between 'no security issues found' and 'security scan incomplete'?",
+    "options": [
+      {
+        "label": "A",
+        "text": "Always - both outcomes require different developer actions and confidence levels",
+        "is_correct": true
+      },
+      {
+        "label": "B",
+        "text": "Only when scanning mission-critical production code",
+        "is_correct": false
+      },
+      {
+        "label": "C",
+        "text": "Never - both indicate the code can proceed through the pipeline",
+        "is_correct": false
+      },
+      {
+        "label": "D",
+        "text": "Only when automated security policies require complete coverage",
+        "is_correct": false
+      }
+    ],
+    "correct_label": "A",
+    "explanation": "These outcomes always require differentiation because they imply different confidence levels and actions. 'No issues found' with complete coverage provides high confidence, while 'scan incomplete' due to access failures requires different risk assessment and potentially additional verification steps.",
+    "tags": [
+      "security_scanning",
+      "confidence_differentiation",
+      "risk_assessment"
+    ],
+    "bloom_level": "understand",
+    "distractor_strategy": {
+      "plausible_but_prompt_only": "N/A",
+      "over_engineered": "N/A",
+      "wrong_layer": "N/A",
+      "valid_but_not_first_step": "N/A"
+    }
+  }
+]

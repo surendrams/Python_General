@@ -1,0 +1,1600 @@
+[
+  {
+    "id": "D4_T4_001",
+    "domain_id": "D4",
+    "task_statement_id": "D4.T4",
+    "scenario_ids": [
+      "S6"
+    ],
+    "difficulty": "conceptual_knowledge",
+    "key_concept_tested": "retry-with-error-feedback pattern",
+    "stem": "Your document extraction system successfully parses 85% of invoices on first attempt, but 15% fail schema validation. What is the primary benefit of implementing a retry-with-error-feedback pattern for the failed extractions?",
+    "options": [
+      {
+        "label": "A",
+        "text": "It reduces token costs by using shorter prompts on retry attempts",
+        "is_correct": false
+      },
+      {
+        "label": "B",
+        "text": "It provides the model with specific validation errors to guide correction",
+        "is_correct": true
+      },
+      {
+        "label": "C",
+        "text": "It automatically switches to a different model variant for better performance",
+        "is_correct": false
+      },
+      {
+        "label": "D",
+        "text": "It parallelizes extraction attempts across multiple model instances",
+        "is_correct": false
+      }
+    ],
+    "correct_label": "B",
+    "explanation": "The retry-with-error-feedback pattern's core benefit is providing specific validation errors (e.g., 'missing required field: invoice_date') to help the model understand exactly what went wrong and how to fix it, rather than just trying again blindly.",
+    "tags": [
+      "validation",
+      "error_feedback",
+      "retry_patterns"
+    ],
+    "bloom_level": "understand",
+    "distractor_strategy": {
+      "plausible_but_prompt_only": "A",
+      "over_engineered": "N/A",
+      "wrong_layer": "N/A",
+      "valid_but_not_first_step": "N/A"
+    }
+  },
+  {
+    "id": "D4_T4_002",
+    "domain_id": "D4",
+    "task_statement_id": "D4.T4",
+    "scenario_ids": [
+      "S6"
+    ],
+    "difficulty": "applied_judgment",
+    "key_concept_tested": "retries ineffective when information absent from source",
+    "stem": "Your extraction system processes expense reports and fails to extract 'project_code' from 12% of documents. After implementing retry logic, the failure rate remains at 12%. What is the most likely root cause?",
+    "options": [
+      {
+        "label": "A",
+        "text": "The JSON schema is too restrictive for the project_code field format",
+        "is_correct": false
+      },
+      {
+        "label": "B",
+        "text": "The retry prompt needs more explicit instructions about project code formats",
+        "is_correct": false
+      },
+      {
+        "label": "C",
+        "text": "The source documents genuinely lack project code information",
+        "is_correct": true
+      },
+      {
+        "label": "D",
+        "text": "The model's context window is too small to process the full document",
+        "is_correct": false
+      }
+    ],
+    "correct_label": "C",
+    "explanation": "When retry logic doesn't improve extraction rates, it typically indicates the information simply isn't present in the source documents. No amount of prompting or retrying can extract data that doesn't exist.",
+    "tags": [
+      "missing_data",
+      "retry_limitations",
+      "source_analysis"
+    ],
+    "bloom_level": "apply",
+    "distractor_strategy": {
+      "plausible_but_prompt_only": "B",
+      "over_engineered": "N/A",
+      "wrong_layer": "N/A",
+      "valid_but_not_first_step": "N/A"
+    }
+  },
+  {
+    "id": "D4_T4_003",
+    "domain_id": "D4",
+    "task_statement_id": "D4.T4",
+    "scenario_ids": [
+      "S6"
+    ],
+    "difficulty": "anti_pattern_recognition",
+    "key_concept_tested": "semantic vs schema syntax errors",
+    "stem": "A colleague implements validation that retries extraction whenever any field contains 'null' or empty strings, regardless of whether those fields are required. What is the primary flaw in this approach?",
+    "options": [
+      {
+        "label": "A",
+        "text": "It doesn't distinguish between missing optional data and actual extraction errors",
+        "is_correct": false
+      },
+      {
+        "label": "B",
+        "text": "It creates excessive retry loops that waste tokens on non-actionable feedback",
+        "is_correct": false
+      },
+      {
+        "label": "C",
+        "text": "It conflates schema syntax validation with semantic content validation",
+        "is_correct": false
+      },
+      {
+        "label": "D",
+        "text": "It triggers retries for documents that were correctly processed according to the schema",
+        "is_correct": true
+      }
+    ],
+    "correct_label": "D",
+    "explanation": "This approach incorrectly treats valid extractions (where optional fields are legitimately null/empty) as failures, causing unnecessary retries. Validation should only trigger retries for actual schema violations or semantic errors, not valid null values in optional fields.",
+    "tags": [
+      "validation_logic",
+      "false_positives",
+      "schema_compliance"
+    ],
+    "bloom_level": "evaluate",
+    "distractor_strategy": {
+      "plausible_but_prompt_only": "N/A",
+      "over_engineered": "N/A",
+      "wrong_layer": "N/A",
+      "valid_but_not_first_step": "N/A"
+    }
+  },
+  {
+    "id": "D4_T4_004",
+    "domain_id": "D4",
+    "task_statement_id": "D4.T4",
+    "scenario_ids": [
+      "S5"
+    ],
+    "difficulty": "applied_judgment",
+    "key_concept_tested": "self-correction validation flows",
+    "stem": "Your CI/CD system generates code review feedback but produces false positives 18% of the time. You implement a self-correction step where Claude reviews its own suggestions before finalizing. What validation criteria should this self-correction step focus on?",
+    "options": [
+      {
+        "label": "A",
+        "text": "Whether the suggested changes follow language-specific style guidelines",
+        "is_correct": true
+      },
+      {
+        "label": "B",
+        "text": "Whether the feedback contains sufficient technical detail and examples",
+        "is_correct": false
+      },
+      {
+        "label": "C",
+        "text": "Whether the tone is appropriately constructive for team collaboration",
+        "is_correct": false
+      },
+      {
+        "label": "D",
+        "text": "Whether the suggestions align with the repository's commit history patterns",
+        "is_correct": false
+      }
+    ],
+    "correct_label": "A",
+    "explanation": "Self-correction should focus on factual accuracy - whether the code actually violates the rules being cited. Checking style guideline compliance helps eliminate false positives where the original code was already correct.",
+    "tags": [
+      "self_validation",
+      "false_positive_reduction",
+      "code_review"
+    ],
+    "bloom_level": "apply",
+    "distractor_strategy": {
+      "plausible_but_prompt_only": "N/A",
+      "over_engineered": "N/A",
+      "wrong_layer": "N/A",
+      "valid_but_not_first_step": "N/A"
+    }
+  },
+  {
+    "id": "D4_T4_005",
+    "domain_id": "D4",
+    "task_statement_id": "D4.T4",
+    "scenario_ids": [
+      "S6"
+    ],
+    "difficulty": "conceptual_knowledge",
+    "key_concept_tested": "detected_pattern field for dismissal analysis",
+    "stem": "Your contract extraction system includes a 'detected_pattern' field that captures the model's reasoning about document structure. How should this field be used in validation workflows?",
+    "options": [
+      {
+        "label": "A",
+        "text": "As the primary validation mechanism to replace JSON schema validation",
+        "is_correct": false
+      },
+      {
+        "label": "B",
+        "text": "To identify when the model misclassified the document type for targeted retry",
+        "is_correct": true
+      },
+      {
+        "label": "C",
+        "text": "To generate confidence scores for downstream system decision-making",
+        "is_correct": false
+      },
+      {
+        "label": "D",
+        "text": "To automatically route documents to human reviewers based on complexity",
+        "is_correct": false
+      }
+    ],
+    "correct_label": "B",
+    "explanation": "The detected_pattern field helps identify systematic errors where the model misunderstood the document type (e.g., treating a lease as a purchase agreement), enabling targeted retries with corrected context.",
+    "tags": [
+      "pattern_detection",
+      "document_classification",
+      "targeted_retry"
+    ],
+    "bloom_level": "understand",
+    "distractor_strategy": {
+      "plausible_but_prompt_only": "N/A",
+      "over_engineered": "N/A",
+      "wrong_layer": "N/A",
+      "valid_but_not_first_step": "N/A"
+    }
+  },
+  {
+    "id": "D4_T4_006",
+    "domain_id": "D4",
+    "task_statement_id": "D4.T4",
+    "scenario_ids": [
+      "S6"
+    ],
+    "difficulty": "applied_judgment",
+    "key_concept_tested": "calculated_total vs stated_total discrepancy detection",
+    "stem": "Your invoice processing system extracts line items and totals, then validates by comparing calculated_total (sum of line items) against stated_total (printed total). When discrepancies exceed $5, what should the retry logic focus on?",
+    "options": [
+      {
+        "label": "A",
+        "text": "Re-extracting the stated total with higher precision number parsing",
+        "is_correct": false
+      },
+      {
+        "label": "B",
+        "text": "Recalculating line item quantities and unit prices for arithmetic accuracy",
+        "is_correct": false
+      },
+      {
+        "label": "C",
+        "text": "Identifying missed line items, taxes, or fees not captured in initial extraction",
+        "is_correct": true
+      },
+      {
+        "label": "D",
+        "text": "Flagging the document for manual review without attempting correction",
+        "is_correct": false
+      }
+    ],
+    "correct_label": "C",
+    "explanation": "When calculated and stated totals don't match, it usually indicates missing data (taxes, fees, discounts, or line items) rather than arithmetic errors. The retry should focus on comprehensive extraction of all invoice components.",
+    "tags": [
+      "total_validation",
+      "missing_components",
+      "arithmetic_checking"
+    ],
+    "bloom_level": "apply",
+    "distractor_strategy": {
+      "plausible_but_prompt_only": "N/A",
+      "over_engineered": "N/A",
+      "wrong_layer": "N/A",
+      "valid_but_not_first_step": "N/A"
+    }
+  },
+  {
+    "id": "D4_T4_007",
+    "domain_id": "D4",
+    "task_statement_id": "D4.T4",
+    "scenario_ids": [
+      "S5"
+    ],
+    "difficulty": "conceptual_knowledge",
+    "key_concept_tested": "semantic vs schema syntax errors",
+    "stem": "Your CI/CD system validates pull request analysis output against a JSON schema. What is the key difference between schema syntax errors and semantic validation errors?",
+    "options": [
+      {
+        "label": "A",
+        "text": "Schema errors are caught by the JSON parser, semantic errors require domain logic",
+        "is_correct": false
+      },
+      {
+        "label": "B",
+        "text": "Schema errors involve data types, semantic errors involve business rule violations",
+        "is_correct": false
+      },
+      {
+        "label": "C",
+        "text": "Schema errors break JSON structure, semantic errors involve incorrect content meaning",
+        "is_correct": false
+      },
+      {
+        "label": "D",
+        "text": "Schema errors violate format requirements, semantic errors involve factual inaccuracies",
+        "is_correct": true
+      }
+    ],
+    "correct_label": "D",
+    "explanation": "Schema syntax errors violate structural requirements (missing fields, wrong types), while semantic errors involve content that's structurally valid but factually wrong (e.g., claiming a security vulnerability exists when it doesn't).",
+    "tags": [
+      "validation_types",
+      "error_classification",
+      "schema_vs_semantic"
+    ],
+    "bloom_level": "understand",
+    "distractor_strategy": {
+      "plausible_but_prompt_only": "N/A",
+      "over_engineered": "N/A",
+      "wrong_layer": "N/A",
+      "valid_but_not_first_step": "N/A"
+    }
+  },
+  {
+    "id": "D4_T4_008",
+    "domain_id": "D4",
+    "task_statement_id": "D4.T4",
+    "scenario_ids": [
+      "S6"
+    ],
+    "difficulty": "anti_pattern_recognition",
+    "key_concept_tested": "retry-with-error-feedback pattern",
+    "stem": "A team implements retry logic that simply re-runs the same extraction prompt three times without providing validation errors to the model. After deployment, extraction accuracy improves from 87% to 89%. What is the fundamental issue with this approach?",
+    "options": [
+      {
+        "label": "A",
+        "text": "The improvement is likely due to random variation rather than systematic correction",
+        "is_correct": true
+      },
+      {
+        "label": "B",
+        "text": "Three retries are insufficient for complex document types requiring more attempts",
+        "is_correct": false
+      },
+      {
+        "label": "C",
+        "text": "The system should use different model parameters for each retry attempt",
+        "is_correct": false
+      },
+      {
+        "label": "D",
+        "text": "The retry logic should include exponential backoff to prevent rate limiting",
+        "is_correct": false
+      }
+    ],
+    "correct_label": "A",
+    "explanation": "Without error feedback, the model has no information to guide improvement. Any accuracy gains are likely statistical noise rather than meaningful correction. True retry-with-feedback patterns provide specific validation errors to enable targeted fixes.",
+    "tags": [
+      "blind_retry",
+      "statistical_significance",
+      "feedback_necessity"
+    ],
+    "bloom_level": "evaluate",
+    "distractor_strategy": {
+      "plausible_but_prompt_only": "N/A",
+      "over_engineered": "N/A",
+      "wrong_layer": "N/A",
+      "valid_but_not_first_step": "N/A"
+    }
+  },
+  {
+    "id": "D4_T4_009",
+    "domain_id": "D4",
+    "task_statement_id": "D4.T4",
+    "scenario_ids": [
+      "S6"
+    ],
+    "difficulty": "applied_judgment",
+    "key_concept_tested": "self-correction validation flows",
+    "stem": "Your medical record extraction system processes discharge summaries and achieves 94% accuracy. You implement a self-correction step where Claude reviews its own extractions. What should trigger the self-correction validation?",
+    "options": [
+      {
+        "label": "A",
+        "text": "When extracted dates fall outside reasonable medical timeline ranges",
+        "is_correct": false
+      },
+      {
+        "label": "B",
+        "text": "When confidence scores for any field fall below a predetermined threshold",
+        "is_correct": true
+      },
+      {
+        "label": "C",
+        "text": "When the document contains medical terminology not in the training vocabulary",
+        "is_correct": false
+      },
+      {
+        "label": "D",
+        "text": "When the total extraction time exceeds the average processing duration",
+        "is_correct": false
+      }
+    ],
+    "correct_label": "B",
+    "explanation": "Self-correction should be triggered by indicators of potential errors, such as low confidence scores, rather than running on every extraction. This balances accuracy improvement with computational efficiency.",
+    "tags": [
+      "self_correction_triggers",
+      "confidence_thresholds",
+      "selective_validation"
+    ],
+    "bloom_level": "apply",
+    "distractor_strategy": {
+      "plausible_but_prompt_only": "N/A",
+      "over_engineered": "N/A",
+      "wrong_layer": "N/A",
+      "valid_but_not_first_step": "N/A"
+    }
+  },
+  {
+    "id": "D4_T4_010",
+    "domain_id": "D4",
+    "task_statement_id": "D4.T4",
+    "scenario_ids": [
+      "S5"
+    ],
+    "difficulty": "conceptual_knowledge",
+    "key_concept_tested": "validation, retry, and feedback loops for extraction quality",
+    "stem": "In a CI/CD code review system, what is the primary purpose of implementing validation feedback loops for generated suggestions?",
+    "options": [
+      {
+        "label": "A",
+        "text": "To reduce the computational cost of generating code review comments",
+        "is_correct": false
+      },
+      {
+        "label": "B",
+        "text": "To ensure suggestions are actionable and technically accurate before presentation",
+        "is_correct": false
+      },
+      {
+        "label": "C",
+        "text": "To maintain consistent code style across different programming languages",
+        "is_correct": false
+      },
+      {
+        "label": "D",
+        "text": "To minimize false positive suggestions that waste developer time",
+        "is_correct": true
+      }
+    ],
+    "correct_label": "D",
+    "explanation": "Validation feedback loops in CI/CD systems primarily aim to reduce false positives - suggestions that appear valid but are actually incorrect or unnecessary - which preserves developer trust and productivity.",
+    "tags": [
+      "ci_cd_validation",
+      "false_positive_reduction",
+      "developer_productivity"
+    ],
+    "bloom_level": "understand",
+    "distractor_strategy": {
+      "plausible_but_prompt_only": "N/A",
+      "over_engineered": "N/A",
+      "wrong_layer": "N/A",
+      "valid_but_not_first_step": "N/A"
+    }
+  },
+  {
+    "id": "D4_T4_011",
+    "domain_id": "D4",
+    "task_statement_id": "D4.T4",
+    "scenario_ids": [
+      "S6"
+    ],
+    "difficulty": "applied_judgment",
+    "key_concept_tested": "retries ineffective when information absent from source",
+    "stem": "Your legal document extraction system fails to extract 'witness_signature_date' from 8% of contracts. After implementing sophisticated retry logic with detailed error feedback, the failure rate remains at 8%. Analysis shows these documents are older contracts from the 1990s. What is the appropriate next step?",
+    "options": [
+      {
+        "label": "A",
+        "text": "Implement OCR preprocessing to improve text quality from scanned documents",
+        "is_correct": false
+      },
+      {
+        "label": "B",
+        "text": "Add the witness_signature_date field as optional in the schema for historical documents",
+        "is_correct": false
+      },
+      {
+        "label": "C",
+        "text": "Create a separate extraction workflow optimized for legacy document formats",
+        "is_correct": false
+      },
+      {
+        "label": "D",
+        "text": "Accept that this field is genuinely absent and mark as null in the structured output",
+        "is_correct": true
+      }
+    ],
+    "correct_label": "D",
+    "explanation": "When retry logic consistently fails on the same subset of documents, it indicates the information is genuinely absent. Rather than over-engineering solutions, accept the limitation and handle missing data gracefully in the schema.",
+    "tags": [
+      "missing_data_acceptance",
+      "legacy_documents",
+      "schema_flexibility"
+    ],
+    "bloom_level": "apply",
+    "distractor_strategy": {
+      "plausible_but_prompt_only": "N/A",
+      "over_engineered": "C",
+      "wrong_layer": "N/A",
+      "valid_but_not_first_step": "N/A"
+    }
+  },
+  {
+    "id": "D4_T4_012",
+    "domain_id": "D4",
+    "task_statement_id": "D4.T4",
+    "scenario_ids": [
+      "S6"
+    ],
+    "difficulty": "anti_pattern_recognition",
+    "key_concept_tested": "calculated_total vs stated_total discrepancy detection",
+    "stem": "A developer implements total validation that flags any invoice where calculated_total != stated_total as an error, regardless of the difference amount. In production, this triggers retries on 45% of invoices. What is the core problem with this validation logic?",
+    "options": [
+      {
+        "label": "A",
+        "text": "It doesn't account for rounding differences in currency calculations",
+        "is_correct": true
+      },
+      {
+        "label": "B",
+        "text": "It should use percentage-based thresholds instead of absolute value comparisons",
+        "is_correct": false
+      },
+      {
+        "label": "C",
+        "text": "It fails to consider tax calculations that may not be line-item based",
+        "is_correct": false
+      },
+      {
+        "label": "D",
+        "text": "It doesn't validate the mathematical accuracy of the extraction algorithm",
+        "is_correct": false
+      }
+    ],
+    "correct_label": "A",
+    "explanation": "Exact equality comparison ignores normal rounding differences in currency calculations. A 45% retry rate suggests the validation is too strict - most discrepancies are likely penny-level rounding rather than actual extraction errors.",
+    "tags": [
+      "rounding_tolerance",
+      "currency_precision",
+      "validation_thresholds"
+    ],
+    "bloom_level": "evaluate",
+    "distractor_strategy": {
+      "plausible_but_prompt_only": "N/A",
+      "over_engineered": "N/A",
+      "wrong_layer": "N/A",
+      "valid_but_not_first_step": "N/A"
+    }
+  },
+  {
+    "id": "D4_T4_013",
+    "domain_id": "D4",
+    "task_statement_id": "D4.T4",
+    "scenario_ids": [
+      "S5"
+    ],
+    "difficulty": "applied_judgment",
+    "key_concept_tested": "semantic vs schema syntax errors",
+    "stem": "Your CI/CD system generates test case suggestions for pull requests. The JSON schema validation passes, but 22% of suggestions reference non-existent functions or variables. How should your validation workflow address this semantic error type?",
+    "options": [
+      {
+        "label": "A",
+        "text": "Implement post-schema validation that cross-references suggestions against the actual codebase",
+        "is_correct": true
+      },
+      {
+        "label": "B",
+        "text": "Modify the JSON schema to include enumerated lists of valid function names",
+        "is_correct": false
+      },
+      {
+        "label": "C",
+        "text": "Add more detailed examples of valid test cases to the generation prompt",
+        "is_correct": false
+      },
+      {
+        "label": "D",
+        "text": "Increase the model temperature to generate more creative test scenarios",
+        "is_correct": false
+      }
+    ],
+    "correct_label": "A",
+    "explanation": "Semantic errors (referencing non-existent code elements) can't be caught by JSON schema validation. A separate validation step that checks references against the actual codebase is needed to catch these factual inaccuracies.",
+    "tags": [
+      "semantic_validation",
+      "code_reference_checking",
+      "post_schema_validation"
+    ],
+    "bloom_level": "apply",
+    "distractor_strategy": {
+      "plausible_but_prompt_only": "C",
+      "over_engineered": "N/A",
+      "wrong_layer": "N/A",
+      "valid_but_not_first_step": "N/A"
+    }
+  },
+  {
+    "id": "D4_T4_014",
+    "domain_id": "D4",
+    "task_statement_id": "D4.T4",
+    "scenario_ids": [
+      "S6"
+    ],
+    "difficulty": "conceptual_knowledge",
+    "key_concept_tested": "self-correction validation flows",
+    "stem": "What is the key advantage of self-correction validation flows compared to external validation rules in document extraction systems?",
+    "options": [
+      {
+        "label": "A",
+        "text": "Self-correction uses the same model context and reasoning that created the original output",
+        "is_correct": false
+      },
+      {
+        "label": "B",
+        "text": "Self-correction can identify subtle inconsistencies that rule-based validation might miss",
+        "is_correct": true
+      },
+      {
+        "label": "C",
+        "text": "Self-correction eliminates the need for predefined validation schemas",
+        "is_correct": false
+      },
+      {
+        "label": "D",
+        "text": "Self-correction processes faster than external validation systems",
+        "is_correct": false
+      }
+    ],
+    "correct_label": "B",
+    "explanation": "Self-correction can catch nuanced inconsistencies and logical errors that rigid rule-based validation might miss, such as dates that are technically valid but contextually implausible.",
+    "tags": [
+      "self_correction_advantages",
+      "nuanced_validation",
+      "contextual_checking"
+    ],
+    "bloom_level": "understand",
+    "distractor_strategy": {
+      "plausible_but_prompt_only": "N/A",
+      "over_engineered": "N/A",
+      "wrong_layer": "N/A",
+      "valid_but_not_first_step": "N/A"
+    }
+  },
+  {
+    "id": "D4_T4_015",
+    "domain_id": "D4",
+    "task_statement_id": "D4.T4",
+    "scenario_ids": [
+      "S6"
+    ],
+    "difficulty": "applied_judgment",
+    "key_concept_tested": "detected_pattern field for dismissal analysis",
+    "stem": "Your contract analysis system includes a 'detected_pattern' field showing the model's document type classification. You notice that 15% of extraction failures correlate with 'detected_pattern': 'employment_agreement' when the actual document is a consulting contract. How should you address this pattern misclassification?",
+    "options": [
+      {
+        "label": "A",
+        "text": "Add document type classification as a separate preprocessing step before extraction",
+        "is_correct": true
+      },
+      {
+        "label": "B",
+        "text": "Include more employment agreement examples in the training prompt",
+        "is_correct": false
+      },
+      {
+        "label": "C",
+        "text": "Remove the detected_pattern field to avoid biasing the extraction process",
+        "is_correct": false
+      },
+      {
+        "label": "D",
+        "text": "Implement confidence scoring for the detected_pattern classification",
+        "is_correct": false
+      }
+    ],
+    "correct_label": "A",
+    "explanation": "When pattern misclassification is causing systematic extraction failures, separating document type classification from extraction allows for targeted retry with corrected document type context.",
+    "tags": [
+      "pattern_misclassification",
+      "document_type_preprocessing",
+      "systematic_errors"
+    ],
+    "bloom_level": "apply",
+    "distractor_strategy": {
+      "plausible_but_prompt_only": "B",
+      "over_engineered": "N/A",
+      "wrong_layer": "N/A",
+      "valid_but_not_first_step": "N/A"
+    }
+  },
+  {
+    "id": "D4_T4_016",
+    "domain_id": "D4",
+    "task_statement_id": "D4.T4",
+    "scenario_ids": [
+      "S5"
+    ],
+    "difficulty": "anti_pattern_recognition",
+    "key_concept_tested": "self-correction validation flows",
+    "stem": "A team implements self-correction by having Claude re-read its code review suggestions and rate them 1-10 for quality, then discarding anything below 7. After deployment, the number of suggestions drops by 60% but false positive rates remain unchanged. What is wrong with this approach?",
+    "options": [
+      {
+        "label": "A",
+        "text": "The quality threshold of 7 is too high and filters out valid suggestions",
+        "is_correct": false
+      },
+      {
+        "label": "B",
+        "text": "Self-rating doesn't provide specific feedback for the model to improve suggestions",
+        "is_correct": true
+      },
+      {
+        "label": "C",
+        "text": "The rating scale should be binary (accept/reject) rather than numerical",
+        "is_correct": false
+      },
+      {
+        "label": "D",
+        "text": "Multiple self-correction iterations are needed rather than a single rating step",
+        "is_correct": false
+      }
+    ],
+    "correct_label": "B",
+    "explanation": "Generic quality ratings don't provide actionable feedback for improvement. Effective self-correction should identify specific issues (e.g., 'this suggestion references a function that doesn't exist') rather than just filtering based on arbitrary scores.",
+    "tags": [
+      "ineffective_self_correction",
+      "generic_rating",
+      "actionable_feedback"
+    ],
+    "bloom_level": "evaluate",
+    "distractor_strategy": {
+      "plausible_but_prompt_only": "N/A",
+      "over_engineered": "N/A",
+      "wrong_layer": "N/A",
+      "valid_but_not_first_step": "N/A"
+    }
+  },
+  {
+    "id": "D4_T4_017",
+    "domain_id": "D4",
+    "task_statement_id": "D4.T4",
+    "scenario_ids": [
+      "S6"
+    ],
+    "difficulty": "applied_judgment",
+    "key_concept_tested": "retry-with-error-feedback pattern",
+    "stem": "Your purchase order extraction system fails schema validation on 11% of documents. You implement retry-with-error-feedback, but some documents continue to fail after 3 retry attempts. The error messages show consistent issues with date format parsing. What is the most effective refinement to your retry strategy?",
+    "options": [
+      {
+        "label": "A",
+        "text": "Increase the maximum retry attempts from 3 to 5 for date parsing errors",
+        "is_correct": false
+      },
+      {
+        "label": "B",
+        "text": "Provide specific examples of acceptable date formats in the retry prompt",
+        "is_correct": true
+      },
+      {
+        "label": "C",
+        "text": "Implement preprocessing to normalize date formats before extraction",
+        "is_correct": false
+      },
+      {
+        "label": "D",
+        "text": "Switch to a more flexible JSON schema that accepts multiple date formats",
+        "is_correct": false
+      }
+    ],
+    "correct_label": "B",
+    "explanation": "When specific error types persist through retries, the feedback needs to be more targeted. Providing concrete examples of acceptable date formats gives the model clear guidance for correction.",
+    "tags": [
+      "targeted_retry_feedback",
+      "format_examples",
+      "persistent_errors"
+    ],
+    "bloom_level": "apply",
+    "distractor_strategy": {
+      "plausible_but_prompt_only": "N/A",
+      "over_engineered": "N/A",
+      "wrong_layer": "N/A",
+      "valid_but_not_first_step": "N/A"
+    }
+  },
+  {
+    "id": "D4_T4_018",
+    "domain_id": "D4",
+    "task_statement_id": "D4.T4",
+    "scenario_ids": [
+      "S5"
+    ],
+    "difficulty": "conceptual_knowledge",
+    "key_concept_tested": "calculated_total vs stated_total discrepancy detection",
+    "stem": "In a CI/CD system that analyzes code complexity metrics, what would be analogous to the calculated_total vs stated_total validation pattern used in invoice processing?",
+    "options": [
+      {
+        "label": "A",
+        "text": "Comparing cyclomatic complexity calculated from code against developer-estimated complexity",
+        "is_correct": false
+      },
+      {
+        "label": "B",
+        "text": "Validating that extracted function count matches actual function definitions in the file",
+        "is_correct": false
+      },
+      {
+        "label": "C",
+        "text": "Cross-checking extracted import statements against actual import declarations",
+        "is_correct": true
+      },
+      {
+        "label": "D",
+        "text": "Verifying that suggested test coverage percentages match actual coverage reports",
+        "is_correct": false
+      }
+    ],
+    "correct_label": "C",
+    "explanation": "Like calculated vs stated totals, comparing extracted imports against actual declarations validates extraction accuracy by cross-referencing extracted data against verifiable source information.",
+    "tags": [
+      "validation_analogy",
+      "cross_reference_checking",
+      "extraction_verification"
+    ],
+    "bloom_level": "understand",
+    "distractor_strategy": {
+      "plausible_but_prompt_only": "N/A",
+      "over_engineered": "N/A",
+      "wrong_layer": "N/A",
+      "valid_but_not_first_step": "N/A"
+    }
+  },
+  {
+    "id": "D4_T4_019",
+    "domain_id": "D4",
+    "task_statement_id": "D4.T4",
+    "scenario_ids": [
+      "S6"
+    ],
+    "difficulty": "applied_judgment",
+    "key_concept_tested": "semantic vs schema syntax errors",
+    "stem": "Your insurance claim extraction system processes accident reports. Schema validation passes 98% of the time, but downstream systems reject 14% of extractions due to impossible combinations like 'injury_severity': 'minor' with 'hospital_stay_days': 45. How should you address these semantic inconsistencies?",
+    "options": [
+      {
+        "label": "A",
+        "text": "Add business rule validation that checks field value combinations for logical consistency",
+        "is_correct": true
+      },
+      {
+        "label": "B",
+        "text": "Modify the JSON schema to include cross-field validation constraints",
+        "is_correct": false
+      },
+      {
+        "label": "C",
+        "text": "Implement fuzzy matching to automatically correct inconsistent severity classifications",
+        "is_correct": false
+      },
+      {
+        "label": "D",
+        "text": "Add confidence scores to flag potentially inconsistent field combinations",
+        "is_correct": false
+      }
+    ],
+    "correct_label": "A",
+    "explanation": "Semantic inconsistencies require business logic validation beyond schema compliance. A separate validation layer that checks logical relationships between fields (e.g., minor injuries shouldn't correlate with extended hospital stays) is needed.",
+    "tags": [
+      "business_rule_validation",
+      "semantic_consistency",
+      "cross_field_validation"
+    ],
+    "bloom_level": "apply",
+    "distractor_strategy": {
+      "plausible_but_prompt_only": "N/A",
+      "over_engineered": "N/A",
+      "wrong_layer": "N/A",
+      "valid_but_not_first_step": "N/A"
+    }
+  },
+  {
+    "id": "D4_T4_020",
+    "domain_id": "D4",
+    "task_statement_id": "D4.T4",
+    "scenario_ids": [
+      "S6"
+    ],
+    "difficulty": "anti_pattern_recognition",
+    "key_concept_tested": "detected_pattern field for dismissal analysis",
+    "stem": "A developer uses the 'detected_pattern' field to automatically route documents to different extraction templates, but doesn't validate the pattern detection accuracy. In production, 23% of documents are misrouted, causing extraction failures. What is the fundamental flaw in this implementation?",
+    "options": [
+      {
+        "label": "A",
+        "text": "The detected_pattern field should be used for analysis, not automated routing decisions",
+        "is_correct": true
+      },
+      {
+        "label": "B",
+        "text": "Pattern detection requires multiple model calls to achieve sufficient accuracy",
+        "is_correct": false
+      },
+      {
+        "label": "C",
+        "text": "Document routing should be based on file metadata rather than content analysis",
+        "is_correct": false
+      },
+      {
+        "label": "D",
+        "text": "The extraction templates are not sufficiently differentiated for reliable routing",
+        "is_correct": false
+      }
+    ],
+    "correct_label": "A",
+    "explanation": "The detected_pattern field is designed for diagnostic analysis and validation, not as a production routing mechanism. Using unvalidated pattern detection for automated decisions introduces systematic errors.",
+    "tags": [
+      "pattern_field_misuse",
+      "automated_routing_risks",
+      "validation_vs_production"
+    ],
+    "bloom_level": "evaluate",
+    "distractor_strategy": {
+      "plausible_but_prompt_only": "N/A",
+      "over_engineered": "N/A",
+      "wrong_layer": "N/A",
+      "valid_but_not_first_step": "N/A"
+    }
+  },
+  {
+    "id": "D4_T4_021",
+    "domain_id": "D4",
+    "task_statement_id": "D4.T4",
+    "scenario_ids": [
+      "S5"
+    ],
+    "difficulty": "applied_judgment",
+    "key_concept_tested": "retries ineffective when information absent from source",
+    "stem": "Your CI/CD system analyzes pull requests for security vulnerabilities but fails to identify 'authentication_method' in 19% of code changes. After implementing retry logic, the failure rate drops only to 17%. Manual review reveals most failed cases involve frontend-only changes. What does this indicate?",
+    "options": [
+      {
+        "label": "A",
+        "text": "The retry logic needs more specific prompting about frontend authentication patterns",
+        "is_correct": false
+      },
+      {
+        "label": "B",
+        "text": "Authentication method analysis is not applicable to frontend-only changes",
+        "is_correct": true
+      },
+      {
+        "label": "C",
+        "text": "The system needs separate analysis workflows for frontend vs backend changes",
+        "is_correct": false
+      },
+      {
+        "label": "D",
+        "text": "The JSON schema should make authentication_method optional for certain change types",
+        "is_correct": false
+      }
+    ],
+    "correct_label": "B",
+    "explanation": "The minimal improvement from retries indicates the information is genuinely absent. Frontend-only changes often don't involve authentication methods, so expecting this field represents a conceptual error in the analysis requirements.",
+    "tags": [
+      "inapplicable_analysis",
+      "context_specific_requirements",
+      "frontend_vs_backend"
+    ],
+    "bloom_level": "apply",
+    "distractor_strategy": {
+      "plausible_but_prompt_only": "A",
+      "over_engineered": "C",
+      "wrong_layer": "N/A",
+      "valid_but_not_first_step": "N/A"
+    }
+  },
+  {
+    "id": "D4_T4_022",
+    "domain_id": "D4",
+    "task_statement_id": "D4.T4",
+    "scenario_ids": [
+      "S6"
+    ],
+    "difficulty": "conceptual_knowledge",
+    "key_concept_tested": "validation, retry, and feedback loops for extraction quality",
+    "stem": "What is the primary difference between validation feedback loops and simple retry mechanisms in document extraction systems?",
+    "options": [
+      {
+        "label": "A",
+        "text": "Validation feedback loops use different model parameters for each attempt",
+        "is_correct": false
+      },
+      {
+        "label": "B",
+        "text": "Validation feedback loops provide specific error information to guide correction",
+        "is_correct": false
+      },
+      {
+        "label": "C",
+        "text": "Validation feedback loops incorporate external data sources for verification",
+        "is_correct": true
+      },
+      {
+        "label": "D",
+        "text": "Validation feedback loops process multiple documents simultaneously for efficiency",
+        "is_correct": false
+      }
+    ],
+    "correct_label": "C",
+    "explanation": "Validation feedback loops actively check extracted data against external sources or business rules, providing specific error feedback, while simple retries just repeat the same process without learning from failures.",
+    "tags": [
+      "feedback_vs_retry",
+      "validation_mechanisms",
+      "error_guidance"
+    ],
+    "bloom_level": "understand",
+    "distractor_strategy": {
+      "plausible_but_prompt_only": "N/A",
+      "over_engineered": "N/A",
+      "wrong_layer": "N/A",
+      "valid_but_not_first_step": "N/A"
+    }
+  },
+  {
+    "id": "D4_T4_023",
+    "domain_id": "D4",
+    "task_statement_id": "D4.T4",
+    "scenario_ids": [
+      "S6"
+    ],
+    "difficulty": "applied_judgment",
+    "key_concept_tested": "self-correction validation flows",
+    "stem": "Your medical record extraction system implements self-correction where Claude reviews its own extractions for logical consistency. The system flags 8% of extractions for human review, but only 2% actually contain errors. How should you refine the self-correction logic?",
+    "options": [
+      {
+        "label": "A",
+        "text": "Increase the confidence threshold for flagging to reduce false positives",
+        "is_correct": false
+      },
+      {
+        "label": "B",
+        "text": "Add more specific criteria about what constitutes a logical inconsistency",
+        "is_correct": true
+      },
+      {
+        "label": "C",
+        "text": "Implement multiple self-correction passes to improve accuracy",
+        "is_correct": false
+      },
+      {
+        "label": "D",
+        "text": "Replace self-correction with rule-based validation for better precision",
+        "is_correct": false
+      }
+    ],
+    "correct_label": "B",
+    "explanation": "A 6% false positive rate (8% flagged, 2% actual errors) indicates the self-correction criteria are too broad. More specific guidance about what constitutes actual logical inconsistencies will improve precision.",
+    "tags": [
+      "false_positive_reduction",
+      "specific_criteria",
+      "self_correction_refinement"
+    ],
+    "bloom_level": "apply",
+    "distractor_strategy": {
+      "plausible_but_prompt_only": "N/A",
+      "over_engineered": "N/A",
+      "wrong_layer": "N/A",
+      "valid_but_not_first_step": "N/A"
+    }
+  },
+  {
+    "id": "D4_T4_024",
+    "domain_id": "D4",
+    "task_statement_id": "D4.T4",
+    "scenario_ids": [
+      "S5"
+    ],
+    "difficulty": "anti_pattern_recognition",
+    "key_concept_tested": "calculated_total vs stated_total discrepancy detection",
+    "stem": "A CI/CD system validates code review suggestions by comparing the number of issues Claude identified against a complexity-based formula that estimates expected issue count. When the counts don't match, it triggers retries. What is problematic about this validation approach?",
+    "options": [
+      {
+        "label": "A",
+        "text": "It assumes a predictable relationship between code complexity and actual issues",
+        "is_correct": true
+      },
+      {
+        "label": "B",
+        "text": "It doesn't account for different types of code quality issues having different weights",
+        "is_correct": false
+      },
+      {
+        "label": "C",
+        "text": "It should use historical data rather than formula-based estimates for comparison",
+        "is_correct": false
+      },
+      {
+        "label": "D",
+        "text": "It triggers too many retries for code that is genuinely high-quality despite complexity",
+        "is_correct": false
+      }
+    ],
+    "correct_label": "A",
+    "explanation": "Unlike invoice totals (which have mathematical relationships), code issues don't correlate predictably with complexity. High-complexity code can be well-written, and simple code can have subtle issues. This validation creates false assumptions.",
+    "tags": [
+      "inappropriate_validation",
+      "complexity_assumptions",
+      "false_correlations"
+    ],
+    "bloom_level": "evaluate",
+    "distractor_strategy": {
+      "plausible_but_prompt_only": "N/A",
+      "over_engineered": "N/A",
+      "wrong_layer": "N/A",
+      "valid_but_not_first_step": "N/A"
+    }
+  },
+  {
+    "id": "D4_T4_025",
+    "domain_id": "D4",
+    "task_statement_id": "D4.T4",
+    "scenario_ids": [
+      "S6"
+    ],
+    "difficulty": "applied_judgment",
+    "key_concept_tested": "detected_pattern field for dismissal analysis",
+    "stem": "Your contract extraction system shows that 85% of extraction failures occur when 'detected_pattern' indicates 'handwritten_annotations' but the document is actually a standard digital contract. What is the most effective way to use this pattern analysis?",
+    "options": [
+      {
+        "label": "A",
+        "text": "Retrain the pattern detection to better distinguish handwritten from digital text",
+        "is_correct": false
+      },
+      {
+        "label": "B",
+        "text": "Create separate extraction prompts optimized for handwritten vs digital documents",
+        "is_correct": false
+      },
+      {
+        "label": "C",
+        "text": "Use pattern misclassification as a trigger for retry with corrected document type context",
+        "is_correct": true
+      },
+      {
+        "label": "D",
+        "text": "Implement confidence scoring for pattern detection to filter unreliable classifications",
+        "is_correct": false
+      }
+    ],
+    "correct_label": "C",
+    "explanation": "When pattern misclassification is causing systematic failures, use it as a retry trigger. The retry can include explicit context correction: 'This is a digital contract, not a handwritten document' to override the initial misclassification.",
+    "tags": [
+      "pattern_based_retry",
+      "context_correction",
+      "systematic_failure_patterns"
+    ],
+    "bloom_level": "apply",
+    "distractor_strategy": {
+      "plausible_but_prompt_only": "B",
+      "over_engineered": "B",
+      "wrong_layer": "N/A",
+      "valid_but_not_first_step": "N/A"
+    }
+  },
+  {
+    "id": "D4_T4_026",
+    "domain_id": "D4",
+    "task_statement_id": "D4.T4",
+    "scenario_ids": [
+      "S5"
+    ],
+    "difficulty": "conceptual_knowledge",
+    "key_concept_tested": "semantic vs schema syntax errors",
+    "stem": "Your CI/CD system generates security analysis reports in JSON format. What type of error would be considered a semantic validation issue rather than a schema syntax error?",
+    "options": [
+      {
+        "label": "A",
+        "text": "Missing required field 'vulnerability_severity' in the output JSON",
+        "is_correct": false
+      },
+      {
+        "label": "B",
+        "text": "Using string type instead of integer for 'lines_affected' field",
+        "is_correct": false
+      },
+      {
+        "label": "C",
+        "text": "Reporting SQL injection vulnerability in a file that contains no database queries",
+        "is_correct": true
+      },
+      {
+        "label": "D",
+        "text": "Including extra fields not defined in the JSON schema specification",
+        "is_correct": false
+      }
+    ],
+    "correct_label": "C",
+    "explanation": "Semantic errors involve factually incorrect content that passes schema validation. Reporting a SQL injection vulnerability in code without database queries is structurally valid JSON but semantically wrong.",
+    "tags": [
+      "semantic_vs_syntax",
+      "factual_accuracy",
+      "security_analysis"
+    ],
+    "bloom_level": "understand",
+    "distractor_strategy": {
+      "plausible_but_prompt_only": "N/A",
+      "over_engineered": "N/A",
+      "wrong_layer": "N/A",
+      "valid_but_not_first_step": "N/A"
+    }
+  },
+  {
+    "id": "D4_T4_027",
+    "domain_id": "D4",
+    "task_statement_id": "D4.T4",
+    "scenario_ids": [
+      "S6"
+    ],
+    "difficulty": "applied_judgment",
+    "key_concept_tested": "retry-with-error-feedback pattern",
+    "stem": "Your invoice extraction system implements retry-with-error-feedback, but you notice that documents requiring retries take 3x longer to process than successful first attempts. Your SLA requires 95% of documents to process within 30 seconds. How should you optimize the retry strategy?",
+    "options": [
+      {
+        "label": "A",
+        "text": "Limit retries to documents under 10 pages to stay within time constraints",
+        "is_correct": false
+      },
+      {
+        "label": "B",
+        "text": "Implement parallel retry attempts to reduce overall processing time",
+        "is_correct": false
+      },
+      {
+        "label": "C",
+        "text": "Route retry-required documents to asynchronous processing queues",
+        "is_correct": false
+      },
+      {
+        "label": "D",
+        "text": "Implement fast-fail validation to identify hopeless cases before retry attempts",
+        "is_correct": true
+      }
+    ],
+    "correct_label": "D",
+    "explanation": "Fast-fail validation can quickly identify documents that are fundamentally unprocessable (corrupted, wrong format, missing critical information) to avoid wasting time on retries that won't succeed.",
+    "tags": [
+      "retry_optimization",
+      "sla_constraints",
+      "fast_fail_validation"
+    ],
+    "bloom_level": "apply",
+    "distractor_strategy": {
+      "plausible_but_prompt_only": "N/A",
+      "over_engineered": "N/A",
+      "wrong_layer": "N/A",
+      "valid_but_not_first_step": "N/A"
+    }
+  },
+  {
+    "id": "D4_T4_028",
+    "domain_id": "D4",
+    "task_statement_id": "D4.T4",
+    "scenario_ids": [
+      "S6"
+    ],
+    "difficulty": "anti_pattern_recognition",
+    "key_concept_tested": "self-correction validation flows",
+    "stem": "A team implements self-correction by having Claude generate extraction results, then immediately generate a second 'corrected' version without any validation feedback between attempts. They claim this reduces errors by 12%. What is the fundamental issue with this approach?",
+    "options": [
+      {
+        "label": "A",
+        "text": "Self-correction without validation feedback is essentially random retry with different seeds",
+        "is_correct": true
+      },
+      {
+        "label": "B",
+        "text": "The 12% improvement is too small to justify the doubled computational cost",
+        "is_correct": false
+      },
+      {
+        "label": "C",
+        "text": "Two correction attempts are insufficient for complex document types",
+        "is_correct": false
+      },
+      {
+        "label": "D",
+        "text": "The second attempt should use different model parameters to ensure variation",
+        "is_correct": false
+      }
+    ],
+    "correct_label": "A",
+    "explanation": "Without validation feedback identifying specific errors, the 'correction' attempt has no guidance for improvement. Any improvement is likely due to random variation rather than systematic correction, making this an inefficient use of resources.",
+    "tags": [
+      "blind_self_correction",
+      "random_variation",
+      "validation_necessity"
+    ],
+    "bloom_level": "evaluate",
+    "distractor_strategy": {
+      "plausible_but_prompt_only": "N/A",
+      "over_engineered": "N/A",
+      "wrong_layer": "N/A",
+      "valid_but_not_first_step": "N/A"
+    }
+  },
+  {
+    "id": "D4_T4_029",
+    "domain_id": "D4",
+    "task_statement_id": "D4.T4",
+    "scenario_ids": [
+      "S5"
+    ],
+    "difficulty": "applied_judgment",
+    "key_concept_tested": "validation, retry, and feedback loops for extraction quality",
+    "stem": "Your CI/CD system's code analysis generates 127 suggestions per pull request on average, but developers only act on 23% of them. You implement validation feedback loops that reduce suggestions to 45 per pull request with 67% action rate. What does this improvement indicate about your validation approach?",
+    "options": [
+      {
+        "label": "A",
+        "text": "The validation successfully filtered out low-priority suggestions while preserving important ones",
+        "is_correct": false
+      },
+      {
+        "label": "B",
+        "text": "The validation eliminated false positives and improved suggestion relevance",
+        "is_correct": true
+      },
+      {
+        "label": "C",
+        "text": "The validation reduced computational overhead while maintaining analysis quality",
+        "is_correct": false
+      },
+      {
+        "label": "D",
+        "text": "The validation improved developer engagement through more manageable suggestion volumes",
+        "is_correct": false
+      }
+    ],
+    "correct_label": "B",
+    "explanation": "The key metric is the action rate improvement from 23% to 67%. This indicates the validation successfully identified and eliminated suggestions that were technically valid but not actionable or relevant, reducing false positives.",
+    "tags": [
+      "false_positive_reduction",
+      "suggestion_relevance",
+      "developer_action_rate"
+    ],
+    "bloom_level": "apply",
+    "distractor_strategy": {
+      "plausible_but_prompt_only": "N/A",
+      "over_engineered": "N/A",
+      "wrong_layer": "N/A",
+      "valid_but_not_first_step": "N/A"
+    }
+  },
+  {
+    "id": "D4_T4_030",
+    "domain_id": "D4",
+    "task_statement_id": "D4.T4",
+    "scenario_ids": [
+      "S6"
+    ],
+    "difficulty": "conceptual_knowledge",
+    "key_concept_tested": "calculated_total vs stated_total discrepancy detection",
+    "stem": "In a purchase order extraction system, what is the primary purpose of implementing calculated_total vs stated_total discrepancy detection?",
+    "options": [
+      {
+        "label": "A",
+        "text": "To verify the mathematical accuracy of the original document",
+        "is_correct": false
+      },
+      {
+        "label": "B",
+        "text": "To identify incomplete extraction of line items, taxes, or fees",
+        "is_correct": false
+      },
+      {
+        "label": "C",
+        "text": "To validate that the extraction captured all financial components accurately",
+        "is_correct": true
+      },
+      {
+        "label": "D",
+        "text": "To detect fraudulent documents with intentionally incorrect totals",
+        "is_correct": false
+      }
+    ],
+    "correct_label": "C",
+    "explanation": "Calculated vs stated total comparison primarily validates extraction completeness - ensuring all financial components (line items, taxes, discounts, fees) were captured, not verifying document accuracy or detecting fraud.",
+    "tags": [
+      "total_validation_purpose",
+      "extraction_completeness",
+      "financial_components"
+    ],
+    "bloom_level": "understand",
+    "distractor_strategy": {
+      "plausible_but_prompt_only": "N/A",
+      "over_engineered": "N/A",
+      "wrong_layer": "N/A",
+      "valid_but_not_first_step": "N/A"
+    }
+  },
+  {
+    "id": "D4_T4_031",
+    "domain_id": "D4",
+    "task_statement_id": "D4.T4",
+    "scenario_ids": [
+      "S6"
+    ],
+    "difficulty": "applied_judgment",
+    "key_concept_tested": "retries ineffective when information absent from source",
+    "stem": "Your legal document system processes merger agreements and consistently fails to extract 'termination_penalty' from 16% of documents. After implementing retry logic with detailed error feedback, the failure rate remains exactly 16%. Legal review confirms these are older agreements from before termination penalties became standard. What is the appropriate system response?",
+    "options": [
+      {
+        "label": "A",
+        "text": "Flag these documents for manual legal review to identify alternative penalty structures",
+        "is_correct": false
+      },
+      {
+        "label": "B",
+        "text": "Set termination_penalty to null and add a metadata flag indicating historical document",
+        "is_correct": true
+      },
+      {
+        "label": "C",
+        "text": "Implement fuzzy matching to identify similar penalty concepts in the text",
+        "is_correct": false
+      },
+      {
+        "label": "D",
+        "text": "Create a separate extraction schema for historical merger agreements",
+        "is_correct": false
+      }
+    ],
+    "correct_label": "B",
+    "explanation": "When information is genuinely absent due to historical context, the system should gracefully handle the missing data with null values and appropriate metadata, rather than over-engineering solutions for data that doesn't exist.",
+    "tags": [
+      "historical_document_handling",
+      "graceful_degradation",
+      "missing_data_patterns"
+    ],
+    "bloom_level": "apply",
+    "distractor_strategy": {
+      "plausible_but_prompt_only": "N/A",
+      "over_engineered": "D",
+      "wrong_layer": "N/A",
+      "valid_but_not_first_step": "N/A"
+    }
+  },
+  {
+    "id": "D4_T4_032",
+    "domain_id": "D4",
+    "task_statement_id": "D4.T4",
+    "scenario_ids": [
+      "S5"
+    ],
+    "difficulty": "anti_pattern_recognition",
+    "key_concept_tested": "semantic vs schema syntax errors",
+    "stem": "A CI/CD system validates code review output by checking that all suggested function names exist in the codebase, then automatically retries with corrected function names when mismatches are found. However, this validation incorrectly flags suggestions about functions that should be created. What is the core issue?",
+    "options": [
+      {
+        "label": "A",
+        "text": "The validation conflates existing code analysis with new code suggestions",
+        "is_correct": false
+      },
+      {
+        "label": "B",
+        "text": "The system needs separate validation logic for different types of code review suggestions",
+        "is_correct": false
+      },
+      {
+        "label": "C",
+        "text": "The validation logic doesn't distinguish between refactoring existing code and proposing new code",
+        "is_correct": true
+      },
+      {
+        "label": "D",
+        "text": "Function name validation should be optional rather than mandatory for all suggestions",
+        "is_correct": false
+      }
+    ],
+    "correct_label": "C",
+    "explanation": "The validation incorrectly assumes all function references should exist in the current codebase, but legitimate code review suggestions often propose creating new functions. The logic needs to distinguish between references to existing vs. proposed code.",
+    "tags": [
+      "validation_context",
+      "existing_vs_proposed_code",
+      "suggestion_types"
+    ],
+    "bloom_level": "evaluate",
+    "distractor_strategy": {
+      "plausible_but_prompt_only": "N/A",
+      "over_engineered": "B",
+      "wrong_layer": "N/A",
+      "valid_but_not_first_step": "N/A"
+    }
+  },
+  {
+    "id": "D4_T4_033",
+    "domain_id": "D4",
+    "task_statement_id": "D4.T4",
+    "scenario_ids": [
+      "S6"
+    ],
+    "difficulty": "applied_judgment",
+    "key_concept_tested": "detected_pattern field for dismissal analysis",
+    "stem": "Your insurance claim extraction system uses 'detected_pattern' to identify document types. Analysis shows 92% accuracy for auto claims but only 67% for property claims. Property claim extraction failures correlate strongly with pattern misclassification. What targeted improvement should you implement?",
+    "options": [
+      {
+        "label": "A",
+        "text": "Add more property claim examples to improve pattern detection training",
+        "is_correct": false
+      },
+      {
+        "label": "B",
+        "text": "Implement confidence scoring specifically for property claim pattern detection",
+        "is_correct": false
+      },
+      {
+        "label": "C",
+        "text": "Use pattern uncertainty as a trigger for manual document type verification",
+        "is_correct": false
+      },
+      {
+        "label": "D",
+        "text": "Create property-specific pattern detection with additional contextual cues",
+        "is_correct": true
+      }
+    ],
+    "correct_label": "D",
+    "explanation": "Since property claims have significantly lower pattern detection accuracy (67% vs 92%), they need specialized pattern detection logic that considers property-specific contextual cues (property types, damage categories, etc.) that differ from auto claims.",
+    "tags": [
+      "domain_specific_patterns",
+      "pattern_detection_accuracy",
+      "contextual_cues"
+    ],
+    "bloom_level": "apply",
+    "distractor_strategy": {
+      "plausible_but_prompt_only": "N/A",
+      "over_engineered": "N/A",
+      "wrong_layer": "N/A",
+      "valid_but_not_first_step": "N/A"
+    }
+  },
+  {
+    "id": "D4_T4_034",
+    "domain_id": "D4",
+    "task_statement_id": "D4.T4",
+    "scenario_ids": [
+      "S6"
+    ],
+    "difficulty": "conceptual_knowledge",
+    "key_concept_tested": "self-correction validation flows",
+    "stem": "In structured data extraction systems, what is the most appropriate trigger condition for initiating self-correction validation flows?",
+    "options": [
+      {
+        "label": "A",
+        "text": "When the initial extraction completes successfully without any schema violations",
+        "is_correct": false
+      },
+      {
+        "label": "B",
+        "text": "When extracted data contains values that fall outside expected ranges or patterns",
+        "is_correct": true
+      },
+      {
+        "label": "C",
+        "text": "When the document processing time exceeds the average for similar document types",
+        "is_correct": false
+      },
+      {
+        "label": "D",
+        "text": "When the extracted data structure is more complex than the defined schema allows",
+        "is_correct": false
+      }
+    ],
+    "correct_label": "B",
+    "explanation": "Self-correction should be triggered by indicators of potential errors, such as extracted values outside expected ranges (dates in the future, negative prices, etc.), which suggest the extraction may contain logical inconsistencies.",
+    "tags": [
+      "self_correction_triggers",
+      "anomaly_detection",
+      "validation_conditions"
+    ],
+    "bloom_level": "understand",
+    "distractor_strategy": {
+      "plausible_but_prompt_only": "N/A",
+      "over_engineered": "N/A",
+      "wrong_layer": "N/A",
+      "valid_but_not_first_step": "N/A"
+    }
+  }
+]

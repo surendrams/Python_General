@@ -1,0 +1,1600 @@
+[
+  {
+    "id": "D2_T3_001",
+    "domain_id": "D2",
+    "task_statement_id": "D2.T3",
+    "scenario_ids": [
+      "S1"
+    ],
+    "difficulty": "conceptual_knowledge",
+    "key_concept_tested": "too many tools degrade selection reliability",
+    "stem": "Your customer support agent has access to 15 different MCP tools including get_customer, lookup_order, process_refund, escalate_to_human, plus various analytics and reporting tools. What is the primary risk of this configuration?",
+    "options": [
+      {
+        "label": "A",
+        "text": "The agent will consume too much compute processing all tool descriptions",
+        "is_correct": false
+      },
+      {
+        "label": "B",
+        "text": "Tool execution latency will increase linearly with the number of available tools",
+        "is_correct": false
+      },
+      {
+        "label": "C",
+        "text": "Claude's tool selection reliability degrades when presented with too many options",
+        "is_correct": true
+      },
+      {
+        "label": "D",
+        "text": "The MCP protocol has a hard limit of 10 tools per agent instance",
+        "is_correct": false
+      }
+    ],
+    "correct_label": "C",
+    "explanation": "Research shows that large language models exhibit decreased selection accuracy when presented with many tool options, similar to choice overload in human decision-making. The other options are incorrect - compute overhead is minimal, latency isn't directly correlated with tool count, and MCP has no hard tool limits.",
+    "tags": [
+      "tool_selection",
+      "cognitive_load",
+      "mcp_design"
+    ],
+    "bloom_level": "understand",
+    "distractor_strategy": {
+      "plausible_but_prompt_only": "N/A",
+      "over_engineered": "N/A",
+      "wrong_layer": "N/A",
+      "valid_but_not_first_step": "N/A"
+    }
+  },
+  {
+    "id": "D2_T3_002",
+    "domain_id": "D2",
+    "task_statement_id": "D2.T3",
+    "scenario_ids": [
+      "S3"
+    ],
+    "difficulty": "applied_judgment",
+    "key_concept_tested": "scoped tool access",
+    "stem": "In your multi-agent research system, the web search subagent is incorrectly calling document_analysis tools instead of focusing on search. The coordinator shows 23% task completion delays. What should you implement?",
+    "options": [
+      {
+        "label": "A",
+        "text": "Add explicit prompt instructions telling the search agent not to use analysis tools",
+        "is_correct": false
+      },
+      {
+        "label": "B",
+        "text": "Implement tool access scoping so each subagent only receives tools relevant to its specialization",
+        "is_correct": false
+      },
+      {
+        "label": "C",
+        "text": "Use tool_choice: 'any' to let the model freely select from all available tools",
+        "is_correct": false
+      },
+      {
+        "label": "D",
+        "text": "Restrict the search subagent's allowedTools to only include web_search and related tools",
+        "is_correct": true
+      }
+    ],
+    "correct_label": "D",
+    "explanation": "Restricting allowedTools to only include relevant tools prevents the agent from accessing out-of-specialization tools entirely. Prompt-only restrictions are unreliable, tool_choice: 'any' would worsen the problem, and 'tool access scoping' is vague compared to the concrete allowedTools configuration.",
+    "tags": [
+      "subagent_configuration",
+      "tool_restriction",
+      "specialization"
+    ],
+    "bloom_level": "apply",
+    "distractor_strategy": {
+      "plausible_but_prompt_only": "A",
+      "over_engineered": "N/A",
+      "wrong_layer": "N/A",
+      "valid_but_not_first_step": "N/A"
+    }
+  },
+  {
+    "id": "D2_T3_003",
+    "domain_id": "D2",
+    "task_statement_id": "D2.T3",
+    "scenario_ids": [
+      "S1"
+    ],
+    "difficulty": "anti_pattern_recognition",
+    "key_concept_tested": "agents misuse out-of-specialization tools",
+    "stem": "A colleague suggests giving all customer support subagents access to the full tool suite (get_customer, lookup_order, process_refund, escalate_to_human, generate_analytics_report, sync_crm_data) to 'maximize flexibility.' What is the primary flaw in this approach?",
+    "options": [
+      {
+        "label": "A",
+        "text": "Subagents will frequently select inappropriate tools outside their specialization, reducing overall system reliability",
+        "is_correct": true
+      },
+      {
+        "label": "B",
+        "text": "The MCP server will become overloaded handling requests from multiple agents simultaneously",
+        "is_correct": false
+      },
+      {
+        "label": "C",
+        "text": "Tool execution costs will increase exponentially with the number of available tools",
+        "is_correct": false
+      },
+      {
+        "label": "D",
+        "text": "The agent conversation history will become too large to fit in the context window",
+        "is_correct": false
+      }
+    ],
+    "correct_label": "A",
+    "explanation": "When agents have access to tools outside their specialization, they often misuse them, leading to incorrect actions and system unreliability. The other options represent technical misconceptions - MCP servers handle concurrent requests well, costs don't scale exponentially with tool count, and tool availability doesn't directly impact context window usage.",
+    "tags": [
+      "anti_pattern",
+      "tool_misuse",
+      "specialization"
+    ],
+    "bloom_level": "evaluate",
+    "distractor_strategy": {
+      "plausible_but_prompt_only": "N/A",
+      "over_engineered": "N/A",
+      "wrong_layer": "N/A",
+      "valid_but_not_first_step": "N/A"
+    }
+  },
+  {
+    "id": "D2_T3_004",
+    "domain_id": "D2",
+    "task_statement_id": "D2.T3",
+    "scenario_ids": [
+      "S3"
+    ],
+    "difficulty": "conceptual_knowledge",
+    "key_concept_tested": "tool_choice: auto vs any vs forced",
+    "stem": "What is the key difference between tool_choice: 'auto' and tool_choice: 'any' in MCP tool configuration?",
+    "options": [
+      {
+        "label": "A",
+        "text": "'auto' allows the model to use tools or respond directly, while 'any' forces tool usage on every turn",
+        "is_correct": false
+      },
+      {
+        "label": "B",
+        "text": "'auto' forces the model to use tools on every turn, while 'any' allows the model to respond without using tools",
+        "is_correct": true
+      },
+      {
+        "label": "C",
+        "text": "'auto' randomly selects tools, while 'any' uses intelligent selection based on context",
+        "is_correct": false
+      },
+      {
+        "label": "D",
+        "text": "'auto' and 'any' are functionally identical, just different naming conventions",
+        "is_correct": false
+      }
+    ],
+    "correct_label": "B",
+    "explanation": "tool_choice: 'auto' forces the model to select and use a tool on every turn, while 'any' allows the model the flexibility to either use a tool or respond directly without tool usage. The other options incorrectly describe these behaviors.",
+    "tags": [
+      "tool_choice",
+      "mcp_configuration",
+      "agent_behavior"
+    ],
+    "bloom_level": "understand",
+    "distractor_strategy": {
+      "plausible_but_prompt_only": "C",
+      "over_engineered": "N/A",
+      "wrong_layer": "N/A",
+      "valid_but_not_first_step": "N/A"
+    }
+  },
+  {
+    "id": "D2_T3_005",
+    "domain_id": "D2",
+    "task_statement_id": "D2.T3",
+    "scenario_ids": [
+      "S1"
+    ],
+    "difficulty": "applied_judgment",
+    "key_concept_tested": "restricting subagent tool sets",
+    "stem": "Your billing dispute subagent is attempting to process refunds directly instead of escalating complex cases. It has access to get_customer, lookup_order, process_refund, and escalate_to_human. What configuration change would improve reliability?",
+    "options": [
+      {
+        "label": "A",
+        "text": "Remove process_refund from the subagent's allowedTools and require escalation for all refund decisions",
+        "is_correct": false
+      },
+      {
+        "label": "B",
+        "text": "Add detailed prompt instructions about when to use each tool",
+        "is_correct": false
+      },
+      {
+        "label": "C",
+        "text": "Restrict the subagent to only get_customer, lookup_order, and escalate_to_human tools",
+        "is_correct": true
+      },
+      {
+        "label": "D",
+        "text": "Use tool_choice: 'auto' to force tool usage on every interaction",
+        "is_correct": false
+      }
+    ],
+    "correct_label": "C",
+    "explanation": "Restricting the subagent's tools to exclude process_refund prevents it from making refund decisions it shouldn't handle, forcing proper escalation. Prompt instructions alone are unreliable, and tool_choice: 'auto' doesn't address the core issue of inappropriate tool access.",
+    "tags": [
+      "tool_restriction",
+      "subagent_specialization",
+      "escalation_patterns"
+    ],
+    "bloom_level": "apply",
+    "distractor_strategy": {
+      "plausible_but_prompt_only": "B",
+      "over_engineered": "N/A",
+      "wrong_layer": "N/A",
+      "valid_but_not_first_step": "N/A"
+    }
+  },
+  {
+    "id": "D2_T3_006",
+    "domain_id": "D2",
+    "task_statement_id": "D2.T3",
+    "scenario_ids": [
+      "S3"
+    ],
+    "difficulty": "conceptual_knowledge",
+    "key_concept_tested": "constrained alternative tools",
+    "stem": "When designing tool sets for specialized subagents, what is the benefit of providing constrained alternative tools rather than a single tool per function?",
+    "options": [
+      {
+        "label": "A",
+        "text": "It increases the total number of available tools for better selection",
+        "is_correct": false
+      },
+      {
+        "label": "B",
+        "text": "It provides redundancy for reliability while maintaining specialization boundaries",
+        "is_correct": false
+      },
+      {
+        "label": "C",
+        "text": "It allows agents to choose the most appropriate tool variant for specific contexts",
+        "is_correct": false
+      },
+      {
+        "label": "D",
+        "text": "It enables graceful fallback when the primary tool fails or is unavailable",
+        "is_correct": true
+      }
+    ],
+    "correct_label": "D",
+    "explanation": "Constrained alternative tools provide fallback options when primary tools fail, improving system resilience while maintaining specialization. Simply increasing tool count doesn't improve selection, and the focus is on reliability rather than context optimization.",
+    "tags": [
+      "tool_design",
+      "fallback_mechanisms",
+      "reliability"
+    ],
+    "bloom_level": "understand",
+    "distractor_strategy": {
+      "plausible_but_prompt_only": "N/A",
+      "over_engineered": "N/A",
+      "wrong_layer": "N/A",
+      "valid_but_not_first_step": "N/A"
+    }
+  },
+  {
+    "id": "D2_T3_007",
+    "domain_id": "D2",
+    "task_statement_id": "D2.T3",
+    "scenario_ids": [
+      "S1"
+    ],
+    "difficulty": "anti_pattern_recognition",
+    "key_concept_tested": "tool_choice: auto vs any vs forced",
+    "stem": "A developer sets tool_choice: 'auto' for the customer support agent to 'ensure it always uses tools for better accuracy.' After deployment, customers complain about robotic responses and unnecessary delays. What is the root cause?",
+    "options": [
+      {
+        "label": "A",
+        "text": "tool_choice: 'auto' forces tool usage even when a direct response would be more appropriate",
+        "is_correct": true
+      },
+      {
+        "label": "B",
+        "text": "The MCP server is experiencing high latency due to increased tool call volume",
+        "is_correct": false
+      },
+      {
+        "label": "C",
+        "text": "The agent is selecting the wrong tools due to poor prompt engineering",
+        "is_correct": false
+      },
+      {
+        "label": "D",
+        "text": "tool_choice: 'auto' causes the agent to use multiple tools simultaneously",
+        "is_correct": false
+      }
+    ],
+    "correct_label": "A",
+    "explanation": "tool_choice: 'auto' forces the agent to use tools on every turn, even when a simple direct response would be better for customer experience. This creates unnecessary delays and robotic interactions. The other options misunderstand how tool_choice works.",
+    "tags": [
+      "anti_pattern",
+      "tool_choice_misuse",
+      "customer_experience"
+    ],
+    "bloom_level": "evaluate",
+    "distractor_strategy": {
+      "plausible_but_prompt_only": "C",
+      "over_engineered": "N/A",
+      "wrong_layer": "N/A",
+      "valid_but_not_first_step": "N/A"
+    }
+  },
+  {
+    "id": "D2_T3_008",
+    "domain_id": "D2",
+    "task_statement_id": "D2.T3",
+    "scenario_ids": [
+      "S3"
+    ],
+    "difficulty": "applied_judgment",
+    "key_concept_tested": "too many tools degrade selection reliability",
+    "stem": "Your research coordinator agent has access to 22 tools across search, analysis, synthesis, and reporting functions. You observe a 31% increase in incorrect tool selections. What is the most effective solution?",
+    "options": [
+      {
+        "label": "A",
+        "text": "Add more detailed descriptions to each tool to help the agent choose correctly",
+        "is_correct": false
+      },
+      {
+        "label": "B",
+        "text": "Partition tools across specialized subagents with 4-6 tools each and route through the coordinator",
+        "is_correct": true
+      },
+      {
+        "label": "C",
+        "text": "Use tool_choice: 'any' to give the agent more flexibility in tool selection",
+        "is_correct": false
+      },
+      {
+        "label": "D",
+        "text": "Implement a probabilistic tool selection algorithm to reduce cognitive load",
+        "is_correct": false
+      }
+    ],
+    "correct_label": "B",
+    "explanation": "Partitioning tools across specialized subagents reduces the cognitive load on each agent, improving selection reliability while maintaining system functionality. More detailed descriptions don't address the core issue of too many choices, and the other options don't solve the selection reliability problem.",
+    "tags": [
+      "tool_partitioning",
+      "cognitive_load",
+      "system_architecture"
+    ],
+    "bloom_level": "apply",
+    "distractor_strategy": {
+      "plausible_but_prompt_only": "N/A",
+      "over_engineered": "N/A",
+      "wrong_layer": "N/A",
+      "valid_but_not_first_step": "N/A"
+    }
+  },
+  {
+    "id": "D2_T3_009",
+    "domain_id": "D2",
+    "task_statement_id": "D2.T3",
+    "scenario_ids": [
+      "S1"
+    ],
+    "difficulty": "conceptual_knowledge",
+    "key_concept_tested": "scoped tool access",
+    "stem": "What is the primary advantage of implementing scoped tool access for customer support subagents?",
+    "options": [
+      {
+        "label": "A",
+        "text": "It reduces the computational overhead of processing tool descriptions",
+        "is_correct": false
+      },
+      {
+        "label": "B",
+        "text": "It prevents agents from accessing tools outside their area of responsibility",
+        "is_correct": false
+      },
+      {
+        "label": "C",
+        "text": "It ensures each agent only sees tools relevant to its specialized function",
+        "is_correct": true
+      },
+      {
+        "label": "D",
+        "text": "It enables better load balancing across MCP servers",
+        "is_correct": false
+      }
+    ],
+    "correct_label": "C",
+    "explanation": "Scoped tool access ensures agents only have access to tools relevant to their specialization, improving both selection accuracy and preventing inappropriate tool usage. The other options focus on technical benefits rather than the core functional advantage.",
+    "tags": [
+      "tool_scoping",
+      "specialization",
+      "agent_design"
+    ],
+    "bloom_level": "understand",
+    "distractor_strategy": {
+      "plausible_but_prompt_only": "N/A",
+      "over_engineered": "N/A",
+      "wrong_layer": "N/A",
+      "valid_but_not_first_step": "N/A"
+    }
+  },
+  {
+    "id": "D2_T3_010",
+    "domain_id": "D2",
+    "task_statement_id": "D2.T3",
+    "scenario_ids": [
+      "S3"
+    ],
+    "difficulty": "applied_judgment",
+    "key_concept_tested": "agents misuse out-of-specialization tools",
+    "stem": "Your document analysis subagent is using web_search tools instead of document_extract tools, causing a 28% accuracy drop in research quality. The agent has access to both tool sets. What should you implement?",
+    "options": [
+      {
+        "label": "A",
+        "text": "Configure allowedTools to exclude web_search tools from the document analysis subagent",
+        "is_correct": false
+      },
+      {
+        "label": "B",
+        "text": "Add explicit prompting to instruct the agent to prefer document tools over web tools",
+        "is_correct": false
+      },
+      {
+        "label": "C",
+        "text": "Use tool_choice to force specific tool usage patterns",
+        "is_correct": false
+      },
+      {
+        "label": "D",
+        "text": "Restrict the subagent to only document-related tools and route web search requests to the coordinator",
+        "is_correct": true
+      }
+    ],
+    "correct_label": "D",
+    "explanation": "Restricting the subagent to only document-related tools prevents misuse of web search tools while routing such requests through the coordinator maintains system functionality. This is more comprehensive than just excluding specific tools and more reliable than prompt-based instructions.",
+    "tags": [
+      "tool_restriction",
+      "agent_specialization",
+      "request_routing"
+    ],
+    "bloom_level": "apply",
+    "distractor_strategy": {
+      "plausible_but_prompt_only": "B",
+      "over_engineered": "N/A",
+      "wrong_layer": "N/A",
+      "valid_but_not_first_step": "N/A"
+    }
+  },
+  {
+    "id": "D2_T3_011",
+    "domain_id": "D2",
+    "task_statement_id": "D2.T3",
+    "scenario_ids": [
+      "S1"
+    ],
+    "difficulty": "conceptual_knowledge",
+    "key_concept_tested": "tool_choice: auto vs any vs forced",
+    "stem": "When would you use tool_choice: 'forced' with a specific tool name in a customer support context?",
+    "options": [
+      {
+        "label": "A",
+        "text": "When you want to guarantee a specific tool is used for a particular interaction type",
+        "is_correct": true
+      },
+      {
+        "label": "B",
+        "text": "When you want to give the agent maximum flexibility in tool selection",
+        "is_correct": false
+      },
+      {
+        "label": "C",
+        "text": "When you want to prevent the agent from using any tools",
+        "is_correct": false
+      },
+      {
+        "label": "D",
+        "text": "When you want to enable automatic tool selection based on context",
+        "is_correct": false
+      }
+    ],
+    "correct_label": "A",
+    "explanation": "tool_choice: 'forced' with a specific tool name guarantees that exact tool will be used, useful for critical operations where you need certainty. The other options describe different tool_choice behaviors or are incorrect.",
+    "tags": [
+      "tool_choice",
+      "forced_execution",
+      "critical_operations"
+    ],
+    "bloom_level": "understand",
+    "distractor_strategy": {
+      "plausible_but_prompt_only": "N/A",
+      "over_engineered": "N/A",
+      "wrong_layer": "N/A",
+      "valid_but_not_first_step": "N/A"
+    }
+  },
+  {
+    "id": "D2_T3_012",
+    "domain_id": "D2",
+    "task_statement_id": "D2.T3",
+    "scenario_ids": [
+      "S3"
+    ],
+    "difficulty": "anti_pattern_recognition",
+    "key_concept_tested": "restricting subagent tool sets",
+    "stem": "A team lead suggests 'just use good prompting' to prevent the synthesis subagent from calling search tools instead of properly restricting its allowedTools. What is the fundamental flaw with this approach?",
+    "options": [
+      {
+        "label": "A",
+        "text": "Prompts consume more tokens than tool restrictions, increasing costs",
+        "is_correct": false
+      },
+      {
+        "label": "B",
+        "text": "Prompt-based restrictions are probabilistic and unreliable compared to configuration-based controls",
+        "is_correct": true
+      },
+      {
+        "label": "C",
+        "text": "The MCP protocol doesn't support prompt-based tool filtering",
+        "is_correct": false
+      },
+      {
+        "label": "D",
+        "text": "Prompts cannot access the current tool configuration state",
+        "is_correct": false
+      }
+    ],
+    "correct_label": "B",
+    "explanation": "Prompt-based restrictions rely on the model's compliance and can fail unpredictably, while configuration-based allowedTools restrictions provide deterministic control. The other options are either incorrect technical claims or miss the core reliability issue.",
+    "tags": [
+      "anti_pattern",
+      "prompt_vs_config",
+      "reliability"
+    ],
+    "bloom_level": "evaluate",
+    "distractor_strategy": {
+      "plausible_but_prompt_only": "D",
+      "over_engineered": "N/A",
+      "wrong_layer": "N/A",
+      "valid_but_not_first_step": "N/A"
+    }
+  },
+  {
+    "id": "D2_T3_013",
+    "domain_id": "D2",
+    "task_statement_id": "D2.T3",
+    "scenario_ids": [
+      "S1"
+    ],
+    "difficulty": "applied_judgment",
+    "key_concept_tested": "constrained alternative tools",
+    "stem": "Your refund processing subagent needs both process_refund and process_store_credit tools, but you want to prevent it from accessing other payment tools like process_chargeback. How should you configure this?",
+    "options": [
+      {
+        "label": "A",
+        "text": "Include both refund tools in allowedTools but exclude all other payment-related tools",
+        "is_correct": false
+      },
+      {
+        "label": "B",
+        "text": "Use tool_choice: 'any' and rely on prompting to guide tool selection",
+        "is_correct": false
+      },
+      {
+        "label": "C",
+        "text": "Provide only process_refund and route store credit requests to a different subagent",
+        "is_correct": true
+      },
+      {
+        "label": "D",
+        "text": "Give access to all payment tools but use detailed tool descriptions to guide selection",
+        "is_correct": false
+      }
+    ],
+    "correct_label": "C",
+    "explanation": "Providing only the essential process_refund tool and routing store credit requests to a specialized subagent maintains clear boundaries and prevents misuse of other payment tools. Including multiple similar tools can lead to confusion and inappropriate selections.",
+    "tags": [
+      "tool_restriction",
+      "request_routing",
+      "specialization"
+    ],
+    "bloom_level": "apply",
+    "distractor_strategy": {
+      "plausible_but_prompt_only": "B",
+      "over_engineered": "N/A",
+      "wrong_layer": "N/A",
+      "valid_but_not_first_step": "N/A"
+    }
+  },
+  {
+    "id": "D2_T3_014",
+    "domain_id": "D2",
+    "task_statement_id": "D2.T3",
+    "scenario_ids": [
+      "S3"
+    ],
+    "difficulty": "conceptual_knowledge",
+    "key_concept_tested": "too many tools degrade selection reliability",
+    "stem": "What is the recommended maximum number of tools per subagent to maintain reliable tool selection?",
+    "options": [
+      {
+        "label": "A",
+        "text": "3-5 tools to minimize cognitive load and maximize selection accuracy",
+        "is_correct": false
+      },
+      {
+        "label": "B",
+        "text": "8-10 tools to provide sufficient functionality while maintaining reliability",
+        "is_correct": false
+      },
+      {
+        "label": "C",
+        "text": "15-20 tools to enable comprehensive task coverage",
+        "is_correct": false
+      },
+      {
+        "label": "D",
+        "text": "4-6 tools to balance functionality with reliable selection performance",
+        "is_correct": true
+      }
+    ],
+    "correct_label": "D",
+    "explanation": "Research and practical experience suggest 4-6 tools per agent provides the optimal balance between functionality and reliable tool selection. Fewer tools may be too limiting, while more tools significantly degrade selection accuracy.",
+    "tags": [
+      "tool_count",
+      "selection_reliability",
+      "best_practices"
+    ],
+    "bloom_level": "understand",
+    "distractor_strategy": {
+      "plausible_but_prompt_only": "N/A",
+      "over_engineered": "N/A",
+      "wrong_layer": "N/A",
+      "valid_but_not_first_step": "N/A"
+    }
+  },
+  {
+    "id": "D2_T3_015",
+    "domain_id": "D2",
+    "task_statement_id": "D2.T3",
+    "scenario_ids": [
+      "S1"
+    ],
+    "difficulty": "applied_judgment",
+    "key_concept_tested": "scoped tool access",
+    "stem": "Your customer lookup subagent is incorrectly calling escalate_to_human for routine information requests, bypassing the normal resolution flow. It currently has access to get_customer, lookup_order, and escalate_to_human. What should you change?",
+    "options": [
+      {
+        "label": "A",
+        "text": "Remove escalate_to_human from the subagent and handle escalation logic at the coordinator level",
+        "is_correct": true
+      },
+      {
+        "label": "B",
+        "text": "Add more detailed prompting about when escalation is appropriate",
+        "is_correct": false
+      },
+      {
+        "label": "C",
+        "text": "Use tool_choice: 'forced' to prevent escalation tool usage",
+        "is_correct": false
+      },
+      {
+        "label": "D",
+        "text": "Implement a separate escalation subagent with specialized escalation tools",
+        "is_correct": false
+      }
+    ],
+    "correct_label": "A",
+    "explanation": "Removing escalate_to_human from the lookup subagent and handling escalation at the coordinator level ensures proper escalation logic and prevents premature escalations. The coordinator can better assess when escalation is truly needed.",
+    "tags": [
+      "tool_scoping",
+      "escalation_control",
+      "coordinator_responsibility"
+    ],
+    "bloom_level": "apply",
+    "distractor_strategy": {
+      "plausible_but_prompt_only": "B",
+      "over_engineered": "D",
+      "wrong_layer": "N/A",
+      "valid_but_not_first_step": "N/A"
+    }
+  },
+  {
+    "id": "D2_T3_016",
+    "domain_id": "D2",
+    "task_statement_id": "D2.T3",
+    "scenario_ids": [
+      "S3"
+    ],
+    "difficulty": "applied_judgment",
+    "key_concept_tested": "tool_choice: auto vs any vs forced",
+    "stem": "Your report generation subagent sometimes needs to generate reports immediately and sometimes needs to gather additional data first. Currently it uses tool_choice: 'auto' but this forces unnecessary tool calls. What should you configure?",
+    "options": [
+      {
+        "label": "A",
+        "text": "Use tool_choice: 'forced' with generate_report to ensure consistent behavior",
+        "is_correct": false
+      },
+      {
+        "label": "B",
+        "text": "Switch to tool_choice: 'any' to allow the agent to decide when tools are needed",
+        "is_correct": true
+      },
+      {
+        "label": "C",
+        "text": "Keep tool_choice: 'auto' but reduce the number of available tools",
+        "is_correct": false
+      },
+      {
+        "label": "D",
+        "text": "Implement separate subagents for immediate vs. data-gathering report scenarios",
+        "is_correct": false
+      }
+    ],
+    "correct_label": "B",
+    "explanation": "tool_choice: 'any' allows the agent to use tools when needed or respond directly when appropriate, providing the flexibility required for this use case. 'auto' forces tool usage, 'forced' removes flexibility, and separate subagents add unnecessary complexity.",
+    "tags": [
+      "tool_choice",
+      "flexibility",
+      "conditional_tool_usage"
+    ],
+    "bloom_level": "apply",
+    "distractor_strategy": {
+      "plausible_but_prompt_only": "N/A",
+      "over_engineered": "D",
+      "wrong_layer": "N/A",
+      "valid_but_not_first_step": "N/A"
+    }
+  },
+  {
+    "id": "D2_T3_017",
+    "domain_id": "D2",
+    "task_statement_id": "D2.T3",
+    "scenario_ids": [
+      "S1"
+    ],
+    "difficulty": "conceptual_knowledge",
+    "key_concept_tested": "agents misuse out-of-specialization tools",
+    "stem": "What is the primary risk when customer support subagents have access to tools outside their specialization?",
+    "options": [
+      {
+        "label": "A",
+        "text": "Increased latency due to processing irrelevant tool descriptions",
+        "is_correct": false
+      },
+      {
+        "label": "B",
+        "text": "Higher costs from unnecessary tool executions",
+        "is_correct": false
+      },
+      {
+        "label": "C",
+        "text": "Agents making inappropriate decisions with tools they don't understand well",
+        "is_correct": true
+      },
+      {
+        "label": "D",
+        "text": "Reduced parallelization due to tool conflicts between agents",
+        "is_correct": false
+      }
+    ],
+    "correct_label": "C",
+    "explanation": "The primary risk is agents making inappropriate decisions with tools outside their expertise, leading to incorrect actions and poor outcomes. The other options focus on technical or cost concerns rather than the core functional risk.",
+    "tags": [
+      "tool_misuse",
+      "specialization_boundaries",
+      "decision_quality"
+    ],
+    "bloom_level": "understand",
+    "distractor_strategy": {
+      "plausible_but_prompt_only": "N/A",
+      "over_engineered": "N/A",
+      "wrong_layer": "N/A",
+      "valid_but_not_first_step": "N/A"
+    }
+  },
+  {
+    "id": "D2_T3_018",
+    "domain_id": "D2",
+    "task_statement_id": "D2.T3",
+    "scenario_ids": [
+      "S3"
+    ],
+    "difficulty": "anti_pattern_recognition",
+    "key_concept_tested": "constrained alternative tools",
+    "stem": "A developer provides each research subagent with 3 different versions of every tool (e.g., web_search_basic, web_search_advanced, web_search_academic) claiming it gives 'more options for better results.' What is wrong with this approach?",
+    "options": [
+      {
+        "label": "A",
+        "text": "It violates the MCP protocol's tool naming conventions",
+        "is_correct": false
+      },
+      {
+        "label": "B",
+        "text": "Multiple similar tools increase selection complexity without meaningful functional benefit",
+        "is_correct": false
+      },
+      {
+        "label": "C",
+        "text": "The agent will become confused by similar tool options and make poor selections",
+        "is_correct": false
+      },
+      {
+        "label": "D",
+        "text": "Tool proliferation degrades selection reliability and creates unnecessary cognitive load",
+        "is_correct": true
+      }
+    ],
+    "correct_label": "D",
+    "explanation": "Providing multiple similar tools creates unnecessary cognitive load and degrades selection reliability without providing meaningful functional alternatives. This is a classic anti-pattern that contradicts the principle of keeping tool sets focused and manageable.",
+    "tags": [
+      "anti_pattern",
+      "tool_proliferation",
+      "cognitive_load"
+    ],
+    "bloom_level": "evaluate",
+    "distractor_strategy": {
+      "plausible_but_prompt_only": "N/A",
+      "over_engineered": "N/A",
+      "wrong_layer": "N/A",
+      "valid_but_not_first_step": "N/A"
+    }
+  },
+  {
+    "id": "D2_T3_019",
+    "domain_id": "D2",
+    "task_statement_id": "D2.T3",
+    "scenario_ids": [
+      "S1"
+    ],
+    "difficulty": "applied_judgment",
+    "key_concept_tested": "restricting subagent tool sets",
+    "stem": "Your billing inquiry subagent needs to look up customer information and order details but should never process refunds or escalate cases. It currently has access to get_customer, lookup_order, process_refund, escalate_to_human. What is the optimal configuration?",
+    "options": [
+      {
+        "label": "A",
+        "text": "Configure allowedTools to only include get_customer and lookup_order",
+        "is_correct": true
+      },
+      {
+        "label": "B",
+        "text": "Keep all tools but use tool_choice: 'forced' to control which tools are used",
+        "is_correct": false
+      },
+      {
+        "label": "C",
+        "text": "Add prompt instructions to never use refund or escalation tools",
+        "is_correct": false
+      },
+      {
+        "label": "D",
+        "text": "Use tool_choice: 'any' and rely on the agent to make appropriate selections",
+        "is_correct": false
+      }
+    ],
+    "correct_label": "A",
+    "explanation": "Restricting allowedTools to only the necessary tools (get_customer, lookup_order) prevents the agent from accessing inappropriate tools entirely, ensuring it stays within its specialized function. This is more reliable than prompt-based or tool_choice-based approaches.",
+    "tags": [
+      "tool_restriction",
+      "specialization",
+      "configuration_control"
+    ],
+    "bloom_level": "apply",
+    "distractor_strategy": {
+      "plausible_but_prompt_only": "C",
+      "over_engineered": "N/A",
+      "wrong_layer": "N/A",
+      "valid_but_not_first_step": "N/A"
+    }
+  },
+  {
+    "id": "D2_T3_020",
+    "domain_id": "D2",
+    "task_statement_id": "D2.T3",
+    "scenario_ids": [
+      "S3"
+    ],
+    "difficulty": "conceptual_knowledge",
+    "key_concept_tested": "tool_choice: auto vs any vs forced",
+    "stem": "In what scenario would tool_choice: 'forced' with a specific tool be most appropriate for a research subagent?",
+    "options": [
+      {
+        "label": "A",
+        "text": "When you want the agent to have maximum flexibility in tool selection",
+        "is_correct": false
+      },
+      {
+        "label": "B",
+        "text": "When you need to guarantee a specific critical operation is performed",
+        "is_correct": true
+      },
+      {
+        "label": "C",
+        "text": "When you want to prevent the agent from using any tools",
+        "is_correct": false
+      },
+      {
+        "label": "D",
+        "text": "When you want the agent to automatically select the best tool for the context",
+        "is_correct": false
+      }
+    ],
+    "correct_label": "B",
+    "explanation": "tool_choice: 'forced' with a specific tool is most appropriate when you need to guarantee a critical operation is performed, such as mandatory data validation or required safety checks. The other options describe different tool_choice behaviors.",
+    "tags": [
+      "tool_choice",
+      "forced_execution",
+      "critical_operations"
+    ],
+    "bloom_level": "understand",
+    "distractor_strategy": {
+      "plausible_but_prompt_only": "N/A",
+      "over_engineered": "N/A",
+      "wrong_layer": "N/A",
+      "valid_but_not_first_step": "N/A"
+    }
+  },
+  {
+    "id": "D2_T3_021",
+    "domain_id": "D2",
+    "task_statement_id": "D2.T3",
+    "scenario_ids": [
+      "S1"
+    ],
+    "difficulty": "applied_judgment",
+    "key_concept_tested": "too many tools degrade selection reliability",
+    "stem": "Your customer support system shows a 19% drop in first-contact resolution after adding 8 new analytics and reporting tools to existing agents. The agents now have 14 total tools. What is the most likely cause and solution?",
+    "options": [
+      {
+        "label": "A",
+        "text": "Tool execution latency is causing timeouts; implement caching to improve performance",
+        "is_correct": false
+      },
+      {
+        "label": "B",
+        "text": "Too many tools are degrading selection accuracy; partition tools across specialized subagents",
+        "is_correct": false
+      },
+      {
+        "label": "C",
+        "text": "New tools are interfering with existing workflows; remove the analytics tools",
+        "is_correct": true
+      },
+      {
+        "label": "D",
+        "text": "Agents need better training on the new tools; improve tool descriptions and examples",
+        "is_correct": false
+      }
+    ],
+    "correct_label": "C",
+    "explanation": "The timing correlation between adding analytics tools and the resolution drop, combined with the high tool count (14), suggests tool selection degradation. Removing non-essential analytics tools that aren't core to customer resolution would restore performance.",
+    "tags": [
+      "tool_selection_degradation",
+      "performance_correlation",
+      "tool_optimization"
+    ],
+    "bloom_level": "apply",
+    "distractor_strategy": {
+      "plausible_but_prompt_only": "N/A",
+      "over_engineered": "N/A",
+      "wrong_layer": "N/A",
+      "valid_but_not_first_step": "N/A"
+    }
+  },
+  {
+    "id": "D2_T3_022",
+    "domain_id": "D2",
+    "task_statement_id": "D2.T3",
+    "scenario_ids": [
+      "S3"
+    ],
+    "difficulty": "anti_pattern_recognition",
+    "key_concept_tested": "scoped tool access",
+    "stem": "A developer argues that 'giving all subagents access to all tools provides maximum flexibility and lets the AI figure out what to use.' The system shows increasing cross-contamination between agent responsibilities. What is the flaw in this reasoning?",
+    "options": [
+      {
+        "label": "A",
+        "text": "MCP servers cannot handle multiple agents accessing the same tools simultaneously",
+        "is_correct": false
+      },
+      {
+        "label": "B",
+        "text": "Unrestricted tool access breaks specialization boundaries and reduces system reliability",
+        "is_correct": true
+      },
+      {
+        "label": "C",
+        "text": "Too many tools will exceed the context window limit for tool descriptions",
+        "is_correct": false
+      },
+      {
+        "label": "D",
+        "text": "The additional computational overhead will slow down all agent responses",
+        "is_correct": false
+      }
+    ],
+    "correct_label": "B",
+    "explanation": "Unrestricted tool access breaks down the specialization that makes multi-agent systems effective, leading to agents performing tasks outside their expertise and reducing overall system reliability. The other options are technical misconceptions.",
+    "tags": [
+      "anti_pattern",
+      "unrestricted_access",
+      "specialization_breakdown"
+    ],
+    "bloom_level": "evaluate",
+    "distractor_strategy": {
+      "plausible_but_prompt_only": "N/A",
+      "over_engineered": "N/A",
+      "wrong_layer": "N/A",
+      "valid_but_not_first_step": "N/A"
+    }
+  },
+  {
+    "id": "D2_T3_023",
+    "domain_id": "D2",
+    "task_statement_id": "D2.T3",
+    "scenario_ids": [
+      "S1"
+    ],
+    "difficulty": "conceptual_knowledge",
+    "key_concept_tested": "constrained alternative tools",
+    "stem": "What is the difference between constrained alternative tools and tool proliferation in subagent design?",
+    "options": [
+      {
+        "label": "A",
+        "text": "Constrained alternatives provide fallback options within specialization boundaries, while proliferation adds unnecessary similar tools",
+        "is_correct": true
+      },
+      {
+        "label": "B",
+        "text": "Constrained alternatives use different MCP protocols, while proliferation uses the same protocol",
+        "is_correct": false
+      },
+      {
+        "label": "C",
+        "text": "Constrained alternatives are automatically selected, while proliferation requires manual selection",
+        "is_correct": false
+      },
+      {
+        "label": "D",
+        "text": "There is no meaningful difference; both approaches provide multiple tool options",
+        "is_correct": false
+      }
+    ],
+    "correct_label": "A",
+    "explanation": "Constrained alternatives provide meaningful fallback options within clear specialization boundaries (e.g., primary and backup payment processors), while tool proliferation adds multiple similar tools that don't provide distinct functional value and degrade selection reliability.",
+    "tags": [
+      "constrained_alternatives",
+      "tool_proliferation",
+      "design_principles"
+    ],
+    "bloom_level": "understand",
+    "distractor_strategy": {
+      "plausible_but_prompt_only": "N/A",
+      "over_engineered": "N/A",
+      "wrong_layer": "N/A",
+      "valid_but_not_first_step": "N/A"
+    }
+  },
+  {
+    "id": "D2_T3_024",
+    "domain_id": "D2",
+    "task_statement_id": "D2.T3",
+    "scenario_ids": [
+      "S3"
+    ],
+    "difficulty": "applied_judgment",
+    "key_concept_tested": "agents misuse out-of-specialization tools",
+    "stem": "Your synthesis subagent is calling web_search tools to find additional sources instead of working with provided analysis results, causing 34% longer processing times. It has access to synthesis_tools, formatting_tools, and web_search tools. What should you do?",
+    "options": [
+      {
+        "label": "A",
+        "text": "Add prompting to tell the agent to only use synthesis and formatting tools",
+        "is_correct": false
+      },
+      {
+        "label": "B",
+        "text": "Remove web_search tools from the synthesis subagent's allowedTools",
+        "is_correct": true
+      },
+      {
+        "label": "C",
+        "text": "Use tool_choice: 'forced' to control which tools are used",
+        "is_correct": false
+      },
+      {
+        "label": "D",
+        "text": "Implement rate limiting on web_search tools to discourage overuse",
+        "is_correct": false
+      }
+    ],
+    "correct_label": "B",
+    "explanation": "Removing web_search tools from the synthesis subagent's allowedTools prevents it from accessing tools outside its specialization. If additional searches are needed, they should be requested through the coordinator to the appropriate search subagent.",
+    "tags": [
+      "tool_removal",
+      "specialization_enforcement",
+      "coordinator_routing"
+    ],
+    "bloom_level": "apply",
+    "distractor_strategy": {
+      "plausible_but_prompt_only": "A",
+      "over_engineered": "N/A",
+      "wrong_layer": "N/A",
+      "valid_but_not_first_step": "N/A"
+    }
+  },
+  {
+    "id": "D2_T3_025",
+    "domain_id": "D2",
+    "task_statement_id": "D2.T3",
+    "scenario_ids": [
+      "S1"
+    ],
+    "difficulty": "applied_judgment",
+    "key_concept_tested": "tool_choice: auto vs any vs forced",
+    "stem": "Your order lookup subagent needs to retrieve customer data and order information but should only escalate in genuine error conditions. Currently using tool_choice: 'auto', it's making unnecessary escalation calls. What configuration would improve this?",
+    "options": [
+      {
+        "label": "A",
+        "text": "Switch to tool_choice: 'any' to let the agent decide when tools are necessary",
+        "is_correct": false
+      },
+      {
+        "label": "B",
+        "text": "Use tool_choice: 'forced' with lookup_order to prevent escalation calls",
+        "is_correct": false
+      },
+      {
+        "label": "C",
+        "text": "Remove escalate_to_human from allowedTools and handle escalation at coordinator level",
+        "is_correct": true
+      },
+      {
+        "label": "D",
+        "text": "Keep tool_choice: 'auto' but add detailed prompting about escalation criteria",
+        "is_correct": false
+      }
+    ],
+    "correct_label": "C",
+    "explanation": "The issue isn't with tool_choice but with tool access. Removing escalate_to_human from the subagent's allowedTools prevents inappropriate escalations while allowing the coordinator to handle genuine escalation needs based on error conditions.",
+    "tags": [
+      "tool_access_control",
+      "escalation_management",
+      "coordinator_responsibility"
+    ],
+    "bloom_level": "apply",
+    "distractor_strategy": {
+      "plausible_but_prompt_only": "D",
+      "over_engineered": "N/A",
+      "wrong_layer": "N/A",
+      "valid_but_not_first_step": "N/A"
+    }
+  },
+  {
+    "id": "D2_T3_026",
+    "domain_id": "D2",
+    "task_statement_id": "D2.T3",
+    "scenario_ids": [
+      "S3"
+    ],
+    "difficulty": "conceptual_knowledge",
+    "key_concept_tested": "restricting subagent tool sets",
+    "stem": "What is the primary benefit of restricting subagent tool sets to only their specialized functions?",
+    "options": [
+      {
+        "label": "A",
+        "text": "It reduces the memory footprint of each subagent instance",
+        "is_correct": false
+      },
+      {
+        "label": "B",
+        "text": "It improves tool selection accuracy and prevents inappropriate actions",
+        "is_correct": false
+      },
+      {
+        "label": "C",
+        "text": "It enables better load balancing across MCP servers",
+        "is_correct": false
+      },
+      {
+        "label": "D",
+        "text": "It maintains clear specialization boundaries and improves system reliability",
+        "is_correct": true
+      }
+    ],
+    "correct_label": "D",
+    "explanation": "Restricting tool sets maintains clear specialization boundaries, which is fundamental to effective multi-agent architecture and improves overall system reliability by preventing agents from performing tasks outside their expertise.",
+    "tags": [
+      "specialization_boundaries",
+      "system_reliability",
+      "agent_architecture"
+    ],
+    "bloom_level": "understand",
+    "distractor_strategy": {
+      "plausible_but_prompt_only": "N/A",
+      "over_engineered": "N/A",
+      "wrong_layer": "N/A",
+      "valid_but_not_first_step": "N/A"
+    }
+  },
+  {
+    "id": "D2_T3_027",
+    "domain_id": "D2",
+    "task_statement_id": "D2.T3",
+    "scenario_ids": [
+      "S1"
+    ],
+    "difficulty": "anti_pattern_recognition",
+    "key_concept_tested": "tool_choice: auto vs any vs forced",
+    "stem": "A colleague sets all customer support subagents to tool_choice: 'any' claiming it provides 'natural conversation flow.' However, critical operations like refund processing are sometimes skipped when agents respond directly. What is the core issue?",
+    "options": [
+      {
+        "label": "A",
+        "text": "tool_choice: 'any' allows agents to skip necessary tool calls, missing critical operations",
+        "is_correct": true
+      },
+      {
+        "label": "B",
+        "text": "The MCP server is not properly configured to handle 'any' tool choice",
+        "is_correct": false
+      },
+      {
+        "label": "C",
+        "text": "Agents need better prompting to understand when tools are required",
+        "is_correct": false
+      },
+      {
+        "label": "D",
+        "text": "tool_choice: 'any' causes increased latency in tool selection decisions",
+        "is_correct": false
+      }
+    ],
+    "correct_label": "A",
+    "explanation": "tool_choice: 'any' allows agents to respond directly without using tools, which can cause them to skip critical operations that require tool execution. For critical operations, you need either 'auto' or 'forced' to ensure tools are used.",
+    "tags": [
+      "anti_pattern",
+      "critical_operations",
+      "tool_choice_risks"
+    ],
+    "bloom_level": "evaluate",
+    "distractor_strategy": {
+      "plausible_but_prompt_only": "C",
+      "over_engineered": "N/A",
+      "wrong_layer": "N/A",
+      "valid_but_not_first_step": "N/A"
+    }
+  },
+  {
+    "id": "D2_T3_028",
+    "domain_id": "D2",
+    "task_statement_id": "D2.T3",
+    "scenario_ids": [
+      "S3"
+    ],
+    "difficulty": "applied_judgment",
+    "key_concept_tested": "constrained alternative tools",
+    "stem": "Your web search subagent needs both general web search and academic paper search capabilities, but you want to prevent it from using document analysis tools. How should you configure its tool set?",
+    "options": [
+      {
+        "label": "A",
+        "text": "Provide web_search_general, web_search_academic, and exclude all document analysis tools from allowedTools",
+        "is_correct": false
+      },
+      {
+        "label": "B",
+        "text": "Provide only web_search_general and route academic searches through a different subagent",
+        "is_correct": true
+      },
+      {
+        "label": "C",
+        "text": "Provide all search and analysis tools but use prompting to guide appropriate usage",
+        "is_correct": false
+      },
+      {
+        "label": "D",
+        "text": "Use tool_choice: 'forced' to control which search tool is used for each query",
+        "is_correct": false
+      }
+    ],
+    "correct_label": "B",
+    "explanation": "Providing only web_search_general and routing academic searches through a specialized subagent or back to the coordinator maintains clear boundaries and prevents tool proliferation while ensuring all search needs are met through appropriate channels.",
+    "tags": [
+      "tool_specialization",
+      "request_routing",
+      "boundary_maintenance"
+    ],
+    "bloom_level": "apply",
+    "distractor_strategy": {
+      "plausible_but_prompt_only": "C",
+      "over_engineered": "N/A",
+      "wrong_layer": "N/A",
+      "valid_but_not_first_step": "N/A"
+    }
+  },
+  {
+    "id": "D2_T3_029",
+    "domain_id": "D2",
+    "task_statement_id": "D2.T3",
+    "scenario_ids": [
+      "S1"
+    ],
+    "difficulty": "applied_judgment",
+    "key_concept_tested": "scoped tool access",
+    "stem": "Your customer support system has subagents for billing, technical support, and returns. Each currently has access to all tools (get_customer, lookup_order, process_refund, escalate_to_human, reset_password, schedule_callback). You observe 22% cross-domain errors. What should you implement?",
+    "options": [
+      {
+        "label": "A",
+        "text": "Add detailed prompting to each subagent about their specific responsibilities",
+        "is_correct": false
+      },
+      {
+        "label": "B",
+        "text": "Implement scoped tool access so each subagent only has tools relevant to its domain",
+        "is_correct": false
+      },
+      {
+        "label": "C",
+        "text": "Use tool_choice: 'forced' to control which tools each subagent can use",
+        "is_correct": false
+      },
+      {
+        "label": "D",
+        "text": "Configure allowedTools per subagent: billing gets financial tools, technical gets system tools, returns gets refund tools",
+        "is_correct": true
+      }
+    ],
+    "correct_label": "D",
+    "explanation": "Configuring allowedTools per subagent domain ensures each agent only has access to tools appropriate for its specialization, preventing cross-domain errors. This is more specific and actionable than generic 'scoped tool access.'",
+    "tags": [
+      "domain_specialization",
+      "tool_partitioning",
+      "error_reduction"
+    ],
+    "bloom_level": "apply",
+    "distractor_strategy": {
+      "plausible_but_prompt_only": "A",
+      "over_engineered": "N/A",
+      "wrong_layer": "N/A",
+      "valid_but_not_first_step": "N/A"
+    }
+  },
+  {
+    "id": "D2_T3_030",
+    "domain_id": "D2",
+    "task_statement_id": "D2.T3",
+    "scenario_ids": [
+      "S3"
+    ],
+    "difficulty": "conceptual_knowledge",
+    "key_concept_tested": "too many tools degrade selection reliability",
+    "stem": "What cognitive principle explains why too many tools degrade agent selection reliability?",
+    "options": [
+      {
+        "label": "A",
+        "text": "Parallel processing limitations in neural architectures",
+        "is_correct": false
+      },
+      {
+        "label": "B",
+        "text": "Context window constraints limiting tool description processing",
+        "is_correct": false
+      },
+      {
+        "label": "C",
+        "text": "Choice overload similar to human decision-making degradation with too many options",
+        "is_correct": false
+      },
+      {
+        "label": "D",
+        "text": "Attention dilution across too many options reduces selection accuracy",
+        "is_correct": true
+      }
+    ],
+    "correct_label": "D",
+    "explanation": "Attention dilution across too many options is the primary cognitive mechanism that reduces selection accuracy in language models, similar to but distinct from choice overload in humans. The model's attention gets distributed across many tool options, reducing its ability to accurately select the best one.",
+    "tags": [
+      "cognitive_principles",
+      "attention_mechanisms",
+      "selection_accuracy"
+    ],
+    "bloom_level": "understand",
+    "distractor_strategy": {
+      "plausible_but_prompt_only": "N/A",
+      "over_engineered": "N/A",
+      "wrong_layer": "N/A",
+      "valid_but_not_first_step": "N/A"
+    }
+  },
+  {
+    "id": "D2_T3_031",
+    "domain_id": "D2",
+    "task_statement_id": "D2.T3",
+    "scenario_ids": [
+      "S1"
+    ],
+    "difficulty": "applied_judgment",
+    "key_concept_tested": "agents misuse out-of-specialization tools",
+    "stem": "Your returns processing subagent is using reset_password tools when customers mention account access issues during return requests, causing workflow confusion. It has access to process_refund, lookup_order, reset_password, and escalate_to_human. What is the best approach?",
+    "options": [
+      {
+        "label": "A",
+        "text": "Remove reset_password from the subagent and route password issues to the technical support subagent",
+        "is_correct": true
+      },
+      {
+        "label": "B",
+        "text": "Add prompting to tell the agent to focus only on return processing",
+        "is_correct": false
+      },
+      {
+        "label": "C",
+        "text": "Use tool_choice: 'forced' with process_refund to prevent password resets",
+        "is_correct": false
+      },
+      {
+        "label": "D",
+        "text": "Keep all tools but implement better error handling for mixed requests",
+        "is_correct": false
+      }
+    ],
+    "correct_label": "A",
+    "explanation": "Removing reset_password from the returns subagent and routing such requests to the appropriate technical support subagent maintains specialization boundaries while ensuring customer needs are met through the correct channel.",
+    "tags": [
+      "specialization_maintenance",
+      "request_routing",
+      "workflow_clarity"
+    ],
+    "bloom_level": "apply",
+    "distractor_strategy": {
+      "plausible_but_prompt_only": "B",
+      "over_engineered": "N/A",
+      "wrong_layer": "N/A",
+      "valid_but_not_first_step": "N/A"
+    }
+  },
+  {
+    "id": "D2_T3_032",
+    "domain_id": "D2",
+    "task_statement_id": "D2.T3",
+    "scenario_ids": [
+      "S3"
+    ],
+    "difficulty": "anti_pattern_recognition",
+    "key_concept_tested": "restricting subagent tool sets",
+    "stem": "A developer creates a 'super-agent' with access to all 28 tools across search, analysis, synthesis, and reporting, claiming it's 'more efficient than coordinating multiple subagents.' The system shows 41% accuracy degradation. What is the fundamental problem?",
+    "options": [
+      {
+        "label": "A",
+        "text": "The MCP server cannot handle 28 simultaneous tool connections efficiently",
+        "is_correct": false
+      },
+      {
+        "label": "B",
+        "text": "Too many tools overwhelm the agent's selection capabilities, destroying the benefits of specialization",
+        "is_correct": true
+      },
+      {
+        "label": "C",
+        "text": "Tool descriptions exceed the context window limit, causing truncation errors",
+        "is_correct": false
+      },
+      {
+        "label": "D",
+        "text": "Parallel tool execution creates race conditions and inconsistent results",
+        "is_correct": false
+      }
+    ],
+    "correct_label": "B",
+    "explanation": "The 'super-agent' anti-pattern destroys the benefits of specialization and overwhelms tool selection capabilities. The 41% accuracy degradation demonstrates that cognitive load from too many tools far outweighs any coordination overhead from multiple specialized subagents.",
+    "tags": [
+      "anti_pattern",
+      "super_agent",
+      "specialization_benefits"
+    ],
+    "bloom_level": "evaluate",
+    "distractor_strategy": {
+      "plausible_but_prompt_only": "N/A",
+      "over_engineered": "N/A",
+      "wrong_layer": "N/A",
+      "valid_but_not_first_step": "N/A"
+    }
+  },
+  {
+    "id": "D2_T3_033",
+    "domain_id": "D2",
+    "task_statement_id": "D2.T3",
+    "scenario_ids": [
+      "S1"
+    ],
+    "difficulty": "applied_judgment",
+    "key_concept_tested": "tool_choice: auto vs any vs forced",
+    "stem": "Your escalation subagent needs to always create an escalation ticket when invoked but should be able to gather additional context before escalating. Currently it uses tool_choice: 'forced' with escalate_to_human but cannot collect context first. How should you reconfigure it?",
+    "options": [
+      {
+        "label": "A",
+        "text": "Switch to tool_choice: 'auto' to allow context gathering followed by mandatory escalation",
+        "is_correct": false
+      },
+      {
+        "label": "B",
+        "text": "Use tool_choice: 'any' and rely on prompting to ensure escalation happens",
+        "is_correct": false
+      },
+      {
+        "label": "C",
+        "text": "Switch to tool_choice: 'auto' and ensure escalate_to_human is the only action tool available",
+        "is_correct": true
+      },
+      {
+        "label": "D",
+        "text": "Keep tool_choice: 'forced' but provide multiple escalation tools for different contexts",
+        "is_correct": false
+      }
+    ],
+    "correct_label": "C",
+    "explanation": "Using tool_choice: 'auto' with escalate_to_human as the only action tool allows context gathering tools to be used first, but ensures escalation ultimately happens since 'auto' forces tool usage and escalation is the only action available.",
+    "tags": [
+      "tool_choice_configuration",
+      "mandatory_actions",
+      "context_gathering"
+    ],
+    "bloom_level": "apply",
+    "distractor_strategy": {
+      "plausible_but_prompt_only": "B",
+      "over_engineered": "N/A",
+      "wrong_layer": "N/A",
+      "valid_but_not_first_step": "N/A"
+    }
+  },
+  {
+    "id": "D2_T3_034",
+    "domain_id": "D2",
+    "task_statement_id": "D2.T3",
+    "scenario_ids": [
+      "S3"
+    ],
+    "difficulty": "applied_judgment",
+    "key_concept_tested": "constrained alternative tools",
+    "stem": "Your report generation subagent needs to handle both PDF and HTML output formats, but you want to prevent it from accessing raw data sources. It currently has generate_pdf_report, generate_html_report, and access_raw_database. What is the optimal configuration?",
+    "options": [
+      {
+        "label": "A",
+        "text": "Keep both report generation tools but remove access_raw_database from allowedTools",
+        "is_correct": false
+      },
+      {
+        "label": "B",
+        "text": "Provide only generate_pdf_report and route HTML requests to a different subagent",
+        "is_correct": false
+      },
+      {
+        "label": "C",
+        "text": "Remove access_raw_database and ensure report tools work with pre-processed data only",
+        "is_correct": false
+      },
+      {
+        "label": "D",
+        "text": "Configure allowedTools to include both report generation tools but exclude data access tools",
+        "is_correct": true
+      }
+    ],
+    "correct_label": "D",
+    "explanation": "Configuring allowedTools to include both legitimate report format options while excluding data access tools provides the necessary constrained alternatives (PDF vs HTML) while maintaining specialization boundaries by preventing direct data access.",
+    "tags": [
+      "constrained_alternatives",
+      "format_options",
+      "data_access_control"
+    ],
+    "bloom_level": "apply",
+    "distractor_strategy": {
+      "plausible_but_prompt_only": "N/A",
+      "over_engineered": "N/A",
+      "wrong_layer": "N/A",
+      "valid_but_not_first_step": "N/A"
+    }
+  }
+]

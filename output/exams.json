@@ -1,0 +1,32 @@
+[
+  {
+    "exam_id": "claude-architect-foundations",
+    "title": "Claude Certified Architect",
+    "subtitle": "Foundations",
+    "description": "Agentic systems, MCP, Claude Code, prompt engineering, context management.",
+    "domains": 5,
+    "passing_pct": 72,
+    "available": true,
+    "created_at": { "$date": "2026-03-18T00:00:00Z" }
+  },
+  {
+    "exam_id": "claude-api-developer",
+    "title": "Claude API Developer",
+    "subtitle": "Associate",
+    "description": "API patterns, tool use, streaming, error handling, production deployment.",
+    "domains": 4,
+    "passing_pct": 70,
+    "available": false,
+    "created_at": { "$date": "2026-03-18T00:00:00Z" }
+  },
+  {
+    "exam_id": "claude-prompt-engineer",
+    "title": "Prompt Engineering",
+    "subtitle": "Specialist",
+    "description": "Advanced prompting, few-shot design, chain-of-thought, evaluation.",
+    "domains": 4,
+    "passing_pct": 70,
+    "available": false,
+    "created_at": { "$date": "2026-03-18T00:00:00Z" }
+  }
+]

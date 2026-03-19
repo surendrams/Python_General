@@ -1,0 +1,1600 @@
+[
+  {
+    "id": "d4_t5_batch_001",
+    "domain_id": "D4",
+    "task_statement_id": "D4.T5",
+    "scenario_ids": [
+      "S6"
+    ],
+    "difficulty": "conceptual_knowledge",
+    "key_concept_tested": "Message Batches API: 50% cost savings, 24h window, no latency SLA",
+    "stem": "Your structured data extraction system processes 10,000 documents daily for compliance reporting. Each document requires a single API call for JSON extraction. The reports are due 48 hours after document submission. What is the primary benefit of using Message Batches API for this workload?",
+    "options": [
+      {
+        "label": "A",
+        "text": "Guaranteed sub-second response times for regulatory compliance",
+        "is_correct": false
+      },
+      {
+        "label": "B",
+        "text": "Automatic retry logic with exponential backoff for failed extractions",
+        "is_correct": false
+      },
+      {
+        "label": "C",
+        "text": "Built-in JSON schema validation during batch processing",
+        "is_correct": false
+      },
+      {
+        "label": "D",
+        "text": "50% cost reduction compared to synchronous API calls",
+        "is_correct": true
+      }
+    ],
+    "correct_label": "D",
+    "explanation": "Message Batches API provides 50% cost savings for batch workloads. Since compliance reports have a 48-hour deadline, the 24-hour processing window is acceptable, making this an ideal cost-optimization use case.",
+    "tags": [
+      "batch_api",
+      "cost_optimization",
+      "structured_extraction"
+    ],
+    "bloom_level": "understand",
+    "distractor_strategy": {
+      "plausible_but_prompt_only": "N/A",
+      "over_engineered": "N/A",
+      "wrong_layer": "N/A",
+      "valid_but_not_first_step": "N/A"
+    }
+  },
+  {
+    "id": "d4_t5_batch_002",
+    "domain_id": "D4",
+    "task_statement_id": "D4.T5",
+    "scenario_ids": [
+      "S5"
+    ],
+    "difficulty": "applied_judgment",
+    "key_concept_tested": "batch not for blocking workflows like pre-merge checks",
+    "stem": "Your CI/CD pipeline generates test cases for pull requests using Claude. Developers expect feedback within 2 minutes to maintain flow state. The current synchronous implementation costs $400/month for 2,000 PRs. A colleague suggests switching to Message Batches API to cut costs in half. What should you do?",
+    "options": [
+      {
+        "label": "A",
+        "text": "Keep synchronous calls - batch processing doesn't meet the 2-minute latency requirement",
+        "is_correct": true
+      },
+      {
+        "label": "B",
+        "text": "Implement hybrid: batch for large PRs, synchronous for small ones",
+        "is_correct": false
+      },
+      {
+        "label": "C",
+        "text": "Switch to batch with aggressive polling every 30 seconds",
+        "is_correct": false
+      },
+      {
+        "label": "D",
+        "text": "Use batch with webhook notifications to minimize perceived latency",
+        "is_correct": false
+      }
+    ],
+    "correct_label": "A",
+    "explanation": "Message Batches API has no latency SLA and processes within 24 hours. Pre-merge checks are blocking workflows requiring immediate feedback. The 2-minute requirement makes synchronous calls the only viable option despite higher cost.",
+    "tags": [
+      "batch_api",
+      "ci_cd",
+      "latency_requirements"
+    ],
+    "bloom_level": "apply",
+    "distractor_strategy": {
+      "plausible_but_prompt_only": "N/A",
+      "over_engineered": "N/A",
+      "wrong_layer": "N/A",
+      "valid_but_not_first_step": "N/A"
+    }
+  },
+  {
+    "id": "d4_t5_batch_003",
+    "domain_id": "D4",
+    "task_statement_id": "D4.T5",
+    "scenario_ids": [
+      "S6"
+    ],
+    "difficulty": "applied_judgment",
+    "key_concept_tested": "custom_id for correlation",
+    "stem": "Your document extraction system processes insurance claims in batches. Each claim has a unique claim_id that must be preserved for downstream processing. When submitting 5,000 claims via Message Batches API, how should you ensure proper correlation between requests and responses?",
+    "options": [
+      {
+        "label": "A",
+        "text": "Include claim_id in the prompt text and parse it from the response",
+        "is_correct": false
+      },
+      {
+        "label": "B",
+        "text": "Set custom_id field to the claim_id when creating each batch request",
+        "is_correct": true
+      },
+      {
+        "label": "C",
+        "text": "Maintain a separate mapping table with request timestamps",
+        "is_correct": false
+      },
+      {
+        "label": "D",
+        "text": "Use the batch request array index to correlate with claim order",
+        "is_correct": false
+      }
+    ],
+    "correct_label": "B",
+    "explanation": "The custom_id field in batch requests is specifically designed for correlation. It's returned with each response, allowing direct mapping between batch results and original identifiers without parsing or external tracking.",
+    "tags": [
+      "batch_api",
+      "correlation",
+      "structured_extraction"
+    ],
+    "bloom_level": "apply",
+    "distractor_strategy": {
+      "plausible_but_prompt_only": "A",
+      "over_engineered": "C",
+      "wrong_layer": "N/A",
+      "valid_but_not_first_step": "N/A"
+    }
+  },
+  {
+    "id": "d4_t5_batch_004",
+    "domain_id": "D4",
+    "task_statement_id": "D4.T5",
+    "scenario_ids": [
+      "S5"
+    ],
+    "difficulty": "anti_pattern_recognition",
+    "key_concept_tested": "no multi-turn tool calling in batch",
+    "stem": "Your CI/CD system needs to analyze code, run static analysis tools, then generate recommendations based on the results. A developer proposes using Message Batches API with multi-turn conversations where Claude first calls analysis tools, then generates recommendations. What is the fundamental flaw in this approach?",
+    "options": [
+      {
+        "label": "A",
+        "text": "Static analysis tools are too slow for batch processing windows",
+        "is_correct": false
+      },
+      {
+        "label": "B",
+        "text": "Multi-turn conversations with tool calling require multiple round trips",
+        "is_correct": false
+      },
+      {
+        "label": "C",
+        "text": "Message Batches API does not support multi-turn tool calling workflows",
+        "is_correct": true
+      },
+      {
+        "label": "D",
+        "text": "Code analysis requires real-time feedback for security compliance",
+        "is_correct": false
+      }
+    ],
+    "correct_label": "C",
+    "explanation": "Message Batches API only supports single-turn requests. Multi-turn tool calling workflows require interactive back-and-forth, which is incompatible with batch processing. The analysis and recommendation generation would need to be separate batch jobs or use synchronous API.",
+    "tags": [
+      "batch_api",
+      "tool_calling",
+      "anti_pattern"
+    ],
+    "bloom_level": "evaluate",
+    "distractor_strategy": {
+      "plausible_but_prompt_only": "N/A",
+      "over_engineered": "N/A",
+      "wrong_layer": "N/A",
+      "valid_but_not_first_step": "N/A"
+    }
+  },
+  {
+    "id": "d4_t5_batch_005",
+    "domain_id": "D4",
+    "task_statement_id": "D4.T5",
+    "scenario_ids": [
+      "S6"
+    ],
+    "difficulty": "conceptual_knowledge",
+    "key_concept_tested": "batch for non-blocking latency-tolerant workloads",
+    "stem": "Your organization processes legal contracts for compliance checking. The workflow includes: (1) immediate document receipt confirmation, (2) extraction of key terms within 6 hours, (3) legal review within 48 hours. Which step is most suitable for Message Batches API?",
+    "options": [
+      {
+        "label": "A",
+        "text": "Document receipt confirmation - needs immediate acknowledgment",
+        "is_correct": false
+      },
+      {
+        "label": "B",
+        "text": "Key term extraction - 6-hour window allows for batch processing efficiency",
+        "is_correct": false
+      },
+      {
+        "label": "C",
+        "text": "Legal review analysis - 48-hour window provides ample batch processing time",
+        "is_correct": false
+      },
+      {
+        "label": "D",
+        "text": "Both steps 2 and 3 - both have latency tolerance for batch processing",
+        "is_correct": true
+      }
+    ],
+    "correct_label": "D",
+    "explanation": "Message Batches API is ideal for non-blocking, latency-tolerant workloads. Both 6-hour and 48-hour deadlines easily accommodate the 24-hour batch processing window. Step 1 requires immediate response, making it unsuitable for batch processing.",
+    "tags": [
+      "batch_api",
+      "latency_tolerance",
+      "workflow_design"
+    ],
+    "bloom_level": "understand",
+    "distractor_strategy": {
+      "plausible_but_prompt_only": "N/A",
+      "over_engineered": "N/A",
+      "wrong_layer": "N/A",
+      "valid_but_not_first_step": "N/A"
+    }
+  },
+  {
+    "id": "d4_t5_batch_006",
+    "domain_id": "D4",
+    "task_statement_id": "D4.T5",
+    "scenario_ids": [
+      "S5"
+    ],
+    "difficulty": "applied_judgment",
+    "key_concept_tested": "batch submission frequency from SLA constraints",
+    "stem": "Your CI/CD system generates documentation for code changes. Teams expect updated docs within 8 hours of merging. You're processing 1,200 requests daily. Given Message Batches API's 24-hour processing window, what submission frequency ensures SLA compliance?",
+    "options": [
+      {
+        "label": "A",
+        "text": "Submit batches every 8 hours to align with SLA requirements",
+        "is_correct": true
+      },
+      {
+        "label": "B",
+        "text": "Submit one large batch daily at midnight for cost efficiency",
+        "is_correct": false
+      },
+      {
+        "label": "C",
+        "text": "Submit batches every 4 hours for safety margin buffer",
+        "is_correct": false
+      },
+      {
+        "label": "D",
+        "text": "Submit batches every 12 hours to balance cost and timing",
+        "is_correct": false
+      }
+    ],
+    "correct_label": "A",
+    "explanation": "With an 8-hour SLA and 24-hour batch processing window, submissions must occur every 8 hours maximum. This ensures that even if a batch takes the full 24 hours to process, it still meets the SLA deadline.",
+    "tags": [
+      "batch_api",
+      "sla_compliance",
+      "submission_frequency"
+    ],
+    "bloom_level": "apply",
+    "distractor_strategy": {
+      "plausible_but_prompt_only": "N/A",
+      "over_engineered": "N/A",
+      "wrong_layer": "N/A",
+      "valid_but_not_first_step": "N/A"
+    }
+  },
+  {
+    "id": "d4_t5_batch_007",
+    "domain_id": "D4",
+    "task_statement_id": "D4.T5",
+    "scenario_ids": [
+      "S6"
+    ],
+    "difficulty": "applied_judgment",
+    "key_concept_tested": "batch for non-blocking latency-tolerant workloads",
+    "stem": "Your document processing pipeline has three stages: (1) OCR text extraction (synchronous, 30 seconds), (2) Claude-based entity extraction (current: 2 minutes sync), (3) database insertion (synchronous, 5 seconds). Stage 2 processes 800 documents/hour during business hours. How should you optimize this pipeline?",
+    "options": [
+      {
+        "label": "A",
+        "text": "Keep all stages synchronous to maintain end-to-end visibility",
+        "is_correct": false
+      },
+      {
+        "label": "B",
+        "text": "Move stage 2 to batch processing with periodic result polling",
+        "is_correct": true
+      },
+      {
+        "label": "C",
+        "text": "Batch all three stages together for maximum cost savings",
+        "is_correct": false
+      },
+      {
+        "label": "D",
+        "text": "Use batch for stage 2 only during peak hours, sync otherwise",
+        "is_correct": false
+      }
+    ],
+    "correct_label": "B",
+    "explanation": "Stage 2 (Claude entity extraction) is the only non-blocking, latency-tolerant component suitable for batch processing. Stages 1 and 3 are fast synchronous operations that should remain as-is. Batching stage 2 provides 50% cost savings without impacting the overall pipeline flow.",
+    "tags": [
+      "batch_api",
+      "pipeline_optimization",
+      "cost_efficiency"
+    ],
+    "bloom_level": "apply",
+    "distractor_strategy": {
+      "plausible_but_prompt_only": "N/A",
+      "over_engineered": "N/A",
+      "wrong_layer": "N/A",
+      "valid_but_not_first_step": "N/A"
+    }
+  },
+  {
+    "id": "d4_t5_batch_008",
+    "domain_id": "D4",
+    "task_statement_id": "D4.T5",
+    "scenario_ids": [
+      "S5"
+    ],
+    "difficulty": "anti_pattern_recognition",
+    "key_concept_tested": "batch not for blocking workflows like pre-merge checks",
+    "stem": "A team lead proposes using Message Batches API for automated security scans that block deployments. The rationale: 'We can save 50% on API costs, and deployments only happen twice daily anyway.' What is the critical flaw in this reasoning?",
+    "options": [
+      {
+        "label": "A",
+        "text": "Security scans require real-time threat intelligence updates",
+        "is_correct": false
+      },
+      {
+        "label": "B",
+        "text": "Batch processing introduces up to 24-hour delays in blocking workflows",
+        "is_correct": false
+      },
+      {
+        "label": "C",
+        "text": "Deployment blocking requires immediate pass/fail decisions, incompatible with batch latency",
+        "is_correct": true
+      },
+      {
+        "label": "D",
+        "text": "Security scanning tools don't integrate with batch API endpoints",
+        "is_correct": false
+      }
+    ],
+    "correct_label": "C",
+    "explanation": "Blocking workflows like deployment gates require immediate decisions to prevent releases. Even with twice-daily deployments, each deployment must wait for scan results. Message Batches API's unpredictable timing (up to 24 hours) makes it unsuitable for any blocking operation.",
+    "tags": [
+      "batch_api",
+      "blocking_workflows",
+      "anti_pattern"
+    ],
+    "bloom_level": "evaluate",
+    "distractor_strategy": {
+      "plausible_but_prompt_only": "A",
+      "over_engineered": "N/A",
+      "wrong_layer": "N/A",
+      "valid_but_not_first_step": "N/A"
+    }
+  },
+  {
+    "id": "d4_t5_batch_009",
+    "domain_id": "D4",
+    "task_statement_id": "D4.T5",
+    "scenario_ids": [
+      "S6"
+    ],
+    "difficulty": "conceptual_knowledge",
+    "key_concept_tested": "Message Batches API: 50% cost savings, 24h window, no latency SLA",
+    "stem": "Your finance team processes expense reports using Claude for receipt categorization. Currently using synchronous API calls costing $200/month for 5,000 receipts. Reports are due weekly. What are the key characteristics of Message Batches API that make it suitable for this use case?",
+    "options": [
+      {
+        "label": "A",
+        "text": "Guaranteed 4-hour processing time with built-in retry logic",
+        "is_correct": false
+      },
+      {
+        "label": "B",
+        "text": "Real-time processing with 99.9% uptime SLA for financial compliance",
+        "is_correct": false
+      },
+      {
+        "label": "C",
+        "text": "Parallel processing of multiple receipts with automatic load balancing",
+        "is_correct": false
+      },
+      {
+        "label": "D",
+        "text": "50% cost reduction with 24-hour processing window, no specific latency guarantee",
+        "is_correct": true
+      }
+    ],
+    "correct_label": "D",
+    "explanation": "Message Batches API offers 50% cost savings and processes requests within 24 hours without specific latency guarantees. For weekly expense reports, the 24-hour window easily meets requirements while providing significant cost benefits.",
+    "tags": [
+      "batch_api",
+      "cost_savings",
+      "processing_window"
+    ],
+    "bloom_level": "understand",
+    "distractor_strategy": {
+      "plausible_but_prompt_only": "N/A",
+      "over_engineered": "N/A",
+      "wrong_layer": "N/A",
+      "valid_but_not_first_step": "N/A"
+    }
+  },
+  {
+    "id": "d4_t5_batch_010",
+    "domain_id": "D4",
+    "task_statement_id": "D4.T5",
+    "scenario_ids": [
+      "S5"
+    ],
+    "difficulty": "applied_judgment",
+    "key_concept_tested": "custom_id for correlation",
+    "stem": "Your CI/CD system generates test cases for multiple repositories simultaneously. Each repository has a unique repo_id and commit_hash. When processing 200 repositories via Message Batches API, you need to route results back to the correct repository's PR. What is the most reliable correlation strategy?",
+    "options": [
+      {
+        "label": "A",
+        "text": "Set custom_id to 'repo_id:commit_hash' format for unique identification",
+        "is_correct": true
+      },
+      {
+        "label": "B",
+        "text": "Include repository information in the system prompt and parse responses",
+        "is_correct": false
+      },
+      {
+        "label": "C",
+        "text": "Submit separate batches for each repository to avoid mixing",
+        "is_correct": false
+      },
+      {
+        "label": "D",
+        "text": "Use batch submission timestamp to correlate with repository order",
+        "is_correct": false
+      }
+    ],
+    "correct_label": "A",
+    "explanation": "Using custom_id with a structured format like 'repo_id:commit_hash' provides reliable correlation. The custom_id is returned with each response, enabling direct mapping without parsing or maintaining external state. This approach scales well for multiple repositories.",
+    "tags": [
+      "batch_api",
+      "correlation",
+      "multi_repository"
+    ],
+    "bloom_level": "apply",
+    "distractor_strategy": {
+      "plausible_but_prompt_only": "B",
+      "over_engineered": "C",
+      "wrong_layer": "N/A",
+      "valid_but_not_first_step": "N/A"
+    }
+  },
+  {
+    "id": "d4_t5_batch_011",
+    "domain_id": "D4",
+    "task_statement_id": "D4.T5",
+    "scenario_ids": [
+      "S6"
+    ],
+    "difficulty": "applied_judgment",
+    "key_concept_tested": "batch submission frequency from SLA constraints",
+    "stem": "Your contract analysis system must deliver results within 12 hours of document submission. Documents arrive continuously throughout the day. With Message Batches API's 24-hour processing window, what submission strategy ensures SLA compliance while maximizing batch efficiency?",
+    "options": [
+      {
+        "label": "A",
+        "text": "Submit batches every 6 hours to provide safety buffer",
+        "is_correct": false
+      },
+      {
+        "label": "B",
+        "text": "Submit batches every 12 hours to exactly match SLA deadline",
+        "is_correct": true
+      },
+      {
+        "label": "C",
+        "text": "Submit one large batch daily for maximum cost efficiency",
+        "is_correct": false
+      },
+      {
+        "label": "D",
+        "text": "Submit batches every 3 hours for premium service level",
+        "is_correct": false
+      }
+    ],
+    "correct_label": "B",
+    "explanation": "With a 12-hour SLA and 24-hour batch processing window, submitting every 12 hours ensures compliance. Even if the batch takes the full 24 hours to process, documents will meet their 12-hour deadline. More frequent submissions reduce efficiency without SLA benefit.",
+    "tags": [
+      "batch_api",
+      "sla_compliance",
+      "submission_timing"
+    ],
+    "bloom_level": "apply",
+    "distractor_strategy": {
+      "plausible_but_prompt_only": "N/A",
+      "over_engineered": "D",
+      "wrong_layer": "N/A",
+      "valid_but_not_first_step": "N/A"
+    }
+  },
+  {
+    "id": "d4_t5_batch_012",
+    "domain_id": "D4",
+    "task_statement_id": "D4.T5",
+    "scenario_ids": [
+      "S5"
+    ],
+    "difficulty": "conceptual_knowledge",
+    "key_concept_tested": "batch for non-blocking latency-tolerant workloads",
+    "stem": "Your development team uses Claude for various tasks: (1) real-time code completion, (2) overnight test generation, (3) weekly code quality reports, (4) on-demand documentation updates. Which tasks are suitable for Message Batches API?",
+    "options": [
+      {
+        "label": "A",
+        "text": "Tasks 1 and 4 - they have flexible timing requirements",
+        "is_correct": false
+      },
+      {
+        "label": "B",
+        "text": "Tasks 2 and 3 - they are non-blocking with latency tolerance",
+        "is_correct": false
+      },
+      {
+        "label": "C",
+        "text": "Tasks 2, 3, and 4 - all except real-time code completion",
+        "is_correct": true
+      },
+      {
+        "label": "D",
+        "text": "Only task 3 - weekly reports have the most flexible deadlines",
+        "is_correct": false
+      }
+    ],
+    "correct_label": "C",
+    "explanation": "Real-time code completion requires immediate response, making it unsuitable for batch processing. Overnight test generation, weekly reports, and on-demand documentation all have sufficient latency tolerance for the 24-hour batch processing window.",
+    "tags": [
+      "batch_api",
+      "workload_classification",
+      "latency_tolerance"
+    ],
+    "bloom_level": "understand",
+    "distractor_strategy": {
+      "plausible_but_prompt_only": "N/A",
+      "over_engineered": "N/A",
+      "wrong_layer": "N/A",
+      "valid_but_not_first_step": "N/A"
+    }
+  },
+  {
+    "id": "d4_t5_batch_013",
+    "domain_id": "D4",
+    "task_statement_id": "D4.T5",
+    "scenario_ids": [
+      "S6"
+    ],
+    "difficulty": "anti_pattern_recognition",
+    "key_concept_tested": "custom_id for correlation",
+    "stem": "Your document processing system uses Message Batches API for invoice extraction. A developer implements correlation by embedding unique IDs in the prompt: 'Extract data from invoice #INV-12345'. They claim this is more reliable than custom_id because 'it's part of the model's context'. What is wrong with this approach?",
+    "options": [
+      {
+        "label": "A",
+        "text": "Embedding IDs in prompts increases token usage and processing costs",
+        "is_correct": false
+      },
+      {
+        "label": "B",
+        "text": "The model might hallucinate or modify the ID in its response",
+        "is_correct": false
+      },
+      {
+        "label": "C",
+        "text": "Parsing IDs from response text is error-prone and requires additional validation",
+        "is_correct": false
+      },
+      {
+        "label": "D",
+        "text": "Custom_id provides guaranteed correlation without parsing or model dependency",
+        "is_correct": true
+      }
+    ],
+    "correct_label": "D",
+    "explanation": "The custom_id field is returned exactly as submitted, providing reliable correlation without depending on model output or text parsing. Embedding IDs in prompts introduces parsing complexity and potential model errors, while custom_id is a dedicated correlation mechanism.",
+    "tags": [
+      "batch_api",
+      "correlation",
+      "anti_pattern"
+    ],
+    "bloom_level": "evaluate",
+    "distractor_strategy": {
+      "plausible_but_prompt_only": "A",
+      "over_engineered": "N/A",
+      "wrong_layer": "N/A",
+      "valid_but_not_first_step": "N/A"
+    }
+  },
+  {
+    "id": "d4_t5_batch_014",
+    "domain_id": "D4",
+    "task_statement_id": "D4.T5",
+    "scenario_ids": [
+      "S5"
+    ],
+    "difficulty": "applied_judgment",
+    "key_concept_tested": "Message Batches API: 50% cost savings, 24h window, no latency SLA",
+    "stem": "Your CI/CD pipeline generates API documentation from code comments. The process runs nightly for 50 repositories, costing $150/month with synchronous calls. Documentation updates aren't time-critical. Management wants to reduce costs. What should you evaluate before switching to Message Batches API?",
+    "options": [
+      {
+        "label": "A",
+        "text": "Whether 24-hour processing window fits within nightly batch job requirements",
+        "is_correct": true
+      },
+      {
+        "label": "B",
+        "text": "Whether the 50% cost savings justify the implementation complexity",
+        "is_correct": false
+      },
+      {
+        "label": "C",
+        "text": "Whether batch API supports the same model parameters as sync calls",
+        "is_correct": false
+      },
+      {
+        "label": "D",
+        "text": "Whether documentation quality remains consistent with batch processing",
+        "is_correct": false
+      }
+    ],
+    "correct_label": "A",
+    "explanation": "The key evaluation is whether the 24-hour processing window aligns with the nightly documentation update schedule. If documentation must be ready by morning, batch processing might not meet timing requirements despite cost savings and non-critical nature.",
+    "tags": [
+      "batch_api",
+      "timing_evaluation",
+      "cost_optimization"
+    ],
+    "bloom_level": "apply",
+    "distractor_strategy": {
+      "plausible_but_prompt_only": "N/A",
+      "over_engineered": "N/A",
+      "wrong_layer": "N/A",
+      "valid_but_not_first_step": "N/A"
+    }
+  },
+  {
+    "id": "d4_t5_batch_015",
+    "domain_id": "D4",
+    "task_statement_id": "D4.T5",
+    "scenario_ids": [
+      "S6"
+    ],
+    "difficulty": "applied_judgment",
+    "key_concept_tested": "batch for non-blocking latency-tolerant workloads",
+    "stem": "Your insurance claims processing has three validation stages: (1) fraud detection (real-time, blocks payout), (2) document categorization (4-hour SLA), (3) audit trail generation (daily batch). Currently all use synchronous API calls. Which optimization provides the best cost-benefit ratio?",
+    "options": [
+      {
+        "label": "A",
+        "text": "Move stage 3 to batch processing - it's already on daily schedule",
+        "is_correct": false
+      },
+      {
+        "label": "B",
+        "text": "Move stages 2 and 3 to batch processing for maximum savings",
+        "is_correct": true
+      },
+      {
+        "label": "C",
+        "text": "Keep all synchronous for consistent processing architecture",
+        "is_correct": false
+      },
+      {
+        "label": "D",
+        "text": "Use batch for stage 2 during off-hours, synchronous during business hours",
+        "is_correct": false
+      }
+    ],
+    "correct_label": "B",
+    "explanation": "Stages 2 and 3 are both non-blocking with sufficient latency tolerance (4-hour and daily respectively) for batch processing's 24-hour window. Stage 1 must remain synchronous as it blocks payouts. Moving both stages provides maximum cost savings while maintaining SLA compliance.",
+    "tags": [
+      "batch_api",
+      "multi_stage_optimization",
+      "cost_benefit"
+    ],
+    "bloom_level": "apply",
+    "distractor_strategy": {
+      "plausible_but_prompt_only": "N/A",
+      "over_engineered": "N/A",
+      "wrong_layer": "N/A",
+      "valid_but_not_first_step": "N/A"
+    }
+  },
+  {
+    "id": "d4_t5_batch_016",
+    "domain_id": "D4",
+    "task_statement_id": "D4.T5",
+    "scenario_ids": [
+      "S5"
+    ],
+    "difficulty": "conceptual_knowledge",
+    "key_concept_tested": "no multi-turn tool calling in batch",
+    "stem": "Your code review system needs to: (1) analyze code complexity, (2) suggest improvements based on analysis, (3) validate suggestions against coding standards. This requires multiple Claude interactions with tool calls between steps. Why is Message Batches API unsuitable for this workflow?",
+    "options": [
+      {
+        "label": "A",
+        "text": "Code review requires real-time feedback for developer productivity",
+        "is_correct": false
+      },
+      {
+        "label": "B",
+        "text": "Tool calling between steps creates dependencies that batch processing can't handle",
+        "is_correct": false
+      },
+      {
+        "label": "C",
+        "text": "Batch API doesn't support the multi-turn conversational flow needed",
+        "is_correct": false
+      },
+      {
+        "label": "D",
+        "text": "Batch API only supports single-turn requests, not multi-step tool calling workflows",
+        "is_correct": true
+      }
+    ],
+    "correct_label": "D",
+    "explanation": "Message Batches API is limited to single-turn requests and doesn't support multi-turn tool calling workflows. The described process requires multiple interactive steps with tool calls, which requires synchronous API calls or redesigning as separate single-turn batch jobs.",
+    "tags": [
+      "batch_api",
+      "multi_turn_limitation",
+      "tool_calling"
+    ],
+    "bloom_level": "understand",
+    "distractor_strategy": {
+      "plausible_but_prompt_only": "N/A",
+      "over_engineered": "N/A",
+      "wrong_layer": "N/A",
+      "valid_but_not_first_step": "N/A"
+    }
+  },
+  {
+    "id": "d4_t5_batch_017",
+    "domain_id": "D4",
+    "task_statement_id": "D4.T5",
+    "scenario_ids": [
+      "S6"
+    ],
+    "difficulty": "applied_judgment",
+    "key_concept_tested": "batch submission frequency from SLA constraints",
+    "stem": "Your document classification system processes legal briefs with a 6-hour accuracy requirement (results needed within 6 hours of submission). Documents arrive randomly throughout business hours. How should you structure batch submissions to meet this SLA?",
+    "options": [
+      {
+        "label": "A",
+        "text": "Submit batches every 2 hours for safety margin",
+        "is_correct": false
+      },
+      {
+        "label": "B",
+        "text": "Submit batches every 6 hours to match SLA exactly",
+        "is_correct": true
+      },
+      {
+        "label": "C",
+        "text": "Use synchronous processing - batch can't guarantee 6-hour SLA",
+        "is_correct": false
+      },
+      {
+        "label": "D",
+        "text": "Submit one large batch daily and negotiate extended SLA",
+        "is_correct": false
+      }
+    ],
+    "correct_label": "B",
+    "explanation": "With a 6-hour SLA and 24-hour batch processing window, submitting every 6 hours ensures compliance. Documents submitted just after a batch will wait 6 hours for the next submission, then have up to 24 hours for processing, potentially exceeding the SLA. The SLA constraint makes synchronous processing more appropriate.",
+    "tags": [
+      "batch_api",
+      "sla_analysis",
+      "timing_constraints"
+    ],
+    "bloom_level": "apply",
+    "distractor_strategy": {
+      "plausible_but_prompt_only": "N/A",
+      "over_engineered": "N/A",
+      "wrong_layer": "N/A",
+      "valid_but_not_first_step": "N/A"
+    }
+  },
+  {
+    "id": "d4_t5_batch_018",
+    "domain_id": "D4",
+    "task_statement_id": "D4.T5",
+    "scenario_ids": [
+      "S5"
+    ],
+    "difficulty": "anti_pattern_recognition",
+    "key_concept_tested": "batch for non-blocking latency-tolerant workloads",
+    "stem": "A developer proposes using Message Batches API for generating unit tests during the pre-commit hook process. Their reasoning: 'Developers can wait 30 seconds for test generation, and we'll save 50% on costs.' What is the fundamental issue with this approach?",
+    "options": [
+      {
+        "label": "A",
+        "text": "Pre-commit hooks have 30-second timeout limits that batch processing exceeds",
+        "is_correct": false
+      },
+      {
+        "label": "B",
+        "text": "Unit test generation requires real-time code context that batch loses",
+        "is_correct": false
+      },
+      {
+        "label": "C",
+        "text": "Batch processing can take up to 24 hours, not 30 seconds",
+        "is_correct": true
+      },
+      {
+        "label": "D",
+        "text": "Pre-commit hooks run locally and can't access batch API endpoints",
+        "is_correct": false
+      }
+    ],
+    "correct_label": "C",
+    "explanation": "The developer misunderstands batch processing timing. Message Batches API processes within 24 hours, not seconds. Pre-commit hooks are blocking workflows requiring immediate results. The 30-second expectation is incompatible with batch processing's unpredictable timing.",
+    "tags": [
+      "batch_api",
+      "timing_misconception",
+      "anti_pattern"
+    ],
+    "bloom_level": "evaluate",
+    "distractor_strategy": {
+      "plausible_but_prompt_only": "N/A",
+      "over_engineered": "N/A",
+      "wrong_layer": "N/A",
+      "valid_but_not_first_step": "N/A"
+    }
+  },
+  {
+    "id": "d4_t5_batch_019",
+    "domain_id": "D4",
+    "task_statement_id": "D4.T5",
+    "scenario_ids": [
+      "S6"
+    ],
+    "difficulty": "applied_judgment",
+    "key_concept_tested": "custom_id for correlation",
+    "stem": "Your multi-tenant document processing system handles files from different customers. Each file has a customer_id and file_uuid. When processing 1,000 files via Message Batches API, you need to route results to the correct customer's storage bucket. What custom_id strategy ensures reliable routing?",
+    "options": [
+      {
+        "label": "A",
+        "text": "Use file_uuid only since it's globally unique",
+        "is_correct": false
+      },
+      {
+        "label": "B",
+        "text": "Use customer_id only to group results by tenant",
+        "is_correct": false
+      },
+      {
+        "label": "C",
+        "text": "Combine both as 'customer_id|file_uuid' for complete identification",
+        "is_correct": false
+      },
+      {
+        "label": "D",
+        "text": "Use structured format like 'cust:123:file:uuid-456' for clear parsing",
+        "is_correct": true
+      }
+    ],
+    "correct_label": "D",
+    "explanation": "A structured custom_id format with clear delimiters enables reliable parsing for routing decisions. While combining customer_id and file_uuid provides complete identification, using a structured format with prefixes makes parsing more robust and less error-prone in multi-tenant scenarios.",
+    "tags": [
+      "batch_api",
+      "multi_tenant",
+      "correlation_strategy"
+    ],
+    "bloom_level": "apply",
+    "distractor_strategy": {
+      "plausible_but_prompt_only": "N/A",
+      "over_engineered": "N/A",
+      "wrong_layer": "N/A",
+      "valid_but_not_first_step": "N/A"
+    }
+  },
+  {
+    "id": "d4_t5_batch_020",
+    "domain_id": "D4",
+    "task_statement_id": "D4.T5",
+    "scenario_ids": [
+      "S5"
+    ],
+    "difficulty": "applied_judgment",
+    "key_concept_tested": "Message Batches API: 50% cost savings, 24h window, no latency SLA",
+    "stem": "Your CI/CD system performs three types of analysis: (1) security scans (must complete before deployment), (2) code quality metrics (daily reports), (3) dependency vulnerability checks (weekly reports). Current monthly cost is $800 for synchronous calls. Which analyses should use Message Batches API?",
+    "options": [
+      {
+        "label": "A",
+        "text": "All three analyses to maximize the 50% cost savings",
+        "is_correct": false
+      },
+      {
+        "label": "B",
+        "text": "Only analysis 3 since weekly reports have the most latency tolerance",
+        "is_correct": false
+      },
+      {
+        "label": "C",
+        "text": "Analyses 2 and 3 since they're non-blocking reporting workflows",
+        "is_correct": false
+      },
+      {
+        "label": "D",
+        "text": "Analyses 2 and 3 - daily and weekly reports can accommodate 24-hour processing",
+        "is_correct": true
+      }
+    ],
+    "correct_label": "D",
+    "explanation": "Security scans block deployments and require immediate results, making them unsuitable for batch processing. Daily and weekly reports are non-blocking with sufficient latency tolerance for the 24-hour processing window. This provides cost savings on suitable workloads while maintaining deployment pipeline speed.",
+    "tags": [
+      "batch_api",
+      "workload_selection",
+      "cost_optimization"
+    ],
+    "bloom_level": "apply",
+    "distractor_strategy": {
+      "plausible_but_prompt_only": "N/A",
+      "over_engineered": "N/A",
+      "wrong_layer": "N/A",
+      "valid_but_not_first_step": "N/A"
+    }
+  },
+  {
+    "id": "d4_t5_batch_021",
+    "domain_id": "D4",
+    "task_statement_id": "D4.T5",
+    "scenario_ids": [
+      "S6"
+    ],
+    "difficulty": "conceptual_knowledge",
+    "key_concept_tested": "batch for non-blocking latency-tolerant workloads",
+    "stem": "Your document processing pipeline handles various document types with different urgency levels: (1) tax forms (annual deadline), (2) contracts (48-hour review), (3) invoices (same-day payment), (4) reports (weekly compilation). Which document types are good candidates for Message Batches API?",
+    "options": [
+      {
+        "label": "A",
+        "text": "Types 1, 2, and 4 - they all have multi-day or longer deadlines",
+        "is_correct": false
+      },
+      {
+        "label": "B",
+        "text": "Types 1 and 4 - annual and weekly deadlines provide maximum latency tolerance",
+        "is_correct": false
+      },
+      {
+        "label": "C",
+        "text": "Only type 1 - annual deadlines have the most flexible timing",
+        "is_correct": false
+      },
+      {
+        "label": "D",
+        "text": "Types 1, 2, and 4 - all except same-day invoices can tolerate 24-hour processing",
+        "is_correct": true
+      }
+    ],
+    "correct_label": "D",
+    "explanation": "Message Batches API's 24-hour processing window accommodates annual, 48-hour, and weekly deadlines. Same-day invoice payment requires faster processing to meet payment deadlines, making it unsuitable for batch processing despite potential cost savings.",
+    "tags": [
+      "batch_api",
+      "deadline_analysis",
+      "latency_tolerance"
+    ],
+    "bloom_level": "understand",
+    "distractor_strategy": {
+      "plausible_but_prompt_only": "N/A",
+      "over_engineered": "N/A",
+      "wrong_layer": "N/A",
+      "valid_but_not_first_step": "N/A"
+    }
+  },
+  {
+    "id": "d4_t5_batch_022",
+    "domain_id": "D4",
+    "task_statement_id": "D4.T5",
+    "scenario_ids": [
+      "S5"
+    ],
+    "difficulty": "applied_judgment",
+    "key_concept_tested": "no multi-turn tool calling in batch",
+    "stem": "Your documentation system uses a multi-step process: Claude analyzes code structure, calls a documentation tool to generate templates, then creates final documentation based on the templates. This currently works with synchronous API calls. What modification is needed to use Message Batches API?",
+    "options": [
+      {
+        "label": "A",
+        "text": "Increase batch size to handle the multi-step complexity",
+        "is_correct": false
+      },
+      {
+        "label": "B",
+        "text": "Redesign as separate single-turn batch jobs for each step",
+        "is_correct": true
+      },
+      {
+        "label": "C",
+        "text": "Use batch API with longer timeout settings for tool calls",
+        "is_correct": false
+      },
+      {
+        "label": "D",
+        "text": "Implement custom polling to simulate multi-turn behavior",
+        "is_correct": false
+      }
+    ],
+    "correct_label": "B",
+    "explanation": "Message Batches API doesn't support multi-turn tool calling. The workflow must be redesigned as separate batch jobs: one for code analysis, another for template generation, and a third for final documentation. Each step becomes a single-turn batch operation with results passed between jobs.",
+    "tags": [
+      "batch_api",
+      "workflow_redesign",
+      "single_turn_limitation"
+    ],
+    "bloom_level": "apply",
+    "distractor_strategy": {
+      "plausible_but_prompt_only": "N/A",
+      "over_engineered": "N/A",
+      "wrong_layer": "N/A",
+      "valid_but_not_first_step": "N/A"
+    }
+  },
+  {
+    "id": "d4_t5_batch_023",
+    "domain_id": "D4",
+    "task_statement_id": "D4.T5",
+    "scenario_ids": [
+      "S6"
+    ],
+    "difficulty": "anti_pattern_recognition",
+    "key_concept_tested": "batch submission frequency from SLA constraints",
+    "stem": "Your contract review system has a 4-hour SLA. A developer implements batch submission every 2 hours, claiming this provides a 'safety buffer' for the 24-hour processing window. After deployment, 15% of contracts miss their SLA. What is the root cause?",
+    "options": [
+      {
+        "label": "A",
+        "text": "2-hour submission frequency is too infrequent for 4-hour SLA",
+        "is_correct": false
+      },
+      {
+        "label": "B",
+        "text": "Batch processing variability can still cause SLA violations despite the buffer",
+        "is_correct": false
+      },
+      {
+        "label": "C",
+        "text": "4-hour SLA is incompatible with 24-hour maximum batch processing time",
+        "is_correct": true
+      },
+      {
+        "label": "D",
+        "text": "Contract complexity requires longer processing time than anticipated",
+        "is_correct": false
+      }
+    ],
+    "correct_label": "C",
+    "explanation": "The fundamental issue is that a 4-hour SLA cannot be guaranteed with a 24-hour batch processing window. Even with 2-hour submissions, if batch processing takes the full 24 hours, contracts will miss their 4-hour deadline. The SLA requirement makes synchronous processing necessary.",
+    "tags": [
+      "batch_api",
+      "sla_violation",
+      "timing_mismatch"
+    ],
+    "bloom_level": "evaluate",
+    "distractor_strategy": {
+      "plausible_but_prompt_only": "N/A",
+      "over_engineered": "N/A",
+      "wrong_layer": "N/A",
+      "valid_but_not_first_step": "N/A"
+    }
+  },
+  {
+    "id": "d4_t5_batch_024",
+    "domain_id": "D4",
+    "task_statement_id": "D4.T5",
+    "scenario_ids": [
+      "S5"
+    ],
+    "difficulty": "applied_judgment",
+    "key_concept_tested": "batch for non-blocking latency-tolerant workloads",
+    "stem": "Your development team uses Claude for: (1) interactive code explanations during debugging, (2) automated changelog generation from git commits, (3) weekly code review summaries, (4) monthly technical debt reports. Budget constraints require 40% cost reduction. Which workloads should move to Message Batches API?",
+    "options": [
+      {
+        "label": "A",
+        "text": "Workloads 2, 3, and 4 - all non-interactive automated processes",
+        "is_correct": true
+      },
+      {
+        "label": "B",
+        "text": "Only workloads 3 and 4 - weekly and monthly reports have longest deadlines",
+        "is_correct": false
+      },
+      {
+        "label": "C",
+        "text": "Workloads 1 and 2 - debugging and changelog generation can tolerate delays",
+        "is_correct": false
+      },
+      {
+        "label": "D",
+        "text": "All workloads during off-hours, synchronous during business hours",
+        "is_correct": false
+      }
+    ],
+    "correct_label": "A",
+    "explanation": "Interactive code explanations during debugging require immediate response for developer productivity. Automated changelog generation, weekly summaries, and monthly reports are all non-blocking with sufficient latency tolerance for batch processing's 24-hour window, providing the needed cost reduction.",
+    "tags": [
+      "batch_api",
+      "cost_reduction",
+      "workload_classification"
+    ],
+    "bloom_level": "apply",
+    "distractor_strategy": {
+      "plausible_but_prompt_only": "N/A",
+      "over_engineered": "N/A",
+      "wrong_layer": "N/A",
+      "valid_but_not_first_step": "N/A"
+    }
+  },
+  {
+    "id": "d4_t5_batch_025",
+    "domain_id": "D4",
+    "task_statement_id": "D4.T5",
+    "scenario_ids": [
+      "S6"
+    ],
+    "difficulty": "conceptual_knowledge",
+    "key_concept_tested": "custom_id for correlation",
+    "stem": "Your document extraction system processes files in batches and needs to correlate results with source documents for audit trails. Each document has metadata including source_system, document_type, and timestamp. What is the purpose of the custom_id field in Message Batches API?",
+    "options": [
+      {
+        "label": "A",
+        "text": "To specify processing priority for different document types",
+        "is_correct": false
+      },
+      {
+        "label": "B",
+        "text": "To group related documents together in the same batch",
+        "is_correct": false
+      },
+      {
+        "label": "C",
+        "text": "To enable tracking and correlation between batch requests and responses",
+        "is_correct": false
+      },
+      {
+        "label": "D",
+        "text": "To provide a client-specified identifier returned with each response for correlation",
+        "is_correct": true
+      }
+    ],
+    "correct_label": "D",
+    "explanation": "The custom_id field allows clients to specify an identifier that is returned unchanged with each batch response. This enables direct correlation between requests and results without relying on response parsing or maintaining separate tracking mechanisms.",
+    "tags": [
+      "batch_api",
+      "correlation",
+      "audit_trail"
+    ],
+    "bloom_level": "understand",
+    "distractor_strategy": {
+      "plausible_but_prompt_only": "N/A",
+      "over_engineered": "N/A",
+      "wrong_layer": "N/A",
+      "valid_but_not_first_step": "N/A"
+    }
+  },
+  {
+    "id": "d4_t5_batch_026",
+    "domain_id": "D4",
+    "task_statement_id": "D4.T5",
+    "scenario_ids": [
+      "S5"
+    ],
+    "difficulty": "applied_judgment",
+    "key_concept_tested": "Message Batches API: 50% cost savings, 24h window, no latency SLA",
+    "stem": "Your CI/CD pipeline generates release notes from commit messages and pull request descriptions. The process runs after each release (2-3 times per week) and costs $60/month. Release notes are published the day after release. Should you switch to Message Batches API?",
+    "options": [
+      {
+        "label": "A",
+        "text": "Yes - 24-hour processing window fits within day-after publication schedule",
+        "is_correct": true
+      },
+      {
+        "label": "B",
+        "text": "No - release notes require immediate generation for stakeholder communication",
+        "is_correct": false
+      },
+      {
+        "label": "C",
+        "text": "No - the cost savings ($30/month) don't justify the implementation effort",
+        "is_correct": false
+      },
+      {
+        "label": "D",
+        "text": "Yes - but only for major releases, keep synchronous for minor releases",
+        "is_correct": false
+      }
+    ],
+    "correct_label": "A",
+    "explanation": "The day-after publication schedule provides sufficient latency tolerance for batch processing's 24-hour window. This non-blocking workflow with flexible timing is ideal for Message Batches API, providing 50% cost savings while meeting publication requirements.",
+    "tags": [
+      "batch_api",
+      "release_management",
+      "timing_compatibility"
+    ],
+    "bloom_level": "apply",
+    "distractor_strategy": {
+      "plausible_but_prompt_only": "N/A",
+      "over_engineered": "N/A",
+      "wrong_layer": "N/A",
+      "valid_but_not_first_step": "N/A"
+    }
+  },
+  {
+    "id": "d4_t5_batch_027",
+    "domain_id": "D4",
+    "task_statement_id": "D4.T5",
+    "scenario_ids": [
+      "S6"
+    ],
+    "difficulty": "applied_judgment",
+    "key_concept_tested": "batch submission frequency from SLA constraints",
+    "stem": "Your compliance reporting system processes regulatory documents with a 16-hour deadline from submission to final report. Documents arrive continuously. Using Message Batches API with its 24-hour processing window, what submission frequency ensures SLA compliance?",
+    "options": [
+      {
+        "label": "A",
+        "text": "Submit batches every 8 hours for optimal safety margin",
+        "is_correct": false
+      },
+      {
+        "label": "B",
+        "text": "Submit batches every 16 hours to match the SLA deadline exactly",
+        "is_correct": true
+      },
+      {
+        "label": "C",
+        "text": "This use case requires synchronous processing due to timing constraints",
+        "is_correct": false
+      },
+      {
+        "label": "D",
+        "text": "Submit batches every 12 hours to balance efficiency and compliance",
+        "is_correct": false
+      }
+    ],
+    "correct_label": "B",
+    "explanation": "With a 16-hour SLA and 24-hour maximum batch processing time, submitting every 16 hours theoretically ensures compliance. However, this leaves no buffer - if batch processing takes the full 24 hours, documents submitted just after a batch will exceed the 16-hour SLA, making synchronous processing more reliable.",
+    "tags": [
+      "batch_api",
+      "regulatory_compliance",
+      "timing_risk"
+    ],
+    "bloom_level": "apply",
+    "distractor_strategy": {
+      "plausible_but_prompt_only": "N/A",
+      "over_engineered": "N/A",
+      "wrong_layer": "N/A",
+      "valid_but_not_first_step": "N/A"
+    }
+  },
+  {
+    "id": "d4_t5_batch_028",
+    "domain_id": "D4",
+    "task_statement_id": "D4.T5",
+    "scenario_ids": [
+      "S5"
+    ],
+    "difficulty": "anti_pattern_recognition",
+    "key_concept_tested": "no multi-turn tool calling in batch",
+    "stem": "A team implements batch processing for code analysis that requires: (1) initial code scan, (2) tool call to fetch dependency info, (3) security analysis based on dependencies, (4) final recommendation generation. They submit each step as separate batch jobs. What is the inefficiency in this approach?",
+    "options": [
+      {
+        "label": "A",
+        "text": "Multiple batch submissions increase API costs beyond synchronous processing",
+        "is_correct": false
+      },
+      {
+        "label": "B",
+        "text": "Each batch job adds 24-hour delays, making total processing time up to 96 hours",
+        "is_correct": true
+      },
+      {
+        "label": "C",
+        "text": "Separate batches lose context continuity between analysis steps",
+        "is_correct": false
+      },
+      {
+        "label": "D",
+        "text": "Dependency tool calls should be pre-executed and included in the initial prompt",
+        "is_correct": false
+      }
+    ],
+    "correct_label": "B",
+    "explanation": "While separating multi-turn workflows into single-turn batch jobs is technically correct for Message Batches API, it can result in excessive total processing time. Four sequential batch jobs could take up to 96 hours total. This workflow might be better suited for synchronous processing despite higher costs.",
+    "tags": [
+      "batch_api",
+      "sequential_processing",
+      "timing_inefficiency"
+    ],
+    "bloom_level": "evaluate",
+    "distractor_strategy": {
+      "plausible_but_prompt_only": "D",
+      "over_engineered": "C",
+      "wrong_layer": "N/A",
+      "valid_but_not_first_step": "N/A"
+    }
+  },
+  {
+    "id": "d4_t5_batch_029",
+    "domain_id": "D4",
+    "task_statement_id": "D4.T5",
+    "scenario_ids": [
+      "S6"
+    ],
+    "difficulty": "applied_judgment",
+    "key_concept_tested": "batch for non-blocking latency-tolerant workloads",
+    "stem": "Your legal document review system handles three priority levels: (1) urgent litigation (2-hour deadline), (2) standard contracts (24-hour deadline), (3) archival processing (no specific deadline). Current costs are $500/month synchronous. Which priority levels should use Message Batches API?",
+    "options": [
+      {
+        "label": "A",
+        "text": "All three levels during off-peak hours to maximize savings",
+        "is_correct": false
+      },
+      {
+        "label": "B",
+        "text": "Levels 2 and 3 - both can accommodate 24-hour processing window",
+        "is_correct": false
+      },
+      {
+        "label": "C",
+        "text": "Only level 3 - archival processing has no timing constraints",
+        "is_correct": false
+      },
+      {
+        "label": "D",
+        "text": "Only level 3 - levels 1 and 2 have deadlines that conflict with batch timing",
+        "is_correct": true
+      }
+    ],
+    "correct_label": "D",
+    "explanation": "Urgent litigation's 2-hour deadline clearly conflicts with batch processing. Standard contracts' 24-hour deadline appears compatible, but batch processing can take up to 24 hours, providing no buffer for SLA compliance. Only archival processing with no specific deadline is truly suitable for batch processing.",
+    "tags": [
+      "batch_api",
+      "priority_classification",
+      "deadline_analysis"
+    ],
+    "bloom_level": "apply",
+    "distractor_strategy": {
+      "plausible_but_prompt_only": "N/A",
+      "over_engineered": "N/A",
+      "wrong_layer": "N/A",
+      "valid_but_not_first_step": "N/A"
+    }
+  },
+  {
+    "id": "d4_t5_batch_030",
+    "domain_id": "D4",
+    "task_statement_id": "D4.T5",
+    "scenario_ids": [
+      "S5"
+    ],
+    "difficulty": "applied_judgment",
+    "key_concept_tested": "custom_id for correlation",
+    "stem": "Your CI/CD system processes test generation requests from multiple branches simultaneously. Each request contains repository_name, branch_name, and commit_sha. You need to correlate batch results with the correct branch for merge decisions. What custom_id format provides the most reliable correlation?",
+    "options": [
+      {
+        "label": "A",
+        "text": "Use commit_sha only since it's globally unique across all repositories",
+        "is_correct": true
+      },
+      {
+        "label": "B",
+        "text": "Use 'repo:branch:commit' format for complete identification",
+        "is_correct": false
+      },
+      {
+        "label": "C",
+        "text": "Use repository_name only to group results by project",
+        "is_correct": false
+      },
+      {
+        "label": "D",
+        "text": "Use branch_name only since that's where results will be merged",
+        "is_correct": false
+      }
+    ],
+    "correct_label": "A",
+    "explanation": "The commit_sha is globally unique and provides sufficient correlation for merge decisions. While the structured format provides more information, the commit_sha alone uniquely identifies the specific code state and is sufficient for routing results back to the correct branch and merge process.",
+    "tags": [
+      "batch_api",
+      "git_workflow",
+      "unique_identification"
+    ],
+    "bloom_level": "apply",
+    "distractor_strategy": {
+      "plausible_but_prompt_only": "N/A",
+      "over_engineered": "N/A",
+      "wrong_layer": "N/A",
+      "valid_but_not_first_step": "N/A"
+    }
+  },
+  {
+    "id": "d4_t5_batch_031",
+    "domain_id": "D4",
+    "task_statement_id": "D4.T5",
+    "scenario_ids": [
+      "S6"
+    ],
+    "difficulty": "conceptual_knowledge",
+    "key_concept_tested": "Message Batches API: 50% cost savings, 24h window, no latency SLA",
+    "stem": "Your organization processes insurance claim documents for fraud detection. The current synchronous system costs $300/month and provides results within 30 minutes. Claims are investigated over several days. What is the key trade-off to consider when evaluating Message Batches API?",
+    "options": [
+      {
+        "label": "A",
+        "text": "Reduced accuracy vs. cost savings due to batch processing limitations",
+        "is_correct": false
+      },
+      {
+        "label": "B",
+        "text": "30-minute response time vs. up to 24-hour processing window",
+        "is_correct": true
+      },
+      {
+        "label": "C",
+        "text": "Synchronous reliability vs. batch processing failure rates",
+        "is_correct": false
+      },
+      {
+        "label": "D",
+        "text": "Individual claim processing vs. bulk processing efficiency",
+        "is_correct": false
+      }
+    ],
+    "correct_label": "B",
+    "explanation": "The primary trade-off is latency: moving from 30-minute synchronous results to up to 24-hour batch processing. Since claims are investigated over several days, this latency increase may be acceptable for the 50% cost savings, but the timing impact must be evaluated against investigation workflows.",
+    "tags": [
+      "batch_api",
+      "latency_tradeoff",
+      "fraud_detection"
+    ],
+    "bloom_level": "understand",
+    "distractor_strategy": {
+      "plausible_but_prompt_only": "N/A",
+      "over_engineered": "N/A",
+      "wrong_layer": "N/A",
+      "valid_but_not_first_step": "N/A"
+    }
+  },
+  {
+    "id": "d4_t5_batch_032",
+    "domain_id": "D4",
+    "task_statement_id": "D4.T5",
+    "scenario_ids": [
+      "S5"
+    ],
+    "difficulty": "conceptual_knowledge",
+    "key_concept_tested": "batch not for blocking workflows like pre-merge checks",
+    "stem": "Your development workflow includes several automated checks: (1) style formatting, (2) security scanning, (3) test coverage analysis, (4) documentation generation. Checks 1-3 must pass before code can be merged. Check 4 runs after merge for wiki updates. Which checks are suitable for Message Batches API?",
+    "options": [
+      {
+        "label": "A",
+        "text": "All checks can use batch processing during off-peak hours",
+        "is_correct": false
+      },
+      {
+        "label": "B",
+        "text": "Checks 1-3 for cost efficiency, check 4 synchronous for immediate updates",
+        "is_correct": false
+      },
+      {
+        "label": "C",
+        "text": "Only check 4 - it's non-blocking and doesn't gate the merge process",
+        "is_correct": true
+      },
+      {
+        "label": "D",
+        "text": "Checks 3-4 since they're less critical than style and security",
+        "is_correct": false
+      }
+    ],
+    "correct_label": "C",
+    "explanation": "Checks 1-3 are blocking workflows that gate the merge process and require immediate results. Only check 4 (documentation generation) is non-blocking and can tolerate the 24-hour batch processing window since it runs after merge for wiki updates.",
+    "tags": [
+      "batch_api",
+      "blocking_workflows",
+      "merge_gates"
+    ],
+    "bloom_level": "understand",
+    "distractor_strategy": {
+      "plausible_but_prompt_only": "N/A",
+      "over_engineered": "N/A",
+      "wrong_layer": "N/A",
+      "valid_but_not_first_step": "N/A"
+    }
+  },
+  {
+    "id": "d4_t5_batch_033",
+    "domain_id": "D4",
+    "task_statement_id": "D4.T5",
+    "scenario_ids": [
+      "S6"
+    ],
+    "difficulty": "anti_pattern_recognition",
+    "key_concept_tested": "batch submission frequency from SLA constraints",
+    "stem": "Your document processing system has a 20-hour SLA. A developer schedules batch submissions every 20 hours to 'perfectly align with the SLA deadline.' After production deployment, some documents miss their deadlines. What is the flaw in this timing strategy?",
+    "options": [
+      {
+        "label": "A",
+        "text": "20-hour submission frequency doesn't account for batch processing variability",
+        "is_correct": false
+      },
+      {
+        "label": "B",
+        "text": "Documents submitted just after a batch wait 20 hours, then need up to 24 hours processing",
+        "is_correct": true
+      },
+      {
+        "label": "C",
+        "text": "Batch API processing time varies based on queue load and system capacity",
+        "is_correct": false
+      },
+      {
+        "label": "D",
+        "text": "20-hour SLA requires more frequent submissions for safety margin",
+        "is_correct": false
+      }
+    ],
+    "correct_label": "B",
+    "explanation": "The critical flaw is that documents submitted just after a batch submission must wait 20 hours for the next batch, then potentially wait up to 24 more hours for processing - totaling up to 44 hours, which exceeds the 20-hour SLA. The submission frequency must account for both wait time and processing time.",
+    "tags": [
+      "batch_api",
+      "sla_calculation",
+      "timing_error"
+    ],
+    "bloom_level": "evaluate",
+    "distractor_strategy": {
+      "plausible_but_prompt_only": "N/A",
+      "over_engineered": "N/A",
+      "wrong_layer": "N/A",
+      "valid_but_not_first_step": "N/A"
+    }
+  },
+  {
+    "id": "d4_t5_batch_034",
+    "domain_id": "D4",
+    "task_statement_id": "D4.T5",
+    "scenario_ids": [
+      "S5"
+    ],
+    "difficulty": "applied_judgment",
+    "key_concept_tested": "Message Batches API: 50% cost savings, 24h window, no latency SLA",
+    "stem": "Your team uses Claude for multiple development tasks with varying urgency: code reviews (2-hour feedback), API documentation (weekly updates), performance analysis (monthly reports), and bug triage (immediate priority assignment). Current monthly cost is $400. Which tasks justify Message Batches API adoption?",
+    "options": [
+      {
+        "label": "A",
+        "text": "API documentation and performance analysis - both have multi-day tolerance",
+        "is_correct": true
+      },
+      {
+        "label": "B",
+        "text": "Only performance analysis - monthly reports have the most flexible deadlines",
+        "is_correct": false
+      },
+      {
+        "label": "C",
+        "text": "All tasks except bug triage to maximize cost savings",
+        "is_correct": false
+      },
+      {
+        "label": "D",
+        "text": "None - development workflows require consistent response times",
+        "is_correct": false
+      }
+    ],
+    "correct_label": "A",
+    "explanation": "Code reviews (2-hour feedback) and bug triage (immediate priority) require fast response times incompatible with batch processing. API documentation (weekly) and performance analysis (monthly) have sufficient latency tolerance for the 24-hour processing window while providing 50% cost savings on those workloads.",
+    "tags": [
+      "batch_api",
+      "development_workflows",
+      "urgency_classification"
+    ],
+    "bloom_level": "apply",
+    "distractor_strategy": {
+      "plausible_but_prompt_only": "N/A",
+      "over_engineered": "N/A",
+      "wrong_layer": "N/A",
+      "valid_but_not_first_step": "N/A"
+    }
+  }
+]

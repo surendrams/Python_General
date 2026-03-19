@@ -1,0 +1,1632 @@
+[
+  {
+    "id": "D2_T5_001",
+    "domain_id": "D2",
+    "task_statement_id": "D2.T5",
+    "scenario_ids": [
+      "S1"
+    ],
+    "difficulty": "conceptual_knowledge",
+    "key_concept_tested": "Grep: content search across files",
+    "stem": "Your customer support agent needs to search through log files to find all instances of a specific customer ID across multiple files. Which built-in tool is most appropriate for this content search task?",
+    "options": [
+      {
+        "label": "A",
+        "text": "Read tool to sequentially examine each file",
+        "is_correct": false
+      },
+      {
+        "label": "B",
+        "text": "Glob tool to match files containing the customer ID",
+        "is_correct": false
+      },
+      {
+        "label": "C",
+        "text": "Grep tool to search for the customer ID pattern across files",
+        "is_correct": true
+      },
+      {
+        "label": "D",
+        "text": "Edit tool to locate and highlight matching content",
+        "is_correct": false
+      }
+    ],
+    "correct_label": "C",
+    "explanation": "Grep is specifically designed for content search across files, making it the optimal choice for finding customer ID instances. Read would be inefficient for searching, Glob matches file paths not content, and Edit is for modifications not search.",
+    "tags": [
+      "built-in-tools",
+      "grep",
+      "content-search"
+    ],
+    "bloom_level": "understand",
+    "distractor_strategy": {
+      "plausible_but_prompt_only": "N/A",
+      "over_engineered": "N/A",
+      "wrong_layer": "N/A",
+      "valid_but_not_first_step": "N/A"
+    }
+  },
+  {
+    "id": "D2_T5_002",
+    "domain_id": "D2",
+    "task_statement_id": "D2.T5",
+    "scenario_ids": [
+      "S3"
+    ],
+    "difficulty": "conceptual_knowledge",
+    "key_concept_tested": "Glob: file path pattern matching",
+    "stem": "Your document analysis agent needs to process all PDF research papers in a directory structure that follows the pattern '/research/papers/2024/*.pdf'. Which tool should it use to identify these files?",
+    "options": [
+      {
+        "label": "A",
+        "text": "Grep tool to search for '.pdf' in file contents",
+        "is_correct": false
+      },
+      {
+        "label": "B",
+        "text": "Read tool to check each file's extension",
+        "is_correct": false
+      },
+      {
+        "label": "C",
+        "text": "Edit tool to locate PDF files",
+        "is_correct": false
+      },
+      {
+        "label": "D",
+        "text": "Glob tool to match the file path pattern",
+        "is_correct": true
+      }
+    ],
+    "correct_label": "D",
+    "explanation": "Glob is designed for file path pattern matching and can efficiently find all files matching '/research/papers/2024/*.pdf'. Grep searches content not paths, Read requires knowing specific filenames, and Edit is for modifications.",
+    "tags": [
+      "built-in-tools",
+      "glob",
+      "file-pattern-matching"
+    ],
+    "bloom_level": "understand",
+    "distractor_strategy": {
+      "plausible_but_prompt_only": "N/A",
+      "over_engineered": "N/A",
+      "wrong_layer": "N/A",
+      "valid_but_not_first_step": "N/A"
+    }
+  },
+  {
+    "id": "D2_T5_003",
+    "domain_id": "D2",
+    "task_statement_id": "D2.T5",
+    "scenario_ids": [
+      "S1"
+    ],
+    "difficulty": "conceptual_knowledge",
+    "key_concept_tested": "Read/Write: full file operations",
+    "stem": "Your support agent needs to create a complete incident report file from scratch with customer details, timestamps, and resolution steps. Which approach uses the appropriate built-in tool?",
+    "options": [
+      {
+        "label": "A",
+        "text": "Write tool to create the complete file with all content",
+        "is_correct": true
+      },
+      {
+        "label": "B",
+        "text": "Edit tool to create and populate the new file",
+        "is_correct": false
+      },
+      {
+        "label": "C",
+        "text": "Grep tool to template the report structure",
+        "is_correct": false
+      },
+      {
+        "label": "D",
+        "text": "Glob tool to generate the file from a pattern",
+        "is_correct": false
+      }
+    ],
+    "correct_label": "A",
+    "explanation": "Write tool is designed for full file operations including creating new files with complete content. Edit requires existing content to modify, Grep is for searching, and Glob is for path matching.",
+    "tags": [
+      "built-in-tools",
+      "write",
+      "file-creation"
+    ],
+    "bloom_level": "understand",
+    "distractor_strategy": {
+      "plausible_but_prompt_only": "N/A",
+      "over_engineered": "N/A",
+      "wrong_layer": "N/A",
+      "valid_but_not_first_step": "N/A"
+    }
+  },
+  {
+    "id": "D2_T5_004",
+    "domain_id": "D2",
+    "task_statement_id": "D2.T5",
+    "scenario_ids": [
+      "S3"
+    ],
+    "difficulty": "conceptual_knowledge",
+    "key_concept_tested": "Edit: targeted modifications with unique text matching",
+    "stem": "Your report generation agent needs to update a specific section in an existing research report by replacing the text 'Preliminary findings suggest' with 'Comprehensive analysis confirms'. Which tool is most appropriate?",
+    "options": [
+      {
+        "label": "A",
+        "text": "Grep tool to find and replace the text",
+        "is_correct": false
+      },
+      {
+        "label": "B",
+        "text": "Edit tool to make the targeted text replacement",
+        "is_correct": true
+      },
+      {
+        "label": "C",
+        "text": "Write tool to recreate the entire file",
+        "is_correct": false
+      },
+      {
+        "label": "D",
+        "text": "Read tool to locate the text for manual replacement",
+        "is_correct": false
+      }
+    ],
+    "correct_label": "B",
+    "explanation": "Edit tool is designed for targeted modifications using unique text matching, perfect for replacing specific phrases. Grep only searches, Write would require recreating the entire file, and Read doesn't perform modifications.",
+    "tags": [
+      "built-in-tools",
+      "edit",
+      "targeted-modifications"
+    ],
+    "bloom_level": "understand",
+    "distractor_strategy": {
+      "plausible_but_prompt_only": "N/A",
+      "over_engineered": "N/A",
+      "wrong_layer": "N/A",
+      "valid_but_not_first_step": "N/A"
+    }
+  },
+  {
+    "id": "D2_T5_005",
+    "domain_id": "D2",
+    "task_statement_id": "D2.T5",
+    "scenario_ids": [
+      "S1"
+    ],
+    "difficulty": "applied_judgment",
+    "key_concept_tested": "Edit failure fallback: Read + Write",
+    "stem": "Your support agent attempts to use Edit tool to update a customer configuration file, but the operation fails because the target text pattern appears multiple times. What is the most reliable fallback approach?",
+    "options": [
+      {
+        "label": "A",
+        "text": "Retry Edit with a more specific pattern",
+        "is_correct": false
+      },
+      {
+        "label": "B",
+        "text": "Use Grep to find all instances then Edit each one",
+        "is_correct": false
+      },
+      {
+        "label": "C",
+        "text": "Use Read to get full content, modify it, then Write the complete file",
+        "is_correct": true
+      },
+      {
+        "label": "D",
+        "text": "Use Glob to find similar files and Edit them instead",
+        "is_correct": false
+      }
+    ],
+    "correct_label": "C",
+    "explanation": "When Edit fails due to ambiguous patterns, the standard fallback is Read + Write: read the full file, make modifications to the content, then write the complete updated file. This ensures precise control over all changes.",
+    "tags": [
+      "built-in-tools",
+      "edit-fallback",
+      "read-write-pattern"
+    ],
+    "bloom_level": "apply",
+    "distractor_strategy": {
+      "plausible_but_prompt_only": "N/A",
+      "over_engineered": "N/A",
+      "wrong_layer": "N/A",
+      "valid_but_not_first_step": "N/A"
+    }
+  },
+  {
+    "id": "D2_T5_006",
+    "domain_id": "D2",
+    "task_statement_id": "D2.T5",
+    "scenario_ids": [
+      "S3"
+    ],
+    "difficulty": "applied_judgment",
+    "key_concept_tested": "incremental codebase understanding pattern",
+    "stem": "Your document analysis agent needs to understand a large research codebase structure before processing files. The codebase has 500+ files across multiple directories. What is the most efficient approach to build understanding incrementally?",
+    "options": [
+      {
+        "label": "A",
+        "text": "Use Read on all files to get complete understanding",
+        "is_correct": false
+      },
+      {
+        "label": "B",
+        "text": "Start with Glob to map structure, then Grep key terms, then Read specific files",
+        "is_correct": false
+      },
+      {
+        "label": "C",
+        "text": "Use Grep to search for main functions across all files",
+        "is_correct": false
+      },
+      {
+        "label": "D",
+        "text": "Use Glob for directory structure, Read key files like README/main, then targeted Grep/Read",
+        "is_correct": true
+      }
+    ],
+    "correct_label": "D",
+    "explanation": "Incremental understanding follows: Glob for structure overview, Read key entry points (README, main files), then targeted Grep/Read for specific areas. This builds context efficiently without overwhelming the agent with all files upfront.",
+    "tags": [
+      "built-in-tools",
+      "incremental-understanding",
+      "codebase-exploration"
+    ],
+    "bloom_level": "apply",
+    "distractor_strategy": {
+      "plausible_but_prompt_only": "N/A",
+      "over_engineered": "N/A",
+      "wrong_layer": "N/A",
+      "valid_but_not_first_step": "N/A"
+    }
+  },
+  {
+    "id": "D2_T5_007",
+    "domain_id": "D2",
+    "task_statement_id": "D2.T5",
+    "scenario_ids": [
+      "S1"
+    ],
+    "difficulty": "applied_judgment",
+    "key_concept_tested": "Grep: content search across files",
+    "stem": "Your customer support agent needs to find all error messages containing 'payment_failed' across log files from the past week to identify patterns. The logs are in /var/logs/app-*.log format. Which approach is most efficient?",
+    "options": [
+      {
+        "label": "A",
+        "text": "Use Grep with 'payment_failed' pattern across the log directory",
+        "is_correct": true
+      },
+      {
+        "label": "B",
+        "text": "Use Glob to find log files, then Read each one to search manually",
+        "is_correct": false
+      },
+      {
+        "label": "C",
+        "text": "Use Read on each log file and manually scan for the error",
+        "is_correct": false
+      },
+      {
+        "label": "D",
+        "text": "Use Edit to highlight all instances of 'payment_failed'",
+        "is_correct": false
+      }
+    ],
+    "correct_label": "A",
+    "explanation": "Grep is designed for efficient content search across multiple files and can search for 'payment_failed' across all matching log files in one operation. Other approaches are inefficient or inappropriate for search tasks.",
+    "tags": [
+      "built-in-tools",
+      "grep",
+      "log-analysis",
+      "error-tracking"
+    ],
+    "bloom_level": "apply",
+    "distractor_strategy": {
+      "plausible_but_prompt_only": "N/A",
+      "over_engineered": "N/A",
+      "wrong_layer": "N/A",
+      "valid_but_not_first_step": "N/A"
+    }
+  },
+  {
+    "id": "D2_T5_008",
+    "domain_id": "D2",
+    "task_statement_id": "D2.T5",
+    "scenario_ids": [
+      "S3"
+    ],
+    "difficulty": "applied_judgment",
+    "key_concept_tested": "Glob: file path pattern matching",
+    "stem": "Your research system needs to process academic papers from multiple years and formats. The files are organized as '/research/2023/papers/*.pdf', '/research/2024/papers/*.pdf', and '/research/2024/drafts/*.docx'. How should you efficiently identify all relevant documents?",
+    "options": [
+      {
+        "label": "A",
+        "text": "Use three separate Read operations for each directory",
+        "is_correct": false
+      },
+      {
+        "label": "B",
+        "text": "Use multiple Glob patterns: '/research/*/papers/*.pdf' and '/research/2024/drafts/*.docx'",
+        "is_correct": true
+      },
+      {
+        "label": "C",
+        "text": "Use Grep to search for file extensions across the research directory",
+        "is_correct": false
+      },
+      {
+        "label": "D",
+        "text": "Use Edit to list all files in the research directory",
+        "is_correct": false
+      }
+    ],
+    "correct_label": "B",
+    "explanation": "Multiple Glob patterns efficiently match the different directory structures and file types. The wildcard patterns capture the year variations and different file locations without needing to know specific filenames.",
+    "tags": [
+      "built-in-tools",
+      "glob",
+      "multi-pattern-matching",
+      "document-processing"
+    ],
+    "bloom_level": "apply",
+    "distractor_strategy": {
+      "plausible_but_prompt_only": "N/A",
+      "over_engineered": "A",
+      "wrong_layer": "N/A",
+      "valid_but_not_first_step": "N/A"
+    }
+  },
+  {
+    "id": "D2_T5_009",
+    "domain_id": "D2",
+    "task_statement_id": "D2.T5",
+    "scenario_ids": [
+      "S1"
+    ],
+    "difficulty": "applied_judgment",
+    "key_concept_tested": "Read/Write: full file operations",
+    "stem": "Your support agent needs to generate a comprehensive customer history report by combining data from multiple sources: account info, transaction logs, and support tickets. The final report will be 2000+ lines. What's the most appropriate approach?",
+    "options": [
+      {
+        "label": "A",
+        "text": "Use Edit to incrementally build the report section by section",
+        "is_correct": false
+      },
+      {
+        "label": "B",
+        "text": "Use Grep to extract relevant data and combine manually",
+        "is_correct": false
+      },
+      {
+        "label": "C",
+        "text": "Use Read to gather all source data, then Write the complete report",
+        "is_correct": true
+      },
+      {
+        "label": "D",
+        "text": "Use Glob to template the report structure",
+        "is_correct": false
+      }
+    ],
+    "correct_label": "C",
+    "explanation": "For large, comprehensive reports combining multiple data sources, the Read + Write pattern is most appropriate: Read source data, process and combine it, then Write the complete report. Edit is not suitable for building large files from scratch.",
+    "tags": [
+      "built-in-tools",
+      "read-write",
+      "report-generation",
+      "data-aggregation"
+    ],
+    "bloom_level": "apply",
+    "distractor_strategy": {
+      "plausible_but_prompt_only": "N/A",
+      "over_engineered": "N/A",
+      "wrong_layer": "N/A",
+      "valid_but_not_first_step": "N/A"
+    }
+  },
+  {
+    "id": "D2_T5_010",
+    "domain_id": "D2",
+    "task_statement_id": "D2.T5",
+    "scenario_ids": [
+      "S3"
+    ],
+    "difficulty": "applied_judgment",
+    "key_concept_tested": "Edit: targeted modifications with unique text matching",
+    "stem": "Your synthesis agent needs to update citation numbers in a research report after adding new references. The report contains '[1]', '[2]', '[3]' etc., and you need to increment all numbers by 5. What's the most reliable approach?",
+    "options": [
+      {
+        "label": "A",
+        "text": "Use multiple Edit operations to replace each citation individually",
+        "is_correct": false
+      },
+      {
+        "label": "B",
+        "text": "Use Grep to find all citations then Edit each pattern",
+        "is_correct": false
+      },
+      {
+        "label": "C",
+        "text": "Use Glob to match citation patterns",
+        "is_correct": false
+      },
+      {
+        "label": "D",
+        "text": "Use Read + Write to process all citations programmatically",
+        "is_correct": true
+      }
+    ],
+    "correct_label": "D",
+    "explanation": "When making systematic changes to multiple similar patterns, Read + Write is more reliable than multiple Edit operations. This allows programmatic processing of all citation numbers in one operation, avoiding potential Edit failures with similar patterns.",
+    "tags": [
+      "built-in-tools",
+      "read-write-pattern",
+      "systematic-updates",
+      "citation-management"
+    ],
+    "bloom_level": "apply",
+    "distractor_strategy": {
+      "plausible_but_prompt_only": "N/A",
+      "over_engineered": "N/A",
+      "wrong_layer": "N/A",
+      "valid_but_not_first_step": "N/A"
+    }
+  },
+  {
+    "id": "D2_T5_011",
+    "domain_id": "D2",
+    "task_statement_id": "D2.T5",
+    "scenario_ids": [
+      "S1"
+    ],
+    "difficulty": "applied_judgment",
+    "key_concept_tested": "incremental codebase understanding pattern",
+    "stem": "Your support agent needs to understand a customer's custom integration codebase to debug their API connection issues. The codebase is unfamiliar and contains 200+ files. How should the agent approach this systematically?",
+    "options": [
+      {
+        "label": "A",
+        "text": "Use Read on every file to get complete understanding",
+        "is_correct": true
+      },
+      {
+        "label": "B",
+        "text": "Use Grep to search for 'API' across all files immediately",
+        "is_correct": false
+      },
+      {
+        "label": "C",
+        "text": "Use Glob for structure, Read entry points, then Grep for API-related code",
+        "is_correct": false
+      },
+      {
+        "label": "D",
+        "text": "Use Edit to add debugging statements throughout the codebase",
+        "is_correct": false
+      }
+    ],
+    "correct_label": "A",
+    "explanation": "For debugging specific issues, starting with structural understanding (Glob), then reading key files (README, main entry points), then targeted searches (Grep for 'API', 'connection', error handling) is most efficient. Reading all files first would be overwhelming and inefficient.",
+    "tags": [
+      "built-in-tools",
+      "incremental-understanding",
+      "debugging",
+      "api-integration"
+    ],
+    "bloom_level": "apply",
+    "distractor_strategy": {
+      "plausible_but_prompt_only": "N/A",
+      "over_engineered": "N/A",
+      "wrong_layer": "N/A",
+      "valid_but_not_first_step": "N/A"
+    }
+  },
+  {
+    "id": "D2_T5_012",
+    "domain_id": "D2",
+    "task_statement_id": "D2.T5",
+    "scenario_ids": [
+      "S3"
+    ],
+    "difficulty": "applied_judgment",
+    "key_concept_tested": "Grep: content search across files",
+    "stem": "Your document analysis agent is processing research papers and needs to identify all papers that cite a specific author 'Johnson, M.' across a collection of 500+ PDF text files. Performance is critical as this runs frequently. What's the optimal approach?",
+    "options": [
+      {
+        "label": "A",
+        "text": "Use Read on each file and manually search for the author name",
+        "is_correct": false
+      },
+      {
+        "label": "B",
+        "text": "Use Grep to search for 'Johnson, M.' across all text files",
+        "is_correct": true
+      },
+      {
+        "label": "C",
+        "text": "Use Glob to find files with 'Johnson' in the filename",
+        "is_correct": false
+      },
+      {
+        "label": "D",
+        "text": "Use Edit to highlight author citations in each file",
+        "is_correct": false
+      }
+    ],
+    "correct_label": "B",
+    "explanation": "Grep is optimized for content search across multiple files and will efficiently find all instances of 'Johnson, M.' across the entire collection. This is much faster than reading each file individually and more appropriate than filename matching or editing operations.",
+    "tags": [
+      "built-in-tools",
+      "grep",
+      "author-citation",
+      "performance-optimization"
+    ],
+    "bloom_level": "apply",
+    "distractor_strategy": {
+      "plausible_but_prompt_only": "N/A",
+      "over_engineered": "N/A",
+      "wrong_layer": "N/A",
+      "valid_but_not_first_step": "N/A"
+    }
+  },
+  {
+    "id": "D2_T5_013",
+    "domain_id": "D2",
+    "task_statement_id": "D2.T5",
+    "scenario_ids": [
+      "S1"
+    ],
+    "difficulty": "applied_judgment",
+    "key_concept_tested": "Glob: file path pattern matching",
+    "stem": "Your customer support system stores escalation records in files following the pattern '/escalations/2024/month-XX/case-XXXXX.json' where XX is the month and XXXXX is the case number. You need to find all escalations from Q4 2024 (months 10-12). What's the most efficient Glob pattern approach?",
+    "options": [
+      {
+        "label": "A",
+        "text": "Use three separate Glob patterns for each month: month-10, month-11, month-12",
+        "is_correct": false
+      },
+      {
+        "label": "B",
+        "text": "Use pattern '/escalations/2024/month-1[0-2]/*.json' to match months 10-12",
+        "is_correct": false
+      },
+      {
+        "label": "C",
+        "text": "Use Grep to search for '10', '11', '12' in file paths",
+        "is_correct": true
+      },
+      {
+        "label": "D",
+        "text": "Use Read to check each directory individually",
+        "is_correct": false
+      }
+    ],
+    "correct_label": "C",
+    "explanation": "The pattern '/escalations/2024/month-1[0-2]/*.json' efficiently matches months 10, 11, and 12 using character class notation. This is more efficient than multiple separate patterns and more precise than searching content or reading directories.",
+    "tags": [
+      "built-in-tools",
+      "glob",
+      "date-range-matching",
+      "escalation-tracking"
+    ],
+    "bloom_level": "apply",
+    "distractor_strategy": {
+      "plausible_but_prompt_only": "N/A",
+      "over_engineered": "A",
+      "wrong_layer": "N/A",
+      "valid_but_not_first_step": "N/A"
+    }
+  },
+  {
+    "id": "D2_T5_014",
+    "domain_id": "D2",
+    "task_statement_id": "D2.T5",
+    "scenario_ids": [
+      "S3"
+    ],
+    "difficulty": "applied_judgment",
+    "key_concept_tested": "Edit: targeted modifications with unique text matching",
+    "stem": "Your report generation agent needs to update the status of multiple research projects in a summary file. Each project has a unique ID and status line like 'Project Alpha-2024-001: In Progress'. You need to change specific projects to 'Completed'. What's the safest approach?",
+    "options": [
+      {
+        "label": "A",
+        "text": "Use Edit with the full unique line as the target pattern",
+        "is_correct": false
+      },
+      {
+        "label": "B",
+        "text": "Use Grep to find the lines then Edit with project ID",
+        "is_correct": false
+      },
+      {
+        "label": "C",
+        "text": "Use multiple Edit operations with just the status text",
+        "is_correct": false
+      },
+      {
+        "label": "D",
+        "text": "Use Edit with the unique project ID as the target pattern",
+        "is_correct": true
+      }
+    ],
+    "correct_label": "D",
+    "explanation": "Using the unique project ID as the target pattern ensures Edit can reliably identify and modify the correct line. Using the full line or just status text could cause issues if patterns are similar, while using the unique ID provides precise targeting.",
+    "tags": [
+      "built-in-tools",
+      "edit",
+      "unique-identifiers",
+      "status-updates"
+    ],
+    "bloom_level": "apply",
+    "distractor_strategy": {
+      "plausible_but_prompt_only": "N/A",
+      "over_engineered": "N/A",
+      "wrong_layer": "N/A",
+      "valid_but_not_first_step": "N/A"
+    }
+  },
+  {
+    "id": "D2_T5_015",
+    "domain_id": "D2",
+    "task_statement_id": "D2.T5",
+    "scenario_ids": [
+      "S1"
+    ],
+    "difficulty": "applied_judgment",
+    "key_concept_tested": "Edit failure fallback: Read + Write",
+    "stem": "Your support agent is trying to update a customer configuration file using Edit, but the operation fails with an error indicating the target text 'timeout: 30' appears in 15 different locations. The agent needs to update only the database timeout setting. What should it do next?",
+    "options": [
+      {
+        "label": "A",
+        "text": "Try Edit again with a more specific pattern like 'database timeout: 30'",
+        "is_correct": true
+      },
+      {
+        "label": "B",
+        "text": "Use Read to get the full file, locate the correct setting, then Write the updated file",
+        "is_correct": false
+      },
+      {
+        "label": "C",
+        "text": "Use Grep to find all timeout settings then manually choose which to edit",
+        "is_correct": false
+      },
+      {
+        "label": "D",
+        "text": "Use Glob to find similar configuration files to compare",
+        "is_correct": false
+      }
+    ],
+    "correct_label": "A",
+    "explanation": "When Edit fails due to multiple matches, the first approach should be using a more specific unique pattern. If that still fails, then fall back to Read + Write. The more specific pattern 'database timeout: 30' is likely to be unique.",
+    "tags": [
+      "built-in-tools",
+      "edit-failure",
+      "pattern-specificity",
+      "configuration-management"
+    ],
+    "bloom_level": "apply",
+    "distractor_strategy": {
+      "plausible_but_prompt_only": "N/A",
+      "over_engineered": "N/A",
+      "wrong_layer": "N/A",
+      "valid_but_not_first_step": "N/A"
+    }
+  },
+  {
+    "id": "D2_T5_016",
+    "domain_id": "D2",
+    "task_statement_id": "D2.T5",
+    "scenario_ids": [
+      "S3"
+    ],
+    "difficulty": "applied_judgment",
+    "key_concept_tested": "incremental codebase understanding pattern",
+    "stem": "Your document analysis agent encounters a complex research codebase with machine learning models. It needs to understand the data preprocessing pipeline to process similar documents. The codebase has 300+ Python files. What's the most systematic approach?",
+    "options": [
+      {
+        "label": "A",
+        "text": "Use Grep to search for 'preprocess' across all files immediately",
+        "is_correct": false
+      },
+      {
+        "label": "B",
+        "text": "Use Glob for structure, Read main.py and README, then Grep for preprocessing terms",
+        "is_correct": true
+      },
+      {
+        "label": "C",
+        "text": "Use Read on all Python files to understand everything",
+        "is_correct": false
+      },
+      {
+        "label": "D",
+        "text": "Use Edit to add logging to trace the preprocessing flow",
+        "is_correct": false
+      }
+    ],
+    "correct_label": "B",
+    "explanation": "Incremental understanding starts with structure (Glob), then key entry points (main.py, README), then targeted searches for specific functionality (Grep for 'preprocess', 'pipeline', 'transform'). This builds context systematically without information overload.",
+    "tags": [
+      "built-in-tools",
+      "incremental-understanding",
+      "ml-pipeline",
+      "preprocessing"
+    ],
+    "bloom_level": "apply",
+    "distractor_strategy": {
+      "plausible_but_prompt_only": "N/A",
+      "over_engineered": "N/A",
+      "wrong_layer": "N/A",
+      "valid_but_not_first_step": "N/A"
+    }
+  },
+  {
+    "id": "D2_T5_017",
+    "domain_id": "D2",
+    "task_statement_id": "D2.T5",
+    "scenario_ids": [
+      "S1"
+    ],
+    "difficulty": "anti_pattern_recognition",
+    "key_concept_tested": "Grep: content search across files",
+    "stem": "A junior developer suggests using Read tool to search for customer complaint patterns across 500+ support ticket files by reading each file sequentially and manually scanning the content. What is the primary flaw in this approach?",
+    "options": [
+      {
+        "label": "A",
+        "text": "Read tool cannot handle large numbers of files",
+        "is_correct": false
+      },
+      {
+        "label": "B",
+        "text": "Sequential reading is too slow and inefficient compared to Grep's optimized search",
+        "is_correct": false
+      },
+      {
+        "label": "C",
+        "text": "Grep tool is specifically designed for content search across multiple files",
+        "is_correct": true
+      },
+      {
+        "label": "D",
+        "text": "Manual scanning will miss patterns that automated tools would catch",
+        "is_correct": false
+      }
+    ],
+    "correct_label": "C",
+    "explanation": "The fundamental flaw is using the wrong tool for the job. Grep is specifically designed for efficient content search across multiple files, while Read is for retrieving full file contents. Using Read for search is both inefficient and architecturally incorrect.",
+    "tags": [
+      "anti-pattern",
+      "tool-misuse",
+      "grep-vs-read",
+      "search-efficiency"
+    ],
+    "bloom_level": "evaluate",
+    "distractor_strategy": {
+      "plausible_but_prompt_only": "N/A",
+      "over_engineered": "N/A",
+      "wrong_layer": "N/A",
+      "valid_but_not_first_step": "N/A"
+    }
+  },
+  {
+    "id": "D2_T5_018",
+    "domain_id": "D2",
+    "task_statement_id": "D2.T5",
+    "scenario_ids": [
+      "S3"
+    ],
+    "difficulty": "anti_pattern_recognition",
+    "key_concept_tested": "Glob: file path pattern matching",
+    "stem": "A team member proposes using Grep to find all Python files in a research project by searching for '.py' across the entire directory structure. Why is this approach problematic?",
+    "options": [
+      {
+        "label": "A",
+        "text": "Grep searches file content, not file paths, and will find '.py' in comments and strings",
+        "is_correct": false
+      },
+      {
+        "label": "B",
+        "text": "Glob is designed for file path pattern matching and would be more efficient",
+        "is_correct": true
+      },
+      {
+        "label": "C",
+        "text": "The search pattern '.py' is too broad and will match unrelated content",
+        "is_correct": false
+      },
+      {
+        "label": "D",
+        "text": "Grep requires knowing specific file contents beforehand",
+        "is_correct": false
+      }
+    ],
+    "correct_label": "B",
+    "explanation": "The main issue is using Grep for file path matching when Glob is specifically designed for this purpose. Grep searches file contents and would indeed find '.py' in code comments, strings, and content, not just filenames. Glob with '*.py' pattern is the correct approach.",
+    "tags": [
+      "anti-pattern",
+      "tool-misuse",
+      "glob-vs-grep",
+      "file-discovery"
+    ],
+    "bloom_level": "evaluate",
+    "distractor_strategy": {
+      "plausible_but_prompt_only": "N/A",
+      "over_engineered": "N/A",
+      "wrong_layer": "N/A",
+      "valid_but_not_first_step": "N/A"
+    }
+  },
+  {
+    "id": "D2_T5_019",
+    "domain_id": "D2",
+    "task_statement_id": "D2.T5",
+    "scenario_ids": [
+      "S1"
+    ],
+    "difficulty": "anti_pattern_recognition",
+    "key_concept_tested": "Edit: targeted modifications with unique text matching",
+    "stem": "A developer suggests using Edit tool to replace all instances of 'error' with 'warning' in log files, arguing it's faster than Read + Write. What is the critical risk with this approach?",
+    "options": [
+      {
+        "label": "A",
+        "text": "Edit tool is slower than Read + Write for bulk operations",
+        "is_correct": false
+      },
+      {
+        "label": "B",
+        "text": "Edit requires unique text patterns and 'error' likely appears in many contexts",
+        "is_correct": false
+      },
+      {
+        "label": "C",
+        "text": "Log files should not be modified as they are historical records",
+        "is_correct": true
+      },
+      {
+        "label": "D",
+        "text": "Edit tool cannot handle large files efficiently",
+        "is_correct": false
+      }
+    ],
+    "correct_label": "C",
+    "explanation": "The critical flaw is modifying log files, which are historical records that should remain immutable for audit and debugging purposes. Additionally, 'error' appearing in many contexts would cause Edit to fail due to non-unique patterns, but the primary issue is the inappropriate modification of logs.",
+    "tags": [
+      "anti-pattern",
+      "log-modification",
+      "data-integrity",
+      "edit-misuse"
+    ],
+    "bloom_level": "evaluate",
+    "distractor_strategy": {
+      "plausible_but_prompt_only": "N/A",
+      "over_engineered": "N/A",
+      "wrong_layer": "N/A",
+      "valid_but_not_first_step": "N/A"
+    }
+  },
+  {
+    "id": "D2_T5_020",
+    "domain_id": "D2",
+    "task_statement_id": "D2.T5",
+    "scenario_ids": [
+      "S3"
+    ],
+    "difficulty": "anti_pattern_recognition",
+    "key_concept_tested": "Read/Write: full file operations",
+    "stem": "A colleague proposes using multiple Edit operations to build a new research report from scratch, adding one section at a time. What is the fundamental problem with this approach?",
+    "options": [
+      {
+        "label": "A",
+        "text": "Multiple Edit operations will create file locking issues",
+        "is_correct": false
+      },
+      {
+        "label": "B",
+        "text": "Edit requires existing content to modify; it's not designed for creating new files",
+        "is_correct": true
+      },
+      {
+        "label": "C",
+        "text": "Write tool would be more efficient for incremental additions",
+        "is_correct": false
+      },
+      {
+        "label": "D",
+        "text": "Edit operations are not atomic and could corrupt the file",
+        "is_correct": false
+      }
+    ],
+    "correct_label": "B",
+    "explanation": "Edit tool requires existing content to modify and unique text patterns to target. It's not designed for creating files from scratch. Write tool is the appropriate choice for creating new files with complete content.",
+    "tags": [
+      "anti-pattern",
+      "edit-misuse",
+      "file-creation",
+      "tool-purpose"
+    ],
+    "bloom_level": "evaluate",
+    "distractor_strategy": {
+      "plausible_but_prompt_only": "N/A",
+      "over_engineered": "N/A",
+      "wrong_layer": "N/A",
+      "valid_but_not_first_step": "N/A"
+    }
+  },
+  {
+    "id": "D2_T5_021",
+    "domain_id": "D2",
+    "task_statement_id": "D2.T5",
+    "scenario_ids": [
+      "S1"
+    ],
+    "difficulty": "anti_pattern_recognition",
+    "key_concept_tested": "incremental codebase understanding pattern",
+    "stem": "A new team member suggests immediately using Grep to search for specific error handling patterns across an unfamiliar customer codebase without any prior exploration. What is the main risk of this approach?",
+    "options": [
+      {
+        "label": "A",
+        "text": "Grep searches will be too slow without indexing the codebase first",
+        "is_correct": false
+      },
+      {
+        "label": "B",
+        "text": "Without understanding the codebase structure, searches may miss relevant code or return overwhelming results",
+        "is_correct": false
+      },
+      {
+        "label": "C",
+        "text": "The agent lacks context to interpret search results meaningfully",
+        "is_correct": true
+      },
+      {
+        "label": "D",
+        "text": "Error handling patterns vary too much to search effectively",
+        "is_correct": false
+      }
+    ],
+    "correct_label": "C",
+    "explanation": "Jumping directly to targeted searches without building contextual understanding first means the agent cannot meaningfully interpret the results. Incremental understanding (structure \u2192 key files \u2192 targeted searches) provides necessary context to make search results actionable.",
+    "tags": [
+      "anti-pattern",
+      "context-building",
+      "incremental-understanding",
+      "search-strategy"
+    ],
+    "bloom_level": "evaluate",
+    "distractor_strategy": {
+      "plausible_but_prompt_only": "N/A",
+      "over_engineered": "N/A",
+      "wrong_layer": "N/A",
+      "valid_but_not_first_step": "N/A"
+    }
+  },
+  {
+    "id": "D2_T5_022",
+    "domain_id": "D2",
+    "task_statement_id": "D2.T5",
+    "scenario_ids": [
+      "S3"
+    ],
+    "difficulty": "anti_pattern_recognition",
+    "key_concept_tested": "Edit failure fallback: Read + Write",
+    "stem": "When an Edit operation fails due to ambiguous patterns, a developer suggests trying the same Edit command multiple times with slight variations rather than using Read + Write. What is wrong with this approach?",
+    "options": [
+      {
+        "label": "A",
+        "text": "Multiple Edit attempts will cause file corruption",
+        "is_correct": false
+      },
+      {
+        "label": "B",
+        "text": "Edit variations are still probabilistic; Read + Write provides deterministic control",
+        "is_correct": true
+      },
+      {
+        "label": "C",
+        "text": "Edit operations become slower with each retry attempt",
+        "is_correct": false
+      },
+      {
+        "label": "D",
+        "text": "The original pattern will eventually work with enough attempts",
+        "is_correct": false
+      }
+    ],
+    "correct_label": "B",
+    "explanation": "Trying multiple Edit variations is still probabilistic and unreliable when patterns are ambiguous. Read + Write provides deterministic control by allowing precise examination and modification of content, ensuring the correct changes are made.",
+    "tags": [
+      "anti-pattern",
+      "edit-failure",
+      "probabilistic-approach",
+      "deterministic-control"
+    ],
+    "bloom_level": "evaluate",
+    "distractor_strategy": {
+      "plausible_but_prompt_only": "N/A",
+      "over_engineered": "N/A",
+      "wrong_layer": "N/A",
+      "valid_but_not_first_step": "N/A"
+    }
+  },
+  {
+    "id": "D2_T5_023",
+    "domain_id": "D2",
+    "task_statement_id": "D2.T5",
+    "scenario_ids": [
+      "S1"
+    ],
+    "difficulty": "conceptual_knowledge",
+    "key_concept_tested": "Read/Write: full file operations",
+    "stem": "Your customer support agent needs to read the complete contents of a customer's configuration file to analyze their current settings. Which built-in tool is designed for this full file retrieval operation?",
+    "options": [
+      {
+        "label": "A",
+        "text": "Grep tool to search through the configuration",
+        "is_correct": false
+      },
+      {
+        "label": "B",
+        "text": "Edit tool to examine the file contents",
+        "is_correct": false
+      },
+      {
+        "label": "C",
+        "text": "Read tool to retrieve the complete file contents",
+        "is_correct": true
+      },
+      {
+        "label": "D",
+        "text": "Glob tool to access the configuration file",
+        "is_correct": false
+      }
+    ],
+    "correct_label": "C",
+    "explanation": "Read tool is specifically designed for full file operations, including retrieving complete file contents. Grep is for searching, Edit is for modifications, and Glob is for path matching.",
+    "tags": [
+      "built-in-tools",
+      "read",
+      "file-retrieval",
+      "configuration-analysis"
+    ],
+    "bloom_level": "understand",
+    "distractor_strategy": {
+      "plausible_but_prompt_only": "N/A",
+      "over_engineered": "N/A",
+      "wrong_layer": "N/A",
+      "valid_but_not_first_step": "N/A"
+    }
+  },
+  {
+    "id": "D2_T5_024",
+    "domain_id": "D2",
+    "task_statement_id": "D2.T5",
+    "scenario_ids": [
+      "S3"
+    ],
+    "difficulty": "conceptual_knowledge",
+    "key_concept_tested": "Edit: targeted modifications with unique text matching",
+    "stem": "Your report generation agent needs to update a single date field in a research report from '2024-01-15' to '2024-01-20'. The date appears only once in the document. Which tool is most appropriate for this targeted modification?",
+    "options": [
+      {
+        "label": "A",
+        "text": "Read the file, modify the date, then Write the complete file",
+        "is_correct": false
+      },
+      {
+        "label": "B",
+        "text": "Edit tool to make the targeted date change",
+        "is_correct": true
+      },
+      {
+        "label": "C",
+        "text": "Grep to find the date then manually update it",
+        "is_correct": false
+      },
+      {
+        "label": "D",
+        "text": "Write tool to replace the entire file with the updated date",
+        "is_correct": false
+      }
+    ],
+    "correct_label": "B",
+    "explanation": "Edit tool is designed for targeted modifications when you have a unique text pattern. Since the date appears only once, Edit can precisely target and replace it without affecting the rest of the file.",
+    "tags": [
+      "built-in-tools",
+      "edit",
+      "targeted-modification",
+      "date-update"
+    ],
+    "bloom_level": "understand",
+    "distractor_strategy": {
+      "plausible_but_prompt_only": "N/A",
+      "over_engineered": "N/A",
+      "wrong_layer": "N/A",
+      "valid_but_not_first_step": "N/A"
+    }
+  },
+  {
+    "id": "D2_T5_025",
+    "domain_id": "D2",
+    "task_statement_id": "D2.T5",
+    "scenario_ids": [
+      "S1"
+    ],
+    "difficulty": "conceptual_knowledge",
+    "key_concept_tested": "Glob: file path pattern matching",
+    "stem": "Your support system stores customer data files with names like 'customer-12345.json', 'customer-67890.json' in the /data directory. Which tool should you use to find all customer data files?",
+    "options": [
+      {
+        "label": "A",
+        "text": "Read tool to check each file in the directory",
+        "is_correct": false
+      },
+      {
+        "label": "B",
+        "text": "Grep tool to search for 'customer' in file contents",
+        "is_correct": false
+      },
+      {
+        "label": "C",
+        "text": "Glob tool with pattern 'customer-*.json'",
+        "is_correct": true
+      },
+      {
+        "label": "D",
+        "text": "Edit tool to list files matching the pattern",
+        "is_correct": false
+      }
+    ],
+    "correct_label": "C",
+    "explanation": "Glob tool is designed for file path pattern matching. The pattern 'customer-*.json' will efficiently match all files that start with 'customer-' and end with '.json'.",
+    "tags": [
+      "built-in-tools",
+      "glob",
+      "file-pattern",
+      "customer-data"
+    ],
+    "bloom_level": "understand",
+    "distractor_strategy": {
+      "plausible_but_prompt_only": "N/A",
+      "over_engineered": "N/A",
+      "wrong_layer": "N/A",
+      "valid_but_not_first_step": "N/A"
+    }
+  },
+  {
+    "id": "D2_T5_026",
+    "domain_id": "D2",
+    "task_statement_id": "D2.T5",
+    "scenario_ids": [
+      "S3"
+    ],
+    "difficulty": "conceptual_knowledge",
+    "key_concept_tested": "Grep: content search across files",
+    "stem": "Your document analysis agent needs to find all research papers that mention 'machine learning' in their content across a directory of text files. Which tool is specifically designed for this content search task?",
+    "options": [
+      {
+        "label": "A",
+        "text": "Glob tool to match files containing the term",
+        "is_correct": false
+      },
+      {
+        "label": "B",
+        "text": "Read tool to examine each file individually",
+        "is_correct": false
+      },
+      {
+        "label": "C",
+        "text": "Edit tool to locate the term in files",
+        "is_correct": false
+      },
+      {
+        "label": "D",
+        "text": "Grep tool to search for 'machine learning' across files",
+        "is_correct": true
+      }
+    ],
+    "correct_label": "D",
+    "explanation": "Grep tool is specifically designed for content search across files. It can efficiently search for 'machine learning' in the content of multiple files simultaneously.",
+    "tags": [
+      "built-in-tools",
+      "grep",
+      "content-search",
+      "research-analysis"
+    ],
+    "bloom_level": "understand",
+    "distractor_strategy": {
+      "plausible_but_prompt_only": "N/A",
+      "over_engineered": "N/A",
+      "wrong_layer": "N/A",
+      "valid_but_not_first_step": "N/A"
+    }
+  },
+  {
+    "id": "D2_T5_027",
+    "domain_id": "D2",
+    "task_statement_id": "D2.T5",
+    "scenario_ids": [
+      "S1"
+    ],
+    "difficulty": "conceptual_knowledge",
+    "key_concept_tested": "Edit failure fallback: Read + Write",
+    "stem": "When an Edit operation fails because the target text pattern is not unique enough, what is the standard fallback approach?",
+    "options": [
+      {
+        "label": "A",
+        "text": "Use Read to get the full file content, modify it, then Write the updated file",
+        "is_correct": true
+      },
+      {
+        "label": "B",
+        "text": "Use Grep to find all instances and Edit them one by one",
+        "is_correct": false
+      },
+      {
+        "label": "C",
+        "text": "Use Glob to find similar files and try Edit on those",
+        "is_correct": false
+      },
+      {
+        "label": "D",
+        "text": "Retry the Edit operation with a shorter pattern",
+        "is_correct": false
+      }
+    ],
+    "correct_label": "A",
+    "explanation": "The standard fallback when Edit fails due to pattern ambiguity is the Read + Write pattern: read the complete file, make the necessary modifications to the content, then write the updated file back.",
+    "tags": [
+      "built-in-tools",
+      "edit-fallback",
+      "read-write-pattern",
+      "error-handling"
+    ],
+    "bloom_level": "understand",
+    "distractor_strategy": {
+      "plausible_but_prompt_only": "N/A",
+      "over_engineered": "N/A",
+      "wrong_layer": "N/A",
+      "valid_but_not_first_step": "N/A"
+    }
+  },
+  {
+    "id": "D2_T5_028",
+    "domain_id": "D2",
+    "task_statement_id": "D2.T5",
+    "scenario_ids": [
+      "S3"
+    ],
+    "difficulty": "conceptual_knowledge",
+    "key_concept_tested": "incremental codebase understanding pattern",
+    "stem": "When approaching an unfamiliar codebase for the first time, what is the recommended first step in the incremental understanding pattern?",
+    "options": [
+      {
+        "label": "A",
+        "text": "Use Grep to search for main functions across all files",
+        "is_correct": false
+      },
+      {
+        "label": "B",
+        "text": "Use Glob to understand the directory structure and file organization",
+        "is_correct": true
+      },
+      {
+        "label": "C",
+        "text": "Use Read to examine all source code files",
+        "is_correct": false
+      },
+      {
+        "label": "D",
+        "text": "Use Edit to add debugging statements throughout the code",
+        "is_correct": false
+      }
+    ],
+    "correct_label": "B",
+    "explanation": "The incremental understanding pattern starts with Glob to map the directory structure and file organization, providing a high-level view before diving into specific files or searching for particular content.",
+    "tags": [
+      "built-in-tools",
+      "incremental-understanding",
+      "codebase-exploration",
+      "structure-mapping"
+    ],
+    "bloom_level": "understand",
+    "distractor_strategy": {
+      "plausible_but_prompt_only": "N/A",
+      "over_engineered": "N/A",
+      "wrong_layer": "N/A",
+      "valid_but_not_first_step": "N/A"
+    }
+  },
+  {
+    "id": "D2_T5_029",
+    "domain_id": "D2",
+    "task_statement_id": "D2.T5",
+    "scenario_ids": [
+      "S1"
+    ],
+    "difficulty": "applied_judgment",
+    "key_concept_tested": "Grep: content search across files",
+    "stem": "Your customer support agent needs to analyze escalation patterns by finding all instances where customers mentioned 'frustrated', 'angry', or 'disappointed' across 1000+ support chat transcripts. The analysis runs daily and performance matters. What's the optimal approach?",
+    "options": [
+      {
+        "label": "A",
+        "text": "Use three separate Grep commands for each emotion word",
+        "is_correct": false
+      },
+      {
+        "label": "B",
+        "text": "Use Read on each file and manually search for the emotion words",
+        "is_correct": false
+      },
+      {
+        "label": "C",
+        "text": "Use Grep with a pattern that matches all three emotion words",
+        "is_correct": true
+      },
+      {
+        "label": "D",
+        "text": "Use Glob to find relevant files then Grep each one individually",
+        "is_correct": false
+      }
+    ],
+    "correct_label": "C",
+    "explanation": "Using Grep with a regex pattern like '(frustrated|angry|disappointed)' or multiple Grep commands can efficiently search for all emotion words across the large file collection in a single operation, optimizing performance for daily analysis.",
+    "tags": [
+      "built-in-tools",
+      "grep",
+      "pattern-matching",
+      "sentiment-analysis",
+      "performance"
+    ],
+    "bloom_level": "apply",
+    "distractor_strategy": {
+      "plausible_but_prompt_only": "N/A",
+      "over_engineered": "A",
+      "wrong_layer": "N/A",
+      "valid_but_not_first_step": "N/A"
+    }
+  },
+  {
+    "id": "D2_T5_030",
+    "domain_id": "D2",
+    "task_statement_id": "D2.T5",
+    "scenario_ids": [
+      "S3"
+    ],
+    "difficulty": "applied_judgment",
+    "key_concept_tested": "Read/Write: full file operations",
+    "stem": "Your synthesis agent needs to merge findings from 5 different research subagents into a final comprehensive report. Each subagent provides a detailed section (200-500 lines each). The final report needs custom formatting, citations, and executive summary. What's the most appropriate approach?",
+    "options": [
+      {
+        "label": "A",
+        "text": "Use Edit to incrementally add each section to a base template",
+        "is_correct": false
+      },
+      {
+        "label": "B",
+        "text": "Use Read to collect all subagent outputs, then Write the formatted comprehensive report",
+        "is_correct": true
+      },
+      {
+        "label": "C",
+        "text": "Use Grep to extract key findings from each subagent report",
+        "is_correct": false
+      },
+      {
+        "label": "D",
+        "text": "Use Glob to template the report structure automatically",
+        "is_correct": false
+      }
+    ],
+    "correct_label": "B",
+    "explanation": "For creating a large, comprehensive report by merging multiple sources with custom formatting, the Read + Write pattern is most appropriate. Read all subagent outputs, process and format them, add citations and summary, then Write the complete final report.",
+    "tags": [
+      "built-in-tools",
+      "read-write",
+      "report-synthesis",
+      "multi-source-aggregation"
+    ],
+    "bloom_level": "apply",
+    "distractor_strategy": {
+      "plausible_but_prompt_only": "N/A",
+      "over_engineered": "N/A",
+      "wrong_layer": "N/A",
+      "valid_but_not_first_step": "N/A"
+    }
+  },
+  {
+    "id": "D2_T5_031",
+    "domain_id": "D2",
+    "task_statement_id": "D2.T5",
+    "scenario_ids": [
+      "S1"
+    ],
+    "difficulty": "applied_judgment",
+    "key_concept_tested": "Edit: targeted modifications with unique text matching",
+    "stem": "Your support agent needs to update a customer's service tier in their profile file. The file contains 'service_tier: basic' and needs to change to 'service_tier: premium'. This is the only service_tier field in the file. However, the word 'basic' appears in other contexts. What's the most reliable Edit approach?",
+    "options": [
+      {
+        "label": "A",
+        "text": "Edit with target pattern 'basic' to replace with 'premium'",
+        "is_correct": false
+      },
+      {
+        "label": "B",
+        "text": "Edit with target pattern 'service_tier: basic' to replace with 'service_tier: premium'",
+        "is_correct": true
+      },
+      {
+        "label": "C",
+        "text": "Edit with target pattern 'tier: basic' to replace with 'tier: premium'",
+        "is_correct": false
+      },
+      {
+        "label": "D",
+        "text": "Use Grep to find the line then Edit with just 'premium'",
+        "is_correct": false
+      }
+    ],
+    "correct_label": "B",
+    "explanation": "Using the complete unique pattern 'service_tier: basic' ensures Edit targets exactly the right field without affecting other instances of 'basic' in the file. This provides the most precise and reliable modification.",
+    "tags": [
+      "built-in-tools",
+      "edit",
+      "unique-patterns",
+      "service-tier-update",
+      "precision"
+    ],
+    "bloom_level": "apply",
+    "distractor_strategy": {
+      "plausible_but_prompt_only": "N/A",
+      "over_engineered": "N/A",
+      "wrong_layer": "N/A",
+      "valid_but_not_first_step": "N/A"
+    }
+  },
+  {
+    "id": "D2_T5_032",
+    "domain_id": "D2",
+    "task_statement_id": "D2.T5",
+    "scenario_ids": [
+      "S3"
+    ],
+    "difficulty": "applied_judgment",
+    "key_concept_tested": "Glob: file path pattern matching",
+    "stem": "Your research system processes academic papers stored in a complex hierarchy: '/papers/conferences/2024/*.pdf', '/papers/journals/2024/*.pdf', '/papers/workshops/2024/*.pdf', and '/papers/preprints/2024/*.pdf'. You need to process only conference and journal papers from 2024 for a quality analysis. What's the most efficient approach?",
+    "options": [
+      {
+        "label": "A",
+        "text": "Use four separate Glob patterns and filter the results",
+        "is_correct": false
+      },
+      {
+        "label": "B",
+        "text": "Use two Glob patterns: '/papers/conferences/2024/*.pdf' and '/papers/journals/2024/*.pdf'",
+        "is_correct": true
+      },
+      {
+        "label": "C",
+        "text": "Use pattern '/papers/*/2024/*.pdf' and manually filter for quality",
+        "is_correct": false
+      },
+      {
+        "label": "D",
+        "text": "Use Grep to search for 'conference' and 'journal' in file paths",
+        "is_correct": false
+      }
+    ],
+    "correct_label": "B",
+    "explanation": "Using two specific Glob patterns for conferences and journals is most efficient as it directly targets only the required paper types without including workshops or preprints that would need to be filtered out later.",
+    "tags": [
+      "built-in-tools",
+      "glob",
+      "selective-matching",
+      "academic-papers",
+      "quality-filtering"
+    ],
+    "bloom_level": "apply",
+    "distractor_strategy": {
+      "plausible_but_prompt_only": "N/A",
+      "over_engineered": "A",
+      "wrong_layer": "N/A",
+      "valid_but_not_first_step": "N/A"
+    }
+  },
+  {
+    "id": "D2_T5_033",
+    "domain_id": "D2",
+    "task_statement_id": "D2.T5",
+    "scenario_ids": [
+      "S1"
+    ],
+    "difficulty": "applied_judgment",
+    "key_concept_tested": "incremental codebase understanding pattern",
+    "stem": "Your support agent needs to understand how a customer's payment processing integration works to debug a recurring billing issue. The integration codebase has 150 files including config files, API handlers, database models, and tests. What's the most systematic debugging approach?",
+    "options": [
+      {
+        "label": "A",
+        "text": "Use Grep for 'billing' and 'payment' across all files immediately",
+        "is_correct": false
+      },
+      {
+        "label": "B",
+        "text": "Use Glob for structure, Read main payment files, then Grep for billing-specific code",
+        "is_correct": true
+      },
+      {
+        "label": "C",
+        "text": "Use Read on all API handler files to understand the payment flow",
+        "is_correct": false
+      },
+      {
+        "label": "D",
+        "text": "Use Edit to add logging statements to trace the billing process",
+        "is_correct": false
+      }
+    ],
+    "correct_label": "B",
+    "explanation": "For debugging specific functionality, start with Glob to understand structure, then Read key files (payment handlers, config), then targeted Grep for billing-related code. This builds context before diving into specific issues.",
+    "tags": [
+      "built-in-tools",
+      "incremental-understanding",
+      "payment-debugging",
+      "systematic-approach"
+    ],
+    "bloom_level": "apply",
+    "distractor_strategy": {
+      "plausible_but_prompt_only": "N/A",
+      "over_engineered": "N/A",
+      "wrong_layer": "N/A",
+      "valid_but_not_first_step": "N/A"
+    }
+  },
+  {
+    "id": "D2_T5_034",
+    "domain_id": "D2",
+    "task_statement_id": "D2.T5",
+    "scenario_ids": [
+      "S3"
+    ],
+    "difficulty": "applied_judgment",
+    "key_concept_tested": "Edit failure fallback: Read + Write",
+    "stem": "Your report generation agent attempts to update research status indicators throughout a 50-page document using Edit. The operation fails because status terms like 'completed', 'in-progress', and 'pending' appear in multiple contexts (project status, review status, publication status). The agent needs to update only project status fields. What's the best recovery strategy?",
+    "options": [
+      {
+        "label": "A",
+        "text": "Try Edit with more specific patterns like 'project status: completed'",
+        "is_correct": false
+      },
+      {
+        "label": "B",
+        "text": "Use Read to get full content, programmatically update project status fields, then Write",
+        "is_correct": true
+      },
+      {
+        "label": "C",
+        "text": "Use Grep to find all status instances and Edit each one manually",
+        "is_correct": false
+      },
+      {
+        "label": "D",
+        "text": "Use multiple Edit commands for each specific project status combination",
+        "is_correct": false
+      }
+    ],
+    "correct_label": "B",
+    "explanation": "When Edit fails due to ambiguous patterns across a large document, Read + Write provides the most reliable approach. The agent can read the full content, programmatically identify and update only the project status fields based on context, then write the corrected document.",
+    "tags": [
+      "built-in-tools",
+      "edit-failure",
+      "read-write-fallback",
+      "context-disambiguation",
+      "large-documents"
+    ],
+    "bloom_level": "apply",
+    "distractor_strategy": {
+      "plausible_but_prompt_only": "N/A",
+      "over_engineered": "N/A",
+      "wrong_layer": "N/A",
+      "valid_but_not_first_step": "N/A"
+    }
+  }
+]

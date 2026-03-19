@@ -1,0 +1,1634 @@
+[
+  {
+    "id": "D4_T3_001",
+    "domain_id": "D4",
+    "task_statement_id": "D4.T3",
+    "scenario_ids": [
+      "S6"
+    ],
+    "difficulty": "conceptual_knowledge",
+    "key_concept_tested": "tool_use with JSON schema: most reliable for schema-compliant output",
+    "stem": "Your structured data extraction system needs to extract invoice data with guaranteed JSON schema compliance. Which approach provides the highest reliability for schema-compliant output?",
+    "options": [
+      {
+        "label": "A",
+        "text": "Use system prompts with detailed JSON examples and ask Claude to validate its own output",
+        "is_correct": false
+      },
+      {
+        "label": "B",
+        "text": "Implement retry logic that re-prompts Claude when JSON parsing fails",
+        "is_correct": false
+      },
+      {
+        "label": "C",
+        "text": "Use regular expressions to post-process Claude's text output into valid JSON",
+        "is_correct": false
+      },
+      {
+        "label": "D",
+        "text": "Define a tool with a JSON schema parameter and use tool_use for extraction",
+        "is_correct": true
+      }
+    ],
+    "correct_label": "D",
+    "explanation": "Tool use with JSON schemas provides the most reliable approach because Claude's tool calling mechanism enforces schema compliance at the model level, eliminating syntax errors. The other approaches rely on probabilistic compliance or post-processing fixes.",
+    "tags": [
+      "tool_use",
+      "JSON_schema",
+      "reliability",
+      "structured_output"
+    ],
+    "bloom_level": "understand",
+    "distractor_strategy": {
+      "plausible_but_prompt_only": "B",
+      "over_engineered": "N/A",
+      "wrong_layer": "N/A",
+      "valid_but_not_first_step": "N/A"
+    }
+  },
+  {
+    "id": "D4_T3_002",
+    "domain_id": "D4",
+    "task_statement_id": "D4.T3",
+    "scenario_ids": [
+      "S5"
+    ],
+    "difficulty": "applied_judgment",
+    "key_concept_tested": "tool_choice auto vs any vs forced",
+    "stem": "Your CI/CD pipeline uses a code review tool that should only activate for pull requests containing actual code changes, not documentation-only PRs. The tool extracts issues into a structured format. How should you configure tool_choice?",
+    "options": [
+      {
+        "label": "A",
+        "text": "Set tool_choice to 'auto' so Claude decides whether code review is needed based on the PR content",
+        "is_correct": true
+      },
+      {
+        "label": "B",
+        "text": "Set tool_choice to 'any' to force tool use on every PR regardless of content",
+        "is_correct": false
+      },
+      {
+        "label": "C",
+        "text": "Use tool_choice with the specific tool name to guarantee structured output on all PRs",
+        "is_correct": false
+      },
+      {
+        "label": "D",
+        "text": "Omit tool_choice and rely on prompt instructions to conditionally call the tool",
+        "is_correct": false
+      }
+    ],
+    "correct_label": "A",
+    "explanation": "tool_choice: 'auto' allows Claude to intelligently decide whether to use the code review tool based on PR content, avoiding unnecessary structured output for documentation-only changes. 'any' would force tool use inappropriately, while omitting tool_choice reduces reliability.",
+    "tags": [
+      "tool_choice",
+      "conditional_logic",
+      "CI_CD",
+      "efficiency"
+    ],
+    "bloom_level": "apply",
+    "distractor_strategy": {
+      "plausible_but_prompt_only": "D",
+      "over_engineered": "N/A",
+      "wrong_layer": "N/A",
+      "valid_but_not_first_step": "N/A"
+    }
+  },
+  {
+    "id": "D4_T3_003",
+    "domain_id": "D4",
+    "task_statement_id": "D4.T3",
+    "scenario_ids": [
+      "S6"
+    ],
+    "difficulty": "anti_pattern_recognition",
+    "key_concept_tested": "strict schemas eliminate syntax errors not semantic errors",
+    "stem": "A colleague claims that using strict JSON schemas in your document extraction system will eliminate all data quality issues. What is the fundamental flaw in this reasoning?",
+    "options": [
+      {
+        "label": "A",
+        "text": "Strict schemas prevent all forms of hallucination and ensure 100% accurate extractions",
+        "is_correct": false
+      },
+      {
+        "label": "B",
+        "text": "Strict schemas guarantee syntactic compliance but cannot prevent semantic errors like extracting wrong values or hallucinating data",
+        "is_correct": true
+      },
+      {
+        "label": "C",
+        "text": "Strict schemas only work with simple data types and fail on complex nested structures",
+        "is_correct": false
+      },
+      {
+        "label": "D",
+        "text": "Strict schemas require additional validation logic to be effective in production",
+        "is_correct": false
+      }
+    ],
+    "correct_label": "B",
+    "explanation": "Strict JSON schemas enforce syntactic structure (valid JSON format, correct types, required fields) but cannot prevent semantic errors like Claude extracting the wrong invoice number or hallucinating data that wasn't in the source document. Additional validation is still needed for data quality.",
+    "tags": [
+      "schema_limitations",
+      "semantic_errors",
+      "data_quality",
+      "misconceptions"
+    ],
+    "bloom_level": "evaluate",
+    "distractor_strategy": {
+      "plausible_but_prompt_only": "N/A",
+      "over_engineered": "N/A",
+      "wrong_layer": "N/A",
+      "valid_but_not_first_step": "N/A"
+    }
+  },
+  {
+    "id": "D4_T3_004",
+    "domain_id": "D4",
+    "task_statement_id": "D4.T3",
+    "scenario_ids": [
+      "S6"
+    ],
+    "difficulty": "conceptual_knowledge",
+    "key_concept_tested": "required vs optional fields",
+    "stem": "Your invoice extraction schema needs to handle invoices where tax amounts might not be present. How should you configure the tax_amount field in your JSON schema?",
+    "options": [
+      {
+        "label": "A",
+        "text": "Make tax_amount required and instruct Claude to use 0 when tax is not mentioned",
+        "is_correct": false
+      },
+      {
+        "label": "B",
+        "text": "Make tax_amount required and use a default value of null in the schema",
+        "is_correct": false
+      },
+      {
+        "label": "C",
+        "text": "Make tax_amount optional so it can be omitted when not present in the source document",
+        "is_correct": true
+      },
+      {
+        "label": "D",
+        "text": "Use a string type for tax_amount to handle both numeric values and 'N/A' text",
+        "is_correct": false
+      }
+    ],
+    "correct_label": "C",
+    "explanation": "Optional fields allow Claude to omit the field entirely when the information isn't present in the source document, which is semantically accurate. Required fields with default values (0 or null) can introduce false data, while string types for numeric data break type safety.",
+    "tags": [
+      "optional_fields",
+      "schema_design",
+      "data_accuracy",
+      "invoice_processing"
+    ],
+    "bloom_level": "understand",
+    "distractor_strategy": {
+      "plausible_but_prompt_only": "A",
+      "over_engineered": "N/A",
+      "wrong_layer": "N/A",
+      "valid_but_not_first_step": "N/A"
+    }
+  },
+  {
+    "id": "D4_T3_005",
+    "domain_id": "D4",
+    "task_statement_id": "D4.T3",
+    "scenario_ids": [
+      "S5"
+    ],
+    "difficulty": "applied_judgment",
+    "key_concept_tested": "enum with other + detail string pattern",
+    "stem": "Your CI/CD code review tool categorizes issues as 'security', 'performance', 'style', or other categories. The schema needs to handle edge cases where issues don't fit standard categories. What's the best schema design?",
+    "options": [
+      {
+        "label": "A",
+        "text": "Use an enum with fixed values and reject any issues that don't fit the predefined categories",
+        "is_correct": false
+      },
+      {
+        "label": "B",
+        "text": "Use a free-form string field to allow any category description",
+        "is_correct": false
+      },
+      {
+        "label": "C",
+        "text": "Use an enum including 'other' with a separate detail field for custom descriptions",
+        "is_correct": false
+      },
+      {
+        "label": "D",
+        "text": "Use an enum with standard categories plus 'other', and include an optional detail string for clarification",
+        "is_correct": true
+      }
+    ],
+    "correct_label": "D",
+    "explanation": "The enum + other + detail pattern provides structure for common cases while gracefully handling edge cases. This maintains data consistency for standard categories while capturing specific details for unusual issues that don't fit predefined buckets.",
+    "tags": [
+      "enum_patterns",
+      "edge_cases",
+      "schema_flexibility",
+      "code_review"
+    ],
+    "bloom_level": "apply",
+    "distractor_strategy": {
+      "plausible_but_prompt_only": "N/A",
+      "over_engineered": "C",
+      "wrong_layer": "N/A",
+      "valid_but_not_first_step": "N/A"
+    }
+  },
+  {
+    "id": "D4_T3_006",
+    "domain_id": "D4",
+    "task_statement_id": "D4.T3",
+    "scenario_ids": [
+      "S6"
+    ],
+    "difficulty": "conceptual_knowledge",
+    "key_concept_tested": "nullable fields to prevent fabrication",
+    "stem": "Your document extraction system processes contracts where signature dates might be missing or illegible. How should you configure the signature_date field to prevent Claude from fabricating dates?",
+    "options": [
+      {
+        "label": "A",
+        "text": "Make signature_date nullable so Claude can return null when the date cannot be determined",
+        "is_correct": true
+      },
+      {
+        "label": "B",
+        "text": "Use a required string field and instruct Claude to write 'Unknown' when dates are missing",
+        "is_correct": false
+      },
+      {
+        "label": "C",
+        "text": "Make signature_date required with a default value of today's date",
+        "is_correct": false
+      },
+      {
+        "label": "D",
+        "text": "Use validation rules to ensure Claude only extracts valid date formats",
+        "is_correct": false
+      }
+    ],
+    "correct_label": "A",
+    "explanation": "Nullable fields allow Claude to explicitly indicate when information cannot be determined from the source document, preventing fabrication. Required fields with fallback values or 'Unknown' strings introduce false data that downstream systems cannot distinguish from real extracted values.",
+    "tags": [
+      "nullable_fields",
+      "data_integrity",
+      "fabrication_prevention",
+      "contract_processing"
+    ],
+    "bloom_level": "understand",
+    "distractor_strategy": {
+      "plausible_but_prompt_only": "B",
+      "over_engineered": "N/A",
+      "wrong_layer": "N/A",
+      "valid_but_not_first_step": "N/A"
+    }
+  },
+  {
+    "id": "D4_T3_007",
+    "domain_id": "D4",
+    "task_statement_id": "D4.T3",
+    "scenario_ids": [
+      "S5"
+    ],
+    "difficulty": "anti_pattern_recognition",
+    "key_concept_tested": "tool_use with JSON schema: most reliable for schema-compliant output",
+    "stem": "Your CI/CD system has a 15% failure rate due to malformed JSON in code review outputs. A team member suggests switching from tool use to few-shot prompting with JSON examples because 'it's simpler and gives Claude more flexibility.' What's wrong with this approach?",
+    "options": [
+      {
+        "label": "A",
+        "text": "Few-shot prompting provides more reliable structured output than tool use with schemas",
+        "is_correct": false
+      },
+      {
+        "label": "B",
+        "text": "Tool use with JSON schemas provides guaranteed syntactic compliance, while prompting relies on probabilistic adherence",
+        "is_correct": true
+      },
+      {
+        "label": "C",
+        "text": "Few-shot examples are more computationally efficient than tool schemas",
+        "is_correct": false
+      },
+      {
+        "label": "D",
+        "text": "Tool use prevents Claude from providing detailed explanations alongside structured data",
+        "is_correct": false
+      }
+    ],
+    "correct_label": "B",
+    "explanation": "Tool use with JSON schemas enforces compliance at the model level, eliminating malformed JSON issues. Few-shot prompting relies on Claude following examples probabilistically, which explains the 15% failure rate. The 'flexibility' argument misses that structured output needs reliability over flexibility.",
+    "tags": [
+      "tool_use_vs_prompting",
+      "reliability",
+      "anti_pattern",
+      "JSON_compliance"
+    ],
+    "bloom_level": "evaluate",
+    "distractor_strategy": {
+      "plausible_but_prompt_only": "A",
+      "over_engineered": "N/A",
+      "wrong_layer": "N/A",
+      "valid_but_not_first_step": "N/A"
+    }
+  },
+  {
+    "id": "D4_T3_008",
+    "domain_id": "D4",
+    "task_statement_id": "D4.T3",
+    "scenario_ids": [
+      "S6"
+    ],
+    "difficulty": "applied_judgment",
+    "key_concept_tested": "required vs optional fields",
+    "stem": "Your medical record extraction system processes patient forms where emergency contact information appears inconsistently. Some forms have complete contact details, others have partial info, and some have none. How should you structure the emergency_contact object in your schema?",
+    "options": [
+      {
+        "label": "A",
+        "text": "Make emergency_contact required with all fields required, defaulting to 'N/A' when missing",
+        "is_correct": false
+      },
+      {
+        "label": "B",
+        "text": "Make emergency_contact optional, with individual fields (name, phone, relationship) also optional when present",
+        "is_correct": false
+      },
+      {
+        "label": "C",
+        "text": "Make emergency_contact optional at the top level, with name required but phone and relationship optional when the object exists",
+        "is_correct": true
+      },
+      {
+        "label": "D",
+        "text": "Use a single optional string field for emergency_contact to capture whatever information is available",
+        "is_correct": false
+      }
+    ],
+    "correct_label": "C",
+    "explanation": "This design accurately reflects the data reality: some forms have no emergency contact (optional object), but when emergency contact info exists, there's typically at least a name (required), while phone/relationship might be missing (optional). This prevents fabrication while maintaining structure.",
+    "tags": [
+      "nested_objects",
+      "optional_required_balance",
+      "medical_records",
+      "data_modeling"
+    ],
+    "bloom_level": "apply",
+    "distractor_strategy": {
+      "plausible_but_prompt_only": "N/A",
+      "over_engineered": "N/A",
+      "wrong_layer": "N/A",
+      "valid_but_not_first_step": "N/A"
+    }
+  },
+  {
+    "id": "D4_T3_009",
+    "domain_id": "D4",
+    "task_statement_id": "D4.T3",
+    "scenario_ids": [
+      "S5"
+    ],
+    "difficulty": "conceptual_knowledge",
+    "key_concept_tested": "tool_choice auto vs any vs forced",
+    "stem": "Your automated test generation tool should create test cases only when it identifies testable functions in the code changes. For documentation or configuration file changes, no test generation is needed. Which tool_choice configuration is most appropriate?",
+    "options": [
+      {
+        "label": "A",
+        "text": "tool_choice: 'any' to ensure consistent tool usage across all PR types",
+        "is_correct": false
+      },
+      {
+        "label": "B",
+        "text": "tool_choice: 'auto' to let Claude decide based on whether testable code is present",
+        "is_correct": false
+      },
+      {
+        "label": "C",
+        "text": "tool_choice: 'required' with the specific tool name to guarantee test generation",
+        "is_correct": false
+      },
+      {
+        "label": "D",
+        "text": "tool_choice: 'auto' to let Claude decide based on whether testable code is present",
+        "is_correct": true
+      }
+    ],
+    "correct_label": "D",
+    "explanation": "tool_choice: 'auto' allows Claude to intelligently determine when test generation is appropriate based on the code changes. This prevents unnecessary tool calls for non-code changes while ensuring tests are generated when needed. 'any' would force tool use inappropriately.",
+    "tags": [
+      "tool_choice",
+      "conditional_execution",
+      "test_generation",
+      "intelligent_routing"
+    ],
+    "bloom_level": "understand",
+    "distractor_strategy": {
+      "plausible_but_prompt_only": "N/A",
+      "over_engineered": "N/A",
+      "wrong_layer": "N/A",
+      "valid_but_not_first_step": "N/A"
+    }
+  },
+  {
+    "id": "D4_T3_010",
+    "domain_id": "D4",
+    "task_statement_id": "D4.T3",
+    "scenario_ids": [
+      "S6"
+    ],
+    "difficulty": "applied_judgment",
+    "key_concept_tested": "nullable fields to prevent fabrication",
+    "stem": "Your insurance claim extraction system processes scanned documents where damage amounts are sometimes illegible or partially obscured. The downstream billing system requires precise monetary values and treats null differently from zero. How should you configure the damage_amount field?",
+    "options": [
+      {
+        "label": "A",
+        "text": "Make damage_amount a required number field with 0 as default for illegible amounts",
+        "is_correct": true
+      },
+      {
+        "label": "B",
+        "text": "Make damage_amount nullable so Claude can return null when amounts cannot be read",
+        "is_correct": false
+      },
+      {
+        "label": "C",
+        "text": "Use a string field to capture partial information like '$1,2__' for partially obscured amounts",
+        "is_correct": false
+      },
+      {
+        "label": "D",
+        "text": "Make damage_amount required and instruct Claude to estimate based on damage descriptions",
+        "is_correct": false
+      }
+    ],
+    "correct_label": "A",
+    "explanation": "Making damage_amount nullable allows Claude to explicitly indicate when monetary values cannot be determined from illegible documents, preventing fabrication. The downstream system can then handle null values appropriately (e.g., flagging for human review) rather than processing fabricated amounts.",
+    "tags": [
+      "nullable_fields",
+      "monetary_data",
+      "illegible_documents",
+      "downstream_integration"
+    ],
+    "bloom_level": "apply",
+    "distractor_strategy": {
+      "plausible_but_prompt_only": "D",
+      "over_engineered": "N/A",
+      "wrong_layer": "N/A",
+      "valid_but_not_first_step": "N/A"
+    }
+  },
+  {
+    "id": "D4_T3_011",
+    "domain_id": "D4",
+    "task_statement_id": "D4.T3",
+    "scenario_ids": [
+      "S5"
+    ],
+    "difficulty": "applied_judgment",
+    "key_concept_tested": "enum with other + detail string pattern",
+    "stem": "Your PR feedback system categorizes code issues as 'bug', 'security', 'performance', 'style', or 'documentation'. However, 8% of issues don't fit these categories cleanly. Your downstream analytics system needs both structured categories and specific details. What's the optimal schema design?",
+    "options": [
+      {
+        "label": "A",
+        "text": "Expand the enum to include 20+ specific categories to cover all edge cases",
+        "is_correct": false
+      },
+      {
+        "label": "B",
+        "text": "Use enum ['bug', 'security', 'performance', 'style', 'documentation', 'other'] with an optional detail_description string",
+        "is_correct": true
+      },
+      {
+        "label": "C",
+        "text": "Use a free-form string field and let analytics categorize issues post-processing",
+        "is_correct": false
+      },
+      {
+        "label": "D",
+        "text": "Force all issues into existing categories and lose the edge case specificity",
+        "is_correct": false
+      }
+    ],
+    "correct_label": "B",
+    "explanation": "The enum + other + detail pattern maintains structured data for analytics (92% of issues fit standard categories) while capturing specific information for edge cases. This balances structure with flexibility and prevents data loss from forced categorization.",
+    "tags": [
+      "enum_other_pattern",
+      "analytics_requirements",
+      "edge_case_handling",
+      "PR_feedback"
+    ],
+    "bloom_level": "apply",
+    "distractor_strategy": {
+      "plausible_but_prompt_only": "N/A",
+      "over_engineered": "N/A",
+      "wrong_layer": "N/A",
+      "valid_but_not_first_step": "N/A"
+    }
+  },
+  {
+    "id": "D4_T3_012",
+    "domain_id": "D4",
+    "task_statement_id": "D4.T3",
+    "scenario_ids": [
+      "S6"
+    ],
+    "difficulty": "anti_pattern_recognition",
+    "key_concept_tested": "strict schemas eliminate syntax errors not semantic errors",
+    "stem": "Your legal document extraction system uses strict JSON schemas and achieves 100% valid JSON output. A stakeholder concludes that the system is production-ready without additional validation because 'strict schemas guarantee data accuracy.' What critical issue does this overlook?",
+    "options": [
+      {
+        "label": "A",
+        "text": "Strict schemas prevent JSON syntax errors but cannot detect when Claude extracts incorrect values or hallucinates data",
+        "is_correct": false
+      },
+      {
+        "label": "B",
+        "text": "Strict schemas only work reliably with simple document types, not complex legal documents",
+        "is_correct": false
+      },
+      {
+        "label": "C",
+        "text": "Strict schemas guarantee format compliance but don't prevent semantic errors like wrong dates or fabricated clauses",
+        "is_correct": true
+      },
+      {
+        "label": "D",
+        "text": "Strict schemas require additional retry logic to handle edge cases in legal documents",
+        "is_correct": false
+      }
+    ],
+    "correct_label": "C",
+    "explanation": "Strict schemas ensure syntactic correctness (valid JSON structure) but cannot prevent semantic errors where Claude extracts the wrong contract date, misidentifies parties, or hallucinates clauses that don't exist. Legal documents require additional validation beyond schema compliance.",
+    "tags": [
+      "schema_limitations",
+      "semantic_vs_syntactic",
+      "legal_documents",
+      "validation_requirements"
+    ],
+    "bloom_level": "evaluate",
+    "distractor_strategy": {
+      "plausible_but_prompt_only": "N/A",
+      "over_engineered": "N/A",
+      "wrong_layer": "N/A",
+      "valid_but_not_first_step": "N/A"
+    }
+  },
+  {
+    "id": "D4_T3_013",
+    "domain_id": "D4",
+    "task_statement_id": "D4.T3",
+    "scenario_ids": [
+      "S5"
+    ],
+    "difficulty": "conceptual_knowledge",
+    "key_concept_tested": "tool_use with JSON schema: most reliable for schema-compliant output",
+    "stem": "Your CI/CD pipeline needs to extract code metrics (complexity scores, test coverage, security findings) into a consistent JSON format for dashboard integration. Which approach provides the most reliable structured output?",
+    "options": [
+      {
+        "label": "A",
+        "text": "Use system prompts with detailed formatting instructions and JSON examples",
+        "is_correct": false
+      },
+      {
+        "label": "B",
+        "text": "Define a tool with parameters matching your dashboard's expected JSON schema",
+        "is_correct": false
+      },
+      {
+        "label": "C",
+        "text": "Use few-shot prompting with 3-5 examples of properly formatted metric outputs",
+        "is_correct": false
+      },
+      {
+        "label": "D",
+        "text": "Define a tool with parameters matching your dashboard's expected JSON schema",
+        "is_correct": true
+      }
+    ],
+    "correct_label": "D",
+    "explanation": "Tool use with JSON schema parameters provides the highest reliability for structured output because Claude's tool calling mechanism enforces schema compliance at the model level. Prompting approaches rely on probabilistic adherence and can produce malformed JSON that breaks dashboard integration.",
+    "tags": [
+      "tool_use",
+      "dashboard_integration",
+      "code_metrics",
+      "reliability"
+    ],
+    "bloom_level": "understand",
+    "distractor_strategy": {
+      "plausible_but_prompt_only": "C",
+      "over_engineered": "N/A",
+      "wrong_layer": "N/A",
+      "valid_but_not_first_step": "N/A"
+    }
+  },
+  {
+    "id": "D4_T3_014",
+    "domain_id": "D4",
+    "task_statement_id": "D4.T3",
+    "scenario_ids": [
+      "S6"
+    ],
+    "difficulty": "applied_judgment",
+    "key_concept_tested": "required vs optional fields",
+    "stem": "Your expense report extraction system processes receipts where merchant names are always present, but tax amounts appear on only 60% of receipts, and tip amounts on 30%. How should you structure your schema to accurately reflect this data reality?",
+    "options": [
+      {
+        "label": "A",
+        "text": "Make merchant_name, tax_amount, and tip_amount all required with default values of null",
+        "is_correct": true
+      },
+      {
+        "label": "B",
+        "text": "Make merchant_name required, tax_amount and tip_amount optional",
+        "is_correct": false
+      },
+      {
+        "label": "C",
+        "text": "Make all fields optional to handle edge cases where merchant names might be illegible",
+        "is_correct": false
+      },
+      {
+        "label": "D",
+        "text": "Make all fields required and instruct Claude to use 0 for missing tax and tip amounts",
+        "is_correct": false
+      }
+    ],
+    "correct_label": "A",
+    "explanation": "This schema design accurately reflects the data reality: merchant names are consistently present (required), while tax and tip amounts are often missing (optional). Using 0 for missing monetary values introduces false data that could affect expense calculations.",
+    "tags": [
+      "field_requirements",
+      "expense_processing",
+      "data_accuracy",
+      "schema_design"
+    ],
+    "bloom_level": "apply",
+    "distractor_strategy": {
+      "plausible_but_prompt_only": "D",
+      "over_engineered": "N/A",
+      "wrong_layer": "N/A",
+      "valid_but_not_first_step": "N/A"
+    }
+  },
+  {
+    "id": "D4_T3_015",
+    "domain_id": "D4",
+    "task_statement_id": "D4.T3",
+    "scenario_ids": [
+      "S5"
+    ],
+    "difficulty": "anti_pattern_recognition",
+    "key_concept_tested": "tool_choice auto vs any vs forced",
+    "stem": "Your automated code review system uses tool_choice: 'any' to ensure structured feedback is always generated. However, you're seeing many empty or trivial reports for minor documentation changes. A colleague suggests this proves the tool is working correctly because 'consistent output format is more important than relevance.' What's the flaw in this reasoning?",
+    "options": [
+      {
+        "label": "A",
+        "text": "tool_choice: 'any' forces unnecessary tool calls, while 'auto' would let Claude skip reviews when no actionable issues exist",
+        "is_correct": false
+      },
+      {
+        "label": "B",
+        "text": "Consistent output format should take priority over content relevance in automated systems",
+        "is_correct": false
+      },
+      {
+        "label": "C",
+        "text": "Documentation changes require the same level of code review as functional changes",
+        "is_correct": false
+      },
+      {
+        "label": "D",
+        "text": "tool_choice: 'any' forces unnecessary tool calls, while 'auto' would let Claude skip reviews when no actionable issues exist",
+        "is_correct": true
+      }
+    ],
+    "correct_label": "D",
+    "explanation": "tool_choice: 'any' forces tool use regardless of relevance, creating noise in the review process. tool_choice: 'auto' allows Claude to intelligently determine when structured output is warranted, improving signal-to-noise ratio for developers reviewing feedback.",
+    "tags": [
+      "tool_choice_anti_pattern",
+      "forced_tool_use",
+      "relevance_vs_consistency",
+      "code_review_noise"
+    ],
+    "bloom_level": "evaluate",
+    "distractor_strategy": {
+      "plausible_but_prompt_only": "N/A",
+      "over_engineered": "N/A",
+      "wrong_layer": "N/A",
+      "valid_but_not_first_step": "N/A"
+    }
+  },
+  {
+    "id": "D4_T3_016",
+    "domain_id": "D4",
+    "task_statement_id": "D4.T3",
+    "scenario_ids": [
+      "S6"
+    ],
+    "difficulty": "applied_judgment",
+    "key_concept_tested": "nullable fields to prevent fabrication",
+    "stem": "Your academic transcript extraction system processes documents where GPA calculations might not be present (some schools don't calculate GPAs). Your downstream admissions system treats null GPAs differently from 0.0 GPAs in ranking algorithms. How should you configure the gpa field?",
+    "options": [
+      {
+        "label": "A",
+        "text": "Make gpa required with 0.0 as default when not present on transcripts",
+        "is_correct": false
+      },
+      {
+        "label": "B",
+        "text": "Make gpa nullable so Claude can return null when GPA is not calculated by the school",
+        "is_correct": false
+      },
+      {
+        "label": "C",
+        "text": "Use a string field to capture text like 'Not calculated' when GPA is missing",
+        "is_correct": false
+      },
+      {
+        "label": "D",
+        "text": "Make gpa nullable so Claude can return null when GPA is not calculated by the school",
+        "is_correct": true
+      }
+    ],
+    "correct_label": "D",
+    "explanation": "Nullable GPA fields allow the system to distinguish between schools that don't calculate GPAs (null) and students with genuinely poor performance (low numeric values). This distinction is crucial for fair admissions algorithms that shouldn't penalize students from schools with different grading systems.",
+    "tags": [
+      "nullable_fields",
+      "academic_data",
+      "algorithmic_fairness",
+      "transcript_processing"
+    ],
+    "bloom_level": "apply",
+    "distractor_strategy": {
+      "plausible_but_prompt_only": "N/A",
+      "over_engineered": "N/A",
+      "wrong_layer": "N/A",
+      "valid_but_not_first_step": "N/A"
+    }
+  },
+  {
+    "id": "D4_T3_017",
+    "domain_id": "D4",
+    "task_statement_id": "D4.T3",
+    "scenario_ids": [
+      "S5"
+    ],
+    "difficulty": "conceptual_knowledge",
+    "key_concept_tested": "enum with other + detail string pattern",
+    "stem": "Your test generation tool needs to categorize test types as 'unit', 'integration', 'e2e', or 'performance'. However, some generated tests don't fit these standard categories. What schema design best handles this variability while maintaining structure?",
+    "options": [
+      {
+        "label": "A",
+        "text": "Use a free-form string field to allow any test type description",
+        "is_correct": false
+      },
+      {
+        "label": "B",
+        "text": "Use enum ['unit', 'integration', 'e2e', 'performance'] and force all tests into these categories",
+        "is_correct": false
+      },
+      {
+        "label": "C",
+        "text": "Use enum ['unit', 'integration', 'e2e', 'performance', 'other'] with optional test_type_detail string",
+        "is_correct": true
+      },
+      {
+        "label": "D",
+        "text": "Expand the enum to include all possible test types you might encounter",
+        "is_correct": false
+      }
+    ],
+    "correct_label": "C",
+    "explanation": "The enum + other + detail pattern provides structure for common test types while gracefully handling edge cases like 'smoke tests' or 'contract tests' through the detail field. This maintains categorization for analytics while preserving specific information.",
+    "tags": [
+      "enum_patterns",
+      "test_categorization",
+      "schema_flexibility",
+      "edge_case_handling"
+    ],
+    "bloom_level": "understand",
+    "distractor_strategy": {
+      "plausible_but_prompt_only": "N/A",
+      "over_engineered": "N/A",
+      "wrong_layer": "N/A",
+      "valid_but_not_first_step": "N/A"
+    }
+  },
+  {
+    "id": "D4_T3_018",
+    "domain_id": "D4",
+    "task_statement_id": "D4.T3",
+    "scenario_ids": [
+      "S6"
+    ],
+    "difficulty": "conceptual_knowledge",
+    "key_concept_tested": "strict schemas eliminate syntax errors not semantic errors",
+    "stem": "Your invoice processing system uses strict JSON schemas and reports 100% schema compliance. However, downstream validation catches issues like negative quantities and future invoice dates. What does this indicate about strict schema limitations?",
+    "options": [
+      {
+        "label": "A",
+        "text": "Strict schemas guarantee syntactic structure but cannot enforce business logic constraints like positive quantities or past dates",
+        "is_correct": true
+      },
+      {
+        "label": "B",
+        "text": "The strict schema implementation is flawed and should include business rule validation",
+        "is_correct": false
+      },
+      {
+        "label": "C",
+        "text": "Strict schemas are insufficient for financial data and should be replaced with custom validation",
+        "is_correct": false
+      },
+      {
+        "label": "D",
+        "text": "The downstream validation is redundant since strict schemas should catch all data issues",
+        "is_correct": false
+      }
+    ],
+    "correct_label": "A",
+    "explanation": "Strict JSON schemas enforce type and structure compliance but cannot encode business logic like 'quantities must be positive' or 'invoice dates must be in the past.' These semantic validations require additional business rule checking beyond schema compliance.",
+    "tags": [
+      "schema_vs_business_rules",
+      "semantic_validation",
+      "invoice_processing",
+      "data_constraints"
+    ],
+    "bloom_level": "understand",
+    "distractor_strategy": {
+      "plausible_but_prompt_only": "N/A",
+      "over_engineered": "N/A",
+      "wrong_layer": "N/A",
+      "valid_but_not_first_step": "N/A"
+    }
+  },
+  {
+    "id": "D4_T3_019",
+    "domain_id": "D4",
+    "task_statement_id": "D4.T3",
+    "scenario_ids": [
+      "S5"
+    ],
+    "difficulty": "applied_judgment",
+    "key_concept_tested": "tool_use with JSON schema: most reliable for schema-compliant output",
+    "stem": "Your CI/CD security scanner needs to output findings in a specific JSON format for integration with your security dashboard. The current prompt-based approach has a 22% malformed JSON rate causing pipeline failures. What's the most effective solution?",
+    "options": [
+      {
+        "label": "A",
+        "text": "Add retry logic to re-prompt Claude when JSON parsing fails",
+        "is_correct": false
+      },
+      {
+        "label": "B",
+        "text": "Replace prompting with a tool that has JSON schema parameters matching your dashboard format",
+        "is_correct": true
+      },
+      {
+        "label": "C",
+        "text": "Improve the prompt with more detailed JSON formatting instructions",
+        "is_correct": false
+      },
+      {
+        "label": "D",
+        "text": "Use post-processing to fix common JSON syntax errors before dashboard integration",
+        "is_correct": false
+      }
+    ],
+    "correct_label": "B",
+    "explanation": "Tool use with JSON schema parameters eliminates the 22% malformed JSON rate by enforcing compliance at the model level. Retry logic and improved prompts still rely on probabilistic compliance, while post-processing adds complexity and potential data corruption.",
+    "tags": [
+      "malformed_JSON",
+      "tool_use_solution",
+      "security_scanning",
+      "pipeline_reliability"
+    ],
+    "bloom_level": "apply",
+    "distractor_strategy": {
+      "plausible_but_prompt_only": "C",
+      "over_engineered": "N/A",
+      "wrong_layer": "N/A",
+      "valid_but_not_first_step": "N/A"
+    }
+  },
+  {
+    "id": "D4_T3_020",
+    "domain_id": "D4",
+    "task_statement_id": "D4.T3",
+    "scenario_ids": [
+      "S6"
+    ],
+    "difficulty": "anti_pattern_recognition",
+    "key_concept_tested": "required vs optional fields",
+    "stem": "Your contract analysis system processes agreements where signature dates are sometimes missing. A developer sets all fields as required and instructs Claude to use 'TBD' for missing dates, claiming this 'ensures consistent data structure.' What's problematic about this approach?",
+    "options": [
+      {
+        "label": "A",
+        "text": "Required fields with placeholder values like 'TBD' introduce false data that downstream systems cannot distinguish from real dates",
+        "is_correct": false
+      },
+      {
+        "label": "B",
+        "text": "Using 'TBD' breaks type safety since signature_date should be a date type, not string",
+        "is_correct": false
+      },
+      {
+        "label": "C",
+        "text": "Optional fields would better represent missing data without introducing fabricated placeholders",
+        "is_correct": false
+      },
+      {
+        "label": "D",
+        "text": "Required fields with placeholder values like 'TBD' introduce false data that downstream systems cannot distinguish from real dates",
+        "is_correct": true
+      }
+    ],
+    "correct_label": "D",
+    "explanation": "Using placeholder values like 'TBD' for missing data creates false positives in downstream processing. Optional fields or nullable types accurately represent missing information, allowing systems to handle incomplete data appropriately rather than processing fabricated placeholders.",
+    "tags": [
+      "required_fields_anti_pattern",
+      "placeholder_values",
+      "false_data",
+      "contract_processing"
+    ],
+    "bloom_level": "evaluate",
+    "distractor_strategy": {
+      "plausible_but_prompt_only": "N/A",
+      "over_engineered": "N/A",
+      "wrong_layer": "N/A",
+      "valid_but_not_first_step": "N/A"
+    }
+  },
+  {
+    "id": "D4_T3_021",
+    "domain_id": "D4",
+    "task_statement_id": "D4.T3",
+    "scenario_ids": [
+      "S5"
+    ],
+    "difficulty": "applied_judgment",
+    "key_concept_tested": "tool_choice auto vs any vs forced",
+    "stem": "Your PR analysis tool should generate structured feedback only when it identifies actual issues (bugs, security, performance problems). Clean code should not trigger tool use. Currently, 40% of tool calls are on clean code, generating empty or trivial reports. How should you configure tool_choice?",
+    "options": [
+      {
+        "label": "A",
+        "text": "Keep tool_choice: 'any' but improve prompts to generate better reports for clean code",
+        "is_correct": false
+      },
+      {
+        "label": "B",
+        "text": "Switch to tool_choice: 'auto' to let Claude decide when issues warrant structured feedback",
+        "is_correct": false
+      },
+      {
+        "label": "C",
+        "text": "Use tool_choice with specific tool name to ensure consistent output format",
+        "is_correct": false
+      },
+      {
+        "label": "D",
+        "text": "Switch to tool_choice: 'auto' to let Claude decide when issues warrant structured feedback",
+        "is_correct": true
+      }
+    ],
+    "correct_label": "D",
+    "explanation": "tool_choice: 'auto' allows Claude to intelligently determine when structured feedback is warranted based on actual issues found. This eliminates the 40% false positive rate from forcing tool use on clean code while ensuring real issues get proper structured output.",
+    "tags": [
+      "tool_choice_optimization",
+      "false_positives",
+      "intelligent_routing",
+      "PR_analysis"
+    ],
+    "bloom_level": "apply",
+    "distractor_strategy": {
+      "plausible_but_prompt_only": "A",
+      "over_engineered": "N/A",
+      "wrong_layer": "N/A",
+      "valid_but_not_first_step": "N/A"
+    }
+  },
+  {
+    "id": "D4_T3_022",
+    "domain_id": "D4",
+    "task_statement_id": "D4.T3",
+    "scenario_ids": [
+      "S6"
+    ],
+    "difficulty": "conceptual_knowledge",
+    "key_concept_tested": "nullable fields to prevent fabrication",
+    "stem": "Your medical form extraction system processes patient intake forms where emergency contact phone numbers are often missing or illegible. The downstream notification system needs to distinguish between 'no phone provided' and 'phone illegible' for different handling workflows. How should you structure the emergency_phone field?",
+    "options": [
+      {
+        "label": "A",
+        "text": "Make emergency_phone a required string with 'Not provided' for missing and 'Illegible' for unreadable numbers",
+        "is_correct": false
+      },
+      {
+        "label": "B",
+        "text": "Make emergency_phone nullable and use additional fields like phone_status to indicate data quality",
+        "is_correct": true
+      },
+      {
+        "label": "C",
+        "text": "Use a single nullable emergency_phone field and lose the distinction between missing and illegible",
+        "is_correct": false
+      },
+      {
+        "label": "D",
+        "text": "Make emergency_phone required and instruct Claude to guess phone numbers from partial information",
+        "is_correct": false
+      }
+    ],
+    "correct_label": "B",
+    "explanation": "Using nullable emergency_phone with a phone_status field (enum: 'present', 'missing', 'illegible') preserves data quality information while preventing fabrication. This allows downstream systems to handle different data quality scenarios appropriately.",
+    "tags": [
+      "nullable_with_status",
+      "data_quality_tracking",
+      "medical_forms",
+      "downstream_workflows"
+    ],
+    "bloom_level": "understand",
+    "distractor_strategy": {
+      "plausible_but_prompt_only": "D",
+      "over_engineered": "N/A",
+      "wrong_layer": "N/A",
+      "valid_but_not_first_step": "N/A"
+    }
+  },
+  {
+    "id": "D4_T3_023",
+    "domain_id": "D4",
+    "task_statement_id": "D4.T3",
+    "scenario_ids": [
+      "S5"
+    ],
+    "difficulty": "conceptual_knowledge",
+    "key_concept_tested": "enum with other + detail string pattern",
+    "stem": "Your code complexity analyzer categorizes functions as 'simple', 'moderate', 'complex', or 'refactor_needed'. However, some functions have unique characteristics like 'generated_code' or 'legacy_compatibility' that affect complexity interpretation. What's the best schema approach?",
+    "options": [
+      {
+        "label": "A",
+        "text": "Add more enum values like 'generated_simple', 'generated_complex', 'legacy_simple', etc.",
+        "is_correct": false
+      },
+      {
+        "label": "B",
+        "text": "Use enum ['simple', 'moderate', 'complex', 'refactor_needed', 'special'] with optional complexity_notes",
+        "is_correct": true
+      },
+      {
+        "label": "C",
+        "text": "Replace the enum with a free-form string to capture all complexity nuances",
+        "is_correct": false
+      },
+      {
+        "label": "D",
+        "text": "Keep the basic enum and lose the special case information",
+        "is_correct": false
+      }
+    ],
+    "correct_label": "B",
+    "explanation": "Using 'special' as an enum value with complexity_notes maintains structured categorization for analytics while capturing contextual information that affects complexity interpretation. This preserves both standardized metrics and important qualitative details.",
+    "tags": [
+      "enum_special_cases",
+      "code_complexity",
+      "contextual_information",
+      "analytics_balance"
+    ],
+    "bloom_level": "understand",
+    "distractor_strategy": {
+      "plausible_but_prompt_only": "N/A",
+      "over_engineered": "N/A",
+      "wrong_layer": "N/A",
+      "valid_but_not_first_step": "N/A"
+    }
+  },
+  {
+    "id": "D4_T3_024",
+    "domain_id": "D4",
+    "task_statement_id": "D4.T3",
+    "scenario_ids": [
+      "S6"
+    ],
+    "difficulty": "applied_judgment",
+    "key_concept_tested": "strict schemas eliminate syntax errors not semantic errors",
+    "stem": "Your financial document extraction system achieves 100% JSON schema compliance but downstream fraud detection flags 18% of extractions as potentially fabricated data (impossible dates, suspicious amounts). What additional validation layer is needed beyond strict schemas?",
+    "options": [
+      {
+        "label": "A",
+        "text": "Business rule validation to check date ranges, amount reasonableness, and cross-field consistency",
+        "is_correct": true
+      },
+      {
+        "label": "B",
+        "text": "Stricter JSON schemas with more detailed type constraints and validation rules",
+        "is_correct": false
+      },
+      {
+        "label": "C",
+        "text": "Confidence scoring for each extracted field to identify uncertain extractions",
+        "is_correct": false
+      },
+      {
+        "label": "D",
+        "text": "Multiple extraction attempts with consensus voting to reduce fabrication",
+        "is_correct": false
+      }
+    ],
+    "correct_label": "A",
+    "explanation": "Strict JSON schemas ensure syntactic correctness but cannot detect semantic issues like impossible dates or unrealistic amounts. Business rule validation adds a semantic layer to check logical consistency and realistic value ranges beyond what schemas can enforce.",
+    "tags": [
+      "business_rule_validation",
+      "semantic_validation",
+      "fraud_detection",
+      "financial_documents"
+    ],
+    "bloom_level": "apply",
+    "distractor_strategy": {
+      "plausible_but_prompt_only": "N/A",
+      "over_engineered": "N/A",
+      "wrong_layer": "N/A",
+      "valid_but_not_first_step": "N/A"
+    }
+  },
+  {
+    "id": "D4_T3_025",
+    "domain_id": "D4",
+    "task_statement_id": "D4.T3",
+    "scenario_ids": [
+      "S5"
+    ],
+    "difficulty": "anti_pattern_recognition",
+    "key_concept_tested": "nullable fields to prevent fabrication",
+    "stem": "Your automated test coverage analyzer extracts metrics from test reports where branch coverage percentages are sometimes not reported by the testing framework. A team member configures branch_coverage as required with -1 as the default, claiming 'negative values clearly indicate missing data.' What's wrong with this approach?",
+    "options": [
+      {
+        "label": "A",
+        "text": "Using -1 requires downstream systems to handle special sentinel values, while nullable fields provide cleaner null handling",
+        "is_correct": false
+      },
+      {
+        "label": "B",
+        "text": "Negative percentages violate the semantic meaning of coverage metrics",
+        "is_correct": false
+      },
+      {
+        "label": "C",
+        "text": "Required fields with sentinel values like -1 create false data points that complicate analytics and reporting",
+        "is_correct": false
+      },
+      {
+        "label": "D",
+        "text": "Using -1 requires downstream systems to handle special sentinel values, while nullable fields provide cleaner null handling",
+        "is_correct": true
+      }
+    ],
+    "correct_label": "D",
+    "explanation": "Sentinel values like -1 require every downstream system to understand and handle the special meaning, creating complexity and potential bugs. Nullable fields use standard null handling patterns and clearly represent missing data without introducing fake numeric values.",
+    "tags": [
+      "sentinel_values_anti_pattern",
+      "nullable_vs_sentinel",
+      "test_coverage",
+      "downstream_complexity"
+    ],
+    "bloom_level": "evaluate",
+    "distractor_strategy": {
+      "plausible_but_prompt_only": "N/A",
+      "over_engineered": "N/A",
+      "wrong_layer": "N/A",
+      "valid_but_not_first_step": "N/A"
+    }
+  },
+  {
+    "id": "D4_T3_026",
+    "domain_id": "D4",
+    "task_statement_id": "D4.T3",
+    "scenario_ids": [
+      "S6"
+    ],
+    "difficulty": "applied_judgment",
+    "key_concept_tested": "tool_use with JSON schema: most reliable for schema-compliant output",
+    "stem": "Your document classification system needs to extract metadata into a specific JSON format for a document management system that cannot handle malformed JSON. The current few-shot prompting approach has a 9% malformed JSON rate. What's the most reliable solution to eliminate JSON syntax errors?",
+    "options": [
+      {
+        "label": "A",
+        "text": "Switch to tool use with JSON schema parameters that match the document management system's requirements",
+        "is_correct": true
+      },
+      {
+        "label": "B",
+        "text": "Add JSON validation and retry logic to re-prompt when parsing fails",
+        "is_correct": false
+      },
+      {
+        "label": "C",
+        "text": "Use more comprehensive few-shot examples with detailed JSON formatting instructions",
+        "is_correct": false
+      },
+      {
+        "label": "D",
+        "text": "Implement JSON repair logic to fix common syntax errors before system integration",
+        "is_correct": false
+      }
+    ],
+    "correct_label": "A",
+    "explanation": "Tool use with JSON schema parameters provides guaranteed syntactic compliance, eliminating the 9% malformed JSON rate entirely. This approach enforces compliance at the model level rather than relying on probabilistic adherence or post-processing fixes.",
+    "tags": [
+      "JSON_compliance",
+      "document_management",
+      "tool_use_reliability",
+      "syntax_error_elimination"
+    ],
+    "bloom_level": "apply",
+    "distractor_strategy": {
+      "plausible_but_prompt_only": "C",
+      "over_engineered": "N/A",
+      "wrong_layer": "N/A",
+      "valid_but_not_first_step": "N/A"
+    }
+  },
+  {
+    "id": "D4_T3_027",
+    "domain_id": "D4",
+    "task_statement_id": "D4.T3",
+    "scenario_ids": [
+      "S5"
+    ],
+    "difficulty": "conceptual_knowledge",
+    "key_concept_tested": "required vs optional fields",
+    "stem": "Your pull request analysis tool extracts code metrics where lines_of_code and files_changed are always present, but security_issues and performance_issues are only relevant when problems are found. How should you structure these fields in your schema?",
+    "options": [
+      {
+        "label": "A",
+        "text": "Make all fields required with empty arrays as defaults for security_issues and performance_issues",
+        "is_correct": false
+      },
+      {
+        "label": "B",
+        "text": "Make lines_of_code and files_changed required, security_issues and performance_issues optional",
+        "is_correct": true
+      },
+      {
+        "label": "C",
+        "text": "Make all fields optional to handle edge cases where metrics might not be calculable",
+        "is_correct": false
+      },
+      {
+        "label": "D",
+        "text": "Make all fields required to ensure consistent output structure across all PRs",
+        "is_correct": false
+      }
+    ],
+    "correct_label": "B",
+    "explanation": "This schema design accurately reflects the data reality: code metrics like lines_of_code are always available (required), while issue arrays should only be present when problems are actually found (optional). Empty arrays for non-existent issues introduce unnecessary data.",
+    "tags": [
+      "field_requirements",
+      "code_metrics",
+      "conditional_data",
+      "schema_accuracy"
+    ],
+    "bloom_level": "understand",
+    "distractor_strategy": {
+      "plausible_but_prompt_only": "N/A",
+      "over_engineered": "N/A",
+      "wrong_layer": "N/A",
+      "valid_but_not_first_step": "N/A"
+    }
+  },
+  {
+    "id": "D4_T3_028",
+    "domain_id": "D4",
+    "task_statement_id": "D4.T3",
+    "scenario_ids": [
+      "S6"
+    ],
+    "difficulty": "applied_judgment",
+    "key_concept_tested": "enum with other + detail string pattern",
+    "stem": "Your resume extraction system categorizes work experience as 'full_time', 'part_time', 'contract', 'internship', or 'volunteer'. However, 12% of experiences don't fit cleanly (e.g., 'consulting', 'freelance', 'sabbatical'). Your HR analytics system needs both standardized categories and specific details. What's the optimal approach?",
+    "options": [
+      {
+        "label": "A",
+        "text": "Expand the enum to include all possible employment types you encounter",
+        "is_correct": false
+      },
+      {
+        "label": "B",
+        "text": "Use enum ['full_time', 'part_time', 'contract', 'internship', 'volunteer', 'other'] with optional employment_detail",
+        "is_correct": true
+      },
+      {
+        "label": "C",
+        "text": "Force all experiences into the existing five categories and lose the nuanced information",
+        "is_correct": false
+      },
+      {
+        "label": "D",
+        "text": "Use a free-form string field and handle categorization in post-processing",
+        "is_correct": false
+      }
+    ],
+    "correct_label": "B",
+    "explanation": "The enum + other + detail pattern maintains structured data for HR analytics (88% of cases fit standard categories) while preserving specific information for edge cases like consulting or freelance work. This balances standardization with information preservation.",
+    "tags": [
+      "employment_categorization",
+      "HR_analytics",
+      "enum_other_pattern",
+      "resume_processing"
+    ],
+    "bloom_level": "apply",
+    "distractor_strategy": {
+      "plausible_but_prompt_only": "N/A",
+      "over_engineered": "N/A",
+      "wrong_layer": "N/A",
+      "valid_but_not_first_step": "N/A"
+    }
+  },
+  {
+    "id": "D4_T3_029",
+    "domain_id": "D4",
+    "task_statement_id": "D4.T3",
+    "scenario_ids": [
+      "S5"
+    ],
+    "difficulty": "applied_judgment",
+    "key_concept_tested": "strict schemas eliminate syntax errors not semantic errors",
+    "stem": "Your automated code review system uses strict JSON schemas and reports 100% schema compliance. However, developers complain that 25% of the feedback contains recommendations for code that wasn't actually changed in the PR. What does this reveal about the limitations of strict schemas?",
+    "options": [
+      {
+        "label": "A",
+        "text": "Strict schemas guarantee JSON format but cannot prevent Claude from analyzing the wrong code sections or providing irrelevant feedback",
+        "is_correct": false
+      },
+      {
+        "label": "B",
+        "text": "The schema should include validation rules to ensure feedback only applies to changed lines",
+        "is_correct": false
+      },
+      {
+        "label": "C",
+        "text": "Strict schemas are working correctly; the issue is with the prompt design, not schema validation",
+        "is_correct": false
+      },
+      {
+        "label": "D",
+        "text": "Strict schemas guarantee JSON format but cannot prevent Claude from analyzing the wrong code sections or providing irrelevant feedback",
+        "is_correct": true
+      }
+    ],
+    "correct_label": "D",
+    "explanation": "Strict schemas ensure syntactic correctness (valid JSON structure) but cannot enforce semantic accuracy like ensuring feedback applies only to changed code. This requires additional logic to validate the relevance and accuracy of the extracted content beyond format compliance.",
+    "tags": [
+      "semantic_accuracy",
+      "code_review_relevance",
+      "schema_limitations",
+      "content_validation"
+    ],
+    "bloom_level": "apply",
+    "distractor_strategy": {
+      "plausible_but_prompt_only": "C",
+      "over_engineered": "N/A",
+      "wrong_layer": "N/A",
+      "valid_but_not_first_step": "N/A"
+    }
+  },
+  {
+    "id": "D4_T3_030",
+    "domain_id": "D4",
+    "task_statement_id": "D4.T3",
+    "scenario_ids": [
+      "S6"
+    ],
+    "difficulty": "conceptual_knowledge",
+    "key_concept_tested": "nullable fields to prevent fabrication",
+    "stem": "Your property listing extraction system processes real estate documents where square footage is sometimes missing or listed as 'TBD'. Your valuation algorithms require precise numeric values and treat null square footage differently from zero. How should you configure the square_footage field?",
+    "options": [
+      {
+        "label": "A",
+        "text": "Make square_footage required with 0 as default when not specified",
+        "is_correct": false
+      },
+      {
+        "label": "B",
+        "text": "Make square_footage nullable so Claude can return null when size information is unavailable",
+        "is_correct": true
+      },
+      {
+        "label": "C",
+        "text": "Use a string field to capture text like 'TBD' or 'Under construction'",
+        "is_correct": false
+      },
+      {
+        "label": "D",
+        "text": "Make square_footage required and instruct Claude to estimate based on property type",
+        "is_correct": false
+      }
+    ],
+    "correct_label": "B",
+    "explanation": "Nullable square_footage allows the system to distinguish between properties with genuinely small spaces (low numeric values) and properties where size information is unavailable (null). This prevents valuation algorithms from incorrectly processing fabricated or default values.",
+    "tags": [
+      "nullable_fields",
+      "real_estate",
+      "valuation_algorithms",
+      "data_integrity"
+    ],
+    "bloom_level": "understand",
+    "distractor_strategy": {
+      "plausible_but_prompt_only": "D",
+      "over_engineered": "N/A",
+      "wrong_layer": "N/A",
+      "valid_but_not_first_step": "N/A"
+    }
+  },
+  {
+    "id": "D4_T3_031",
+    "domain_id": "D4",
+    "task_statement_id": "D4.T3",
+    "scenario_ids": [
+      "S5"
+    ],
+    "difficulty": "anti_pattern_recognition",
+    "key_concept_tested": "tool_choice auto vs any vs forced",
+    "stem": "Your CI/CD pipeline uses tool_choice: 'any' to ensure every commit gets structured security analysis, even for documentation-only changes. This generates 200+ empty security reports daily. A manager argues this is correct because 'consistent monitoring is more important than relevance.' What's the fundamental issue with this approach?",
+    "options": [
+      {
+        "label": "A",
+        "text": "tool_choice: 'any' creates noise that obscures real security issues, while 'auto' would focus attention on actual threats",
+        "is_correct": true
+      },
+      {
+        "label": "B",
+        "text": "Documentation changes can introduce security vulnerabilities and require the same analysis as code changes",
+        "is_correct": false
+      },
+      {
+        "label": "C",
+        "text": "Consistent output format is indeed more valuable than content relevance for automated systems",
+        "is_correct": false
+      },
+      {
+        "label": "D",
+        "text": "The high volume of reports indicates the security analysis is working effectively",
+        "is_correct": false
+      }
+    ],
+    "correct_label": "A",
+    "explanation": "tool_choice: 'any' forces tool use inappropriately, creating 200+ meaningless reports that dilute attention from real security issues. tool_choice: 'auto' would allow Claude to intelligently determine when security analysis is warranted, improving signal-to-noise ratio.",
+    "tags": [
+      "tool_choice_noise",
+      "security_analysis",
+      "signal_to_noise",
+      "forced_tool_use_anti_pattern"
+    ],
+    "bloom_level": "evaluate",
+    "distractor_strategy": {
+      "plausible_but_prompt_only": "N/A",
+      "over_engineered": "N/A",
+      "wrong_layer": "N/A",
+      "valid_but_not_first_step": "N/A"
+    }
+  },
+  {
+    "id": "D4_T3_032",
+    "domain_id": "D4",
+    "task_statement_id": "D4.T3",
+    "scenario_ids": [
+      "S6"
+    ],
+    "difficulty": "applied_judgment",
+    "key_concept_tested": "required vs optional fields",
+    "stem": "Your scientific paper extraction system processes research documents where author affiliations are always present, but funding information appears in only 40% of papers, and conflict of interest statements in 60%. How should you structure your extraction schema?",
+    "options": [
+      {
+        "label": "A",
+        "text": "Make author_affiliations, funding_info, and conflict_of_interest all required with 'Not disclosed' defaults",
+        "is_correct": false
+      },
+      {
+        "label": "B",
+        "text": "Make author_affiliations required, funding_info and conflict_of_interest optional",
+        "is_correct": true
+      },
+      {
+        "label": "C",
+        "text": "Make all fields optional to handle variations in paper formats across journals",
+        "is_correct": false
+      },
+      {
+        "label": "D",
+        "text": "Make all fields required to ensure consistent metadata structure for research databases",
+        "is_correct": false
+      }
+    ],
+    "correct_label": "B",
+    "explanation": "This schema accurately reflects academic publishing reality: author affiliations are standard requirements (required), while funding and conflict disclosures are journal-dependent and often absent (optional). Using 'Not disclosed' creates false metadata that doesn't distinguish between undisclosed and non-existent information.",
+    "tags": [
+      "academic_papers",
+      "metadata_extraction",
+      "publication_standards",
+      "optional_disclosures"
+    ],
+    "bloom_level": "apply",
+    "distractor_strategy": {
+      "plausible_but_prompt_only": "N/A",
+      "over_engineered": "N/A",
+      "wrong_layer": "N/A",
+      "valid_but_not_first_step": "N/A"
+    }
+  },
+  {
+    "id": "D4_T3_033",
+    "domain_id": "D4",
+    "task_statement_id": "D4.T3",
+    "scenario_ids": [
+      "S5"
+    ],
+    "difficulty": "conceptual_knowledge",
+    "key_concept_tested": "tool_use with JSON schema: most reliable for schema-compliant output",
+    "stem": "Your build system needs to extract dependency information from package files into a standardized JSON format for vulnerability scanning. The current regex-based parser has reliability issues. Which Claude-based approach provides the most reliable structured output?",
+    "options": [
+      {
+        "label": "A",
+        "text": "Use detailed prompts with JSON formatting examples and validation instructions",
+        "is_correct": false
+      },
+      {
+        "label": "B",
+        "text": "Implement a tool with JSON schema parameters that match your vulnerability scanner's input format",
+        "is_correct": false
+      },
+      {
+        "label": "C",
+        "text": "Use few-shot learning with examples of properly formatted dependency extractions",
+        "is_correct": false
+      },
+      {
+        "label": "D",
+        "text": "Implement a tool with JSON schema parameters that match your vulnerability scanner's input format",
+        "is_correct": true
+      }
+    ],
+    "correct_label": "D",
+    "explanation": "Tool use with JSON schema parameters provides the highest reliability for structured output because it enforces schema compliance at the model level. This eliminates the parsing reliability issues while ensuring the output format exactly matches your vulnerability scanner's requirements.",
+    "tags": [
+      "dependency_extraction",
+      "vulnerability_scanning",
+      "tool_use_reliability",
+      "build_systems"
+    ],
+    "bloom_level": "understand",
+    "distractor_strategy": {
+      "plausible_but_prompt_only": "A",
+      "over_engineered": "N/A",
+      "wrong_layer": "N/A",
+      "valid_but_not_first_step": "N/A"
+    }
+  },
+  {
+    "id": "D4_T3_034",
+    "domain_id": "D4",
+    "task_statement_id": "D4.T3",
+    "scenario_ids": [
+      "S6"
+    ],
+    "difficulty": "anti_pattern_recognition",
+    "key_concept_tested": "enum with other + detail string pattern",
+    "stem": "Your customer feedback extraction system uses a rigid enum for sentiment: ['positive', 'negative', 'neutral']. However, 15% of feedback contains mixed emotions like 'frustrated but hopeful' that don't fit cleanly. A developer suggests expanding to 20+ specific emotion combinations. What's problematic about this approach?",
+    "options": [
+      {
+        "label": "A",
+        "text": "Expanding to 20+ enum values creates over-categorization and reduces analytical utility compared to using 'mixed' with detail strings",
+        "is_correct": true
+      },
+      {
+        "label": "B",
+        "text": "Complex emotions require free-form text fields rather than structured enums",
+        "is_correct": false
+      },
+      {
+        "label": "C",
+        "text": "The current three-category system is sufficient and edge cases should be forced into existing categories",
+        "is_correct": false
+      },
+      {
+        "label": "D",
+        "text": "Mixed emotions indicate poor data quality and should be filtered out during processing",
+        "is_correct": false
+      }
+    ],
+    "correct_label": "A",
+    "explanation": "Over-expanding enums creates analytical complexity without proportional value. Using ['positive', 'negative', 'neutral', 'mixed'] with an optional detail field captures nuanced emotions while maintaining structured categories for analytics. This balances precision with usability.",
+    "tags": [
+      "enum_over_expansion",
+      "sentiment_analysis",
+      "mixed_emotions",
+      "analytical_balance"
+    ],
+    "bloom_level": "evaluate",
+    "distractor_strategy": {
+      "plausible_but_prompt_only": "N/A",
+      "over_engineered": "N/A",
+      "wrong_layer": "N/A",
+      "valid_but_not_first_step": "N/A"
+    }
+  }
+]

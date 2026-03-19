@@ -1,0 +1,1600 @@
+[
+  {
+    "id": "D5_T4_001",
+    "domain_id": "D5",
+    "task_statement_id": "D5.T4",
+    "scenario_ids": [
+      "S2"
+    ],
+    "difficulty": "conceptual_knowledge",
+    "key_concept_tested": "context degradation in extended sessions",
+    "stem": "During a 3-hour Claude Code session exploring a 50,000-line legacy codebase, you notice the model's responses becoming less accurate and missing obvious patterns it identified earlier. What is the primary cause of this degradation?",
+    "options": [
+      {
+        "label": "A",
+        "text": "The model is experiencing fatigue from processing too much code",
+        "is_correct": false
+      },
+      {
+        "label": "B",
+        "text": "Context window limitations are causing earlier findings to be compressed or lost",
+        "is_correct": true
+      },
+      {
+        "label": "C",
+        "text": "The codebase complexity is exceeding Claude's analytical capabilities",
+        "is_correct": false
+      },
+      {
+        "label": "D",
+        "text": "Network latency is causing incomplete responses from the API",
+        "is_correct": false
+      }
+    ],
+    "correct_label": "B",
+    "explanation": "In extended sessions, Claude's context window fills up with conversation history, causing earlier findings and insights to be compressed or pushed out entirely. This leads to degraded performance as the model loses access to previously discovered patterns and context.",
+    "tags": [
+      "context_management",
+      "extended_sessions",
+      "performance_degradation"
+    ],
+    "bloom_level": "understand",
+    "distractor_strategy": {
+      "plausible_but_prompt_only": "N/A",
+      "over_engineered": "N/A",
+      "wrong_layer": "N/A",
+      "valid_but_not_first_step": "N/A"
+    }
+  },
+  {
+    "id": "D5_T4_002",
+    "domain_id": "D5",
+    "task_statement_id": "D5.T4",
+    "scenario_ids": [
+      "S1"
+    ],
+    "difficulty": "applied_judgment",
+    "key_concept_tested": "scratchpad files for persistent findings",
+    "stem": "Your customer support agent is handling complex billing disputes that require analyzing multiple orders, payment histories, and account changes spanning 6 months. After 45 minutes of investigation, the agent starts repeating previous queries and missing key connections. What should you implement?",
+    "options": [
+      {
+        "label": "A",
+        "text": "Increase the context window size to accommodate more conversation history",
+        "is_correct": false
+      },
+      {
+        "label": "B",
+        "text": "Restart the conversation periodically to clear the context",
+        "is_correct": false
+      },
+      {
+        "label": "C",
+        "text": "Create scratchpad files to persist findings and reference them throughout the investigation",
+        "is_correct": true
+      },
+      {
+        "label": "D",
+        "text": "Add more MCP tools to reduce the amount of natural language processing needed",
+        "is_correct": false
+      }
+    ],
+    "correct_label": "C",
+    "explanation": "Scratchpad files allow the agent to persist key findings, patterns, and intermediate conclusions outside the conversation context. This prevents loss of important discoveries when the context window fills up and enables the agent to reference structured findings throughout extended investigations.",
+    "tags": [
+      "persistent_state",
+      "complex_investigations",
+      "scratchpad_pattern"
+    ],
+    "bloom_level": "apply",
+    "distractor_strategy": {
+      "plausible_but_prompt_only": "N/A",
+      "over_engineered": "N/A",
+      "wrong_layer": "N/A",
+      "valid_but_not_first_step": "N/A"
+    }
+  },
+  {
+    "id": "D5_T4_003",
+    "domain_id": "D5",
+    "task_statement_id": "D5.T4",
+    "scenario_ids": [
+      "S2"
+    ],
+    "difficulty": "anti_pattern_recognition",
+    "key_concept_tested": "subagent delegation for verbose output isolation",
+    "stem": "A developer proposes handling large codebase exploration by having Claude Code output extremely detailed analysis of every file directly in the main conversation, with verbose logging of each discovery. Why is this approach problematic?",
+    "options": [
+      {
+        "label": "A",
+        "text": "It provides too much information for the developer to process effectively",
+        "is_correct": false
+      },
+      {
+        "label": "B",
+        "text": "Detailed analysis should only be done on files that contain obvious bugs",
+        "is_correct": false
+      },
+      {
+        "label": "C",
+        "text": "The verbose output will consume context window space, degrading subsequent analysis quality",
+        "is_correct": false
+      },
+      {
+        "label": "D",
+        "text": "Verbose output will quickly fill the context window, causing loss of earlier findings and degraded performance",
+        "is_correct": true
+      }
+    ],
+    "correct_label": "D",
+    "explanation": "Verbose output in the main conversation rapidly consumes context window space, pushing out earlier findings and reducing the model's ability to maintain coherent analysis across the codebase. Subagent delegation isolates verbose processing, preserving main context for high-level coordination.",
+    "tags": [
+      "verbose_output",
+      "context_pollution",
+      "subagent_isolation"
+    ],
+    "bloom_level": "evaluate",
+    "distractor_strategy": {
+      "plausible_but_prompt_only": "N/A",
+      "over_engineered": "N/A",
+      "wrong_layer": "N/A",
+      "valid_but_not_first_step": "N/A"
+    }
+  },
+  {
+    "id": "D5_T4_004",
+    "domain_id": "D5",
+    "task_statement_id": "D5.T4",
+    "scenario_ids": [
+      "S1"
+    ],
+    "difficulty": "conceptual_knowledge",
+    "key_concept_tested": "structured state persistence for crash recovery",
+    "stem": "Your customer support agent crashes during a complex return processing workflow after gathering customer data, order history, and refund calculations. What information should be persisted to enable effective recovery?",
+    "options": [
+      {
+        "label": "A",
+        "text": "The complete conversation history and all API responses",
+        "is_correct": true
+      },
+      {
+        "label": "B",
+        "text": "Only the final refund amount and customer ID",
+        "is_correct": false
+      },
+      {
+        "label": "C",
+        "text": "The customer's original complaint and the escalation reason",
+        "is_correct": false
+      },
+      {
+        "label": "D",
+        "text": "A summary of actions taken but not the underlying data",
+        "is_correct": false
+      }
+    ],
+    "correct_label": "A",
+    "explanation": "Complete conversation history and API responses provide the full context needed to resume the workflow without requiring the customer to re-explain their issue or the agent to re-gather information. This ensures continuity and maintains customer satisfaction.",
+    "tags": [
+      "crash_recovery",
+      "state_persistence",
+      "workflow_continuity"
+    ],
+    "bloom_level": "understand",
+    "distractor_strategy": {
+      "plausible_but_prompt_only": "N/A",
+      "over_engineered": "N/A",
+      "wrong_layer": "N/A",
+      "valid_but_not_first_step": "N/A"
+    }
+  },
+  {
+    "id": "D5_T4_005",
+    "domain_id": "D5",
+    "task_statement_id": "D5.T4",
+    "scenario_ids": [
+      "S2"
+    ],
+    "difficulty": "applied_judgment",
+    "key_concept_tested": "/compact for context reduction",
+    "stem": "During a Claude Code session analyzing a microservices architecture, your context is filled with detailed API endpoint documentation, service dependencies, and configuration files. The model's responses are becoming generic. When should you use /compact?",
+    "options": [
+      {
+        "label": "A",
+        "text": "Immediately when you notice the first signs of response quality degradation",
+        "is_correct": false
+      },
+      {
+        "label": "B",
+        "text": "After documenting key findings in external files and when generic responses indicate context overload",
+        "is_correct": true
+      },
+      {
+        "label": "C",
+        "text": "Only when you've reached the absolute maximum context window limit",
+        "is_correct": false
+      },
+      {
+        "label": "D",
+        "text": "At regular 30-minute intervals regardless of response quality",
+        "is_correct": false
+      }
+    ],
+    "correct_label": "B",
+    "explanation": "Use /compact after securing important findings externally and when response quality clearly indicates context overload. This timing preserves critical discoveries while restoring the model's ability to provide specific, actionable insights about the codebase.",
+    "tags": [
+      "context_compaction",
+      "response_quality",
+      "timing_strategy"
+    ],
+    "bloom_level": "apply",
+    "distractor_strategy": {
+      "plausible_but_prompt_only": "N/A",
+      "over_engineered": "N/A",
+      "wrong_layer": "N/A",
+      "valid_but_not_first_step": "N/A"
+    }
+  },
+  {
+    "id": "D5_T4_006",
+    "domain_id": "D5",
+    "task_statement_id": "D5.T4",
+    "scenario_ids": [
+      "S1"
+    ],
+    "difficulty": "anti_pattern_recognition",
+    "key_concept_tested": "context degradation in extended sessions",
+    "stem": "A colleague suggests that context degradation in extended customer support sessions can be solved by simply asking Claude to 'remember everything important from our conversation so far' in each new message. What is the flaw in this approach?",
+    "options": [
+      {
+        "label": "A",
+        "text": "It relies on natural language instructions rather than structured context management",
+        "is_correct": false
+      },
+      {
+        "label": "B",
+        "text": "It adds more tokens to an already overloaded context window",
+        "is_correct": false
+      },
+      {
+        "label": "C",
+        "text": "It relies on the model's summarization rather than explicit state preservation and doesn't address the underlying context window limitations",
+        "is_correct": true
+      },
+      {
+        "label": "D",
+        "text": "It requires too much manual intervention from the support agent",
+        "is_correct": false
+      }
+    ],
+    "correct_label": "C",
+    "explanation": "This approach is a prompt-only solution that doesn't address the fundamental issue: context window limitations. The model cannot reliably 'remember' information that has been compressed or pushed out of its context window, regardless of instructions.",
+    "tags": [
+      "prompt_only_solutions",
+      "context_limitations",
+      "unreliable_memory"
+    ],
+    "bloom_level": "evaluate",
+    "distractor_strategy": {
+      "plausible_but_prompt_only": "A",
+      "over_engineered": "N/A",
+      "wrong_layer": "N/A",
+      "valid_but_not_first_step": "N/A"
+    }
+  },
+  {
+    "id": "D5_T4_007",
+    "domain_id": "D5",
+    "task_statement_id": "D5.T4",
+    "scenario_ids": [
+      "S2"
+    ],
+    "difficulty": "conceptual_knowledge",
+    "key_concept_tested": "subagent delegation for verbose output isolation",
+    "stem": "When exploring a large codebase with Claude Code, why should verbose analysis be delegated to subagents rather than performed in the main conversation?",
+    "options": [
+      {
+        "label": "A",
+        "text": "Subagents are faster at processing large amounts of code",
+        "is_correct": false
+      },
+      {
+        "label": "B",
+        "text": "Subagents have access to specialized tools not available in the main conversation",
+        "is_correct": false
+      },
+      {
+        "label": "C",
+        "text": "Subagents cost less per token for detailed analysis tasks",
+        "is_correct": false
+      },
+      {
+        "label": "D",
+        "text": "Subagents isolate verbose output, preserving main conversation context for coordination and high-level insights",
+        "is_correct": true
+      }
+    ],
+    "correct_label": "D",
+    "explanation": "Subagent delegation isolates verbose processing in separate context windows, preventing the main conversation from being overwhelmed with detailed output. This preserves the coordinator's ability to maintain high-level understanding and make strategic decisions about the exploration.",
+    "tags": [
+      "subagent_isolation",
+      "context_preservation",
+      "verbose_output_management"
+    ],
+    "bloom_level": "understand",
+    "distractor_strategy": {
+      "plausible_but_prompt_only": "N/A",
+      "over_engineered": "N/A",
+      "wrong_layer": "N/A",
+      "valid_but_not_first_step": "N/A"
+    }
+  },
+  {
+    "id": "D5_T4_008",
+    "domain_id": "D5",
+    "task_statement_id": "D5.T4",
+    "scenario_ids": [
+      "S1"
+    ],
+    "difficulty": "applied_judgment",
+    "key_concept_tested": "structured state persistence for crash recovery",
+    "stem": "Your customer support agent system experiences a crash during a complex billing dispute resolution involving multiple refunds and account adjustments. The customer has been on the call for 90 minutes. What recovery strategy minimizes customer impact?",
+    "options": [
+      {
+        "label": "A",
+        "text": "Start fresh with a new agent and ask the customer to re-explain their issue completely",
+        "is_correct": true
+      },
+      {
+        "label": "B",
+        "text": "Load the persisted conversation state and API call history to resume from the exact point of failure",
+        "is_correct": false
+      },
+      {
+        "label": "C",
+        "text": "Escalate immediately to a human agent without attempting recovery",
+        "is_correct": false
+      },
+      {
+        "label": "D",
+        "text": "Use only the customer ID to look up their account and start a simplified resolution process",
+        "is_correct": false
+      }
+    ],
+    "correct_label": "A",
+    "explanation": "Loading persisted state allows the new agent instance to understand the full context of the customer's issue, previous investigation steps, and partial resolutions without requiring the customer to repeat their story. This maintains continuity and reduces frustration.",
+    "tags": [
+      "crash_recovery",
+      "customer_experience",
+      "state_restoration"
+    ],
+    "bloom_level": "apply",
+    "distractor_strategy": {
+      "plausible_but_prompt_only": "N/A",
+      "over_engineered": "N/A",
+      "wrong_layer": "N/A",
+      "valid_but_not_first_step": "N/A"
+    }
+  },
+  {
+    "id": "D5_T4_009",
+    "domain_id": "D5",
+    "task_statement_id": "D5.T4",
+    "scenario_ids": [
+      "S2"
+    ],
+    "difficulty": "conceptual_knowledge",
+    "key_concept_tested": "/compact for context reduction",
+    "stem": "What happens when you use the /compact command in Claude Code during a codebase exploration session?",
+    "options": [
+      {
+        "label": "A",
+        "text": "It deletes all conversation history and starts fresh",
+        "is_correct": false
+      },
+      {
+        "label": "B",
+        "text": "It compresses the conversation history into a condensed summary while preserving key findings",
+        "is_correct": true
+      },
+      {
+        "label": "C",
+        "text": "It saves the current conversation to a file and starts a new session",
+        "is_correct": false
+      },
+      {
+        "label": "D",
+        "text": "It removes only the code snippets while keeping natural language responses",
+        "is_correct": false
+      }
+    ],
+    "correct_label": "B",
+    "explanation": "The /compact command creates a condensed summary of the conversation history, preserving key findings and insights while reducing the overall token count. This helps restore the model's performance by freeing up context window space.",
+    "tags": [
+      "context_compaction",
+      "conversation_summarization",
+      "token_reduction"
+    ],
+    "bloom_level": "understand",
+    "distractor_strategy": {
+      "plausible_but_prompt_only": "N/A",
+      "over_engineered": "N/A",
+      "wrong_layer": "N/A",
+      "valid_but_not_first_step": "N/A"
+    }
+  },
+  {
+    "id": "D5_T4_010",
+    "domain_id": "D5",
+    "task_statement_id": "D5.T4",
+    "scenario_ids": [
+      "S1"
+    ],
+    "difficulty": "applied_judgment",
+    "key_concept_tested": "context degradation in extended sessions",
+    "stem": "Your customer support agent is handling a complex account migration case requiring analysis of 18 months of transaction history, multiple service subscriptions, and billing adjustments. After 2 hours, the agent's accuracy drops from 94% to 73%. What should you do first?",
+    "options": [
+      {
+        "label": "A",
+        "text": "Continue with the current session but ask more specific questions",
+        "is_correct": false
+      },
+      {
+        "label": "B",
+        "text": "Implement scratchpad files to externalize key findings before continuing",
+        "is_correct": false
+      },
+      {
+        "label": "C",
+        "text": "Use subagents to handle detailed data analysis while maintaining coordination context",
+        "is_correct": false
+      },
+      {
+        "label": "D",
+        "text": "Persist current findings and restart with a fresh context, loading essential discoveries",
+        "is_correct": true
+      }
+    ],
+    "correct_label": "D",
+    "explanation": "A 21% accuracy drop indicates severe context degradation. The immediate priority is to preserve current findings and restart with a clean context, loading only the essential discoveries needed to continue effectively.",
+    "tags": [
+      "accuracy_degradation",
+      "context_refresh",
+      "finding_preservation"
+    ],
+    "bloom_level": "apply",
+    "distractor_strategy": {
+      "plausible_but_prompt_only": "N/A",
+      "over_engineered": "N/A",
+      "wrong_layer": "N/A",
+      "valid_but_not_first_step": "N/A"
+    }
+  },
+  {
+    "id": "D5_T4_011",
+    "domain_id": "D5",
+    "task_statement_id": "D5.T4",
+    "scenario_ids": [
+      "S2"
+    ],
+    "difficulty": "anti_pattern_recognition",
+    "key_concept_tested": "scratchpad files for persistent findings",
+    "stem": "A developer proposes managing codebase exploration findings by having Claude Code repeat all important discoveries in every response to ensure nothing is forgotten. Why is this problematic?",
+    "options": [
+      {
+        "label": "A",
+        "text": "It makes responses too long and difficult to read",
+        "is_correct": true
+      },
+      {
+        "label": "B",
+        "text": "Repetitive output rapidly consumes context window space and creates noise that degrades analysis quality",
+        "is_correct": false
+      },
+      {
+        "label": "C",
+        "text": "It increases API costs due to longer responses",
+        "is_correct": false
+      },
+      {
+        "label": "D",
+        "text": "It prevents Claude from discovering new patterns in the code",
+        "is_correct": false
+      }
+    ],
+    "correct_label": "A",
+    "explanation": "Repeating discoveries in every response creates a context pollution anti-pattern where valuable context window space is consumed by redundant information, leaving less room for new analysis and degrading the model's ability to process fresh code effectively.",
+    "tags": [
+      "context_pollution",
+      "repetitive_output",
+      "anti_pattern"
+    ],
+    "bloom_level": "evaluate",
+    "distractor_strategy": {
+      "plausible_but_prompt_only": "N/A",
+      "over_engineered": "N/A",
+      "wrong_layer": "N/A",
+      "valid_but_not_first_step": "N/A"
+    }
+  },
+  {
+    "id": "D5_T4_012",
+    "domain_id": "D5",
+    "task_statement_id": "D5.T4",
+    "scenario_ids": [
+      "S1"
+    ],
+    "difficulty": "conceptual_knowledge",
+    "key_concept_tested": "subagent delegation for verbose output isolation",
+    "stem": "In a customer support resolution system, when should you delegate verbose data analysis to subagents rather than handling it in the main conversation?",
+    "options": [
+      {
+        "label": "A",
+        "text": "When the analysis involves more than 3 different data sources",
+        "is_correct": true
+      },
+      {
+        "label": "B",
+        "text": "When the output would exceed 500 tokens and could overwhelm the main conversation context",
+        "is_correct": false
+      },
+      {
+        "label": "C",
+        "text": "When the customer specifically requests detailed explanations",
+        "is_correct": false
+      },
+      {
+        "label": "D",
+        "text": "When the analysis involves financial calculations",
+        "is_correct": false
+      }
+    ],
+    "correct_label": "A",
+    "explanation": "Delegate to subagents when verbose output would consume significant context window space in the main conversation. The 500-token threshold provides a practical guideline for when detailed analysis should be isolated to preserve coordination context.",
+    "tags": [
+      "subagent_delegation",
+      "verbose_analysis",
+      "context_preservation"
+    ],
+    "bloom_level": "understand",
+    "distractor_strategy": {
+      "plausible_but_prompt_only": "N/A",
+      "over_engineered": "N/A",
+      "wrong_layer": "N/A",
+      "valid_but_not_first_step": "N/A"
+    }
+  },
+  {
+    "id": "D5_T4_013",
+    "domain_id": "D5",
+    "task_statement_id": "D5.T4",
+    "scenario_ids": [
+      "S2"
+    ],
+    "difficulty": "applied_judgment",
+    "key_concept_tested": "structured state persistence for crash recovery",
+    "stem": "During a critical refactoring session with Claude Code, your system crashes after identifying 23 code smells and generating 8 improvement recommendations. The session involved analyzing 150 files across 12 modules. What should your recovery strategy prioritize?",
+    "options": [
+      {
+        "label": "A",
+        "text": "Re-analyze all 150 files to ensure nothing was missed",
+        "is_correct": false
+      },
+      {
+        "label": "B",
+        "text": "Focus only on the 8 improvement recommendations since they represent the final output",
+        "is_correct": true
+      },
+      {
+        "label": "C",
+        "text": "Restore the structured findings (code smells, recommendations, file analysis) and resume from the interruption point",
+        "is_correct": false
+      },
+      {
+        "label": "D",
+        "text": "Start with a fresh analysis of just the most critical modules",
+        "is_correct": false
+      }
+    ],
+    "correct_label": "B",
+    "explanation": "Restoring structured findings allows you to resume the session with full context of what was discovered, avoiding redundant analysis while maintaining the depth of understanding needed to continue the refactoring work effectively.",
+    "tags": [
+      "crash_recovery",
+      "structured_restoration",
+      "refactoring_continuity"
+    ],
+    "bloom_level": "apply",
+    "distractor_strategy": {
+      "plausible_but_prompt_only": "N/A",
+      "over_engineered": "N/A",
+      "wrong_layer": "N/A",
+      "valid_but_not_first_step": "N/A"
+    }
+  },
+  {
+    "id": "D5_T4_014",
+    "domain_id": "D5",
+    "task_statement_id": "D5.T4",
+    "scenario_ids": [
+      "S1"
+    ],
+    "difficulty": "anti_pattern_recognition",
+    "key_concept_tested": "/compact for context reduction",
+    "stem": "A colleague suggests using /compact every 10 minutes during customer support sessions to 'keep the context fresh and prevent any degradation.' What is wrong with this approach?",
+    "options": [
+      {
+        "label": "A",
+        "text": "It interrupts the natural flow of customer conversation",
+        "is_correct": false
+      },
+      {
+        "label": "B",
+        "text": "It increases processing time and API costs unnecessarily",
+        "is_correct": false
+      },
+      {
+        "label": "C",
+        "text": "It may compress away important context that is still actively being referenced",
+        "is_correct": false
+      },
+      {
+        "label": "D",
+        "text": "It applies compression based on arbitrary timing rather than actual context degradation indicators",
+        "is_correct": true
+      }
+    ],
+    "correct_label": "D",
+    "explanation": "Using /compact on a fixed schedule rather than based on actual performance degradation indicators is an over-engineered approach. Context compression should be triggered by observable quality decline, not arbitrary time intervals.",
+    "tags": [
+      "over_engineering",
+      "arbitrary_timing",
+      "context_management"
+    ],
+    "bloom_level": "evaluate",
+    "distractor_strategy": {
+      "plausible_but_prompt_only": "N/A",
+      "over_engineered": "N/A",
+      "wrong_layer": "N/A",
+      "valid_but_not_first_step": "N/A"
+    }
+  },
+  {
+    "id": "D5_T4_015",
+    "domain_id": "D5",
+    "task_statement_id": "D5.T4",
+    "scenario_ids": [
+      "S2"
+    ],
+    "difficulty": "conceptual_knowledge",
+    "key_concept_tested": "context degradation in extended sessions",
+    "stem": "What are the early warning signs that context degradation is affecting Claude Code's performance during codebase exploration?",
+    "options": [
+      {
+        "label": "A",
+        "text": "Slower response times and increased API errors",
+        "is_correct": false
+      },
+      {
+        "label": "B",
+        "text": "Generic responses, repetition of previous queries, and missed obvious patterns",
+        "is_correct": true
+      },
+      {
+        "label": "C",
+        "text": "Requests for clarification and shorter code snippets in responses",
+        "is_correct": false
+      },
+      {
+        "label": "D",
+        "text": "Increased use of placeholder comments and incomplete function implementations",
+        "is_correct": false
+      }
+    ],
+    "correct_label": "B",
+    "explanation": "Context degradation manifests as generic responses, repetitive behavior, and failure to recognize patterns that were previously identified. These behavioral changes indicate that earlier findings are no longer accessible in the context window.",
+    "tags": [
+      "degradation_indicators",
+      "performance_monitoring",
+      "context_quality"
+    ],
+    "bloom_level": "understand",
+    "distractor_strategy": {
+      "plausible_but_prompt_only": "N/A",
+      "over_engineered": "N/A",
+      "wrong_layer": "N/A",
+      "valid_but_not_first_step": "N/A"
+    }
+  },
+  {
+    "id": "D5_T4_016",
+    "domain_id": "D5",
+    "task_statement_id": "D5.T4",
+    "scenario_ids": [
+      "S1"
+    ],
+    "difficulty": "applied_judgment",
+    "key_concept_tested": "scratchpad files for persistent findings",
+    "stem": "Your customer support agent is investigating a complex billing issue involving subscription changes, prorated refunds, and tax adjustments across multiple billing cycles. The investigation has uncovered 12 discrepancies and 5 potential solutions. How should you structure the scratchpad file?",
+    "options": [
+      {
+        "label": "A",
+        "text": "Chronological timeline of all customer interactions and billing events",
+        "is_correct": true
+      },
+      {
+        "label": "B",
+        "text": "Categorized sections: discrepancies found, solutions evaluated, customer impact, next actions",
+        "is_correct": false
+      },
+      {
+        "label": "C",
+        "text": "Simple list of problems and corresponding fixes",
+        "is_correct": false
+      },
+      {
+        "label": "D",
+        "text": "Copy of all raw data and API responses for reference",
+        "is_correct": false
+      }
+    ],
+    "correct_label": "A",
+    "explanation": "Categorized sections provide structured organization that makes it easy for the agent to reference specific types of findings, evaluate progress, and maintain focus on actionable next steps throughout the extended investigation.",
+    "tags": [
+      "scratchpad_structure",
+      "complex_investigations",
+      "organized_findings"
+    ],
+    "bloom_level": "apply",
+    "distractor_strategy": {
+      "plausible_but_prompt_only": "N/A",
+      "over_engineered": "N/A",
+      "wrong_layer": "N/A",
+      "valid_but_not_first_step": "N/A"
+    }
+  },
+  {
+    "id": "D5_T4_017",
+    "domain_id": "D5",
+    "task_statement_id": "D5.T4",
+    "scenario_ids": [
+      "S2"
+    ],
+    "difficulty": "applied_judgment",
+    "key_concept_tested": "subagent delegation for verbose output isolation",
+    "stem": "While exploring a legacy monolith with Claude Code, you need detailed analysis of database schema relationships, API endpoint mappings, and service dependencies. The main conversation is becoming cluttered with technical details. What delegation strategy should you use?",
+    "options": [
+      {
+        "label": "A",
+        "text": "Create one subagent to handle all detailed analysis and report back summaries",
+        "is_correct": false
+      },
+      {
+        "label": "B",
+        "text": "Create specialized subagents for each analysis type, with the coordinator synthesizing findings",
+        "is_correct": true
+      },
+      {
+        "label": "C",
+        "text": "Use the main conversation but implement strict output formatting to reduce verbosity",
+        "is_correct": false
+      },
+      {
+        "label": "D",
+        "text": "Alternate between detailed analysis and high-level overview in the same conversation",
+        "is_correct": false
+      }
+    ],
+    "correct_label": "B",
+    "explanation": "Specialized subagents allow each one to focus deeply on their domain (database, API, services) with full context isolation, while the coordinator maintains the high-level understanding needed to synthesize findings and guide the overall exploration strategy.",
+    "tags": [
+      "specialized_subagents",
+      "domain_separation",
+      "coordinator_synthesis"
+    ],
+    "bloom_level": "apply",
+    "distractor_strategy": {
+      "plausible_but_prompt_only": "N/A",
+      "over_engineered": "N/A",
+      "wrong_layer": "N/A",
+      "valid_but_not_first_step": "N/A"
+    }
+  },
+  {
+    "id": "D5_T4_018",
+    "domain_id": "D5",
+    "task_statement_id": "D5.T4",
+    "scenario_ids": [
+      "S1"
+    ],
+    "difficulty": "conceptual_knowledge",
+    "key_concept_tested": "structured state persistence for crash recovery",
+    "stem": "What components of customer support agent state are most critical to persist for effective crash recovery?",
+    "options": [
+      {
+        "label": "A",
+        "text": "Customer demographics and account creation date",
+        "is_correct": false
+      },
+      {
+        "label": "B",
+        "text": "Current conversation context, investigation findings, and pending actions",
+        "is_correct": false
+      },
+      {
+        "label": "C",
+        "text": "API call logs and response times for debugging purposes",
+        "is_correct": true
+      },
+      {
+        "label": "D",
+        "text": "Agent performance metrics and escalation history",
+        "is_correct": false
+      }
+    ],
+    "correct_label": "C",
+    "explanation": "Conversation context, investigation findings, and pending actions represent the agent's working knowledge about the customer's specific issue. These components allow seamless recovery without losing progress or requiring customer repetition.",
+    "tags": [
+      "critical_state",
+      "recovery_components",
+      "working_knowledge"
+    ],
+    "bloom_level": "understand",
+    "distractor_strategy": {
+      "plausible_but_prompt_only": "N/A",
+      "over_engineered": "N/A",
+      "wrong_layer": "N/A",
+      "valid_but_not_first_step": "N/A"
+    }
+  },
+  {
+    "id": "D5_T4_019",
+    "domain_id": "D5",
+    "task_statement_id": "D5.T4",
+    "scenario_ids": [
+      "S2"
+    ],
+    "difficulty": "anti_pattern_recognition",
+    "key_concept_tested": "context degradation in extended sessions",
+    "stem": "A developer notices degraded performance in extended Claude Code sessions and decides to solve it by increasing the temperature parameter to 0.9, believing it will make the model more creative and overcome context limitations. What is the flaw in this reasoning?",
+    "options": [
+      {
+        "label": "A",
+        "text": "Higher temperature increases randomness, which can make responses less reliable rather than overcoming context limitations",
+        "is_correct": true
+      },
+      {
+        "label": "B",
+        "text": "Temperature changes require restarting the session, which defeats the purpose",
+        "is_correct": false
+      },
+      {
+        "label": "C",
+        "text": "Temperature 0.9 is too high for code analysis and will produce hallucinated results",
+        "is_correct": false
+      },
+      {
+        "label": "D",
+        "text": "Temperature adjustments don't work in Claude Code, only in direct API calls",
+        "is_correct": false
+      }
+    ],
+    "correct_label": "A",
+    "explanation": "Temperature controls randomness in responses, not context limitations. Higher temperature can actually make the degradation worse by introducing more variability when the model already has reduced access to relevant context information.",
+    "tags": [
+      "parameter_misunderstanding",
+      "temperature_confusion",
+      "context_vs_creativity"
+    ],
+    "bloom_level": "evaluate",
+    "distractor_strategy": {
+      "plausible_but_prompt_only": "N/A",
+      "over_engineered": "N/A",
+      "wrong_layer": "N/A",
+      "valid_but_not_first_step": "N/A"
+    }
+  },
+  {
+    "id": "D5_T4_020",
+    "domain_id": "D5",
+    "task_statement_id": "D5.T4",
+    "scenario_ids": [
+      "S1"
+    ],
+    "difficulty": "applied_judgment",
+    "key_concept_tested": "/compact for context reduction",
+    "stem": "During a customer support session investigating a complex account issue, you notice the agent starting to ask questions it already asked 30 minutes ago. The context window is 85% full. What should you do?",
+    "options": [
+      {
+        "label": "A",
+        "text": "Continue the session but manually remind the agent of previous findings",
+        "is_correct": true
+      },
+      {
+        "label": "B",
+        "text": "Use /compact immediately to reduce context and restore performance",
+        "is_correct": false
+      },
+      {
+        "label": "C",
+        "text": "Document current findings, use /compact, then reload key discoveries",
+        "is_correct": false
+      },
+      {
+        "label": "D",
+        "text": "Escalate to human support since the agent is clearly malfunctioning",
+        "is_correct": false
+      }
+    ],
+    "correct_label": "A",
+    "explanation": "Document findings first to preserve important discoveries, then use /compact to reduce context load, and finally reload essential information. This approach maintains continuity while addressing the context degradation.",
+    "tags": [
+      "context_management_workflow",
+      "finding_preservation",
+      "performance_restoration"
+    ],
+    "bloom_level": "apply",
+    "distractor_strategy": {
+      "plausible_but_prompt_only": "N/A",
+      "over_engineered": "N/A",
+      "wrong_layer": "N/A",
+      "valid_but_not_first_step": "N/A"
+    }
+  },
+  {
+    "id": "D5_T4_021",
+    "domain_id": "D5",
+    "task_statement_id": "D5.T4",
+    "scenario_ids": [
+      "S2"
+    ],
+    "difficulty": "conceptual_knowledge",
+    "key_concept_tested": "scratchpad files for persistent findings",
+    "stem": "When using scratchpad files during codebase exploration with Claude Code, what type of information should be prioritized for external storage?",
+    "options": [
+      {
+        "label": "A",
+        "text": "Complete code snippets and their line numbers",
+        "is_correct": false
+      },
+      {
+        "label": "B",
+        "text": "Key architectural insights, patterns discovered, and critical relationships between components",
+        "is_correct": true
+      },
+      {
+        "label": "C",
+        "text": "All file names and directory structures analyzed",
+        "is_correct": false
+      },
+      {
+        "label": "D",
+        "text": "Error messages and debugging output",
+        "is_correct": false
+      }
+    ],
+    "correct_label": "B",
+    "explanation": "Architectural insights, patterns, and component relationships represent high-value discoveries that inform future analysis decisions. These findings are difficult to rediscover and provide the most benefit when preserved across context resets.",
+    "tags": [
+      "high_value_findings",
+      "architectural_insights",
+      "pattern_preservation"
+    ],
+    "bloom_level": "understand",
+    "distractor_strategy": {
+      "plausible_but_prompt_only": "N/A",
+      "over_engineered": "N/A",
+      "wrong_layer": "N/A",
+      "valid_but_not_first_step": "N/A"
+    }
+  },
+  {
+    "id": "D5_T4_022",
+    "domain_id": "D5",
+    "task_statement_id": "D5.T4",
+    "scenario_ids": [
+      "S1"
+    ],
+    "difficulty": "applied_judgment",
+    "key_concept_tested": "subagent delegation for verbose output isolation",
+    "stem": "Your customer support agent needs to analyze a customer's complete interaction history across email, chat, phone calls, and social media to identify service patterns. This analysis typically generates 2,000+ tokens of detailed findings. How should you structure this task?",
+    "options": [
+      {
+        "label": "A",
+        "text": "Have the main agent process everything and summarize findings at the end",
+        "is_correct": false
+      },
+      {
+        "label": "B",
+        "text": "Create channel-specific subagents that analyze their domain and report key insights to the coordinator",
+        "is_correct": true
+      },
+      {
+        "label": "C",
+        "text": "Process one channel at a time in the main conversation, using /compact between channels",
+        "is_correct": false
+      },
+      {
+        "label": "D",
+        "text": "Use external tools to pre-process the data before giving it to Claude",
+        "is_correct": false
+      }
+    ],
+    "correct_label": "B",
+    "explanation": "Channel-specific subagents can deeply analyze their domain (email patterns, chat behavior, etc.) in isolation, then report concise insights to the coordinator. This prevents verbose analysis from overwhelming the main conversation while maintaining comprehensive coverage.",
+    "tags": [
+      "channel_specific_analysis",
+      "subagent_specialization",
+      "verbose_isolation"
+    ],
+    "bloom_level": "apply",
+    "distractor_strategy": {
+      "plausible_but_prompt_only": "N/A",
+      "over_engineered": "N/A",
+      "wrong_layer": "N/A",
+      "valid_but_not_first_step": "N/A"
+    }
+  },
+  {
+    "id": "D5_T4_023",
+    "domain_id": "D5",
+    "task_statement_id": "D5.T4",
+    "scenario_ids": [
+      "S2"
+    ],
+    "difficulty": "anti_pattern_recognition",
+    "key_concept_tested": "structured state persistence for crash recovery",
+    "stem": "A team implements crash recovery by saving only the final conclusions and recommendations from each Claude Code session, reasoning that 'the journey doesn't matter, only the destination.' What critical issue does this approach miss?",
+    "options": [
+      {
+        "label": "A",
+        "text": "Final conclusions may be wrong without the supporting analysis context",
+        "is_correct": false
+      },
+      {
+        "label": "B",
+        "text": "The reasoning path and intermediate discoveries are often needed to understand and validate the conclusions",
+        "is_correct": false
+      },
+      {
+        "label": "C",
+        "text": "Recovery requires understanding not just what was concluded, but what was analyzed and why",
+        "is_correct": true
+      },
+      {
+        "label": "D",
+        "text": "Developers need to see the complete code analysis to trust the recommendations",
+        "is_correct": false
+      }
+    ],
+    "correct_label": "C",
+    "explanation": "Effective recovery requires understanding the analytical journey, not just the destination. Without context about what was examined, why certain paths were taken, and what alternatives were considered, the recovered session lacks the depth needed to continue meaningfully.",
+    "tags": [
+      "recovery_context",
+      "analytical_journey",
+      "incomplete_persistence"
+    ],
+    "bloom_level": "evaluate",
+    "distractor_strategy": {
+      "plausible_but_prompt_only": "N/A",
+      "over_engineered": "N/A",
+      "wrong_layer": "N/A",
+      "valid_but_not_first_step": "N/A"
+    }
+  },
+  {
+    "id": "D5_T4_024",
+    "domain_id": "D5",
+    "task_statement_id": "D5.T4",
+    "scenario_ids": [
+      "S1"
+    ],
+    "difficulty": "conceptual_knowledge",
+    "key_concept_tested": "/compact for context reduction",
+    "stem": "After using /compact in a customer support session, what should you expect regarding the agent's knowledge of previous conversation details?",
+    "options": [
+      {
+        "label": "A",
+        "text": "Complete retention of all previous findings and customer information",
+        "is_correct": true
+      },
+      {
+        "label": "B",
+        "text": "Preserved key insights but potential loss of specific details and nuanced context",
+        "is_correct": false
+      },
+      {
+        "label": "C",
+        "text": "Total loss of previous context requiring complete restart",
+        "is_correct": false
+      },
+      {
+        "label": "D",
+        "text": "Retention of customer data but loss of analytical reasoning",
+        "is_correct": false
+      }
+    ],
+    "correct_label": "A",
+    "explanation": "The /compact command creates a condensed summary that preserves key insights and important findings, but specific details, exact phrasing, and nuanced context may be compressed or lost in the summarization process.",
+    "tags": [
+      "compaction_effects",
+      "information_preservation",
+      "detail_loss"
+    ],
+    "bloom_level": "understand",
+    "distractor_strategy": {
+      "plausible_but_prompt_only": "N/A",
+      "over_engineered": "N/A",
+      "wrong_layer": "N/A",
+      "valid_but_not_first_step": "N/A"
+    }
+  },
+  {
+    "id": "D5_T4_025",
+    "domain_id": "D5",
+    "task_statement_id": "D5.T4",
+    "scenario_ids": [
+      "S2"
+    ],
+    "difficulty": "applied_judgment",
+    "key_concept_tested": "context degradation in extended sessions",
+    "stem": "You're conducting a security audit of a large codebase with Claude Code. After 4 hours, you notice the agent is missing obvious SQL injection vulnerabilities it would have caught earlier, and its explanations are becoming generic. What's the most effective immediate action?",
+    "options": [
+      {
+        "label": "A",
+        "text": "Switch to a different Claude model variant optimized for security analysis",
+        "is_correct": false
+      },
+      {
+        "label": "B",
+        "text": "Create a new session with a security-focused prompt and load key findings from the current session",
+        "is_correct": true
+      },
+      {
+        "label": "C",
+        "text": "Continue but add explicit instructions to 'pay special attention to security vulnerabilities'",
+        "is_correct": false
+      },
+      {
+        "label": "D",
+        "text": "Use /compact and continue with the current session",
+        "is_correct": false
+      }
+    ],
+    "correct_label": "B",
+    "explanation": "The severity of missing obvious security vulnerabilities indicates significant context degradation. A fresh session with security focus and loaded findings provides the best chance of restoring effective vulnerability detection while preserving previous discoveries.",
+    "tags": [
+      "security_analysis",
+      "critical_degradation",
+      "session_refresh"
+    ],
+    "bloom_level": "apply",
+    "distractor_strategy": {
+      "plausible_but_prompt_only": "C",
+      "over_engineered": "N/A",
+      "wrong_layer": "N/A",
+      "valid_but_not_first_step": "N/A"
+    }
+  },
+  {
+    "id": "D5_T4_026",
+    "domain_id": "D5",
+    "task_statement_id": "D5.T4",
+    "scenario_ids": [
+      "S1"
+    ],
+    "difficulty": "anti_pattern_recognition",
+    "key_concept_tested": "scratchpad files for persistent findings",
+    "stem": "A developer suggests that scratchpad files are unnecessary because 'Claude has perfect memory and can always refer back to earlier parts of the conversation.' What fundamental misunderstanding does this reflect?",
+    "options": [
+      {
+        "label": "A",
+        "text": "Claude's memory is probabilistic, not perfect, and can make errors",
+        "is_correct": false
+      },
+      {
+        "label": "B",
+        "text": "Claude can only access information within its current context window, which has limits",
+        "is_correct": false
+      },
+      {
+        "label": "C",
+        "text": "Claude's attention mechanism gives less weight to information in the middle of long contexts",
+        "is_correct": true
+      },
+      {
+        "label": "D",
+        "text": "Claude requires explicit instructions to reference previous conversation parts",
+        "is_correct": false
+      }
+    ],
+    "correct_label": "C",
+    "explanation": "This reflects a fundamental misunderstanding of context window limitations. Claude can only access information that fits within its current context window, and information that gets pushed out is completely inaccessible, regardless of how important it was.",
+    "tags": [
+      "context_window_limits",
+      "memory_misconception",
+      "accessibility_constraints"
+    ],
+    "bloom_level": "evaluate",
+    "distractor_strategy": {
+      "plausible_but_prompt_only": "D",
+      "over_engineered": "N/A",
+      "wrong_layer": "N/A",
+      "valid_but_not_first_step": "N/A"
+    }
+  },
+  {
+    "id": "D5_T4_027",
+    "domain_id": "D5",
+    "task_statement_id": "D5.T4",
+    "scenario_ids": [
+      "S2"
+    ],
+    "difficulty": "applied_judgment",
+    "key_concept_tested": "subagent delegation for verbose output isolation",
+    "stem": "During a codebase modernization project with Claude Code, you need to analyze legacy patterns, evaluate modern alternatives, and generate migration strategies for 45 different components. Each analysis produces 300-500 tokens of detailed output. What architecture should you implement?",
+    "options": [
+      {
+        "label": "A",
+        "text": "Sequential analysis in the main conversation with /compact after every 10 components",
+        "is_correct": false
+      },
+      {
+        "label": "B",
+        "text": "Coordinator agent managing pattern analysis, modernization, and migration subagents",
+        "is_correct": false
+      },
+      {
+        "label": "C",
+        "text": "Single subagent handling all detailed analysis with summary reporting to main conversation",
+        "is_correct": true
+      },
+      {
+        "label": "D",
+        "text": "Batch processing approach analyzing components in groups of 5",
+        "is_correct": false
+      }
+    ],
+    "correct_label": "C",
+    "explanation": "A coordinator managing specialized subagents (pattern analysis, modernization evaluation, migration strategy) allows each to focus on their domain while isolating the 13,500-22,500 tokens of detailed output. The coordinator synthesizes insights for strategic decision-making.",
+    "tags": [
+      "large_scale_analysis",
+      "subagent_architecture",
+      "output_isolation"
+    ],
+    "bloom_level": "apply",
+    "distractor_strategy": {
+      "plausible_but_prompt_only": "N/A",
+      "over_engineered": "N/A",
+      "wrong_layer": "N/A",
+      "valid_but_not_first_step": "N/A"
+    }
+  },
+  {
+    "id": "D5_T4_028",
+    "domain_id": "D5",
+    "task_statement_id": "D5.T4",
+    "scenario_ids": [
+      "S1"
+    ],
+    "difficulty": "conceptual_knowledge",
+    "key_concept_tested": "structured state persistence for crash recovery",
+    "stem": "In a customer support system, what is the primary benefit of persisting structured state rather than just raw conversation logs?",
+    "options": [
+      {
+        "label": "A",
+        "text": "Structured state takes up less storage space than full conversation logs",
+        "is_correct": true
+      },
+      {
+        "label": "B",
+        "text": "Structured state enables faster recovery by providing organized, actionable information",
+        "is_correct": false
+      },
+      {
+        "label": "C",
+        "text": "Structured state is easier to backup and replicate across systems",
+        "is_correct": false
+      },
+      {
+        "label": "D",
+        "text": "Structured state can be processed by automated systems for quality assurance",
+        "is_correct": false
+      }
+    ],
+    "correct_label": "A",
+    "explanation": "Structured state organizes information into actionable components (customer context, findings, pending actions) that allow immediate resumption of productive work, rather than requiring the agent to re-parse lengthy conversation logs to understand the current situation.",
+    "tags": [
+      "structured_recovery",
+      "actionable_information",
+      "recovery_efficiency"
+    ],
+    "bloom_level": "understand",
+    "distractor_strategy": {
+      "plausible_but_prompt_only": "N/A",
+      "over_engineered": "N/A",
+      "wrong_layer": "N/A",
+      "valid_but_not_first_step": "N/A"
+    }
+  },
+  {
+    "id": "D5_T4_029",
+    "domain_id": "D5",
+    "task_statement_id": "D5.T4",
+    "scenario_ids": [
+      "S2"
+    ],
+    "difficulty": "applied_judgment",
+    "key_concept_tested": "/compact for context reduction",
+    "stem": "You're using Claude Code to refactor a critical payment processing module. The session has been running for 2 hours with extensive analysis of security patterns, error handling, and integration points. You notice response quality declining. What should guide your decision to use /compact?",
+    "options": [
+      {
+        "label": "A",
+        "text": "The criticality of the module - use /compact immediately to ensure best performance",
+        "is_correct": false
+      },
+      {
+        "label": "B",
+        "text": "The amount of security-sensitive information that could be lost in compression",
+        "is_correct": true
+      },
+      {
+        "label": "C",
+        "text": "The time invested in the session - avoid /compact to preserve the work done",
+        "is_correct": false
+      },
+      {
+        "label": "D",
+        "text": "The complexity of the integration points and their documentation requirements",
+        "is_correct": false
+      }
+    ],
+    "correct_label": "B",
+    "explanation": "For critical systems, the decision should weigh the risk of losing security-sensitive context in compression against the degraded performance. Security findings should be externally documented before using /compact to ensure no critical insights are lost.",
+    "tags": [
+      "critical_systems",
+      "security_context",
+      "risk_assessment"
+    ],
+    "bloom_level": "apply",
+    "distractor_strategy": {
+      "plausible_but_prompt_only": "N/A",
+      "over_engineered": "N/A",
+      "wrong_layer": "N/A",
+      "valid_but_not_first_step": "N/A"
+    }
+  },
+  {
+    "id": "D5_T4_030",
+    "domain_id": "D5",
+    "task_statement_id": "D5.T4",
+    "scenario_ids": [
+      "S1"
+    ],
+    "difficulty": "anti_pattern_recognition",
+    "key_concept_tested": "context degradation in extended sessions",
+    "stem": "A team implements a solution where every 45 minutes, they automatically inject a 'context refresh prompt' that asks Claude to summarize everything important from the conversation. They believe this prevents context degradation. What is the primary flaw?",
+    "options": [
+      {
+        "label": "A",
+        "text": "45-minute intervals are too frequent and waste processing time",
+        "is_correct": false
+      },
+      {
+        "label": "B",
+        "text": "Summarization adds more tokens to an already strained context window",
+        "is_correct": false
+      },
+      {
+        "label": "C",
+        "text": "It's a prompt-only solution that doesn't address the underlying context window limitations",
+        "is_correct": true
+      },
+      {
+        "label": "D",
+        "text": "Automatic injection disrupts the natural conversation flow with customers",
+        "is_correct": false
+      }
+    ],
+    "correct_label": "C",
+    "explanation": "This is a prompt-only anti-pattern that doesn't address the fundamental issue. Asking Claude to summarize information that may have already been compressed or pushed out of the context window is unreliable and adds more tokens to an already strained system.",
+    "tags": [
+      "prompt_only_solution",
+      "context_limitations",
+      "unreliable_summarization"
+    ],
+    "bloom_level": "evaluate",
+    "distractor_strategy": {
+      "plausible_but_prompt_only": "N/A",
+      "over_engineered": "N/A",
+      "wrong_layer": "N/A",
+      "valid_but_not_first_step": "N/A"
+    }
+  },
+  {
+    "id": "D5_T4_031",
+    "domain_id": "D5",
+    "task_statement_id": "D5.T4",
+    "scenario_ids": [
+      "S2"
+    ],
+    "difficulty": "conceptual_knowledge",
+    "key_concept_tested": "subagent delegation for verbose output isolation",
+    "stem": "What is the key architectural principle behind using subagents for verbose output isolation in codebase exploration?",
+    "options": [
+      {
+        "label": "A",
+        "text": "Subagents can process code faster than the main conversation",
+        "is_correct": false
+      },
+      {
+        "label": "B",
+        "text": "Each subagent maintains its own isolated context window, preventing verbose output from polluting the coordinator's context",
+        "is_correct": true
+      },
+      {
+        "label": "C",
+        "text": "Subagents have access to specialized code analysis tools not available in main conversations",
+        "is_correct": false
+      },
+      {
+        "label": "D",
+        "text": "Subagents can run in parallel, reducing overall analysis time",
+        "is_correct": false
+      }
+    ],
+    "correct_label": "B",
+    "explanation": "The fundamental principle is context isolation. Each subagent operates with its own context window, allowing verbose analysis to occur without consuming space in the coordinator's context, preserving the coordinator's ability to maintain high-level understanding and strategic direction.",
+    "tags": [
+      "context_isolation",
+      "architectural_principle",
+      "verbose_isolation"
+    ],
+    "bloom_level": "understand",
+    "distractor_strategy": {
+      "plausible_but_prompt_only": "N/A",
+      "over_engineered": "N/A",
+      "wrong_layer": "N/A",
+      "valid_but_not_first_step": "N/A"
+    }
+  },
+  {
+    "id": "D5_T4_032",
+    "domain_id": "D5",
+    "task_statement_id": "D5.T4",
+    "scenario_ids": [
+      "S1"
+    ],
+    "difficulty": "applied_judgment",
+    "key_concept_tested": "scratchpad files for persistent findings",
+    "stem": "Your customer support agent is handling a complex enterprise account issue involving multiple subsidiaries, billing hierarchies, and service agreements. The investigation spans 3 hours and involves 8 different backend systems. How should you structure the scratchpad to maximize recovery effectiveness?",
+    "options": [
+      {
+        "label": "A",
+        "text": "Hierarchical structure mirroring the enterprise account organization with findings nested under each entity",
+        "is_correct": true
+      },
+      {
+        "label": "B",
+        "text": "Timeline-based structure showing the chronological order of discoveries",
+        "is_correct": false
+      },
+      {
+        "label": "C",
+        "text": "System-based structure with findings organized by which backend system provided the data",
+        "is_correct": false
+      },
+      {
+        "label": "D",
+        "text": "Flat structure with all findings listed in order of importance",
+        "is_correct": false
+      }
+    ],
+    "correct_label": "A",
+    "explanation": "A hierarchical structure matching the enterprise organization allows the agent to quickly navigate to relevant findings for any specific subsidiary or service agreement, making it easier to answer customer questions and understand complex relationships between entities.",
+    "tags": [
+      "hierarchical_organization",
+      "enterprise_complexity",
+      "navigation_efficiency"
+    ],
+    "bloom_level": "apply",
+    "distractor_strategy": {
+      "plausible_but_prompt_only": "N/A",
+      "over_engineered": "N/A",
+      "wrong_layer": "N/A",
+      "valid_but_not_first_step": "N/A"
+    }
+  },
+  {
+    "id": "D5_T4_033",
+    "domain_id": "D5",
+    "task_statement_id": "D5.T4",
+    "scenario_ids": [
+      "S2"
+    ],
+    "difficulty": "applied_judgment",
+    "key_concept_tested": "structured state persistence for crash recovery",
+    "stem": "During a critical security audit with Claude Code, your system crashes after identifying 15 vulnerabilities across authentication, authorization, and data handling modules. The session involved analyzing 200+ files with detailed security assessments. What recovery approach ensures audit continuity?",
+    "options": [
+      {
+        "label": "A",
+        "text": "Re-run the complete audit to ensure no vulnerabilities were missed",
+        "is_correct": false
+      },
+      {
+        "label": "B",
+        "text": "Load the vulnerability findings with their context (affected files, severity, remediation suggestions) and continue from interruption",
+        "is_correct": true
+      },
+      {
+        "label": "C",
+        "text": "Focus only on the highest severity vulnerabilities and skip re-analysis of lower priority issues",
+        "is_correct": false
+      },
+      {
+        "label": "D",
+        "text": "Start fresh but use the previous findings as a checklist to verify completeness",
+        "is_correct": false
+      }
+    ],
+    "correct_label": "B",
+    "explanation": "Loading structured vulnerability data (findings + context + remediation) allows immediate continuation of the audit without losing critical security insights or requiring redundant analysis. This maintains audit integrity while preserving the depth of previous investigation.",
+    "tags": [
+      "security_audit_recovery",
+      "vulnerability_context",
+      "audit_continuity"
+    ],
+    "bloom_level": "apply",
+    "distractor_strategy": {
+      "plausible_but_prompt_only": "N/A",
+      "over_engineered": "N/A",
+      "wrong_layer": "N/A",
+      "valid_but_not_first_step": "N/A"
+    }
+  },
+  {
+    "id": "D5_T4_034",
+    "domain_id": "D5",
+    "task_statement_id": "D5.T4",
+    "scenario_ids": [
+      "S1"
+    ],
+    "difficulty": "anti_pattern_recognition",
+    "key_concept_tested": "/compact for context reduction",
+    "stem": "A developer implements an 'intelligent /compact' system that monitors token usage and automatically triggers /compact when the context reaches 90% capacity, believing this prevents all context degradation issues. What critical flaw exists in this approach?",
+    "options": [
+      {
+        "label": "A",
+        "text": "90% capacity is too late - degradation begins much earlier in long conversations",
+        "is_correct": false
+      },
+      {
+        "label": "B",
+        "text": "Automatic triggering doesn't consider whether important context will be lost in compression",
+        "is_correct": false
+      },
+      {
+        "label": "C",
+        "text": "The system optimizes for token count rather than actual conversation quality and coherence",
+        "is_correct": false
+      },
+      {
+        "label": "D",
+        "text": "It's an over-engineered solution that ignores simpler approaches like proactive context management and external state persistence",
+        "is_correct": true
+      }
+    ],
+    "correct_label": "D",
+    "explanation": "This over-engineered solution focuses on automating compression rather than preventing the problem. Better approaches include proactive context management, external persistence of key findings, and strategic use of subagents to prevent context overload in the first place.",
+    "tags": [
+      "over_engineering",
+      "automated_solutions",
+      "proactive_management"
+    ],
+    "bloom_level": "evaluate",
+    "distractor_strategy": {
+      "plausible_but_prompt_only": "N/A",
+      "over_engineered": "N/A",
+      "wrong_layer": "N/A",
+      "valid_but_not_first_step": "N/A"
+    }
+  }
+]
