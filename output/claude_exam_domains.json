@@ -1,0 +1,42 @@
+[
+  {
+    "exam_id": "claude-architect-foundations",
+    "domain_id": "D1",
+    "name": "Agentic Architecture & Orchestration",
+    "weight_pct": 27,
+    "questions_in_25": 7,
+    "sequence": 1
+  },
+  {
+    "exam_id": "claude-architect-foundations",
+    "domain_id": "D2",
+    "name": "Tool Design & MCP Integration",
+    "weight_pct": 18,
+    "questions_in_25": 5,
+    "sequence": 2
+  },
+  {
+    "exam_id": "claude-architect-foundations",
+    "domain_id": "D3",
+    "name": "Claude Code Configuration & Workflows",
+    "weight_pct": 20,
+    "questions_in_25": 5,
+    "sequence": 3
+  },
+  {
+    "exam_id": "claude-architect-foundations",
+    "domain_id": "D4",
+    "name": "Prompt Engineering & Structured Output",
+    "weight_pct": 20,
+    "questions_in_25": 5,
+    "sequence": 4
+  },
+  {
+    "exam_id": "claude-architect-foundations",
+    "domain_id": "D5",
+    "name": "Context Management & Reliability",
+    "weight_pct": 15,
+    "questions_in_25": 3,
+    "sequence": 5
+  }
+]

@@ -1,0 +1,154 @@
+[
+  {
+    "exam_id": "google-professional-mle",
+    "title": "Google Cloud Certified Professional Machine Learning Engineer",
+    "subtitle": "Professional",
+    "description": "Design, build, productionize, and optimize ML solutions using Vertex AI, BigQuery ML, TensorFlow, Kubeflow, and generative AI on Google Cloud.",
+    "domains": 6,
+    "passing_pct": 70,
+    "available": false,
+    "format": "exam",
+    "duration_mins": 120,
+    "total_questions": 60,
+    "exam_fee_usd": 200,
+    "experience_recommended": "3+ years industry, 1+ year GCP",
+    "created_at": {
+      "$date": "2024-10-01T00:00:00.000Z"
+    }
+  },
+  {
+    "exam_id": "google-genai-leader",
+    "title": "Google Cloud Certified Generative AI Leader",
+    "subtitle": "Foundational",
+    "description": "Generative AI fundamentals, Google Cloud AI offerings, model optimization techniques, and business strategies for gen AI adoption.",
+    "domains": 4,
+    "passing_pct": 75,
+    "available": false,
+    "format": "exam",
+    "duration_mins": 90,
+    "total_questions": 50,
+    "exam_fee_usd": 200,
+    "created_at": {
+      "$date": "2024-10-01T00:00:00.000Z"
+    }
+  },
+  {
+    "exam_id": "google-professional-cloud-architect",
+    "title": "Google Cloud Certified Professional Cloud Architect",
+    "subtitle": "Professional",
+    "description": "Design, develop, and manage robust, secure, scalable, and cost-effective cloud solutions using the Google Cloud Well-Architected Framework across hybrid and multicloud environments.",
+    "domains": 6,
+    "passing_pct": 70,
+    "available": false,
+    "format": "exam",
+    "duration_mins": 120,
+    "total_questions": 60,
+    "exam_fee_usd": 200,
+    "experience_recommended": "3+ years industry, 1+ year Google Cloud",
+    "created_at": {
+      "$date": "2024-11-01T00:00:00.000Z"
+    }
+  },
+  {
+    "exam_id": "google-professional-cloud-developer",
+    "title": "Google Cloud Certified Professional Cloud Developer",
+    "subtitle": "Professional",
+    "description": "Build and deploy scalable, secure, and highly available cloud-native applications using Google-recommended tools, managed services, CI/CD, and next-generation databases.",
+    "domains": 4,
+    "passing_pct": 70,
+    "available": false,
+    "format": "exam",
+    "duration_mins": 120,
+    "total_questions": 60,
+    "exam_fee_usd": 200,
+    "experience_recommended": "3+ years industry, 1+ year Google Cloud",
+    "created_at": {
+      "$date": "2024-10-01T00:00:00.000Z"
+    }
+  },
+  {
+    "exam_id": "google-professional-data-engineer",
+    "title": "Google Cloud Certified Professional Data Engineer",
+    "subtitle": "Professional",
+    "description": "Design, build, operationalize, secure, and optimize data processing systems including pipelines, storage, analytics, and ML-ready data platforms on Google Cloud.",
+    "domains": 5,
+    "passing_pct": 70,
+    "available": false,
+    "format": "exam",
+    "duration_mins": 120,
+    "total_questions": 60,
+    "exam_fee_usd": 200,
+    "experience_recommended": "3+ years industry, 1+ year Google Cloud",
+    "created_at": {
+      "$date": "2024-10-01T00:00:00.000Z"
+    }
+  },
+  {
+    "exam_id": "google-professional-cloud-devops-engineer",
+    "title": "Google Cloud Certified Professional Cloud DevOps Engineer",
+    "subtitle": "Professional",
+    "description": "Implement DevOps processes and CI/CD pipelines, apply SRE practices, build observability solutions, and optimize performance and cost across Google Cloud environments.",
+    "domains": 5,
+    "passing_pct": 70,
+    "available": false,
+    "format": "exam",
+    "duration_mins": 120,
+    "total_questions": 60,
+    "exam_fee_usd": 200,
+    "experience_recommended": "3+ years industry, 1+ year Google Cloud",
+    "created_at": {
+      "$date": "2024-10-01T00:00:00.000Z"
+    }
+  },
+  {
+    "exam_id": "google-professional-cloud-security-engineer",
+    "title": "Google Cloud Certified Professional Cloud Security Engineer",
+    "subtitle": "Professional",
+    "description": "Design and implement secure workloads and infrastructure on Google Cloud including IAM, network security, data protection, AI security, software supply chain, and compliance.",
+    "domains": 5,
+    "passing_pct": 70,
+    "available": false,
+    "format": "exam",
+    "duration_mins": 120,
+    "total_questions": 60,
+    "exam_fee_usd": 200,
+    "experience_recommended": "3+ years industry, 1+ year Google Cloud",
+    "created_at": {
+      "$date": "2024-10-01T00:00:00.000Z"
+    }
+  },
+  {
+    "exam_id": "google-professional-cloud-network-engineer",
+    "title": "Google Cloud Certified Professional Cloud Network Engineer",
+    "subtitle": "Professional",
+    "description": "Design, implement, and manage Google Cloud network infrastructure including VPCs, hybrid connectivity, load balancing, DNS, network security, and Network Intelligence Center.",
+    "domains": 6,
+    "passing_pct": 70,
+    "available": false,
+    "format": "exam",
+    "duration_mins": 120,
+    "total_questions": 60,
+    "exam_fee_usd": 200,
+    "experience_recommended": "3+ years industry, 1+ year Google Cloud",
+    "created_at": {
+      "$date": "2024-10-01T00:00:00.000Z"
+    }
+  },
+  {
+    "exam_id": "google-professional-cloud-database-engineer",
+    "title": "Google Cloud Certified Professional Cloud Database Engineer",
+    "subtitle": "Professional",
+    "description": "Design, create, manage, and troubleshoot Google Cloud databases including Cloud SQL, Spanner, Bigtable, AlloyDB, and Firestore for scalable and resilient data solutions.",
+    "domains": 4,
+    "passing_pct": 75,
+    "available": false,
+    "format": "exam",
+    "duration_mins": 120,
+    "total_questions": 60,
+    "exam_fee_usd": 200,
+    "experience_recommended": "5+ years database/IT experience, 2+ years Google Cloud",
+    "created_at": {
+      "$date": "2024-10-01T00:00:00.000Z"
+    }
+  }
+]

@@ -1,0 +1,860 @@
+[
+    {
+      "exam_id": "aws-cloud-practitioner",
+      "domain_id": "D1",
+      "sequence": 1,
+      "name": "Cloud Concepts",
+      "weight_pct": 24,
+      "questions_in_25": 6,
+      "key_topics": [
+        "Benefits of AWS Cloud: elasticity, scalability, high availability, agility",
+        "Cloud computing deployment models: public, private, hybrid",
+        "AWS Well-Architected Framework six pillars",
+        "AWS Cloud Adoption Framework (AWS CAF)",
+        "AWS global infrastructure: Regions, AZs, Edge Locations",
+        "Cloud economics: CapEx vs OpEx, economies of scale"
+      ]
+    },
+    {
+      "exam_id": "aws-cloud-practitioner",
+      "domain_id": "D2",
+      "sequence": 2,
+      "name": "Security and Compliance",
+      "weight_pct": 30,
+      "questions_in_25": 8,
+      "key_topics": [
+        "AWS Shared Responsibility Model",
+        "IAM: users, groups, roles, policies, MFA",
+        "AWS security services: Shield, WAF, GuardDuty, Inspector, Macie",
+        "Encryption: at rest and in transit, AWS KMS",
+        "Compliance programs: HIPAA, GDPR, SOC, PCI DSS",
+        "AWS Security Hub, CloudTrail, Config",
+        "Principle of least privilege, root account best practices"
+      ]
+    },
+    {
+      "exam_id": "aws-cloud-practitioner",
+      "domain_id": "D3",
+      "sequence": 3,
+      "name": "Cloud Technology and Services",
+      "weight_pct": 34,
+      "questions_in_25": 8,
+      "key_topics": [
+        "Compute: EC2 (instance types, pricing), Lambda, Elastic Beanstalk, ECS, EKS",
+        "Storage: S3 (storage classes, lifecycle), EBS, EFS, S3 Glacier",
+        "Databases: RDS, Aurora, DynamoDB, ElastiCache, Redshift",
+        "Networking: VPC, subnets, security groups, NACLs, Route 53, CloudFront",
+        "Developer tools: CloudFormation, CDK, CodePipeline, CodeDeploy",
+        "Management: CloudWatch, CloudTrail, AWS Config, Trusted Advisor, Systems Manager",
+        "Application integration: SQS, SNS, EventBridge, Step Functions, API Gateway",
+        "AI/ML services: SageMaker, Rekognition, Polly, Transcribe, Comprehend, Bedrock"
+      ]
+    },
+    {
+      "exam_id": "aws-cloud-practitioner",
+      "domain_id": "D4",
+      "sequence": 4,
+      "name": "Billing, Pricing, and Support",
+      "weight_pct": 12,
+      "questions_in_25": 3,
+      "key_topics": [
+        "AWS pricing models: On-Demand, Reserved Instances, Savings Plans, Spot",
+        "AWS Free Tier, pricing calculator, Cost Explorer",
+        "AWS Budgets, cost allocation tags, consolidated billing with Organizations",
+        "AWS Support plans: Basic, Developer, Business, Enterprise",
+        "AWS Trusted Advisor cost and performance recommendations"
+      ]
+    },
+    {
+      "exam_id": "aws-solutions-architect-associate",
+      "domain_id": "D1",
+      "sequence": 1,
+      "name": "Design Secure Architectures",
+      "weight_pct": 30,
+      "questions_in_25": 8,
+      "key_topics": [
+        "IAM best practices: users, groups, roles, policies, MFA, STS cross-account access",
+        "AWS SSO / IAM Identity Center, AWS Control Tower, Service Control Policies (SCPs)",
+        "VPC architecture: subnets, security groups, NACLs, NAT gateways, flow logs",
+        "Securing applications: WAF, Shield, Secrets Manager, Parameter Store",
+        "Secure external connections: Direct Connect, VPN, PrivateLink",
+        "Data security: S3 Object Lock, bucket policies, KMS, encryption strategies",
+        "AWS Certificate Manager, Cognito user pools"
+      ]
+    },
+    {
+      "exam_id": "aws-solutions-architect-associate",
+      "domain_id": "D2",
+      "sequence": 2,
+      "name": "Design Resilient Architectures",
+      "weight_pct": 26,
+      "questions_in_25": 6,
+      "key_topics": [
+        "Scalable and loosely coupled architectures: SQS, SNS, EventBridge, API Gateway",
+        "Multi-AZ and multi-Region HA patterns",
+        "Disaster recovery strategies: RPO/RTO, backup-restore, pilot light, warm standby, active-active",
+        "Auto Scaling groups, ELB (ALB/NLB/CLB) configurations",
+        "RDS Multi-AZ, Aurora Global Databases, read replicas",
+        "S3 Cross-Region Replication, versioning, lifecycle policies"
+      ]
+    },
+    {
+      "exam_id": "aws-solutions-architect-associate",
+      "domain_id": "D3",
+      "sequence": 3,
+      "name": "Design High-Performing Architectures",
+      "weight_pct": 24,
+      "questions_in_25": 6,
+      "key_topics": [
+        "High-performing storage: S3 (Intelligent-Tiering), EBS types, EFS, FSx, Storage Gateway",
+        "High-performing compute: EC2 types, Lambda, Fargate, Elastic Beanstalk",
+        "Caching: ElastiCache (Redis/Memcached), DAX, CloudFront",
+        "High-performing databases: DynamoDB (DAX, GSI), Aurora, RDS, Redshift",
+        "Networking performance: Global Accelerator, Route 53 routing policies, CloudFront",
+        "HPC and batch workloads: AWS Batch, EC2 placement groups"
+      ]
+    },
+    {
+      "exam_id": "aws-solutions-architect-associate",
+      "domain_id": "D4",
+      "sequence": 4,
+      "name": "Design Cost-Optimized Architectures",
+      "weight_pct": 20,
+      "questions_in_25": 5,
+      "key_topics": [
+        "Cost-optimized storage: S3 storage classes, EBS vs instance store, lifecycle policies",
+        "Cost-optimized compute: Spot Instances, Reserved Instances, Savings Plans, Graviton",
+        "Cost-optimized databases: Aurora Serverless, DynamoDB on-demand, RDS reserved",
+        "Cost-optimized networking: data transfer costs, VPC endpoints, NAT gateway optimization",
+        "AWS Cost Explorer, Budgets, Trusted Advisor cost recommendations",
+        "Right-sizing with Compute Optimizer"
+      ]
+    },
+    {
+      "exam_id": "aws-developer-associate",
+      "domain_id": "D1",
+      "sequence": 1,
+      "name": "Development with AWS Services",
+      "weight_pct": 32,
+      "questions_in_25": 8,
+      "key_topics": [
+        "AWS Lambda: triggers, event sources, layers, concurrency, cold starts, container images",
+        "API Gateway: REST vs HTTP vs WebSocket APIs, stages, throttling, caching",
+        "DynamoDB: data modeling, GSI/LSI, streams, TTL, transactions, PartiQL",
+        "S3: SDKs, pre-signed URLs, multipart upload, event notifications, CORS",
+        "Application integration: SQS (standard vs FIFO), SNS, EventBridge, Step Functions",
+        "AWS SDKs and CLI usage, pagination, batching, error handling (exponential backoff)",
+        "Elastic Beanstalk: deployment options, environment tiers",
+        "ECS/EKS/ECR: container development and deployment patterns"
+      ]
+    },
+    {
+      "exam_id": "aws-developer-associate",
+      "domain_id": "D2",
+      "sequence": 2,
+      "name": "Security",
+      "weight_pct": 26,
+      "questions_in_25": 7,
+      "key_topics": [
+        "Authentication and authorization: Cognito user pools vs identity pools",
+        "IAM roles for services, resource-based policies, cross-account access",
+        "Secure API calls: SigV4, pre-signed URLs, temporary credentials via STS",
+        "Secrets Manager vs Parameter Store: use cases and rotation",
+        "Encryption with KMS: envelope encryption, GenerateDataKey, CMKs",
+        "Application security: Certificate Manager, WAF, SSL/TLS configurations",
+        "Workload Identity Federation, least privilege for Lambda execution roles"
+      ]
+    },
+    {
+      "exam_id": "aws-developer-associate",
+      "domain_id": "D3",
+      "sequence": 3,
+      "name": "Deployment",
+      "weight_pct": 24,
+      "questions_in_25": 6,
+      "key_topics": [
+        "Deployment strategies: blue/green, canary, rolling, all-at-once",
+        "AWS CodePipeline: pipeline stages, source, build, deploy",
+        "AWS CodeBuild: buildspec.yml, build environments, artifacts, caching",
+        "AWS CodeDeploy: deployment groups, appspec.yml, hooks, rollback",
+        "SAM (Serverless Application Model): template syntax, local testing, transforms",
+        "CloudFormation: stacks, change sets, stack policies, cross-stack references",
+        "CDK: constructs, app structure, synthesize and deploy",
+        "Container deployment: ECS task definitions, service updates, ECR image management"
+      ]
+    },
+    {
+      "exam_id": "aws-developer-associate",
+      "domain_id": "D4",
+      "sequence": 4,
+      "name": "Troubleshooting and Optimization",
+      "weight_pct": 18,
+      "questions_in_25": 4,
+      "key_topics": [
+        "CloudWatch: metrics, logs, log insights, alarms, dashboards, custom metrics",
+        "AWS X-Ray: distributed tracing, segments, subsegments, sampling, service maps",
+        "Lambda optimization: memory tuning, timeout configuration, provisioned concurrency",
+        "API Gateway troubleshooting: 4XX vs 5XX errors, throttling, integration timeouts",
+        "DynamoDB optimization: capacity modes, hot partitions, GSI optimization",
+        "Cost optimization: Lambda right-sizing, S3 Intelligent-Tiering, Spot for batch"
+      ]
+    },
+    {
+      "exam_id": "aws-cloudops-engineer-associate",
+      "domain_id": "D1",
+      "sequence": 1,
+      "name": "Monitoring, Logging, and Remediation",
+      "weight_pct": 20,
+      "questions_in_25": 5,
+      "key_topics": [
+        "CloudWatch: metrics, alarms, composite alarms, dashboards, anomaly detection",
+        "CloudWatch Logs: log groups, metric filters, Logs Insights queries",
+        "EventBridge rules for automated remediation",
+        "Systems Manager Automation documents for remediation workflows",
+        "AWS Health: Personal Health Dashboard, service health events",
+        "AWS Config rules for compliance monitoring and auto-remediation"
+      ]
+    },
+    {
+      "exam_id": "aws-cloudops-engineer-associate",
+      "domain_id": "D2",
+      "sequence": 2,
+      "name": "Reliability and Business Continuity",
+      "weight_pct": 16,
+      "questions_in_25": 4,
+      "key_topics": [
+        "Multi-AZ vs Multi-Region strategies for HA",
+        "Backup strategies: S3 versioning, RDS automated backups, Aurora snapshots, EBS snapshots",
+        "Disaster recovery: RPO/RTO, backup-restore, pilot light, warm standby",
+        "Auto Scaling: target tracking, step scaling, scheduled scaling",
+        "ELB health checks, connection draining, cross-zone load balancing"
+      ]
+    },
+    {
+      "exam_id": "aws-cloudops-engineer-associate",
+      "domain_id": "D3",
+      "sequence": 3,
+      "name": "Deployment, Provisioning, and Automation",
+      "weight_pct": 18,
+      "questions_in_25": 5,
+      "key_topics": [
+        "EC2: AMIs, user data scripts, launch templates, placement groups",
+        "Systems Manager: Patch Manager, State Manager, Run Command, Session Manager",
+        "CloudFormation: stack operations, drift detection, StackSets, rollback triggers",
+        "Elastic Beanstalk: environment types, deployment policies, managed updates",
+        "Blue/green and canary deployments with ALB or Route 53 weighted routing"
+      ]
+    },
+    {
+      "exam_id": "aws-cloudops-engineer-associate",
+      "domain_id": "D4",
+      "sequence": 4,
+      "name": "Security and Compliance",
+      "weight_pct": 16,
+      "questions_in_25": 4,
+      "key_topics": [
+        "IAM: least privilege, permission boundaries, roles, service-linked roles",
+        "KMS: key policies, CMK rotation, encryption at rest and in transit",
+        "Secrets Manager and Parameter Store for credential management",
+        "CloudTrail: trail configuration, log validation, multi-region trails",
+        "AWS Config rules, conformance packs, security posture management",
+        "Inspector for vulnerability assessment, Security Hub aggregation"
+      ]
+    },
+    {
+      "exam_id": "aws-cloudops-engineer-associate",
+      "domain_id": "D5",
+      "sequence": 5,
+      "name": "Networking and Content Delivery",
+      "weight_pct": 18,
+      "questions_in_25": 4,
+      "key_topics": [
+        "VPC: subnets, route tables, internet gateways, NAT gateways, VPC peering",
+        "Security groups vs NACLs: stateful vs stateless filtering",
+        "Route 53: routing policies (failover, latency, geolocation, weighted), health checks",
+        "CloudFront: distributions, cache behaviors, origins, invalidations, signed URLs",
+        "Direct Connect and VPN: use cases, failover, BGP routing"
+      ]
+    },
+    {
+      "exam_id": "aws-cloudops-engineer-associate",
+      "domain_id": "D6",
+      "sequence": 6,
+      "name": "Cost and Performance Optimization",
+      "weight_pct": 12,
+      "questions_in_25": 3,
+      "key_topics": [
+        "EC2 cost optimization: Spot, Reserved, Savings Plans, right-sizing",
+        "S3 cost optimization: storage classes, lifecycle policies, Requester Pays",
+        "Cost Explorer, Budgets, Cost Allocation Tags, consolidated billing",
+        "Performance optimization: EBS volume types, ElastiCache, RDS read replicas",
+        "Trusted Advisor cost and performance checks"
+      ]
+    },
+    {
+      "exam_id": "aws-data-engineer-associate",
+      "domain_id": "D1",
+      "sequence": 1,
+      "name": "Data Ingestion and Transformation",
+      "weight_pct": 34,
+      "questions_in_25": 9,
+      "key_topics": [
+        "Data ingestion patterns: batch vs streaming, replayability, throughput, latency",
+        "Kinesis Data Streams: shards, producers, consumers, retention, enhanced fan-out",
+        "Kinesis Data Firehose: delivery streams, transformation with Lambda, destinations",
+        "AWS Glue: ETL jobs, crawlers, Data Catalog, job bookmarks, DynamicFrames",
+        "AWS DMS (Database Migration Service): replication instances, tasks, CDC",
+        "Apache Kafka / MSK: topics, partitions, consumer groups",
+        "Data transformation: Glue, EMR (Spark/Hadoop), Lambda, Step Functions orchestration",
+        "AWS Batch for batch processing workloads",
+        "Data formats: JSON, Parquet, ORC, Avro, CSV — performance trade-offs"
+      ]
+    },
+    {
+      "exam_id": "aws-data-engineer-associate",
+      "domain_id": "D2",
+      "sequence": 2,
+      "name": "Data Store Management",
+      "weight_pct": 26,
+      "questions_in_25": 6,
+      "key_topics": [
+        "S3: data lake design, storage classes, S3 Select, lifecycle policies, object versioning",
+        "Redshift: cluster architecture, distribution keys, sort keys, AQUA, Spectrum",
+        "DynamoDB: table design for analytics, streams, global tables, on-demand scaling",
+        "RDS and Aurora: read replicas, Aurora Serverless, zero-ETL integrations",
+        "AWS Lake Formation: data lake setup, permissions, governed tables, data sharing",
+        "Apache Iceberg, Hudi, Delta Lake on S3: table formats for data lake",
+        "Data lifecycle management: S3 lifecycle, Glacier archival, retention policies"
+      ]
+    },
+    {
+      "exam_id": "aws-data-engineer-associate",
+      "domain_id": "D3",
+      "sequence": 3,
+      "name": "Data Operations and Support",
+      "weight_pct": 22,
+      "questions_in_25": 6,
+      "key_topics": [
+        "Monitoring data pipelines: CloudWatch metrics and alarms, EventBridge rules",
+        "Glue job monitoring: job runs, error handling, job bookmarks",
+        "Orchestration: AWS Step Functions, MWAA (Managed Workflows for Apache Airflow)",
+        "Debugging and troubleshooting: Kinesis, Glue, EMR, Redshift performance",
+        "Data quality: Glue DataBrew, Deequ, Great Expectations patterns",
+        "Cost optimization: right-sizing EMR clusters, Glue job cost, Redshift reserved nodes"
+      ]
+    },
+    {
+      "exam_id": "aws-data-engineer-associate",
+      "domain_id": "D4",
+      "sequence": 4,
+      "name": "Data Security and Governance",
+      "weight_pct": 18,
+      "questions_in_25": 4,
+      "key_topics": [
+        "Data encryption: S3 SSE-S3/SSE-KMS/SSE-C, Redshift encryption, KMS key policies",
+        "Access control: IAM policies for data services, S3 bucket policies, Lake Formation permissions",
+        "Data masking and PII: Glue DataBrew, Macie for S3, Comprehend for PII detection",
+        "Column-level and row-level security in Redshift and Lake Formation",
+        "VPC endpoints for S3 and other data services, private connectivity",
+        "Data lineage and cataloging: Glue Data Catalog, Lake Formation data governance"
+      ]
+    },
+    {
+      "exam_id": "aws-solutions-architect-professional",
+      "domain_id": "D1",
+      "sequence": 1,
+      "name": "Design Solutions for Organizational Complexity",
+      "weight_pct": 26,
+      "questions_in_25": 6,
+      "key_topics": [
+        "Multi-account AWS environments: AWS Organizations, SCPs, OUs",
+        "Network connectivity strategies: Transit Gateway, VPC peering, PrivateLink at scale",
+        "Shared services VPCs, centralized networking, DNS delegation",
+        "IAM cross-account access, role chaining, permission boundaries",
+        "AWS Control Tower: landing zones, guardrails, account vending",
+        "CloudFormation StackSets for multi-account/multi-region deployments",
+        "Cost visibility across accounts: consolidated billing, cost allocation tags"
+      ]
+    },
+    {
+      "exam_id": "aws-solutions-architect-professional",
+      "domain_id": "D2",
+      "sequence": 2,
+      "name": "Design for New Solutions",
+      "weight_pct": 29,
+      "questions_in_25": 8,
+      "key_topics": [
+        "Deployment strategies: blue/green, canary, immutable, traffic splitting",
+        "Business continuity: multi-region active-active, active-passive, pilot light",
+        "Security controls: encryption strategies, key management, secrets rotation",
+        "Microservices and event-driven architectures: SQS, SNS, EventBridge, Step Functions",
+        "Serverless architectures: Lambda, API Gateway, DynamoDB, Fargate",
+        "Container strategies: ECS vs EKS, Fargate vs EC2, service mesh",
+        "Data analytics solutions: Kinesis, Glue, Athena, Redshift, QuickSight",
+        "High-performance computing: EC2 placement groups, EFA, FSx for Lustre"
+      ]
+    },
+    {
+      "exam_id": "aws-solutions-architect-professional",
+      "domain_id": "D3",
+      "sequence": 3,
+      "name": "Continuous Improvement for Existing Solutions",
+      "weight_pct": 25,
+      "questions_in_25": 6,
+      "key_topics": [
+        "Monitoring and observability: CloudWatch, X-Ray, CloudTrail, Config",
+        "Performance optimization: caching strategies, Auto Scaling, read replicas",
+        "Cost optimization: Reserved Instances, Savings Plans, Spot fleets, right-sizing",
+        "Improving reliability: chaos engineering, fault injection, load testing",
+        "Security improvements: Security Hub findings remediation, compliance automation",
+        "Database improvements: Aurora Global, DynamoDB Global Tables, ElastiCache",
+        "Network optimization: Global Accelerator, CloudFront, Route 53 routing policies"
+      ]
+    },
+    {
+      "exam_id": "aws-solutions-architect-professional",
+      "domain_id": "D4",
+      "sequence": 4,
+      "name": "Accelerate Workload Migration and Modernization",
+      "weight_pct": 20,
+      "questions_in_25": 5,
+      "key_topics": [
+        "Migration strategies: 7Rs (Retire, Retain, Rehost, Relocate, Repurchase, Re-platform, Refactor)",
+        "AWS Migration Hub, Application Discovery Service, Server Migration Service",
+        "Database migration: AWS DMS, Schema Conversion Tool (SCT)",
+        "Application modernization: containerization, serverless refactoring",
+        "Data migration: Snowball, Snowmobile, DataSync, Transfer Family",
+        "VMware Cloud on AWS, lift-and-shift with minimal changes"
+      ]
+    },
+    {
+      "exam_id": "aws-devops-engineer-professional",
+      "domain_id": "D1",
+      "sequence": 1,
+      "name": "SDLC Automation",
+      "weight_pct": 22,
+      "questions_in_25": 6,
+      "key_topics": [
+        "CI/CD pipelines: CodePipeline stages, source integrations (CodeCommit, GitHub, S3)",
+        "CodeBuild: buildspec.yml, environment variables, build caching, test reports",
+        "CodeDeploy: EC2/ECS/Lambda deployments, deployment groups, lifecycle hooks, rollback",
+        "Deployment strategies: canary, blue/green, linear, all-at-once with rollback",
+        "Container CI/CD: ECR image scanning, ECS/EKS rolling updates, GitOps with Argo CD",
+        "Serverless CI/CD: SAM pipelines, Lambda aliases, traffic shifting"
+      ]
+    },
+    {
+      "exam_id": "aws-devops-engineer-professional",
+      "domain_id": "D2",
+      "sequence": 2,
+      "name": "Configuration Management and IaC",
+      "weight_pct": 17,
+      "questions_in_25": 4,
+      "key_topics": [
+        "CloudFormation: nested stacks, StackSets, macros, custom resources, drift detection",
+        "AWS CDK: constructs library, app lifecycle, testing CDK apps",
+        "Systems Manager: State Manager, Patch Manager, Parameter Store, Automation documents",
+        "AWS Config: rules, conformance packs, remediation actions, aggregators",
+        "Service Catalog: portfolios, products, constraints, self-service provisioning",
+        "OpsWorks: layers, stacks, lifecycle events (limited use cases)"
+      ]
+    },
+    {
+      "exam_id": "aws-devops-engineer-professional",
+      "domain_id": "D3",
+      "sequence": 3,
+      "name": "Resilient Cloud Solutions",
+      "weight_pct": 15,
+      "questions_in_25": 4,
+      "key_topics": [
+        "High availability patterns: multi-AZ, multi-Region, active-active vs active-passive",
+        "Auto Scaling: predictive, scheduled, target tracking, step scaling, warm pools",
+        "Chaos engineering: AWS Fault Injection Simulator (FIS), game days",
+        "Disaster recovery automation: AWS Backup, cross-Region replication, Route 53 failover",
+        "Self-healing architectures: EC2 Auto Recovery, Lambda retries, SQS dead-letter queues"
+      ]
+    },
+    {
+      "exam_id": "aws-devops-engineer-professional",
+      "domain_id": "D4",
+      "sequence": 4,
+      "name": "Monitoring and Logging",
+      "weight_pct": 15,
+      "questions_in_25": 4,
+      "key_topics": [
+        "CloudWatch: custom metrics, metric math, composite alarms, embedded metric format",
+        "CloudWatch Logs: structured logging, log groups, retention, metric filters, Logs Insights",
+        "AWS X-Ray: distributed tracing, sampling rules, groups, insights, service maps",
+        "CloudTrail: management events, data events, Insights, multi-region trails",
+        "Centralized logging: Kinesis Data Firehose, OpenSearch Service, S3 log archiving",
+        "Observability-as-Code: alarms, dashboards, log queries managed via CloudFormation"
+      ]
+    },
+    {
+      "exam_id": "aws-devops-engineer-professional",
+      "domain_id": "D5",
+      "sequence": 5,
+      "name": "Incident and Event Response",
+      "weight_pct": 14,
+      "questions_in_25": 4,
+      "key_topics": [
+        "Event-driven automation: EventBridge rules, Lambda-based remediation",
+        "Systems Manager Automation for incident response runbooks",
+        "GuardDuty: threat detection, findings, automated response with EventBridge",
+        "Security Hub: aggregating findings, automated remediation workflows",
+        "SNS notifications, PagerDuty integration, on-call escalation",
+        "Post-incident analysis: AWS CloudTrail investigation, X-Ray trace correlation"
+      ]
+    },
+    {
+      "exam_id": "aws-devops-engineer-professional",
+      "domain_id": "D6",
+      "sequence": 6,
+      "name": "Security and Compliance",
+      "weight_pct": 17,
+      "questions_in_25": 3,
+      "key_topics": [
+        "IAM governance at scale: SCPs, permission boundaries, AWS Organizations policies",
+        "Secrets management: Secrets Manager rotation, cross-account access, integration with ECS/Lambda",
+        "Compliance automation: AWS Config rules, Security Hub standards, Audit Manager",
+        "Pipeline security: artifact signing, CodeArtifact, SAST/DAST integration",
+        "Inspector: EC2 and ECR vulnerability scanning in CI/CD pipelines",
+        "Macie for S3 data classification and compliance"
+      ]
+    },
+    {
+      "exam_id": "aws-advanced-networking-specialty",
+      "domain_id": "D1",
+      "sequence": 1,
+      "name": "Network Design",
+      "weight_pct": 30,
+      "questions_in_25": 8,
+      "key_topics": [
+        "VPC design: CIDR planning, subnet strategy, IPv6, shared VPC patterns",
+        "Hybrid connectivity: Direct Connect (Dedicated/Hosted), DX Gateway, LAG",
+        "VPN: Site-to-Site HA VPN, Client VPN, redundant VPN with BGP failover",
+        "Transit Gateway: route tables, attachments, multicast, Network Manager",
+        "Network Connectivity Center: hub-and-spoke, VPN/DX spokes",
+        "DNS architecture: Route 53 Resolver inbound/outbound endpoints, DNS forwarding",
+        "Load balancing architecture: ALB, NLB, GLB — use cases and design",
+        "Multi-Region and global routing: Global Accelerator vs CloudFront vs Route 53",
+        "Highly available DX: redundant connections, DX SLA 99.99% topology"
+      ]
+    },
+    {
+      "exam_id": "aws-advanced-networking-specialty",
+      "domain_id": "D2",
+      "sequence": 2,
+      "name": "Network Implementation",
+      "weight_pct": 26,
+      "questions_in_25": 6,
+      "key_topics": [
+        "VPC implementation: route tables, internet/NAT gateways, VPC endpoints (Interface/Gateway)",
+        "Direct Connect configuration: virtual interfaces (public/private/transit), BGP attributes",
+        "BGP advanced: AS path prepending, MED, local preference, route filtering",
+        "VPN configuration: IKEv2, Dead Peer Detection, BGP over VPN",
+        "Transit Gateway implementation: route tables, blackhole routes, peering attachments",
+        "Load balancer configuration: target groups, health checks, weighted routing, stickiness",
+        "Route 53 advanced: routing policies, health checks, failover, DNSSEC",
+        "CloudFront: custom origins, cache policies, origin shield, signed cookies"
+      ]
+    },
+    {
+      "exam_id": "aws-advanced-networking-specialty",
+      "domain_id": "D3",
+      "sequence": 3,
+      "name": "Network Management and Operation",
+      "weight_pct": 20,
+      "questions_in_25": 5,
+      "key_topics": [
+        "Network monitoring: VPC Flow Logs, CloudWatch metrics (VPN, DX, load balancers)",
+        "Network Intelligence Center: Reachability Analyzer, Network Access Analyzer, Traffic Mirroring",
+        "Troubleshooting connectivity: route table issues, security group/NACL conflicts",
+        "Troubleshooting DX: BGP session issues, VLAN misconfig, bandwidth utilization",
+        "Automation: CloudFormation for VPC, Lambda for network changes, AWS Network Manager",
+        "DNS troubleshooting: NXDOMAIN, TTL issues, split-horizon DNS validation"
+      ]
+    },
+    {
+      "exam_id": "aws-advanced-networking-specialty",
+      "domain_id": "D4",
+      "sequence": 4,
+      "name": "Network Security, Compliance, and Governance",
+      "weight_pct": 24,
+      "questions_in_25": 6,
+      "key_topics": [
+        "Network Firewall: stateful and stateless rules, domain filtering, TLS inspection",
+        "AWS WAF: managed rule groups, rate-based rules, Bot Control, Fraud Control",
+        "Shield Advanced: DDoS protection, proactive engagement, Route 53 integration",
+        "Security groups vs NACLs: defense-in-depth network segmentation",
+        "AWS PrivateLink: endpoint services, interface endpoints, cross-account access",
+        "VPC Service Controls and compliance: DX encryption (MACsec), VPN encryption",
+        "Guardrails: org-level SCP network restrictions, AWS Config network rules",
+        "Certificate management: ACM, Private CA for internal PKI"
+      ]
+    },
+    {
+      "exam_id": "aws-security-specialty",
+      "domain_id": "D1",
+      "sequence": 1,
+      "name": "Detection",
+      "weight_pct": 16,
+      "questions_in_25": 4,
+      "key_topics": [
+        "Amazon GuardDuty: threat detection, finding types (DNS, IAM, S3, EKS, RDS, Lambda)",
+        "Amazon Inspector: EC2 vulnerability scanning, ECR image scanning, Lambda code scanning",
+        "Amazon Macie: S3 sensitive data discovery, PII classification, findings",
+        "Security Hub: aggregating findings (ASFF format), security standards",
+        "AWS Config: detecting configuration drift, non-compliant resources",
+        "Detective for investigation: entity profiles, VPC Flow Log analysis, GuardDuty integration"
+      ]
+    },
+    {
+      "exam_id": "aws-security-specialty",
+      "domain_id": "D2",
+      "sequence": 2,
+      "name": "Incident Response",
+      "weight_pct": 14,
+      "questions_in_25": 4,
+      "key_topics": [
+        "Incident response plans: NIST framework, AWS-specific IR playbooks",
+        "Automated remediation: EventBridge + Lambda, Systems Manager Automation",
+        "Isolating compromised resources: security group modification, instance isolation",
+        "Forensics: EBS snapshots, memory capture, VPC Traffic Mirroring",
+        "AWS Security Finding Format (ASFF) for Security Hub integration",
+        "Post-incident analysis: CloudTrail log review, Athena queries on logs"
+      ]
+    },
+    {
+      "exam_id": "aws-security-specialty",
+      "domain_id": "D3",
+      "sequence": 3,
+      "name": "Infrastructure Security",
+      "weight_pct": 18,
+      "questions_in_25": 4,
+      "key_topics": [
+        "Edge security: CloudFront security headers, WAF rules, AWS Shield, OWASP Top 10 mitigations",
+        "Network segmentation: VPC design, security groups, NACLs, VPC endpoints",
+        "Hybrid connectivity security: Site-to-Site VPN encryption, DX MACsec",
+        "Container security: ECR image scanning, ECS task IAM roles, EKS pod security",
+        "Compute hardening: EC2 Image Builder, Systems Manager Patch Manager, Inspector",
+        "GenAI security: GenAI OWASP Top 10 for LLM, Amazon Bedrock guardrails",
+        "AWS Network Firewall: stateful inspection, domain allowlisting, TLS inspection"
+      ]
+    },
+    {
+      "exam_id": "aws-security-specialty",
+      "domain_id": "D4",
+      "sequence": 4,
+      "name": "Identity and Access Management",
+      "weight_pct": 20,
+      "questions_in_25": 5,
+      "key_topics": [
+        "IAM policy evaluation: explicit deny, permission boundaries, SCPs, session policies",
+        "IAM Identity Center (AWS SSO): SAML/OIDC federation, permission sets, multi-account",
+        "Amazon Cognito: user pools (authentication), identity pools (authorization), federation",
+        "Temporary credentials: STS AssumeRole, AssumeRoleWithWebIdentity, cross-account",
+        "Attribute-based access control (ABAC): IAM tags, condition keys",
+        "Privileged access: AWS Directory Service, AD integration, just-in-time access",
+        "IAM Access Analyzer: external access findings, unused access, policy validation"
+      ]
+    },
+    {
+      "exam_id": "aws-security-specialty",
+      "domain_id": "D5",
+      "sequence": 5,
+      "name": "Data Protection",
+      "weight_pct": 18,
+      "questions_in_25": 5,
+      "key_topics": [
+        "KMS: CMK types (AWS-managed, customer-managed, custom key stores), key policies, grants",
+        "Envelope encryption: GenerateDataKey, client-side vs server-side encryption",
+        "S3 encryption: SSE-S3, SSE-KMS, SSE-C, DSSE-KMS, bucket key, MFA Delete",
+        "Database encryption: RDS at-rest and in-transit, DynamoDB encryption, Redshift",
+        "CloudHSM: HSM clusters, FIPS 140-2 Level 3, custom key store for KMS",
+        "Certificate management: ACM public/private certs, Private CA, certificate rotation",
+        "Data sovereignty: S3 Object Lock, compliance mode vs governance mode, legal hold",
+        "Secrets Manager: automatic rotation, cross-account access, integration patterns"
+      ]
+    },
+    {
+      "exam_id": "aws-security-specialty",
+      "domain_id": "D6",
+      "sequence": 6,
+      "name": "Security Foundations and Governance",
+      "weight_pct": 14,
+      "questions_in_25": 3,
+      "key_topics": [
+        "AWS Organizations: organizational units, SCPs, tag policies, backup policies",
+        "AWS Control Tower: landing zones, guardrails (preventive/detective), Account Factory",
+        "Audit and compliance: Audit Manager, AWS Artifact (SOC reports, PCI DSS)",
+        "Firewall Manager: centralized WAF, Security Group, Network Firewall policies",
+        "AWS RAM (Resource Access Manager): sharing resources across accounts",
+        "Cost and governance: Security Hub CSPM, Trusted Advisor security checks",
+        "Well-Architected security pillar review process"
+      ]
+    },
+    {
+      "exam_id": "aws-data-analytics-specialty",
+      "domain_id": "D1",
+      "sequence": 1,
+      "name": "Collection",
+      "weight_pct": 18,
+      "questions_in_25": 5,
+      "key_topics": [
+        "Kinesis Data Streams: shards, partition keys, sequence numbers, retention, GetRecords",
+        "Kinesis Data Firehose: buffering, transformation, delivery to S3/Redshift/OpenSearch",
+        "Kinesis Video Streams: media ingestion, playback, ML integration",
+        "AWS IoT Core: rules engine, MQTT, data routing to Kinesis/S3/DynamoDB",
+        "Database migration: DMS for streaming CDC, log-based replication",
+        "Direct connectivity: Snowball Edge, DataSync, Transfer Family for large-scale ingestion"
+      ]
+    },
+    {
+      "exam_id": "aws-data-analytics-specialty",
+      "domain_id": "D2",
+      "sequence": 2,
+      "name": "Storage and Data Management",
+      "weight_pct": 22,
+      "questions_in_25": 5,
+      "key_topics": [
+        "S3 as data lake: partitioning strategies, file formats (Parquet, ORC, Avro), compression",
+        "Data lifecycle: S3 intelligent tiering, archival to Glacier, lifecycle rules",
+        "Redshift: cluster management, distribution styles, sort keys, COPY command, Spectrum",
+        "DynamoDB: capacity planning, GSI/LSI for analytics, streams for CDC",
+        "Lake Formation: governed tables, data sharing, column/row-level security",
+        "Schema evolution: Glue Data Catalog versioning, Apache Iceberg format"
+      ]
+    },
+    {
+      "exam_id": "aws-data-analytics-specialty",
+      "domain_id": "D3",
+      "sequence": 3,
+      "name": "Processing",
+      "weight_pct": 24,
+      "questions_in_25": 6,
+      "key_topics": [
+        "AWS Glue: ETL jobs, PySpark/Scala, DynamicFrames, job bookmarks, triggers",
+        "Amazon EMR: cluster types, Spark/Hive/Presto, EMR on EKS, spot instances",
+        "Kinesis Analytics (Managed Service for Apache Flink): SQL and Flink applications",
+        "AWS Lambda for lightweight data transformations and event-driven processing",
+        "Data enrichment: joining streams with reference data, broadcasting variables",
+        "Batch vs streaming: when to use each, micro-batch architectures"
+      ]
+    },
+    {
+      "exam_id": "aws-data-analytics-specialty",
+      "domain_id": "D4",
+      "sequence": 4,
+      "name": "Analysis and Visualization",
+      "weight_pct": 18,
+      "questions_in_25": 5,
+      "key_topics": [
+        "Amazon Athena: federated queries, Iceberg support, partitioning, query optimization",
+        "Amazon Redshift: OLAP queries, materialized views, query monitoring rules",
+        "Amazon OpenSearch Service: search, log analytics, Kibana/OpenSearch Dashboards",
+        "Amazon QuickSight: SPICE, ML insights, row-level security, embedded analytics",
+        "Amazon SageMaker for ML analytics: built-in algorithms, batch transform",
+        "AWS Glue DataBrew: visual data profiling, transformations without code"
+      ]
+    },
+    {
+      "exam_id": "aws-data-analytics-specialty",
+      "domain_id": "D5",
+      "sequence": 5,
+      "name": "Security",
+      "weight_pct": 18,
+      "questions_in_25": 4,
+      "key_topics": [
+        "Authentication and authorization: IAM policies, Lake Formation permissions, Redshift users",
+        "Column-level and row-level security: Lake Formation, Redshift data sharing",
+        "Encryption: S3 SSE/CSE, Kinesis encryption, Redshift at-rest/in-transit",
+        "KMS integration for analytics services: Glue, EMR, Redshift, Athena",
+        "VPC endpoints for analytics services, private connectivity patterns",
+        "Data governance: Glue Data Catalog access, Lake Formation cross-account sharing, audit logging"
+      ]
+    },
+    {
+      "exam_id": "aws-ai-practitioner",
+      "domain_id": "D1",
+      "sequence": 1,
+      "name": "Fundamentals of AI and ML",
+      "weight_pct": 20,
+      "questions_in_25": 5,
+      "key_topics": [
+        "Core concepts: AI, ML, deep learning, neural networks, NLP definitions",
+        "ML approaches: supervised (classification/regression), unsupervised (clustering), reinforcement learning",
+        "Practical business use cases: fraud detection, recommendation systems, churn prediction",
+        "AWS AI/ML services overview: SageMaker, Rekognition, Polly, Transcribe, Comprehend, Translate",
+        "Model performance metrics: accuracy, precision, recall, F1, AUC-ROC",
+        "Bias and fairness in ML: sources of bias, mitigation strategies, SageMaker Clarify"
+      ]
+    },
+    {
+      "exam_id": "aws-ai-practitioner",
+      "domain_id": "D2",
+      "sequence": 2,
+      "name": "Fundamentals of Generative AI",
+      "weight_pct": 24,
+      "questions_in_25": 6,
+      "key_topics": [
+        "GenAI concepts: tokens, embeddings, context window, temperature, top-p sampling",
+        "Foundation models: LLMs, multimodal models, transformer architecture",
+        "Diffusion models for image generation: Stable Diffusion, Amazon Titan Image",
+        "GenAI use cases: text summarization, chatbots, code generation, content creation",
+        "GenAI limitations: hallucinations, knowledge cutoff, non-determinism, bias",
+        "Amazon Bedrock: foundation model selection, model evaluation, pricing models",
+        "Amazon Q: business use cases, document understanding, code assistance"
+      ]
+    },
+    {
+      "exam_id": "aws-ai-practitioner",
+      "domain_id": "D3",
+      "sequence": 3,
+      "name": "Applications of Foundation Models",
+      "weight_pct": 28,
+      "questions_in_25": 7,
+      "key_topics": [
+        "Prompt engineering techniques: zero-shot, one-shot, few-shot, chain-of-thought",
+        "Advanced prompting: role prompting, ReAct, prompt chaining",
+        "RAG (Retrieval-Augmented Generation): vector databases, embeddings, Amazon Bedrock Knowledge Bases",
+        "Fine-tuning vs RAG vs prompt engineering: when to use each approach",
+        "Agents: Amazon Bedrock Agents, action groups, knowledge bases, orchestration",
+        "Model customization: continued pre-training, fine-tuning on Bedrock, PEFT/LoRA concepts",
+        "Amazon SageMaker JumpStart: foundation model deployment, fine-tuning",
+        "Evaluation: ROUGE, BLEU, human evaluation, model benchmarks"
+      ]
+    },
+    {
+      "exam_id": "aws-ai-practitioner",
+      "domain_id": "D4",
+      "sequence": 4,
+      "name": "Guidelines for Responsible AI",
+      "weight_pct": 14,
+      "questions_in_25": 4,
+      "key_topics": [
+        "AWS responsible AI principles: fairness, explainability, privacy, safety, robustness",
+        "Bias detection and mitigation: SageMaker Clarify, bias reports",
+        "Explainability: SHAP values, SageMaker Model Monitor explainability",
+        "Human oversight: human-in-the-loop (HITL), Amazon Augmented AI (A2I)",
+        "Ethical implications: AI transparency, accountability in automated decision-making",
+        "Regulatory considerations: GDPR for AI, AI Act awareness, data privacy"
+      ]
+    },
+    {
+      "exam_id": "aws-ai-practitioner",
+      "domain_id": "D5",
+      "sequence": 5,
+      "name": "Security, Compliance, and Governance for AI Solutions",
+      "weight_pct": 14,
+      "questions_in_25": 3,
+      "key_topics": [
+        "Data security for AI: encryption of training data, model artifacts, inference data",
+        "IAM for AI services: SageMaker execution roles, Bedrock access policies",
+        "Amazon Bedrock Guardrails: content filtering, topic denial, PII redaction, hallucination grounding",
+        "Compliance for AI: AWS Audit Manager frameworks for AI workloads",
+        "VPC isolation for ML training and inference, PrivateLink for Bedrock",
+        "Model governance: SageMaker Model Registry, model versioning, approval workflows"
+      ]
+    }
+  ]

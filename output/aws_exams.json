@@ -1,0 +1,223 @@
+[
+    {
+      "exam_id": "aws-cloud-practitioner",
+      "exam_code": "CLF-C02",
+      "title": "AWS Certified Cloud Practitioner",
+      "subtitle": "Foundational",
+      "description": "Foundational knowledge of AWS Cloud concepts, security, technology, services, and billing practices. Suitable for non-technical and technical roles.",
+      "level": "Foundational",
+      "domains": 4,
+      "passing_pct": 70,
+      "available": false,
+      "format": "exam",
+      "duration_mins": 90,
+      "total_questions": 65,
+      "scored_questions": 50,
+      "exam_fee_usd": 100,
+      "experience_recommended": "Up to 6 months AWS exposure",
+      "created_at": {
+        "$date": "2023-09-19T00:00:00.000Z"
+      }
+    },
+    {
+      "exam_id": "aws-solutions-architect-associate",
+      "exam_code": "SAA-C03",
+      "title": "AWS Certified Solutions Architect – Associate",
+      "subtitle": "Associate Level",
+      "description": "Design secure, resilient, high-performing, and cost-optimized architectures on AWS using the Well-Architected Framework.",
+      "level": "Associate",
+      "domains": 4,
+      "passing_pct": 72,
+      "available": false,
+      "format": "exam",
+      "duration_mins": 130,
+      "total_questions": 65,
+      "scored_questions": 65,
+      "exam_fee_usd": 150,
+      "experience_recommended": "1+ year hands-on AWS experience",
+      "created_at": {
+        "$date": "2022-08-29T00:00:00.000Z"
+      }
+    },
+    {
+      "exam_id": "aws-developer-associate",
+      "exam_code": "DVA-C02",
+      "title": "AWS Certified Developer – Associate",
+      "subtitle": "Associate Level",
+      "description": "Develop, test, deploy, and debug cloud-based applications on AWS using SDKs, Lambda, DynamoDB, API Gateway, and CI/CD pipelines.",
+      "level": "Associate",
+      "domains": 4,
+      "passing_pct": 72,
+      "available": false,
+      "format": "exam",
+      "duration_mins": 130,
+      "total_questions": 65,
+      "scored_questions": 50,
+      "exam_fee_usd": 150,
+      "experience_recommended": "1+ year hands-on AWS development",
+      "created_at": {
+        "$date": "2023-02-28T00:00:00.000Z"
+      }
+    },
+    {
+      "exam_id": "aws-cloudops-engineer-associate",
+      "exam_code": "SOA-C03",
+      "title": "AWS Certified CloudOps Engineer – Associate",
+      "subtitle": "Associate Level",
+      "description": "Deploy, manage, and operate workloads on AWS. Focus on monitoring, automation, security, and troubleshooting in AWS environments",
+      "level": "Associate",
+      "domains": 6,
+      "passing_pct": 72,
+      "available": false,
+      "format": "exam",
+      "duration_mins": 130,
+      "total_questions": 65,
+      "scored_questions": 65,
+      "exam_fee_usd": 150,
+      "experience_recommended": "1+ year hands-on AWS sysops",
+      "created_at": {
+        "$date": "2021-07-26T00:00:00.000Z"
+      }
+    },
+    {
+      "exam_id": "aws-data-engineer-associate",
+      "exam_code": "DEA-C01",
+      "title": "AWS Certified Data Engineer – Associate",
+      "subtitle": "Associate Level (New)",
+      "description": "Implement data pipelines, manage data stores, and apply security and governance for data solutions on AWS using Kinesis, Glue, Redshift, Athena, and more.",
+      "level": "Associate",
+      "domains": 4,
+      "passing_pct": 72,
+      "available": false,
+      "format": "exam",
+      "duration_mins": 130,
+      "total_questions": 65,
+      "scored_questions": 50,
+      "exam_fee_usd": 150,
+      "experience_recommended": "2-3 years data engineering experience, 1-2 years AWS",
+      "created_at": {
+        "$date": "2024-03-12T00:00:00.000Z"
+      }
+    },
+    {
+      "exam_id": "aws-solutions-architect-professional",
+      "exam_code": "SAP-C02",
+      "title": "AWS Certified Solutions Architect – Professional",
+      "subtitle": "Professional Level",
+      "description": "Advanced architectural design for complex, multi-account AWS environments including migration, organizational design, and continuous improvement.",
+      "level": "Professional",
+      "domains": 4,
+      "passing_score": 750,
+      "passing_pct": 75,
+      "available": false,
+      "format": "exam",
+      "duration_mins": 180,
+      "total_questions": 75,
+      "scored_questions": 65,
+      "exam_fee_usd": 300,
+      "experience_recommended": "2+ years hands-on AWS architecture",
+      "created_at": {
+        "$date": "2022-11-15T00:00:00.000Z"
+      }
+    },
+    {
+      "exam_id": "aws-devops-engineer-professional",
+      "exam_code": "DOP-C02",
+      "title": "AWS Certified DevOps Engineer – Professional",
+      "subtitle": "Professional Level",
+      "description": "Provision, operate, and manage distributed systems on AWS with CI/CD, IaC, SRE practices, monitoring, incident response, and security compliance.",
+      "level": "Professional",
+      "domains": 6,
+      "passing_pct": 75,
+      "available": false,
+      "format": "exam",
+      "duration_mins": 180,
+      "total_questions": 75,
+      "scored_questions": 65,
+      "exam_fee_usd": 300,
+      "experience_recommended": "2+ years DevOps on AWS",
+      "created_at": {
+        "$date": "2023-02-07T00:00:00.000Z"
+      }
+    },
+    {
+      "exam_id": "aws-advanced-networking-specialty",
+      "exam_code": "ANS-C01",
+      "title": "AWS Certified Advanced Networking – Specialty",
+      "subtitle": "Specialty",
+      "description": "Design, implement, manage, and secure AWS and hybrid network architectures at scale including VPCs, Direct Connect, Transit Gateway, and network security.",
+      "level": "Specialty",
+      "domains": 4,
+      "passing_pct": 75,
+      "available": false,
+      "format": "exam",
+      "duration_mins": 170,
+      "total_questions": 65,
+      "scored_questions": 50,
+      "exam_fee_usd": 300,
+      "experience_recommended": "5+ years networking, 2+ years AWS",
+      "created_at": {
+        "$date": "2021-08-23T00:00:00.000Z"
+      }
+    },
+    {
+      "exam_id": "aws-security-specialty",
+      "exam_code": "SCS-C03",
+      "title": "AWS Certified Security – Specialty",
+      "subtitle": "Specialty",
+      "description": "Design and implement security solutions on AWS including detection, incident response, infrastructure security, IAM, data protection, and governance. Current version SCS-C03 (active Dec 2, 2025).",
+      "level": "Specialty",
+      "domains": 6,
+      "passing_pct": 75,
+      "available": false,
+      "format": "exam",
+      "duration_mins": 170,
+      "total_questions": 65,
+      "scored_questions": 50,
+      "exam_fee_usd": 300,
+      "experience_recommended": "3-5 years security design, 2+ years AWS",
+      "created_at": {
+        "$date": "2025-12-02T00:00:00.000Z"
+      }
+    },
+    {
+      "exam_id": "aws-data-analytics-specialty",
+      "exam_code": "DAS-C01",
+      "title": "AWS Certified Data Analytics – Specialty",
+      "subtitle": "Specialty",
+      "description": "Design, build, secure, and maintain analytics solutions on AWS. NOTE: AWS has effectively superseded DAS-C01 with the DEA-C01 Data Engineer Associate cert.",
+      "level": "Specialty",
+      "domains": 5,
+      "passing_pct": 75,
+      "available": false,
+      "format": "exam",
+      "duration_mins": 180,
+      "total_questions": 65,
+      "scored_questions": 50,
+      "exam_fee_usd": 300,
+      "experience_recommended": "5+ years data analytics, 2+ years AWS",
+      "created_at": {
+        "$date": "2020-04-06T00:00:00.000Z"
+      }
+    },
+    {
+      "exam_id": "aws-ai-practitioner",
+      "exam_code": "AIF-C01",
+      "title": "AWS Certified AI Practitioner",
+      "subtitle": "Foundational / Emerging GenAI (New)",
+      "description": "Foundational understanding of AI/ML and generative AI concepts, AWS AI tools, foundation models, responsible AI, and security for AI solutions.",
+      "level": "Foundational",
+      "domains": 5,
+      "passing_pct": 70,
+      "available": false,
+      "format": "exam",
+      "duration_mins": 90,
+      "total_questions": 65,
+      "scored_questions": 50,
+      "exam_fee_usd": 100,
+      "experience_recommended": "Up to 6 months AI/ML on AWS",
+      "created_at": {
+        "$date": "2024-10-01T00:00:00.000Z"
+      }
+    }
+  ]

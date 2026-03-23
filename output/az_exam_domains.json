@@ -1,0 +1,975 @@
+[
+    {
+      "exam_id": "az-900-azure-fundamentals",
+      "domain_id": "D1",
+      "sequence": 1,
+      "name": "Describe Cloud Concepts",
+      "weight_pct_range": "25–30%",
+      "weight_pct": 28,
+      "questions_in_25": 7,
+      "key_topics": [
+        "Cloud computing definition, shared responsibility model",
+        "Cloud models: public, private, hybrid — use cases and trade-offs",
+        "Consumption-based model, cloud pricing models comparison",
+        "Benefits: high availability, scalability, reliability, predictability, security, manageability",
+        "Cloud service types: IaaS, PaaS, SaaS — use cases for each",
+        "Serverless computing concepts"
+      ]
+    },
+    {
+      "exam_id": "az-900-azure-fundamentals",
+      "domain_id": "D2",
+      "sequence": 2,
+      "name": "Describe Azure Architecture and Services",
+      "weight_pct_range": "35–40%",
+      "weight_pct": 37,
+      "questions_in_25": 10,
+      "key_topics": [
+        "Azure regions, region pairs, sovereign regions, availability zones, datacenters",
+        "Resources, resource groups, subscriptions, management groups — hierarchy",
+        "Compute: VMs, Scale Sets, availability sets, Azure Virtual Desktop, containers, functions",
+        "Networking: VNet, subnets, peering, Azure DNS, VPN Gateway, ExpressRoute, public/private endpoints",
+        "Storage: Blob, Files, Table, Queue, Disk — tiers, redundancy (LRS/ZRS/GRS/GZRS), migration (AzCopy, Azure Migrate, Data Box)",
+        "Identity and security: Microsoft Entra ID, SSO, MFA, passwordless, Conditional Access, RBAC",
+        "Zero Trust model, defense-in-depth, Microsoft Defender for Cloud"
+      ]
+    },
+    {
+      "exam_id": "az-900-azure-fundamentals",
+      "domain_id": "D3",
+      "sequence": 3,
+      "name": "Describe Azure Management and Governance",
+      "weight_pct_range": "30–35%",
+      "weight_pct": 35,
+      "questions_in_25": 8,
+      "key_topics": [
+        "Cost factors in Azure, pricing calculator, cost management capabilities, resource tagging",
+        "Microsoft Purview for governance, Azure Policy for compliance enforcement",
+        "Resource locks (CanNotDelete, ReadOnly)",
+        "Azure portal, Cloud Shell (CLI and PowerShell), Azure Arc for hybrid management",
+        "Infrastructure as Code (IaC), ARM templates, Bicep",
+        "Azure Resource Manager (ARM) overview",
+        "Azure Advisor recommendations, Azure Service Health, Azure Monitor (Log Analytics, alerts, Application Insights)"
+      ]
+    },
+    {
+      "exam_id": "ai-900-azure-ai-fundamentals",
+      "domain_id": "D1",
+      "sequence": 1,
+      "name": "Describe Artificial Intelligence Workloads and Considerations",
+      "weight_pct_range": "15–20%",
+      "weight_pct": 17,
+      "questions_in_25": 5,
+      "key_topics": [
+        "AI workload types: computer vision, NLP, document processing, generative AI",
+        "Responsible AI principles: fairness, reliability, privacy, inclusiveness, transparency, accountability",
+        "Identifying appropriate AI solutions for real-world scenarios"
+      ]
+    },
+    {
+      "exam_id": "ai-900-azure-ai-fundamentals",
+      "domain_id": "D2",
+      "sequence": 2,
+      "name": "Describe Fundamental Principles of Machine Learning on Azure",
+      "weight_pct_range": "15–20%",
+      "weight_pct": 17,
+      "questions_in_25": 5,
+      "key_topics": [
+        "ML techniques: regression, classification, clustering, deep learning, Transformer architecture",
+        "Features and labels, training vs validation datasets",
+        "Azure Machine Learning: automated ML (AutoML), data/compute services, model management and deployment"
+      ]
+    },
+    {
+      "exam_id": "ai-900-azure-ai-fundamentals",
+      "domain_id": "D3",
+      "sequence": 3,
+      "name": "Describe Features of Computer Vision Workloads on Azure",
+      "weight_pct_range": "15–20%",
+      "weight_pct": 17,
+      "questions_in_25": 4,
+      "key_topics": [
+        "Image classification, object detection, OCR, facial detection and facial analysis solutions",
+        "Azure AI Vision service capabilities",
+        "Azure AI Face detection service capabilities"
+      ]
+    },
+    {
+      "exam_id": "ai-900-azure-ai-fundamentals",
+      "domain_id": "D4",
+      "sequence": 4,
+      "name": "Describe Features of NLP Workloads on Azure",
+      "weight_pct_range": "15–20%",
+      "weight_pct": 17,
+      "questions_in_25": 4,
+      "key_topics": [
+        "NLP workloads: key phrase extraction, entity recognition, sentiment analysis, language modeling",
+        "Speech recognition/synthesis, translation use cases",
+        "Azure AI Language service, Azure AI Speech service capabilities"
+      ]
+    },
+    {
+      "exam_id": "ai-900-azure-ai-fundamentals",
+      "domain_id": "D5",
+      "sequence": 5,
+      "name": "Describe Features of Generative AI Workloads on Azure",
+      "weight_pct_range": "20–25%",
+      "weight_pct": 22,
+      "questions_in_25": 7,
+      "key_topics": [
+        "Generative AI model features, common gen AI scenarios, responsible AI for gen AI",
+        "Azure AI Foundry: features, capabilities, model catalog",
+        "Azure OpenAI Service: features, capabilities, and use cases",
+        "Foundation model selection, prompt engineering fundamentals"
+      ]
+    },
+    {
+      "exam_id": "dp-900-azure-data-fundamentals",
+      "domain_id": "D1",
+      "sequence": 1,
+      "name": "Describe Core Data Concepts",
+      "weight_pct_range": "25–30%",
+      "weight_pct": 27,
+      "questions_in_25": 7,
+      "key_topics": [
+        "Structured, semi-structured, and unstructured data features",
+        "Common data file formats and database types",
+        "Transactional vs analytical workloads",
+        "Roles: database administrators, data engineers, data analysts"
+      ]
+    },
+    {
+      "exam_id": "dp-900-azure-data-fundamentals",
+      "domain_id": "D2",
+      "sequence": 2,
+      "name": "Identify Considerations for Relational Data on Azure",
+      "weight_pct_range": "20–25%",
+      "weight_pct": 22,
+      "questions_in_25": 6,
+      "key_topics": [
+        "Relational data features, normalization, common SQL statements, database objects",
+        "Azure SQL Database, Azure SQL Managed Instance, SQL Server on Azure VMs",
+        "Azure database services for open-source: PostgreSQL, MySQL, MariaDB"
+      ]
+    },
+    {
+      "exam_id": "dp-900-azure-data-fundamentals",
+      "domain_id": "D3",
+      "sequence": 3,
+      "name": "Describe Considerations for Working with Non-Relational Data on Azure",
+      "weight_pct_range": "15–20%",
+      "weight_pct": 17,
+      "questions_in_25": 5,
+      "key_topics": [
+        "Azure Storage: Blob, File, and Table storage capabilities",
+        "Azure Cosmos DB use cases and API options (Core SQL, MongoDB, Cassandra, Gremlin, Table)"
+      ]
+    },
+    {
+      "exam_id": "dp-900-azure-data-fundamentals",
+      "domain_id": "D4",
+      "sequence": 4,
+      "name": "Describe an Analytics Workload on Azure",
+      "weight_pct_range": "25–30%",
+      "weight_pct": 27,
+      "questions_in_25": 7,
+      "key_topics": [
+        "Large-scale analytics: data ingestion/processing considerations, analytical data stores",
+        "Azure Synapse Analytics, Azure Databricks, Microsoft Fabric for large-scale analytics",
+        "Real-time analytics: batch vs streaming data, Microsoft services for real-time analytics",
+        "Power BI: capabilities, data models, appropriate visualizations"
+      ]
+    },
+    {
+      "exam_id": "sc-900-security-fundamentals",
+      "domain_id": "D1",
+      "sequence": 1,
+      "name": "Describe Security and Compliance Concepts",
+      "weight_pct_range": "35–40%",
+      "weight_pct": 37,
+      "questions_in_25": 9,
+      "key_topics": [
+        "Shared responsibility model, defense in depth, Zero Trust principles",
+        "Encryption, hashing, compliance concepts",
+        "Microsoft Security, Compliance, and Identity capabilities overview"
+      ]
+    },
+    {
+      "exam_id": "sc-900-security-fundamentals",
+      "domain_id": "D2",
+      "sequence": 2,
+      "name": "Describe Microsoft Entra Capabilities",
+      "weight_pct_range": "30–35%",
+      "weight_pct": 35,
+      "questions_in_25": 9,
+      "key_topics": [
+        "Microsoft Entra ID: identity types, authentication (MFA, passwordless, SSO, SSPR)",
+        "External identities: B2B, B2C collaboration",
+        "Conditional Access, RBAC, identity governance, Privileged Identity Management (PIM)",
+        "Microsoft Entra Verified ID, Microsoft Entra Permissions Management"
+      ]
+    },
+    {
+      "exam_id": "sc-900-security-fundamentals",
+      "domain_id": "D3",
+      "sequence": 3,
+      "name": "Describe Microsoft Security Solutions",
+      "weight_pct_range": "25–30%",
+      "weight_pct": 28,
+      "questions_in_25": 7,
+      "key_topics": [
+        "Microsoft Defender for Cloud: CSPM, workload protections",
+        "Microsoft Sentinel: SIEM/SOAR capabilities, threat detection",
+        "Microsoft Purview: data governance, compliance manager, communication compliance",
+        "Microsoft 365 Defender: Defender for Endpoint, Identity, Office 365, Cloud Apps"
+      ]
+    },
+    {
+      "exam_id": "az-104-azure-administrator",
+      "domain_id": "D1",
+      "sequence": 1,
+      "name": "Manage Azure Identities and Governance",
+      "weight_pct_range": "20–25%",
+      "weight_pct": 22,
+      "questions_in_25": 6,
+      "key_topics": [
+        "Microsoft Entra users and groups: create, manage properties, licenses, external users, SSPR",
+        "Manage access: built-in Azure roles, assign roles at different scopes, interpret access assignments",
+        "Azure Policy: implement and manage compliance policies",
+        "Resource locks, tags on resources, resource groups",
+        "Subscription management, cost alerts, budgets, Azure Advisor",
+        "Management groups for governance at scale"
+      ]
+    },
+    {
+      "exam_id": "az-104-azure-administrator",
+      "domain_id": "D2",
+      "sequence": 2,
+      "name": "Implement and Manage Storage",
+      "weight_pct_range": "15–20%",
+      "weight_pct": 17,
+      "questions_in_25": 5,
+      "key_topics": [
+        "Configure storage access: firewalls, VNet rules, SAS tokens, stored access policies, access keys",
+        "Identity-based access for Azure Files",
+        "Storage accounts: creation, redundancy (LRS/ZRS/GRS/GZRS), object replication, encryption",
+        "Azure Storage Explorer and AzCopy for data management",
+        "Azure Files: file shares, snapshots, soft delete; Blob Storage: containers, tiers, lifecycle management",
+        "Blob versioning, soft delete for blobs and containers"
+      ]
+    },
+    {
+      "exam_id": "az-104-azure-administrator",
+      "domain_id": "D3",
+      "sequence": 3,
+      "name": "Deploy and Manage Azure Compute Resources",
+      "weight_pct_range": "20–25%",
+      "weight_pct": 22,
+      "questions_in_25": 6,
+      "key_topics": [
+        "ARM templates and Bicep: interpret, modify, deploy, export",
+        "VMs: create, configure disk encryption, move across resource groups/subscriptions/regions",
+        "VM sizes, disks, availability zones/sets, Azure Virtual Machine Scale Sets",
+        "Container Registry, Azure Container Instances, Azure Container Apps — sizing and scaling",
+        "App Service: plans, scaling, TLS configuration, custom DNS, backup, deployment slots, networking"
+      ]
+    },
+    {
+      "exam_id": "az-104-azure-administrator",
+      "domain_id": "D4",
+      "sequence": 4,
+      "name": "Implement and Manage Virtual Networking",
+      "weight_pct_range": "15–20%",
+      "weight_pct": 17,
+      "questions_in_25": 5,
+      "key_topics": [
+        "VNets and subnets: create, configure, VNet peering, public IPs, user-defined routes",
+        "Troubleshoot network connectivity",
+        "NSGs and Application Security Groups: create, configure, evaluate effective rules",
+        "Azure Bastion, service endpoints, private endpoints for Azure PaaS",
+        "Azure DNS: zones, records, public and private",
+        "Load balancers: internal vs public, configure and troubleshoot"
+      ]
+    },
+    {
+      "exam_id": "az-104-azure-administrator",
+      "domain_id": "D5",
+      "sequence": 5,
+      "name": "Monitor and Maintain Azure Resources",
+      "weight_pct_range": "10–15%",
+      "weight_pct": 12,
+      "questions_in_25": 3,
+      "key_topics": [
+        "Azure Monitor: metrics, log settings, Log Analytics queries, alerts, action groups",
+        "VM Insights, storage account monitoring, network monitoring",
+        "Azure Network Watcher, Connection Monitor",
+        "Recovery Services vault, Azure Backup vault, backup policies",
+        "Azure Backup: backup and restore operations, reports and alerts",
+        "Azure Site Recovery: configure, failover to secondary region"
+      ]
+    },
+    {
+      "exam_id": "az-204-azure-developer",
+      "domain_id": "D1",
+      "sequence": 1,
+      "name": "Develop Azure Compute Solutions",
+      "weight_pct_range": "25–30%",
+      "weight_pct": 27,
+      "questions_in_25": 7,
+      "key_topics": [
+        "Containerized solutions: create/manage container images, publish to Azure Container Registry",
+        "Run containers with Azure Container Instances, build solutions with Azure Container Apps",
+        "Azure App Service Web Apps: create, diagnostics/logging, deploy code and containers",
+        "Configure TLS, API settings, service connections, autoscaling, deployment slots",
+        "Azure Functions: create/configure function apps, input/output bindings",
+        "Function triggers: data operations, timers, webhooks"
+      ]
+    },
+    {
+      "exam_id": "az-204-azure-developer",
+      "domain_id": "D2",
+      "sequence": 2,
+      "name": "Develop for Azure Storage",
+      "weight_pct_range": "15–20%",
+      "weight_pct": 17,
+      "questions_in_25": 4,
+      "key_topics": [
+        "Azure Cosmos DB: SDK operations on containers/items, consistency levels, change feed",
+        "Azure Blob Storage: properties/metadata, SDK data operations",
+        "Storage policies and data lifecycle management"
+      ]
+    },
+    {
+      "exam_id": "az-204-azure-developer",
+      "domain_id": "D3",
+      "sequence": 3,
+      "name": "Implement Azure Security",
+      "weight_pct_range": "15–20%",
+      "weight_pct": 17,
+      "questions_in_25": 4,
+      "key_topics": [
+        "User authentication/authorization: Microsoft Identity Platform, Microsoft Entra ID",
+        "Shared access signatures (SAS), Microsoft Graph integration",
+        "Azure App Configuration and Azure Key Vault: secure app configuration data",
+        "Keys, secrets, certificates stored in Key Vault",
+        "Managed Identities for Azure resources"
+      ]
+    },
+    {
+      "exam_id": "az-204-azure-developer",
+      "domain_id": "D4",
+      "sequence": 4,
+      "name": "Monitor and Troubleshoot Azure Solutions",
+      "weight_pct_range": "5–10%",
+      "weight_pct": 7,
+      "questions_in_25": 2,
+      "key_topics": [
+        "Azure Monitor Application Insights: metrics, logs, traces",
+        "Availability tests and alerts, instrumenting apps/services with Application Insights"
+      ]
+    },
+    {
+      "exam_id": "az-204-azure-developer",
+      "domain_id": "D5",
+      "sequence": 5,
+      "name": "Connect to and Consume Azure Services and Third-Party Services",
+      "weight_pct_range": "20–25%",
+      "weight_pct": 22,
+      "questions_in_25": 8,
+      "key_topics": [
+        "Azure API Management: create instances, create/document APIs, configure access, implement policies",
+        "Event-based solutions: Azure Event Grid, Azure Event Hubs",
+        "Message-based solutions: Azure Service Bus (queues/topics/subscriptions), Azure Queue Storage"
+      ]
+    },
+    {
+      "exam_id": "dp-700-fabric-data-engineer",
+      "domain_id": "D1",
+      "sequence": 1,
+      "name": "Implement and Manage an Analytics Solution",
+      "weight_pct_range": "30–35%",
+      "weight_pct": 32,
+      "questions_in_25": 8,
+      "key_topics": [
+        "Microsoft Fabric workspace: configure Spark, domain, OneLake, and data workflow settings",
+        "Lifecycle management: version control, database projects, deployment pipelines",
+        "Security and governance: workspace/item/row/column/object/folder-level access controls",
+        "Dynamic data masking, sensitivity labels, item endorsement",
+        "Workspace logging and OneLake security",
+        "Orchestration: Dataflow Gen2 vs pipeline vs notebook selection",
+        "Schedules, event-based triggers, orchestration patterns with notebooks and pipelines"
+      ]
+    },
+    {
+      "exam_id": "dp-700-fabric-data-engineer",
+      "domain_id": "D2",
+      "sequence": 2,
+      "name": "Ingest and Transform Data",
+      "weight_pct_range": "30–35%",
+      "weight_pct": 32,
+      "questions_in_25": 9,
+      "key_topics": [
+        "Loading patterns: full and incremental loads, dimensional model preparation, streaming loads",
+        "Batch data ingestion: choosing appropriate data store, dataflows vs notebooks vs KQL vs T-SQL",
+        "Shortcuts, mirroring, pipeline ingestion, continuous integration from OneLake",
+        "Data transformations: Power Query (M), PySpark, SQL, KQL",
+        "Denormalize, group/aggregate, handle duplicates/missing/late-arriving data",
+        "Streaming data: choosing streaming engine, native/mirrored/shortcut storage in Real-Time Intelligence",
+        "Eventstreams, Spark structured streaming, KQL for streaming, windowing functions"
+      ]
+    },
+    {
+      "exam_id": "dp-700-fabric-data-engineer",
+      "domain_id": "D3",
+      "sequence": 3,
+      "name": "Monitor and Optimize an Analytics Solution",
+      "weight_pct_range": "30–35%",
+      "weight_pct": 32,
+      "questions_in_25": 8,
+      "key_topics": [
+        "Monitor Fabric items: data ingestion, transformation, semantic model refresh, alerts",
+        "Identify and resolve pipeline, dataflow, notebook, eventhouse, eventstream, T-SQL, shortcut errors",
+        "Optimize lakehouse tables, pipelines, data warehouse, eventstreams/eventhouses",
+        "Spark performance optimization, query performance optimization"
+      ]
+    },
+    {
+      "exam_id": "dp-300-azure-database-administrator",
+      "domain_id": "D1",
+      "sequence": 1,
+      "name": "Plan and Implement Data Platform Resources",
+      "weight_pct_range": "20–25%",
+      "weight_pct": 22,
+      "questions_in_25": 6,
+      "key_topics": [
+        "Deploy Azure SQL solutions: Azure SQL Database, Managed Instance, SQL Server on Azure VMs",
+        "Automated deployment, patching/updates for hybrid and IaaS deployments",
+        "Recommend appropriate database offering based on specific requirements",
+        "Evaluate security aspects of database offerings",
+        "Table partitioning and database sharding solutions",
+        "Configure resources for scale and performance: compression, partitioning",
+        "Migration strategy: evaluate offline/online migrations, DMS, post-migration validations",
+        "SQL Data Sync, Azure SQL MI database copy and move"
+      ]
+    },
+    {
+      "exam_id": "dp-300-azure-database-administrator",
+      "domain_id": "D2",
+      "sequence": 2,
+      "name": "Implement a Secure Environment",
+      "weight_pct_range": "15–20%",
+      "weight_pct": 17,
+      "questions_in_25": 5,
+      "key_topics": [
+        "Database authentication: Microsoft Entra ID, security principals, object-level permissions",
+        "Principle of least privilege, troubleshoot authentication and authorization",
+        "Transparent Data Encryption (TDE), object-level encryption, firewall rules",
+        "Always Encrypted, Always Encrypted with VBS enclaves",
+        "Data classification strategy, Microsoft Purview for SQL compliance",
+        "Sensitive data discovery, dynamic data masking, row-level security"
+      ]
+    },
+    {
+      "exam_id": "dp-300-azure-database-administrator",
+      "domain_id": "D3",
+      "sequence": 3,
+      "name": "Monitor, Configure, and Optimize Database Resources",
+      "weight_pct_range": "20–25%",
+      "weight_pct": 22,
+      "questions_in_25": 5,
+      "key_topics": [
+        "Monitor activity: Dynamic Management Views (DMVs), Query Store, wait statistics",
+        "Intelligent Query Processing (IQP), Automatic Tuning",
+        "Query performance: execution plans, missing indexes, query hints",
+        "Azure SQL performance tuning: DTUs vs vCores, elastic pools, read replicas",
+        "Identify and resolve blocking, deadlocks, and performance bottlenecks",
+        "Configure and use Azure Monitor, SQL Insights for database monitoring"
+      ]
+    },
+    {
+      "exam_id": "dp-300-azure-database-administrator",
+      "domain_id": "D4",
+      "sequence": 4,
+      "name": "Configure and Manage Automation of Tasks",
+      "weight_pct_range": "15–20%",
+      "weight_pct": 17,
+      "questions_in_25": 4,
+      "key_topics": [
+        "SQL Server Agent: jobs, alerts, operators, notifications",
+        "Elastic Jobs for Azure SQL Database automation at scale",
+        "Automate database maintenance: index maintenance, statistics updates, backups",
+        "Azure Automation, Logic Apps, PowerShell for database task automation",
+        "Notifications and alerting via Azure Monitor action groups"
+      ]
+    },
+    {
+      "exam_id": "dp-300-azure-database-administrator",
+      "domain_id": "D5",
+      "sequence": 5,
+      "name": "Plan and Configure a High Availability and Disaster Recovery Environment",
+      "weight_pct_range": "20–25%",
+      "weight_pct": 22,
+      "questions_in_25": 5,
+      "key_topics": [
+        "Azure SQL Database HA: zone redundancy, active geo-replication, failover groups",
+        "SQL Managed Instance HA: Business Critical tier, auto-failover groups",
+        "SQL Server on Azure VMs: Always On Availability Groups, Failover Cluster Instances",
+        "Backup strategies: automated backups, long-term retention, point-in-time restore (PITR)",
+        "RPO and RTO design, geo-restore vs geo-replication trade-offs",
+        "Disaster recovery testing, failover and failback procedures"
+      ]
+    },
+    {
+      "exam_id": "az-500-azure-security-engineer",
+      "domain_id": "D1",
+      "sequence": 1,
+      "name": "Manage Identity and Access",
+      "weight_pct_range": "15–20%",
+      "weight_pct": 17,
+      "questions_in_25": 4,
+      "key_topics": [
+        "Microsoft Entra ID: users, groups, external identities, Conditional Access policies",
+        "MFA registration, authentication methods, password protection",
+        "Privileged Identity Management (PIM): just-in-time access, access reviews",
+        "Managed Identities: system-assigned and user-assigned",
+        "Service principals, app registrations, OAuth 2.0 and OIDC flows",
+        "Microsoft Entra ID Governance: entitlement management, access reviews"
+      ]
+    },
+    {
+      "exam_id": "az-500-azure-security-engineer",
+      "domain_id": "D2",
+      "sequence": 2,
+      "name": "Secure Networking",
+      "weight_pct_range": "20–25%",
+      "weight_pct": 22,
+      "questions_in_25": 6,
+      "key_topics": [
+        "VNet security: NSGs, Application Security Groups, service tags, effective security rules",
+        "Azure Firewall: policies, DNAT rules, application/network rules, Firewall Manager",
+        "Azure DDoS Protection: Basic vs Standard plans, mitigation policies",
+        "Azure Front Door and Web Application Firewall (WAF): managed rule sets, custom rules",
+        "Private endpoints and Private Link: securing PaaS services",
+        "VPN and ExpressRoute security: encryption, BGP authentication",
+        "Azure Bastion for secure VM access, Just-in-Time (JIT) VM access"
+      ]
+    },
+    {
+      "exam_id": "az-500-azure-security-engineer",
+      "domain_id": "D3",
+      "sequence": 3,
+      "name": "Secure Compute, Storage, and Databases",
+      "weight_pct_range": "20–25%",
+      "weight_pct": 22,
+      "questions_in_25": 6,
+      "key_topics": [
+        "Container security: Azure Kubernetes Service (AKS) RBAC, network policies, Defender for Containers",
+        "App Service security: authentication, managed identity, access restrictions",
+        "Azure Key Vault: secrets, keys, certificates management, access policies, RBAC",
+        "Storage security: encryption, SAS tokens, immutable storage, private endpoints",
+        "Azure SQL security: Transparent Data Encryption, Always Encrypted, Advanced Threat Protection",
+        "Disk encryption: Azure Disk Encryption (ADE), server-side encryption with CMK"
+      ]
+    },
+    {
+      "exam_id": "az-500-azure-security-engineer",
+      "domain_id": "D4",
+      "sequence": 4,
+      "name": "Manage Security Operations",
+      "weight_pct_range": "30–35%",
+      "weight_pct": 32,
+      "questions_in_25": 9,
+      "key_topics": [
+        "Microsoft Defender for Cloud: security posture (CSPM), workload protections (CWPP), regulatory compliance",
+        "Security Center recommendations, secure score, workflow automations",
+        "Microsoft Sentinel: workspace setup, data connectors, analytics rules, workbooks",
+        "Sentinel: incidents, investigations, hunting queries, SOAR playbooks (Logic Apps)",
+        "Azure Monitor: Diagnostic settings, Log Analytics workspace, KQL queries",
+        "Azure Policy: security policies, compliance, remediation tasks",
+        "Vulnerability assessment: Defender for Servers, Qualys integration, container image scanning"
+      ]
+    },
+    {
+      "exam_id": "ai-102-azure-ai-engineer",
+      "domain_id": "D1",
+      "sequence": 1,
+      "name": "Plan and Manage an Azure AI Solution",
+      "weight_pct_range": "15–20%",
+      "weight_pct": 17,
+      "questions_in_25": 4,
+      "key_topics": [
+        "Select and deploy Azure AI services (multi-service resource vs individual service)",
+        "Manage authentication and keys for Azure AI services",
+        "Configure diagnostic logging, Azure Monitor integration",
+        "Monitor AI service usage and costs, apply responsible AI principles",
+        "Azure AI Foundry: hubs, projects, deployments, connections"
+      ]
+    },
+    {
+      "exam_id": "ai-102-azure-ai-engineer",
+      "domain_id": "D2",
+      "sequence": 2,
+      "name": "Implement Content Moderation and Computer Vision Solutions",
+      "weight_pct_range": "15–20%",
+      "weight_pct": 17,
+      "questions_in_25": 4,
+      "key_topics": [
+        "Azure AI Content Safety: text and image moderation, groundedness detection, prompt shields",
+        "Azure AI Vision: image analysis (OCR, tagging, captioning, object detection, dense captions)",
+        "Face API: face detection, verification, identification, attribute analysis",
+        "Azure AI Custom Vision: training custom classifiers and object detectors",
+        "Azure AI Video Indexer: video analysis, insight extraction"
+      ]
+    },
+    {
+      "exam_id": "ai-102-azure-ai-engineer",
+      "domain_id": "D3",
+      "sequence": 3,
+      "name": "Implement Natural Language Processing Solutions",
+      "weight_pct_range": "25–30%",
+      "weight_pct": 28,
+      "questions_in_25": 7,
+      "key_topics": [
+        "Azure AI Language: key phrase extraction, entity recognition (NER), sentiment analysis",
+        "Language Understanding (CLU), custom text classification, summarization",
+        "Question Answering (custom QnA), conversational language understanding",
+        "Azure AI Speech: speech-to-text, text-to-speech, speech translation, speaker recognition",
+        "Custom Speech models, pronunciation assessment",
+        "Azure AI Translator: document translation, text translation, custom translator"
+      ]
+    },
+    {
+      "exam_id": "ai-102-azure-ai-engineer",
+      "domain_id": "D4",
+      "sequence": 4,
+      "name": "Implement Generative AI Solutions",
+      "weight_pct_range": "20–25%",
+      "weight_pct": 22,
+      "questions_in_25": 6,
+      "key_topics": [
+        "Azure OpenAI Service: provision resources, deploy models (GPT-4, DALL-E, Whisper, Embeddings)",
+        "Prompt engineering: system prompts, few-shot examples, chain-of-thought",
+        "Azure AI Foundry: model catalog, model evaluation, fine-tuning",
+        "RAG patterns: Azure AI Search integration, vector search, semantic ranking",
+        "Azure AI Foundry Agent Service: build agents with tools and knowledge",
+        "Responsible use of generative AI: content filters, groundedness, Responsible AI dashboard"
+      ]
+    },
+    {
+      "exam_id": "ai-102-azure-ai-engineer",
+      "domain_id": "D5",
+      "sequence": 5,
+      "name": "Implement Knowledge Mining and Document Intelligence Solutions",
+      "weight_pct_range": "15–20%",
+      "weight_pct": 17,
+      "questions_in_25": 4,
+      "key_topics": [
+        "Azure AI Search: index design, indexers, skillsets, semantic search, vector search",
+        "Custom skills: Azure Functions integration with AI Search pipelines",
+        "Azure AI Document Intelligence: prebuilt models (invoice, receipt, ID), custom models",
+        "Form recognizer, layout analysis, document classification"
+      ]
+    },
+    {
+      "exam_id": "dp-100-azure-data-scientist",
+      "domain_id": "D1",
+      "sequence": 1,
+      "name": "Design and Prepare a Machine Learning Solution",
+      "weight_pct_range": "25–30%",
+      "weight_pct": 27,
+      "questions_in_25": 7,
+      "key_topics": [
+        "Azure Machine Learning workspace: create and configure, compute targets (clusters, instances)",
+        "Data assets: create, manage, version datasets and data stores",
+        "Environment management: curated vs custom environments, Docker contexts",
+        "Select appropriate ML framework and compute for workloads",
+        "Responsible AI: Fairlearn, InterpretML, differential privacy, model cards"
+      ]
+    },
+    {
+      "exam_id": "dp-100-azure-data-scientist",
+      "domain_id": "D2",
+      "sequence": 2,
+      "name": "Explore Data and Train Models",
+      "weight_pct_range": "30–35%",
+      "weight_pct": 32,
+      "questions_in_25": 8,
+      "key_topics": [
+        "Exploratory data analysis with Azure ML notebooks and Python",
+        "AutoML: configure runs, classification/regression/forecasting tasks, primary metrics",
+        "Feature engineering: scaling, encoding, missing value imputation",
+        "Training scripts: script-based training, logging metrics with MLflow",
+        "Hyperparameter tuning: sweep jobs, sampling methods (random, Bayesian, grid), early termination",
+        "Distributed training with Azure ML: data and model parallelism"
+      ]
+    },
+    {
+      "exam_id": "dp-100-azure-data-scientist",
+      "domain_id": "D3",
+      "sequence": 3,
+      "name": "Prepare a Model for Deployment",
+      "weight_pct_range": "20–25%",
+      "weight_pct": 22,
+      "questions_in_25": 6,
+      "key_topics": [
+        "Model registry: register models, manage versions, model lineage",
+        "MLflow model format, model signatures, conda environments",
+        "Model evaluation: classification metrics, regression metrics, confusion matrix",
+        "Responsible AI dashboard: error analysis, fairness, explainability (SHAP), causal analysis",
+        "Model packaging: scoring scripts, inference environments, containerization"
+      ]
+    },
+    {
+      "exam_id": "dp-100-azure-data-scientist",
+      "domain_id": "D4",
+      "sequence": 4,
+      "name": "Deploy and Retrain a Model",
+      "weight_pct_range": "15–20%",
+      "weight_pct": 17,
+      "questions_in_25": 4,
+      "key_topics": [
+        "Online endpoints: managed online endpoints, Kubernetes online endpoints, A/B testing with traffic split",
+        "Batch endpoints: scoring large datasets asynchronously",
+        "Monitor model performance: data drift detection, model quality monitoring",
+        "Azure ML pipelines: component-based pipelines, scheduling, retraining triggers",
+        "CI/CD for ML: GitHub Actions / Azure DevOps integration with Azure ML"
+      ]
+    },
+    {
+      "exam_id": "az-700-azure-network-engineer",
+      "domain_id": "D1",
+      "sequence": 1,
+      "name": "Design and Implement Core Networking Infrastructure",
+      "weight_pct_range": "25–30%",
+      "weight_pct": 27,
+      "questions_in_25": 7,
+      "key_topics": [
+        "IP addressing: VNet address spaces, subnets, IPv4/IPv6, VNet peering (regional/global)",
+        "User-defined routes (UDRs), BGP dynamic routing, route tables and associations, effective routes",
+        "Azure DNS: public and private zones, Private DNS zones, hybrid DNS patterns",
+        "NAT Gateway vs SNAT, outbound connectivity control, scaling outbound",
+        "Network Watcher, Connection Monitor, NSG flow logs, Network Insights for monitoring",
+        "Azure Virtual WAN: hubs, spoke connections, routing policies, secured hubs"
+      ]
+    },
+    {
+      "exam_id": "az-700-azure-network-engineer",
+      "domain_id": "D2",
+      "sequence": 2,
+      "name": "Design, Implement, and Manage Connectivity Services",
+      "weight_pct_range": "20–25%",
+      "weight_pct": 22,
+      "questions_in_25": 6,
+      "key_topics": [
+        "Site-to-site VPN: HA VPN gateway design, active-active vs active-passive, BGP over VPN",
+        "Point-to-site VPN: authentication methods (certificates, Entra ID, RADIUS), tunnel protocols",
+        "Azure ExpressRoute: circuits, peering types (private/Microsoft), Global Reach, FastPath",
+        "ExpressRoute redundancy: dual circuits, zone-redundant gateways, 99.95% SLA design",
+        "Virtual WAN: S2S/P2S VPN hubs, ExpressRoute hubs, routing intent",
+        "Azure Route Server: BGP peering with NVAs, branch-to-branch connectivity"
+      ]
+    },
+    {
+      "exam_id": "az-700-azure-network-engineer",
+      "domain_id": "D3",
+      "sequence": 3,
+      "name": "Design and Implement Application Delivery Services",
+      "weight_pct_range": "15–20%",
+      "weight_pct": 17,
+      "questions_in_25": 5,
+      "key_topics": [
+        "Azure Load Balancer: SKUs (Basic/Standard), inbound NAT rules, health probes, outbound rules",
+        "Azure Application Gateway: WAF, URL routing, SSL offloading, autoscaling, multi-site hosting",
+        "Azure Front Door: global load balancing, CDN integration, WAF policies, routing rules",
+        "Azure Traffic Manager: DNS-based routing, routing methods (priority, weighted, performance, geographic)",
+        "Cross-region load balancer for global HA, choosing the right load balancing solution"
+      ]
+    },
+    {
+      "exam_id": "az-700-azure-network-engineer",
+      "domain_id": "D4",
+      "sequence": 4,
+      "name": "Design and Implement Private Access to Azure Services",
+      "weight_pct_range": "10–15%",
+      "weight_pct": 12,
+      "questions_in_25": 3,
+      "key_topics": [
+        "Azure Private Link and Private Endpoints: configure, DNS integration for private endpoints",
+        "Service Endpoints vs Private Endpoints: trade-offs and use cases",
+        "Azure Private Link Service: expose own services via Private Link",
+        "App Service VNet Integration and private access patterns"
+      ]
+    },
+    {
+      "exam_id": "az-700-azure-network-engineer",
+      "domain_id": "D5",
+      "sequence": 5,
+      "name": "Design and Implement Azure Network Security Services",
+      "weight_pct_range": "15–20%",
+      "weight_pct": 17,
+      "questions_in_25": 4,
+      "key_topics": [
+        "Azure Firewall: Standard vs Premium, DNAT/SNAT rules, application/network rules, Firewall Manager",
+        "Azure Firewall Premium: IDPS, TLS inspection, URL filtering, web categories",
+        "NSG and ASG: effective rules analysis, service tags, augmented security rules",
+        "Azure DDoS Protection: Standard plan, mitigation policies, diagnostic logs",
+        "Azure Web Application Firewall: Application Gateway WAF vs Front Door WAF",
+        "Network security monitoring: Azure Firewall logs, NSG flow logs, Network Watcher, Firewall Manager"
+      ]
+    },
+    {
+      "exam_id": "az-305-azure-solutions-architect",
+      "domain_id": "D1",
+      "sequence": 1,
+      "name": "Design Identity, Governance, and Monitoring Solutions",
+      "weight_pct_range": "~26%",
+      "weight_pct": 26,
+      "questions_in_25": 6,
+      "key_topics": [
+        "Identity solutions: Microsoft Entra ID design, hybrid identity (Entra Connect, ADFS)",
+        "Authentication: MFA, Conditional Access, passwordless, B2B/B2C identity",
+        "Authorization: RBAC design, Privileged Identity Management (PIM), Managed Identities",
+        "Governance: management groups, subscriptions, resource group structure and tagging strategy",
+        "Azure Policy: policy definitions, initiatives, remediation, compliance reporting",
+        "Monitoring solutions: Azure Monitor design, Log Analytics workspace strategy, alerts, Application Insights"
+      ]
+    },
+    {
+      "exam_id": "az-305-azure-solutions-architect",
+      "domain_id": "D2",
+      "sequence": 2,
+      "name": "Design Data Storage Solutions",
+      "weight_pct_range": "~24%",
+      "weight_pct": 24,
+      "questions_in_25": 6,
+      "key_topics": [
+        "Non-relational storage: Cosmos DB (API selection, consistency levels, partitioning), Storage accounts",
+        "Relational storage: Azure SQL Database, SQL Managed Instance, SQL Server on VMs",
+        "Semi-structured and unstructured: Azure Data Lake, Blob storage tiers",
+        "Storage integration: Data Factory for ETL, Synapse Analytics for analytics workloads",
+        "Data archiving, lifecycle management, hot/cool/cold/archive tiers",
+        "Cross-region data replication, geo-redundancy for storage services"
+      ]
+    },
+    {
+      "exam_id": "az-305-azure-solutions-architect",
+      "domain_id": "D3",
+      "sequence": 3,
+      "name": "Design Business Continuity Solutions",
+      "weight_pct_range": "~17%",
+      "weight_pct": 17,
+      "questions_in_25": 5,
+      "key_topics": [
+        "HA architecture: availability zones, availability sets, zone-redundant services",
+        "Backup solutions: Azure Backup for VMs, SQL, files; Recovery Services vault design",
+        "Disaster recovery: Azure Site Recovery for VMs, DR for Azure SQL, Cosmos DB",
+        "RTO and RPO requirements mapping to Azure DR strategies",
+        "Traffic management for resilience: Traffic Manager, Front Door, Application Gateway with zones",
+        "Multi-region active-active and active-passive architecture patterns"
+      ]
+    },
+    {
+      "exam_id": "az-305-azure-solutions-architect",
+      "domain_id": "D4",
+      "sequence": 4,
+      "name": "Design Infrastructure Solutions",
+      "weight_pct_range": "~33%",
+      "weight_pct": 33,
+      "questions_in_25": 8,
+      "key_topics": [
+        "Compute architecture: VM selection, VMSS, containers (AKS, ACI, Container Apps), serverless (Functions, Logic Apps)",
+        "Application architecture: microservices, event-driven (Event Grid, Service Bus, Event Hubs)",
+        "API design: API Management tiers, policies, caching, backends",
+        "Network design: hub-and-spoke, VNet peering, ExpressRoute, Azure Virtual WAN",
+        "Migration architecture: 7Rs strategy, Azure Migrate, DMS, landing zones",
+        "Well-Architected Framework pillars: reliability, security, performance, cost optimization, operational excellence",
+        "Azure Landing Zones and Cloud Adoption Framework (CAF) application",
+        "Infrastructure as Code: ARM, Bicep, Terraform architecture decisions"
+      ]
+    },
+    {
+      "exam_id": "az-400-azure-devops-engineer",
+      "domain_id": "D1",
+      "sequence": 1,
+      "name": "Design and Implement Processes and Communications",
+      "weight_pct_range": "10–15%",
+      "weight_pct": 12,
+      "questions_in_25": 3,
+      "key_topics": [
+        "Flow of work: GitHub Flow, feedback cycles, GitHub issues, notifications",
+        "Work tracking integration: GitHub Projects, Azure Boards, repository integration",
+        "Source, bug, and quality traceability",
+        "DevOps metrics and dashboards: cycle time, lead time, time to recovery",
+        "Metrics for planning, development, and testing insights"
+      ]
+    },
+    {
+      "exam_id": "az-400-azure-devops-engineer",
+      "domain_id": "D2",
+      "sequence": 2,
+      "name": "Design and Implement a Source Control Strategy",
+      "weight_pct_range": "10–15%",
+      "weight_pct": 12,
+      "questions_in_25": 3,
+      "key_topics": [
+        "Branching strategies: trunk-based development, feature flags, GitHub Flow, GitFlow",
+        "Repository management: monorepos vs multi-repos, permissions, branch protection rules",
+        "Pull request workflows, code review policies, required reviewers",
+        "Git hooks, pre-commit validation, signed commits"
+      ]
+    },
+    {
+      "exam_id": "az-400-azure-devops-engineer",
+      "domain_id": "D3",
+      "sequence": 3,
+      "name": "Design and Implement Build and Release Pipelines",
+      "weight_pct_range": "50–55%",
+      "weight_pct": 52,
+      "questions_in_25": 14,
+      "key_topics": [
+        "Azure Pipelines: YAML pipelines, stages, jobs, steps, templates, triggers",
+        "GitHub Actions: workflows, jobs, actions, secrets, environments",
+        "Build strategies: parallel jobs, self-hosted agents, container jobs",
+        "Package management: Azure Artifacts, NuGet, npm, Maven, universal packages",
+        "Release strategies: blue/green, canary, rolling, ring-based deployment",
+        "Deployment approvals, gates, environment policies",
+        "Infrastructure provisioning: ARM, Bicep, Terraform in pipelines",
+        "Container deployments: Docker build, push to ACR, deploy to AKS",
+        "App Service deployment slots, swap strategies",
+        "Azure Load Testing, chaos engineering in pipelines",
+        "Testing integration: unit, integration, performance, UI tests in pipelines"
+      ]
+    },
+    {
+      "exam_id": "az-400-azure-devops-engineer",
+      "domain_id": "D4",
+      "sequence": 4,
+      "name": "Develop a Security and Compliance Plan",
+      "weight_pct_range": "10–15%",
+      "weight_pct": 12,
+      "questions_in_25": 3,
+      "key_topics": [
+        "Software Composition Analysis (SCA): dependency scanning, license compliance",
+        "SAST and DAST integration in CI/CD pipelines",
+        "Secret management: Azure Key Vault integration, secret scanning in repos",
+        "Supply chain security: signed artifacts, SBOM generation, dependency pinning",
+        "GitHub Advanced Security: code scanning, secret scanning, Dependabot",
+        "Compliance policies: Azure Policy in pipelines, Microsoft Defender for DevOps"
+      ]
+    },
+    {
+      "exam_id": "az-400-azure-devops-engineer",
+      "domain_id": "D5",
+      "sequence": 5,
+      "name": "Implement an Instrumentation Strategy",
+      "weight_pct_range": "5–10%",
+      "weight_pct": 7,
+      "questions_in_25": 2,
+      "key_topics": [
+        "Application monitoring: Azure Monitor Application Insights, distributed tracing",
+        "Infrastructure monitoring: Azure Monitor, Log Analytics, dashboards and workbooks",
+        "Alerting and on-call: alert rules, action groups, Azure Monitor alert integration",
+        "Feedback loops: deployment frequency, change failure rate, MTTR (DORA metrics)"
+      ]
+    }
+]

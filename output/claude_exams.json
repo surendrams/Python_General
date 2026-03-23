@@ -21,7 +21,7 @@
   },
   {
     "exam_id": "claude-prompt-engineer",
-    "title": "Prompt Engineering",
+    "title": "Claude Prompt Engineering",
     "subtitle": "Specialist",
     "description": "Advanced prompting, few-shot design, chain-of-thought, evaluation.",
     "domains": 4,

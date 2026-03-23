@@ -1,0 +1,184 @@
+[
+    {
+      "exam_id": "oci-foundations-associate",
+      "exam_code": "1Z0-1085-25",
+      "title": "Oracle Cloud Infrastructure 2025 Foundations Associate",
+      "subtitle": "Foundations",
+      "description": "Foundational knowledge of OCI core services including Compute, Networking, Storage, Database, Security, IAM, cloud-native services, pricing, and governance.",
+      "level": "Foundations",
+      "domains": 5,
+      "passing_score": 65,
+      "passing_pct": 65,
+      "available": true,
+      "format": "exam",
+      "duration_mins": 60,
+      "total_questions": 60,
+      "created_at": {
+        "$date": "2025-01-01T00:00:00.000Z"
+      }
+    },
+    {
+      "exam_id": "oci-ai-foundations-associate",
+      "exam_code": "1Z0-1122-25",
+      "title": "Oracle Cloud Infrastructure 2025 AI Foundations Associate",
+      "subtitle": "Foundations",
+      "description": "Foundational AI/ML knowledge on OCI including machine learning concepts, generative AI, OCI AI services (Language, Vision, Speech, Document Understanding), and OCI Generative AI.",
+      "level": "Foundations",
+      "domains": 5,
+      "passing_score": 65,
+      "passing_pct": 65,
+      "available": true,
+      "format": "exam",
+      "duration_mins": 60,
+      "total_questions": 60,
+      "created_at": {
+        "$date": "2025-01-01T00:00:00.000Z"
+      }
+    },
+    {
+      "exam_id": "oci-data-foundations-associate",
+      "exam_code": "1Z0-1195-25",
+      "title": "Oracle Data Platform 2025 Foundations Associate",
+      "subtitle": "Foundations / Entry Level",
+      "description": "Foundational knowledge of Oracle data management platform including Autonomous Database, Exadata, MySQL, NoSQL, Data Lakehouse, Analytics, and migrations.",
+      "level": "Foundations",
+      "domains": 9,
+      "passing_score": 65,
+      "passing_pct": 65,
+      "available": true,
+      "format": "exam",
+      "duration_mins": 60,
+      "total_questions": 60,
+      "created_at": {
+        "$date": "2025-01-01T00:00:00.000Z"
+      }
+    },
+    {
+      "exam_id": "oci-architect-associate",
+      "exam_code": "1Z0-1072-25",
+      "title": "Oracle Cloud Infrastructure 2025 Architect Associate",
+      "subtitle": "Associate",
+      "description": "Design, implement, and manage OCI solutions across IAM, Networking, Compute, and Storage. Build secure, scalable, and highly available cloud architectures.",
+      "level": "Associate",
+      "domains": 4,
+      "passing_score": 65,
+      "passing_pct": 65,
+      "available": true,
+      "format": "exam",
+      "duration_mins": 90,
+      "total_questions": 60,
+      "created_at": {
+        "$date": "2025-01-01T00:00:00.000Z"
+      }
+    },
+    {
+      "exam_id": "oci-architect-professional",
+      "exam_code": "1Z0-997-25",
+      "title": "Oracle Cloud Infrastructure 2025 Architect Professional",
+      "subtitle": "Professional",
+      "description": "Advanced OCI architecture: cloud-native solutions, HA/DR, multicloud, IaC, security, observability, workload migration, and enterprise-grade design patterns.",
+      "level": "Professional",
+      "domains": 6,
+      "passing_score": 65,
+      "passing_pct": 65,
+      "available": true,
+      "format": "exam",
+      "duration_mins": 90,
+      "total_questions": 60,
+      "created_at": {
+        "$date": "2025-01-01T00:00:00.000Z"
+      }
+    },
+    {
+      "exam_id": "oci-data-science-professional",
+      "exam_code": "1Z0-1110-25",
+      "title": "Oracle Cloud Infrastructure 2025 Data Science Professional",
+      "subtitle": "Professional",
+      "description": "End-to-end ML solutions on OCI Data Science: notebook environments, data preparation, model training, MLOps, deployment, monitoring, and AI services integration.",
+      "level": "Professional",
+      "domains": 6,
+      "passing_score": 65,
+      "passing_pct": 65,
+      "available": true,
+      "format": "exam",
+      "duration_mins": 90,
+      "total_questions": 60,
+      "created_at": {
+        "$date": "2025-01-01T00:00:00.000Z"
+      }
+    },
+    {
+      "exam_id": "oracle-autonomous-database-professional",
+      "exam_code": "1Z0-931-25",
+      "title": "Oracle AI Autonomous Database 2025 Professional",
+      "subtitle": "Professional",
+      "description": "Deploy, manage, secure, migrate, and develop on Oracle Autonomous Database (ATP, ADW, AJD) on shared and dedicated Exadata infrastructure including AI features.",
+      "level": "Professional",
+      "domains": 7,
+      "passing_score": 65,
+      "passing_pct": 65,
+      "available": true,
+      "format": "exam",
+      "duration_mins": 90,
+      "total_questions": 60,
+      "created_at": {
+        "$date": "2025-01-01T00:00:00.000Z"
+      }
+    },
+    {
+      "exam_id": "oracle-cloud-database-services-professional",
+      "exam_code": "1Z0-1093-25",
+      "title": "Oracle AI Cloud Database Services 2025 Professional",
+      "subtitle": "Professional",
+      "description": "Implement Oracle Database Cloud Services on OCI: Base Database Service, Exadata Database Service, MySQL HeatWave, NoSQL, and OCI Database Management Service.",
+      "level": "Professional",
+      "domains": 5,
+      "passing_score": 65,
+      "passing_pct": 65,
+      "available": true,
+      "format": "exam",
+      "duration_mins": 90,
+      "total_questions": 60,
+      "created_at": {
+        "$date": "2025-01-01T00:00:00.000Z"
+      }
+    },
+    {
+      "exam_id": "oracle-ml-autonomous-database-associate",
+      "exam_code": "1Z0-1096-24",
+      "title": "Oracle Machine Learning Using Autonomous Database 2024 Associate",
+      "subtitle": "Associate",
+      "description": "Implement ML solutions using Oracle Machine Learning (OML) tools on Autonomous Database: OML Notebooks, OML4SQL, OML4Py, OML AutoML UI, OML Services REST API, and in-database ML algorithms.",
+      "level": "Associate",
+      "track": "AI / Machine Learning / GenAI",
+      "domains": 6,
+      "passing_score": 65,
+      "passing_pct": 65,
+      "available": true,
+      "format": "exam",
+      "duration_mins": 90,
+      "total_questions": 50,
+      "created_at": {
+        "$date": "2024-01-01T00:00:00.000Z"
+      }
+    },
+    {
+      "exam_id": "oci-generative-ai-professional",
+      "exam_code": "1Z0-1127-25",
+      "title": "Oracle Cloud Infrastructure 2025 Generative AI Professional",
+      "subtitle": "Professional",
+      "description": "Design and implement generative AI solutions on OCI: LLM fundamentals, OCI Generative AI service (fine-tuning, embeddings, dedicated clusters), RAG with LangChain and Oracle Database 23ai, and OCI Generative AI RAG Agents.",
+      "level": "Professional",
+      "track": "AI / Machine Learning / GenAI",
+      "domains": 4,
+      "passing_score": 68,
+      "passing_pct": 68,
+      "available": true,
+      "format": "exam",
+      "duration_mins": 90,
+      "total_questions": 50,
+      "created_at": {
+        "$date": "2025-01-01T00:00:00.000Z"
+      }
+    }
+  ]

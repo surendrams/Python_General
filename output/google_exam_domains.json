@@ -1,0 +1,869 @@
+[
+  {
+    "exam_id": "google-professional-mle",
+    "domain_id": "D1",
+    "name": "Architecting Low-Code AI Solutions",
+    "weight_pct": 13,
+    "questions_in_25": 3,
+    "sequence": 1,
+    "key_topics": [
+      "BigQuery ML model types: linear/binary classification, regression, time-series, matrix factorization, boosted trees, autoencoders",
+      "Feature engineering and feature selection using BigQuery ML",
+      "Generating batch and online predictions using BigQuery ML",
+      "Building applications using ML APIs from Model Garden",
+      "Industry-specific APIs: Document AI API, Retail API",
+      "Implementing RAG applications using Vertex AI Agent Builder",
+      "Preparing data for AutoML: feature selection, data labeling, Tabular Workflows",
+      "Training custom models with AutoML: tabular, text, speech, images, videos",
+      "Creating forecasting models using AutoML",
+      "Configuring and debugging AutoML trained models"
+    ]
+  },
+  {
+    "exam_id": "google-professional-mle",
+    "domain_id": "D2",
+    "name": "Collaborating Within and Across Teams to Manage Data and Models",
+    "weight_pct": 14,
+    "questions_in_25": 4,
+    "sequence": 2,
+    "key_topics": [
+      "Organizing data types (tabular, text, speech, images, videos) for efficient training",
+      "Managing datasets in Vertex AI",
+      "Data preprocessing tools: Dataflow, TensorFlow Extended (TFX), BigQuery",
+      "Creating and consolidating features in Vertex AI Feature Store",
+      "Privacy implications: handling PII and PHI in data collection and usage",
+      "Ingesting data sources (e.g., text documents) into Vertex AI for inference",
+      "Choosing Jupyter backend: Vertex AI Workbench, Colab Enterprise, Dataproc notebooks",
+      "Security best practices in Vertex AI Workbench",
+      "Developing models with frameworks: TensorFlow, PyTorch, sklearn, Spark, JAX",
+      "Leveraging foundation and open-source models in Model Garden",
+      "Tracking ML experiments: Vertex AI Experiments, Kubeflow Pipelines, Vertex AI TensorBoard",
+      "Evaluating generative AI solutions"
+    ]
+  },
+  {
+    "exam_id": "google-professional-mle",
+    "domain_id": "D3",
+    "name": "Scaling Prototypes into ML Models",
+    "weight_pct": 18,
+    "questions_in_25": 5,
+    "sequence": 3,
+    "key_topics": [
+      "Choosing ML framework and model architecture for the problem",
+      "Modeling techniques given interpretability requirements",
+      "Organizing training data on Google Cloud: Cloud Storage, BigQuery",
+      "Ingesting file types into training: CSV, JSON, images, Hadoop, databases",
+      "Training SDKs: Vertex AI custom training, Kubeflow on GKE, AutoML, tabular workflows",
+      "Distributed training for reliable pipelines",
+      "Hyperparameter tuning strategies",
+      "Troubleshooting ML model training failures",
+      "Fine-tuning foundation models via Vertex AI and Model Garden",
+      "Compute and accelerator evaluation: CPU, GPU, TPU, edge devices",
+      "Distributed training with TPUs and GPUs: Reduction Server on Vertex AI, Horovod"
+    ]
+  },
+  {
+    "exam_id": "google-professional-mle",
+    "domain_id": "D4",
+    "name": "Serving and Scaling Models",
+    "weight_pct": 20,
+    "questions_in_25": 5,
+    "sequence": 4,
+    "key_topics": [
+      "Batch and online inference: Vertex AI, Dataflow, BigQuery ML, Dataproc",
+      "Serving models with different frameworks: PyTorch, XGBoost",
+      "Organizing and managing a model registry",
+      "A/B testing different model versions",
+      "Vertex AI Feature Store for online serving",
+      "Vertex AI public and private endpoints",
+      "Choosing appropriate serving hardware: CPU, GPU, TPU, edge",
+      "Scaling serving backend by throughput: Vertex AI Prediction, containerized serving",
+      "Tuning ML models for production: simplification techniques, latency, memory, throughput optimization"
+    ]
+  },
+  {
+    "exam_id": "google-professional-mle",
+    "domain_id": "D5",
+    "name": "Automating and Orchestrating ML Pipelines",
+    "weight_pct": 22,
+    "questions_in_25": 6,
+    "sequence": 5,
+    "key_topics": [
+      "Developing end-to-end ML pipelines: data and model validation",
+      "Ensuring consistent data preprocessing between training and serving",
+      "Hosting third-party pipelines on Google Cloud (e.g., MLFlow)",
+      "Pipeline components, parameters, triggers, and compute needs: Cloud Build, Cloud Run",
+      "Orchestration frameworks: Kubeflow Pipelines, Vertex AI Pipelines, Cloud Composer",
+      "Hybrid and multicloud ML pipeline strategies",
+      "System design with TFX components or Kubeflow DSL using Dataflow",
+      "Determining appropriate model retraining policies",
+      "CI/CD model deployment: Cloud Build, Jenkins",
+      "Tracking and comparing model artifacts and versions: Vertex AI Experiments, Vertex ML Metadata",
+      "Model and dataset versioning",
+      "Model and data lineage tracking and auditing"
+    ]
+  },
+  {
+    "exam_id": "google-professional-mle",
+    "domain_id": "D6",
+    "name": "Monitoring AI Solutions",
+    "weight_pct": 13,
+    "questions_in_25": 2,
+    "sequence": 6,
+    "key_topics": [
+      "Building secure AI systems: protecting against unintentional exploitation and hacking",
+      "Aligning with Google's Responsible AI practices: monitoring for bias",
+      "Assessing AI solution readiness: fairness and bias evaluation",
+      "Model explainability on Vertex AI Prediction",
+      "Establishing continuous evaluation metrics: Vertex AI Model Monitoring, Explainable AI",
+      "Monitoring for training-serving skew",
+      "Monitoring for feature attribution drift",
+      "Monitoring model performance against baselines and simpler models over time",
+      "Monitoring for common training and serving errors"
+    ]
+  },
+  {
+    "exam_id": "google-genai-leader",
+    "domain_id": "D1",
+    "name": "Fundamentals of Generative AI",
+    "weight_pct": 30,
+    "questions_in_25": 8,
+    "sequence": 1,
+    "key_topics": [
+      "Core gen AI concepts: AI, NLP, ML, foundation models, LLMs, diffusion models",
+      "Machine learning approaches: supervised, unsupervised, reinforcement learning",
+      "ML lifecycle stages: data ingestion, preparation, training, deployment, management",
+      "Choosing the right foundation model: modality, context window, cost, performance, fine-tuning",
+      "Gen AI use cases: text, image, code, video generation, data analysis, personalization",
+      "Data types in gen AI: structured vs unstructured, labeled vs unlabeled",
+      "Data quality and accessibility: completeness, consistency, relevance, availability",
+      "Gen AI landscape layers: infrastructure, models, platforms, agents, applications",
+      "Google foundation models: Gemini, Gemma, Imagen, Veo"
+    ]
+  },
+  {
+    "exam_id": "google-genai-leader",
+    "domain_id": "D2",
+    "name": "Google Cloud's Generative AI Offerings",
+    "weight_pct": 35,
+    "questions_in_25": 9,
+    "sequence": 2,
+    "key_topics": [
+      "Google's AI-first approach: responsible, secure, private, reliable, scalable platform",
+      "Google Cloud AI infrastructure: hypercomputer, custom TPUs, GPUs, data centers",
+      "Low-code/no-code tools, pre-trained models, APIs for AI democratization",
+      "Gemini app and Gemini Advanced (Gems)",
+      "Gemini Enterprise: NotebookLM API, multimodal search, custom agent capabilities",
+      "Gemini for Google Workspace productivity integrations",
+      "Vertex AI Search and Google Search for external search offerings",
+      "Customer Engagement Suite: Conversational Agents, Agent Assist, Conversational Insights, Contact Center as a Service",
+      "Vertex AI Platform: Model Garden, Vertex AI Search, AutoML",
+      "RAG offerings: prebuilt RAG with Vertex AI Search, RAG APIs",
+      "Vertex AI Agent Builder for custom agents",
+      "Agent tooling: extensions, functions, data stores, plugins",
+      "Pre-built AI APIs: Vision, Video Intelligence, Natural Language, Speech, Translation, Document AI",
+      "Vertex AI Studio vs Google AI Studio"
+    ]
+  },
+  {
+    "exam_id": "google-genai-leader",
+    "domain_id": "D3",
+    "name": "Techniques to Improve Generative AI Model Output",
+    "weight_pct": 20,
+    "questions_in_25": 5,
+    "sequence": 3,
+    "key_topics": [
+      "Foundation model limitations: data dependency, knowledge cutoff, bias, hallucinations, edge cases",
+      "Overcoming limitations: grounding, RAG, prompt engineering, fine-tuning, human-in-the-loop (HITL)",
+      "Continuous monitoring: KPIs, security patches, versioning, drift monitoring, Vertex AI Feature Store",
+      "Prompt engineering: definition, significance with LLMs",
+      "Prompting techniques: zero-shot, one-shot, few-shot, role prompting, prompt chaining",
+      "Advanced prompting: chain-of-thought, ReAct prompting",
+      "Grounding in LLMs: first-party, third-party, and world data",
+      "RAG impact on gen AI output quality",
+      "Google Cloud grounding: Vertex AI Search RAG, RAG APIs, Grounding with Google Search",
+      "Sampling parameters: token count, temperature, top-p, safety settings, output length"
+    ]
+  },
+  {
+    "exam_id": "google-genai-leader",
+    "domain_id": "D4",
+    "name": "Business Strategies for a Successful Gen AI Solution",
+    "weight_pct": 15,
+    "questions_in_25": 4,
+    "sequence": 4,
+    "key_topics": [
+      "Types of gen AI solutions: text, image, code generation, personalized user experiences",
+      "Key factors influencing gen AI needs: business requirements, technical constraints",
+      "Choosing the right gen AI solution for specific business problems",
+      "Steps to integrate gen AI into an organization",
+      "Measuring the impact of gen AI initiatives",
+      "Secure AI: security throughout the ML lifecycle",
+      "Google's Secure AI Framework (SAIF): purpose and benefits",
+      "Google Cloud security tools: IAM, Security Command Center, workload monitoring",
+      "Responsible AI: transparency, accountability, explainability",
+      "Privacy considerations: risks, data anonymization, pseudonymization",
+      "Data quality, bias, and fairness implications in AI systems"
+    ]
+  },
+  {
+    "exam_id": "google-professional-cloud-architect",
+    "domain_id": "D1",
+    "sequence": 1,
+    "name": "Designing and Planning a Cloud Solution Architecture",
+    "weight_pct": 25,
+    "questions_in_25": 6,
+    "key_topics": [
+      "Business use cases, product strategy, functional and non-functional requirements",
+      "Business continuity planning, cost optimization, workload disposition strategies",
+      "KPI, ROI, success metrics, security and compliance, observability",
+      "Google Cloud Well-Architected Framework: HA, failover, scalability, performance",
+      "Gemini Cloud Assist, backup and recovery",
+      "Network, storage, and compute resource design: VPC, peering, firewalls, load balancers",
+      "GKE, Cloud Run, Cloud Run functions, spot VMs, custom machine types",
+      "AI/ML solutions: Gemini LLMs, Agent Builder, Model Garden, AI Hypercomputer",
+      "Migration planning: Google Cloud Migration Center, migration methodologies",
+      "Integrating with existing systems, software license implications",
+      "Envisioning future improvements: cloud-first design, evolution of business needs"
+    ]
+  },
+  {
+    "exam_id": "google-professional-cloud-architect",
+    "domain_id": "D2",
+    "sequence": 2,
+    "name": "Managing and Provisioning a Cloud Solution Infrastructure",
+    "weight_pct": 17,
+    "questions_in_25": 4,
+    "key_topics": [
+      "Network topologies: hybrid networking, multicloud, VPC design, load balancing",
+      "Security protection: intrusion protection, access control, firewalls",
+      "Individual storage systems: data allocation, lifecycle management, data protection",
+      "Compute systems: provisioning, spot vs standard, container orchestration, serverless",
+      "Infrastructure orchestration, patch management",
+      "Vertex AI pipelines for ML lifecycle automation",
+      "AI Hypercomputer: GPU/TPU integration, large-scale AI model training",
+      "Prebuilt solutions and APIs with Vertex AI: Google AI APIs, Gemini Enterprise, Model Garden"
+    ]
+  },
+  {
+    "exam_id": "google-professional-cloud-architect",
+    "domain_id": "D3",
+    "sequence": 3,
+    "name": "Designing for Security and Compliance",
+    "weight_pct": 17,
+    "questions_in_25": 5,
+    "key_topics": [
+      "Identity and Access Management (IAM): resource hierarchy, separation of duties",
+      "Data security: Cloud KMS, encryption, secret management",
+      "Security controls: auditing, VPC Service Controls, context-aware access, org policies",
+      "Securing software supply chain",
+      "Securing AI workloads: Model Armor, Sensitive Data Protection, secure model deployment",
+      "Secure remote access: Identity-Aware Proxy, Workload Identity Federation, Chrome Enterprise Premium",
+      "Compliance: health record privacy, data sovereignty, PII, SOC 2, audit logs"
+    ]
+  },
+  {
+    "exam_id": "google-professional-cloud-architect",
+    "domain_id": "D4",
+    "sequence": 4,
+    "name": "Analyzing and Optimizing Technical and Business Processes",
+    "weight_pct": 15,
+    "questions_in_25": 4,
+    "key_topics": [
+      "Software development lifecycle (SDLC), CI/CD pipelines",
+      "Troubleshooting and root cause analysis best practices",
+      "Testing and validation: load, unit, integration testing",
+      "Service catalog and provisioning, disaster recovery",
+      "Stakeholder management, change management, team skills readiness",
+      "Decision-making processes, customer success management",
+      "Cost and resource optimization: CapEx vs OpEx, business continuity"
+    ]
+  },
+  {
+    "exam_id": "google-professional-cloud-architect",
+    "domain_id": "D5",
+    "sequence": 5,
+    "name": "Managing Implementation",
+    "weight_pct": 13,
+    "questions_in_25": 3,
+    "key_topics": [
+      "Application and infrastructure deployment best practices",
+      "API management: Apigee best practices",
+      "Testing frameworks: load, unit, integration",
+      "Data and system migration tooling",
+      "Gemini Cloud Assist for deployment guidance",
+      "Google Cloud SDKs: gcloud, gsutil, bq",
+      "Infrastructure as Code: Terraform, IaC",
+      "Cloud Shell Editor, Cloud Code, Cloud Emulators"
+    ]
+  },
+  {
+    "exam_id": "google-professional-cloud-architect",
+    "domain_id": "D6",
+    "sequence": 6,
+    "name": "Ensuring Solution and Operations Excellence",
+    "weight_pct": 13,
+    "questions_in_25": 3,
+    "key_topics": [
+      "Google Cloud Well-Architected Framework: operational excellence pillar",
+      "Google Cloud Observability: monitoring, logging, profiling, benchmarking",
+      "Alerting strategies and deployment/release management",
+      "Support of deployed solutions, quality control measures",
+      "Reliability in production: chaos engineering, penetration testing, load testing"
+    ]
+  },
+  {
+    "exam_id": "google-professional-cloud-developer",
+    "domain_id": "D1",
+    "sequence": 1,
+    "name": "Designing Highly Scalable, Available, and Reliable Cloud-Native Applications",
+    "weight_pct": 36,
+    "questions_in_25": 9,
+    "key_topics": [
+      "Microservices architecture and platform selection: IaaS, CaaS, PaaS, FaaS",
+      "Application modernization and containerization",
+      "High availability, disaster recovery, geographic distribution",
+      "User session management, caching solutions",
+      "High-performing APIs: HTTP REST vs gRPC, Apigee, API Gateway",
+      "Loosely coupled async applications: Pub/Sub, Kafka, Eventarc",
+      "Secure applications: IAP, Web Security Scanner, Secret Manager, Cloud KMS",
+      "IAM roles, Workload Identity, service-to-service security",
+      "SAML, OAuth 2.0, mTLS, Identity Platform",
+      "Storage selection: Cloud SQL, AlloyDB, Spanner, Firestore, Bigtable, Cloud Storage",
+      "Structured vs unstructured, OLTP vs data warehousing, strong vs eventual consistency"
+    ]
+  },
+  {
+    "exam_id": "google-professional-cloud-developer",
+    "domain_id": "D2",
+    "sequence": 2,
+    "name": "Building and Testing Applications",
+    "weight_pct": 24,
+    "questions_in_25": 6,
+    "key_topics": [
+      "Local development: Cloud Shell, Cloud Workstations, Cloud SDK, IDEs, Cloud Code, Skaffold",
+      "Authenticating to Google Cloud: Cloud SQL Auth proxy, AlloyDB Auth proxy",
+      "Source control management, secure container image creation from code",
+      "CI pipelines: Cloud Build, Artifact Registry, deployment artifact construction",
+      "Code and test build optimization",
+      "Supply-chain security: SLSA framework",
+      "Testing strategies: unit, integration, performance, load, chaos/failure testing",
+      "Using emulators for local testing"
+    ]
+  },
+  {
+    "exam_id": "google-professional-cloud-developer",
+    "domain_id": "D3",
+    "sequence": 3,
+    "name": "Deploying Applications",
+    "weight_pct": 20,
+    "questions_in_25": 5,
+    "key_topics": [
+      "Feature rollout strategies: A/B testing, feature flags, backward compatibility",
+      "Versioning APIs with Apigee",
+      "Deploying to serverless: Cloud Run, App Engine, Cloud Functions",
+      "Configuring event receivers: Eventarc, Pub/Sub",
+      "Deploying containerized apps to GKE: RBAC, Kubernetes workload specs",
+      "Deployment strategies: canary, blue/green, rolling updates",
+      "Exposing and securing APIs with Apigee"
+    ]
+  },
+  {
+    "exam_id": "google-professional-cloud-developer",
+    "domain_id": "D4",
+    "sequence": 4,
+    "name": "Integrating an Application with Google Cloud Services",
+    "weight_pct": 20,
+    "questions_in_25": 5,
+    "key_topics": [
+      "Managing datastore connections: Cloud SQL, Firestore, Bigtable, Cloud Storage",
+      "Reading/writing data to various datastores",
+      "Async messaging: Pub/Sub, streaming data sources",
+      "Orchestrating services with Workflows, Eventarc, Cloud Tasks, Cloud Scheduler",
+      "Google Cloud APIs: Cloud Client Library, REST API, gRPC, batching, pagination, caching",
+      "Error handling: exponential backoff, error reporting",
+      "Integrating with Google Cloud Observability: metrics, logs, traces",
+      "Using service accounts for Cloud API calls"
+    ]
+  },
+  {
+    "exam_id": "google-professional-data-engineer",
+    "domain_id": "D1",
+    "sequence": 1,
+    "name": "Designing Data Processing Systems",
+    "weight_pct": 22,
+    "questions_in_25": 5,
+    "key_topics": [
+      "IAM, organization policies, data security, encryption, and key management",
+      "Privacy strategies for PII, data sovereignty, regional considerations",
+      "Legal and regulatory compliance, project/dataset/table architecture for governance",
+      "Multi-environment use cases: development vs production",
+      "Data preparation and cleaning: Dataform, Dataflow, Cloud Data Fusion, LLM prompting for queries",
+      "Monitoring and orchestration of data pipelines",
+      "Disaster recovery, fault tolerance, ACID compliance, data validation",
+      "Data portability: multi-cloud, data residency requirements",
+      "Data staging, cataloging, profiling, and discovery (governance)",
+      "Migration planning: BigQuery Data Transfer Service, DMS, Transfer Appliance, Datastream"
+    ]
+  },
+  {
+    "exam_id": "google-professional-data-engineer",
+    "domain_id": "D2",
+    "sequence": 2,
+    "name": "Ingesting and Processing the Data",
+    "weight_pct": 25,
+    "questions_in_25": 6,
+    "key_topics": [
+      "Defining data sources, sinks, transformation and orchestration logic",
+      "Networking fundamentals and data encryption for pipelines",
+      "Data cleansing and identifying processing services: Dataflow, Apache Beam, Dataproc, Data Fusion",
+      "BigQuery, Pub/Sub, Apache Spark, Hadoop ecosystem, Apache Kafka",
+      "Transformations: batch, streaming (windowing, late-arriving data), AI data enrichment",
+      "Data acquisition, import, and integrating new data sources",
+      "Deploying and operationalizing pipelines: Cloud Composer, Workflows",
+      "CI/CD for data pipeline deployment"
+    ]
+  },
+  {
+    "exam_id": "google-professional-data-engineer",
+    "domain_id": "D3",
+    "sequence": 3,
+    "name": "Storing the Data",
+    "weight_pct": 20,
+    "questions_in_25": 5,
+    "key_topics": [
+      "Analyzing data access patterns to choose storage systems",
+      "Managed services: BigQuery, BigLake, AlloyDB, Bigtable, Spanner, Cloud SQL, Cloud Storage, Firestore, Memorystore",
+      "Storage cost, performance, and lifecycle management",
+      "Data warehouse design: data model, normalization, access pattern architecture",
+      "Data lake management: discovery, access, cost controls, processing, monitoring",
+      "Data platform design: Dataplex, Dataplex Catalog, BigQuery, Cloud Storage",
+      "Federated governance for distributed data systems"
+    ]
+  },
+  {
+    "exam_id": "google-professional-data-engineer",
+    "domain_id": "D4",
+    "sequence": 4,
+    "name": "Preparing and Using Data for Analysis",
+    "weight_pct": 15,
+    "questions_in_25": 4,
+    "key_topics": [
+      "Connecting to visualization tools, precalculating fields",
+      "BigQuery BI Engine, materialized views, troubleshooting slow queries",
+      "Security, data masking, IAM, and Cloud DLP for BI",
+      "Preparing data for ML: feature engineering, BigQueryML, training and serving",
+      "Preparing unstructured data for embeddings and RAG",
+      "Defining data sharing rules, publishing datasets and reports",
+      "BigQuery Analytics Hub for data sharing"
+    ]
+  },
+  {
+    "exam_id": "google-professional-data-engineer",
+    "domain_id": "D5",
+    "sequence": 5,
+    "name": "Maintaining and Automating Data Workloads",
+    "weight_pct": 18,
+    "questions_in_25": 5,
+    "key_topics": [
+      "Minimizing costs and ensuring resources for business-critical processes",
+      "Persistent vs job-based data clusters: Dataproc",
+      "Creating DAGs for Cloud Composer, scheduling and orchestrating jobs",
+      "BigQuery Editions and reservations: capacity management",
+      "Interactive vs batch query jobs",
+      "Observability: Cloud Monitoring, Cloud Logging, BigQuery admin panel",
+      "Monitoring planned usage, troubleshooting errors, billing, and quotas",
+      "Fault tolerance design: multi-region/zone jobs, data replication and failover",
+      "Cloud SQL and Redis cluster failover, managing data corruption and missing data"
+    ]
+  },
+  {
+    "exam_id": "google-professional-cloud-devops-engineer",
+    "domain_id": "D1",
+    "sequence": 1,
+    "name": "Bootstrapping and Maintaining a Google Cloud Organization",
+    "weight_pct": 20,
+    "questions_in_25": 5,
+    "key_topics": [
+      "Resource hierarchy design: application-centric, projects, folders",
+      "Shared networking: Shared VPC, VPC Network Peering, Private Service Connect",
+      "Multi-project monitoring and logging, IAM roles and org-level policies",
+      "Creating and managing service accounts, data residency",
+      "Infrastructure-as-Code: Infrastructure Manager, Config Connector, Terraform, Helm, GitOps",
+      "Automation with scripting: Python, Go",
+      "CI/CD architecture: Cloud Build, Cloud Deploy, Kustomize, Skaffold",
+      "Artifact Registry, Jenkins, Argo CD, Packer, kpt",
+      "Managing multiple environments: staging, production, ephemeral environments",
+      "GKE cluster management across enterprise (fleets), safe patching and upgrading",
+      "Cloud development environments: Cloud Workstations, Cloud Shell",
+      "AI-assisted development: Gemini Code Assist, Gemini Cloud Assist, Gemini CLI"
+    ]
+  },
+  {
+    "exam_id": "google-professional-cloud-devops-engineer",
+    "domain_id": "D2",
+    "sequence": 2,
+    "name": "Building and Implementing CI/CD Pipelines",
+    "weight_pct": 25,
+    "questions_in_25": 6,
+    "key_topics": [
+      "CI/CD for applications, infrastructure, and ML workloads",
+      "Artifact management with Artifact Registry",
+      "Hybrid and multi-cloud deployments (GKE), pipeline triggers and approval flows",
+      "Auditing deployments: Artifact Registry, Cloud Build, Cloud Deploy, Cloud Audit Logs",
+      "Deployment strategies: canary, blue/green, rolling, traffic splitting, feature flags",
+      "Defining success metrics based on app or ML pipeline telemetry",
+      "Troubleshooting and mitigating deployment issues",
+      "Key management: Cloud KMS, Secret Manager, Certificate Manager, Parameter Manager",
+      "Workload Identity Federation, build vs runtime secret injection",
+      "Artifact Analysis and vulnerability scanning",
+      "Software supply chain security: Binary Authorization, SLSA framework",
+      "IAM policies based on environment"
+    ]
+  },
+  {
+    "exam_id": "google-professional-cloud-devops-engineer",
+    "domain_id": "D3",
+    "sequence": 3,
+    "name": "Applying Site Reliability Engineering Practices",
+    "weight_pct": 18,
+    "questions_in_25": 4,
+    "key_topics": [
+      "Defining SLIs (availability, latency), SLOs, and SLAs",
+      "Error budgets and Cloud Service Mesh definitions",
+      "Opportunity cost of risk and reliability (number of nines)",
+      "Service lifecycle: planning, deployment, maintenance, retirement",
+      "Capacity planning: quotas, limits, reservations, Dynamic Workload Scheduler",
+      "Autoscaling: managed instance groups, Cloud Run, GKE",
+      "Incident mitigation: draining/redirecting traffic, adding capacity",
+      "Rollback strategies"
+    ]
+  },
+  {
+    "exam_id": "google-professional-cloud-devops-engineer",
+    "domain_id": "D4",
+    "sequence": 4,
+    "name": "Implementing Observability Practices and Troubleshooting",
+    "weight_pct": 25,
+    "questions_in_25": 6,
+    "key_topics": [
+      "Collecting logs: Ops Agent, OpenTelemetry, Cloud Audit Logs, VPC Flow Logs, Cloud Service Mesh",
+      "Optimizing logs: filtering, sampling, exclusions, cost management",
+      "Collecting metrics: applications, platforms, networking, Managed Prometheus, hybrid/multi-cloud",
+      "Synthetic monitors for proactive endpoint probing",
+      "Custom metrics including log-based metrics",
+      "Log analysis: Logs Explorer, Logging query language, exporting to BigQuery/Pub/Sub/Storage",
+      "Sensitive data handling: redacting PII and PHI from logs",
+      "Gemini Cloud Assist for AI-powered log analysis",
+      "Metrics Explorer, dashboards (PromQL), alerting policies (SLIs, SLOs, cost control)",
+      "Third-party alerting integration: PagerDuty, Rootly, webhooks",
+      "Distributed tracing: OpenTelemetry, trace waterfalls, spans, correlating trace IDs with logs",
+      "Troubleshooting: infrastructure, CI/CD, application, observability, performance issues"
+    ]
+  },
+  {
+    "exam_id": "google-professional-cloud-devops-engineer",
+    "domain_id": "D5",
+    "sequence": 5,
+    "name": "Optimizing Performance and Cost",
+    "weight_pct": 12,
+    "questions_in_25": 4,
+    "key_topics": [
+      "Application performance monitoring and Active Assist insights",
+      "FinOps practices: observability costs, spot VMs, resource usage optimization",
+      "Infrastructure cost planning: committed-use discounts, sustained-use discounts, network tiers",
+      "Google Cloud recommenders: cost, security, performance, manageability, reliability",
+      "Optimizing individual workload costs: GKE, Cloud Run, Compute Engine"
+    ]
+  },
+  {
+    "exam_id": "google-professional-cloud-security-engineer",
+    "domain_id": "D1",
+    "sequence": 1,
+    "name": "Configuring Access",
+    "weight_pct": 25,
+    "questions_in_25": 6,
+    "key_topics": [
+      "Cloud Identity: Google Cloud Directory Sync, SSO with third-party IdP",
+      "Managing super administrator accounts, automating user lifecycle management",
+      "Programmatic user/group administration, Workforce Identity Federation",
+      "Service accounts: securing, creating, disabling, authorizing, short-lived credentials",
+      "Workload Identity Federation, service account impersonation",
+      "Authentication: password/session management, SAML, OAuth, 2-step verification",
+      "Authorization: privileged roles, IAM permissions, ACLs, IAM conditions, deny policies",
+      "Principle of least privilege: org, folder, project, and resource levels",
+      "Access Context Manager, Policy Intelligence, Privileged Access Manager",
+      "Resource hierarchy: folders, projects, org policies, permissions inheritance"
+    ]
+  },
+  {
+    "exam_id": "google-professional-cloud-security-engineer",
+    "domain_id": "D2",
+    "sequence": 2,
+    "name": "Securing Communications and Establishing Boundary Protection",
+    "weight_pct": 22,
+    "questions_in_25": 6,
+    "key_topics": [
+      "Perimeter security: Cloud NGFW rules and policies, IAP, load balancers, Certificate Authority Service",
+      "Application layer inspection on Cloud NGFW (Layer 7)",
+      "Private vs public IP addressing, Google Cloud Armor (WAF)",
+      "Secure Web Proxy, Cloud DNS security settings, API monitoring and restriction",
+      "Boundary segmentation: VPC network security, VPC peering, Shared VPC, firewall rules",
+      "Network isolation for N-tier applications, VPC Service Controls",
+      "Private connectivity: Shared VPC, VPC peering, Private Google Access",
+      "Private connectivity to data centers: HA VPN, Cloud Interconnect",
+      "Private Google APIs: Private Service Connect, Private Google Access for on-premises",
+      "Cloud NAT for outbound traffic"
+    ]
+  },
+  {
+    "exam_id": "google-professional-cloud-security-engineer",
+    "domain_id": "D3",
+    "sequence": 3,
+    "name": "Ensuring Data Protection",
+    "weight_pct": 23,
+    "questions_in_25": 6,
+    "key_topics": [
+      "Sensitive Data Protection (SDP): discovering and redacting PII, pseudonymization, format-preserving encryption",
+      "Restricting access to BigQuery, Cloud Storage, and Cloud SQL datastores",
+      "Securing secrets with Secret Manager, protecting compute instance metadata",
+      "Encryption use cases: Google default, CMEK, Cloud External Key Manager (EKM)",
+      "Software vs hardware keys, CMEK key rotation, revocation, and import",
+      "Cloud Storage object lifecycle policies, Confidential Computing",
+      "AI/ML security: protecting against unintentional data/model exploitation",
+      "IaaS vs PaaS training model security requirements",
+      "Implementing security controls for Vertex AI"
+    ]
+  },
+  {
+    "exam_id": "google-professional-cloud-security-engineer",
+    "domain_id": "D4",
+    "sequence": 4,
+    "name": "Managing Operations",
+    "weight_pct": 19,
+    "questions_in_25": 5,
+    "key_topics": [
+      "Automating CVE scanning through CI/CD pipelines",
+      "Binary Authorization to secure GKE clusters or Cloud Run",
+      "Automated VM and container image creation, hardening, patch management",
+      "Policy and drift detection at scale: cloud security posture management, custom org policies",
+      "Security Health Analytics custom modules",
+      "Network log analysis: Cloud NGFW, VPC flow logs, Packet Mirroring, Cloud IDS, Log Analytics",
+      "Designing effective logging strategies, secure log access",
+      "Exporting logs to external security systems (SIEM)",
+      "Cloud Audit Logs and data access logs configuration",
+      "Log sinks, aggregated sinks, and Security Command Center monitoring"
+    ]
+  },
+  {
+    "exam_id": "google-professional-cloud-security-engineer",
+    "domain_id": "D5",
+    "sequence": 5,
+    "name": "Supporting Compliance Requirements",
+    "weight_pct": 11,
+    "questions_in_25": 2,
+    "key_topics": [
+      "Technical needs for compute, data, network, and storage compliance",
+      "Evaluating the shared responsibility model",
+      "Security controls for compliance: Assured Workloads, org policies, Access Transparency, Access Approval",
+      "Regionalization of data and services for regulatory compliance",
+      "Mapping compliance requirements to Google Cloud services and security controls",
+      "Network and access segmentation, audit log coverage for compliance"
+    ]
+  },
+  {
+    "exam_id": "google-professional-cloud-network-engineer",
+    "domain_id": "D1",
+    "sequence": 1,
+    "name": "Designing and Planning a Google Cloud VPC Network",
+    "weight_pct": 24,
+    "questions_in_25": 6,
+    "key_topics": [
+      "Network architecture for HA, failover, disaster recovery, and scale",
+      "DNS topology: on-premises, Cloud DNS",
+      "Choosing load balancers, designing for hybrid connectivity",
+      "GKE networking: secondary ranges, IP address space, control plane access",
+      "IAM roles for Shared VPC environments",
+      "Connectivity to managed services: Private Service Connect, Serverless VPC Access",
+      "VPC types: standalone vs Shared VPC, VPC Network Peering, Network Connectivity Center",
+      "IP address management: subnets, IPv6, BYOIP, Private NAT, non-RFC 1918",
+      "Global vs regional network environments, MTU sizing",
+      "Third-party device insertion with custom routes and load balancing",
+      "Resilient hybrid/multi-cloud: Dedicated Interconnect, Partner Interconnect, Cloud VPN, SD-WAN",
+      "Cross-Cloud Interconnect, Direct Peering, HA/DR strategies, DNS peering and forwarding",
+      "GKE network design: public/private nodes, control plane, subnets, IPv6, load balancing"
+    ]
+  },
+  {
+    "exam_id": "google-professional-cloud-network-engineer",
+    "domain_id": "D2",
+    "sequence": 2,
+    "name": "Implementing a VPC Network",
+    "weight_pct": 19,
+    "questions_in_25": 5,
+    "key_topics": [
+      "Creating VPC resources: networks, subnets, firewall rules, private services access",
+      "VPC Network Peering, Shared VPC network and subnet sharing",
+      "Configuring access to Google APIs and managed services",
+      "Configuring access to Vertex AI services, VPC Service Controls perimeters",
+      "VPC routing: static and dynamic routing, Cloud Router, global/regional dynamic routing",
+      "Custom route import/export, Policy-based Routing",
+      "Network Connectivity Center: spoke types, VPC topology, Private NAT, IP/CIDR filters",
+      "GKE cluster configuration: VPC-native clusters, Shared VPC, private clusters",
+      "GKE Dataplane V2, SNAT, IP Masquerade, network policies, Pod/service ranges"
+    ]
+  },
+  {
+    "exam_id": "google-professional-cloud-network-engineer",
+    "domain_id": "D3",
+    "sequence": 3,
+    "name": "Configuring Managed Network Services",
+    "weight_pct": 16,
+    "questions_in_25": 4,
+    "key_topics": [
+      "Load balancing solutions: internal/external, regional/global, application/proxy/passthrough",
+      "Backend services: network endpoint groups (NEGs), managed instance groups",
+      "Load balancer settings: session affinity, URL maps, health checks, autoscaling",
+      "GKE load balancing: GKE Gateway controller, GKE Ingress controller",
+      "Traffic management: traffic splitting, mirroring, URL rewrites",
+      "Cloud CDN: supported origins, external backends, cache invalidation, signed URLs",
+      "Cloud DNS: zones, records, migration, routing policies (geolocation, failover)",
+      "DNSSEC, split-horizon DNS, DNS forwarding, DNS cross-project binding and peering",
+      "Cloud DNS and external-DNS operator for GKE"
+    ]
+  },
+  {
+    "exam_id": "google-professional-cloud-network-engineer",
+    "domain_id": "D4",
+    "sequence": 4,
+    "name": "Configuring and Implementing Hybrid and Multi-Cloud Network Interconnectivity",
+    "weight_pct": 15,
+    "questions_in_25": 4,
+    "key_topics": [
+      "Cloud Interconnect: Dedicated, Partner, Cross-Cloud connections and VLAN attachments",
+      "Layer 2 vs Layer 3 Partner Interconnect, HA VPN over Cloud Interconnect",
+      "99.9% and 99.99% SLA Interconnect topologies",
+      "HA VPN: site-to-site IPSec, on-premises gateways, GCP-to-GCP VPC",
+      "Classic VPN: route-based and policy-based",
+      "Cloud Router: BGP attributes (ASN, MED, link-local, authentication), BFD",
+      "Custom advertised and learned routes, best path selection",
+      "Network Connectivity Center: hybrid spokes (VPN, VLAN), site-to-site data transfer, Router appliances"
+    ]
+  },
+  {
+    "exam_id": "google-professional-cloud-network-engineer",
+    "domain_id": "D5",
+    "sequence": 5,
+    "name": "Managing, Monitoring, and Troubleshooting Network Operations",
+    "weight_pct": 12,
+    "questions_in_25": 3,
+    "key_topics": [
+      "Cloud Logging for networking: Cloud VPN, Cloud Router, VPC Service Controls, Firewall Insights, Cloud DNS, Cloud NAT",
+      "Monitoring metrics: Cloud VPN, Cloud Interconnect, Cloud Router, load balancers, Cloud Armor, Cloud NAT",
+      "Troubleshooting: VPN, Cloud Interconnect, Cloud Router BGP peering",
+      "VPC Flow Logs, firewall logs, Packet Mirroring for connectivity issues",
+      "Network Intelligence Center: Network Topology, Connectivity Tests, Performance Dashboard",
+      "Firewall Insights: rule hit count, shadowed rules",
+      "Network Analyzer, Flow Analyzer for traffic evaluation"
+    ]
+  },
+  {
+    "exam_id": "google-professional-cloud-network-engineer",
+    "domain_id": "D6",
+    "sequence": 6,
+    "name": "Configuring, Implementing, and Managing Cloud Network Security",
+    "weight_pct": 14,
+    "questions_in_25": 3,
+    "key_topics": [
+      "Google Cloud Armor: edge and backend security policies, WAF rules (SQLi, XSS, RFI)",
+      "Advanced DDoS, Adaptive Protection, rate limiting, bot management, Threat Intelligence",
+      "Cloud NGFW: VPC firewall rules, hierarchical firewall rules, regional/global NGFW policies",
+      "NGFW for GKE and Cloud load balancers, Layer 7 inspection with Cloud NGFW Enterprise",
+      "Micro segmentation using Tags, service accounts, and network tags",
+      "Cloud NGFW tiers: Essentials, Standard, Enterprise",
+      "Cloud NAT IP addressing, static/dynamic port allocation, Secure Web Proxy",
+      "Multi-NIC VM traffic inspection: NGFW appliances, Cloud IDS, Packet Mirroring",
+      "Network Security Integration (NSI) strategy, policy-based routes for HA routing"
+    ]
+  },
+  {
+    "exam_id": "google-professional-cloud-database-engineer",
+    "domain_id": "D1",
+    "sequence": 1,
+    "name": "Design Innovative, Scalable, and Highly Available Cloud Database Solutions",
+    "weight_pct": 32,
+    "questions_in_25": 8,
+    "key_topics": [
+      "Database capacity and usage planning based on workload metrics and future requirements",
+      "Performance and cost trade-offs of database configurations: machine types, storage types",
+      "Sizing database compute and storage for performance requirements",
+      "HA and DR options: multi-regional, regional, and zonal deployment strategies",
+      "Maintenance windows and notifications based on availability requirements",
+      "Database connectivity: networking, key management, encryption, and security",
+      "Session pooler services, auditing policies for managed services",
+      "Differentiating managed vs unmanaged database services: Cloud SQL, Bigtable, Spanner, AlloyDB",
+      "SQL vs NoSQL requirements: structured, semi-structured, unstructured, vector data",
+      "Cost analysis of running database solutions in Google Cloud",
+      "Regulatory and compliance requirements for database solutions",
+      "Multi-database federation, hybrid deployments",
+      "Database technologies to support generative AI and LLM use cases"
+    ]
+  },
+  {
+    "exam_id": "google-professional-cloud-database-engineer",
+    "domain_id": "D2",
+    "sequence": 2,
+    "name": "Manage a Solution That Can Span Multiple Database Technologies",
+    "weight_pct": 25,
+    "questions_in_25": 6,
+    "key_topics": [
+      "IAM and policies for database connectivity and access control",
+      "Managing database users: authentication and access management",
+      "Monitoring slow queries, database locking, identifying missing indexes",
+      "Monitoring database vitals: RAM, CPU, storage, I/O, and audit logging",
+      "Monitoring and updating quotas, investigating database resource contention",
+      "Setting up alerts for errors and performance metrics",
+      "Backup and recovery options: automatic scheduled backups",
+      "Export and import data configuration, RTO/RPO/PITR design",
+      "Data retention management",
+      "Scaling up vs scaling out options, defining replication strategies",
+      "Continuously optimizing cost and performance of database solutions",
+      "Query optimization for cost and performance",
+      "Automating database maintenance: index rebuilds, exports, scheduled jobs",
+      "Managing upgrades for Google Cloud-managed databases, monitoring SLA/SLOs"
+    ]
+  },
+  {
+    "exam_id": "google-professional-cloud-database-engineer",
+    "domain_id": "D3",
+    "sequence": 3,
+    "name": "Migrate Data Solutions",
+    "weight_pct": 23,
+    "questions_in_25": 6,
+    "key_topics": [
+      "Developing and executing migration strategies: zero/near-zero downtime, extended outage",
+      "Fallback and rollback plans, DDL/DML conversion strategies",
+      "Reverse replication from Google Cloud back to source",
+      "Planning and performing database migration with Database Migration Service (DMS)",
+      "Choosing migration tools based on source database and business constraints",
+      "Lift-and-shift vs re-architecture migration strategies",
+      "Downtime tolerance planning, cut-over strategies"
+    ]
+  },
+  {
+    "exam_id": "google-professional-cloud-database-engineer",
+    "domain_id": "D4",
+    "sequence": 4,
+    "name": "Deploy Scalable and Highly Available Databases in Google Cloud",
+    "weight_pct": 20,
+    "questions_in_25": 5,
+    "key_topics": [
+      "Provisioning highly available database solutions: Cloud SQL, Spanner, Bigtable, AlloyDB",
+      "Testing HA and disaster recovery strategies",
+      "Setting up multi-regional replication for databases",
+      "Deploying and scaling read replicas",
+      "Automating database instance provisioning",
+      "Configuring monitoring for highly available databases"
+    ]
+  }
+]

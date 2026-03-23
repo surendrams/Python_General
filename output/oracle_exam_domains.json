@@ -1,0 +1,929 @@
+[
+    {
+      "exam_id": "oci-foundations-associate",
+      "domain_id": "D1",
+      "sequence": 1,
+      "name": "Getting Started with OCI",
+      "weight_pct": 20,
+      "questions_in_25": 5,
+      "key_topics": [
+        "OCI distributed cloud model and global cloud services overview",
+        "OCI regions, Availability Domains (ADs), Fault Domains (FDs)",
+        "OCI key features and components overview",
+        "Access methods: OCI Console, API, CLI, SDKs, Cloud Shell",
+        "Cloud computing models: IaaS, PaaS, SaaS — OCI service mapping",
+        "CapEx vs OpEx, scalability, elasticity, fault tolerance concepts"
+      ]
+    },
+    {
+      "exam_id": "oci-foundations-associate",
+      "domain_id": "D2",
+      "sequence": 2,
+      "name": "Core OCI Services",
+      "weight_pct": 20,
+      "questions_in_25": 5,
+      "key_topics": [
+        "Compute: Virtual Machines, Bare Metal, Dedicated VM Hosts, Flexible Shapes, Autoscaling",
+        "OKE (Oracle Kubernetes Engine), OCIR (Oracle Container Registry), OCI Functions (serverless)",
+        "Networking: VCN, subnets, Internet Gateway, NAT Gateway, Service Gateway, DRG, FastConnect",
+        "Load Balancer (LBaaS), Network Security Groups (NSG), Security Lists",
+        "Storage: Block Volume, Object Storage (Standard/Archive), File Storage, NVMe",
+        "Object Storage tiers: Standard, Infrequent Access, Archive; lifecycle policies",
+        "Database services: Oracle DB on VM/BM, Exadata CS, Autonomous Database overview",
+        "OCI Streaming, OCI Events, OCI Notifications (cloud-native services)"
+      ]
+    },
+    {
+      "exam_id": "oci-foundations-associate",
+      "domain_id": "D3",
+      "sequence": 3,
+      "name": "Security and Compliance",
+      "weight_pct": 20,
+      "questions_in_25": 5,
+      "key_topics": [
+        "OCI Shared Security Model: customer vs Oracle responsibilities",
+        "Identity and Access Management (IAM): tenancy, compartments, users, groups, policies",
+        "Dynamic Groups and policy conditions",
+        "OCI Security services: Cloud Guard, Security Zones, Vault (KMS), Data Safe",
+        "WAF, Bastion, Vulnerability Scanning, OS Management",
+        "Audit service for compliance logging and trail"
+      ]
+    },
+    {
+      "exam_id": "oci-foundations-associate",
+      "domain_id": "D4",
+      "sequence": 4,
+      "name": "Pricing, Billing, and Support",
+      "weight_pct": 20,
+      "questions_in_25": 5,
+      "key_topics": [
+        "OCI pricing models: Pay As You Go (PAYG), Annual Universal Credits, Monthly Flex",
+        "OCI Always Free services and Free Trial",
+        "Cost estimation with OCI Pricing Calculator",
+        "Cost management: Budgets, Cost Analysis, Usage reports, Cost and Usage reports",
+        "OCI Support plans: Basic, Developer, Business, Premium",
+        "Oracle Cloud infrastructure SLA commitments"
+      ]
+    },
+    {
+      "exam_id": "oci-foundations-associate",
+      "domain_id": "D5",
+      "sequence": 5,
+      "name": "Cloud-Native and Additional OCI Services",
+      "weight_pct": 20,
+      "questions_in_25": 5,
+      "key_topics": [
+        "OCI API Gateway, OCI Service Mesh, OCI DevOps (CI/CD pipelines)",
+        "Resource Manager (Terraform-based IaC), Ansible integration",
+        "OCI Observability: Monitoring (metrics, alarms), Logging, Logging Analytics, Application Performance Monitoring",
+        "OCI Data Transfer Service, Data Safe, Digital Assistant (chatbot AI)",
+        "OCI Generative AI service overview, OCI AI Language, Vision, Speech services overview",
+        "Hybrid cloud: Dedicated Region, Roving Edge Infrastructure"
+      ]
+    },
+    {
+      "exam_id": "oci-ai-foundations-associate",
+      "domain_id": "D1",
+      "sequence": 1,
+      "name": "AI and Machine Learning Concepts",
+      "weight_pct": 20,
+      "questions_in_25": 5,
+      "key_topics": [
+        "Core AI/ML terminology: AI, ML, deep learning, neural networks, data science",
+        "ML approaches: supervised (classification, regression), unsupervised (clustering), reinforcement learning",
+        "Model training, validation, and testing concepts; overfitting and underfitting",
+        "ML lifecycle: data preparation, feature engineering, model training, evaluation, deployment",
+        "Transformer architecture, attention mechanisms, tokenization",
+        "Bias, fairness, and responsible AI principles"
+      ]
+    },
+    {
+      "exam_id": "oci-ai-foundations-associate",
+      "domain_id": "D2",
+      "sequence": 2,
+      "name": "Generative AI Fundamentals",
+      "weight_pct": 20,
+      "questions_in_25": 5,
+      "key_topics": [
+        "Foundation models and Large Language Models (LLMs): architecture and capabilities",
+        "Generative AI concepts: tokens, embeddings, context window, temperature, top-p",
+        "Generative Adversarial Networks (GANs) and diffusion model concepts",
+        "Prompt engineering: zero-shot, few-shot, chain-of-thought prompting",
+        "Fine-tuning vs. RAG (Retrieval Augmented Generation) vs. prompt engineering trade-offs",
+        "LLM limitations: hallucinations, knowledge cutoff, bias"
+      ]
+    },
+    {
+      "exam_id": "oci-ai-foundations-associate",
+      "domain_id": "D3",
+      "sequence": 3,
+      "name": "OCI Generative AI Service",
+      "weight_pct": 20,
+      "questions_in_25": 5,
+      "key_topics": [
+        "OCI Generative AI service: foundation model catalog (Cohere, Meta Llama, xAI Grok)",
+        "Generation, summarization, embedding, and chat models on OCI",
+        "Dedicated AI clusters for fine-tuning and inference",
+        "OCI Generative AI Agents: RAG pipelines, knowledge bases, agent tools",
+        "AI Vector Search: vector embeddings, semantic similarity search in Oracle Database",
+        "OCI AI Infrastructure: GPU clusters (NVIDIA A100/H100), RDMA networking"
+      ]
+    },
+    {
+      "exam_id": "oci-ai-foundations-associate",
+      "domain_id": "D4",
+      "sequence": 4,
+      "name": "OCI AI Services",
+      "weight_pct": 20,
+      "questions_in_25": 5,
+      "key_topics": [
+        "OCI Language: text classification, NER, sentiment analysis, key phrase extraction, translation",
+        "OCI Vision: image classification, object detection, document AI, optical character recognition (OCR)",
+        "OCI Speech: speech-to-text transcription, text normalization, diarization, timestamped output",
+        "OCI Document Understanding: table extraction, form recognition, key-value extraction",
+        "OCI Anomaly Detection: time-series anomaly detection, multivariate models",
+        "OCI Data Labeling: annotating datasets for supervised ML model training"
+      ]
+    },
+    {
+      "exam_id": "oci-ai-foundations-associate",
+      "domain_id": "D5",
+      "sequence": 5,
+      "name": "OCI Data Science and MLOps",
+      "weight_pct": 20,
+      "questions_in_25": 5,
+      "key_topics": [
+        "OCI Data Science service: projects, notebook sessions, Conda environments",
+        "Accelerated Data Science (ADS) SDK: dataset access, model evaluation, AutoML",
+        "OCI Data Flow: serverless Apache Spark for large-scale data processing",
+        "OCI Data Science Jobs: scheduled and custom ML pipeline execution",
+        "Model deployment: model catalog, model deployment (real-time/batch endpoints)",
+        "OCI Open Data Service: access to curated public datasets for ML training"
+      ]
+    },
+    {
+      "exam_id": "oci-data-foundations-associate",
+      "domain_id": "D1",
+      "sequence": 1,
+      "name": "Data Management Introduction",
+      "weight_pct": 11,
+      "questions_in_25": 3,
+      "key_topics": [
+        "Oracle's data management strategy and converged database philosophy",
+        "Oracle database offerings and deployment options: on-prem, cloud, hybrid",
+        "Multi-cloud and hybrid cloud options for Oracle data: Oracle Database@Azure, Exadata@Azure",
+        "ORDS (Oracle REST Data Services) and Oracle Application Express (APEX)"
+      ]
+    },
+    {
+      "exam_id": "oci-data-foundations-associate",
+      "domain_id": "D2",
+      "sequence": 2,
+      "name": "Autonomous Database and Tools",
+      "weight_pct": 16,
+      "questions_in_25": 4,
+      "key_topics": [
+        "Autonomous Database offerings: ATP (Transaction Processing), ADW (Data Warehouse), AJD (JSON), APEX Service",
+        "Deployment options: Shared Exadata Infrastructure vs Dedicated Exadata Infrastructure",
+        "Provision, scale CPU and storage, start and stop ADB instances (no downtime for CPU scaling)",
+        "ADB Tools: SQL Developer Web, Data Studio, Database Actions, APEX, Oracle Machine Learning (OML) Notebooks",
+        "Loading data into ADB: Data Load wizard, Object Storage integration, DBMS_CLOUD"
+      ]
+    },
+    {
+      "exam_id": "oci-data-foundations-associate",
+      "domain_id": "D3",
+      "sequence": 3,
+      "name": "Exadata and Base Database Service",
+      "weight_pct": 11,
+      "questions_in_25": 3,
+      "key_topics": [
+        "Exadata deployment options: Exadata Cloud Service (ExaDB-D), Exadata Cloud@Customer, Base Exadata",
+        "Exadata Smart Scan, Smart Flash Cache, RDMA fabric performance advantages",
+        "Lifecycle management: patching, backup and recovery for Exadata and Base DB",
+        "Oracle Base Database Service (BaseDB): VM DB Systems, BM DB Systems, SE2 vs EE",
+        "Data Guard integration with Exadata and Base DB for HA/DR"
+      ]
+    },
+    {
+      "exam_id": "oci-data-foundations-associate",
+      "domain_id": "D4",
+      "sequence": 4,
+      "name": "MySQL and NoSQL",
+      "weight_pct": 10,
+      "questions_in_25": 3,
+      "key_topics": [
+        "MySQL HeatWave Database Service: in-memory query acceleration for OLAP on MySQL",
+        "HeatWave Lakehouse: query data in OCI Object Storage (CSV, Parquet, Avro) without ETL",
+        "MySQL HeatWave cluster: stop/start, billing behavior, data persistence",
+        "OCI NoSQL Database Cloud Service: schema-less, key-value and document model",
+        "Comparing relational (MySQL) vs non-relational (NoSQL) database use cases"
+      ]
+    },
+    {
+      "exam_id": "oci-data-foundations-associate",
+      "domain_id": "D5",
+      "sequence": 5,
+      "name": "Converged Database",
+      "weight_pct": 7,
+      "questions_in_25": 2,
+      "key_topics": [
+        "Oracle converged database: multi-model support (relational, JSON, XML, spatial, graph, text)",
+        "Benefits of managing multiple data types in a single Oracle database vs polyglot persistence",
+        "Spatial data, graph analytics, JSON documents, and full-text search in Oracle Database",
+        "Oracle Database 23ai new features for AI workloads: AI Vector Search, True Cache"
+      ]
+    },
+    {
+      "exam_id": "oci-data-foundations-associate",
+      "domain_id": "D6",
+      "sequence": 6,
+      "name": "Resiliency",
+      "weight_pct": 9,
+      "questions_in_25": 2,
+      "key_topics": [
+        "Oracle Data Guard: primary/standby roles, protection modes, fast-start failover",
+        "Active Data Guard for read-only standby reporting workloads",
+        "Disaster recovery strategies: RTO and RPO design for Oracle Cloud databases",
+        "Cross-region replication for databases; backup to OCI Object Storage",
+        "OCI region failure scenarios: performance consistency during region-wide outages"
+      ]
+    },
+    {
+      "exam_id": "oci-data-foundations-associate",
+      "domain_id": "D7",
+      "sequence": 7,
+      "name": "Developing on Oracle Database",
+      "weight_pct": 13,
+      "questions_in_25": 3,
+      "key_topics": [
+        "Oracle REST Data Services (ORDS): RESTful API access to database objects",
+        "Oracle APEX (Application Express): low-code application development on Oracle Database",
+        "Oracle Database API for MongoDB: MongoDB-compatible access to Oracle Database",
+        "SQL and PL/SQL fundamentals for cloud database development",
+        "DBMS_CLOUD package: loading and querying Object Storage data from ADB",
+        "Connection methods: JDBC, ODBC, Oracle Wallet, TLS/mTLS for secure connectivity"
+      ]
+    },
+    {
+      "exam_id": "oci-data-foundations-associate",
+      "domain_id": "D8",
+      "sequence": 8,
+      "name": "Data Lake, Data Warehouse, and Machine Learning",
+      "weight_pct": 15,
+      "questions_in_25": 4,
+      "key_topics": [
+        "Oracle Data Lakehouse architecture: OCI Object Storage (data lake) + Autonomous Database (data warehouse)",
+        "OCI Data Catalog: metadata management, data discovery, business glossary",
+        "OCI Data Flow: serverless Apache Spark for ETL and analytics on Object Storage",
+        "Oracle Analytics Cloud (OAC): self-service BI, dashboards, ML augmented analytics",
+        "OCI GoldenGate: real-time data replication and streaming for data pipelines",
+        "Oracle Machine Learning (OML): in-database ML with AutoML, Python, SQL interfaces"
+      ]
+    },
+    {
+      "exam_id": "oci-data-foundations-associate",
+      "domain_id": "D9",
+      "sequence": 9,
+      "name": "Upgrades and Migrations",
+      "weight_pct": 8,
+      "questions_in_25": 1,
+      "key_topics": [
+        "Migration strategies to OCI: lift-and-shift, re-platform, refactor",
+        "OCI Database Migration Service (DMS): online and offline migration paths",
+        "Zero Downtime Migration (ZDM): online database migration to Exadata and ADB",
+        "Data Transfer Service: offline bulk data transfer using Oracle Data Transfer Appliance",
+        "Exadata@Customer: premises-based Exadata managed by Oracle"
+      ]
+    },
+    {
+      "exam_id": "oci-architect-associate",
+      "domain_id": "D1",
+      "sequence": 1,
+      "name": "Identity and Access Management (IAM)",
+      "weight_pct": 22,
+      "questions_in_25": 6,
+      "key_topics": [
+        "OCI tenancy structure: compartments (nested), policies, inheritance",
+        "IAM identities: users, groups, dynamic groups, instance principals, resource principals",
+        "Policy syntax: verbs (manage, use, read, inspect), resources, conditions",
+        "Federation: SAML/OIDC IdP integration with OCI IAM, SCIM provisioning",
+        "Moving resources across compartments and impact on IAM policies",
+        "Tag-based access control with defined and free-form tags"
+      ]
+    },
+    {
+      "exam_id": "oci-architect-associate",
+      "domain_id": "D2",
+      "sequence": 2,
+      "name": "Networking",
+      "weight_pct": 27,
+      "questions_in_25": 7,
+      "key_topics": [
+        "VCN design: CIDR blocks, regional subnets (public/private), IPv6 support",
+        "Gateways: Internet Gateway, NAT Gateway, Service Gateway, Local Peering Gateway (LPG), Dynamic Routing Gateway (DRG)",
+        "VCN Peering: local peering (LPG) vs remote peering via DRG, transit routing",
+        "Security Lists vs Network Security Groups (NSGs): stateless vs stateful rules",
+        "Load Balancer (Flexible Shape): listeners, backends, health checks, SSL termination",
+        "Network Load Balancer for Layer 4, Application Load Balancer for Layer 7",
+        "FastConnect: dedicated private connectivity, virtual circuits, BGP routing",
+        "Site-to-Site VPN (IPSec): LibreSwan, IKEv2, redundant tunnels, BGP routing"
+      ]
+    },
+    {
+      "exam_id": "oci-architect-associate",
+      "domain_id": "D3",
+      "sequence": 3,
+      "name": "Compute",
+      "weight_pct": 27,
+      "questions_in_25": 7,
+      "key_topics": [
+        "Compute shapes: Standard (AMD/Intel/ARM), Dense I/O, GPU (A100/H100), HPC, Flexible Shapes (OCPU+RAM)",
+        "Bare Metal instances vs Virtual Machines: use cases and performance characteristics",
+        "Instance configuration: boot volume, OS images (platform vs custom), user data scripts",
+        "High Availability: Instance Pools, Instance Configurations, Autoscaling Policies (metric-based, scheduled)",
+        "Preemptible (Spot) instances: cost savings and interruption handling",
+        "OS Management Service: automated patching and compliance for OCI instances",
+        "OKE (Oracle Kubernetes Engine): cluster types, node pools, Kubernetes version management",
+        "OCI Container Instances and Functions (serverless): event-driven compute patterns"
+      ]
+    },
+    {
+      "exam_id": "oci-architect-associate",
+      "domain_id": "D4",
+      "sequence": 4,
+      "name": "Storage",
+      "weight_pct": 24,
+      "questions_in_25": 5,
+      "key_topics": [
+        "Block Volume: performance levels (Lower Cost/Balanced/Higher Performance/Ultra High), online resize",
+        "Block Volume Backup: manual vs automatic, cross-region backup copy",
+        "Object Storage: buckets, objects, versioning, Object Storage tiers (Standard/IA/Archive)",
+        "Object Lifecycle Management: transition and expiration rules",
+        "Object Storage pre-authenticated requests (PARs), replication policies, multipart upload",
+        "File Storage (FSS): NFS v3/v4.1, mount targets, export options, snapshots",
+        "Storage Gateway: on-premises NFS-to-OCI Object Storage bridge"
+      ]
+    },
+    {
+      "exam_id": "oci-architect-professional",
+      "domain_id": "D1",
+      "sequence": 1,
+      "name": "Cloud-Native Architecture Design",
+      "weight_pct": 17,
+      "questions_in_25": 4,
+      "key_topics": [
+        "Microservices on OKE: node pools, Helm charts, Kubernetes operators, service mesh (OCI Service Mesh)",
+        "Serverless architectures: OCI Functions triggered by Events, API Gateway, Streaming",
+        "API Gateway: authentication, rate limiting, request/response transformations, routing",
+        "OCI DevOps: build pipelines, deployment pipelines, triggers, environments",
+        "OCI Streaming: Kafka-compatible streaming, consumer groups, partitions, retention",
+        "Event-driven architecture: OCI Events + Notifications + Functions integration"
+      ]
+    },
+    {
+      "exam_id": "oci-architect-professional",
+      "domain_id": "D2",
+      "sequence": 2,
+      "name": "High Availability and Disaster Recovery",
+      "weight_pct": 20,
+      "questions_in_25": 5,
+      "key_topics": [
+        "Multi-AD and multi-region HA patterns: active-active, active-passive, pilot light",
+        "OCI Traffic Management Steering Policies: failover, load balancing, geolocation, ASN",
+        "DNS Failover: health check-based DNS steering with OCI Health Check",
+        "Database HA: Data Guard (Async/Sync), Active Data Guard, GoldenGate for zero-RPO replication",
+        "Backup strategies: cross-region Object Storage replication, Volume Group Backup",
+        "OCI Full Stack Disaster Recovery (FSDR): automated DR orchestration and switchover"
+      ]
+    },
+    {
+      "exam_id": "oci-architect-professional",
+      "domain_id": "D3",
+      "sequence": 3,
+      "name": "Security Architecture",
+      "weight_pct": 17,
+      "questions_in_25": 4,
+      "key_topics": [
+        "Zero Trust security model on OCI: micro-segmentation, instance principals, resource principals",
+        "OCI Vault: master encryption keys, data encryption keys, secret management, key rotation",
+        "OCI Cloud Guard: detector recipes, responder recipes, security posture management",
+        "Security Zones: maximum security compartments, security zone policies",
+        "OCI WAF: edge protection, rate limiting, bot management, protection rules",
+        "Audit service: full audit trail, log retention, integration with SIEM",
+        "Data Safe: sensitive data discovery, data masking, security assessment, user assessment"
+      ]
+    },
+    {
+      "exam_id": "oci-architect-professional",
+      "domain_id": "D4",
+      "sequence": 4,
+      "name": "Infrastructure as Code and Automation",
+      "weight_pct": 20,
+      "questions_in_25": 5,
+      "key_topics": [
+        "OCI Resource Manager: Terraform state management, stacks, jobs, private endpoints",
+        "Terraform on OCI: OCI provider, module design, remote state backend",
+        "Ansible OCI collections for configuration management and orchestration",
+        "OCI CLI and SDK automation: scripting provisioning, event-driven operations",
+        "OCI Console Plug-ins, API versioning, and SDK best practices",
+        "Custom images and image pipelines: Packer for golden image creation"
+      ]
+    },
+    {
+      "exam_id": "oci-architect-professional",
+      "domain_id": "D5",
+      "sequence": 5,
+      "name": "Observability and Cost Optimization",
+      "weight_pct": 17,
+      "questions_in_25": 4,
+      "key_topics": [
+        "OCI Monitoring: custom metrics (MetricStream), composite alarms, notification channels",
+        "OCI Logging: log groups, log sources (VCN flow logs, audit, service logs), log retention",
+        "Logging Analytics: log explorer, machine learning-based log parsing, dashboards",
+        "Application Performance Monitoring (APM): distributed tracing, synthetic monitors, browser agents",
+        "OCI Compute Optimizer: right-sizing recommendations, GPU utilization insights",
+        "Cost optimization: Compute Savings Plans, Reserved Capacity, preemptible instances"
+      ]
+    },
+    {
+      "exam_id": "oci-architect-professional",
+      "domain_id": "D6",
+      "sequence": 6,
+      "name": "Workload Migration and Multicloud",
+      "weight_pct": 10,
+      "questions_in_25": 3,
+      "key_topics": [
+        "Oracle Cloud Migrations (OCM): discovery, assessment, replication, and cutover",
+        "OCI multicloud: Oracle Database@Azure, Oracle Database@Google Cloud",
+        "Oracle Dedicated Region: OCI services in customer data centers",
+        "Hybrid cloud connectivity: FastConnect, Site-to-Site VPN, Roving Edge Infrastructure",
+        "Application migration patterns: rehost, re-platform, re-architect for OCI",
+        "Oracle Zero Downtime Migration (ZDM) for database workloads to OCI"
+      ]
+    },
+    {
+      "exam_id": "oci-data-science-professional",
+      "domain_id": "D1",
+      "sequence": 1,
+      "name": "OCI Data Science Service and Environment Setup",
+      "weight_pct": 17,
+      "questions_in_25": 4,
+      "key_topics": [
+        "OCI Data Science projects, compartments, IAM policies for data science resources",
+        "Notebook sessions: compute shapes (CPU/GPU), block storage, lifecycle management",
+        "Conda environments: create, publish to Object Storage, install (odsc conda init/publish)",
+        "ADS (Accelerated Data Science) SDK: DatasetFactory, ADSTurner, Dataset Browser",
+        "OCI Open Data Service: accessing public datasets (scikit-learn, Hugging Face) via ADS",
+        "OCI Vault integration for secrets management in notebook environments"
+      ]
+    },
+    {
+      "exam_id": "oci-data-science-professional",
+      "domain_id": "D2",
+      "sequence": 2,
+      "name": "Data Preparation and Exploration",
+      "weight_pct": 20,
+      "questions_in_25": 5,
+      "key_topics": [
+        "Data ingestion from OCI Object Storage, Autonomous Database, and other OCI sources",
+        "OCI Data Labeling: annotating images, text, and documents for supervised ML",
+        "Exploratory data analysis (EDA): Python (Pandas, NumPy, Matplotlib) in notebook sessions",
+        "Data cleaning: missing values, duplicates, outliers, type casting",
+        "Feature engineering: scaling, encoding, binning, embedding extraction",
+        "PySpark in notebook sessions: configure core-site.xml, develop Spark applications"
+      ]
+    },
+    {
+      "exam_id": "oci-data-science-professional",
+      "domain_id": "D3",
+      "sequence": 3,
+      "name": "Model Training and Evaluation",
+      "weight_pct": 17,
+      "questions_in_25": 4,
+      "key_topics": [
+        "Supervised vs unsupervised learning selection for OCI use cases",
+        "AutoML with ADS: automatic algorithm and hyperparameter selection",
+        "Distributed training on OCI: multi-node GPU clusters, Horovod, PyTorch DDP",
+        "Model evaluation metrics: classification (accuracy, F1, AUC-ROC), regression (RMSE, MAE)",
+        "OCI Language AI service: topic classification, sentiment analysis, NER in ML pipelines",
+        "OCI AI services integration: Vision, Speech, Document Understanding in ML workflows"
+      ]
+    },
+    {
+      "exam_id": "oci-data-science-professional",
+      "domain_id": "D4",
+      "sequence": 4,
+      "name": "MLOps and Model Deployment",
+      "weight_pct": 20,
+      "questions_in_25": 5,
+      "key_topics": [
+        "OCI Data Science Jobs: create and manage custom ML pipeline jobs, scheduling",
+        "Model catalog: register models, model versioning, MLflow and ONNX format support",
+        "Model Deployments: real-time HTTP endpoints, auto-scaling for inference",
+        "Batch prediction: large-scale offline scoring via jobs",
+        "MLOps pipelines: automated retraining triggers, model performance monitoring",
+        "CI/CD for ML: OCI DevOps integration with Data Science pipelines"
+      ]
+    },
+    {
+      "exam_id": "oci-data-science-professional",
+      "domain_id": "D5",
+      "sequence": 5,
+      "name": "OCI Data Flow and Big Data Processing",
+      "weight_pct": 17,
+      "questions_in_25": 4,
+      "key_topics": [
+        "OCI Data Flow: serverless Apache Spark — submit Spark applications without cluster management",
+        "Data Flow application types: batch (PySpark, Scala), streaming (Spark Structured Streaming)",
+        "Data Flow integration with OCI Data Science: develop in notebook, scale in Data Flow",
+        "Reading from and writing to OCI Object Storage using HDFS connector in Data Flow",
+        "Cost optimization in Data Flow: choosing compute shapes, logging configuration",
+        "OCI Big Data Service: managed Hadoop/Spark cluster for large-scale analytics"
+      ]
+    },
+    {
+      "exam_id": "oci-data-science-professional",
+      "domain_id": "D6",
+      "sequence": 6,
+      "name": "Security, Governance, and Responsible AI",
+      "weight_pct": 10,
+      "questions_in_25": 3,
+      "key_topics": [
+        "IAM policies for data science: managing access to notebooks, jobs, model deployments",
+        "OCI Vault for encrypting model artifacts and credentials in pipelines",
+        "Data privacy in ML: PII handling, OCI Data Safe integration for database access",
+        "Responsible AI: fairness, explainability (SHAP), model bias detection with ADS",
+        "OCI Logging for auditability of model training runs and deployments",
+        "Cost management for data science workloads: right-sizing, preemptible shapes"
+      ]
+    },
+    {
+      "exam_id": "oracle-autonomous-database-professional",
+      "domain_id": "D1",
+      "sequence": 1,
+      "name": "Getting Started with Autonomous Database",
+      "weight_pct": 14,
+      "questions_in_25": 4,
+      "key_topics": [
+        "Autonomous Database architecture: self-driving, self-securing, self-repairing",
+        "Workload types: ATP (OLTP), ADW (Analytics), AJD (JSON), APEX Service",
+        "Shared vs Dedicated Exadata Infrastructure: differences and use case selection",
+        "Provisioning ADB: OCPU/ECPUs, storage allocation, license types (BYOL vs License Included)",
+        "Access control levels: network access (public/private endpoint, IP allowlist, VCN)"
+      ]
+    },
+    {
+      "exam_id": "oracle-autonomous-database-professional",
+      "domain_id": "D2",
+      "sequence": 2,
+      "name": "Managing and Maintaining Autonomous Database",
+      "weight_pct": 14,
+      "questions_in_25": 4,
+      "key_topics": [
+        "Scaling: online CPU and storage scaling (no downtime), manual vs auto-scaling",
+        "Automatic patching and maintenance windows: customer-controlled scheduling",
+        "Backup and restore: automatic daily backups (60-day retention), manual backups, PITR",
+        "Long-term backup retention: cross-region backup copy, Object Storage integration",
+        "ADB monitoring: Performance Hub, AWR reports, SQL Monitoring, real-time SQL monitoring",
+        "Cloning: full clone vs metadata clone; refreshable clones for dev/test"
+      ]
+    },
+    {
+      "exam_id": "oracle-autonomous-database-professional",
+      "domain_id": "D3",
+      "sequence": 3,
+      "name": "Autonomous Database Tools",
+      "weight_pct": 14,
+      "questions_in_25": 3,
+      "key_topics": [
+        "Database Actions (formerly SQL Developer Web): SQL Worksheet, Data Modeler, REST",
+        "Data Studio: data loading, data transforms, data insights, data share",
+        "Oracle APEX: low-code app development, workspace management on ADB",
+        "OML (Oracle Machine Learning) Notebooks: in-database ML with Python, R, SQL, AutoML",
+        "Graph Studio: property graph creation, PGQL queries, graph analytics",
+        "JSON Duality Views and MongoDB API for schema-flexible development on ADB"
+      ]
+    },
+    {
+      "exam_id": "oracle-autonomous-database-professional",
+      "domain_id": "D4",
+      "sequence": 4,
+      "name": "Autonomous Database Shared Infrastructure",
+      "weight_pct": 14,
+      "questions_in_25": 3,
+      "key_topics": [
+        "Shared Exadata Infrastructure: multi-tenant architecture, resource isolation",
+        "Consumer Groups for workload management and resource prioritization",
+        "Connection profiles: high/medium/low/TP/TPurgent service names for different workloads",
+        "Autonomous Data Guard on Shared: standby database for disaster recovery",
+        "SQL translation for third-party dialects (PostgreSQL, SQL Server) compatibility"
+      ]
+    },
+    {
+      "exam_id": "oracle-autonomous-database-professional",
+      "domain_id": "D5",
+      "sequence": 5,
+      "name": "Migrating to Autonomous Database",
+      "weight_pct": 14,
+      "questions_in_25": 4,
+      "key_topics": [
+        "Migration strategies: Data Pump (offline), GoldenGate (online/minimal downtime), DBMS_CLOUD",
+        "Zero Downtime Migration (ZDM) tool: physical and logical online migration modes",
+        "SQL Compatibility: handling unsupported features (ALTER SYSTEM, DROP TABLESPACE, etc.)",
+        "Data type compatibility: handling Oracle-to-ADB data type limitations",
+        "Pre-migration assessment: CPAT (Cloud Premigration Advisor Tool) usage",
+        "Post-migration validation and performance comparison techniques"
+      ]
+    },
+    {
+      "exam_id": "oracle-autonomous-database-professional",
+      "domain_id": "D6",
+      "sequence": 6,
+      "name": "Autonomous Database Dedicated Infrastructure",
+      "weight_pct": 14,
+      "questions_in_25": 4,
+      "key_topics": [
+        "Dedicated Exadata Infrastructure: exclusive Exadata hardware for single customer",
+        "Autonomous Exadata VM Cluster (AVMC): manage container databases (CDB) and ADBs",
+        "Custom maintenance and patching schedules on Dedicated infrastructure",
+        "Autonomous Container Database (ACD) architecture and ADB provisioning within ACDs",
+        "Private network access and VCN integration for Dedicated ADB",
+        "Database Vault and Label Security on ADB Dedicated for enhanced security"
+      ]
+    },
+    {
+      "exam_id": "oracle-autonomous-database-professional",
+      "domain_id": "D7",
+      "sequence": 7,
+      "name": "Developing on Autonomous Database",
+      "weight_pct": 14,
+      "questions_in_25": 3,
+      "key_topics": [
+        "Connectivity: Oracle Wallet, TLS (one-way)/mTLS (mutual), connection strings",
+        "JDBC, ODBC, Python cx_Oracle/python-oracledb driver configuration for ADB",
+        "DBMS_CLOUD: loading data from Object Storage, REST calls, external tables",
+        "Connection pooling: DRCP (Database Resident Connection Pooling), PRCP",
+        "Performance tuning for application workloads: SQL Tuning Advisor, ADDM",
+        "AI Vector Search: store, index, and query vector embeddings in ADB for RAG applications"
+      ]
+    },
+    {
+      "exam_id": "oracle-cloud-database-services-professional",
+      "domain_id": "D1",
+      "sequence": 1,
+      "name": "Base Database Service – VM (BaseDB)",
+      "weight_pct": 24,
+      "questions_in_25": 6,
+      "key_topics": [
+        "Provisioning BaseDB VM DB Systems: compute shapes (Standard/DenseIO), storage (ASM/LVM)",
+        "Database editions: Standard Edition 2 (SE2) vs Enterprise Edition (EE) and EE options",
+        "BaseDB lifecycle management: stop/start, terminate, resize shapes",
+        "Backup and recovery: automatic backups, manual backups, PITR, cross-region backup",
+        "Patching and upgrades: Grid Infrastructure patching, DB Home patching, OS patching order",
+        "Monitoring and management interfaces: OCI Console, OCI CLI, dbaascli, dbcli, EM Express",
+        "Data Guard configuration from OCI Console: switchover, failover, reinstate"
+      ]
+    },
+    {
+      "exam_id": "oracle-cloud-database-services-professional",
+      "domain_id": "D2",
+      "sequence": 2,
+      "name": "Exadata Database Service (ExaDB)",
+      "weight_pct": 24,
+      "questions_in_25": 6,
+      "key_topics": [
+        "Exadata Cloud Infrastructure (ExaDB-D): Quarter/Half/Full rack configurations",
+        "VM Cluster provisioning on Exadata: OCPUs, storage, network configuration",
+        "Exadata Smart Scan, Smart Flash Cache, RDMA storage protocol (RoCE)",
+        "Exadata lifecycle management: patching (GI, DB, OS), rolling vs non-rolling patching",
+        "Exadata management interfaces: dbaascli, ExaCLI, EM, OCI Console",
+        "Exadata Cloud@Customer: on-premises Exadata managed by Oracle, private cloud model",
+        "Data Guard setup on Exadata: sync/async redo transport, observer configuration"
+      ]
+    },
+    {
+      "exam_id": "oracle-cloud-database-services-professional",
+      "domain_id": "D3",
+      "sequence": 3,
+      "name": "MySQL HeatWave",
+      "weight_pct": 20,
+      "questions_in_25": 5,
+      "key_topics": [
+        "MySQL HeatWave Database System: provisioning MySQL DB System on OCI, HA configuration",
+        "HeatWave cluster: in-memory analytics engine, adding/removing nodes, data loading",
+        "HeatWave Lakehouse: querying OCI Object Storage data (CSV, Parquet, Avro) via MySQL",
+        "HeatWave GenAI: vector store, embeddings, LLM-powered natural language queries",
+        "Backup: automated backup scheduling, restore DB System, cross-region copy",
+        "MySQL Shell, MySQL Workbench, OCI Console management interfaces",
+        "Replication: inbound replication from on-premises MySQL, read replicas"
+      ]
+    },
+    {
+      "exam_id": "oracle-cloud-database-services-professional",
+      "domain_id": "D4",
+      "sequence": 4,
+      "name": "NoSQL Database Cloud Service",
+      "weight_pct": 16,
+      "questions_in_25": 4,
+      "key_topics": [
+        "OCI NoSQL Database: provisioned vs on-demand capacity modes, table creation",
+        "NoSQL data model: schema-flexible tables, JSON documents, key-value pairs",
+        "CRUD operations via NoSQL SDK (Java, Python, Go, Node.js, .NET)",
+        "Secondary indexes for query optimization on non-primary key columns",
+        "Global Active Tables: multi-region active-active NoSQL replication",
+        "Security: IAM policies for NoSQL, encryption at rest and in transit"
+      ]
+    },
+    {
+      "exam_id": "oracle-cloud-database-services-professional",
+      "domain_id": "D5",
+      "sequence": 5,
+      "name": "OCI Database Management Service",
+      "weight_pct": 16,
+      "questions_in_25": 4,
+      "key_topics": [
+        "Database Management Service: enable for ADB, BaseDB, ExaDB, on-premises (private endpoint)",
+        "Fleet-level monitoring: fleet summary, database health monitoring across multiple DBs",
+        "Performance Hub via Database Management: AWR, ASH, Real-Time SQL Monitoring",
+        "Diagnostics and tuning: ADDM findings, SQL Tuning Advisor integration",
+        "Database Groups: organize and perform operations across multiple databases",
+        "SQL job execution: scheduled SQL jobs across managed databases in a fleet"
+      ]
+    },
+    {
+      "exam_id": "oracle-ml-autonomous-database-associate",
+      "domain_id": "D1",
+      "sequence": 1,
+      "name": "Oracle Machine Learning Components and User Management",
+      "weight_pct": 17,
+      "questions_in_25": 4,
+      "key_topics": [
+        "Oracle Machine Learning (OML) architecture: in-database ML on Autonomous Database",
+        "OML components overview: OML Notebooks, OML4SQL, OML4Py, OML4R, OML AutoML UI, OML Services",
+        "OML user roles and permissions: Administrator, Developer — create, manage, and view access",
+        "OML User Management Interface: create users, assign roles, reset passwords from ADB Console",
+        "OML workspace management: create, share, and transfer workspaces and projects",
+        "OML access methods: Database Actions UI (OML component), OML API endpoints"
+      ]
+    },
+    {
+      "exam_id": "oracle-ml-autonomous-database-associate",
+      "domain_id": "D2",
+      "sequence": 2,
+      "name": "OML Notebooks and Collaborative Features",
+      "weight_pct": 17,
+      "questions_in_25": 5,
+      "key_topics": [
+        "OML Notebooks: create, run, schedule, and manage notebooks within OML workspace",
+        "Notebook interpreters: SQL (%sql), PL/SQL (%script), Python (%python), R (%r), Markdown (%md)",
+        "Notebook paragraphs: ordering, execution, and re-running individual paragraphs",
+        "Notebook sharing: share notebooks with other OML users, collaborative editing permissions",
+        "Notebook jobs: schedule notebooks to run on a periodic basis (cron-based scheduling)",
+        "OML Notebook templates: personal, shared, and example template types",
+        "Scratchpad notebooks: temporary ad-hoc SQL/Python execution within OML Notebooks"
+      ]
+    },
+    {
+      "exam_id": "oracle-ml-autonomous-database-associate",
+      "domain_id": "D3",
+      "sequence": 3,
+      "name": "OML4SQL — In-Database Machine Learning with SQL",
+      "weight_pct": 17,
+      "questions_in_25": 4,
+      "key_topics": [
+        "OML4SQL (Oracle Machine Learning for SQL): run ML algorithms directly in Oracle Database using SQL",
+        "Supervised ML algorithms: Decision Trees, Random Forest, Neural Networks, SVM, Naive Bayes, GLM",
+        "Unsupervised ML algorithms: K-Means Clustering, PCA (dimensionality reduction), Association Rules",
+        "Anomaly Detection algorithms in OML4SQL: One-Class SVM, Isolation Forest",
+        "DBMS_DATA_MINING package: CREATE_MODEL, APPLY, PREDICT, SCORE functions",
+        "Model management via SQL: create, drop, rename ML models; ALL_MINING_MODELS view",
+        "Feature importance and model detail views for model explainability in OML4SQL"
+      ]
+    },
+    {
+      "exam_id": "oracle-ml-autonomous-database-associate",
+      "domain_id": "D4",
+      "sequence": 4,
+      "name": "OML4Py and OML AutoML UI",
+      "weight_pct": 17,
+      "questions_in_25": 4,
+      "key_topics": [
+        "OML4Py: Python interface to Oracle in-database ML — transparency layer for scikit-learn-style API",
+        "OML4Py datastores: persist Python objects (models, data frames) to Oracle Database",
+        "Embedded Python execution: run Python functions in database-spawned Python engines (row/table apply)",
+        "AutoML UI: automated algorithm selection, feature selection, and hyperparameter tuning",
+        "AutoML experiment: configure prediction target, sample size, metric, and algorithm pool",
+        "Model Repository via AutoML UI: deploy model to REST endpoint, create OML4Py notebook from model",
+        "ONNX model support in OML: import ONNX-format models and deploy as in-database models"
+      ]
+    },
+    {
+      "exam_id": "oracle-ml-autonomous-database-associate",
+      "domain_id": "D5",
+      "sequence": 5,
+      "name": "OML Services REST API and Model Deployment",
+      "weight_pct": 17,
+      "questions_in_25": 4,
+      "key_topics": [
+        "OML Services: REST API for real-time scoring of OML in-database models",
+        "Authentication: obtain OML Services token using ADB tenancy, database, username, password",
+        "Score a model: POST request to OML Services /score endpoint with JSON input data",
+        "Model deployment lifecycle: deploy, undeploy, and manage model namespaces via OML Services API",
+        "Cognitive Text OML Services: built-in NLP capabilities (sentiment, feature extraction, summarization)",
+        "OML Services discovery endpoints: list available models, model details, and scoring schemas",
+        "Integration: call OML Services from Python (requests), REST clients, and external applications"
+      ]
+    },
+    {
+      "exam_id": "oracle-ml-autonomous-database-associate",
+      "domain_id": "D6",
+      "sequence": 6,
+      "name": "Data Preparation and ML Best Practices on ADB",
+      "weight_pct": 15,
+      "questions_in_25": 4,
+      "key_topics": [
+        "Data preparation for ML in ADB: SQL-based ETL, data cleansing, handling nulls and outliers",
+        "Feature engineering in SQL: case expressions, binning, one-hot encoding using SQL transforms",
+        "Data splits: training, validation, and test datasets in OML4SQL workflows",
+        "Automated Data Preparation (ADP) in OML4SQL: automatic normalization, outlier treatment",
+        "Model evaluation metrics in OML: lift charts, ROC curves, confusion matrix, RMSE",
+        "Text mining in OML4SQL: DBMS_DATA_MINING text preprocessing, term extraction",
+        "Best practices: working with large datasets in ADB, partitioning for ML performance"
+      ]
+    },
+    {
+      "exam_id": "oci-generative-ai-professional",
+      "domain_id": "D1",
+      "sequence": 1,
+      "name": "Fundamentals of Large Language Models (LLMs)",
+      "weight_pct": 20,
+      "questions_in_25": 5,
+      "key_topics": [
+        "LLM architecture fundamentals: transformer model, self-attention, encoder-decoder vs decoder-only",
+        "Pre-training, instruction tuning, and RLHF (Reinforcement Learning from Human Feedback)",
+        "Prompt design and engineering: system prompts, zero-shot, one-shot, few-shot, chain-of-thought",
+        "Advanced prompting: ReAct (Reasoning + Acting), prompt chaining, and meta-prompting",
+        "LLM fine-tuning approaches: full fine-tuning vs PEFT (LoRA, adapter layers, soft prompts/T-Few)",
+        "Code models: code generation, code completion, debugging with LLMs",
+        "Multimodal models: vision-language models, image-to-text, text-to-image capabilities",
+        "Language agents: tool use, function calling, planning, memory, and agentic loops"
+      ]
+    },
+    {
+      "exam_id": "oci-generative-ai-professional",
+      "domain_id": "D2",
+      "sequence": 2,
+      "name": "Using OCI Generative AI Service",
+      "weight_pct": 40,
+      "questions_in_25": 10,
+      "key_topics": [
+        "OCI Generative AI service overview: managed LLM APIs on OCI dedicated GPU infrastructure",
+        "Pretrained foundation models: Cohere Command R+, Meta Llama 3, xAI Grok — use cases and capabilities",
+        "Chat models: conversational endpoints, system prompts, message history management",
+        "Embedding models: Cohere embed — generate vector embeddings for semantic search and RAG",
+        "Dedicated AI clusters: isolate compute for fine-tuning and inference (Unit shapes, hosting policies)",
+        "Fine-tuning base models: prepare custom JSONL dataset (prompt/completion pairs, min 32 examples)",
+        "Fine-tuning methods: T-Few (update subset of transformer layers) vs Vanilla (full weight update)",
+        "Custom model endpoints: create, manage, and invoke fine-tuned model endpoints for inference",
+        "OCI Generative AI security: VCN integration, private endpoints, IAM policies for GenAI resources",
+        "Content moderation in OCI GenAI Agents: activate, configure safety filters and guardrails"
+      ]
+    },
+    {
+      "exam_id": "oci-generative-ai-professional",
+      "domain_id": "D3",
+      "sequence": 3,
+      "name": "Implement RAG Using OCI Generative AI Service",
+      "weight_pct": 20,
+      "questions_in_25": 5,
+      "key_topics": [
+        "RAG (Retrieval-Augmented Generation): architecture, motivation, and workflow overview",
+        "OCI Generative AI integration with LangChain: ChatOCIGenAI, OCIGenAI LLM, OCI embeddings classes",
+        "Oracle Database 23ai as vector store: AI Vector Search, VECTOR data type, HNSW index",
+        "Document ingestion pipeline: loading (PDFs, URLs, text), splitting strategies, chunking approaches",
+        "Chunk embedding: generate embeddings using OCI Generative AI embedding models for each chunk",
+        "Storing and indexing vectors: insert embedded chunks into Oracle Database 23ai vector tables",
+        "Similarity search: cosine, dot product, Euclidean distance — retrieve top-k relevant chunks",
+        "Response generation: pass retrieved chunks + user query to OCI GenAI LLM for grounded answers"
+      ]
+    },
+    {
+      "exam_id": "oci-generative-ai-professional",
+      "domain_id": "D4",
+      "sequence": 4,
+      "name": "Using OCI Generative AI RAG Agents Service",
+      "weight_pct": 20,
+      "questions_in_25": 5,
+      "key_topics": [
+        "OCI Generative AI Agents service: managed RAG agent with knowledge base — no infrastructure to manage",
+        "Knowledge base options: OCI Object Storage (files) vs Oracle Database 23ai (vector store)",
+        "Creating a knowledge base: ingest documents, configure chunking, embedding model selection",
+        "Creating and configuring an agent: attach knowledge base, set welcome message, enable content moderation",
+        "Deploying an agent endpoint: make agent available as a chat session endpoint",
+        "Invoking a deployed agent: REST API call to agent endpoint, chat session management",
+        "Testing agents as chatbots: interactive test session via OCI Console RAG Agent playground",
+        "Prompt injection and jailbreaking risks: identifying and mitigating adversarial prompts in production"
+      ]
+    }
+  ]

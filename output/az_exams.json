@@ -1,0 +1,247 @@
+[
+    {
+      "exam_id": "az-900-azure-fundamentals",
+      "exam_code": "AZ-900",
+      "title": "Microsoft Certified: Azure Fundamentals",
+      "subtitle": "Foundational",
+      "description": "Foundational cloud and Azure knowledge including cloud concepts, Azure architecture, compute, networking, storage, identity, and governance.",
+      "level": "Foundational",
+      "domains": 3,
+      "passing_pct": 70,
+      "available": false,
+      "format": "exam",
+      "duration_mins": 65,
+      "total_questions": 40,
+      "created_at": {
+        "$date": "2019-05-01T00:00:00.000Z"
+      }
+    },
+    {
+      "exam_id": "ai-900-azure-ai-fundamentals",
+      "exam_code": "AI-900",
+      "title": "Microsoft Certified: Azure AI Fundamentals",
+      "subtitle": "Foundational",
+      "description": "Foundational AI and ML knowledge including AI workloads, ML principles, computer vision, NLP, and generative AI on Azure.",
+      "level": "Foundational",
+      "domains": 5,
+      "passing_pct": 70,
+      "available": false,
+      "format": "exam",
+      "duration_mins": 65,
+      "total_questions": 40,
+      "created_at": {
+        "$date": "2020-04-02T00:00:00.000Z"
+      }
+    },
+    {
+      "exam_id": "dp-900-azure-data-fundamentals",
+      "exam_code": "DP-900",
+      "title": "Microsoft Certified: Azure Data Fundamentals",
+      "subtitle": "Foundational",
+      "description": "Core data concepts including relational data, non-relational data, and analytics workloads on Azure using Synapse, Databricks, and Power BI.",
+      "level": "Foundational",
+      "domains": 4,
+      "passing_pct": 70,
+      "available": false,
+      "format": "exam",
+      "duration_mins": 65,
+      "total_questions": 40,
+      "created_at": {
+        "$date": "2020-04-02T00:00:00.000Z"
+      }
+    },
+    {
+      "exam_id": "sc-900-security-fundamentals",
+      "exam_code": "SC-900",
+      "title": "Microsoft Certified: Security, Compliance, and Identity Fundamentals",
+      "subtitle": "Foundational",
+      "description": "Foundational knowledge of security, compliance, and identity concepts across Microsoft cloud services including Entra ID, Defender, Purview, and Sentinel.",
+      "level": "Foundational",
+      "domains": 3,
+      "passing_pct": 70,
+      "available": false,
+      "format": "exam",
+      "duration_mins": 65,
+      "total_questions": 40,
+      "created_at": {
+        "$date": "2021-04-28T00:00:00.000Z"
+      }
+    },
+    {
+      "exam_id": "az-104-azure-administrator",
+      "exam_code": "AZ-104",
+      "title": "Microsoft Certified: Azure Administrator Associate",
+      "subtitle": "Associate Level",
+      "description": "Implement, manage, and monitor Azure environments including virtual networks, storage, compute, identity, security, and governance.",
+      "level": "Associate",
+      "domains": 5,
+      "passing_pct": 70,
+      "available": false,
+      "format": "exam",
+      "duration_mins": 100,
+      "total_questions": 55,
+      "created_at": {
+        "$date": "2020-04-02T00:00:00.000Z"
+      }
+    },
+    {
+      "exam_id": "az-204-azure-developer",
+      "exam_code": "AZ-204",
+      "title": "Microsoft Certified: Azure Developer Associate",
+      "subtitle": "Associate Level",
+      "description": "Design, build, test, and maintain cloud applications and services on Azure using compute, storage, security, messaging, and event-based solutions.",
+      "level": "Associate",
+      "domains": 5,
+      "passing_pct": 70,
+      "available": false,
+      "format": "exam",
+      "duration_mins": 100,
+      "total_questions": 55,
+      "created_at": {
+        "$date": "2020-04-02T00:00:00.000Z"
+      }
+    },
+    {
+      "exam_id": "dp-700-fabric-data-engineer",
+      "exam_code": "DP-700",
+      "title": "Microsoft Certified: Fabric Data Engineer Associate",
+      "subtitle": "Associate Level",
+      "description": "Implement data engineering solutions using Microsoft Fabric including ingestion, transformation, pipeline orchestration, security, governance, and monitoring.",
+      "level": "Associate",
+      "domains": 3,
+      "passing_pct": 70,
+      "available": false,
+      "retired": false,
+      "format": "exam",
+      "duration_mins": 100,
+      "total_questions": 55,
+      "created_at": {
+        "$date": "2021-03-23T00:00:00.000Z"
+      }
+    },
+    {
+      "exam_id": "dp-300-azure-database-administrator",
+      "exam_code": "DP-300",
+      "title": "Microsoft Certified: Azure Database Administrator Associate",
+      "subtitle": "Associate Level",
+      "description": "Administer SQL-based database solutions on Azure including Azure SQL Database, SQL Managed Instance, SQL Server on VMs, security, HA/DR, and automation.",
+      "level": "Associate",
+      "domains": 5,
+      "passing_pct": 70,
+      "available": false,
+      "format": "exam",
+      "duration_mins": 100,
+      "total_questions": 55,
+      "created_at": {
+        "$date": "2020-09-24T00:00:00.000Z"
+      }
+    },
+    {
+      "exam_id": "az-500-azure-security-engineer",
+      "exam_code": "AZ-500",
+      "title": "Microsoft Certified: Azure Security Engineer Associate",
+      "subtitle": "Associate Level",
+      "description": "Implement security controls and threat protection, manage identity and access, and protect data, applications, and networks using Azure Defender, Sentinel, and Entra ID.",
+      "level": "Associate",
+      "domains": 4,
+      "passing_pct": 70,
+      "available": false,
+      "format": "exam",
+      "duration_mins": 100,
+      "total_questions": 55,
+      "created_at": {
+        "$date": "2019-09-25T00:00:00.000Z"
+      }
+    },
+    {
+      "exam_id": "ai-102-azure-ai-engineer",
+      "exam_code": "AI-102",
+      "title": "Microsoft Certified: Azure AI Engineer Associate",
+      "subtitle": "Associate Level",
+      "description": "Plan, create, deploy, and manage AI solutions using Azure AI Services, Azure OpenAI, AI Foundry, Document Intelligence, Speech, Vision, Language, and Bot Service.",
+      "level": "Associate",
+      "domains": 5,
+      "passing_pct": 70,
+      "available": false,
+      "format": "exam",
+      "duration_mins": 100,
+      "total_questions": 55,
+      "created_at": {
+        "$date": "2021-02-23T00:00:00.000Z"
+      }
+    },
+    {
+      "exam_id": "dp-100-azure-data-scientist",
+      "exam_code": "DP-100",
+      "title": "Microsoft Certified: Azure Data Scientist Associate",
+      "subtitle": "Associate Level",
+      "description": "Design and implement data science and ML solutions using Azure Machine Learning, including data ingestion, model training, deployment, and responsible AI.",
+      "level": "Associate",
+      "domains": 4,
+      "passing_pct": 70,
+      "available": false,
+      "format": "exam",
+      "duration_mins": 100,
+      "total_questions": 55,
+      "created_at": {
+        "$date": "2020-04-02T00:00:00.000Z"
+      }
+    },
+    {
+      "exam_id": "az-700-azure-network-engineer",
+      "exam_code": "AZ-700",
+      "title": "Microsoft Certified: Azure Network Engineer Associate",
+      "subtitle": "Associate Level",
+      "description": "Plan, implement, and manage Azure networking solutions including VNets, hybrid connectivity, routing, load balancing, private access, and network security.",
+      "level": "Associate",
+      "domains": 5,
+      "passing_pct": 70,
+      "available": false,
+      "format": "exam",
+      "duration_mins": 100,
+      "total_questions": 55,
+      "created_at": {
+        "$date": "2021-10-26T00:00:00.000Z"
+      }
+    },
+    {
+      "exam_id": "az-305-azure-solutions-architect",
+      "exam_code": "AZ-305",
+      "title": "Microsoft Certified: Azure Solutions Architect Expert",
+      "subtitle": "Expert Level",
+      "description": "Design cloud and hybrid Azure solutions including identity, governance, data storage, business continuity, and infrastructure aligned with the Azure Well-Architected Framework.",
+      "level": "Expert",
+      "domains": 4,
+      "passing_pct": 70,
+      "available": false,
+      "format": "exam",
+      "duration_mins": 120,
+      "total_questions": 60,
+      "prerequisites": [
+        "az-104-azure-administrator"
+      ],
+      "created_at": {
+        "$date": "2021-12-14T00:00:00.000Z"
+      }
+    },
+    {
+      "exam_id": "az-400-azure-devops-engineer",
+      "exam_code": "AZ-400",
+      "title": "Microsoft Certified: DevOps Engineer Expert",
+      "subtitle": "Expert Level",
+      "description": "Design and implement DevOps practices including CI/CD pipelines, source control, IaC, security compliance, and instrumentation using Azure DevOps and GitHub.",
+      "level": "Expert",
+      "domains": 5,
+      "passing_pct": 70,
+      "available": false,
+      "format": "exam",
+      "duration_mins": 120,
+      "total_questions": 60,
+      "prerequisites": [
+        "az-104-azure-administrator"
+      ],
+      "created_at": {
+        "$date": "2019-05-01T00:00:00.000Z"
+      }
+    }
+  ]
